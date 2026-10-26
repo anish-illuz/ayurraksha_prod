@@ -193,13 +193,14 @@ export const CartDrawer: React.FC = () => {
               Taxes included. Standard delivery across India.
             </p>
 
-            <a
-              href={checkoutUrl}
-              className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-button text-sm font-semibold bg-botanical hover:bg-forest text-white shadow-md hover:shadow-lg transition-all active:scale-[0.99]"
+            <Link
+              href="/checkout"
+              onClick={closeCart}
+              className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl text-sm font-bold uppercase tracking-wider bg-botanical hover:bg-forest text-white shadow-md hover:shadow-lg transition-all active:scale-[0.99]"
             >
               <span>Proceed to Checkout</span>
               <ArrowRight size={16} />
-            </a>
+            </Link>
 
             <div className="mt-3 flex items-center justify-center gap-3 text-[11px] text-charcoal-muted">
               <span>Razorpay Verified</span>

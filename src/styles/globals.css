@@ -34,6 +34,91 @@ h1, h2, h3, h4, h5, h6, .font-serif, .font-heading {
   outline-offset: 2px;
 }
 
+/* Hero Section Smooth Animations */
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.4deg);
+  }
+}
+
+@keyframes heroPulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes badgeFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes badgeFloatDelayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes heroSlideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-hero-float {
+  animation: heroFloat 5s ease-in-out infinite;
+}
+
+.animate-hero-glow {
+  animation: heroPulseGlow 7s ease-in-out infinite;
+}
+
+.animate-badge-float {
+  animation: badgeFloat 3.8s ease-in-out infinite;
+}
+
+.animate-badge-float-delayed {
+  animation: badgeFloatDelayed 4.2s ease-in-out infinite;
+}
+
+.animate-hero-text {
+  animation: heroSlideFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-hero-image {
+  animation: heroImageReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 /* Custom Scrollbar for Drawer & Menus */
 ::-webkit-scrollbar {
   width: 6px;

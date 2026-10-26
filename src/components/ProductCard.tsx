@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Star, ShoppingBag, Check, Tag } from 'lucide-react';
+import { Star, ShoppingBag, Check, Tag, Plus, Minus } from 'lucide-react';
 import { Product } from '@/types/product';
 import { useCart } from '@/lib/cartContext';
 
@@ -14,15 +14,29 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = false }) => {
   const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleQuickAdd = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    addToCart(product, 1);
+    if (!product.inStock) return;
+    addToCart(product, quantity);
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 1800);
+  };
+
+  const handleDecrement = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setQuantity((prev) => Math.max(1, prev - 1));
+  };
+
+  const handleIncrement = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setQuantity((prev) => prev + 1);
   };
 
   const primaryImage = product.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg';
@@ -148,27 +162,54 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
           </span>
         </div>
 
-        {/* Full-Width Add to Cart CTA Button in #80A03C */}
-        <div className="pt-1">
+        {/* Quantity Stepper + Add to Cart Action Row */}
+        <div className="pt-1 flex items-center gap-2">
+          {/* Quantity + / - Stepper */}
+          <div className="flex items-center border border-stone-300 rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-11">
+            <button
+              onClick={handleDecrement}
+              aria-label="Decrease quantity"
+              className="w-8 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all disabled:opacity-40"
+              disabled={quantity <= 1}
+            >
+              <Minus size={14} />
+            </button>
+            <span className="w-7 text-center text-sm font-bold text-forest select-none">
+              {quantity}
+            </span>
+            <button
+              onClick={handleIncrement}
+              aria-label="Increase quantity"
+              className="w-8 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all"
+            >
+              <Plus size={14} />
+            </button>
+          </div>
+
+          {/* Add to Cart CTA Button */}
           <button
             onClick={handleQuickAdd}
             disabled={!product.inStock}
             aria-label={`Add ${product.name} to cart`}
-            className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-200 shadow-xs active:scale-[0.98] ${
-              isAdded
+            className={`flex-grow h-11 inline-flex items-center justify-center gap-2 px-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 shadow-xs active:scale-[0.98] ${
+              !product.inStock
+                ? 'bg-stone-200 text-stone-500 cursor-not-allowed'
+                : isAdded
                 ? 'bg-forest text-white'
                 : 'bg-botanical hover:bg-forest text-white'
-            } disabled:bg-stone-200 disabled:text-stone-400 disabled:cursor-not-allowed`}
+            }`}
           >
-            {isAdded ? (
+            {!product.inStock ? (
+              <span>Out of Stock</span>
+            ) : isAdded ? (
               <>
                 <Check size={16} />
-                <span>Added to Cart!</span>
+                <span>Added ({quantity})!</span>
               </>
             ) : (
               <>
                 <ShoppingBag size={16} />
-                <span>Add to Cart</span>
+                <span>Add {quantity > 1 ? `(${quantity})` : ''}</span>
               </>
             )}
           </button>

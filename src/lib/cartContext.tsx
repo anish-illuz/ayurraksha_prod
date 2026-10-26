@@ -101,11 +101,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const clearCart = () => setItems([]);
 
-  // Generate checkout URL linking to WooCommerce with first product or direct checkout
-  // If multiple items, points to /checkout on the live domain
-  const checkoutUrl = items.length === 1
-    ? `https://www.ayurrakshaonline.com/checkout/?add-to-cart=${items[0].product.id}&quantity=${items[0].quantity}`
-    : 'https://www.ayurrakshaonline.com/checkout/';
+  // In-site checkout URL
+  const checkoutUrl = '/checkout';
 
   return (
     <CartContext.Provider

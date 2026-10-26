@@ -180,13 +180,13 @@ export default function CartPage() {
                   </span>
                 </div>
 
-                <a
-                  href={checkoutUrl}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-button text-sm font-semibold bg-botanical hover:bg-forest text-white shadow-md hover:shadow-lg transition-all active:scale-[0.99]"
+                <Link
+                  href="/checkout"
+                  className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-2xl text-base font-bold uppercase tracking-wider bg-botanical hover:bg-forest text-white shadow-md hover:shadow-lg transition-all active:scale-[0.99]"
                 >
-                  <Lock size={16} />
+                  <Lock size={18} />
                   <span>Proceed to Secure Checkout</span>
-                </a>
+                </Link>
 
                 <div className="pt-2 text-center text-[11px] text-charcoal-muted space-y-1">
                   <p>Payments processed securely via Razorpay gateway.</p>

@@ -8,9 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: {
+          DEFAULT: '#80A03C', // Signature Ayurraksha Olive Green
+          dark: '#58702E',
+          light: '#95B847',
+          hover: '#6F8C31',
+          subtle: '#F4F7EE',
+        },
         forest: {
           DEFAULT: '#58702E', // Live site deep herbal green
-          dark: '#024B19',   // Live logo green
+          dark: '#014C1A',   // Live logo green
           light: '#6B8938',
         },
         botanical: {
@@ -34,13 +41,13 @@ module.exports = {
           light: '#D97706',
         },
         charcoal: {
-          DEFAULT: '#3A3A3A', // Live site text color
-          light: '#555555',
-          muted: '#777777',
+          DEFAULT: '#2E332E', // Live site text color
+          light: '#4A524A',
+          muted: '#6B726B',
         },
         border: {
           botanical: 'rgba(128, 160, 60, 0.25)',
-          subtle: 'rgba(58, 58, 58, 0.08)',
+          subtle: 'rgba(46, 51, 46, 0.08)',
         }
       },
       fontFamily: {

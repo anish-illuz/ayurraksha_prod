@@ -87,10 +87,10 @@ export const ShopContent: React.FC<ShopContentProps> = ({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Category Header */}
       <div className="mb-8 pb-6 border-b border-stone-200">
-        <h1 className="font-serif text-3xl sm:text-4xl font-bold text-forest">
+        <h1 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-forest">
           {title}
         </h1>
-        <p className="mt-2 text-sm text-charcoal-muted max-w-3xl leading-relaxed">
+        <p className="mt-2 text-xs sm:text-sm text-charcoal-muted max-w-3xl leading-relaxed">
           {description}
         </p>
       </div>
@@ -277,13 +277,13 @@ export const ShopContent: React.FC<ShopContentProps> = ({
         <div className="lg:col-span-3">
           {filteredProducts.length === 0 ? (
             <div className="text-center py-16 px-4 bg-white rounded-card border border-stone-200">
-              <h3 className="font-serif text-lg font-bold text-forest">No formulations match your selection</h3>
+              <h3 className="font-heading text-lg font-bold text-forest">No formulations match your selection</h3>
               <p className="text-xs text-charcoal-muted mt-1 max-w-sm mx-auto">
                 Try clearing some filters or searching for alternative health concerns.
               </p>
               <button
                 onClick={resetFilters}
-                className="mt-4 px-4 py-2 rounded-button text-xs font-semibold bg-forest text-white hover:bg-forest-light transition-colors"
+                className="mt-4 px-4 py-2 rounded-button text-xs font-semibold bg-primary text-white hover:bg-primary-dark transition-colors"
               >
                 Reset All Filters
               </button>
@@ -392,7 +392,7 @@ export const ShopContent: React.FC<ShopContentProps> = ({
               </button>
               <button
                 onClick={() => setIsMobileFilterOpen(false)}
-                className="w-1/2 py-2.5 rounded-button text-xs font-semibold bg-forest text-white"
+                className="w-1/2 py-2.5 rounded-button text-xs font-semibold bg-primary text-white"
               >
                 Apply ({filteredProducts.length})
               </button>

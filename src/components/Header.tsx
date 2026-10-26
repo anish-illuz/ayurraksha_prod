@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, Search, ShoppingBag, ChevronDown, Leaf } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, Search, ShoppingBag, ChevronDown } from 'lucide-react';
 import { AnnouncementBar } from './AnnouncementBar';
 import { SearchModal } from './SearchModal';
 import { CartDrawer } from './CartDrawer';
@@ -47,17 +48,16 @@ export const Header: React.FC = () => {
                 <Menu size={22} />
               </button>
 
-              <Link href="/" className="flex items-center gap-2 group">
-                <div className="w-9 h-9 rounded-full bg-forest text-ivory flex items-center justify-center transition-transform group-hover:scale-105 shadow-xs">
-                  <Leaf size={18} className="text-emerald-300" />
-                </div>
-                <div>
-                  <span className="font-serif text-xl sm:text-2xl font-bold text-forest tracking-tight block leading-none">
-                    Ayurraksha
-                  </span>
-                  <span className="text-[10px] text-charcoal-muted tracking-widest uppercase block mt-0.5">
-                    Ayurvedic Wellness
-                  </span>
+              <Link href="/" className="flex items-center group py-1" aria-label="Ayurraksha Home">
+                <div className="relative h-10 sm:h-12 w-36 sm:w-44 transition-transform duration-200 group-hover:scale-[1.02]">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Ayurraksha"
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 144px, 176px"
+                    className="object-contain object-left"
+                  />
                 </div>
               </Link>
             </div>
@@ -154,11 +154,11 @@ export const Header: React.FC = () => {
               <button
                 onClick={openCart}
                 aria-label={`Open cart with ${itemCount} items`}
-                className="relative flex items-center gap-2 py-2 px-3 bg-forest hover:bg-forest-light text-white rounded-button transition-all shadow-xs"
+                className="relative flex items-center gap-2 py-2 px-3.5 bg-primary hover:bg-primary-dark text-white rounded-xl transition-all shadow-xs active:scale-95"
               >
                 <ShoppingBag size={18} />
                 <span className="hidden sm:inline text-xs font-semibold">Cart</span>
-                <span className="inline-flex items-center justify-center min-w-5 h-5 px-1 rounded-full text-[11px] font-bold bg-emerald-400 text-forest">
+                <span className="inline-flex items-center justify-center min-w-5 h-5 px-1 rounded-full text-[11px] font-bold bg-white text-forest shadow-xs">
                   {itemCount}
                 </span>
               </button>

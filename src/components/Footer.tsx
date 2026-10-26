@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { Leaf, Phone, Mail, MapPin, MessageSquare, ShieldCheck } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Mail, MapPin, MessageSquare, ShieldCheck } from 'lucide-react';
 import { HEALTH_CONCERNS, SITE_CONFIG } from '@/data/siteConfig';
 
 export const Footer: React.FC = () => {
@@ -10,15 +11,18 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-stone-800">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-full bg-botanical text-ivory flex items-center justify-center">
-                <Leaf size={16} className="text-emerald-300" />
+            <Link href="/" className="inline-block group bg-white/95 rounded-xl px-3 py-2 shadow-xs transition-transform hover:scale-[1.02]" aria-label="Ayurraksha Home">
+              <div className="relative h-10 w-36">
+                <Image
+                  src="/images/logo.png"
+                  alt="Ayurraksha"
+                  fill
+                  sizes="144px"
+                  className="object-contain object-left"
+                />
               </div>
-              <span className="font-serif text-2xl font-bold text-white tracking-tight">
-                Ayurraksha
-              </span>
             </Link>
-            <p className="text-xs sm:text-sm text-stone-400 leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-sm">
               Rooted in classical Ayurvedic pharmacology and backed by contemporary research. An initiative of VPrime Innovations, dedicated to natural vitality, metabolic balance, and holistic healing.
             </p>
             <div className="pt-2">
@@ -26,7 +30,7 @@ export const Footer: React.FC = () => {
                 href={SITE_CONFIG.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-button text-xs font-semibold bg-emerald-800/80 hover:bg-emerald-700 text-white transition-colors border border-emerald-700"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-button text-xs font-semibold bg-primary hover:bg-primary-dark text-white transition-colors"
               >
                 <MessageSquare size={14} />
                 <span>Chat with Ayurvedic Consultant</span>

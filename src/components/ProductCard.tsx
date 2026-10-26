@@ -38,41 +38,41 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
     'Standard Pack'
   );
 
-  // Calculate promotional prepaid price (extra 5% or 10% on prepaid)
+  // Calculate promotional prepaid price (10% extra on prepaid)
   const prepaidDiscountPrice = Math.round(product.price * 0.9);
 
   return (
     <div
-      className="group relative flex flex-col bg-white rounded-2xl border border-stone-200/90 overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:border-botanical/40"
+      className="group relative flex flex-col bg-white rounded-2xl border border-stone-200 overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:border-botanical/50"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Top Banner Offer Chip */}
-      <div className="bg-[#F0F5F1] text-forest text-[11px] font-semibold py-1.5 px-3 text-center border-b border-stone-100 flex items-center justify-center gap-1.5">
-        <Tag size={12} className="text-botanical" />
-        <span>Prepaid Orders: Free Shipping Across India</span>
+      <div className="bg-[#F0F5E6] text-forest text-[11px] font-semibold py-1.5 px-3 text-center border-b border-stone-100 flex items-center justify-center gap-1.5">
+        <Tag size={12} className="text-botanical flex-shrink-0" />
+        <span className="truncate">Prepaid Orders: Free Shipping Across India</span>
       </div>
 
       {/* Product Image Area */}
-      <div className="relative block w-full aspect-square bg-[#FAF8F5] overflow-hidden p-6">
+      <div className="relative block w-full aspect-square bg-[#FAF8F5] overflow-hidden p-4 sm:p-5">
         {/* Top Floating Badges */}
-        <div className="absolute top-3 left-3 right-3 z-10 flex items-center justify-between pointer-events-none">
+        <div className="absolute top-2.5 left-2.5 right-2.5 z-10 flex items-center justify-between pointer-events-none">
           {product.isBestseller ? (
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-forest text-white shadow-xs">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-forest text-white shadow-xs">
               BESTSELLER
             </span>
           ) : product.discountPercent >= 15 ? (
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-emerald-800 text-white shadow-xs">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-botanical text-white shadow-xs">
               POPULAR
             </span>
           ) : (
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-stone-800 text-white shadow-xs">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-stone-700 text-white shadow-xs">
               AYURVEDIC
             </span>
           )}
 
           {product.discountPercent > 0 && (
-            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
               {product.discountPercent}% OFF
             </span>
           )}
@@ -93,22 +93,22 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
         </Link>
       </div>
 
-      {/* Product Information Body */}
-      <div className="flex flex-col flex-grow p-4.5 bg-white space-y-2">
-        {/* Product Title (Clean Jost/Inter font) */}
-        <h3 className="font-heading font-semibold text-sm sm:text-base text-charcoal group-hover:text-botanical transition-colors line-clamp-2 min-h-[2.75rem] leading-snug">
+      {/* Product Information Body with proper standard Tailwind spacing */}
+      <div className="flex flex-col flex-grow p-4 sm:p-5 bg-white space-y-2.5">
+        {/* Product Title (Clean Jost font, standardized height) */}
+        <h3 className="font-heading font-semibold text-sm sm:text-[15px] text-charcoal group-hover:text-botanical transition-colors line-clamp-2 min-h-[2.5rem] leading-snug">
           <Link href={`/product/${product.slug}`}>{product.name}</Link>
         </h3>
 
-        {/* Rating & Concern Row: ★ 4.8 (840) | Liver Detox */}
+        {/* Rating & Concern Row: ★ 4.8 (840) | Liver Wellness */}
         <div className="flex items-center gap-1.5 text-xs text-charcoal-muted">
-          <div className="flex items-center text-emerald-700 font-bold gap-0.5">
-            <Star size={13} className="fill-emerald-600 text-emerald-600" />
+          <div className="flex items-center text-botanical font-bold gap-0.5">
+            <Star size={13} className="fill-botanical text-botanical" />
             <span>{product.rating.toFixed(1)}</span>
           </div>
           <span className="text-stone-400">({product.reviewCount})</span>
           <span className="text-stone-300">|</span>
-          <span className="truncate font-medium text-stone-600">
+          <span className="truncate font-medium text-stone-500 text-[11px]">
             {product.healthConcerns[0] || 'Ayurvedic Care'}
           </span>
         </div>
@@ -121,7 +121,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
         </div>
 
         {/* Price Row: ₹Price ₹Regular % OFF */}
-        <div className="pt-1 flex items-baseline gap-2 flex-wrap">
+        <div className="pt-0.5 flex items-baseline gap-2 flex-wrap">
           <span className="font-heading font-bold text-base sm:text-lg text-forest">
             ₹{product.price.toLocaleString('en-IN')}
           </span>
@@ -131,16 +131,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             </span>
           )}
           {product.discountPercent > 0 && (
-            <span className="text-xs font-bold text-emerald-700">
+            <span className="text-xs font-bold text-botanical">
               {product.discountPercent}% OFF
             </span>
           )}
         </div>
 
-        {/* Special Offer Pill: 🏷️ Get it for ₹X */}
-        <div className="bg-[#FAF7EE] border border-[#E9DEC5] rounded-lg px-2.5 py-1.5 flex items-center justify-between text-[11px]">
+        {/* Special Offer Pill: ⚡ Prepaid Special: ₹X */}
+        <div className="bg-[#F4F7EE] border border-[#DCE4CF] rounded-lg px-2.5 py-1.5 flex items-center justify-between text-[11px]">
           <span className="flex items-center gap-1 text-stone-700 font-medium truncate">
-            <span className="text-amber-600 font-bold">⚡</span>
+            <span className="text-botanical font-bold">⚡</span>
             <span>Prepaid Special:</span>
           </span>
           <span className="font-bold text-forest ml-1">
@@ -148,8 +148,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
           </span>
         </div>
 
-        {/* Full-Width Add to Cart CTA Button */}
-        <div className="pt-2">
+        {/* Full-Width Add to Cart CTA Button in #80A03C */}
+        <div className="pt-1.5">
           <button
             onClick={handleQuickAdd}
             disabled={!product.inStock}

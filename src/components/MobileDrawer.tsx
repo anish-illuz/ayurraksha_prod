@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { X, ChevronDown, Phone, MessageSquare, ShieldCheck, Heart } from 'lucide-react';
 import { HEALTH_CONCERNS, PRODUCT_FORMATS, SITE_CONFIG } from '@/data/siteConfig';
 
@@ -50,10 +51,15 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
       >
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-stone-200 bg-ivory">
-          <div>
-            <span className="font-serif text-lg font-bold text-forest tracking-tight">Ayurraksha</span>
-            <p className="text-[10px] text-charcoal-muted uppercase tracking-wider">Ayurvedic Wellness</p>
-          </div>
+          <Link href="/" onClick={onClose} className="relative h-9 w-32 block">
+            <Image
+              src="/images/logo.png"
+              alt="Ayurraksha"
+              fill
+              sizes="128px"
+              className="object-contain object-left"
+            />
+          </Link>
           <button
             onClick={onClose}
             aria-label="Close menu"

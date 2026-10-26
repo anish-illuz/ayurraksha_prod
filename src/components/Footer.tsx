@@ -1,141 +1,227 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, MessageSquare, ShieldCheck } from 'lucide-react';
-import { HEALTH_CONCERNS, SITE_CONFIG } from '@/data/siteConfig';
+import { Phone, Mail, ArrowRight, Instagram, Facebook, Youtube, Check } from 'lucide-react';
+import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const Footer: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email.trim() && email.includes('@')) {
+      setIsSubscribed(true);
+      setEmail('');
+      setTimeout(() => setIsSubscribed(false), 4000);
+    }
+  };
+
   return (
-    <footer className="bg-forest-dark text-stone-300 pt-16 pb-12 border-t border-forest">
+    <footer className="bg-white text-[#26352D] pt-14 pb-10 border-t border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-stone-800">
-          {/* Brand Info */}
-          <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block group bg-white/95 rounded-xl px-3 py-2 shadow-xs transition-transform hover:scale-[1.02]" aria-label="Ayurraksha Home">
-              <div className="relative h-10 w-36">
+        {/* Main 4-Column Grid matching reference image */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-stone-200">
+
+          {/* Left Column: Brand, Address, Phone, Email */}
+          <div className="lg:col-span-4 space-y-4">
+            <Link href="/" className="inline-block" aria-label="Ayurraksha Home">
+              <div className="relative h-11 w-44">
                 <Image
                   src="/images/logo.png"
                   alt="Ayurraksha"
                   fill
-                  sizes="144px"
+                  sizes="176px"
                   className="object-contain object-left"
                 />
               </div>
             </Link>
-            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-sm">
-              Pure, doctor-formulated Ayurvedic remedies. An initiative of VPrime Innovations in Chennai, dedicated to everyday health, natural energy, and authentic herbal healing.
+
+            {/* Address in clean italic text matching reference */}
+            <p className="text-sm font-serif italic text-[#26352D] leading-relaxed">
+              251, First Floor,<br />
+              New Tiny Sector,<br />
+              Ambattur Industrial Estate,<br />
+              Chennai 600058
             </p>
-            <div className="pt-2">
+
+            {/* Phone */}
+            <div className="flex items-center gap-3 pt-1">
+              <Phone size={19} className="text-[#26352D] flex-shrink-0" />
               <a
-                href={SITE_CONFIG.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-primary hover:bg-primary-dark text-white transition-colors"
+                href={`tel:${SITE_CONFIG.phone}`}
+                className="text-base font-bold text-[#26352D] tracking-wide hover:text-[#9E2A2B] transition-colors"
               >
-                <MessageSquare size={14} />
-                <span>WhatsApp Order &amp; Doctor Support</span>
+                99403-88877
+              </a>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-center gap-3">
+              <Mail size={19} className="text-[#26352D] flex-shrink-0" />
+              <a
+                href="mailto:info@vprimecorp.in"
+                className="text-sm font-semibold text-[#26352D] hover:text-[#9E2A2B] transition-colors"
+              >
+                info@vprimecorp.in
               </a>
             </div>
           </div>
 
-          {/* Shop by Concern */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-semibold text-white uppercase tracking-wider">
-              Health Concerns
-            </h4>
-            <ul className="space-y-2 text-xs">
-              {HEALTH_CONCERNS.slice(0, 6).map((c) => (
-                <li key={c.id}>
-                  <Link
-                    href={`/concern/${c.slug}`}
-                    className="hover:text-emerald-400 transition-colors"
+          {/* Column 2: Navigation Links 1 (SHOP ALL, CONSULT A DOCTOR, etc.) */}
+          <div className="lg:col-span-2">
+            <ul className="space-y-3.5 text-xs font-bold uppercase tracking-wider text-[#9E2A2B]">
+              <li>
+                <Link href="/shop" className="hover:underline transition-colors block">
+                  SHOP ALL
+                </Link>
+              </li>
+              <li>
+                <a
+                  href={SITE_CONFIG.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline transition-colors block"
+                >
+                  CONSULT A DOCTOR
+                </a>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:underline transition-colors block">
+                  OUR LOCATIONS
+                </Link>
+              </li>
+              <li>
+                <Link href="/shipping-policy" className="hover:underline transition-colors block">
+                  SHIPPING POLICY
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-of-service" className="hover:underline transition-colors block">
+                  TERMS &amp; CONDITIONS
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Navigation Links 2 (BLOG, ORDER TRACKING, etc.) */}
+          <div className="lg:col-span-2">
+            <ul className="space-y-3.5 text-xs font-bold uppercase tracking-wider text-[#9E2A2B]">
+              <li>
+                <Link href="/blog" className="hover:underline transition-colors block">
+                  BLOG
+                </Link>
+              </li>
+              <li>
+                <Link href="/cart" className="hover:underline transition-colors block">
+                  ORDER TRACKING
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:underline transition-colors block">
+                  CONTACT US
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="hover:underline transition-colors block">
+                  PRIVACY POLICY
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:underline transition-colors block">
+                  ABOUT US
+                </Link>
+              </li>
+              <li>
+                <Link href="/refund-returns" className="hover:underline transition-colors block">
+                  RETURN &amp; REFUND POLICY
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: JOIN OUR MAILING LIST & FOLLOW US */}
+          <div className="lg:col-span-4 space-y-5">
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-[#26352D] mb-3">
+                JOIN OUR MAILING LIST
+              </h4>
+
+              {isSubscribed ? (
+                <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-md text-xs font-semibold text-emerald-800 flex items-center gap-2">
+                  <Check size={16} />
+                  <span>Thank you for subscribing!</span>
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="flex items-center">
+                  <label htmlFor="footer-email-input" className="sr-only">
+                    Enter Email
+                  </label>
+                  <input
+                    id="footer-email-input"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    placeholder="Enter Email"
+                    className="flex-grow px-3.5 py-2.5 bg-white border border-stone-300 rounded-l-md text-sm text-[#26352D] placeholder:text-stone-400 focus:outline-none focus:border-stone-500"
+                  />
+                  <button
+                    type="submit"
+                    aria-label="Subscribe to newsletter"
+                    className="px-4 py-2.5 bg-[#9FB8A6] hover:bg-[#8DA895] text-white rounded-r-md transition-colors flex items-center justify-center flex-shrink-0 h-[42px]"
                   >
-                    {c.name}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href="/shop" className="text-emerald-400 font-semibold hover:underline">
-                  View All 44 Products →
-                </Link>
-              </li>
-            </ul>
-          </div>
+                    <ArrowRight size={18} />
+                  </button>
+                </form>
+              )}
+            </div>
 
-          {/* Customer Care & Policies */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-semibold text-white uppercase tracking-wider">
-              Customer Support
-            </h4>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <Link href="/shipping-policy" className="hover:text-emerald-400 transition-colors">
-                  Shipping &amp; Delivery Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/refund-returns" className="hover:text-emerald-400 transition-colors">
-                  Refund &amp; Returns Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms-of-service" className="hover:text-emerald-400 transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy" className="hover:text-emerald-400 transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-emerald-400 transition-colors">
-                  About Dr. Jegajothi Pandian
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-emerald-400 transition-colors">
-                  Clinical Case Studies &amp; Blog
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Details */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-semibold text-white uppercase tracking-wider">
-              Contact &amp; Clinic
-            </h4>
-            <div className="space-y-2.5 text-xs text-stone-400">
-              <div className="flex items-start gap-2">
-                <MapPin size={15} className="text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span>
-                  {SITE_CONFIG.address.street}, {SITE_CONFIG.address.area}, {SITE_CONFIG.address.city} {SITE_CONFIG.address.postalCode}, {SITE_CONFIG.address.state}
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone size={15} className="text-emerald-400 flex-shrink-0" />
-                <a href={`tel:${SITE_CONFIG.phone}`} className="hover:text-white transition-colors">
-                  {SITE_CONFIG.displayPhone}
+            {/* Follow Us with clean outline social icons */}
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-[#26352D] mb-3">
+                FOLLOW US
+              </h4>
+              <div className="flex items-center gap-4 text-[#26352D]">
+                <a
+                  href="https://www.instagram.com/ayurrakshaonline/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Ayurraksha on Instagram"
+                  className="hover:text-[#9E2A2B] transition-colors p-1"
+                >
+                  <Instagram size={24} className="stroke-[1.75]" />
                 </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail size={15} className="text-emerald-400 flex-shrink-0" />
-                <a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-white transition-colors">
-                  {SITE_CONFIG.email}
+                <a
+                  href="https://www.facebook.com/VPrimeCare/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Ayurraksha on Facebook"
+                  className="hover:text-[#9E2A2B] transition-colors p-1"
+                >
+                  <Facebook size={24} className="stroke-[1.75]" />
                 </a>
-              </div>
-              <div className="pt-2 text-[11px] text-stone-500">
-                Mon – Sat: 9:30 AM – 6:30 PM IST
+                <a
+                  href="https://www.youtube.com/@ayurrakshaonline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Subscribe to Ayurraksha on YouTube"
+                  className="hover:text-[#9E2A2B] transition-colors p-1"
+                >
+                  <Youtube size={24} className="stroke-[1.75]" />
+                </a>
               </div>
             </div>
           </div>
+
         </div>
 
         {/* Regulatory Disclaimer */}
-        <div className="py-6 border-b border-stone-800 text-[11px] text-stone-400 leading-relaxed">
+        <div className="py-6 border-b border-stone-200 text-xs text-stone-500 leading-relaxed">
           <p>
-            <strong className="text-stone-300">Disclaimer:</strong> Ayurraksha products are Ayurvedic and herbal dietary supplements formulated to promote natural health, balance, and well-being. Statements regarding dietary supplements have not been evaluated by any governmental drug administration to diagnose, treat, cure, or prevent any chronic disease. Please consult with a qualified Ayurvedic physician or medical doctor before beginning any new healthcare regimen, particularly if pregnant, lactating, taking prescription medication, or suffering from a pre-existing medical condition.
+            <strong className="text-stone-700">Disclaimer:</strong> Ayurraksha products are Ayurvedic and herbal dietary supplements formulated to promote natural health, balance, and well-being. Statements regarding dietary supplements have not been evaluated by any governmental drug administration to diagnose, treat, cure, or prevent any chronic disease. Please consult with a qualified Ayurvedic physician or medical doctor before beginning any new healthcare regimen, particularly if pregnant, lactating, taking prescription medication, or suffering from a pre-existing medical condition.
           </p>
         </div>
 
@@ -145,11 +231,11 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} Ayurraksha Online (VPrime Innovations). All rights reserved.
           </div>
 
-          <div className="flex items-center gap-2 text-[11px] text-stone-400">
-            <span className="px-2 py-0.5 rounded bg-stone-800 border border-stone-700">Razorpay Secured</span>
-            <span className="px-2 py-0.5 rounded bg-stone-800 border border-stone-700">UPI / RuPay</span>
-            <span className="px-2 py-0.5 rounded bg-stone-800 border border-stone-700">Visa / Mastercard</span>
-            <span className="px-2 py-0.5 rounded bg-stone-800 border border-stone-700">Cash on Delivery</span>
+          <div className="flex items-center gap-2 text-[11px] text-stone-600">
+            <span className="px-2 py-0.5 rounded bg-stone-100 border border-stone-300">Razorpay Secured</span>
+            <span className="px-2 py-0.5 rounded bg-stone-100 border border-stone-300">UPI / RuPay</span>
+            <span className="px-2 py-0.5 rounded bg-stone-100 border border-stone-300">Visa / Mastercard</span>
+            <span className="px-2 py-0.5 rounded bg-stone-100 border border-stone-300">Cash on Delivery</span>
           </div>
         </div>
       </div>

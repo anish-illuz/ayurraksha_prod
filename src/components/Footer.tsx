@@ -26,21 +26,21 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-stone-200">
 
           {/* Left Column: Brand, Address, Phone, Email */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-4 space-y-5">
             <Link href="/" className="inline-block" aria-label="Ayurraksha Home">
-              <div className="relative h-11 w-44">
+              <div className="relative h-12 w-48">
                 <Image
                   src="/images/logo.png"
                   alt="Ayurraksha"
                   fill
-                  sizes="176px"
+                  sizes="192px"
                   className="object-contain object-left"
                 />
               </div>
             </Link>
 
-            {/* Address in clean italic text matching reference */}
-            <p className="text-sm font-serif italic text-[#26352D] leading-relaxed">
+            {/* Address with larger, clear, legible font */}
+            <p className="text-base italic text-[#26352D] leading-relaxed">
               251, First Floor,<br />
               New Tiny Sector,<br />
               Ambattur Industrial Estate,<br />
@@ -49,10 +49,10 @@ export const Footer: React.FC = () => {
 
             {/* Phone */}
             <div className="flex items-center gap-3 pt-1">
-              <Phone size={19} className="text-[#26352D] flex-shrink-0" />
+              <Phone size={22} className="text-[#26352D] flex-shrink-0" />
               <a
                 href={`tel:${SITE_CONFIG.phone}`}
-                className="text-base font-bold text-[#26352D] tracking-wide hover:text-[#9E2A2B] transition-colors"
+                className="text-lg font-bold text-[#26352D] tracking-wide hover:text-[#9E2A2B] transition-colors"
               >
                 99403-88877
               </a>
@@ -60,10 +60,10 @@ export const Footer: React.FC = () => {
 
             {/* Email */}
             <div className="flex items-center gap-3">
-              <Mail size={19} className="text-[#26352D] flex-shrink-0" />
+              <Mail size={22} className="text-[#26352D] flex-shrink-0" />
               <a
                 href="mailto:info@vprimecorp.in"
-                className="text-sm font-semibold text-[#26352D] hover:text-[#9E2A2B] transition-colors"
+                className="text-base font-semibold text-[#26352D] hover:text-[#9E2A2B] transition-colors"
               >
                 info@vprimecorp.in
               </a>
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Navigation Links 1 (SHOP ALL, CONSULT A DOCTOR, etc.) */}
           <div className="lg:col-span-2">
-            <ul className="space-y-3.5 text-xs font-bold uppercase tracking-wider text-[#9E2A2B]">
+            <ul className="space-y-4 text-sm sm:text-[15px] font-bold uppercase tracking-wider text-[#9E2A2B]">
               <li>
                 <Link href="/shop" className="hover:underline transition-colors block">
                   SHOP ALL
@@ -108,7 +108,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Navigation Links 2 (BLOG, ORDER TRACKING, etc.) */}
           <div className="lg:col-span-2">
-            <ul className="space-y-3.5 text-xs font-bold uppercase tracking-wider text-[#9E2A2B]">
+            <ul className="space-y-4 text-sm sm:text-[15px] font-bold uppercase tracking-wider text-[#9E2A2B]">
               <li>
                 <Link href="/blog" className="hover:underline transition-colors block">
                   BLOG
@@ -143,15 +143,15 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Column 4: JOIN OUR MAILING LIST & FOLLOW US */}
-          <div className="lg:col-span-4 space-y-5">
+          <div className="lg:col-span-4 space-y-6">
             <div>
-              <h4 className="text-sm font-bold uppercase tracking-wider text-[#26352D] mb-3">
+              <h4 className="text-base sm:text-lg font-bold uppercase tracking-wider text-[#26352D] mb-3.5">
                 JOIN OUR MAILING LIST
               </h4>
 
               {isSubscribed ? (
-                <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-md text-xs font-semibold text-emerald-800 flex items-center gap-2">
-                  <Check size={16} />
+                <div className="p-3.5 bg-emerald-50 border border-emerald-200 rounded-md text-sm font-semibold text-emerald-800 flex items-center gap-2">
+                  <Check size={18} />
                   <span>Thank you for subscribing!</span>
                 </div>
               ) : (
@@ -166,14 +166,14 @@ export const Footer: React.FC = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     placeholder="Enter Email"
-                    className="flex-grow px-3.5 py-2.5 bg-white border border-stone-300 rounded-l-md text-sm text-[#26352D] placeholder:text-stone-400 focus:outline-none focus:border-stone-500"
+                    className="flex-grow px-4 py-3 bg-white border border-stone-300 rounded-l-md text-base text-[#26352D] placeholder:text-stone-400 focus:outline-none focus:border-stone-500 h-[48px]"
                   />
                   <button
                     type="submit"
                     aria-label="Subscribe to newsletter"
-                    className="px-4 py-2.5 bg-[#9FB8A6] hover:bg-[#8DA895] text-white rounded-r-md transition-colors flex items-center justify-center flex-shrink-0 h-[42px]"
+                    className="px-5 py-3 bg-[#9FB8A6] hover:bg-[#8DA895] text-white rounded-r-md transition-colors flex items-center justify-center flex-shrink-0 h-[48px]"
                   >
-                    <ArrowRight size={18} />
+                    <ArrowRight size={20} />
                   </button>
                 </form>
               )}
@@ -181,10 +181,10 @@ export const Footer: React.FC = () => {
 
             {/* Follow Us with clean outline social icons */}
             <div>
-              <h4 className="text-sm font-bold uppercase tracking-wider text-[#26352D] mb-3">
+              <h4 className="text-base sm:text-lg font-bold uppercase tracking-wider text-[#26352D] mb-3.5">
                 FOLLOW US
               </h4>
-              <div className="flex items-center gap-4 text-[#26352D]">
+              <div className="flex items-center gap-5 text-[#26352D]">
                 <a
                   href="https://www.instagram.com/ayurrakshaonline/"
                   target="_blank"
@@ -192,7 +192,7 @@ export const Footer: React.FC = () => {
                   aria-label="Follow Ayurraksha on Instagram"
                   className="hover:text-[#9E2A2B] transition-colors p-1"
                 >
-                  <Instagram size={24} className="stroke-[1.75]" />
+                  <Instagram size={28} className="stroke-[1.75]" />
                 </a>
                 <a
                   href="https://www.facebook.com/VPrimeCare/"
@@ -201,7 +201,7 @@ export const Footer: React.FC = () => {
                   aria-label="Follow Ayurraksha on Facebook"
                   className="hover:text-[#9E2A2B] transition-colors p-1"
                 >
-                  <Facebook size={24} className="stroke-[1.75]" />
+                  <Facebook size={28} className="stroke-[1.75]" />
                 </a>
                 <a
                   href="https://www.youtube.com/@ayurrakshaonline"
@@ -210,7 +210,7 @@ export const Footer: React.FC = () => {
                   aria-label="Subscribe to Ayurraksha on YouTube"
                   className="hover:text-[#9E2A2B] transition-colors p-1"
                 >
-                  <Youtube size={24} className="stroke-[1.75]" />
+                  <Youtube size={28} className="stroke-[1.75]" />
                 </a>
               </div>
             </div>

@@ -9,15 +9,15 @@ const posts: BlogPost[] = postsData.slice(0, 3) as BlogPost[];
 
 export const JournalSection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-20 bg-white border-b border-border-botanical">
+    <section className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sage text-forest text-sm font-bold mb-2.5">
-              <BookOpen size={16} className="text-botanical" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-primary text-xs font-semibold mb-2.5">
+              <BookOpen size={14} className="text-primary" />
               <span>Health Guides &amp; Ayurvedic Tips</span>
             </div>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-forest tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
               From Our Health Blog
             </h2>
             <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl">
@@ -27,7 +27,7 @@ export const JournalSection: React.FC = () => {
 
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-forest hover:text-botanical transition-colors"
+            className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-primary hover:underline transition-colors"
           >
             <span>Read All Articles (20)</span>
             <ArrowRight size={16} />
@@ -38,7 +38,7 @@ export const JournalSection: React.FC = () => {
           {posts.map((post) => (
             <article
               key={post.id}
-              className="flex flex-col bg-[#FDFBF7] rounded-2xl border border-stone-200/90 overflow-hidden group hover:shadow-card-hover transition-all"
+              className="flex flex-col bg-[#FAF9F5] rounded-2xl border border-stone-200/80 overflow-hidden group hover:shadow-card-hover hover:border-primary/40 transition-all"
             >
               <Link
                 href={`/blog/${post.slug}`}
@@ -54,21 +54,21 @@ export const JournalSection: React.FC = () => {
               </Link>
 
               <div className="flex flex-col flex-grow p-6 sm:p-7">
-                <span className="text-xs font-bold text-botanical uppercase tracking-wider mb-2">
+                <span className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
                   {post.date}
                 </span>
 
-                <h3 className="font-heading text-lg sm:text-xl font-bold text-forest group-hover:text-botanical transition-colors line-clamp-2 mb-2.5 leading-snug">
+                <h3 className="font-heading text-xl sm:text-2xl font-bold text-primary group-hover:text-primary-dark transition-colors line-clamp-2 mb-2.5 leading-snug">
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h3>
 
-                <p className="text-sm sm:text-[15px] text-charcoal-muted line-clamp-3 leading-relaxed flex-grow">
+                <p className="text-sm text-charcoal-muted line-clamp-3 leading-relaxed flex-grow">
                   {post.excerpt}
                 </p>
 
-                <div className="mt-5 pt-4 border-t border-stone-200 flex items-center text-sm font-bold text-forest group-hover:text-botanical">
+                <div className="mt-5 pt-4 border-t border-stone-200/70 flex items-center text-sm font-semibold text-primary group-hover:text-primary-dark">
                   <span>Read Full Article</span>
-                  <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight size={16} className="ml-1.5 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
             </article>

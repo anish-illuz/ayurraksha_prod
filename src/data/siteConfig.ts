@@ -108,11 +108,12 @@ export const SITE_CONFIG = {
   doctor: {
     name: 'Dr. Jegajothi Pandian',
     title: 'Chief Ayurvedic Medical Officer & Formulation Scientist',
-    experience: 'Over 25+ years in clinical Ayurvedic formulation and holistic therapeutics.',
+    experience: 'Over 25 years of experience in Ayurvedic formulations and holistic therapeutics.',
   },
   shipping: {
     prepaidThreshold: 0, // Free on all prepaid orders
     prepaidText: 'Free shipping on all prepaid orders across India',
+    dispatchTime: 'Dispatched within 1–2 business days',
     codFee: 100,
     deliveryMetro: '2–5 business days',
     deliveryNonMetro: '5–7 business days',
@@ -120,6 +121,7 @@ export const SITE_CONFIG = {
   reviews: {
     averageRating: 4.8,
     totalReviews: 840,
-    provider: 'Judge.me Verified Customer Reviews',
+    provider: 'Judge.me',
+    verifiedText: 'Verified Customer Reviews',
   },
 };

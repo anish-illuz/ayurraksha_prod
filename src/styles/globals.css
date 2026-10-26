@@ -4,12 +4,14 @@
 
 :root {
   color-scheme: light;
-  --bg-ivory: #FAFAFA;
-  --color-primary: #80A03C;
-  --color-forest: #58702E;
-  --color-forest-dark: #014C1A;
-  --color-botanical: #80A03C;
-  --color-charcoal: #2E332E;
+  --bg-ivory: #FAF9F5;
+  --bg-sage: #E8EFE7;
+  --color-primary: #204A3B;
+  --color-forest: #204A3B;
+  --color-botanical: #204A3B;
+  --color-charcoal: #26352D;
+  --color-muted: #66736A;
+  --color-gold: #B49A70;
   --color-terracotta: #B45309;
 }
 
@@ -22,10 +24,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography Headings with clean Jost geometric font */
+/* Typography Headings with Cormorant Garamond */
 h1, h2, h3, h4, h5, h6, .font-serif, .font-heading {
-  font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  letter-spacing: -0.01em;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: -0.015em;
+  font-weight: 600;
 }
 
 /* Smooth Focus States for WCAG 2.2 AA */

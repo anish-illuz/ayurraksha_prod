@@ -16,28 +16,28 @@ export const Newsletter: React.FC = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-forest text-ivory">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-light text-emerald-300 text-sm font-bold mb-4">
-          <Mail size={16} />
+    <section className="py-12 sm:py-16 bg-[#FAF9F5] text-charcoal">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-primary text-xs font-semibold mb-3">
+          <Mail size={14} />
           <span>Exclusive Subscriber Offer</span>
         </div>
 
-        <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+        <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary">
           Get 10% Off Your First Order
         </h2>
 
-        <p className="mt-3.5 text-sm sm:text-base text-stone-300 max-w-xl mx-auto leading-relaxed">
-          Join the Ayurraksha family for natural wellness tips, seasonal health guides, and exclusive subscriber deals. No spam, unsubscribe anytime.
+        <p className="mt-2.5 text-sm sm:text-base text-charcoal-muted max-w-lg mx-auto leading-relaxed">
+          Join the Ayurraksha family for natural wellness tips, seasonal health guides, and exclusive subscriber deals.
         </p>
 
         {isSubmitted ? (
-          <div className="mt-8 p-5 bg-emerald-900/60 border border-emerald-600 rounded-2xl inline-flex items-center gap-3 text-base font-semibold text-emerald-200">
-            <CheckCircle size={20} />
+          <div className="mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl inline-flex items-center gap-2.5 text-sm font-semibold text-emerald-800">
+            <CheckCircle size={18} />
             <span>Thank you for joining our community! We will be in touch soon.</span>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-3">
+          <form onSubmit={handleSubmit} className="mt-6 max-w-md mx-auto flex flex-col sm:flex-row gap-2.5">
             <label htmlFor="newsletter-email" className="sr-only">
               Email Address
             </label>
@@ -48,11 +48,11 @@ export const Newsletter: React.FC = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Enter your email address"
-              className="flex-grow px-5 py-3.5 rounded-xl text-sm sm:text-base bg-forest-dark border border-forest-light text-white placeholder:text-stone-400 focus:outline-none focus:border-emerald-400"
+              className="flex-grow px-4 h-12 rounded-[8px] text-sm bg-white border border-stone-300 text-charcoal placeholder:text-stone-400 focus:outline-none focus:border-primary shadow-xs"
             />
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm sm:text-base font-bold bg-emerald-700 hover:bg-emerald-600 text-white transition-colors shadow-xs"
+              className="h-12 inline-flex items-center justify-center gap-2 px-6 rounded-[8px] text-sm font-semibold bg-primary hover:bg-primary-dark text-white transition-colors shadow-xs active:scale-[0.98]"
             >
               <span>Subscribe</span>
               <ArrowRight size={16} />
@@ -60,7 +60,7 @@ export const Newsletter: React.FC = () => {
           </form>
         )}
 
-        <p className="mt-3.5 text-xs text-stone-400">
+        <p className="mt-3 text-xs text-charcoal-muted">
           We respect your privacy. You can unsubscribe at any time with a single click.
         </p>
       </div>

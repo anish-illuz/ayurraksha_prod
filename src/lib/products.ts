@@ -3,6 +3,76 @@ import { Product } from '@/types/product';
 
 const allProducts: Product[] = productsData as Product[];
 
+// Canonical mapping between Health Concern slugs and matching tags/terms
+export const CONCERN_SLUG_MAP: Record<string, string[]> = {
+  'liver-wellness': [
+    'liver-wellness',
+    'liver wellness',
+    'liver wellness & detox',
+    'liver detox',
+    'liver',
+  ],
+  'pain-joints': [
+    'pain-joints',
+    'pain & joints',
+    'joint & muscle care',
+    'joint and muscle care',
+    'joints',
+    'pain',
+  ],
+  'skin-dermatology': [
+    'skin-dermatology',
+    'skin & dermatology',
+    'skin & botanical care',
+    'skin and botanical care',
+    'skin care',
+    'dermatology',
+    'skin',
+  ],
+  'heart-cardiac': [
+    'heart-cardiac',
+    'heart & cardiac',
+    'heart & cardiovascular',
+    'cardiac',
+    'cardiovascular',
+    'heart',
+  ],
+  'digestive-health': [
+    'digestive-health',
+    'digestive health',
+    'digestive & gut health',
+    'digestive and gut health',
+    'gut health',
+    'digestion',
+  ],
+  'vascular-veins': [
+    'vascular-veins',
+    'vascular & piles',
+    'circulation & vein care',
+    'circulation and vein care',
+    'vascular',
+    'veins',
+    'piles',
+  ],
+  'respiratory-care': [
+    'respiratory-care',
+    'respiratory care',
+    'respiratory wellness',
+    'respiratory',
+    'breathing',
+    'cold',
+  ],
+  'immunity-vitality': [
+    'immunity-vitality',
+    'immunity & vitality',
+    'vitality & rejuvenation',
+    'vitality and rejuvenation',
+    'vitality',
+    'rejuvenation',
+    'immunity',
+  ],
+};
+
 export function getAllProducts(): Product[] {
   return allProducts;
 }
@@ -22,9 +92,14 @@ export function getBestsellers(limit = 8): Product[] {
 }
 
 export function getProductsByConcern(concernSlug: string): Product[] {
-  const slugLower = concernSlug.toLowerCase().replace(/-/g, ' ');
+  const normalizedSlug = concernSlug.toLowerCase().trim();
+  const searchTerms = CONCERN_SLUG_MAP[normalizedSlug] || [normalizedSlug, normalizedSlug.replace(/-/g, ' ')];
+
   return allProducts.filter((p) =>
-    p.healthConcerns.some((c) => c.toLowerCase().includes(slugLower))
+    p.healthConcerns.some((c) => {
+      const cLower = c.toLowerCase();
+      return searchTerms.some((term) => cLower.includes(term) || term.includes(cLower));
+    })
   );
 }
 

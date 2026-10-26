@@ -9,31 +9,36 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#80A03C', // Signature Ayurraksha Olive Green
-          dark: '#58702E',
-          light: '#95B847',
-          hover: '#6F8C31',
-          subtle: '#F4F7EE',
+          DEFAULT: '#204A3B', // Deep botanical green
+          dark: '#17362B',
+          light: '#2D614E',
+          hover: '#1B4033',
+          subtle: '#FAF9F5',
         },
         forest: {
-          DEFAULT: '#58702E', // Live site deep herbal green
-          dark: '#014C1A',   // Live logo green
-          light: '#6B8938',
+          DEFAULT: '#204A3B', // Deep botanical green
+          dark: '#17362B',
+          light: '#2D614E',
         },
         botanical: {
-          DEFAULT: '#80A03C', // Live site signature olive green
-          dark: '#58702E',
-          light: '#95B847',
+          DEFAULT: '#204A3B', // Deep botanical green
+          dark: '#17362B',
+          light: '#2D614E',
         },
         ivory: {
-          DEFAULT: '#FAFAFA', // Live site clean background
-          dark: '#F3F4F1',
+          DEFAULT: '#FAF9F5', // Warm ivory
+          dark: '#F3F0E6',
           card: '#FFFFFF',
         },
         sage: {
-          DEFAULT: '#EAF0DF', // Live site soft olive sage
-          light: '#F4F7EE',
-          dark: '#D8E4C4',
+          DEFAULT: '#E8EFE7', // Soft sage
+          light: '#F4F7F2',
+          dark: '#D8E4D7',
+        },
+        gold: {
+          DEFAULT: '#B49A70', // Muted antique gold
+          dark: '#9A8057',
+          light: '#C7B18B',
         },
         terracotta: {
           DEFAULT: '#B45309',
@@ -41,20 +46,19 @@ module.exports = {
           light: '#D97706',
         },
         charcoal: {
-          DEFAULT: '#2E332E', // Live site text color
-          light: '#4A524A',
-          muted: '#6B726B',
+          DEFAULT: '#26352D', // Dark charcoal green
+          light: '#3C4D43',
+          muted: '#66736A', // Muted grey green
         },
         border: {
-          botanical: 'rgba(128, 160, 60, 0.25)',
-          subtle: 'rgba(46, 51, 46, 0.08)',
+          botanical: 'rgba(32, 74, 59, 0.15)',
+          subtle: 'rgba(38, 53, 45, 0.08)',
         }
       },
       fontFamily: {
-        heading: ['Jost', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        jost: ['Jost', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        heading: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        serif: ['Jost', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       boxShadow: {
         'card': '0 2px 10px rgba(22, 56, 44, 0.04)',

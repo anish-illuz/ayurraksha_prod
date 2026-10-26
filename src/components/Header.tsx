@@ -63,12 +63,12 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Center: Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-7 xl:gap-8 text-[15px] font-semibold text-charcoal">
+            <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[15px] font-semibold text-charcoal">
               <Link
                 href="/shop"
-                className="hover:text-botanical transition-colors py-2"
+                className="relative py-2 hover:text-primary transition-colors after:absolute after:bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
               >
-                Shop All
+                Shop
               </Link>
 
               {/* Mega Dropdown: Shop by Concern */}
@@ -78,22 +78,22 @@ export const Header: React.FC = () => {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center gap-1.5 hover:text-botanical transition-colors"
+                  className="flex items-center gap-1.5 hover:text-primary transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:origin-left"
                   aria-expanded={activeDropdown === 'concern'}
                 >
-                  <span>Shop by Health Need</span>
-                  <ChevronDown size={15} className="text-stone-400 group-hover:text-botanical transition-transform group-hover:rotate-180" />
+                  <span>Shop by Concern</span>
+                  <ChevronDown size={15} className="text-stone-400 group-hover:text-primary transition-transform group-hover:rotate-180" />
                 </button>
 
                 {activeDropdown === 'concern' && (
-                  <div className="absolute top-full -left-20 w-[680px] bg-white rounded-2xl shadow-xl border border-border-botanical p-6 animate-in fade-in-50 duration-150 grid grid-cols-2 gap-4">
+                  <div className="absolute top-full -left-20 w-[680px] bg-white rounded-2xl shadow-xl border border-stone-200/80 p-6 animate-in fade-in-50 duration-150 grid grid-cols-2 gap-4">
                     {HEALTH_CONCERNS.map((c) => (
                       <Link
                         key={c.id}
                         href={`/concern/${c.slug}`}
-                        className="flex flex-col p-3.5 rounded-xl hover:bg-ivory transition-colors group/item"
+                        className="flex flex-col p-3 rounded-xl hover:bg-ivory transition-colors group/item"
                       >
-                        <span className="text-sm font-bold text-forest group-hover/item:text-botanical transition-colors">
+                        <span className="text-sm font-bold text-forest group-hover/item:text-primary transition-colors">
                           {c.name}
                         </span>
                         <span className="text-xs text-charcoal-muted mt-1 line-clamp-1">
@@ -101,10 +101,10 @@ export const Header: React.FC = () => {
                         </span>
                       </Link>
                     ))}
-                    <div className="col-span-2 pt-3.5 border-t border-stone-100 flex items-center justify-between text-sm">
+                    <div className="col-span-2 pt-3 border-t border-stone-100 flex items-center justify-between text-sm">
                       <span className="text-charcoal-muted text-xs">Doctor-formulated Ayurvedic wellness • Chennai, India</span>
-                      <Link href="/shop" className="text-forest font-bold hover:text-botanical">
-                        View All 44 Products →
+                      <Link href="/shop" className="text-primary font-bold hover:underline">
+                        View All Formulations →
                       </Link>
                     </div>
                   </div>
@@ -113,54 +113,54 @@ export const Header: React.FC = () => {
 
               <Link
                 href="/shop?sort=bestseller"
-                className="hover:text-botanical transition-colors py-2"
+                className="relative py-2 hover:text-primary transition-colors after:absolute after:bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
               >
-                Best Sellers
+                Bestsellers
               </Link>
 
               <Link
                 href="/category/health-packs"
-                className="hover:text-botanical transition-colors py-2"
+                className="relative py-2 hover:text-primary transition-colors after:absolute after:bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
               >
-                Combos &amp; Packs
+                Wellness Packs
               </Link>
 
               <Link
                 href="/about"
-                className="hover:text-botanical transition-colors py-2"
+                className="relative py-2 hover:text-primary transition-colors after:absolute after:bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
               >
                 Our Story
               </Link>
 
               <Link
                 href="/blog"
-                className="hover:text-botanical transition-colors py-2"
+                className="relative py-2 hover:text-primary transition-colors after:absolute after:bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
               >
                 Blog
               </Link>
             </nav>
 
             {/* Right: Search & Cart Trigger */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <button
                 onClick={() => setIsSearchOpen(true)}
                 aria-label="Search store"
-                className="flex items-center gap-2 py-2 px-3 text-charcoal hover:text-botanical hover:bg-stone-100 rounded-xl transition-colors"
+                className="p-2.5 text-charcoal hover:text-primary hover:bg-stone-100 rounded-full transition-colors"
               >
-                <Search size={20} />
-                <span className="hidden sm:inline text-sm font-medium text-charcoal">Search</span>
+                <Search size={21} />
               </button>
 
               <button
                 onClick={openCart}
                 aria-label={`Open cart with ${itemCount} items`}
-                className="relative flex items-center gap-2.5 py-2.5 px-4 bg-primary hover:bg-primary-dark text-white rounded-xl transition-all shadow-xs active:scale-95"
+                className="relative p-2.5 text-charcoal hover:text-primary hover:bg-stone-100 rounded-full transition-colors"
               >
-                <ShoppingBag size={19} />
-                <span className="hidden sm:inline text-sm font-bold">Cart</span>
-                <span className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 rounded-full text-xs font-bold bg-white text-forest shadow-xs">
-                  {itemCount}
-                </span>
+                <ShoppingBag size={22} className="stroke-[1.75]" />
+                {itemCount > 0 && (
+                  <span className="absolute top-1 right-1 min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-bold bg-primary text-white flex items-center justify-center shadow-xs">
+                    {itemCount}
+                  </span>
+                )}
               </button>
             </div>
           </div>

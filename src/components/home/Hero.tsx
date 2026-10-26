@@ -162,7 +162,7 @@ export const Hero: React.FC = () => {
   useEffect(() => {
     if (isPaused) return;
 
-    const intervalTime = 50; // update progress every 50ms
+    const intervalTime = 50;
     const step = (intervalTime / AUTOPLAY_DURATION) * 100;
 
     const timer = setInterval(() => {
@@ -198,52 +198,53 @@ export const Hero: React.FC = () => {
 
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-b from-[#FAFBF8] via-[#F4F7EE] to-[#FAFBF8] border-b border-border-botanical select-none"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#F7F9F5] via-[#E8EFE7]/40 to-[#FAF9F5] select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       aria-label="Featured Ayurvedic Remedies"
     >
-      {/* Animated Atmospheric Background Glow that shifts with each slide */}
+      {/* Full-bleed Atmospheric Glow */}
       <div
         key={`glow-${slide.id}`}
-        className={`absolute top-1/4 right-1/4 w-[600px] h-[500px] bg-gradient-to-r ${slide.bgGlow} rounded-full blur-3xl pointer-events-none transition-all duration-1000 animate-hero-glow`}
+        className="absolute top-1/4 right-0 w-[700px] h-[550px] bg-gradient-to-l from-[#204A3B]/10 via-[#B49A70]/10 to-transparent rounded-full blur-3xl pointer-events-none transition-all duration-1000 animate-hero-glow"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-14 sm:pt-14 sm:pb-18 lg:pt-16 lg:pb-20 relative">
+      {/* Main Content inside 1280px standard container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
-          {/* Left Column: Animated Value Proposition & Headlines */}
+          {/* Left Column: Headlines & CTAs */}
           <div
             key={`content-${slide.id}`}
             className="lg:col-span-7 space-y-6 text-left z-10 animate-hero-text"
           >
-            {/* Tag Pill with Pulse Animation */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#D7E3C4] shadow-xs text-xs sm:text-sm font-bold text-forest">
-              <span className="flex h-2 w-2 rounded-full bg-botanical animate-pulse" />
-              <Sparkles size={16} className="text-botanical" />
+            {/* Tag Pill */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#204A3B]/15 shadow-xs text-xs sm:text-sm font-semibold text-primary">
+              <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
+              <Sparkles size={15} className="text-gold" />
               <span>{slide.tag}</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-forest leading-[1.12] tracking-tight">
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-[1.1] tracking-tight">
               {slide.headlineMain}{' '}
-              <span className="text-botanical italic font-normal block sm:inline">
+              <span className="italic font-normal block sm:inline text-primary/85">
                 {slide.headlineHighlight}
               </span>
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg lg:text-xl text-charcoal-muted leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg text-charcoal-muted leading-relaxed max-w-2xl">
               {slide.description}
             </p>
 
             {/* Action Buttons */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
               <Link
                 href={slide.primaryCtaLink}
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-bold bg-botanical hover:bg-forest text-white shadow-md hover:shadow-lg transition-all active:scale-[0.98] group"
+                className="inline-flex items-center justify-center gap-2.5 px-8 h-12 rounded-[8px] text-base font-semibold bg-primary hover:bg-primary-dark text-white shadow-md hover:shadow-lg transition-all active:scale-[0.98] group"
               >
                 <span>{slide.primaryCtaText}</span>
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
@@ -251,21 +252,21 @@ export const Hero: React.FC = () => {
 
               <Link
                 href={slide.secondaryCtaLink}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold bg-white hover:bg-stone-50 text-forest border border-stone-300 transition-all shadow-xs hover:border-botanical"
+                className="inline-flex items-center justify-center gap-2 px-7 h-12 rounded-[8px] text-base font-semibold bg-white hover:bg-stone-50 text-primary border border-stone-300 transition-all shadow-xs hover:border-primary"
               >
                 <span>{slide.secondaryCtaText}</span>
               </Link>
             </div>
 
-            {/* Price Note & Free Delivery Reassurance */}
-            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs sm:text-sm font-semibold text-stone-600">
-              <span className="flex items-center gap-1.5 text-forest">
-                <CheckCircle2 size={16} className="text-botanical" />
+            {/* Price Note & Free Delivery */}
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs sm:text-sm font-medium text-charcoal-muted">
+              <span className="flex items-center gap-1.5 text-primary font-semibold">
+                <CheckCircle2 size={16} className="text-primary" />
                 <span>{slide.priceNote}</span>
               </span>
               <span className="hidden sm:inline text-stone-300">•</span>
               <span className="flex items-center gap-1.5">
-                <Truck size={16} className="text-botanical" />
+                <Truck size={16} className="text-primary" />
                 <span>Prepaid Free Delivery</span>
               </span>
             </div>
@@ -273,49 +274,49 @@ export const Hero: React.FC = () => {
             {/* Credibility Counter Strip */}
             <div className="pt-6 grid grid-cols-3 gap-6 border-t border-stone-200/80 text-xs sm:text-sm text-charcoal-muted max-w-xl">
               <div>
-                <span className="font-heading font-bold text-forest block text-xl sm:text-2xl">25+ Years</span>
-                <span>Doctor Practice</span>
+                <span className="font-heading font-bold text-primary block text-2xl sm:text-3xl">25+ Years</span>
+                <span>Of Experience</span>
               </div>
               <div>
-                <span className="font-heading font-bold text-forest block text-xl sm:text-2xl">100% Pure</span>
+                <span className="font-heading font-bold text-primary block text-2xl sm:text-3xl">100% Pure</span>
                 <span>Herbal Extracts</span>
               </div>
               <div>
-                <span className="font-heading font-bold text-forest block text-xl sm:text-2xl">4.8 / 5.0</span>
-                <span>800+ Reviews</span>
+                <span className="font-heading font-bold text-primary block text-2xl sm:text-3xl">4.8 / 5.0</span>
+                <span>840 Reviews</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Floating Visual with Organic Levitation Animation */}
+          {/* Right Column: Floating Visual */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
             <div className="relative w-full max-w-md aspect-square flex items-center justify-center">
 
               {/* Layered Background Discs with Glow */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#E8F0DC] via-[#F4F8EC] to-white rounded-full scale-100 sm:scale-105 shadow-inner border border-stone-200/60 transition-transform duration-700" />
-              <div className="absolute inset-4 bg-white/70 backdrop-blur-xs rounded-full" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#E8EFE7] via-white to-[#FAF9F5] rounded-full scale-100 sm:scale-105 shadow-inner border border-stone-200/60 transition-transform duration-700" />
+              <div className="absolute inset-4 bg-white/80 backdrop-blur-xs rounded-full" />
 
-              {/* Floating Top Badge: Rating with Smooth Float Animation */}
-              <div className="absolute -top-2 right-4 sm:right-6 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-dropdown border border-border-botanical flex items-center gap-2 animate-badge-float">
-                <div className="flex items-center text-botanical font-bold text-xs sm:text-sm">
-                  <Star size={15} className="fill-botanical text-botanical mr-1" />
+              {/* Floating Top Badge: Rating */}
+              <div className="absolute -top-2 right-4 sm:right-6 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-card border border-stone-200/80 flex items-center gap-2 animate-badge-float">
+                <div className="flex items-center text-primary font-bold text-xs sm:text-sm">
+                  <Star size={15} className="fill-gold text-gold mr-1" />
                   <span>{slide.ratingText}</span>
                 </div>
               </div>
 
-              {/* Floating Left Pill: Benefit 1 with Delayed Float Animation */}
-              <div className="absolute top-1/4 -left-4 sm:-left-6 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-dropdown border border-stone-200/90 flex items-center gap-2 animate-badge-float-delayed">
-                <span className="w-2 h-2 rounded-full bg-botanical" />
-                <span className="text-xs sm:text-sm font-bold text-forest">{slide.badge1}</span>
+              {/* Floating Left Pill */}
+              <div className="absolute top-1/4 -left-4 sm:-left-6 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-card border border-stone-200/80 flex items-center gap-2 animate-badge-float-delayed">
+                <span className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-xs sm:text-sm font-semibold text-primary">{slide.badge1}</span>
               </div>
 
-              {/* Floating Bottom Pill: Benefit 2 */}
-              <div className="absolute -bottom-2 left-6 sm:left-10 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-dropdown border border-stone-200/90 flex items-center gap-2 animate-badge-float">
-                <ShieldCheck size={16} className="text-botanical" />
-                <span className="text-xs sm:text-sm font-bold text-forest">{slide.badge2}</span>
+              {/* Floating Bottom Pill */}
+              <div className="absolute -bottom-2 left-6 sm:left-10 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-card border border-stone-200/80 flex items-center gap-2 animate-badge-float">
+                <ShieldCheck size={16} className="text-primary" />
+                <span className="text-xs sm:text-sm font-semibold text-primary">{slide.badge2}</span>
               </div>
 
-              {/* Central Floating Animated Product Visual */}
+              {/* Central Floating Product Visual */}
               <Link
                 href={slide.primaryCtaLink}
                 key={`img-${slide.id}`}
@@ -337,16 +338,15 @@ export const Hero: React.FC = () => {
 
         </div>
 
-        {/* Minimalist Floating Navigation Controls & Smooth Animated Progress Bar */}
+        {/* Navigation Controls */}
         <div className="mt-10 pt-6 border-t border-stone-200/70 flex items-center justify-between">
 
-          {/* Clean Slide Counter + Interactive Animated Progress Dots */}
+          {/* Slide Counter + Dots */}
           <div className="flex items-center gap-4 sm:gap-6">
-            <span className="text-xs sm:text-sm font-bold text-forest tracking-wider">
+            <span className="text-xs sm:text-sm font-bold text-primary tracking-wider">
               0{currentSlide + 1} <span className="text-stone-400 font-normal">/ 0{total}</span>
             </span>
 
-            {/* Animated Dots with Active Progress Fill */}
             <div className="flex items-center gap-2">
               {HERO_SLIDES.map((item, idx) => {
                 const isActive = idx === currentSlide;
@@ -361,7 +361,7 @@ export const Hero: React.FC = () => {
                   >
                     {isActive && (
                       <span
-                        className="absolute inset-y-0 left-0 bg-botanical rounded-full transition-all ease-linear"
+                        className="absolute inset-y-0 left-0 bg-primary rounded-full transition-all ease-linear"
                         style={{ width: `${progress}%` }}
                       />
                     )}
@@ -371,19 +371,19 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Sleek Prev / Next Buttons */}
+          {/* Prev / Next Buttons */}
           <div className="flex items-center gap-2">
             <button
               onClick={prevSlide}
               aria-label="Previous slide"
-              className="w-10 h-10 rounded-full bg-white hover:bg-botanical hover:text-white text-forest border border-stone-200/90 flex items-center justify-center transition-all shadow-xs hover:shadow active:scale-95"
+              className="w-10 h-10 rounded-full bg-white hover:bg-primary hover:text-white text-primary border border-stone-200/90 flex items-center justify-center transition-all shadow-xs hover:shadow active:scale-95"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next slide"
-              className="w-10 h-10 rounded-full bg-white hover:bg-botanical hover:text-white text-forest border border-stone-200/90 flex items-center justify-center transition-all shadow-xs hover:shadow active:scale-95"
+              className="w-10 h-10 rounded-full bg-white hover:bg-primary hover:text-white text-primary border border-stone-200/90 flex items-center justify-center transition-all shadow-xs hover:shadow active:scale-95"
             >
               <ChevronRight size={20} />
             </button>

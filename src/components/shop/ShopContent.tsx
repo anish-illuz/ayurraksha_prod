@@ -5,6 +5,7 @@ import { SlidersHorizontal, X, ChevronDown, Check } from 'lucide-react';
 import { Product } from '@/types/product';
 import { ProductCard } from '@/components/ProductCard';
 import { HEALTH_CONCERNS, PRODUCT_FORMATS } from '@/data/siteConfig';
+import { CONCERN_SLUG_MAP } from '@/lib/products';
 
 interface ShopContentProps {
   initialProducts: Product[];
@@ -34,9 +35,17 @@ export const ShopContent: React.FC<ShopContentProps> = ({
     // Filter by Concern
     if (selectedConcern !== 'all') {
       const concernObj = HEALTH_CONCERNS.find((c) => c.slug === selectedConcern);
-      const concernName = concernObj ? concernObj.name.toLowerCase() : selectedConcern.replace(/-/g, ' ');
+      const searchTerms = CONCERN_SLUG_MAP[selectedConcern] || [
+        selectedConcern.toLowerCase(),
+        selectedConcern.replace(/-/g, ' ').toLowerCase(),
+        ...(concernObj ? [concernObj.name.toLowerCase()] : []),
+      ];
+
       result = result.filter((p) =>
-        p.healthConcerns.some((c) => c.toLowerCase().includes(concernName) || concernName.includes(c.toLowerCase()))
+        p.healthConcerns.some((c) => {
+          const cLower = c.toLowerCase();
+          return searchTerms.some((term) => cLower.includes(term) || term.includes(cLower));
+        })
       );
     }
 

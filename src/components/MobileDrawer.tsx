@@ -76,24 +76,24 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
             <Link
               href="/shop"
               onClick={onClose}
-              className="flex items-center justify-between py-2 text-sm font-semibold text-charcoal hover:text-botanical transition-colors"
+              className="flex items-center justify-between py-2.5 text-sm font-semibold text-charcoal hover:text-primary transition-colors"
             >
-              <span>Shop All Products</span>
-              <span className="text-[11px] font-bold text-botanical bg-sage px-2 py-0.5 rounded-badge">44</span>
+              <span>Shop</span>
+              <span className="text-[11px] font-bold text-primary bg-sage px-2 py-0.5 rounded-badge">44</span>
             </Link>
             <Link
               href="/shop?sort=bestseller"
               onClick={onClose}
-              className="flex items-center py-2 text-sm font-semibold text-charcoal hover:text-botanical transition-colors"
+              className="flex items-center py-2.5 text-sm font-semibold text-charcoal hover:text-primary transition-colors"
             >
-              <span>Best Sellers</span>
+              <span>Bestsellers</span>
             </Link>
             <Link
               href="/category/health-packs"
               onClick={onClose}
-              className="flex items-center py-2 text-sm font-semibold text-charcoal hover:text-botanical transition-colors"
+              className="flex items-center py-2.5 text-sm font-semibold text-charcoal hover:text-primary transition-colors"
             >
-              <span>Combos &amp; Health Packs</span>
+              <span>Wellness Packs</span>
             </Link>
           </div>
 
@@ -105,7 +105,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
               onClick={() => setConcernsOpen(!concernsOpen)}
               className="flex items-center justify-between w-full py-1 text-xs font-bold text-forest uppercase tracking-wider"
             >
-              <span>Shop by Health Need</span>
+              <span>Shop by Concern</span>
               <ChevronDown
                 size={16}
                 className={`transition-transform duration-200 ${concernsOpen ? 'rotate-180' : ''}`}

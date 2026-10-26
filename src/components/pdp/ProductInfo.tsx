@@ -127,7 +127,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600" />
         </span>
-        <span>In Stock • Dispatched from Chennai within 24 Hours</span>
+        <span>In Stock • Dispatched within 1–2 business days from Chennai</span>
       </div>
 
       {/* Quantity & Add to Cart Controls */}

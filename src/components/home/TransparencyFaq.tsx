@@ -35,14 +35,14 @@ export const TransparencyFaq: React.FC = () => {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-white border-b border-border-botanical">
+    <section className="py-16 sm:py-20 lg:py-24 bg-[#E8EFE7]/40">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sage text-forest text-sm font-bold mb-2.5">
-            <ShieldCheck size={16} className="text-botanical" />
+        <div className="text-center mb-12 sm:mb-14">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-primary text-xs font-semibold mb-2.5 border border-primary/10 shadow-xs">
+            <ShieldCheck size={15} className="text-primary" />
             <span>Got Questions? We Have Answers</span>
           </div>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-forest tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
             Frequently Asked Questions
           </h2>
           <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl mx-auto">
@@ -56,18 +56,18 @@ export const TransparencyFaq: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="border border-stone-200/90 rounded-2xl overflow-hidden transition-all bg-white hover:border-botanical/50 shadow-xs"
+                className="border border-stone-200/80 rounded-2xl overflow-hidden transition-all bg-white hover:border-primary/40 shadow-xs"
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full p-5 sm:p-6 flex items-center justify-between text-left text-base sm:text-lg font-bold text-forest transition-colors focus:outline-none"
+                  className="w-full p-5 sm:p-6 flex items-center justify-between text-left text-base sm:text-lg font-bold text-primary transition-colors focus:outline-none"
                   aria-expanded={isOpen}
                 >
                   <span className="pr-4 leading-snug">{faq.q}</span>
                   <ChevronDown
                     size={20}
                     className={`text-stone-400 flex-shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-botanical' : ''
+                      isOpen ? 'rotate-180 text-primary' : ''
                     }`}
                   />
                 </button>
@@ -79,6 +79,26 @@ export const TransparencyFaq: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Small Support Section Below the FAQs */}
+        <div className="mt-12 p-8 bg-white rounded-2xl border border-stone-200/80 shadow-xs text-center">
+          <h3 className="font-heading text-2xl font-bold text-primary">
+            Still have questions?
+          </h3>
+          <p className="mt-2 text-sm sm:text-base text-charcoal-muted max-w-md mx-auto">
+            Contact our team for product information and guidance.
+          </p>
+          <div className="mt-5">
+            <a
+              href={SITE_CONFIG.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 h-12 rounded-[8px] text-sm font-semibold bg-primary hover:bg-primary-dark text-white transition-all shadow-xs active:scale-[0.98]"
+            >
+              <span>Contact Our Team</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

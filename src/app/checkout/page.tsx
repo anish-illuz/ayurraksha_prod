@@ -122,28 +122,54 @@ export default function CheckoutPage() {
     setIsProcessing(true);
     setErrorMessage(null);
 
-    const orderNumber = `AYUR-${Date.now().toString().slice(-6)}`;
+    // Record order in WooCommerce backend and get the real WooCommerce Order Number
+    let wooOrderNumber = '';
+    let wooOrderId = '';
+
+    try {
+      const orderRes = await fetch('/api/order/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items,
+          customer: formData,
+          paymentMethod,
+          customerNote: formData.notes,
+        }),
+      });
+
+      const orderData = await orderRes.json();
+      if (orderData.orderNumber) {
+        wooOrderNumber = String(orderData.orderNumber);
+        wooOrderId = String(orderData.orderId || orderData.orderNumber);
+      } else {
+        wooOrderNumber = orderData.fallbackOrderNumber || `AYUR-${Date.now().toString().slice(-6)}`;
+      }
+    } catch (err) {
+      console.error('WooCommerce order recording error:', err);
+      wooOrderNumber = `AYUR-${Date.now().toString().slice(-6)}`;
+    }
 
     if (paymentMethod === 'cod') {
-      // Direct Cash on Delivery order
-      setTimeout(() => {
-        const orderSummary: OrderSuccess = {
-          orderId: orderNumber,
-          paymentMethod: 'cod',
-          customerName: formData.name,
-          customerPhone: formData.phone,
-          customerEmail: formData.email,
-          shippingAddress: formData.address,
-          city: formData.city,
-          state: formData.state,
-          pincode: formData.pincode,
-          items: [...items],
-          totalAmount: totalPayable,
-        };
-        setCompletedOrder(orderSummary);
-        clearCart();
-        setIsProcessing(false);
-      }, 900);
+      // Direct Cash on Delivery order recorded in WooCommerce
+      const orderSummary: OrderSuccess = {
+        orderId: wooOrderNumber,
+        paymentMethod: 'cod',
+        customerName: formData.name,
+        customerPhone: formData.phone,
+        customerEmail: formData.email,
+        shippingAddress: formData.address,
+        city: formData.city,
+        state: formData.state,
+        pincode: formData.pincode,
+        items: [...items],
+        totalAmount: totalPayable,
+      };
+      setCompletedOrder(orderSummary);
+      clearCart();
+      setIsProcessing(false);
       return;
     }
 
@@ -161,12 +187,12 @@ export default function CheckoutPage() {
       amount: Math.round(totalPayable * 100), // in paise
       currency: razorpayConfig?.currency || 'INR',
       name: razorpayConfig?.name || 'Ayur Raksha',
-      description: `Order ${orderNumber} (${itemCount} ${itemCount === 1 ? 'item' : 'items'})`,
+      description: `Order #${wooOrderNumber} (${itemCount} ${itemCount === 1 ? 'item' : 'items'})`,
       image: 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/cropped-Ayur-Raksha-Favicon-192x192.png',
       handler: function (response: any) {
         setIsProcessing(false);
         const orderSummary: OrderSuccess = {
-          orderId: orderNumber,
+          orderId: wooOrderNumber,
           paymentId: response.razorpay_payment_id,
           paymentMethod: 'razorpay',
           customerName: formData.name,
@@ -188,8 +214,9 @@ export default function CheckoutPage() {
         contact: formData.phone,
       },
       notes: {
+        woocommerce_order_number: wooOrderNumber,
+        woocommerce_order_id: wooOrderId,
         address: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`,
-        order_number: orderNumber,
       },
       theme: {
         color: '#80A03C',

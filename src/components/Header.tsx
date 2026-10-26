@@ -63,7 +63,7 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Center: Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-charcoal">
+            <nav className="hidden lg:flex items-center gap-7 xl:gap-8 text-[15px] font-semibold text-charcoal">
               <Link
                 href="/shop"
                 className="hover:text-botanical transition-colors py-2"
@@ -78,32 +78,32 @@ export const Header: React.FC = () => {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center gap-1 hover:text-botanical transition-colors"
+                  className="flex items-center gap-1.5 hover:text-botanical transition-colors"
                   aria-expanded={activeDropdown === 'concern'}
                 >
                   <span>Shop by Health Need</span>
-                  <ChevronDown size={14} className="text-stone-400 group-hover:text-botanical transition-transform group-hover:rotate-180" />
+                  <ChevronDown size={15} className="text-stone-400 group-hover:text-botanical transition-transform group-hover:rotate-180" />
                 </button>
 
                 {activeDropdown === 'concern' && (
-                  <div className="absolute top-full -left-20 w-[640px] bg-white rounded-card shadow-dropdown border border-border-botanical p-6 animate-in fade-in-50 duration-150 grid grid-cols-2 gap-4">
+                  <div className="absolute top-full -left-20 w-[680px] bg-white rounded-2xl shadow-xl border border-border-botanical p-6 animate-in fade-in-50 duration-150 grid grid-cols-2 gap-4">
                     {HEALTH_CONCERNS.map((c) => (
                       <Link
                         key={c.id}
                         href={`/concern/${c.slug}`}
-                        className="flex flex-col p-3 rounded-lg hover:bg-ivory transition-colors group/item"
+                        className="flex flex-col p-3.5 rounded-xl hover:bg-ivory transition-colors group/item"
                       >
-                        <span className="text-xs font-bold text-forest group-hover/item:text-botanical transition-colors">
+                        <span className="text-sm font-bold text-forest group-hover/item:text-botanical transition-colors">
                           {c.name}
                         </span>
-                        <span className="text-[11px] text-charcoal-muted mt-0.5 line-clamp-1">
+                        <span className="text-xs text-charcoal-muted mt-1 line-clamp-1">
                           {c.description}
                         </span>
                       </Link>
                     ))}
-                    <div className="col-span-2 pt-3 border-t border-stone-100 flex items-center justify-between text-xs">
-                      <span className="text-charcoal-muted">Doctor-formulated Ayurvedic wellness • Chennai, India</span>
-                      <Link href="/shop" className="text-forest font-semibold hover:text-botanical">
+                    <div className="col-span-2 pt-3.5 border-t border-stone-100 flex items-center justify-between text-sm">
+                      <span className="text-charcoal-muted text-xs">Doctor-formulated Ayurvedic wellness • Chennai, India</span>
+                      <Link href="/shop" className="text-forest font-bold hover:text-botanical">
                         View All 44 Products →
                       </Link>
                     </div>
@@ -145,20 +145,20 @@ export const Header: React.FC = () => {
               <button
                 onClick={() => setIsSearchOpen(true)}
                 aria-label="Search store"
-                className="flex items-center gap-2 p-2 text-charcoal hover:text-botanical hover:bg-stone-100 rounded-lg transition-colors"
+                className="flex items-center gap-2 py-2 px-3 text-charcoal hover:text-botanical hover:bg-stone-100 rounded-xl transition-colors"
               >
                 <Search size={20} />
-                <span className="hidden sm:inline text-xs text-charcoal-muted">Search</span>
+                <span className="hidden sm:inline text-sm font-medium text-charcoal">Search</span>
               </button>
 
               <button
                 onClick={openCart}
                 aria-label={`Open cart with ${itemCount} items`}
-                className="relative flex items-center gap-2 py-2 px-3.5 bg-primary hover:bg-primary-dark text-white rounded-xl transition-all shadow-xs active:scale-95"
+                className="relative flex items-center gap-2.5 py-2.5 px-4 bg-primary hover:bg-primary-dark text-white rounded-xl transition-all shadow-xs active:scale-95"
               >
-                <ShoppingBag size={18} />
-                <span className="hidden sm:inline text-xs font-semibold">Cart</span>
-                <span className="inline-flex items-center justify-center min-w-5 h-5 px-1 rounded-full text-[11px] font-bold bg-white text-forest shadow-xs">
+                <ShoppingBag size={19} />
+                <span className="hidden sm:inline text-sm font-bold">Cart</span>
+                <span className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 rounded-full text-xs font-bold bg-white text-forest shadow-xs">
                   {itemCount}
                 </span>
               </button>

@@ -18,22 +18,22 @@ export const Bestsellers: React.FC = () => {
     <section className="py-16 sm:py-20 bg-white border-b border-border-botanical">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage-light text-forest text-xs font-semibold mb-2">
-              <Sparkles size={13} className="text-botanical" />
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sage-light text-forest text-sm font-bold mb-2.5">
+              <Sparkles size={14} className="text-botanical" />
               <span>Customer Favorites</span>
             </div>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-forest tracking-tight">
               Our Best Sellers
             </h2>
-            <p className="mt-2 text-sm text-charcoal-muted max-w-xl">
+            <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl">
               Our most popular doctor-formulated herbal remedies, trusted by thousands of customers across India.
             </p>
           </div>
 
           {/* Quick Category Pill Tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 text-xs font-semibold">
+          <div className="flex items-center gap-2.5 overflow-x-auto pb-2 md:pb-0 text-sm font-semibold">
             {[
               { label: 'All Best Sellers', val: 'all' },
               { label: 'Tonics & Syrups', val: 'tonic' },
@@ -44,10 +44,10 @@ export const Bestsellers: React.FC = () => {
               <button
                 key={tab.val}
                 onClick={() => setFilter(tab.val as any)}
-                className={`px-4 py-2 rounded-full whitespace-nowrap transition-all ${
+                className={`px-5 py-2.5 rounded-full whitespace-nowrap transition-all ${
                   filter === tab.val
                     ? 'bg-forest text-white shadow-xs'
-                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200 hover:text-charcoal'
+                    : 'bg-stone-100 text-stone-700 hover:bg-stone-200 hover:text-charcoal'
                 }`}
               >
                 {tab.label}

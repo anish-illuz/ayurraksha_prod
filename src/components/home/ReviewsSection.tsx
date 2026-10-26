@@ -11,30 +11,30 @@ export const ReviewsSection: React.FC = () => {
         {/* Header with Judge.me Badge */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-2 mb-2.5">
               <div className="flex items-center text-botanical">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} size={16} className="fill-botanical" />
+                  <Star key={i} size={18} className="fill-botanical" />
                 ))}
               </div>
-              <span className="text-xs font-bold text-forest">
+              <span className="text-sm font-bold text-forest">
                 {SITE_CONFIG.reviews.averageRating} / 5.0
               </span>
-              <span className="text-xs text-charcoal-muted">
+              <span className="text-sm text-charcoal-muted">
                 ({SITE_CONFIG.reviews.totalReviews} Verified Customer Reviews)
               </span>
             </div>
 
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-forest tracking-tight">
               Customer Reviews &amp; Experiences
             </h2>
-            <p className="mt-2 text-sm text-charcoal-muted max-w-xl">
+            <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl">
               Real feedback from customers across India who trust Ayurraksha remedies for their daily health and wellness.
             </p>
           </div>
 
-          <div className="text-xs text-charcoal-muted flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-stone-200">
-            <ShieldCheck size={16} className="text-emerald-700" />
+          <div className="text-xs sm:text-sm text-charcoal-muted flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-stone-200 shadow-xs">
+            <ShieldCheck size={18} className="text-emerald-700" />
             <span>Verified by {SITE_CONFIG.reviews.provider}</span>
           </div>
         </div>
@@ -44,29 +44,29 @@ export const ReviewsSection: React.FC = () => {
           {VERIFIED_REVIEWS.map((rev) => (
             <div
               key={rev.id}
-              className="flex flex-col justify-between p-6 bg-white rounded-card border border-stone-200/80 shadow-card transition-all duration-300 hover:shadow-card-hover hover:border-botanical/30"
+              className="flex flex-col justify-between p-6 sm:p-7 bg-white rounded-2xl border border-stone-200/90 shadow-card transition-all duration-300 hover:shadow-card-hover hover:border-botanical/40"
             >
               <div>
                 {/* Stars & Verified */}
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between mb-3.5">
                   <div className="flex items-center text-botanical">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} size={14} className="fill-botanical" />
+                      <Star key={i} size={16} className="fill-botanical" />
                     ))}
                   </div>
                   {rev.verified && (
-                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">
-                      <ShieldCheck size={12} />
+                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-md">
+                      <ShieldCheck size={13} />
                       <span>Verified Buyer</span>
                     </span>
                   )}
                 </div>
 
-                <h3 className="text-sm font-bold text-forest mb-2">
+                <h3 className="text-base sm:text-lg font-bold text-forest mb-2 leading-snug">
                   &ldquo;{rev.title}&rdquo;
                 </h3>
 
-                <p className="text-xs text-charcoal-muted leading-relaxed italic">
+                <p className="text-sm sm:text-[15px] text-charcoal leading-relaxed italic">
                   {rev.content}
                 </p>
               </div>
@@ -74,16 +74,16 @@ export const ReviewsSection: React.FC = () => {
               {/* Author & Product Info */}
               <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
                 <div>
-                  <span className="text-xs font-bold text-charcoal block">
+                  <span className="text-sm font-bold text-charcoal block">
                     {rev.author}
                   </span>
-                  <span className="text-[11px] text-charcoal-muted">
+                  <span className="text-xs text-charcoal-muted">
                     {rev.location}
                   </span>
                 </div>
                 <Link
                   href={`/product/${rev.productSlug}`}
-                  className="text-[11px] font-semibold text-forest hover:text-botanical bg-sage-light hover:bg-sage px-2.5 py-1 rounded transition-colors"
+                  className="text-xs font-semibold text-forest hover:text-botanical bg-sage-light hover:bg-sage px-3 py-1.5 rounded-lg transition-colors"
                 >
                   {rev.productName}
                 </Link>

@@ -13,24 +13,24 @@ export const JournalSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-forest text-xs font-semibold mb-2">
-              <BookOpen size={14} className="text-botanical" />
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sage text-forest text-sm font-bold mb-2.5">
+              <BookOpen size={16} className="text-botanical" />
               <span>Health Guides &amp; Ayurvedic Tips</span>
             </div>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-forest tracking-tight">
               From Our Health Blog
             </h2>
-            <p className="mt-2 text-sm text-charcoal-muted max-w-xl">
+            <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl">
               Helpful wellness guides, herbal health tips, and recovery stories from our clinical team in Chennai.
             </p>
           </div>
 
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-forest hover:text-botanical transition-colors"
+            className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-forest hover:text-botanical transition-colors"
           >
             <span>Read All Articles (20)</span>
-            <ArrowRight size={14} />
+            <ArrowRight size={16} />
           </Link>
         </div>
 
@@ -38,7 +38,7 @@ export const JournalSection: React.FC = () => {
           {posts.map((post) => (
             <article
               key={post.id}
-              className="flex flex-col bg-[#FDFBF7] rounded-card border border-stone-200/80 overflow-hidden group hover:shadow-card-hover transition-all"
+              className="flex flex-col bg-[#FDFBF7] rounded-2xl border border-stone-200/90 overflow-hidden group hover:shadow-card-hover transition-all"
             >
               <Link
                 href={`/blog/${post.slug}`}
@@ -53,22 +53,22 @@ export const JournalSection: React.FC = () => {
                 />
               </Link>
 
-              <div className="flex flex-col flex-grow p-6">
-                <span className="text-[11px] font-semibold text-botanical uppercase tracking-wider mb-2">
+              <div className="flex flex-col flex-grow p-6 sm:p-7">
+                <span className="text-xs font-bold text-botanical uppercase tracking-wider mb-2">
                   {post.date}
                 </span>
 
-                <h3 className="font-serif text-base sm:text-lg font-bold text-forest group-hover:text-botanical transition-colors line-clamp-2 mb-2">
+                <h3 className="font-heading text-lg sm:text-xl font-bold text-forest group-hover:text-botanical transition-colors line-clamp-2 mb-2.5 leading-snug">
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h3>
 
-                <p className="text-xs text-charcoal-muted line-clamp-3 leading-relaxed flex-grow">
+                <p className="text-sm sm:text-[15px] text-charcoal-muted line-clamp-3 leading-relaxed flex-grow">
                   {post.excerpt}
                 </p>
 
-                <div className="mt-4 pt-3 border-t border-stone-200 flex items-center text-xs font-bold text-forest group-hover:text-botanical">
+                <div className="mt-5 pt-4 border-t border-stone-200 flex items-center text-sm font-bold text-forest group-hover:text-botanical">
                   <span>Read Full Article</span>
-                  <ArrowRight size={14} className="ml-1.5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
             </article>

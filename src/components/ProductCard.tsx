@@ -48,8 +48,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Top Banner Offer Chip */}
-      <div className="bg-[#F0F5E6] text-forest text-[11px] font-semibold py-1.5 px-3 text-center border-b border-stone-100 flex items-center justify-center gap-1.5">
-        <Tag size={12} className="text-botanical flex-shrink-0" />
+      <div className="bg-[#F0F5E6] text-forest text-xs font-semibold py-2 px-3 text-center border-b border-stone-100 flex items-center justify-center gap-1.5">
+        <Tag size={13} className="text-botanical flex-shrink-0" />
         <span className="truncate">Prepaid Orders: Free Shipping Across India</span>
       </div>
 
@@ -58,21 +58,21 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
         {/* Top Floating Badges */}
         <div className="absolute top-2.5 left-2.5 right-2.5 z-10 flex items-center justify-between pointer-events-none">
           {product.isBestseller ? (
-            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-forest text-white shadow-xs">
+            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-forest text-white shadow-xs">
               BESTSELLER
             </span>
           ) : product.discountPercent >= 15 ? (
-            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-botanical text-white shadow-xs">
+            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-botanical text-white shadow-xs">
               POPULAR
             </span>
           ) : (
-            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-stone-700 text-white shadow-xs">
+            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-stone-700 text-white shadow-xs">
               AYURVEDIC
             </span>
           )}
 
           {product.discountPercent > 0 && (
-            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
               {product.discountPercent}% OFF
             </span>
           )}
@@ -94,52 +94,52 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       </div>
 
       {/* Product Information Body with proper standard Tailwind spacing */}
-      <div className="flex flex-col flex-grow p-4 sm:p-5 bg-white space-y-2.5">
+      <div className="flex flex-col flex-grow p-4 sm:p-5 bg-white space-y-3">
         {/* Product Title (Clean Jost font, standardized height) */}
-        <h3 className="font-heading font-semibold text-sm sm:text-[15px] text-charcoal group-hover:text-botanical transition-colors line-clamp-2 min-h-[2.5rem] leading-snug">
+        <h3 className="font-heading font-bold text-base sm:text-lg text-forest group-hover:text-botanical transition-colors line-clamp-2 min-h-[3rem] leading-snug">
           <Link href={`/product/${product.slug}`}>{product.name}</Link>
         </h3>
 
         {/* Rating & Concern Row: ★ 4.8 (840) | Liver Wellness */}
-        <div className="flex items-center gap-1.5 text-xs text-charcoal-muted">
-          <div className="flex items-center text-botanical font-bold gap-0.5">
-            <Star size={13} className="fill-botanical text-botanical" />
+        <div className="flex items-center gap-2 text-sm text-charcoal-muted">
+          <div className="flex items-center text-botanical font-bold gap-1">
+            <Star size={14} className="fill-botanical text-botanical" />
             <span>{product.rating.toFixed(1)}</span>
           </div>
-          <span className="text-stone-400">({product.reviewCount})</span>
+          <span className="text-stone-400 text-xs">({product.reviewCount})</span>
           <span className="text-stone-300">|</span>
-          <span className="truncate font-medium text-stone-500 text-[11px]">
+          <span className="truncate font-medium text-stone-600 text-xs">
             {product.healthConcerns[0] || 'Ayurvedic Care'}
           </span>
         </div>
 
         {/* Pack / Size Pill Badge */}
         <div>
-          <span className="inline-block text-[11px] font-medium text-stone-600 bg-stone-100 px-2.5 py-0.5 rounded-full border border-stone-200">
+          <span className="inline-block text-xs font-medium text-stone-600 bg-stone-100 px-3 py-1 rounded-full border border-stone-200">
             {sizeLabel}
           </span>
         </div>
 
         {/* Price Row: ₹Price ₹Regular % OFF */}
-        <div className="pt-0.5 flex items-baseline gap-2 flex-wrap">
-          <span className="font-heading font-bold text-base sm:text-lg text-forest">
+        <div className="pt-0.5 flex items-baseline gap-2.5 flex-wrap">
+          <span className="font-heading font-bold text-lg sm:text-xl text-forest">
             ₹{product.price.toLocaleString('en-IN')}
           </span>
           {product.regularPrice > product.price && (
-            <span className="text-xs text-stone-400 line-through">
+            <span className="text-xs sm:text-sm text-stone-400 line-through">
               ₹{product.regularPrice.toLocaleString('en-IN')}
             </span>
           )}
           {product.discountPercent > 0 && (
-            <span className="text-xs font-bold text-botanical">
+            <span className="text-xs sm:text-sm font-bold text-botanical">
               {product.discountPercent}% OFF
             </span>
           )}
         </div>
 
         {/* Special Offer Pill: ⚡ Prepaid Special: ₹X */}
-        <div className="bg-[#F4F7EE] border border-[#DCE4CF] rounded-lg px-2.5 py-1.5 flex items-center justify-between text-[11px]">
-          <span className="flex items-center gap-1 text-stone-700 font-medium truncate">
+        <div className="bg-[#F4F7EE] border border-[#DCE4CF] rounded-xl px-3 py-2 flex items-center justify-between text-xs sm:text-sm">
+          <span className="flex items-center gap-1.5 text-stone-700 font-medium truncate">
             <span className="text-botanical font-bold">⚡</span>
             <span>Prepaid Special:</span>
           </span>
@@ -149,12 +149,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
         </div>
 
         {/* Full-Width Add to Cart CTA Button in #80A03C */}
-        <div className="pt-1.5">
+        <div className="pt-1">
           <button
             onClick={handleQuickAdd}
             disabled={!product.inStock}
             aria-label={`Add ${product.name} to cart`}
-            className={`w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-xs active:scale-[0.98] ${
+            className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-200 shadow-xs active:scale-[0.98] ${
               isAdded
                 ? 'bg-forest text-white'
                 : 'bg-botanical hover:bg-forest text-white'
@@ -162,12 +162,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
           >
             {isAdded ? (
               <>
-                <Check size={15} />
+                <Check size={16} />
                 <span>Added to Cart!</span>
               </>
             ) : (
               <>
-                <ShoppingBag size={15} />
+                <ShoppingBag size={16} />
                 <span>Add to Cart</span>
               </>
             )}

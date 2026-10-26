@@ -35,44 +35,44 @@ export const TransparencyFaq: React.FC = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-white border-b border-border-botanical">
+    <section className="py-16 sm:py-24 bg-white border-b border-border-botanical">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-forest text-xs font-semibold mb-2">
-            <ShieldCheck size={14} className="text-botanical" />
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sage text-forest text-sm font-bold mb-2.5">
+            <ShieldCheck size={16} className="text-botanical" />
             <span>Got Questions? We Have Answers</span>
           </div>
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-forest tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="mt-2 text-sm text-charcoal-muted max-w-xl mx-auto">
+          <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl mx-auto">
             Clear, helpful answers about our natural ingredients, safety, shipping, and doctor consultations.
           </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           {FAQS.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
               <div
                 key={idx}
-                className="border border-stone-200 rounded-card overflow-hidden transition-colors bg-white hover:border-botanical/40"
+                className="border border-stone-200/90 rounded-2xl overflow-hidden transition-all bg-white hover:border-botanical/50 shadow-xs"
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full p-4 sm:p-5 flex items-center justify-between text-left text-sm sm:text-base font-semibold text-charcoal transition-colors focus:outline-none"
+                  className="w-full p-5 sm:p-6 flex items-center justify-between text-left text-base sm:text-lg font-bold text-forest transition-colors focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="pr-4">{faq.q}</span>
+                  <span className="pr-4 leading-snug">{faq.q}</span>
                   <ChevronDown
-                    size={18}
+                    size={20}
                     className={`text-stone-400 flex-shrink-0 transition-transform duration-200 ${
                       isOpen ? 'rotate-180 text-botanical' : ''
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-4 pb-5 sm:px-5 sm:pb-6 text-xs sm:text-sm text-charcoal-muted leading-relaxed border-t border-stone-100 pt-3">
+                  <div className="px-5 pb-6 sm:px-6 sm:pb-7 text-sm sm:text-base text-stone-600 leading-relaxed border-t border-stone-100 pt-4">
                     {faq.a}
                   </div>
                 )}

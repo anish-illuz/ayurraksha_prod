@@ -156,8 +156,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             aria-label={`Add ${product.name} to cart`}
             className={`w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-xs active:scale-[0.98] ${
               isAdded
-                ? 'bg-botanical text-white'
-                : 'bg-forest hover:bg-forest-light text-white'
+                ? 'bg-forest text-white'
+                : 'bg-botanical hover:bg-forest text-white'
             } disabled:bg-stone-200 disabled:text-stone-400 disabled:cursor-not-allowed`}
           >
             {isAdded ? (

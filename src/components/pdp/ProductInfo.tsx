@@ -160,8 +160,8 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
             onClick={handleAddToCart}
             className={`flex-grow inline-flex items-center justify-center gap-2 py-3 px-6 rounded-button text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-[0.99] ${
               isAdded
-                ? 'bg-botanical text-white'
-                : 'bg-forest hover:bg-forest-light text-white'
+                ? 'bg-forest text-white'
+                : 'bg-botanical hover:bg-forest text-white'
             }`}
           >
             {isAdded ? (

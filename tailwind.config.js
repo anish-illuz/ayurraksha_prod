@@ -9,24 +9,24 @@ module.exports = {
     extend: {
       colors: {
         forest: {
-          DEFAULT: '#16382C',
-          dark: '#0E251D',
-          light: '#224D3E',
+          DEFAULT: '#58702E', // Live site deep herbal green
+          dark: '#024B19',   // Live logo green
+          light: '#6B8938',
         },
         botanical: {
-          DEFAULT: '#2D5A43',
-          dark: '#214432',
-          light: '#3D7457',
+          DEFAULT: '#80A03C', // Live site signature olive green
+          dark: '#58702E',
+          light: '#95B847',
         },
         ivory: {
-          DEFAULT: '#FAF7F2',
-          dark: '#F3EDE2',
+          DEFAULT: '#FAFAFA', // Live site clean background
+          dark: '#F3F4F1',
           card: '#FFFFFF',
         },
         sage: {
-          DEFAULT: '#E8EFE6',
-          light: '#F3F7F2',
-          dark: '#D5DFD2',
+          DEFAULT: '#EAF0DF', // Live site soft olive sage
+          light: '#F4F7EE',
+          dark: '#D8E4C4',
         },
         terracotta: {
           DEFAULT: '#B45309',
@@ -34,13 +34,13 @@ module.exports = {
           light: '#D97706',
         },
         charcoal: {
-          DEFAULT: '#1F2421',
-          light: '#3C443F',
-          muted: '#626C65',
+          DEFAULT: '#3A3A3A', // Live site text color
+          light: '#555555',
+          muted: '#777777',
         },
         border: {
-          botanical: 'rgba(22, 56, 44, 0.12)',
-          subtle: 'rgba(22, 56, 44, 0.06)',
+          botanical: 'rgba(128, 160, 60, 0.25)',
+          subtle: 'rgba(58, 58, 58, 0.08)',
         }
       },
       fontFamily: {

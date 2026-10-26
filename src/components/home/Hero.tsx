@@ -5,7 +5,7 @@ import { ArrowRight, Sparkles, ShieldCheck, HeartPulse } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF7F2] via-[#F4EFE6] to-[#FAF7F2] pt-10 pb-16 lg:py-20 border-b border-border-botanical">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#FAFAFA] via-[#F0F5E6] to-[#FAFAFA] pt-10 pb-16 lg:py-20 border-b border-border-botanical">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Editorial Value Proposition */}
@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
               <span>Doctor-Formulated Classical Ayurveda</span>
             </div>
 
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-forest leading-[1.12] tracking-tight">
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-forest leading-[1.12] tracking-tight">
               Rooted in Nature.
               <br />
               <span className="text-botanical italic font-normal">Made for Your Wellbeing.</span>
@@ -28,14 +28,14 @@ export const Hero: React.FC = () => {
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
               <Link
                 href="/shop?sort=bestseller"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-button text-sm font-semibold bg-forest hover:bg-forest-light text-white shadow-md hover:shadow-lg transition-all active:scale-[0.99]"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-button text-sm font-semibold bg-botanical hover:bg-forest text-white shadow-md hover:shadow-lg transition-all active:scale-[0.99]"
               >
                 <span>Shop Bestsellers</span>
                 <ArrowRight size={16} />
               </Link>
               <Link
                 href="/shop"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-button text-sm font-semibold bg-white hover:bg-stone-50 text-forest border border-forest/20 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-button text-sm font-semibold bg-white hover:bg-stone-50 text-forest border border-botanical/30 transition-all"
               >
                 <span>Explore All Formulations (44)</span>
               </Link>
@@ -106,7 +106,7 @@ export const Hero: React.FC = () => {
 
                   <Link
                     href="/product/boozliv"
-                    className="mt-4 w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-button text-xs font-semibold bg-forest hover:bg-forest-light text-white transition-colors"
+                    className="mt-4 w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-button text-xs font-semibold bg-botanical hover:bg-forest text-white transition-colors"
                   >
                     <span>View BoozLiv Details</span>
                     <ArrowRight size={14} />

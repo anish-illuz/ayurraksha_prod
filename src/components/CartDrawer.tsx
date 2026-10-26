@@ -195,7 +195,7 @@ export const CartDrawer: React.FC = () => {
 
             <a
               href={checkoutUrl}
-              className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-button text-sm font-semibold bg-forest hover:bg-forest-light text-white shadow-md hover:shadow-lg transition-all active:scale-[0.99]"
+              className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-button text-sm font-semibold bg-botanical hover:bg-forest text-white shadow-md hover:shadow-lg transition-all active:scale-[0.99]"
             >
               <span>Proceed to Checkout</span>
               <ArrowRight size={16} />

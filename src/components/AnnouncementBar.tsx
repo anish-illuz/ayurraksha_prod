@@ -33,22 +33,22 @@ export const AnnouncementBar: React.FC = () => {
   const IconComponent = current.icon;
 
   return (
-    <aside aria-label="Announcement" className="bg-forest text-ivory text-xs py-2 px-4 border-b border-forest-dark/40 select-none">
+    <aside aria-label="Announcement" className="bg-botanical text-white text-xs py-2 px-4 border-b border-botanical-dark/30 select-none">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Mobile single cycling item */}
         <div className="flex md:hidden items-center justify-center w-full gap-2 text-center text-[11px] font-medium transition-all duration-300">
-          <IconComponent size={13} className="text-emerald-400 flex-shrink-0" />
+          <IconComponent size={13} className="text-white flex-shrink-0" />
           <span>{current.text}</span>
         </div>
 
         {/* Desktop balanced 3-item strip */}
-        <div className="hidden md:flex items-center justify-between w-full text-[11px] font-medium text-ivory/90">
+        <div className="hidden md:flex items-center justify-between w-full text-[11px] font-medium text-white">
           <div className="flex items-center gap-1.5">
-            <Truck size={13} className="text-emerald-400" />
-            <span>Free delivery on all prepaid orders across India</span>
+            <Truck size={13} className="text-white" />
+            <span>Get Free Shipping On Prepaid Orders Across India</span>
           </div>
-          <div className="flex items-center gap-1.5 text-ivory/80">
-            <ShieldCheck size={13} className="text-emerald-400" />
+          <div className="flex items-center gap-1.5 text-white/95">
+            <ShieldCheck size={13} className="text-white" />
             <span>Formulated with Clinical Ayurvedic Purity • Chennai, India</span>
           </div>
           <div className="flex items-center gap-2">
@@ -56,7 +56,7 @@ export const AnnouncementBar: React.FC = () => {
               href={SITE_CONFIG.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-emerald-300 transition-colors"
+              className="hover:underline font-semibold transition-colors"
             >
               Consult a Specialist: {SITE_CONFIG.displayPhone}
             </a>

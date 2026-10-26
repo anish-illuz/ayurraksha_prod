@@ -15,16 +15,16 @@
 body {
   background-color: var(--bg-ivory);
   color: var(--color-charcoal);
-  font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography Headings */
-h1, h2, h3, .font-serif {
-  font-family: var(--font-serif), 'Playfair Display', 'DM Serif Display', 'Georgia', serif;
-  letter-spacing: -0.015em;
+/* Typography Headings with clean Jost geometric font */
+h1, h2, h3, .font-serif, .font-heading {
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 /* Smooth Focus States for WCAG 2.2 AA */

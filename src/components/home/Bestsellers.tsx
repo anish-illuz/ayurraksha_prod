@@ -2,14 +2,13 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { ProductCard } from '@/components/ProductCard';
 import { getBestsellers } from '@/lib/products';
-import { Product } from '@/types/product';
 
 export const Bestsellers: React.FC = () => {
   const bestsellers = getBestsellers(8);
-  const [filter, setFilter] = useState<'all' | 'tonic' | 'oil' | 'capsules'>('all');
+  const [filter, setFilter] = useState<'all' | 'tonic' | 'oil' | 'capsules' | 'health-packs'>('all');
 
   const filtered = filter === 'all'
     ? bestsellers
@@ -21,51 +20,39 @@ export const Bestsellers: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <span className="text-xs font-semibold text-botanical uppercase tracking-widest block mb-2">
-              Customer Favorites
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest tracking-tight">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage-light text-forest text-xs font-semibold mb-2">
+              <Sparkles size={13} className="text-botanical" />
+              <span>Customer Favorites &amp; Verified Results</span>
+            </div>
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest tracking-tight">
               Most Trusted Formulations
             </h2>
             <p className="mt-2 text-sm text-charcoal-muted max-w-xl">
-              Backed by hundreds of verified patient reviews across India. Pure, unadulterated herbal efficacy.
+              Doctor-formulated classical remedies backed by hundreds of verified patient reviews across India.
             </p>
           </div>
 
-          {/* Quick Category Tabs */}
-          <div className="flex items-center gap-1.5 p-1 bg-stone-100 rounded-lg overflow-x-auto text-xs font-semibold text-charcoal">
-            <button
-              onClick={() => setFilter('all')}
-              className={`px-3 py-1.5 rounded-md transition-colors ${
-                filter === 'all' ? 'bg-white text-forest shadow-xs' : 'text-charcoal-muted hover:text-charcoal'
-              }`}
-            >
-              All Bestsellers
-            </button>
-            <button
-              onClick={() => setFilter('tonic')}
-              className={`px-3 py-1.5 rounded-md transition-colors ${
-                filter === 'tonic' ? 'bg-white text-forest shadow-xs' : 'text-charcoal-muted hover:text-charcoal'
-              }`}
-            >
-              Tonics
-            </button>
-            <button
-              onClick={() => setFilter('oil')}
-              className={`px-3 py-1.5 rounded-md transition-colors ${
-                filter === 'oil' ? 'bg-white text-forest shadow-xs' : 'text-charcoal-muted hover:text-charcoal'
-              }`}
-            >
-              Oils
-            </button>
-            <button
-              onClick={() => setFilter('capsules')}
-              className={`px-3 py-1.5 rounded-md transition-colors ${
-                filter === 'capsules' ? 'bg-white text-forest shadow-xs' : 'text-charcoal-muted hover:text-charcoal'
-              }`}
-            >
-              Capsules
-            </button>
+          {/* Quick Category Pill Tabs */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 text-xs font-semibold">
+            {[
+              { label: 'All Bestsellers', val: 'all' },
+              { label: 'Tonics', val: 'tonic' },
+              { label: 'Therapeutic Oils', val: 'oil' },
+              { label: 'Capsules', val: 'capsules' },
+              { label: 'Health Packs', val: 'health-packs' },
+            ].map((tab) => (
+              <button
+                key={tab.val}
+                onClick={() => setFilter(tab.val as any)}
+                className={`px-4 py-2 rounded-full whitespace-nowrap transition-all ${
+                  filter === tab.val
+                    ? 'bg-forest text-white shadow-xs'
+                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200 hover:text-charcoal'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
           </div>
         </div>
 
@@ -80,9 +67,9 @@ export const Bestsellers: React.FC = () => {
         <div className="mt-12 text-center">
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-button text-xs font-semibold bg-forest hover:bg-forest-light text-white transition-colors"
+            className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-forest hover:bg-forest-light text-white transition-all shadow-xs"
           >
-            <span>View All 44 Formulations</span>
+            <span>Explore All 44 Formulations</span>
             <ArrowRight size={14} />
           </Link>
         </div>

@@ -48,12 +48,17 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: 'Missing customer shipping details' }, { status: 400 });
     }
 
-    // Step 1: Initialize WooCommerce Cart Session
-    const cartInitRes = await fetch(`${WORDPRESS_STORE_API}/cart`, {
+    const timestamp = Date.now();
+
+    // Step 1: Initialize Fresh WooCommerce Cart Session
+    // We add a unique timestamp query parameter and no-cache headers to bypass Hostinger LiteSpeed cache
+    const cartInitRes = await fetch(`${WORDPRESS_STORE_API}/cart?_nocache=${timestamp}`, {
       method: 'GET',
       headers: {
         'User-Agent': 'Ayurraksha-Storefront/2.0',
         'Accept': 'application/json',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
       },
       cache: 'no-store',
     });
@@ -61,13 +66,31 @@ export async function POST(req: Request) {
     let nonce = cartInitRes.headers.get('Nonce') || '';
     let cartToken = cartInitRes.headers.get('Cart-Token') || '';
 
-    // Step 2: Add all items to WooCommerce cart session
+    // Step 2: Clear any leftover items in this cart session to PREVENT double amounts
+    // (Crucial: prevents previous checkout attempts from accumulating in the same WooCommerce cart)
+    try {
+      const clearRes = await fetch(`${WORDPRESS_STORE_API}/cart/items?_nocache=${Date.now()}`, {
+        method: 'DELETE',
+        headers: {
+          'User-Agent': 'Ayurraksha-Storefront/2.0',
+          'Nonce': nonce,
+          'Cart-Token': cartToken,
+        },
+        cache: 'no-store',
+      });
+      if (clearRes.headers.get('Nonce')) nonce = clearRes.headers.get('Nonce') || nonce;
+      if (clearRes.headers.get('Cart-Token')) cartToken = clearRes.headers.get('Cart-Token') || cartToken;
+    } catch (clearErr) {
+      console.warn('Could not clear cart session items:', clearErr);
+    }
+
+    // Step 3: Add exactly the current order items to WooCommerce cart session
     for (const item of items) {
       const productId = item.product?.id || item.id;
       const targetId = VARIABLE_PRODUCT_MAP[productId] || productId;
       const quantity = item.quantity || 1;
 
-      const addRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item`, {
+      const addRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
         method: 'POST',
         headers: {
           'User-Agent': 'Ayurraksha-Storefront/2.0',
@@ -79,16 +102,16 @@ export async function POST(req: Request) {
           id: targetId,
           quantity: quantity,
         }),
+        cache: 'no-store',
       });
 
-      // Update session tokens if changed
       if (addRes.headers.get('Nonce')) nonce = addRes.headers.get('Nonce') || nonce;
       if (addRes.headers.get('Cart-Token')) cartToken = addRes.headers.get('Cart-Token') || cartToken;
 
       if (!addRes.ok) {
         // Fallback: retry with original product ID if mapping failed
         if (targetId !== productId) {
-          await fetch(`${WORDPRESS_STORE_API}/cart/add-item`, {
+          const retryRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
             method: 'POST',
             headers: {
               'User-Agent': 'Ayurraksha-Storefront/2.0',
@@ -100,7 +123,10 @@ export async function POST(req: Request) {
               id: productId,
               quantity: quantity,
             }),
+            cache: 'no-store',
           });
+          if (retryRes.headers.get('Nonce')) nonce = retryRes.headers.get('Nonce') || nonce;
+          if (retryRes.headers.get('Cart-Token')) cartToken = retryRes.headers.get('Cart-Token') || cartToken;
         }
       }
     }
@@ -112,7 +138,7 @@ export async function POST(req: Request) {
 
     const stateCode = STATE_CODE_MAP[customer.state] || customer.state || 'TN';
 
-    // Step 3: Execute Checkout on WooCommerce Store API
+    // Step 4: Execute Checkout on WooCommerce Store API
     const checkoutPayload = {
       billing_address: {
         first_name: firstName,
@@ -139,7 +165,7 @@ export async function POST(req: Request) {
       customer_note: customerNote || 'Order placed via Ayurraksha Next.js storefront',
     };
 
-    const checkoutRes = await fetch(`${WORDPRESS_STORE_API}/checkout`, {
+    const checkoutRes = await fetch(`${WORDPRESS_STORE_API}/checkout?_nocache=${Date.now()}`, {
       method: 'POST',
       headers: {
         'User-Agent': 'Ayurraksha-Storefront/2.0',
@@ -148,6 +174,7 @@ export async function POST(req: Request) {
         'Cart-Token': cartToken,
       },
       body: JSON.stringify(checkoutPayload),
+      cache: 'no-store',
     });
 
     if (!checkoutRes.ok) {

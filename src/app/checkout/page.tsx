@@ -56,6 +56,8 @@ export default function CheckoutPage() {
     notes: '',
   });
 
+  const [previousAttemptOrderId, setPreviousAttemptOrderId] = useState<string | null>(null);
+
   const [paymentMethod, setPaymentMethod] = useState<'razorpay' | 'cod'>('razorpay');
   const [isProcessing, setIsProcessing] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -127,6 +129,14 @@ export default function CheckoutPage() {
     let wooOrderId = '';
 
     try {
+      const note = formData.notes
+        ? previousAttemptOrderId
+          ? `${formData.notes} | Switched to ${paymentMethod.toUpperCase()} (Prev: #${previousAttemptOrderId})`
+          : formData.notes
+        : previousAttemptOrderId
+        ? `Switched to ${paymentMethod.toUpperCase()} (Previous attempt: #${previousAttemptOrderId})`
+        : `Order placed via ${paymentMethod === 'cod' ? 'Cash on Delivery' : 'Razorpay'}`;
+
       const orderRes = await fetch('/api/order/create', {
         method: 'POST',
         headers: {
@@ -136,7 +146,7 @@ export default function CheckoutPage() {
           items,
           customer: formData,
           paymentMethod,
-          customerNote: formData.notes,
+          customerNote: note,
         }),
       });
 
@@ -144,6 +154,7 @@ export default function CheckoutPage() {
       if (orderData.orderNumber) {
         wooOrderNumber = String(orderData.orderNumber);
         wooOrderId = String(orderData.orderId || orderData.orderNumber);
+        setPreviousAttemptOrderId(wooOrderNumber);
       } else {
         wooOrderNumber = orderData.fallbackOrderNumber || `AYUR-${Date.now().toString().slice(-6)}`;
       }
@@ -224,6 +235,7 @@ export default function CheckoutPage() {
       modal: {
         ondismiss: function () {
           setIsProcessing(false);
+          setErrorMessage('Online payment was cancelled or closed. You can retry payment or switch to Cash on Delivery below.');
         },
       },
     };

@@ -6,27 +6,27 @@ export const TrustBadges: React.FC = () => {
     {
       icon: Stethoscope,
       title: 'Doctor Formulated',
-      subtitle: 'Clinical expertise by Dr. Jegajothi Pandian',
+      subtitle: 'Formulated by Dr. Jegajothi Pandian',
     },
     {
       icon: ShieldCheck,
-      title: '100% Classical Ayurveda',
-      subtitle: 'Pure botanicals & ethical extracts',
+      title: '100% Pure & Herbal',
+      subtitle: 'Natural botanicals, zero steroids',
     },
     {
       icon: Award,
-      title: 'Batch Quality Assured',
-      subtitle: 'Rigorous testing & safety standards',
+      title: 'Lab Tested Quality',
+      subtitle: 'Rigorous safety & purity testing',
     },
     {
       icon: Truck,
-      title: 'Free Prepaid Delivery',
-      subtitle: 'Across all metro & non-metro India',
+      title: 'Free Delivery Across India',
+      subtitle: 'On all prepaid online orders',
     },
     {
       icon: Lock,
-      title: 'Secure & Discreet',
-      subtitle: 'Tamper-evident packaging & privacy',
+      title: 'Safe & Secure Pay',
+      subtitle: 'Secure checkout & discreet packaging',
     },
   ];
 

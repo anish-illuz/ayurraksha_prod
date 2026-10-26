@@ -13,15 +13,15 @@ export const JournalSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sage text-forest text-xs font-semibold mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-forest text-xs font-semibold mb-2">
               <BookOpen size={14} className="text-botanical" />
-              <span>Ayurvedic Wisdom &amp; Clinical Insights</span>
+              <span>Health Guides &amp; Ayurvedic Tips</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest tracking-tight">
-              The Wellness Journal
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest tracking-tight">
+              From Our Health Blog
             </h2>
             <p className="mt-2 text-sm text-charcoal-muted max-w-xl">
-              Educational articles, botanical pharmacology, and in-depth patient recovery case studies from our clinical team in Chennai.
+              Helpful wellness guides, herbal health tips, and recovery stories from our clinical team in Chennai.
             </p>
           </div>
 

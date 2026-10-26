@@ -25,11 +25,11 @@ export const ReviewsSection: React.FC = () => {
               </span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest tracking-tight">
-              Real Stories of Natural Recovery
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest tracking-tight">
+              Customer Reviews &amp; Experiences
             </h2>
             <p className="mt-2 text-sm text-charcoal-muted max-w-xl">
-              Genuine experiences from individuals across India who found sustained vitality and relief through Ayurraksha formulations.
+              Real feedback from customers across India who trust Ayurraksha remedies for their daily health and wellness.
             </p>
           </div>
 

@@ -84,15 +84,15 @@ export const CartDrawer: React.FC = () => {
               <div className="w-16 h-16 rounded-full bg-sage-light flex items-center justify-center text-botanical mb-4">
                 <ShoppingBag size={28} />
               </div>
-              <h3 className="text-base font-serif font-bold text-charcoal">Your cart is empty</h3>
+              <h3 className="text-base font-heading font-bold text-charcoal">Your cart is empty</h3>
               <p className="text-xs text-charcoal-muted mt-1.5 max-w-xs">
-                Discover our doctor-formulated Ayurvedic wellness formulations and tonics.
+                Explore our doctor-formulated natural Ayurvedic remedies, tonics, and health combos.
               </p>
               <button
                 onClick={closeCart}
-                className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-button text-xs font-semibold bg-forest hover:bg-forest-light text-white transition-colors"
+                className="mt-6 inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-semibold bg-botanical hover:bg-forest text-white transition-colors shadow-xs"
               >
-                <span>Explore Formulations</span>
+                <span>Shop Best Sellers</span>
                 <ArrowRight size={14} />
               </button>
             </div>

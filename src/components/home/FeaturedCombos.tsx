@@ -12,15 +12,15 @@ export const FeaturedCombos: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sage text-forest text-xs font-semibold mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-forest text-xs font-semibold mb-2">
               <Package size={14} className="text-botanical" />
-              <span>Synergistic Wellness</span>
+              <span>Value Packs &amp; Bundles</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest tracking-tight">
-              Featured Health Packs &amp; Combos
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest tracking-tight">
+              Best Value Health Combos
             </h2>
             <p className="mt-2 text-sm text-charcoal-muted max-w-xl">
-              Carefully curated complementary formulations that work synergistically for comprehensive, multi-angle bodily support.
+              Save more with doctor-recommended combos designed to work together for comprehensive, everyday bodily support.
             </p>
           </div>
 
@@ -28,7 +28,7 @@ export const FeaturedCombos: React.FC = () => {
             href="/category/health-packs"
             className="inline-flex items-center gap-1.5 text-xs font-bold text-forest hover:text-botanical transition-colors"
           >
-            <span>View All Health Packs</span>
+            <span>Shop All Health Combos</span>
             <ArrowRight size={14} />
           </Link>
         </div>

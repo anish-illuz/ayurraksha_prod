@@ -20,15 +20,15 @@ export const Newsletter: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-light text-emerald-300 text-xs font-semibold mb-4">
           <Mail size={14} />
-          <span>Ayurraksha Botanical Dispatch</span>
+          <span>Exclusive Subscriber Offer</span>
         </div>
 
-        <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-white">
-          Guidance for Mindful, Natural Living
+        <h2 className="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Get 10% Off Your First Order
         </h2>
 
         <p className="mt-3 text-xs sm:text-sm text-stone-300 max-w-xl mx-auto leading-relaxed">
-          Subscribe to receive seasonal Ayurvedic health tips, ingredient spotlights, and announcements on newly formulated restorative packs. No spam, ever.
+          Join the Ayurraksha family for natural wellness tips, seasonal health guides, and exclusive subscriber deals. No spam, unsubscribe anytime.
         </p>
 
         {isSubmitted ? (

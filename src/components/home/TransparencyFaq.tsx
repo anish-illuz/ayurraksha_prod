@@ -38,15 +38,15 @@ export const TransparencyFaq: React.FC = () => {
     <section className="py-16 sm:py-20 bg-white border-b border-border-botanical">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sage text-forest text-xs font-semibold mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-forest text-xs font-semibold mb-2">
             <ShieldCheck size={14} className="text-botanical" />
-            <span>Product &amp; Clinical Transparency</span>
+            <span>Got Questions? We Have Answers</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="mt-2 text-sm text-charcoal-muted">
-            Honest answers regarding ingredients, clinical formulations, and delivery policies.
+          <p className="mt-2 text-sm text-charcoal-muted max-w-xl mx-auto">
+            Clear, helpful answers about our natural ingredients, safety, shipping, and doctor consultations.
           </p>
         </div>
 

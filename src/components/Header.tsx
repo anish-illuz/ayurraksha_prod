@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
                   className="flex items-center gap-1 hover:text-botanical transition-colors"
                   aria-expanded={activeDropdown === 'concern'}
                 >
-                  <span>Shop by Concern</span>
+                  <span>Shop by Health Need</span>
                   <ChevronDown size={14} className="text-stone-400 group-hover:text-botanical transition-transform group-hover:rotate-180" />
                 </button>
 
@@ -102,9 +102,9 @@ export const Header: React.FC = () => {
                       </Link>
                     ))}
                     <div className="col-span-2 pt-3 border-t border-stone-100 flex items-center justify-between text-xs">
-                      <span className="text-charcoal-muted">Formulated in Chennai under clinical guidance</span>
+                      <span className="text-charcoal-muted">Doctor-formulated Ayurvedic wellness • Chennai, India</span>
                       <Link href="/shop" className="text-forest font-semibold hover:text-botanical">
-                        View Entire Catalogue (44) →
+                        View All 44 Products →
                       </Link>
                     </div>
                   </div>
@@ -115,7 +115,7 @@ export const Header: React.FC = () => {
                 href="/shop?sort=bestseller"
                 className="hover:text-botanical transition-colors py-2"
               >
-                Bestsellers
+                Best Sellers
               </Link>
 
               <Link
@@ -136,7 +136,7 @@ export const Header: React.FC = () => {
                 href="/blog"
                 className="hover:text-botanical transition-colors py-2"
               >
-                Journal
+                Blog
               </Link>
             </nav>
 

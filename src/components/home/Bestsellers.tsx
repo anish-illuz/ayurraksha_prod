@@ -22,24 +22,24 @@ export const Bestsellers: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage-light text-forest text-xs font-semibold mb-2">
               <Sparkles size={13} className="text-botanical" />
-              <span>Customer Favorites &amp; Verified Results</span>
+              <span>Customer Favorites</span>
             </div>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest tracking-tight">
-              Most Trusted Formulations
+              Our Best Sellers
             </h2>
             <p className="mt-2 text-sm text-charcoal-muted max-w-xl">
-              Doctor-formulated classical remedies backed by hundreds of verified patient reviews across India.
+              Our most popular doctor-formulated herbal remedies, trusted by thousands of customers across India.
             </p>
           </div>
 
           {/* Quick Category Pill Tabs */}
           <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 text-xs font-semibold">
             {[
-              { label: 'All Bestsellers', val: 'all' },
-              { label: 'Tonics', val: 'tonic' },
-              { label: 'Therapeutic Oils', val: 'oil' },
+              { label: 'All Best Sellers', val: 'all' },
+              { label: 'Tonics & Syrups', val: 'tonic' },
+              { label: 'Herbal Oils', val: 'oil' },
               { label: 'Capsules', val: 'capsules' },
-              { label: 'Health Packs', val: 'health-packs' },
+              { label: 'Combos & Packs', val: 'health-packs' },
             ].map((tab) => (
               <button
                 key={tab.val}
@@ -67,9 +67,9 @@ export const Bestsellers: React.FC = () => {
         <div className="mt-12 text-center">
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-forest hover:bg-forest-light text-white transition-all shadow-xs"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-forest hover:bg-forest-light text-white transition-all shadow-xs"
           >
-            <span>Explore All 44 Formulations</span>
+            <span>Shop All 44 Products</span>
             <ArrowRight size={14} />
           </Link>
         </div>

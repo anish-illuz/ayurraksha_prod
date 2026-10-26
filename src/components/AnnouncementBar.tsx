@@ -7,15 +7,15 @@ import { SITE_CONFIG } from '@/data/siteConfig';
 const ANNOUNCEMENTS = [
   {
     icon: Truck,
-    text: 'Free delivery on all prepaid orders across India',
+    text: 'Free shipping on all prepaid orders across India',
   },
   {
     icon: ShieldCheck,
-    text: 'Authentic Ayurvedic formulations guided by Dr. Jegajothi Pandian',
+    text: '100% Doctor-formulated natural Ayurvedic care',
   },
   {
     icon: PhoneCall,
-    text: `Support & Consultation: ${SITE_CONFIG.displayPhone}`,
+    text: `Order support & consultations: ${SITE_CONFIG.displayPhone}`,
   },
 ];
 
@@ -45,11 +45,11 @@ export const AnnouncementBar: React.FC = () => {
         <div className="hidden md:flex items-center justify-between w-full text-[11px] font-medium text-white">
           <div className="flex items-center gap-1.5">
             <Truck size={13} className="text-white" />
-            <span>Get Free Shipping On Prepaid Orders Across India</span>
+            <span>Free Delivery On All Prepaid Orders Across India</span>
           </div>
           <div className="flex items-center gap-1.5 text-white/95">
             <ShieldCheck size={13} className="text-white" />
-            <span>Formulated with Clinical Ayurvedic Purity • Chennai, India</span>
+            <span>Doctor Formulated • 100% Pure Natural Herbs</span>
           </div>
           <div className="flex items-center gap-2">
             <a
@@ -58,7 +58,7 @@ export const AnnouncementBar: React.FC = () => {
               rel="noopener noreferrer"
               className="hover:underline font-semibold transition-colors"
             >
-              Consult a Specialist: {SITE_CONFIG.displayPhone}
+              Order Help &amp; Support: {SITE_CONFIG.displayPhone}
             </a>
           </div>
         </div>

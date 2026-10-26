@@ -23,17 +23,17 @@ export const Footer: React.FC = () => {
               </div>
             </Link>
             <p className="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-sm">
-              Rooted in classical Ayurvedic pharmacology and backed by contemporary research. An initiative of VPrime Innovations, dedicated to natural vitality, metabolic balance, and holistic healing.
+              Pure, doctor-formulated Ayurvedic remedies. An initiative of VPrime Innovations in Chennai, dedicated to everyday health, natural energy, and authentic herbal healing.
             </p>
             <div className="pt-2">
               <a
                 href={SITE_CONFIG.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-button text-xs font-semibold bg-primary hover:bg-primary-dark text-white transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-primary hover:bg-primary-dark text-white transition-colors"
               >
                 <MessageSquare size={14} />
-                <span>Chat with Ayurvedic Consultant</span>
+                <span>WhatsApp Order &amp; Doctor Support</span>
               </a>
             </div>
           </div>
@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
               ))}
               <li>
                 <Link href="/shop" className="text-emerald-400 font-semibold hover:underline">
-                  All 44 Formulations →
+                  View All 44 Products →
                 </Link>
               </li>
             </ul>

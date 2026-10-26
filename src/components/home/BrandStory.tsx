@@ -48,39 +48,39 @@ export const BrandStory: React.FC = () => {
           <div className="lg:col-span-7 space-y-6 lg:pl-6">
             <div className="space-y-2">
               <span className="text-xs font-semibold text-botanical uppercase tracking-widest block">
-                Heritage &amp; Formulation Philosophy
+                Our Story &amp; Promise
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest leading-tight tracking-tight">
-                A Thoughtful Approach to Everyday Wellness
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-forest leading-tight tracking-tight">
+                Pure Ayurvedic Care, Made for Everyday Living
               </h2>
             </div>
 
             <p className="text-sm sm:text-base text-charcoal leading-relaxed">
-              At Ayurraksha, we believe genuine healing begins from within. As a proud initiative of <strong>VPrime Innovations</strong> in Chennai, our mission is to make classical Ayurvedic wisdom accessible, transparent, and clinically relevant for modern lives.
+              At Ayurraksha, we believe that true wellbeing starts with pure, natural care. An initiative of <strong>VPrime Innovations</strong> in Chennai, our mission is to make authentic Ayurvedic healing accessible, safe, and effective for modern families.
             </p>
 
             <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
-              Unlike generic supplements, every formulation is developed through disciplined research, standardized botanical extractions, and rigorous batch evaluation. We never compromise on raw botanical sourcing, ensuring each tonic, oil, and capsule preserves its authentic therapeutic essence.
+              Unlike ordinary health products, every tonic, oil, and capsule is developed with rigorous attention to purity and botanical potency under the clinical supervision of Dr. Jegajothi Pandian. We source only genuine, high-grade herbs so you receive remedies you can trust.
             </p>
 
             {/* 3 Core Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="p-3.5 bg-white rounded-xl border border-stone-200/80">
+              <div className="p-4 bg-white rounded-2xl border border-stone-200/80 shadow-xs">
                 <CheckCircle2 size={18} className="text-botanical mb-1.5" />
-                <h4 className="text-xs font-bold text-forest">Zero Steroids</h4>
-                <p className="text-[11px] text-charcoal-muted mt-0.5">100% pure herbal ingredients without hidden adulterants.</p>
+                <h4 className="text-xs font-bold text-forest">100% Pure Herbs</h4>
+                <p className="text-[11px] text-charcoal-muted mt-0.5">Zero hidden steroids, chemicals, or artificial fillers.</p>
               </div>
 
-              <div className="p-3.5 bg-white rounded-xl border border-stone-200/80">
+              <div className="p-4 bg-white rounded-2xl border border-stone-200/80 shadow-xs">
                 <CheckCircle2 size={18} className="text-botanical mb-1.5" />
-                <h4 className="text-xs font-bold text-forest">Batch Standardized</h4>
-                <p className="text-[11px] text-charcoal-muted mt-0.5">Consistent herbal potency tested for microbiological safety.</p>
+                <h4 className="text-xs font-bold text-forest">Doctor Formulated</h4>
+                <p className="text-[11px] text-charcoal-muted mt-0.5">Guided by Dr. Jegajothi Pandian with 25+ years experience.</p>
               </div>
 
-              <div className="p-3.5 bg-white rounded-xl border border-stone-200/80">
+              <div className="p-4 bg-white rounded-2xl border border-stone-200/80 shadow-xs">
                 <CheckCircle2 size={18} className="text-botanical mb-1.5" />
-                <h4 className="text-xs font-bold text-forest">Clinical Heritage</h4>
-                <p className="text-[11px] text-charcoal-muted mt-0.5">Formulations trusted by thousands of patients across India.</p>
+                <h4 className="text-xs font-bold text-forest">Lab Tested Quality</h4>
+                <p className="text-[11px] text-charcoal-muted mt-0.5">Tested for purity, safety, and consistent therapeutic strength.</p>
               </div>
             </div>
 
@@ -89,7 +89,7 @@ export const BrandStory: React.FC = () => {
                 href="/about"
                 className="inline-flex items-center gap-2 text-xs font-bold text-forest hover:text-botanical transition-colors group"
               >
-                <span>Discover Our Complete Clinical Story</span>
+                <span>Read Our Full Story</span>
                 <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

@@ -86,7 +86,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
               onClick={onClose}
               className="flex items-center py-2 text-sm font-semibold text-charcoal hover:text-botanical transition-colors"
             >
-              <span>Bestsellers</span>
+              <span>Best Sellers</span>
             </Link>
             <Link
               href="/category/health-packs"
@@ -105,7 +105,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
               onClick={() => setConcernsOpen(!concernsOpen)}
               className="flex items-center justify-between w-full py-1 text-xs font-bold text-forest uppercase tracking-wider"
             >
-              <span>Shop by Health Concern</span>
+              <span>Shop by Health Need</span>
               <ChevronDown
                 size={16}
                 className={`transition-transform duration-200 ${concernsOpen ? 'rotate-180' : ''}`}

@@ -21,13 +21,13 @@ export const CategoryGrid: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <span className="text-xs font-semibold text-botanical uppercase tracking-widest block mb-2">
-            Targeted Ayurvedic Solutions
+            Targeted Herbal Care
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest tracking-tight">
-            Shop by Health Concern
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest tracking-tight">
+            Shop by Health Need
           </h2>
           <p className="mt-3 text-sm sm:text-base text-charcoal-muted leading-relaxed">
-            Every formulation is crafted to address specific bodily imbalances naturally, honoring traditional wisdom and clinical efficacy.
+            Choose your health goal below to explore doctor-recommended herbal tonics, supplements, and oils crafted for everyday wellness.
           </p>
         </div>
 

@@ -4,16 +4,40 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { HEALTH_CONCERNS } from '@/data/siteConfig';
 
-// High-resolution authentic imagery for each health concern category
+// High-resolution authentic imagery for each health concern category from master design document
 const CONCERN_IMAGES: Record<string, string> = {
-  'liver-wellness': 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png',
-  'pain-joints': 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/AYUR-RAKSHA-OIL_new.png',
-  'skin-dermatology': 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Skin-well-pack.webp',
-  'heart-cardiac': 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/cardiac-combo.webp',
-  'digestive-health': 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/01/LaxaHealth-Tea-Tin-1.webp',
-  'vascular-veins': 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Flow-Well-Pack_1.webp',
-  'respiratory-care': 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/01/Esnovate-1-768x768-1.webp',
-  'immunity-vitality': 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Purna-Sakthi-1.webp',
+  'liver-wellness': '/images/categories/liver-wellness.webp',
+  'pain-joints': '/images/categories/pain-joints.webp',
+  'skin-dermatology': '/images/categories/skin-dermatology.webp',
+  'heart-cardiac': '/images/categories/heart-cardiac.webp',
+  'digestive-health': '/images/categories/digestive-health.webp',
+  'vascular-veins': '/images/categories/vascular-veins.webp',
+  'respiratory-care': '/images/categories/respiratory-care.webp',
+  'immunity-vitality': '/images/categories/immunity-vitality.webp',
+};
+
+// Approved category titles matching master brand design
+const CONCERN_TITLES: Record<string, string> = {
+  'liver-wellness': 'Liver Wellness & Detox',
+  'pain-joints': 'Joint & Muscle Care',
+  'skin-dermatology': 'Skin & Botanical Care',
+  'heart-cardiac': 'Heart & Cardiovascular',
+  'digestive-health': 'Digestive & Gut Health',
+  'vascular-veins': 'Circulation & Vein Care',
+  'respiratory-care': 'Respiratory Wellness',
+  'immunity-vitality': 'Vitality & Rejuvenation',
+};
+
+// Approved category descriptions from master design document
+const CONCERN_DESCRIPTIONS: Record<string, string> = {
+  'liver-wellness': 'Natural liver support for detox and everyday vitality.',
+  'pain-joints': 'Soothing Ayurvedic care for flexible joints and active living.',
+  'skin-dermatology': 'Nourishing herbal care for healthy, radiant skin.',
+  'heart-cardiac': 'Comprehensive herbal support for a healthy heart and better circulation.',
+  'digestive-health': 'Gentle herbal support for smooth digestion and gut balance.',
+  'vascular-veins': 'Herbal support for healthy blood flow and lighter legs.',
+  'respiratory-care': 'Ayurvedic support for clear breathing and seasonal comfort.',
+  'immunity-vitality': 'Natural herbal care to boost stamina, energy and immunity.',
 };
 
 export const CategoryGrid: React.FC = () => {
@@ -33,25 +57,28 @@ export const CategoryGrid: React.FC = () => {
           </p>
         </div>
 
-        {/* 8 Concern Grid: Card Structure: 1. Image, 2. Heading, 3. Short sentence, 4. Explore Collection link */}
+        {/* 8 Concern Grid: Card Structure: 1. Category scene image, 2. Heading, 3. Short sentence, 4. Explore Collection link */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
           {HEALTH_CONCERNS.map((c) => {
-            const imgSrc = CONCERN_IMAGES[c.slug] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png';
+            const imgSrc = CONCERN_IMAGES[c.slug] || `/images/categories/${c.slug}.webp`;
+            const title = CONCERN_TITLES[c.slug] || c.name;
+            const description = CONCERN_DESCRIPTIONS[c.slug] || c.description;
+
             return (
               <Link
                 key={c.id}
                 href={`/concern/${c.slug}`}
                 className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-xs transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 hover:-translate-y-1"
               >
-                {/* 1. Category image at the top */}
-                <div className="relative w-full aspect-[4/3] bg-[#F7F9F5] p-5 flex items-center justify-center overflow-hidden">
+                {/* 1. Category scene image at the top */}
+                <div className="relative w-full aspect-[4/3] bg-[#F7F9F5] overflow-hidden">
                   <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
                     <Image
                       src={imgSrc}
-                      alt={c.name}
+                      alt={title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-contain"
+                      className="object-cover object-center"
                     />
                   </div>
                 </div>
@@ -60,18 +87,21 @@ export const CategoryGrid: React.FC = () => {
                 <div className="p-6 flex flex-col flex-grow">
                   {/* 2. Category heading below the image */}
                   <h3 className="font-heading text-xl sm:text-2xl font-bold text-primary group-hover:text-primary-dark transition-colors leading-snug">
-                    {c.name}
+                    {title}
                   </h3>
 
                   {/* 3. One short sentence describing the collection */}
                   <p className="text-sm text-charcoal-muted mt-2 leading-relaxed flex-grow">
-                    {c.description}
+                    {description}
                   </p>
 
-                  {/* 4. Explore Collection link with a right arrow */}
-                  <div className="mt-5 pt-4 border-t border-stone-100 flex items-center text-sm font-semibold text-primary group-hover:text-primary-dark">
+                  {/* 4. Explore Collection link with right arrow */}
+                  <div className="mt-5 pt-4 border-t border-stone-100 flex items-center text-sm font-semibold text-primary group-hover:text-primary-dark transition-colors">
                     <span>Explore Collection</span>
-                    <ArrowRight size={16} className="ml-1.5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight
+                      size={16}
+                      className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1"
+                    />
                   </div>
                 </div>
               </Link>

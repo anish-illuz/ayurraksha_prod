@@ -162,12 +162,12 @@ export const CartDrawer: React.FC = () => {
                       </button>
                     </div>
 
-                    {/* Price */}
+                    {/* Price with accurate live variation support */}
                     <div className="text-right">
                       <span className="text-xs font-bold text-forest">
-                        ₹{(item.product.price * item.quantity).toLocaleString('en-IN')}
+                        ₹{((item.variantPrice ?? item.product.price) * item.quantity).toLocaleString('en-IN')}
                       </span>
-                      {item.product.regularPrice > item.product.price && (
+                      {item.product.regularPrice > (item.variantPrice ?? item.product.price) && (
                         <span className="text-[10px] text-stone-400 line-through block">
                           ₹{(item.product.regularPrice * item.quantity).toLocaleString('en-IN')}
                         </span>

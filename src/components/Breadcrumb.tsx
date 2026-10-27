@@ -38,7 +38,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
           {allItems.map((item, idx) => {
             const isLast = idx === allItems.length - 1;
             return (
-              <li key={item.url} className="flex items-center gap-1.5">
+              <li key={`${item.url}-${idx}`} className="flex items-center gap-1.5">
                 {idx === 0 ? (
                   <Link
                     href={item.url}

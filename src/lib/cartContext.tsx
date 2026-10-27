@@ -12,7 +12,13 @@ interface CartContextType {
   openCart: () => void;
   closeCart: () => void;
   toggleCart: () => void;
-  addToCart: (product: Product, quantity?: number, selectedVariant?: string) => void;
+  addToCart: (
+    product: Product,
+    quantity?: number,
+    selectedVariant?: string,
+    variantPrice?: number,
+    variantId?: number
+  ) => void;
   updateQuantity: (productId: number, quantity: number, variant?: string) => void;
   removeFromCart: (productId: number, variant?: string) => void;
   clearCart: () => void;
@@ -54,14 +60,21 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
   const subtotal = items.reduce((sum, item) => {
-    return sum + item.product.price * item.quantity;
+    const itemPrice = item.variantPrice ?? item.product.price;
+    return sum + itemPrice * item.quantity;
   }, 0);
 
   const openCart = () => setIsCartOpen(true);
   const closeCart = () => setIsCartOpen(false);
   const toggleCart = () => setIsCartOpen((prev) => !prev);
 
-  const addToCart = (product: Product, quantity = 1, selectedVariant?: string) => {
+  const addToCart = (
+    product: Product,
+    quantity = 1,
+    selectedVariant?: string,
+    variantPrice?: number,
+    variantId?: number
+  ) => {
     setItems((prev) => {
       const existingIndex = prev.findIndex(
         (i) => i.product.id === product.id && i.selectedVariant === selectedVariant
@@ -69,9 +82,11 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (existingIndex > -1) {
         const next = [...prev];
         next[existingIndex].quantity += quantity;
+        if (variantPrice !== undefined) next[existingIndex].variantPrice = variantPrice;
+        if (variantId !== undefined) next[existingIndex].variantId = variantId;
         return next;
       }
-      return [...prev, { product, quantity, selectedVariant }];
+      return [...prev, { product, quantity, selectedVariant, variantPrice, variantId }];
     });
     setIsCartOpen(true);
   };

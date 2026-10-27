@@ -67,8 +67,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
         <span className="truncate">Prepaid Orders: Free Shipping Across India</span>
       </div>
 
-      {/* Product Image Area */}
-      <div className="relative block w-full aspect-square bg-[#FAF8F5] overflow-hidden p-4 sm:p-5">
+      {/* Product Image Area - Clean Full Bleed Without Awkward White Box Border */}
+      <div className="relative block w-full aspect-square bg-[#FAF8F5] overflow-hidden p-1.5 sm:p-2">
         {/* Top Floating Badges */}
         <div className="absolute top-2.5 left-2.5 right-2.5 z-10 flex items-center justify-between pointer-events-none">
           {product.isBestseller ? (
@@ -101,7 +101,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
               fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               priority={priority}
-              className="object-contain"
+              className="object-contain w-full h-full"
             />
           </div>
         </Link>

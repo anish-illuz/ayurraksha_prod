@@ -45,8 +45,8 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
         </div>
       )}
 
-      {/* Main Large Image Container */}
-      <div className="relative flex-grow aspect-square bg-white rounded-2xl border border-stone-200/80 p-6 sm:p-10 shadow-xs flex items-center justify-center overflow-hidden">
+      {/* Main Large Image Container - Full image presentation without thick padded border */}
+      <div className="relative flex-grow aspect-square bg-[#FAF9F5] rounded-2xl border border-stone-200/60 p-2 sm:p-3 shadow-xs flex items-center justify-center overflow-hidden">
         <div className="relative w-full h-full">
           <Image
             src={currentImage}
@@ -54,7 +54,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 550px"
-            className="object-contain transition-opacity duration-300"
+            className="object-contain w-full h-full transition-opacity duration-300"
           />
         </div>
       </div>

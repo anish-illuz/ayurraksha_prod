@@ -32,19 +32,40 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
   const [isAdded, setIsAdded] = useState(false);
   const [openTab, setOpenTab] = useState<'desc' | 'dosage' | 'shipping'>('desc');
 
+  // Match selected variation directly from WooCommerce data
+  const currentVariant = product.variants.find((v) => v.name === selectedVariant) || product.variants[0];
+  const currentPrice = currentVariant?.price ?? product.price;
+  const currentRegularPrice = currentVariant?.regularPrice ?? (product.regularPrice > product.price ? product.regularPrice : currentPrice);
+  const currentDiscount = currentRegularPrice > currentPrice
+    ? Math.round(((currentRegularPrice - currentPrice) / currentRegularPrice) * 100)
+    : product.discountPercent;
+
   const handleAddToCart = () => {
-    addToCart(product, quantity, selectedVariant || undefined);
+    addToCart(
+      product,
+      quantity,
+      selectedVariant || undefined,
+      currentPrice,
+      currentVariant?.id
+    );
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 2000);
   };
 
   const handleBuyNow = () => {
-    addToCart(product, quantity, selectedVariant || undefined);
-    // User is automatically shown cart with direct checkout handoff
+    addToCart(
+      product,
+      quantity,
+      selectedVariant || undefined,
+      currentPrice,
+      currentVariant?.id
+    );
   };
 
   const whatsappInquiryUrl = `https://wa.me/919940388877?text=${encodeURIComponent(
-    `Hello Dr. Jegajothi Pandian & Ayurraksha team, I would like to inquire about ${product.name} (₹${product.price}).`
+    `Hello Dr. Jegajothi Pandian & Ayurraksha team, I would like to inquire about ${product.name}${
+      selectedVariant ? ` (${selectedVariant})` : ''
+    } (₹${currentPrice}).`
   )}`;
 
   return (
@@ -75,20 +96,20 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         </span>
       </div>
 
-      {/* Price & Savings */}
+      {/* Dynamic Price & Savings directly linked to selected variation */}
       <div className="p-4 bg-white rounded-xl border border-stone-200/80 space-y-1">
         <div className="flex items-baseline gap-3">
           <span className="text-2xl sm:text-3xl font-bold text-forest">
-            ₹{product.price.toLocaleString('en-IN')}
+            ₹{currentPrice.toLocaleString('en-IN')}
           </span>
-          {product.regularPrice > product.price && (
+          {currentRegularPrice > currentPrice && (
             <span className="text-base text-stone-400 line-through">
-              ₹{product.regularPrice.toLocaleString('en-IN')}
+              ₹{currentRegularPrice.toLocaleString('en-IN')}
             </span>
           )}
-          {product.discountPercent > 0 && (
+          {currentDiscount > 0 && (
             <span className="px-2 py-0.5 rounded-badge text-xs font-bold bg-terracotta text-white">
-              Save {product.discountPercent}%
+              Save {currentDiscount}%
             </span>
           )}
         </div>
@@ -97,26 +118,47 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         </p>
       </div>
 
-      {/* Variant / Pack Selector (if product has packs) */}
+      {/* Variant / Pack Selector directly with dynamic WooCommerce prices */}
       {product.variants.length > 0 && (
         <div className="space-y-2">
-          <label className="text-xs font-bold text-charcoal uppercase tracking-wider block">
-            Select Course / Pack Size:
-          </label>
+          <div className="flex items-center justify-between">
+            <label className="text-xs font-bold text-charcoal uppercase tracking-wider block">
+              Select Pack / Course:
+            </label>
+            {selectedVariant && (
+              <span className="text-xs font-semibold text-botanical">
+                Selected: {selectedVariant}
+              </span>
+            )}
+          </div>
           <div className="flex flex-wrap gap-2.5">
-            {product.variants.map((v) => (
-              <button
-                key={v.name}
-                onClick={() => setSelectedVariant(v.name)}
-                className={`px-4 py-2 rounded-button text-xs font-semibold border transition-all ${
-                  selectedVariant === v.name
-                    ? 'border-botanical bg-sage-light text-forest shadow-xs'
-                    : 'border-stone-200 bg-white text-charcoal hover:border-stone-300'
-                }`}
-              >
-                {v.name}
-              </button>
-            ))}
+            {product.variants.map((v) => {
+              const isSelected = selectedVariant === v.name;
+              return (
+                <button
+                  key={v.name}
+                  onClick={() => setSelectedVariant(v.name)}
+                  className={`px-4 py-2.5 rounded-button text-xs font-semibold border transition-all flex items-center gap-2 ${
+                    isSelected
+                      ? 'border-botanical bg-sage-light text-forest shadow-xs'
+                      : 'border-stone-200 bg-white text-charcoal hover:border-stone-300'
+                  }`}
+                >
+                  <span>{v.name}</span>
+                  {v.price && (
+                    <span
+                      className={`text-[11px] font-bold px-1.5 py-0.5 rounded ${
+                        isSelected
+                          ? 'bg-botanical text-white'
+                          : 'bg-stone-100 text-stone-700'
+                      }`}
+                    >
+                      ₹{v.price.toLocaleString('en-IN')}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </div>
       )}
@@ -172,7 +214,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
             ) : (
               <>
                 <ShoppingBag size={18} />
-                <span>Add to Cart • ₹{(product.price * quantity).toLocaleString('en-IN')}</span>
+                <span>Add to Cart • ₹{(currentPrice * quantity).toLocaleString('en-IN')}</span>
               </>
             )}
           </button>

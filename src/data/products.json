@@ -359,14 +359,26 @@
     "inStock": true,
     "variants": [
       {
+        "id": 14562,
         "name": "15 days pack",
-        "slug": "15 days pack",
-        "default": false
+        "slug": "bpain-out-capsules-30-days-pack",
+        "price": 600,
+        "regularPrice": 600,
+        "salePrice": 600,
+        "discountPercent": 0,
+        "inStock": true,
+        "default": true
       },
       {
+        "id": 14563,
         "name": "30 days pack",
-        "slug": "30 days pack",
-        "default": true
+        "slug": "bpain-out-capsules-60-days-pack",
+        "price": 1100,
+        "regularPrice": 1200,
+        "salePrice": 1100,
+        "discountPercent": 8,
+        "inStock": true,
+        "default": false
       }
     ],
     "sku": ""
@@ -499,13 +511,25 @@
     "inStock": true,
     "variants": [
       {
+        "id": 17508,
         "name": "1 Month",
-        "slug": "1 Month",
+        "slug": "ayur-raksha-breathe-well-pack-1-month",
+        "price": 1599,
+        "regularPrice": 1800,
+        "salePrice": 1599,
+        "discountPercent": 11,
+        "inStock": true,
         "default": true
       },
       {
+        "id": 17509,
         "name": "2 Months",
-        "slug": "2 Months",
+        "slug": "ayur-raksha-breathe-well-pack-2-months",
+        "price": 2899,
+        "regularPrice": 3600,
+        "salePrice": 2899,
+        "discountPercent": 19,
+        "inStock": true,
         "default": false
       }
     ],
@@ -604,13 +628,25 @@
     "inStock": true,
     "variants": [
       {
+        "id": 11474,
         "name": "Dia Well Combo 1",
-        "slug": "Dia Well Combo 1",
+        "slug": "ayur-raksha-dia-well-pack-dia-well-combo-1",
+        "price": 3500,
+        "regularPrice": 4100,
+        "salePrice": 3500,
+        "discountPercent": 15,
+        "inStock": true,
         "default": true
       },
       {
+        "id": 11475,
         "name": "Dia Well Combo 2",
-        "slug": "Dia Well Combo 2",
+        "slug": "ayur-raksha-dia-well-pack-dia-well-combo-2",
+        "price": 4500,
+        "regularPrice": 5400,
+        "salePrice": 4500,
+        "discountPercent": 17,
+        "inStock": true,
         "default": false
       }
     ],
@@ -914,18 +950,25 @@
     "inStock": true,
     "variants": [
       {
-        "name": "10 Days Pack",
-        "slug": "10 Days Pack",
-        "default": false
-      },
-      {
+        "id": 11810,
         "name": "30 Days Pack",
-        "slug": "30 Days Pack",
-        "default": false
+        "slug": "booznil-30-days-pack",
+        "price": 2400,
+        "regularPrice": 2600,
+        "salePrice": 2400,
+        "discountPercent": 8,
+        "inStock": true,
+        "default": true
       },
       {
+        "id": 11811,
         "name": "60 Days Pack",
-        "slug": "60 Days Pack",
+        "slug": "booznil-60-days-pack",
+        "price": 3850,
+        "regularPrice": 5200,
+        "salePrice": 3850,
+        "discountPercent": 26,
+        "inStock": true,
         "default": false
       }
     ],
@@ -1194,23 +1237,36 @@
     "inStock": true,
     "variants": [
       {
-        "name": "Single",
-        "slug": "single",
-        "default": false
-      },
-      {
+        "id": 9630,
         "name": "One Bottle",
-        "slug": "One Bottle",
-        "default": false
-      },
-      {
-        "name": "Two Bottles (Save 100)",
-        "slug": "Two Bottles (Save 100)",
+        "slug": "divine-healing-oil-one-bottle",
+        "price": 800,
+        "regularPrice": 800,
+        "salePrice": 800,
+        "discountPercent": 0,
+        "inStock": true,
         "default": true
       },
       {
+        "id": 9631,
+        "name": "Two Bottles (Save 100)",
+        "slug": "divine-healing-oil-two-bottles-save-100",
+        "price": 1600,
+        "regularPrice": 1600,
+        "salePrice": 1600,
+        "discountPercent": 0,
+        "inStock": true,
+        "default": false
+      },
+      {
+        "id": 9632,
         "name": "Four Bottles (Save 600)",
-        "slug": "Four Bottles (Save 600)",
+        "slug": "divine-healing-oil-four-bottles-save-600",
+        "price": 2400,
+        "regularPrice": 3200,
+        "salePrice": 2400,
+        "discountPercent": 25,
+        "inStock": true,
         "default": false
       }
     ],
@@ -1252,19 +1308,26 @@
     "inStock": true,
     "variants": [
       {
-        "name": "10 Days Pack",
-        "slug": "10 Days Pack",
-        "default": false
-      },
-      {
+        "id": 7726,
         "name": "30 Days Pack",
-        "slug": "30 Days Pack",
-        "default": false
+        "slug": "boozliv-30-days-pack-2",
+        "price": 2400,
+        "regularPrice": 2600,
+        "salePrice": 2400,
+        "discountPercent": 8,
+        "inStock": true,
+        "default": true
       },
       {
+        "id": 7727,
         "name": "60 Days Pack",
-        "slug": "60 Days Pack",
-        "default": true
+        "slug": "boozliv-60-days-pack-2",
+        "price": 3850,
+        "regularPrice": 5200,
+        "salePrice": 3850,
+        "discountPercent": 26,
+        "inStock": true,
+        "default": false
       }
     ],
     "sku": ""
@@ -1302,14 +1365,26 @@
     "inStock": true,
     "variants": [
       {
+        "id": 7618,
         "name": "60 Capsules",
-        "slug": "60 Capsules",
-        "default": false
+        "slug": "esnovate-immunity-boosting-capsules-60-capsules",
+        "price": 999,
+        "regularPrice": 999,
+        "salePrice": 999,
+        "discountPercent": 0,
+        "inStock": true,
+        "default": true
       },
       {
+        "id": 7619,
         "name": "120 Capsules",
-        "slug": "120 Capsules",
-        "default": true
+        "slug": "esnovate-immunity-boosting-capsules-120-capsules",
+        "price": 1799,
+        "regularPrice": 1799,
+        "salePrice": 1799,
+        "discountPercent": 0,
+        "inStock": true,
+        "default": false
       }
     ],
     "sku": ""
@@ -1513,23 +1588,47 @@
     "inStock": true,
     "variants": [
       {
+        "id": 9252,
         "name": "Pack 1",
-        "slug": "Pack 1",
-        "default": false
+        "slug": "ayur-raksha-flow-well-pack-combination-pack-for-varicose-veins-basic",
+        "price": 1400,
+        "regularPrice": 1400,
+        "salePrice": 1400,
+        "discountPercent": 0,
+        "inStock": true,
+        "default": true
       },
       {
+        "id": 9253,
         "name": "Pack 2",
-        "slug": "Pack 2",
+        "slug": "ayur-raksha-flow-well-pack-value-combination-pack-for-varicose-veins",
+        "price": 2200,
+        "regularPrice": 2200,
+        "salePrice": 2200,
+        "discountPercent": 0,
+        "inStock": true,
         "default": false
       },
       {
+        "id": 9422,
         "name": "Pack 3",
-        "slug": "Pack 3",
+        "slug": "ayur-raksha-flow-well-pack-combination-pack-for-varicose-veins-advanced",
+        "price": 3000,
+        "regularPrice": 3000,
+        "salePrice": 3000,
+        "discountPercent": 0,
+        "inStock": true,
         "default": false
       },
       {
+        "id": 9423,
         "name": "Pack 4",
-        "slug": "Pack 4",
+        "slug": "ayur-raksha-flow-well-pack-combination-pack-for-gangrene-wounds-foot-ulcer",
+        "price": 3149,
+        "regularPrice": 3149,
+        "salePrice": 3149,
+        "discountPercent": 0,
+        "inStock": true,
         "default": false
       }
     ],
@@ -1566,23 +1665,47 @@
     "inStock": true,
     "variants": [
       {
+        "id": 10756,
         "name": "Pack 1",
-        "slug": "Pack 1",
-        "default": false
+        "slug": "ayur-raksha-skin-well-pack-pack-1",
+        "price": 2925,
+        "regularPrice": 3599,
+        "salePrice": 2925,
+        "discountPercent": 19,
+        "inStock": true,
+        "default": true
       },
       {
+        "id": 10757,
         "name": "Pack 2",
-        "slug": "Pack 2",
+        "slug": "ayur-raksha-skin-well-pack-pack-2",
+        "price": 3725,
+        "regularPrice": 4599,
+        "salePrice": 3725,
+        "discountPercent": 19,
+        "inStock": true,
         "default": false
       },
       {
+        "id": 10758,
         "name": "Pack 3",
-        "slug": "Pack 3",
+        "slug": "ayur-raksha-skin-well-pack-pack-3",
+        "price": 5225,
+        "regularPrice": 6599,
+        "salePrice": 5225,
+        "discountPercent": 21,
+        "inStock": true,
         "default": false
       },
       {
+        "id": 10759,
         "name": "Pack 4",
-        "slug": "Pack 4",
+        "slug": "ayur-raksha-skin-well-pack-pack-4",
+        "price": 2125,
+        "regularPrice": 2700,
+        "salePrice": 2125,
+        "discountPercent": 21,
+        "inStock": true,
         "default": false
       }
     ],

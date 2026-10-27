@@ -1,6 +1,12 @@
 export interface ProductVariant {
+  id?: number;
   name: string;
   slug: string;
+  price?: number;
+  regularPrice?: number;
+  salePrice?: number;
+  discountPercent?: number;
+  inStock?: boolean;
   default?: boolean;
 }
 
@@ -32,6 +38,8 @@ export interface CartItem {
   product: Product;
   quantity: number;
   selectedVariant?: string;
+  variantPrice?: number;
+  variantId?: number;
 }
 
 export interface BlogPost {

@@ -29,15 +29,15 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
 
   return (
     <div className="flex flex-col bg-white rounded-2xl border border-stone-200/90 overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 group">
-      {/* 1. Pack photograph */}
-      <Link href={`/product/${pack.slug}`} className="relative block w-full aspect-square bg-[#F7F9F5] p-5 overflow-hidden">
+      {/* 1. Pack photograph - Full display framing */}
+      <Link href={`/product/${pack.slug}`} className="relative block w-full aspect-square bg-[#F7F9F5] p-2 sm:p-3 overflow-hidden">
         <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-105">
           <Image
             src={imageSrc}
             alt={pack.name}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="object-contain"
+            className="object-contain w-full h-full"
           />
         </div>
       </Link>

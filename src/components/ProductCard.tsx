@@ -108,51 +108,51 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       </div>
 
       {/* Product Information Body with responsive padding */}
-      <div className="flex flex-col flex-grow p-3 sm:p-5 bg-white space-y-2.5 sm:space-y-3">
+      <div className="flex flex-col flex-grow p-2 sm:p-4 bg-white space-y-2 sm:space-y-3">
         {/* Product Title (Clean Jost font, standardized height) */}
-        <h3 className="font-heading font-bold text-sm sm:text-lg text-forest group-hover:text-botanical transition-colors line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem] leading-snug">
+        <h3 className="font-heading font-bold text-xs sm:text-base md:text-lg text-forest group-hover:text-botanical transition-colors line-clamp-2 min-h-[2.25rem] sm:min-h-[2.75rem] leading-snug">
           <Link href={`/product/${product.slug}`}>{product.name}</Link>
         </h3>
 
         {/* Rating & Concern Row: ★ 4.8 (840) | Liver Wellness */}
-        <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-charcoal-muted">
+        <div className="flex items-center gap-1 sm:gap-2 text-[11px] sm:text-sm text-charcoal-muted">
           <div className="flex items-center text-botanical font-bold gap-1">
-            <Star size={13} className="fill-botanical text-botanical" />
+            <Star size={12} className="fill-botanical text-botanical flex-shrink-0" />
             <span>{product.rating.toFixed(1)}</span>
           </div>
-          <span className="text-stone-400 text-[11px] sm:text-xs">({product.reviewCount})</span>
+          <span className="text-stone-400 text-[10px] sm:text-xs">({product.reviewCount})</span>
           <span className="text-stone-300">|</span>
-          <span className="truncate font-medium text-stone-600 text-[11px] sm:text-xs">
+          <span className="truncate font-medium text-stone-600 text-[10px] sm:text-xs">
             {product.healthConcerns[0] || 'Ayurvedic Care'}
           </span>
         </div>
 
         {/* Pack / Size Pill Badge */}
         <div>
-          <span className="inline-block text-[11px] sm:text-xs font-medium text-stone-600 bg-stone-100 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-stone-200">
+          <span className="inline-block text-[10px] sm:text-xs font-medium text-stone-600 bg-stone-100 px-2 sm:px-2.5 py-0.5 rounded-full border border-stone-200">
             {sizeLabel}
           </span>
         </div>
 
         {/* Price Row: ₹Price ₹Regular % OFF */}
-        <div className="pt-0.5 flex items-baseline gap-1.5 sm:gap-2.5 flex-wrap">
-          <span className="font-heading font-bold text-base sm:text-xl text-forest">
+        <div className="pt-0.5 flex items-baseline gap-1 sm:gap-2 flex-wrap">
+          <span className="font-heading font-bold text-sm sm:text-lg md:text-xl text-forest">
             ₹{product.price.toLocaleString('en-IN')}
           </span>
           {product.regularPrice > product.price && (
-            <span className="text-xs sm:text-sm text-stone-400 line-through">
+            <span className="text-[11px] sm:text-sm text-stone-400 line-through">
               ₹{product.regularPrice.toLocaleString('en-IN')}
             </span>
           )}
           {product.discountPercent > 0 && (
-            <span className="text-[11px] sm:text-sm font-bold text-botanical">
+            <span className="text-[10px] sm:text-xs font-bold text-botanical">
               {product.discountPercent}% OFF
             </span>
           )}
         </div>
 
         {/* Special Offer Pill: ⚡ Prepaid: ₹X */}
-        <div className="bg-[#F4F7EE] border border-[#DCE4CF] rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 flex items-center justify-between text-xs sm:text-sm">
+        <div className="bg-[#F4F7EE] border border-[#DCE4CF] rounded-lg sm:rounded-xl px-2 sm:px-2.5 py-1 sm:py-1.5 flex items-center justify-between text-[10px] sm:text-xs md:text-sm">
           <span className="flex items-center gap-1 text-stone-700 font-medium">
             <span className="text-botanical font-bold">⚡</span>
             <span>Prepaid<span className="hidden sm:inline"> Special</span>:</span>
@@ -162,36 +162,36 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
           </span>
         </div>
 
-        {/* Quantity Stepper + Add to Cart Action Row - Fully Responsive */}
-        <div className="pt-1 flex items-center gap-2">
-          {/* Quantity + / - Stepper (shown on desktop, hidden on narrow mobile cards to give Add to Cart full width) */}
-          <div className="hidden sm:flex items-center border border-stone-300 rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-11">
+        {/* Quantity Stepper + Add to Cart Action Row - Guaranteed Single Line Everywhere */}
+        <div className="pt-1 flex items-center gap-1 sm:gap-2">
+          {/* Quantity + / - Stepper (Compact sizing so it leaves ample space for Add to Cart on one line) */}
+          <div className="flex items-center border border-stone-300 rounded-lg sm:rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-8 sm:h-10">
             <button
               onClick={handleDecrement}
               aria-label="Decrease quantity"
-              className="w-8 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all disabled:opacity-40"
+              className="w-5 sm:w-7 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all disabled:opacity-40"
               disabled={quantity <= 1}
             >
-              <Minus size={14} />
+              <Minus size={11} />
             </button>
-            <span className="w-7 text-center text-sm font-bold text-forest select-none">
+            <span className="w-4 sm:w-6 text-center text-[11px] sm:text-sm font-bold text-forest select-none">
               {quantity}
             </span>
             <button
               onClick={handleIncrement}
               aria-label="Increase quantity"
-              className="w-8 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all"
+              className="w-5 sm:w-7 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all"
             >
-              <Plus size={14} />
+              <Plus size={11} />
             </button>
           </div>
 
-          {/* Add to Cart CTA Button - Full width on mobile, perfectly legible */}
+          {/* Add to Cart CTA Button - Guaranteed single-line display with whitespace-nowrap */}
           <button
             onClick={handleQuickAdd}
             disabled={!product.inStock}
             aria-label={`Add ${product.name} to cart`}
-            className={`w-full sm:flex-grow h-10 sm:h-11 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 shadow-xs active:scale-[0.98] ${
+            className={`flex-1 min-w-0 h-8 sm:h-10 inline-flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 sm:px-3 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-tight sm:tracking-normal whitespace-nowrap transition-all duration-200 shadow-xs active:scale-[0.98] ${
               !product.inStock
                 ? 'bg-stone-200 text-stone-500 cursor-not-allowed'
                 : isAdded
@@ -200,16 +200,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             }`}
           >
             {!product.inStock ? (
-              <span>Out of Stock</span>
+              <span className="whitespace-nowrap">Out of Stock</span>
             ) : isAdded ? (
               <>
-                <Check size={15} />
-                <span>Added!</span>
+                <Check size={12} className="flex-shrink-0" />
+                <span className="whitespace-nowrap">Added!</span>
               </>
             ) : (
               <>
-                <ShoppingBag size={15} />
-                <span>Add to Cart</span>
+                <ShoppingBag size={12} className="flex-shrink-0" />
+                <span className="whitespace-nowrap">Add to Cart</span>
               </>
             )}
           </button>

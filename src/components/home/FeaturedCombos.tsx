@@ -90,7 +90,7 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
           <button
             onClick={handleAdd}
             aria-label={`Add ${pack.name} to cart`}
-            className={`w-full h-12 inline-flex items-center justify-center gap-2 px-4 rounded-[8px] text-sm font-semibold transition-all duration-200 shadow-xs active:scale-[0.98] ${
+            className={`w-full h-11 sm:h-12 inline-flex items-center justify-center gap-2 px-4 rounded-[8px] text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-200 shadow-xs active:scale-[0.98] ${
               isAdded
                 ? 'bg-emerald-800 text-white'
                 : 'bg-primary hover:bg-primary-dark text-white'
@@ -98,13 +98,13 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
           >
             {isAdded ? (
               <>
-                <Check size={18} />
-                <span>Added to Cart!</span>
+                <Check size={18} className="flex-shrink-0" />
+                <span className="whitespace-nowrap">Added to Cart!</span>
               </>
             ) : (
               <>
-                <ShoppingBag size={18} />
-                <span>Add to Cart</span>
+                <ShoppingBag size={18} className="flex-shrink-0" />
+                <span className="whitespace-nowrap">Add to Cart</span>
               </>
             )}
           </button>

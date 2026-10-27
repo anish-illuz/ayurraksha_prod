@@ -64,7 +64,7 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
 
         <button
           onClick={handleQuickAdd}
-          className={`flex-shrink-0 inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-button text-xs font-semibold transition-all ${
+          className={`flex-shrink-0 inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-button text-xs font-semibold whitespace-nowrap transition-all ${
             isAdded
               ? 'bg-forest text-white'
               : 'bg-botanical hover:bg-forest text-white'
@@ -72,13 +72,13 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
         >
           {isAdded ? (
             <>
-              <Check size={14} />
-              <span>Added</span>
+              <Check size={14} className="flex-shrink-0" />
+              <span className="whitespace-nowrap">Added</span>
             </>
           ) : (
             <>
-              <ShoppingBag size={14} />
-              <span>Add to Cart</span>
+              <ShoppingBag size={14} className="flex-shrink-0" />
+              <span className="whitespace-nowrap">Add to Cart</span>
             </>
           )}
         </button>

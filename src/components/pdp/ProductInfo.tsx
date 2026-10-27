@@ -200,7 +200,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           {/* Add to Cart Button */}
           <button
             onClick={handleAddToCart}
-            className={`flex-grow inline-flex items-center justify-center gap-2 py-3 px-6 rounded-button text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-[0.99] ${
+            className={`flex-grow inline-flex items-center justify-center gap-2 py-3 px-6 rounded-button text-sm font-semibold whitespace-nowrap transition-all shadow-md hover:shadow-lg active:scale-[0.99] ${
               isAdded
                 ? 'bg-forest text-white'
                 : 'bg-botanical hover:bg-forest text-white'
@@ -208,13 +208,13 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           >
             {isAdded ? (
               <>
-                <Check size={18} />
-                <span>Added to Cart!</span>
+                <Check size={18} className="flex-shrink-0" />
+                <span className="whitespace-nowrap">Added to Cart!</span>
               </>
             ) : (
               <>
-                <ShoppingBag size={18} />
-                <span>Add to Cart • ₹{(currentPrice * quantity).toLocaleString('en-IN')}</span>
+                <ShoppingBag size={18} className="flex-shrink-0" />
+                <span className="whitespace-nowrap">Add to Cart • ₹{(currentPrice * quantity).toLocaleString('en-IN')}</span>
               </>
             )}
           </button>

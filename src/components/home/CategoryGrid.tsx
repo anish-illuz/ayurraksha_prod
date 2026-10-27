@@ -6,14 +6,14 @@ import { HEALTH_CONCERNS } from '@/data/siteConfig';
 
 // High-resolution authentic imagery for each health concern category from master design document
 const CONCERN_IMAGES: Record<string, string> = {
-  'liver-wellness': '/images/categories/liver-wellness.webp',
-  'pain-joints': '/images/categories/pain-joints.webp',
-  'skin-dermatology': '/images/categories/skin-dermatology.webp',
-  'heart-cardiac': '/images/categories/heart-cardiac.webp',
-  'digestive-health': '/images/categories/digestive-health.webp',
-  'vascular-veins': '/images/categories/vascular-veins.webp',
-  'respiratory-care': '/images/categories/respiratory-care.webp',
-  'immunity-vitality': '/images/categories/immunity-vitality.webp',
+  'liver-wellness': '/images/categories/cat-liver-wellness.webp',
+  'pain-joints': '/images/categories/cat-pain-joints.webp',
+  'skin-dermatology': '/images/categories/cat-skin-dermatology.webp',
+  'heart-cardiac': '/images/categories/cat-heart-cardiac.webp',
+  'digestive-health': '/images/categories/cat-digestive-health.webp',
+  'vascular-veins': '/images/categories/cat-vascular-veins.webp',
+  'respiratory-care': '/images/categories/cat-respiratory-care.webp',
+  'immunity-vitality': '/images/categories/cat-immunity-vitality.webp',
 };
 
 // Approved category titles matching master brand design

@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface BannerSlide {
   id: string;
@@ -234,8 +235,33 @@ export const Hero: React.FC = () => {
           );
         })}
 
-        {/* Clean Centered Pagination Indicator Dots (No side arrows) */}
-        <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white/80 backdrop-blur-xs border border-stone-200/60 shadow-xs">
+        {/* Sharp High-Contrast Side Arrow Navigation Controls */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            prevSlide();
+          }}
+          aria-label="Previous slide"
+          className="absolute left-2.5 sm:left-5 md:left-7 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-white text-forest hover:text-botanical shadow-lg border border-stone-200/90 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-primary backdrop-blur-xs"
+        >
+          <ChevronLeft size={22} className="stroke-[2.5]" />
+        </button>
+
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            nextSlide();
+          }}
+          aria-label="Next slide"
+          className="absolute right-2.5 sm:right-5 md:right-7 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-white text-forest hover:text-botanical shadow-lg border border-stone-200/90 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-primary backdrop-blur-xs"
+        >
+          <ChevronRight size={22} className="stroke-[2.5]" />
+        </button>
+
+        {/* Single Clean Centered Pagination Indicator Dots (Baked-in image dots removed) */}
+        <div className="absolute bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-stone-200/80 shadow-md">
           {BANNER_SLIDES.map((slide, idx) => {
             const isActive = idx === currentSlide;
             return (
@@ -246,10 +272,10 @@ export const Hero: React.FC = () => {
                   goToSlide(idx);
                 }}
                 aria-label={`Go to slide ${idx + 1}: ${slide.title}`}
-                className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                   isActive
-                    ? 'w-5 sm:w-7 bg-primary shadow-2xs'
-                    : 'w-1.5 sm:w-2 bg-stone-300 hover:bg-stone-400'
+                    ? 'w-6 sm:w-8 bg-primary shadow-xs'
+                    : 'w-2 bg-stone-300 hover:bg-stone-400'
                 }`}
               />
             );

@@ -28,31 +28,27 @@ export const Footer: React.FC = () => {
 
       {/* Main 4-Column Footer Area */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-12 sm:pb-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-0 items-start">
 
           {/* Column 1: Brand & Contact Info (Span 4) */}
-          <div className="lg:col-span-4 lg:pr-8 space-y-5">
-            {/* Logo */}
+          <div className="lg:col-span-4 lg:pr-10 space-y-5">
+            {/* Original White Ayurraksha Brand Logo */}
             <div>
-              <Link href="/" className="inline-flex items-center gap-2.5 group" aria-label="AyurRaksha Homepage">
-                {/* 3-Leaf Botanical Emblem matching 11.webp */}
-                <div className="flex items-center justify-center text-white">
-                  <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                    {/* Center Leaf */}
-                    <path d="M17 3C17 3 20.5 8 20.5 13C20.5 18 17 21 17 21C17 21 13.5 18 13.5 13C13.5 8 17 3 17 3Z" fill="#F6F1E7" />
-                    {/* Left Leaf */}
-                    <path d="M14 13C14 13 9 10 5 13C1 16 3 21 6 22C9 23 13 18 14 13Z" fill="#F6F1E7" opacity="0.9" />
-                    {/* Right Leaf */}
-                    <path d="M20 13C20 13 25 10 29 13C33 16 31 21 28 22C25 23 21 18 20 13Z" fill="#F6F1E7" opacity="0.9" />
-                  </svg>
+              <Link href="/" className="inline-block group" aria-label="AyurRaksha Homepage">
+                <div className="relative h-12 w-44">
+                  <Image
+                    src="/images/logo-white.png"
+                    alt="AyurRaksha - Rooted in Ayurveda"
+                    fill
+                    sizes="180px"
+                    priority
+                    className="object-contain object-left transition-opacity group-hover:opacity-90"
+                  />
                 </div>
-                <span className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white group-hover:text-[#C9AD79] transition-colors">
-                  AyurRaksha
-                </span>
               </Link>
 
               {/* Subtitle in Gold matching 11.webp */}
-              <div className="mt-2 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] text-[#C9AD79] uppercase leading-tight font-sans">
+              <div className="mt-3 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] text-[#C9AD79] uppercase leading-tight font-sans">
                 ROOTED IN AYURVEDA<br />
                 FOR A HEALTHIER TOMORROW
               </div>
@@ -124,7 +120,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Column 2: SHOP (Span 3) with vertical divider matching 11.webp */}
-          <div className="lg:col-span-3 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-8 space-y-4">
+          <div className="lg:col-span-3 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-10 space-y-4">
             <div>
               <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase">
                 SHOP
@@ -176,7 +172,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Column 3: ABOUT AYURRAKSHA (Span 2) with vertical divider matching 11.webp */}
-          <div className="lg:col-span-2 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-8 space-y-4">
+          <div className="lg:col-span-2 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-10 space-y-4">
             <div>
               <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase">
                 ABOUT AYURRAKSHA
@@ -208,7 +204,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Column 4: CUSTOMER CARE (Span 3) with vertical divider matching 11.webp */}
-          <div className="lg:col-span-3 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-8 space-y-4">
+          <div className="lg:col-span-3 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-10 space-y-4">
             <div>
               <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase">
                 CUSTOMER CARE

@@ -123,7 +123,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 
       {/* Variant / Pack Selector directly with dynamic WooCommerce prices */}
       {product.variants.length > 0 && (
-        <div className="space-y-2">
+        <div id="product-purchase-options" className="space-y-2 scroll-mt-24">
           <div className="flex items-center justify-between">
             <label className="text-xs font-bold text-charcoal uppercase tracking-wider block">
               Select Pack / Course:

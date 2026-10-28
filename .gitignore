@@ -32,3 +32,6 @@ Thumbs.db
 
 # Local verification artifacts
 /.qa/
+/.playwright-mcp/
+Scrum_Master_Jobs_Bengaluru.xlsx
+

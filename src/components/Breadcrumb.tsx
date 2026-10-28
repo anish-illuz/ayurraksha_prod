@@ -13,7 +13,11 @@ interface BreadcrumbProps {
 }
 
 export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
-  const allItems: BreadcrumbItem[] = [{ name: 'Home', url: '/' }, ...items];
+  // Prevent duplicate Home if caller already passed it
+  const allItems: BreadcrumbItem[] =
+    items.length > 0 && (items[0].url === '/' || items[0].name.toLowerCase() === 'home')
+      ? items
+      : [{ name: 'Home', url: '/' }, ...items];
 
   // Schema.org BreadcrumbList JSON-LD
   const schemaData = {

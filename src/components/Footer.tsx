@@ -31,16 +31,16 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-0 items-start">
 
           {/* Column 1: Brand & Contact Info (Span 4) */}
-          <div className="lg:col-span-4 lg:pr-10 space-y-5">
-            {/* Original White Ayurraksha Brand Logo */}
+          <div className="lg:col-span-4 lg:pr-8 space-y-5">
+            {/* Original White Ayurraksha Brand Logo (increased by 50% from h-12 w-44 to h-[72px] w-[264px]) */}
             <div>
               <Link href="/" className="inline-block group" aria-label="AyurRaksha Homepage">
-                <div className="relative h-12 w-44">
+                <div className="relative h-[72px] w-[264px] max-w-full">
                   <Image
                     src="/images/logo-white.png"
                     alt="AyurRaksha - Rooted in Ayurveda"
                     fill
-                    sizes="180px"
+                    sizes="264px"
                     priority
                     className="object-contain object-left transition-opacity group-hover:opacity-90"
                   />
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
               </Link>
 
               {/* Subtitle in Gold matching 11.webp */}
-              <div className="mt-3 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] text-[#C9AD79] uppercase leading-tight font-sans">
+              <div className="mt-2 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] text-[#C9AD79] uppercase leading-tight font-sans">
                 ROOTED IN AYURVEDA<br />
                 FOR A HEALTHIER TOMORROW
               </div>
@@ -119,10 +119,10 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: SHOP (Span 3) with vertical divider matching 11.webp */}
-          <div className="lg:col-span-3 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-10 space-y-4">
+          {/* Column 2: SHOP (Span 2) with vertical divider matching 11.webp */}
+          <div className="lg:col-span-2 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-6 xl:pl-8 space-y-4">
             <div>
-              <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase">
+              <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase whitespace-nowrap">
                 SHOP
               </h4>
               <div className="w-8 h-[2px] bg-[#C9AD79] mt-2 mb-4" />
@@ -171,10 +171,10 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: ABOUT AYURRAKSHA (Span 2) with vertical divider matching 11.webp */}
-          <div className="lg:col-span-2 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-10 space-y-4">
+          {/* Column 3: ABOUT AYURRAKSHA (Span 3 - Guaranteed single line) with vertical divider matching 11.webp */}
+          <div className="lg:col-span-3 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-6 xl:pl-8 space-y-4">
             <div>
-              <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase">
+              <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase whitespace-nowrap">
                 ABOUT AYURRAKSHA
               </h4>
               <div className="w-8 h-[2px] bg-[#C9AD79] mt-2 mb-4" />
@@ -204,9 +204,9 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Column 4: CUSTOMER CARE (Span 3) with vertical divider matching 11.webp */}
-          <div className="lg:col-span-3 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-10 space-y-4">
+          <div className="lg:col-span-3 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-6 xl:pl-8 space-y-4">
             <div>
-              <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase">
+              <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase whitespace-nowrap">
                 CUSTOMER CARE
               </h4>
               <div className="w-8 h-[2px] bg-[#C9AD79] mt-2 mb-4" />

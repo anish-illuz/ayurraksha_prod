@@ -1,3 +1,4 @@
+import { formatArticleDate } from '@/lib/dates';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,9 +10,9 @@ const posts: BlogPost[] = postsData.slice(0, 3) as BlogPost[];
 
 export const JournalSection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+    <section className="py-9 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:gap-6 sm:mb-12">
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-primary text-xs font-semibold mb-2.5">
               <BookOpen size={14} className="text-primary" />
@@ -53,12 +54,12 @@ export const JournalSection: React.FC = () => {
                 />
               </Link>
 
-              <div className="flex flex-col flex-grow p-6 sm:p-7">
+              <div className="flex flex-col flex-grow p-4 sm:p-7">
                 <span className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
-                  {post.date}
+                  {formatArticleDate(post.date)}
                 </span>
 
-                <h3 className="font-heading text-xl sm:text-2xl font-bold text-primary group-hover:text-primary-dark transition-colors line-clamp-2 mb-2.5 leading-snug">
+                <h3 className="font-heading text-xl sm:text-2xl font-bold text-primary group-hover:text-primary-dark transition-colors mb-2.5 leading-snug">
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h3>
 

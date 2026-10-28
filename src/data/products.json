@@ -19,6 +19,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/migro-prime-tablets.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/10/Migro-Prime-Tablets.jpg"
     ],
     "rating": 4.8,
@@ -52,6 +53,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-foot-bath-powder.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/08/ayurraksha-footbath.jpeg"
     ],
     "rating": 4.8,
@@ -85,6 +87,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/etioment-pain-relief-roll-on-50ml.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/08/roll-on-web.jpg",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/08/etioment-roll-on-1.jpg",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/08/etioment-roll-on-2.jpg"
@@ -119,13 +122,14 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-superheal-o3-cream.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-SuperHeal-O3-Cream.png"
     ],
     "rating": 4.8,
     "reviewCount": 12,
-    "shortDescription": "Struggling with wounds, infections, or persistent skin irritation? Discover the powerful healing properties of Ayur Raksha SuperHeal O3 Cream – a 100% natural wound healing and skin salve cream formulated to treat a wide range of skin conditions. Whether it’s cuts, burns, rashes, age spots, wrinkles, or fungal infections, this cream offers fast, visible relief without any side effects. &nbsp;",
-    "description": "<p>&nbsp;</p>\n<p>&nbsp;</p>",
-    "cleanDescription": "&nbsp; &nbsp;",
+    "shortDescription": "Struggling with wounds, infections, or persistent skin irritation? Discover the powerful healing properties of Ayur Raksha SuperHeal O3 Cream – a 100% natural wound healing and skin salve cream formulated to treat a wide range of skin conditions. Whether it’s cuts, burns, rashes, age spots, wrinkles, or fungal infections, this cream offers fast, visible relief without any side effects.",
+    "description": "<p>Ayur Raksha SuperHeal O3 Cream is a physician-formulated ozonated therapeutic skin salve designed for rapid dermal restoration and antimicrobial defense. Harnessing oxygen-rich botanical extracts and classical Ayurvedic healing herbs, it accelerates cellular regeneration while shielding damaged tissue from infections.</p>\n<p><strong>Key Therapeutic Actions:</strong></p>\n<ul>\n<li><strong>Accelerated Tissue Repair:</strong> Stimulates granulation tissue formation for cuts, minor burns, abrasions, and chronic non-healing ulcers.</li>\n<li><strong>Antimicrobial & Antifungal Protection:</strong> Creates a protective natural shield against dermal microbial proliferation.</li>\n<li><strong>Soothes Irritation & Itching:</strong> Calms allergic rashes, dermatitis, pruritus, and localized inflammation.</li>\n<li><strong>Cellular Rejuvenation:</strong> Softens dry rough skin patches, restores elasticity, and diminishes age spots and scars.</li>\n</ul>\n<p><strong>Directions for Use:</strong> Cleanse the affected area thoroughly with clean lukewarm water, pat dry with a soft cloth, and apply a thin layer 2 to 3 times daily, or as advised by your Ayurvedic healthcare practitioner.</p>",
+    "cleanDescription": "Ayur Raksha SuperHeal O3 Cream is a physician-formulated ozonated therapeutic skin salve designed for rapid dermal restoration and antimicrobial defense. Key Therapeutic Actions: Accelerated Tissue Repair, Antimicrobial & Antifungal Protection, Soothes Irritation & Itching, and Cellular Rejuvenation.",
     "inStock": true,
     "variants": [],
     "sku": ""
@@ -150,6 +154,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-dant-swasthya.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-Dant-Swasthya.jpeg"
     ],
     "rating": 4.8,
@@ -187,6 +192,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-premium-high-fiber-health-mix.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-Premium-High-Fiber-Health-Mix.jpeg"
     ],
     "rating": 4.8,
@@ -218,6 +224,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-gargling-oil.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-Gargling-Oil.jpeg"
     ],
     "rating": 4.8,
@@ -252,6 +259,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-alg.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-ALG.jpeg"
     ],
     "rating": 4.8,
@@ -267,7 +275,7 @@
     "id": 22713,
     "name": "Ayur Raksha CREAT Capsules",
     "slug": "ayur-raksha-creat-capsules",
-    "price": 1298,
+    "price": 1299,
     "regularPrice": 1299,
     "salePrice": 1298,
     "discountPercent": 0,
@@ -284,6 +292,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-creat-capsules.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-CREAT-Capsules.jpeg"
     ],
     "rating": 4.8,
@@ -299,7 +308,7 @@
     "id": 22738,
     "name": "Ayur Raksha IMU 360",
     "slug": "ayur-raksha-imu-360",
-    "price": 1298,
+    "price": 1299,
     "regularPrice": 1299,
     "salePrice": 1298,
     "discountPercent": 0,
@@ -317,6 +326,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-imu-360.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-IMU-360.png"
     ],
     "rating": 4.8,
@@ -349,13 +359,14 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/bpain-out-capsules.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/06/Bpain-out_1.jpeg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
-    "shortDescription": "",
-    "description": "",
-    "cleanDescription": "",
+    "shortDescription": "Ayur Raksha BPain Out Capsules is an authentic classical Ayurvedic formulation engineered for rapid, sustained relief from acute and chronic body pain. It effectively targets severe back pain, knee joint stiffness, cervical and lumbar discomfort, and muscular inflammation without causing acidity or gastric irritation.",
+    "description": "<p>BPain Out Capsules deliver natural relief for individuals suffering from persistent back pain, joint stiffness, and musculoskeletal stress. Crafted under clinical supervision, this herbal formula combines classical anti-inflammatory herbs like Shallaki, Guggulu, Nirgundi, and Rasna to support joint flexibility and ease spinal discomfort.</p>\n<p><strong>Key Benefits:</strong></p>\n<ul>\n<li>Effective relief from backache, lumbar pain, and sciatica</li>\n<li>Reduces swelling, inflammation, and stiffness in knee and hip joints</li>\n<li>Relaxes tense spinal and cervical musculature</li>\n<li>100% natural, non-habit forming, and safe for extended use with zero steroids</li>\n</ul>\n<p><strong>Dosage:</strong> Take 1 to 2 capsules twice daily after meals with warm water, or as directed by an Ayurvedic physician.</p>",
+    "cleanDescription": "BPain Out Capsules deliver natural relief for back pain, joint stiffness, and musculoskeletal stress. Key Benefits: Effective relief from backache and sciatica, reduces joint swelling, relaxes spinal muscles, 100% natural without steroids.",
     "inStock": true,
     "variants": [
       {
@@ -405,6 +416,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-herbal-shampoo.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/hair-well-shampoo.jpeg"
     ],
     "rating": 4.8,
@@ -436,6 +448,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/hair-well-food-supplement-capsules.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/Hair-well-capsules.webp"
     ],
     "rating": 4.8,
@@ -469,7 +482,7 @@
     ],
     "isBestseller": true,
     "images": [
-      "/images/combos/ayur-raksha-cardiac-combo.webp",
+      "/images/products/ayur-raksha-cardiac-combo.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/cardiac-combo.webp"
     ],
     "rating": 4.8,
@@ -678,6 +691,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-skin-conditioning-oil.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/Skin.png"
     ],
     "rating": 4.8,
@@ -710,6 +724,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/sp-soryn-cream.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/03/s-p-soryn-feature.webp"
     ],
     "rating": 4.8,
@@ -742,6 +757,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/b-derma-capsules.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/03/bderma-feature.webp"
     ],
     "rating": 4.8,
@@ -755,10 +771,10 @@
   },
   {
     "id": 11270,
-    "name": "Ayur Raksha Skin Well Food Moisturising Gel",
+    "name": "Ayur Raksha Skin Well Moisturising Gel",
     "slug": "ayur-raksha-skin-well-food-moisturising-gel",
     "price": 999,
-    "regularPrice": 1000,
+    "regularPrice": 999,
     "salePrice": 999,
     "discountPercent": 0,
     "onSale": false,
@@ -776,11 +792,12 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-skin-well-food-moisturising-gel.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/03/Skin-Food-Moisturizing-Gel-feature.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
-    "shortDescription": "Experience the ultimate hydration and rejuvenation for your skin with Ayur Raksha Skin Food Moisturizing Gel. Infused with the healing properties of Divine Healing Oil and enriched with extracts of honey bee, this gel offers intensive moisture and nourishment, leaving your skin soft, supple, and radiant. Say goodbye to dry, itchy skin and hello to a smoother, more vibrant complexion with our luxurious moisturizing gel.",
+    "shortDescription": "Experience deep botanical hydration and skin barrier restoration with Ayur Raksha Skin Well Moisturising Gel. Infused with pure honeybee extracts, soothing aloe, and nourishing herbal oils, it provides intensive moisture without heaviness or sticky residue.",
     "description": "",
     "cleanDescription": "",
     "inStock": true,
@@ -789,7 +806,7 @@
   },
   {
     "id": 6319,
-    "name": "Etionment Pain Relief Cream",
+    "name": "Etioment Pain Relief Cream",
     "slug": "etionment-pain-relief-cream",
     "price": 350,
     "regularPrice": 400,
@@ -810,11 +827,12 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/etionment-pain-relief-cream.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/01/Etionment-1.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
-    "shortDescription": "Introducing Etionment Cream &#8211; Your Ultimate Solution for Immediate Pain Relief! Etionment Cream, our #1 Best-Seller, is a groundbreaking anti-inflammatory solution containing 100% natural active ingredients, along with Vitamin E. This unique formula is designed to assist with muscle, joint, and nerve discomfort, providing instant relief.",
+    "shortDescription": "Introducing Etioment Cream &#8211; Your Ultimate Solution for Immediate Pain Relief! Etioment Cream, our #1 Best-Seller, is a groundbreaking anti-inflammatory solution containing 100% natural active ingredients, along with Vitamin E. This unique formula is designed to assist with muscle, joint, and nerve discomfort, providing instant relief.",
     "description": "",
     "cleanDescription": "",
     "inStock": true,
@@ -847,6 +865,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/ayur-raksha-beta-powder.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/beta_powder.webp"
     ],
     "rating": 4.8,
@@ -914,6 +933,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/b-gasonil.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/B-Ganonil-1.webp"
     ],
     "rating": 4.8,
@@ -946,6 +966,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/booznil.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/Booznil.webp"
     ],
     "rating": 4.8,
@@ -1001,6 +1022,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/skin-well-food-supplement-capsules.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Skin-Well-Food-Supplement-Capsules-1.png",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Skin-Well-Food-Supplement-Capsules-2.png",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Skin-Well-Food-Supplement-Capsules-3.png",
@@ -1305,6 +1327,7 @@
     ],
     "isBestseller": true,
     "images": [
+      "/images/products/boozliv.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_2.jpg",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_3.jpg",
@@ -1315,8 +1338,8 @@
     "rating": 4.8,
     "reviewCount": 12,
     "shortDescription": "Are you ready to embark on a journey to revitalized liver health? Look no further, because BoozLiv is here with a promise – to restore your liver functions to normal with continuous intake and absolutely NO side effects! With a successful completion of human clinical trials, BoozLiv is proven to effectively treat fatty liver, offering hope and relief to those struggling with liver issues.",
-    "description": "<p>BoozLiv is designed to cleanse and refresh your liver. This unique formula is made from natural herbs and nutrients that are known to support liver health and promote liver detoxification. This helps to eliminate toxins from the liver and improve liver function, which can improve overall health and wellbeing.</p>\n<p>✔ 100% Siddha Formulation and has No Side Effects.<br />\n✔ Treats Fatty Liver, Jaundice and early stages of Liver Cirrhosis effectively<br />\n✔ Gives remedy for those affected with Hepatitis B &amp; C Virus.<br />\n✔ Treats and provides relief for people affected with Alcohol related ailments.<br />\n✔ Completely detoxifies and regerates Liver</p>",
-    "cleanDescription": "BoozLiv is designed to cleanse and refresh your liver. This unique formula is made from natural herbs and nutrients that are known to support liver health and promote liver detoxification. This helps to eliminate toxins from the liver and improve liver function, which can improve overall health and wellbeing. ✔ 100% Siddha Formulation and has No Side Effects. ✔ Treats Fatty Liver, Jaundice and early stages of Liver Cirrhosis effectively ✔ Gives remedy for those affected with Hepatitis B &amp; C Virus. ✔ Treats and provides relief for people affected with Alcohol related ailments. ✔ Completely detoxifies and regerates Liver",
+    "description": "<p>BoozLiv is designed to cleanse and refresh your liver. This unique formula is made from natural herbs and nutrients that are known to support liver health and promote liver detoxification. This helps to eliminate toxins from the liver and improve liver function, which can improve overall health and wellbeing.</p>\n<p>✔ 100% Siddha Formulation and has No Side Effects.<br />\n✔ Treats Fatty Liver, Jaundice and early stages of Liver Cirrhosis effectively<br />\n✔ Gives remedy for those affected with Hepatitis B &amp; C Virus.<br />\n✔ Treats and provides relief for people affected with Alcohol related ailments.<br />\n✔ Completely detoxifies and regenerates Liver</p>",
+    "cleanDescription": "BoozLiv is designed to cleanse and refresh your liver. This unique formula is made from natural herbs and nutrients that are known to support liver health and promote liver detoxification. This helps to eliminate toxins from the liver and improve liver function, which can improve overall health and wellbeing. ✔ 100% Siddha Formulation and has No Side Effects. ✔ Treats Fatty Liver, Jaundice and early stages of Liver Cirrhosis effectively ✔ Gives remedy for those affected with Hepatitis B &amp; C Virus. ✔ Treats and provides relief for people affected with Alcohol related ailments. ✔ Completely detoxifies and regenerates Liver",
     "inStock": true,
     "variants": [
       {
@@ -1367,6 +1390,7 @@
     ],
     "isBestseller": true,
     "images": [
+      "/images/products/esnovate-immunity-boosting-capsules.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2024/01/Esnovate-1-768x768-1.webp"
     ],
     "rating": 4.8,
@@ -1421,11 +1445,12 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/dhayani-herbal-hair-oil-100ml.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/09/dhayani100ml_394x.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
-    "shortDescription": "Dhayani HERBAL HAIR OIL Promote Hair Regrowth Stimulate Hair from Root Prevent Dandruff Visible Results within 2 months Trusted by 1 Million Users Clinical Observation Controls hair fall in a week time. Controls dandruff in a week time Stimulates hair from roots with in 30 days. Start promotes healthy hair in 60 days. 100 days of continuous use will give wonderful visible best results. DHAYANI HERBAL HAIR OIL is a new innovative success formula for hair care industry. This herbal oil helps in hair regrowth, controls hair loss and reduces dandruff. Our no toxins and no harmful chemicals philosophy makes the oil completely herbal. Start Your Hair Growth Journey With Dhayani Herbal Hair Oil",
+    "shortDescription": "Dhayani HERBAL HAIR OIL Promote Hair Regrowth Stimulate Hair from Root Prevent Dandruff Visible Results within 2 months Trusted by 1 Million Users Clinical Observation Controls hair fall in a week time. Controls dandruff in a week time Stimulates hair from roots within 30 days. Start promotes healthy hair in 60 days. 100 days of continuous use will give wonderful visible best results. DHAYANI HERBAL HAIR OIL is a new innovative success formula for hair care industry. This herbal oil helps in hair regrowth, controls hair loss and reduces dandruff. Our no toxins and no harmful chemicals philosophy makes the oil completely herbal. Start Your Hair Growth Journey With Dhayani Herbal Hair Oil",
     "description": "",
     "cleanDescription": "",
     "inStock": false,
@@ -1433,7 +1458,8 @@
       {
         "name": "Single",
         "slug": "single",
-        "default": false
+        "default": false,
+        "inStock": false
       }
     ],
     "sku": ""
@@ -1459,6 +1485,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/organics-herbo-protein-powder.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/09/P3-S1600x600px-1_394x.webp"
     ],
     "rating": 4.8,
@@ -1471,7 +1498,8 @@
       {
         "name": "Single",
         "slug": "single",
-        "default": false
+        "default": false,
+        "inStock": false
       }
     ],
     "sku": ""
@@ -1497,6 +1525,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/organics-hibiscus-tea-tin.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/09/18-herbs-hibiscus-tea-tin_394x.webp"
     ],
     "rating": 4.8,
@@ -1509,7 +1538,8 @@
       {
         "name": "Single",
         "slug": "single",
-        "default": false
+        "default": false,
+        "inStock": false
       }
     ],
     "sku": ""
@@ -1554,17 +1584,20 @@
       {
         "name": "1 Month Pack",
         "slug": "1 Month Pack",
-        "default": false
+        "default": false,
+        "inStock": false
       },
       {
         "name": "2 Month Pack",
         "slug": "2 Month Pack",
-        "default": false
+        "default": false,
+        "inStock": false
       },
       {
         "name": "3 Month Pack",
         "slug": "3 Month Pack",
-        "default": false
+        "default": false,
+        "inStock": false
       }
     ],
     "sku": ""
@@ -1596,9 +1629,9 @@
     ],
     "rating": 4.8,
     "reviewCount": 12,
-    "shortDescription": "Ayur Raksha Flow Well Pack – a holistic solution for Varicose Veins, Leg Blackening, Diabetic Neuropathy, and Gangrene Wounds/Foot Ulcers. This carefully curated combination harnesses Ayurvedic benefits through our flagship products",
-    "description": "",
-    "cleanDescription": "",
+    "shortDescription": "Ayur Raksha Flow Well Pack is a comprehensive Ayurvedic therapy clinically curated for Varicose Veins, Leg Blackening, Diabetic Neuropathy, and Non-Healing Foot Ulcers. It combines our synergistic internal and external formulations to restore healthy microcirculation and relieve leg heaviness.",
+    "description": "<p>The Flow Well Pack provides holistic care for severe vascular and circulatory disorders affecting the lower limbs. By enhancing venous return, detoxifying the vascular channels (Srotas), and promoting oxygenated blood flow, it addresses the root cause of varicose veins and diabetic leg complications.</p>\n<p><strong>Available Pack Options & Included Products:</strong></p>\n<ul>\n<li><strong>Pack 1 (Basic Varicose Veins Care):</strong> Save Heart Capsules (60 caps) + Divine Healing Oil (100ml) for mild vein swelling and localized leg ache.</li>\n<li><strong>Pack 2 (Value Combination Pack):</strong> Save Heart Capsules + Flow Well Capsules + Divine Healing Oil for chronic spider veins, visible pooling, and leg fatigue.</li>\n<li><strong>Pack 3 (Advanced 30-Day Circulation Therapy):</strong> Save Heart Capsules + Flow Well Capsules + Divine Healing Oil + Medicated Foot Bath Powder for severe venous insufficiency and leg discoloration.</li>\n<li><strong>Pack 4 (Gangrene & Diabetic Foot Ulcer Pack):</strong> Flow Well Capsules + SuperHeal O3 Cream + Divine Healing Oil for non-healing diabetic wounds and tissue necrosis.</li>\n</ul>",
+    "cleanDescription": "The Flow Well Pack provides holistic care for severe vascular and circulatory disorders affecting lower limbs. Available in 4 specialized combinations addressing mild varicose veins up to advanced diabetic foot ulcers and leg blackening.",
     "inStock": true,
     "variants": [
       {
@@ -1751,6 +1784,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/pi-well-food-supplement-capsules.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-PI-Well-Food-Supplement-Capsules-1.png",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-PI-Well-Food-Supplement-Capsules-3.png",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-PI-Well-Food-Supplement-Capsules-2.png",
@@ -1785,6 +1819,7 @@
     ],
     "isBestseller": false,
     "images": [
+      "/images/products/sleep-well-food-supplement-capsules.webp",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1-1.png",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/2-1.png",
       "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/3-1.png",

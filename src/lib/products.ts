@@ -131,3 +131,7 @@ export function searchProducts(query: string): Product[] {
       p.categories.some((cat) => cat.toLowerCase().includes(q))
   );
 }
+
+export function getProductById(id: number): Product | undefined {
+  return allProducts.find(product => product.id === id);
+}

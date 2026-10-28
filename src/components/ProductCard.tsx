@@ -42,8 +42,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
   const primaryImage = product.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg';
   const secondaryImage = product.images[1] || primaryImage;
 
-  // Determine size/pack label
-  const sizeLabel = product.variants[0]?.name || (
+  // Determine size/pack label accurately based on product title or category
+  const titleSizeMatch = product.name.match(/\b(\d+\s*ml|\d+\s*g)\b/i);
+  const isTablet = product.name.toLowerCase().includes('tablet');
+
+  const sizeLabel = (product.variants.find(v => v.default) || product.variants[0])?.name || (
+    titleSizeMatch ? titleSizeMatch[1] :
+    isTablet ? '60 Tablets' :
     product.categorySlugs.includes('oil') ? '100 ml' :
     product.categorySlugs.includes('tonic') ? '200 ml' :
     product.categorySlugs.includes('capsules') ? '60 Capsules' :
@@ -61,12 +66,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Top Banner Offer Chip */}
-      <div className="bg-[#F0F5E6] text-forest text-xs font-semibold py-2 px-3 text-center border-b border-stone-100 flex items-center justify-center gap-1.5">
-        <Tag size={13} className="text-botanical flex-shrink-0" />
-        <span className="truncate">Prepaid Orders: Free Shipping Across India</span>
-      </div>
-
       {/* Product Image Area - Clean Full Bleed Without Awkward White Box Border */}
       <div className="relative block w-full aspect-square bg-[#FAF8F5] overflow-hidden p-1.5 sm:p-2">
         {/* Top Floating Badges */}
@@ -86,7 +85,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
           )}
 
           {product.discountPercent > 0 && (
-            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
+            <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] sm:text-xs whitespace-nowrap font-bold bg-amber-100 text-amber-900 border border-amber-300">
               {product.discountPercent}% OFF
             </span>
           )}
@@ -110,7 +109,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       {/* Product Information Body with responsive padding */}
       <div className="flex flex-col flex-grow p-2 sm:p-4 bg-white space-y-2 sm:space-y-3">
         {/* Product Title (Clean Jost font, standardized height) */}
-        <h3 className="font-heading font-bold text-xs sm:text-base md:text-lg text-forest group-hover:text-botanical transition-colors line-clamp-2 min-h-[2.25rem] sm:min-h-[2.75rem] leading-snug">
+        <h3 className="font-heading font-bold text-sm sm:text-base md:text-lg text-forest group-hover:text-botanical transition-colors line-clamp-2 min-h-[2.75rem] sm:min-h-[2.75rem] leading-snug">
           <Link href={`/product/${product.slug}`}>{product.name}</Link>
         </h3>
 
@@ -136,7 +135,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
 
         {/* Price Row: ₹Price ₹Regular % OFF */}
         <div className="pt-0.5 flex items-baseline gap-1 sm:gap-2 flex-wrap">
-          <span className="font-heading font-bold text-sm sm:text-lg md:text-xl text-forest">
+          <span className="font-heading font-bold text-lg md:text-xl text-forest">
             ₹{product.price.toLocaleString('en-IN')}
           </span>
           {product.regularPrice > product.price && (
@@ -163,24 +162,25 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
         </div>
 
         {/* Quantity Stepper + Add to Cart Action Row - Guaranteed Single Line Everywhere */}
-        <div className="pt-1 flex items-center gap-1 sm:gap-2">
+        <div className="pt-2 flex flex-col xl:flex-row items-stretch gap-2">
           {/* Quantity + / - Stepper (Compact sizing so it leaves ample space for Add to Cart on one line) */}
-          <div className="flex items-center border border-stone-300 rounded-lg sm:rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-8 sm:h-10">
+          <div className="flex items-center border border-stone-300 rounded-lg sm:rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-10">
             <button
               onClick={handleDecrement}
               aria-label="Decrease quantity"
-              className="w-5 sm:w-7 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all disabled:opacity-40"
-              disabled={quantity <= 1}
+              className="w-10 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all disabled:opacity-40"
+              disabled={quantity <= 1 || !product.inStock}
             >
               <Minus size={11} />
             </button>
-            <span className="w-4 sm:w-6 text-center text-[11px] sm:text-sm font-bold text-forest select-none">
+            <span className="flex-1 xl:w-6 text-center text-[11px] sm:text-sm font-bold text-forest select-none">
               {quantity}
             </span>
             <button
+              disabled={!product.inStock}
               onClick={handleIncrement}
               aria-label="Increase quantity"
-              className="w-5 sm:w-7 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all"
+              className="w-10 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all"
             >
               <Plus size={11} />
             </button>
@@ -191,7 +191,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             onClick={handleQuickAdd}
             disabled={!product.inStock}
             aria-label={`Add ${product.name} to cart`}
-            className={`flex-1 min-w-0 h-8 sm:h-10 inline-flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 sm:px-3 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-tight sm:tracking-normal whitespace-nowrap transition-all duration-200 shadow-xs active:scale-[0.98] ${
+            className={`w-full min-w-0 h-10 inline-flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 sm:px-3 rounded-lg sm:rounded-xl text-xs font-bold uppercase tracking-tight sm:tracking-normal whitespace-nowrap transition-all duration-200 shadow-xs active:scale-[0.98] ${
               !product.inStock
                 ? 'bg-stone-200 text-stone-500 cursor-not-allowed'
                 : isAdded

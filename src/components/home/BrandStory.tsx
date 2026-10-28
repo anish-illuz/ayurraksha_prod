@@ -6,24 +6,22 @@ import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const BrandStory: React.FC = () => {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-[#E8EFE7]/50 overflow-hidden">
+    <section className="py-9 sm:py-20 lg:py-24 bg-[#E8EFE7]/50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left: Atmospheric Image & Doctor Badge */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-12 items-center">
+          {/* Doctor portrait and credentials */}
           <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-card border border-stone-200">
+            <div className="relative mx-auto max-w-md lg:max-w-none overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-card">
+              <div className="relative h-64 sm:h-80 lg:h-[400px] bg-sage">
                 <Image
-                  src="https://www.ayurrakshaonline.com/wp-content/uploads/2025/06/Ayurvedic-tonic-for-liver.jpg"
-                  alt="Traditional Ayurvedic herbs and formulations at Ayurraksha"
+                  src="/images/brand/dr-jegajothi-pandian.webp"
+                  alt="Dr. Jegajothi Pandian"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 500px"
-                  className="object-cover"
+                  sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 448px, 480px"
+                  className="object-cover object-top"
                 />
               </div>
-
-              {/* Floating Doctor Credibility Card */}
-              <div className="absolute -bottom-6 -right-3 sm:-right-6 bg-white p-5 rounded-2xl shadow-dropdown border border-primary/15 max-w-xs">
+              <div className="p-4 sm:p-5">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 rounded-full bg-sage flex items-center justify-center text-primary flex-shrink-0">
                     <Stethoscope size={22} />
@@ -45,7 +43,7 @@ export const BrandStory: React.FC = () => {
           </div>
 
           {/* Right: Editorial Narrative */}
-          <div className="lg:col-span-7 space-y-6 lg:pl-6">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6 lg:pl-6">
             <div className="space-y-2.5">
               <span className="text-xs font-bold text-primary uppercase tracking-widest block">
                 Our Story &amp; Promise
@@ -56,28 +54,28 @@ export const BrandStory: React.FC = () => {
             </div>
 
             <p className="text-base sm:text-lg text-charcoal leading-relaxed">
-              At AyurRaksha, we believe that true wellbeing begins with the goodness of nature and the wisdom of traditional Ayurveda. An initiative of <strong>VPrime Innovations</strong>, our mission is to make authentic Ayurvedic wellness solutions accessible and relevant to modern families.
+              An initiative of <strong>VPrime Innovations</strong>, AyurRaksha brings traditional Ayurvedic care to everyday family life.
             </p>
 
-            <p className="text-sm sm:text-base text-charcoal-muted leading-relaxed">
+            <p className="hidden sm:block text-sm sm:text-base text-charcoal-muted leading-relaxed">
               Every tonic, oil, and capsule is thoughtfully formulated with careful attention to ingredient quality, purity, and botanical composition under the guidance of Dr. Jegajothi Pandian. We prioritize carefully selected, high-quality herbs and consistent formulation standards to deliver Ayurvedic wellness products you can trust.
             </p>
 
             {/* 3 Core Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="p-4 sm:p-5 bg-white rounded-2xl border border-stone-200/90 shadow-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 pt-2">
+              <div className="p-3 sm:p-5 bg-white rounded-2xl border border-stone-200/90 shadow-xs">
                 <CheckCircle2 size={20} className="text-primary mb-2" />
                 <h4 className="text-sm sm:text-base font-bold text-primary">100% Pure Herbs</h4>
                 <p className="text-xs sm:text-sm text-charcoal-muted mt-1">Zero hidden steroids, chemicals, or artificial fillers.</p>
               </div>
 
-              <div className="p-4 sm:p-5 bg-white rounded-2xl border border-stone-200/90 shadow-xs">
+              <div className="p-3 sm:p-5 bg-white rounded-2xl border border-stone-200/90 shadow-xs">
                 <CheckCircle2 size={20} className="text-primary mb-2" />
                 <h4 className="text-sm sm:text-base font-bold text-primary">Doctor Formulated</h4>
                 <p className="text-xs sm:text-sm text-charcoal-muted mt-1">Guided by Dr. Jegajothi Pandian with 25+ years of experience.</p>
               </div>
 
-              <div className="p-4 sm:p-5 bg-white rounded-2xl border border-stone-200/90 shadow-xs">
+              <div className="p-3 sm:p-5 bg-white rounded-2xl border border-stone-200/90 shadow-xs">
                 <CheckCircle2 size={20} className="text-primary mb-2" />
                 <h4 className="text-sm sm:text-base font-bold text-primary">Lab Tested Quality</h4>
                 <p className="text-xs sm:text-sm text-charcoal-muted mt-1">Tested for purity, safety, and consistent therapeutic strength.</p>
@@ -99,3 +97,4 @@ export const BrandStory: React.FC = () => {
     </section>
   );
 };
+

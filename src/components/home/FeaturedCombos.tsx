@@ -80,7 +80,7 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
         </div>
 
         {/* 7. Prepaid offer */}
-        <div className="bg-[#FAF9F5] border border-stone-200/80 rounded-xl px-3 py-2 text-xs flex items-center justify-between">
+        <div className="bg-[#FAF9F5] border border-stone-200/80 rounded-xl px-3 py-2 text-xs flex flex-wrap gap-1 items-center justify-between">
           <span className="text-stone-600 font-medium">⚡ Prepaid Offer:</span>
           <span className="font-bold text-primary">₹{prepaidDiscountPrice.toLocaleString('en-IN')} + Free Ship</span>
         </div>
@@ -89,6 +89,7 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
         <div className="pt-2">
           <button
             onClick={handleAdd}
+            disabled={!pack.inStock}
             aria-label={`Add ${pack.name} to cart`}
             className={`w-full h-11 sm:h-12 inline-flex items-center justify-center gap-2 px-4 rounded-[8px] text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-200 shadow-xs active:scale-[0.98] ${
               isAdded
@@ -96,7 +97,7 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
                 : 'bg-primary hover:bg-primary-dark text-white'
             }`}
           >
-            {isAdded ? (
+            {!pack.inStock ? 'Out of Stock' : isAdded ? (
               <>
                 <Check size={18} className="flex-shrink-0" />
                 <span className="whitespace-nowrap">Added to Cart!</span>
@@ -118,9 +119,9 @@ export const FeaturedCombos: React.FC = () => {
   const packs = getProductsByCategory('health-packs').slice(0, 4);
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-ivory">
+    <section className="py-9 sm:py-20 lg:py-24 bg-ivory">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:gap-6 sm:mb-12">
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-primary text-xs font-semibold mb-2.5">
               <Package size={14} className="text-primary" />

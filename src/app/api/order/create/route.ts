@@ -1,19 +1,7 @@
 import { NextResponse } from 'next/server';
+import { getProductById } from '@/lib/products';
 
 const WORDPRESS_STORE_API = 'https://www.ayurrakshaonline.com/wp-json/wc/store/v1';
-
-// Mapping for WooCommerce variable products to ensure add-to-cart succeeds
-const VARIABLE_PRODUCT_MAP: Record<number, number> = {
-  14561: 14562, // BPain Out Capsules
-  11605: 17508, // Breathe Well Pack
-  11457: 11474, // Dia Well Pack
-  11803: 11810, // BoozNil
-  7689: 9630,   // Ayur Raksha Divine Healing Oil
-  7694: 7726,   // BoozLiv
-  6381: 7618,   // Esnovate Immunity Boosting Capsules
-  4673: 9252,   // Flow Well Pack
-  4666: 10756,  // Ayur Raksha Skin Well Pack
-};
 
 // State name to state code abbreviation mapping for India
 const STATE_CODE_MAP: Record<string, string> = {
@@ -48,6 +36,16 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: 'Missing customer shipping details' }, { status: 400 });
     }
 
+    for (const item of items) {
+      const product = getProductById(item.product?.id || item.id);
+      const variant = product?.variants.find(v => v.id === item.variantId || v.name === item.selectedVariant) || product?.variants.find(v => v.default) || product?.variants[0];
+      if (!product?.inStock || variant?.inStock === false || !Number.isInteger(item.quantity) || item.quantity < 1) {
+        return NextResponse.json({ success: false, error: 'An item is unavailable or has an invalid quantity. Please refresh your cart.' }, { status: 400 });
+      }
+      if ((item.variantId && item.variantId !== variant?.id) || (item.selectedVariant && item.selectedVariant !== variant?.name)) {
+        return NextResponse.json({ success: false, error: 'The selected pack is no longer available.' }, { status: 400 });
+      }
+    }
     const timestamp = Date.now();
 
     // Step 1: Initialize Fresh WooCommerce Cart Session
@@ -87,7 +85,9 @@ export async function POST(req: Request) {
     // Step 3: Add exactly the current order items to WooCommerce cart session
     for (const item of items) {
       const productId = item.product?.id || item.id;
-      const targetId = VARIABLE_PRODUCT_MAP[productId] || productId;
+      const product = getProductById(productId)!;
+      const variant = product.variants.find(v => v.id === item.variantId || v.name === item.selectedVariant) || product.variants.find(v => v.default) || product.variants[0];
+      const targetId = variant?.id || productId;
       const quantity = item.quantity || 1;
 
       const addRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
@@ -109,25 +109,8 @@ export async function POST(req: Request) {
       if (addRes.headers.get('Cart-Token')) cartToken = addRes.headers.get('Cart-Token') || cartToken;
 
       if (!addRes.ok) {
-        // Fallback: retry with original product ID if mapping failed
-        if (targetId !== productId) {
-          const retryRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
-            method: 'POST',
-            headers: {
-              'User-Agent': 'Ayurraksha-Storefront/2.0',
-              'Content-Type': 'application/json',
-              'Nonce': nonce,
-              'Cart-Token': cartToken,
-            },
-            body: JSON.stringify({
-              id: productId,
-              quantity: quantity,
-            }),
-            cache: 'no-store',
-          });
-          if (retryRes.headers.get('Nonce')) nonce = retryRes.headers.get('Nonce') || nonce;
-          if (retryRes.headers.get('Cart-Token')) cartToken = retryRes.headers.get('Cart-Token') || cartToken;
-        }
+        const error = await addRes.json().catch(() => ({}));
+        return NextResponse.json({ success: false, error: error.message || 'A selected item is no longer available. Please review your cart.' }, { status: 409 });
       }
     }
 

@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { getProductBySlug } from '@/lib/products';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface BannerSlide {
@@ -18,7 +18,7 @@ interface BannerSlide {
   secondaryLabel: string;
 }
 
-// 4 Flagship Hero Banners - completely cleaned of side navigation arrows and non-flagship slides
+// Desktop artwork with simplified live-text banners on mobile.
 const BANNER_SLIDES: BannerSlide[] = [
   {
     id: 'boozliv',
@@ -69,7 +69,7 @@ const BANNER_SLIDES: BannerSlide[] = [
 const AUTOPLAY_INTERVAL = 6000; // 6 seconds per slide
 
 export const Hero: React.FC = () => {
-  const router = useRouter();
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
 
   // Autoplay timer with pause on hover
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || window.matchMedia('(max-width: 767px), (prefers-reduced-motion: reduce)').matches) return;
 
     const timer = setInterval(() => {
       nextSlide();
@@ -130,7 +130,7 @@ export const Hero: React.FC = () => {
     }
     touchStartX.current = null;
     touchStartY.current = null;
-    isSwiping.current = false;
+    // Keep swipe flag until next touch to suppress accidental clicks.
   };
 
   // Keyboard navigation
@@ -143,144 +143,48 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section
-      className="relative w-full overflow-hidden bg-[#FAF9F5]"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      onKeyDown={handleKeyDown}
-      tabIndex={0}
-      aria-label="Ayur Raksha Featured Formulations"
-      aria-roledescription="carousel"
-    >
-      {/*
-        Full-Bleed Master Banner across all devices (Mobile, Tablet, Laptop, Desktop):
-        - Uses the authentic high-resolution master banner artwork with 0% distortion
-        - Aspect ratio matched to master artwork: aspect-[2.2/1] on mobile, aspect-[2.28/1] on desktop
-        - Clean full-bleed edge-to-edge presentation
-        - Interactive hotspots mapped directly over the artwork's primary & secondary buttons
-        - Left & Right navigation arrows completely removed as requested
-      */}
-      <div className="relative w-full aspect-[2.2/1] sm:aspect-[2.25/1] md:aspect-[2.28/1] min-h-[165px] sm:min-h-[220px] max-h-[720px] overflow-hidden select-none">
+    <section className="relative w-full overflow-hidden bg-[#FAF9F5] touch-pan-y"
+      onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}
+      onTouchCancel={() => { touchStartX.current = null; touchStartY.current = null; }}
+      onClickCapture={(e) => { if (isSwiping.current) { e.preventDefault(); e.stopPropagation(); } }}
+      onKeyDown={handleKeyDown} tabIndex={0} aria-label="Ayur Raksha Featured Formulations" aria-roledescription="carousel">
+      <div className="relative w-full aspect-[2.2/1] md:aspect-[2.28/1] min-h-[180px] max-h-[720px] select-none">
         {BANNER_SLIDES.map((slide, idx) => {
           const isActive = idx === currentSlide;
+          const product = getProductBySlug(slide.primaryLink.split('/').pop()!);
+          const names = ['BoozLiv', 'Cardiac Combo', 'Divine Healing Oil', 'Purna Sakthi'];
+          const summaries = ['Rooted in Ayurveda', 'Everyday heart care', 'Joint & muscle care', 'Energy & vitality'];
           return (
-            <div
-              key={slide.id}
-              className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
-                isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-              }`}
-              aria-hidden={!isActive}
-              role="group"
-              aria-roledescription="slide"
-              aria-label={`${idx + 1} of ${total}: ${slide.title}`}
-            >
-              {/* Entire banner is a clickable link to product page */}
-              <Link
-                href={slide.primaryLink}
-                tabIndex={isActive ? 0 : -1}
-                className="block relative w-full h-full cursor-pointer focus:outline-hidden"
-                title={`${slide.title} - ${slide.primaryLabel}`}
-              >
-                <Image
-                  src={slide.desktopImageSrc}
-                  alt={slide.imageAlt}
-                  fill
-                  priority={idx === 0}
-                  loading={idx === 0 ? 'eager' : 'lazy'}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
-                  className="object-cover object-center w-full h-full"
-                />
-
-                <span className="sr-only">
-                  {slide.title}. Click to shop {slide.primaryLabel}.
-                </span>
-              </Link>
-
-              {/* Interactive CTA Hotspot Overlay (mapped directly over artwork buttons without visual duplication) */}
-              {isActive && (
-                <div className="absolute inset-0 pointer-events-none z-20">
-                  {/* Primary CTA Button Hotspot (e.g. "Explore BoozLiv →") */}
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      e.preventDefault();
-                      router.push(slide.primaryLink);
-                    }}
-                    tabIndex={0}
-                    aria-label={slide.primaryLabel}
-                    title={slide.primaryLabel}
-                    className="absolute left-[5%] sm:left-[6%] bottom-[12%] sm:bottom-[14%] w-[20%] sm:w-[18%] md:w-[16%] h-[18%] sm:h-[16%] rounded-full pointer-events-auto cursor-pointer focus:ring-2 focus:ring-primary focus:outline-hidden transition-all bg-transparent active:bg-black/10"
-                  />
-
-                  {/* Secondary CTA Button Hotspot (e.g. "View Bestsellers") */}
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      e.preventDefault();
-                      router.push(slide.secondaryLink);
-                    }}
-                    tabIndex={0}
-                    aria-label={slide.secondaryLabel}
-                    title={slide.secondaryLabel}
-                    className="absolute left-[26%] sm:left-[25%] md:left-[23%] bottom-[12%] sm:bottom-[14%] w-[20%] sm:w-[18%] md:w-[16%] h-[18%] sm:h-[16%] rounded-full pointer-events-auto cursor-pointer focus:ring-2 focus:ring-primary focus:outline-hidden transition-all bg-transparent active:bg-black/10"
-                  />
+            <div key={slide.id} className={`absolute inset-0 transition-opacity duration-500 ${isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
+              aria-hidden={!isActive} role="group" aria-roledescription="slide" aria-label={`${idx + 1} of ${total}: ${slide.title}`}>
+              <div className="md:hidden h-full grid grid-cols-[55%_45%] bg-gradient-to-br from-[#f6f3df] via-[#f4f5e7] to-[#dce7cc]">
+                <div className="relative z-10 flex flex-col justify-center items-start pl-4 pr-1 py-3">
+                  <p className="text-[10px] min-[380px]:text-xs font-semibold text-primary mb-1">Doctor formulated</p>
+                  <h2 className="font-heading text-[26px] min-[380px]:text-[30px] leading-[1.02] text-primary font-bold">{names[idx]}</h2>
+                  <p className="text-xs min-[380px]:text-sm leading-snug text-primary mt-1">{summaries[idx]}</p>
+                  <p className="mt-2 text-xs text-primary"><span className="text-amber-600">★</span> <strong className="text-sm">{product?.rating.toFixed(1)}</strong> <span>· {product?.reviewCount} reviews</span></p>
+                  <Link href={slide.primaryLink} tabIndex={isActive ? 0 : -1} className="mt-2 inline-flex items-center justify-center min-h-9 px-3 py-2 bg-primary rounded-full text-white text-xs font-semibold">Shop now <span className="ml-2" aria-hidden="true">→</span></Link>
                 </div>
-              )}
+                <div className="relative h-full overflow-hidden">
+                  <Image src={product?.images[0] || slide.desktopImageSrc} alt={slide.imageAlt} fill sizes="45vw" priority={idx === 0} className="object-cover object-center" />
+                </div>
+              </div>
+              <Link href={slide.primaryLink} tabIndex={isActive ? 0 : -1} className="hidden md:block relative w-full h-full" aria-label={slide.primaryLabel}>
+                <Image src={slide.desktopImageSrc} alt={slide.imageAlt} fill priority={idx === 0} sizes="100vw" className="object-cover object-center" />
+              </Link>
+              {isActive && <Link href={slide.secondaryLink} aria-label={slide.secondaryLabel} className="hidden md:block absolute left-[23%] bottom-[14%] w-[16%] h-[16%] rounded-full focus:ring-2 focus:ring-primary" />}
             </div>
           );
         })}
-
-        {/* Sharp High-Contrast Side Arrow Navigation Controls */}
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            prevSlide();
-          }}
-          aria-label="Previous slide"
-          className="absolute left-2.5 sm:left-5 md:left-7 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-white text-forest hover:text-botanical shadow-lg border border-stone-200/90 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-primary backdrop-blur-xs"
-        >
-          <ChevronLeft size={22} className="stroke-[2.5]" />
-        </button>
-
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            nextSlide();
-          }}
-          aria-label="Next slide"
-          className="absolute right-2.5 sm:right-5 md:right-7 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-white text-forest hover:text-botanical shadow-lg border border-stone-200/90 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-primary backdrop-blur-xs"
-        >
-          <ChevronRight size={22} className="stroke-[2.5]" />
-        </button>
-
-        {/* Single Clean Centered Pagination Indicator Dots (Baked-in image dots removed) */}
-        <div className="absolute bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-stone-200/80 shadow-md">
-          {BANNER_SLIDES.map((slide, idx) => {
-            const isActive = idx === currentSlide;
-            return (
-              <button
-                key={`dot-${slide.id}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goToSlide(idx);
-                }}
-                aria-label={`Go to slide ${idx + 1}: ${slide.title}`}
-                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  isActive
-                    ? 'w-6 sm:w-8 bg-primary shadow-xs'
-                    : 'w-2 bg-stone-300 hover:bg-stone-400'
-                }`}
-              />
-            );
-          })}
+        <button type="button" onClick={prevSlide} aria-label="Previous slide" className="hidden md:flex absolute left-7 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/95 text-primary shadow-lg items-center justify-center"><ChevronLeft size={22} /></button>
+        <button type="button" onClick={nextSlide} aria-label="Next slide" className="hidden md:flex absolute right-7 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/95 text-primary shadow-lg items-center justify-center"><ChevronRight size={22} /></button>
+        <div className="hidden md:flex absolute bottom-4 left-1/2 -translate-x-1/2 z-30 items-center gap-2 px-3 py-1.5 rounded-full bg-white/90">
+          {BANNER_SLIDES.map((slide, idx) => <button key={slide.id} type="button" onClick={() => goToSlide(idx)} aria-label={`Go to slide ${idx + 1}`} aria-current={idx === currentSlide} className={`h-2 rounded-full ${idx === currentSlide ? 'w-8 bg-primary' : 'w-2 bg-stone-300'}`} />)}
         </div>
+      </div>
+      <div className="md:hidden flex justify-center items-center gap-2 py-1.5 text-[10px] text-primary/70" aria-hidden="true">
+        <span>Swipe to explore</span>{BANNER_SLIDES.map((slide, idx) => <span key={slide.id} className={`h-1 rounded-full ${idx === currentSlide ? 'w-4 bg-primary' : 'w-1 bg-primary/25'}`} />)}
       </div>
     </section>
   );

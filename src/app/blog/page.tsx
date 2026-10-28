@@ -1,3 +1,4 @@
+import { formatArticleDate } from '@/lib/dates';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -58,11 +59,11 @@ export default function BlogListPage() {
 
               <div className="flex flex-col flex-grow p-6">
                 <div className="flex items-center justify-between text-[11px] text-charcoal-muted mb-2">
-                  <span className="font-semibold text-botanical">{post.date}</span>
+                  <span className="font-semibold text-botanical">{formatArticleDate(post.date)}</span>
                   <span>Verified Case Study</span>
                 </div>
 
-                <h2 className="font-serif text-base sm:text-lg font-bold text-forest group-hover:text-botanical transition-colors line-clamp-2 mb-2">
+                <h2 className="font-serif text-base sm:text-lg font-bold text-forest group-hover:text-botanical transition-colors mb-2">
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h2>
 

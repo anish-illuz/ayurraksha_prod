@@ -147,3 +147,7 @@ h1, h2, h3, h4, h5, h6, .font-serif, .font-heading {
     scroll-behavior: auto !important;
   }
 }
+
+/* Keep anchor targets below the sticky navigation. */
+html { scroll-padding-top: 120px; }
+section[id], h1, h2, h3 { scroll-margin-top: 120px; }

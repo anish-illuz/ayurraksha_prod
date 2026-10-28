@@ -42,10 +42,10 @@ const CONCERN_DESCRIPTIONS: Record<string, string> = {
 
 export const CategoryGrid: React.FC = () => {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-ivory">
+    <section className="py-9 sm:py-20 lg:py-24 bg-ivory">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-16">
           <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-2.5">
             Targeted Herbal Care
           </span>
@@ -71,7 +71,7 @@ export const CategoryGrid: React.FC = () => {
                 className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-xs transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 hover:-translate-y-1"
               >
                 {/* 1. Category scene image at the top */}
-                <div className="relative w-full aspect-[4/3] bg-[#F7F9F5] overflow-hidden">
+                <div className="relative w-full aspect-[2/1] sm:aspect-[4/3] bg-[#F7F9F5] overflow-hidden">
                   <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
                     <Image
                       src={imgSrc}
@@ -84,7 +84,7 @@ export const CategoryGrid: React.FC = () => {
                 </div>
 
                 {/* Content Body */}
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-4 sm:p-6 flex flex-col flex-grow">
                   {/* 2. Category heading below the image */}
                   <h3 className="font-heading text-xl sm:text-2xl font-bold text-primary group-hover:text-primary-dark transition-colors leading-snug">
                     {title}
@@ -96,7 +96,7 @@ export const CategoryGrid: React.FC = () => {
                   </p>
 
                   {/* 4. Explore Collection link with right arrow */}
-                  <div className="mt-5 pt-4 border-t border-stone-100 flex items-center text-sm font-semibold text-primary group-hover:text-primary-dark transition-colors">
+                  <div className="mt-3 pt-3 sm:mt-5 sm:pt-4 border-t border-stone-100 flex items-center text-sm font-semibold text-primary group-hover:text-primary-dark transition-colors">
                     <span>Explore Collection</span>
                     <ArrowRight
                       size={16}

@@ -1,3 +1,4 @@
+import { formatArticleDate } from '@/lib/dates';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -106,7 +107,7 @@ export default function BlogPostDetailPage({ params }: PageProps) {
           <div className="flex flex-wrap items-center gap-4 text-xs text-charcoal-muted">
             <span className="flex items-center gap-1 text-botanical font-semibold">
               <Calendar size={14} />
-              <span>{post.date}</span>
+              <span>{formatArticleDate(post.date)}</span>
             </span>
             <span>•</span>
             <span className="flex items-center gap-1">

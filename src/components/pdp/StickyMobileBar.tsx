@@ -25,6 +25,10 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
   }, []);
 
   const handleQuickAdd = () => {
+    if (product.variants.length > 1) {
+      document.getElementById('product-purchase-options')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
     addToCart(product, 1);
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 1800);
@@ -62,26 +66,35 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
           </div>
         </div>
 
-        <button
-          onClick={handleQuickAdd}
-          className={`flex-shrink-0 inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-button text-xs font-semibold whitespace-nowrap transition-all ${
-            isAdded
-              ? 'bg-forest text-white'
-              : 'bg-botanical hover:bg-forest text-white'
-          }`}
-        >
-          {isAdded ? (
-            <>
-              <Check size={14} className="flex-shrink-0" />
-              <span className="whitespace-nowrap">Added</span>
-            </>
-          ) : (
-            <>
-              <ShoppingBag size={14} className="flex-shrink-0" />
-              <span className="whitespace-nowrap">Add to Cart</span>
-            </>
-          )}
-        </button>
+        {product.inStock ? (
+          <button
+            onClick={handleQuickAdd}
+            className={`flex-shrink-0 inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-button text-xs font-semibold whitespace-nowrap transition-all ${
+              isAdded
+                ? 'bg-forest text-white'
+                : 'bg-botanical hover:bg-forest text-white'
+            }`}
+          >
+            {isAdded ? (
+              <>
+                <Check size={14} className="flex-shrink-0" />
+                <span className="whitespace-nowrap">Added</span>
+              </>
+            ) : (
+              <>
+                <ShoppingBag size={14} className="flex-shrink-0" />
+                <span className="whitespace-nowrap">{product.variants.length > 1 ? 'Choose pack' : 'Add to Cart'}</span>
+              </>
+            )}
+          </button>
+        ) : (
+          <button
+            disabled
+            className="flex-shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-button text-xs font-semibold whitespace-nowrap bg-stone-200 text-stone-500 cursor-not-allowed border border-stone-300"
+          >
+            <span>Out of Stock</span>
+          </button>
+        )}
       </div>
     </div>
   );

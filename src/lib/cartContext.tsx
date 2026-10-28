@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Product, CartItem } from '@/types/product';
-import { SITE_CONFIG } from '@/data/siteConfig';
+import { getProductById } from '@/lib/products';
 
 interface CartContextType {
   items: CartItem[];
@@ -39,7 +39,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        setItems(JSON.parse(saved));
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) setItems(parsed.flatMap((item: CartItem) => {
+          const product = getProductById(item.product?.id);
+          if (!product?.inStock || !Number.isInteger(item.quantity) || item.quantity < 1) return [];
+          const variant = product.variants.find(v => v.id === item.variantId || v.name === item.selectedVariant) || product.variants.find(v => v.default) || product.variants[0];
+          if (variant?.inStock === false) return [];
+          return [{ ...item, product, selectedVariant: variant?.name, variantId: variant?.id, variantPrice: variant?.price }];
+        }));
       }
     } catch {
       // Ignore storage errors in restricted contexts
@@ -75,6 +82,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     variantPrice?: number,
     variantId?: number
   ) => {
+    const canonical = getProductById(product.id);
+    if (!canonical?.inStock || !Number.isInteger(quantity) || quantity < 1) return;
+    product = canonical;
+    const variant = product.variants.find(v => v.id === variantId || v.name === selectedVariant) || product.variants.find(v => v.default) || product.variants[0];
+    if (variant?.inStock === false) return;
+    selectedVariant = variant?.name;
+    variantId = variant?.id;
+    variantPrice = variant?.price;
     setItems((prev) => {
       const existingIndex = prev.findIndex(
         (i) => i.product.id === product.id && i.selectedVariant === selectedVariant

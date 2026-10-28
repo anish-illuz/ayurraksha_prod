@@ -1,81 +1,202 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, ArrowRight, Instagram, Facebook, Youtube, Check } from 'lucide-react';
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Instagram,
+  Facebook,
+  Youtube,
+  ShieldCheck,
+  CreditCard,
+  Banknote,
+  QrCode,
+  Truck,
+  ArrowRight,
+} from 'lucide-react';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const Footer: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim() && email.includes('@')) {
-      setIsSubscribed(true);
-      setEmail('');
-      setTimeout(() => setIsSubscribed(false), 4000);
-    }
-  };
-
   return (
-    <footer className="bg-white text-[#26352D] pt-14 pb-10 border-t border-stone-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main 4-Column Grid matching reference image */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-stone-200">
+    <footer className="bg-[#163D30] text-[#F6F1E7] border-t border-[#1F4E3E]">
+      {/* Upper Main Footer Grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 sm:pt-16 sm:pb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-8">
 
-          {/* Left Column: Brand, Address, Phone, Email */}
-          <div className="lg:col-span-4 space-y-5">
-            <Link href="/" className="inline-block" aria-label="Ayurraksha Home">
-              <div className="relative h-12 w-48">
-                <Image
-                  src="/images/logo.png"
-                  alt="Ayurraksha"
-                  fill
-                  sizes="192px"
-                  className="object-contain object-left"
-                />
-              </div>
-            </Link>
-
-            {/* Address with larger, clear, legible font */}
-            <p className="text-base italic text-[#26352D] leading-relaxed">
-              251, First Floor,<br />
-              New Tiny Sector,<br />
-              Ambattur Industrial Estate,<br />
-              Chennai 600058
-            </p>
-
-            {/* Phone */}
-            <div className="flex items-center gap-3 pt-1">
-              <Phone size={22} className="text-[#26352D] flex-shrink-0" />
-              <a
-                href={`tel:${SITE_CONFIG.phone}`}
-                className="text-lg font-bold text-[#26352D] tracking-wide hover:text-[#9E2A2B] transition-colors"
-              >
-                99403-88877
-              </a>
+          {/* Column 1: Brand & Contact (Span 4) */}
+          <div className="lg:col-span-4 space-y-6">
+            <div>
+              <Link href="/" className="inline-block" aria-label="Ayurraksha Homepage">
+                <div className="relative h-12 w-48 bg-white/95 px-3 py-1.5 rounded-lg shadow-sm">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Ayurraksha"
+                    fill
+                    sizes="192px"
+                    className="object-contain object-left p-1"
+                  />
+                </div>
+              </Link>
+              <p className="mt-3 text-xs tracking-wider uppercase font-semibold text-[#C9AD79]">
+                Classical Ayurveda • Doctor Formulated
+              </p>
             </div>
 
-            {/* Email */}
-            <div className="flex items-center gap-3">
-              <Mail size={22} className="text-[#26352D] flex-shrink-0" />
-              <a
-                href="mailto:info@vprimecorp.in"
-                className="text-base font-semibold text-[#26352D] hover:text-[#9E2A2B] transition-colors"
-              >
-                info@vprimecorp.in
-              </a>
+            <p className="text-sm text-[#F6F1E7]/80 leading-relaxed font-sans max-w-sm">
+              Rooted in classical Ayurvedic pharmacology overseen by Dr. Jegajothi Pandian. Natural, pure herbal extracts crafted to restore balance from within.
+            </p>
+
+            {/* Address */}
+            <div className="flex items-start gap-3 text-xs sm:text-sm text-[#F6F1E7]/85 pt-1">
+              <MapPin size={18} className="text-[#C9AD79] flex-shrink-0 mt-0.5" />
+              <address className="not-italic leading-relaxed">
+                251, First Floor, New Tiny Sector,<br />
+                Ambattur Industrial Estate,<br />
+                Chennai, Tamil Nadu – 600058
+              </address>
+            </div>
+
+            {/* Phone & Email */}
+            <div className="space-y-2.5 pt-1">
+              <div className="flex items-center gap-3">
+                <Phone size={17} className="text-[#C9AD79] flex-shrink-0" />
+                <a
+                  href={`tel:${SITE_CONFIG.phone}`}
+                  className="text-sm sm:text-base font-bold text-[#F6F1E7] hover:text-[#C9AD79] transition-colors tracking-wide"
+                >
+                  99403-88877
+                </a>
+                <span className="text-xs text-[#C9AD79]/80 font-medium">(Customer Care)</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail size={17} className="text-[#C9AD79] flex-shrink-0" />
+                <a
+                  href="mailto:info@vprimecorp.in"
+                  className="text-xs sm:text-sm text-[#F6F1E7]/90 hover:text-[#C9AD79] transition-colors"
+                >
+                  info@vprimecorp.in
+                </a>
+              </div>
+            </div>
+
+            {/* Social Media Row - Displayed once with official channels */}
+            <div className="pt-2">
+              <span className="text-xs uppercase tracking-widest text-[#C9AD79] font-bold block mb-3">
+                Follow AyurRaksha
+              </span>
+              <div className="flex items-center gap-3.5">
+                <a
+                  href="https://www.instagram.com/ayurrakshaonline/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ayurraksha on Instagram"
+                  className="w-9 h-9 rounded-full bg-[#1F4E3E] text-[#F6F1E7] hover:bg-[#C9AD79] hover:text-[#163D30] transition-all flex items-center justify-center shadow-xs"
+                >
+                  <Instagram size={17} />
+                </a>
+                <a
+                  href="https://www.facebook.com/VPrimeCare/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ayurraksha on Facebook"
+                  className="w-9 h-9 rounded-full bg-[#1F4E3E] text-[#F6F1E7] hover:bg-[#C9AD79] hover:text-[#163D30] transition-all flex items-center justify-center shadow-xs"
+                >
+                  <Facebook size={17} />
+                </a>
+                <a
+                  href="https://www.youtube.com/@ayurrakshaonline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ayurraksha on YouTube"
+                  className="w-9 h-9 rounded-full bg-[#1F4E3E] text-[#F6F1E7] hover:bg-[#C9AD79] hover:text-[#163D30] transition-all flex items-center justify-center shadow-xs"
+                >
+                  <Youtube size={17} />
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Column 2: Navigation Links 1 (SHOP ALL, CONSULT A DOCTOR, etc.) */}
-          <div className="lg:col-span-2">
-            <ul className="space-y-4 text-sm sm:text-[15px] font-bold uppercase tracking-wider text-[#9E2A2B]">
+          {/* Column 2: Shop Formulations (Span 3) */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="font-serif text-lg sm:text-xl font-bold text-[#C9AD79] tracking-wide border-b border-[#235343] pb-2.5">
+              Shop AyurRaksha
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-[#F6F1E7]/80">
               <li>
-                <Link href="/shop" className="hover:underline transition-colors block">
-                  SHOP ALL
+                <Link href="/shop" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> All Products &amp; Tonics
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/health-packs" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Therapeutic Health Packs
+                </Link>
+              </li>
+              <li>
+                <Link href="/concern/liver-wellness" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Liver Care &amp; Detox
+                </Link>
+              </li>
+              <li>
+                <Link href="/concern/pain-joints" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Joint Comfort &amp; Pain Relief
+                </Link>
+              </li>
+              <li>
+                <Link href="/concern/skin-dermatology" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Skin Disorders &amp; Hair Wellness
+                </Link>
+              </li>
+              <li>
+                <Link href="/concern/digestive-health" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Digestion &amp; Gut Balance
+                </Link>
+              </li>
+              <li>
+                <Link href="/product/purna-sakthi-tonic" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Women&apos;s Health &amp; Hormonal Balance
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/powder" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Herbal Botanical Teas
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: About Ayurraksha (Span 2) */}
+          <div className="lg:col-span-2 space-y-4">
+            <h4 className="font-serif text-lg sm:text-xl font-bold text-[#C9AD79] tracking-wide border-b border-[#235343] pb-2.5">
+              About Ayurraksha
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-[#F6F1E7]/80">
+              <li>
+                <Link href="/about" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Our Story &amp; Heritage
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Dr. Jegajothi Pandian
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Ayurvedic Journal &amp; Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Clinic Locations
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Contact Support
                 </Link>
               </li>
               <li>
@@ -83,160 +204,141 @@ export const Footer: React.FC = () => {
                   href={SITE_CONFIG.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline transition-colors block"
+                  className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5 font-medium text-[#C9AD79]"
                 >
-                  CONSULT A DOCTOR
+                  <span className="text-xs">›</span> Free Doctor Consultation
                 </a>
               </li>
-              <li>
-                <Link href="/contact" className="hover:underline transition-colors block">
-                  OUR LOCATIONS
-                </Link>
-              </li>
-              <li>
-                <Link href="/shipping-policy" className="hover:underline transition-colors block">
-                  SHIPPING POLICY
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms-of-service" className="hover:underline transition-colors block">
-                  TERMS &amp; CONDITIONS
-                </Link>
-              </li>
             </ul>
           </div>
 
-          {/* Column 3: Navigation Links 2 (BLOG, ORDER TRACKING, etc.) */}
-          <div className="lg:col-span-2">
-            <ul className="space-y-4 text-sm sm:text-[15px] font-bold uppercase tracking-wider text-[#9E2A2B]">
+          {/* Column 4: Customer Care & Order Tracking (Span 3) */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="font-serif text-lg sm:text-xl font-bold text-[#C9AD79] tracking-wide border-b border-[#235343] pb-2.5">
+              Customer Care
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-[#F6F1E7]/80">
               <li>
-                <Link href="/blog" className="hover:underline transition-colors block">
-                  BLOG
+                <Link
+                  href="/order-tracking"
+                  className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5 font-bold text-[#F6F1E7]"
+                >
+                  <Truck size={14} className="text-[#C9AD79]" />
+                  <span>Order Tracking</span>
                 </Link>
               </li>
               <li>
-                <Link href="/cart" className="hover:underline transition-colors block">
-                  ORDER TRACKING
+                <Link href="/shipping-policy" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Shipping &amp; Delivery Policy
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:underline transition-colors block">
-                  CONTACT US
+                <Link href="/refund-returns" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Return &amp; Refund Policy
                 </Link>
               </li>
               <li>
-                <Link href="/privacy-policy" className="hover:underline transition-colors block">
-                  PRIVACY POLICY
+                <Link href="/terms-of-service" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Terms &amp; Conditions
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:underline transition-colors block">
-                  ABOUT US
-                </Link>
-              </li>
-              <li>
-                <Link href="/refund-returns" className="hover:underline transition-colors block">
-                  RETURN &amp; REFUND POLICY
+                <Link href="/privacy-policy" className="hover:text-[#C9AD79] transition-colors flex items-center gap-1.5">
+                  <span className="text-[#C9AD79] text-xs">›</span> Privacy &amp; Data Policy
                 </Link>
               </li>
             </ul>
-          </div>
 
-          {/* Column 4: JOIN OUR MAILING LIST & FOLLOW US */}
-          <div className="lg:col-span-4 space-y-6">
-            <div>
-              <h4 className="text-base sm:text-lg font-bold uppercase tracking-wider text-[#26352D] mb-3.5">
-                JOIN OUR MAILING LIST
-              </h4>
-
-              {isSubscribed ? (
-                <div className="p-3.5 bg-emerald-50 border border-emerald-200 rounded-md text-sm font-semibold text-emerald-800 flex items-center gap-2">
-                  <Check size={18} />
-                  <span>Thank you for subscribing!</span>
+            {/* Quick Order Tracking Action Callout */}
+            <div className="pt-2">
+              <Link
+                href="/order-tracking"
+                className="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-[#1F4E3E] hover:bg-[#25604C] text-[#F6F1E7] border border-[#2B6A55] text-xs font-semibold transition-all group"
+              >
+                <div className="flex items-center gap-2">
+                  <Truck size={16} className="text-[#C9AD79]" />
+                  <span>Track Your Order</span>
                 </div>
-              ) : (
-                <form onSubmit={handleSubscribe} className="flex items-center">
-                  <label htmlFor="footer-email-input" className="sr-only">
-                    Enter Email
-                  </label>
-                  <input
-                    id="footer-email-input"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    placeholder="Enter Email"
-                    className="flex-grow px-4 py-3 bg-white border border-stone-300 rounded-l-md text-base text-[#26352D] placeholder:text-stone-400 focus:outline-none focus:border-stone-500 h-[48px]"
-                  />
-                  <button
-                    type="submit"
-                    aria-label="Subscribe to newsletter"
-                    className="px-5 py-3 bg-[#9FB8A6] hover:bg-[#8DA895] text-white rounded-r-md transition-colors flex items-center justify-center flex-shrink-0 h-[48px]"
-                  >
-                    <ArrowRight size={20} />
-                  </button>
-                </form>
-              )}
+                <ArrowRight size={14} className="text-[#C9AD79] group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
+          </div>
 
-            {/* Follow Us with clean outline social icons */}
-            <div>
-              <h4 className="text-base sm:text-lg font-bold uppercase tracking-wider text-[#26352D] mb-3.5">
-                FOLLOW US
-              </h4>
-              <div className="flex items-center gap-5 text-[#26352D]">
-                <a
-                  href="https://www.instagram.com/ayurrakshaonline/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow Ayurraksha on Instagram"
-                  className="hover:text-[#9E2A2B] transition-colors p-1"
-                >
-                  <Instagram size={28} className="stroke-[1.75]" />
-                </a>
-                <a
-                  href="https://www.facebook.com/VPrimeCare/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow Ayurraksha on Facebook"
-                  className="hover:text-[#9E2A2B] transition-colors p-1"
-                >
-                  <Facebook size={28} className="stroke-[1.75]" />
-                </a>
-                <a
-                  href="https://www.youtube.com/@ayurrakshaonline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Subscribe to Ayurraksha on YouTube"
-                  className="hover:text-[#9E2A2B] transition-colors p-1"
-                >
-                  <Youtube size={28} className="stroke-[1.75]" />
-                </a>
+        </div>
+      </div>
+
+      {/* Darker Green Bottom Section (#0E261E) */}
+      <div className="bg-[#0E261E] text-[#F6F1E7]/70 border-t border-[#1A3D31] py-8 sm:py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+          {/* Regulatory Disclaimer Box with High Readability */}
+          <div className="p-4 sm:p-5 rounded-xl bg-[#133228] border border-[#1E4537] text-sm leading-relaxed text-[#F6F1E7]/80">
+            <div className="flex items-start gap-2.5">
+              <ShieldCheck size={18} className="text-[#C9AD79] flex-shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-[#C9AD79] block mb-1 uppercase tracking-wider font-sans text-[11px]">
+                  Ayurvedic Regulatory &amp; Health Disclaimer
+                </strong>
+                <p>
+                  AyurRaksha products are classical Ayurvedic and herbal dietary supplements formulated to promote natural health, balance, and constitutional well-being. Statements regarding these herbal preparations have not been evaluated by any governmental food and drug administration to diagnose, treat, cure, or prevent any chronic disease. Please consult with a qualified Ayurvedic physician or medical doctor before beginning any new healthcare regimen, particularly if you are pregnant, lactating, taking prescription pharmaceutical medication, or managing a pre-existing medical condition.
+                </p>
               </div>
             </div>
           </div>
 
-        </div>
-
-        {/* Regulatory Disclaimer */}
-        <div className="py-6 border-b border-stone-200 text-xs text-stone-500 leading-relaxed">
-          <p>
-            <strong className="text-stone-700">Disclaimer:</strong> Ayurraksha products are Ayurvedic and herbal dietary supplements formulated to promote natural health, balance, and well-being. Statements regarding dietary supplements have not been evaluated by any governmental drug administration to diagnose, treat, cure, or prevent any chronic disease. Please consult with a qualified Ayurvedic physician or medical doctor before beginning any new healthcare regimen, particularly if pregnant, lactating, taking prescription medication, or suffering from a pre-existing medical condition.
-          </p>
-        </div>
-
-        {/* Bottom Bar: Copyright & Payment Badges */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
-          <div>
-            © {new Date().getFullYear()} Ayurraksha Online (VPrime Innovations). All rights reserved.
+          {/* Payment Methods - Displayed strictly as icons with name */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-5 pt-1 border-b border-[#1A3D31] pb-6">
+            <span className="text-xs uppercase tracking-widest text-[#C9AD79] font-bold">
+              Verified Payment Methods
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#143329] border border-[#235343] text-xs font-medium text-[#F6F1E7]">
+                <CreditCard size={14} className="text-[#C9AD79]" />
+                <span>Visa</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#143329] border border-[#235343] text-xs font-medium text-[#F6F1E7]">
+                <CreditCard size={14} className="text-[#C9AD79]" />
+                <span>Mastercard</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#143329] border border-[#235343] text-xs font-medium text-[#F6F1E7]">
+                <QrCode size={14} className="text-[#C9AD79]" />
+                <span>UPI / QR</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#143329] border border-[#235343] text-xs font-medium text-[#F6F1E7]">
+                <CreditCard size={14} className="text-[#C9AD79]" />
+                <span>RuPay</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#143329] border border-[#235343] text-xs font-medium text-[#F6F1E7]">
+                <Banknote size={14} className="text-[#C9AD79]" />
+                <span>Cash on Delivery</span>
+              </div>
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 text-[11px] text-stone-600">
-            <span className="px-2 py-0.5 rounded bg-stone-100 border border-stone-300">Razorpay Secured</span>
-            <span className="px-2 py-0.5 rounded bg-stone-100 border border-stone-300">UPI / RuPay</span>
-            <span className="px-2 py-0.5 rounded bg-stone-100 border border-stone-300">Visa / Mastercard</span>
-            <span className="px-2 py-0.5 rounded bg-stone-100 border border-stone-300">Cash on Delivery</span>
+          {/* Copyright & Legal Navigation Links */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#F6F1E7]/60">
+            <p className="text-center sm:text-left">
+              &copy; {new Date().getFullYear()} AyurRaksha Online (VPrime Innovations). All rights reserved.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-[#F6F1E7]/70">
+              <Link href="/shipping-policy" className="hover:text-[#C9AD79] transition-colors">
+                Shipping Policy
+              </Link>
+              <span>•</span>
+              <Link href="/refund-returns" className="hover:text-[#C9AD79] transition-colors">
+                Refund &amp; Returns
+              </Link>
+              <span>•</span>
+              <Link href="/terms-of-service" className="hover:text-[#C9AD79] transition-colors">
+                Terms of Service
+              </Link>
+              <span>•</span>
+              <Link href="/privacy-policy" className="hover:text-[#C9AD79] transition-colors">
+                Privacy Policy
+              </Link>
+            </div>
           </div>
+
         </div>
       </div>
     </footer>

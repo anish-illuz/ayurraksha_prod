@@ -8,12 +8,12 @@ import { getProductBySlug } from '@/lib/products';
 
 export const ReviewsSection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+    <section className="py-9 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Judge.me Badge */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:gap-6 sm:mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-2.5">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-2.5">
               <div className="flex items-center text-gold">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <Star key={i} size={18} className="fill-gold" />
@@ -22,7 +22,7 @@ export const ReviewsSection: React.FC = () => {
               <span className="text-sm font-bold text-primary">
                 {SITE_CONFIG.reviews.averageRating} / 5.0
               </span>
-              <span className="text-sm text-charcoal-muted">
+              <span className="basis-full sm:basis-auto text-sm text-charcoal-muted">
                 ({SITE_CONFIG.reviews.totalReviews} Verified Customer Reviews)
               </span>
             </div>
@@ -42,7 +42,7 @@ export const ReviewsSection: React.FC = () => {
         </div>
 
         {/* 6 Grid Review Cards with Authentic Product Thumbnails */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7">
           {VERIFIED_REVIEWS.map((rev) => {
             const product = getProductBySlug(rev.productSlug);
             const thumbImg = product?.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png';
@@ -50,7 +50,7 @@ export const ReviewsSection: React.FC = () => {
             return (
               <div
                 key={rev.id}
-                className="flex flex-col justify-between p-6 sm:p-7 bg-[#FAF9F5] rounded-2xl border border-stone-200/80 shadow-xs transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 group"
+                className="flex flex-col justify-between p-4 sm:p-7 bg-[#FAF9F5] rounded-2xl border border-stone-200/80 shadow-xs transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 group"
               >
                 <div>
                   {/* Stars & Verified */}
@@ -78,7 +78,7 @@ export const ReviewsSection: React.FC = () => {
                 </div>
 
                 {/* Author & Linked Product Thumbnail at Bottom */}
-                <div className="mt-6 pt-4 border-t border-stone-200/80 flex items-center justify-between gap-3">
+                <div className="mt-4 pt-3 border-t border-stone-200/80 flex flex-wrap items-center justify-between gap-3">
                   <div>
                     <span className="text-sm font-bold text-charcoal block">
                       {rev.author}

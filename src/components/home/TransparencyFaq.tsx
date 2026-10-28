@@ -15,7 +15,7 @@ const FAQS = [
   },
   {
     q: 'How long does it typically take to feel the benefits?',
-    a: 'Ayurveda works holistically by restoring internal balance rather than temporarily masking symptoms. While soothing topical products like Divine Healing Oil or Etionment Cream offer rapid localized comfort within days, internal tonics and packs (like BoozLiv or Flow Well) yield optimal results when taken consistently for 30 to 60 days.',
+    a: 'Ayurveda works holistically by restoring internal balance rather than temporarily masking symptoms. While soothing topical products like Divine Healing Oil or Etioment Cream offer rapid localized comfort within days, internal tonics and packs (like BoozLiv or Flow Well) yield optimal results when taken consistently for 30 to 60 days.',
   },
   {
     q: 'What are the delivery charges and shipping times across India?',
@@ -35,7 +35,7 @@ export const TransparencyFaq: React.FC = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-[#E8EFE7]/40">
+    <section className="py-9 sm:py-20 lg:py-24 bg-[#E8EFE7]/40">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-primary text-xs font-semibold mb-2.5 border border-primary/10 shadow-xs">

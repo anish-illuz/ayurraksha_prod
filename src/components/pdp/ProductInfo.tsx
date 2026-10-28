@@ -40,6 +40,9 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
     ? Math.round(((currentRegularPrice - currentPrice) / currentRegularPrice) * 100)
     : product.discountPercent;
 
+  // Determine stock availability for product or selected variant
+  const isAvailable = (currentVariant?.inStock ?? true) && product.inStock;
+
   const handleAddToCart = () => {
     addToCart(
       product,
@@ -69,7 +72,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
   )}`;
 
   return (
-    <div className="flex flex-col space-y-6">
+    <div id="product-purchase-options" className="flex flex-col space-y-6">
       {/* Brand & Category badges */}
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs font-semibold text-botanical uppercase tracking-wider">
@@ -163,61 +166,82 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         </div>
       )}
 
-      {/* In Stock Status */}
-      <div className="flex items-center gap-2 text-xs font-semibold text-emerald-800">
-        <span className="relative flex h-2.5 w-2.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600" />
-        </span>
-        <span>In Stock • Dispatched within 1–2 business days from Chennai</span>
-      </div>
+      {/* Stock Status Indicator */}
+      {isAvailable ? (
+        <div className="flex items-center gap-2 text-xs font-semibold text-emerald-800">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600" />
+          </span>
+          <span>In Stock • Dispatched within 1–2 business days from Chennai</span>
+        </div>
+      ) : (
+        <div className="flex items-center gap-2 text-xs font-semibold text-rose-700 bg-rose-50 border border-rose-200/80 px-3.5 py-2.5 rounded-lg">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-600" />
+          </span>
+          <span>Currently Out of Stock • Fresh Batch in Preparation</span>
+        </div>
+      )}
 
       {/* Quantity & Add to Cart Controls */}
       <div className="space-y-3 pt-2">
         <div className="flex items-center gap-3">
           {/* Quantity Selector */}
-          <div className="flex items-center border border-stone-200 rounded-button bg-white overflow-hidden shadow-xs">
-            <button
-              onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-              disabled={quantity <= 1}
-              aria-label="Decrease quantity"
-              className="p-3 text-stone-600 hover:bg-stone-100 disabled:opacity-40 transition-colors"
-            >
-              <Minus size={16} />
-            </button>
-            <span className="w-12 text-center text-sm font-bold text-charcoal">
-              {quantity}
-            </span>
-            <button
-              onClick={() => setQuantity((q) => q + 1)}
-              aria-label="Increase quantity"
-              className="p-3 text-stone-600 hover:bg-stone-100 transition-colors"
-            >
-              <Plus size={16} />
-            </button>
-          </div>
+          {isAvailable && (
+            <div className="flex items-center border border-stone-200 rounded-button bg-white overflow-hidden shadow-xs">
+              <button
+                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                disabled={quantity <= 1}
+                aria-label="Decrease quantity"
+                className="p-3 text-stone-600 hover:bg-stone-100 disabled:opacity-40 transition-colors"
+              >
+                <Minus size={16} />
+              </button>
+              <span className="w-12 text-center text-sm font-bold text-charcoal">
+                {quantity}
+              </span>
+              <button
+                onClick={() => setQuantity((q) => q + 1)}
+                aria-label="Increase quantity"
+                className="p-3 text-stone-600 hover:bg-stone-100 transition-colors"
+              >
+                <Plus size={16} />
+              </button>
+            </div>
+          )}
 
           {/* Add to Cart Button */}
-          <button
-            onClick={handleAddToCart}
-            className={`flex-grow inline-flex items-center justify-center gap-2 py-3 px-6 rounded-button text-sm font-semibold whitespace-nowrap transition-all shadow-md hover:shadow-lg active:scale-[0.99] ${
-              isAdded
-                ? 'bg-forest text-white'
-                : 'bg-botanical hover:bg-forest text-white'
-            }`}
-          >
-            {isAdded ? (
-              <>
-                <Check size={18} className="flex-shrink-0" />
-                <span className="whitespace-nowrap">Added to Cart!</span>
-              </>
-            ) : (
-              <>
-                <ShoppingBag size={18} className="flex-shrink-0" />
-                <span className="whitespace-nowrap">Add to Cart • ₹{(currentPrice * quantity).toLocaleString('en-IN')}</span>
-              </>
-            )}
-          </button>
+          {isAvailable ? (
+            <button
+              onClick={handleAddToCart}
+              className={`flex-grow inline-flex items-center justify-center gap-2 py-3 px-6 rounded-button text-sm font-semibold whitespace-nowrap transition-all shadow-md hover:shadow-lg active:scale-[0.99] ${
+                isAdded
+                  ? 'bg-forest text-white'
+                  : 'bg-botanical hover:bg-forest text-white'
+              }`}
+            >
+              {isAdded ? (
+                <>
+                  <Check size={18} className="flex-shrink-0" />
+                  <span className="whitespace-nowrap">Added to Cart!</span>
+                </>
+              ) : (
+                <>
+                  <ShoppingBag size={18} className="flex-shrink-0" />
+                  <span className="whitespace-nowrap">Add to Cart • ₹{(currentPrice * quantity).toLocaleString('en-IN')}</span>
+                </>
+              )}
+            </button>
+          ) : (
+            <button
+              disabled
+              className="flex-grow inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-button text-sm font-semibold whitespace-nowrap bg-stone-200 text-stone-500 cursor-not-allowed border border-stone-300 shadow-none"
+            >
+              <ShoppingBag size={18} className="flex-shrink-0 text-stone-400" />
+              <span>Out of Stock</span>
+            </button>
+          )}
         </div>
 
         {/* WhatsApp Consultation Action */}
@@ -228,7 +252,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-button text-xs font-semibold bg-white border border-emerald-700/30 text-emerald-800 hover:bg-emerald-50 transition-colors"
         >
           <MessageSquare size={16} className="text-emerald-700" />
-          <span>Consult Dr. Jegajothi Pandian About This Formulation</span>
+          <span>{isAvailable ? 'Consult Dr. Jegajothi Pandian About This Formulation' : 'Notify Me When Available via WhatsApp Consultation'}</span>
         </a>
       </div>
 

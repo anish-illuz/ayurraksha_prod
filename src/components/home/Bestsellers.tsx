@@ -15,10 +15,10 @@ export const Bestsellers: React.FC = () => {
     : bestsellers.filter((p) => p.categorySlugs.includes(filter));
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+    <section className="py-9 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:gap-6 sm:mb-12">
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-primary text-xs font-semibold mb-2.5">
               <Sparkles size={14} className="text-gold" />
@@ -56,6 +56,8 @@ export const Bestsellers: React.FC = () => {
           </div>
         </div>
 
+        <p className="mb-4 rounded-xl bg-sage px-4 py-3 text-sm text-primary">Free shipping across India on all prepaid orders.</p>
+
         {/* Product Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {filtered.map((product, idx) => (
@@ -64,7 +66,7 @@ export const Bestsellers: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-12 text-center">
+        <div className="mt-6 sm:mt-12 text-center">
           <Link
             href="/shop"
             className="inline-flex items-center justify-center gap-2 px-8 h-12 rounded-[8px] text-sm font-semibold bg-primary hover:bg-primary-dark text-white transition-all shadow-xs active:scale-[0.98]"

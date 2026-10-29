@@ -55,8 +55,8 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Address */}
-            <div className="flex items-start gap-3 text-xs sm:text-sm text-[#F6F1E7]/85 pt-1">
-              <MapPin size={18} className="text-[#C9AD79] flex-shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3.5 text-xs sm:text-sm text-[#F6F1E7]/85 pt-1">
+              <MapPin size={18} className="text-[#C9AD79] flex-shrink-0 mt-0.5 stroke-[1.8]" />
               <address className="not-italic leading-relaxed font-sans">
                 251, First Floor,<br />
                 New Tiny Sector,<br />
@@ -66,8 +66,8 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Phone */}
-            <div className="flex items-center gap-3">
-              <Phone size={17} className="text-[#C9AD79] flex-shrink-0" />
+            <div className="flex items-center gap-3.5">
+              <Phone size={18} className="text-[#C9AD79] flex-shrink-0 stroke-[1.8]" />
               <a
                 href={`tel:${SITE_CONFIG.phone}`}
                 className="text-sm sm:text-base font-bold text-[#F6F1E7] hover:text-[#C9AD79] transition-colors tracking-wide font-sans"
@@ -77,8 +77,8 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Email */}
-            <div className="flex items-center gap-3">
-              <Mail size={17} className="text-[#C9AD79] flex-shrink-0" />
+            <div className="flex items-center gap-3.5">
+              <Mail size={18} className="text-[#C9AD79] flex-shrink-0 stroke-[1.8]" />
               <a
                 href="mailto:info@vprimecorp.in"
                 className="text-xs sm:text-sm text-[#F6F1E7]/90 hover:text-[#C9AD79] transition-colors font-sans"
@@ -94,27 +94,27 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ayurraksha on Instagram"
-                className="w-8 h-8 rounded-full border border-[#C9AD79]/60 text-[#F6F1E7] hover:bg-[#C9AD79] hover:text-[#0D2E22] hover:border-[#C9AD79] transition-all flex items-center justify-center"
+                className="w-9 h-9 rounded-full border border-[#C9AD79]/60 text-[#F6F1E7] hover:bg-[#C9AD79] hover:text-[#0D2E22] hover:border-[#C9AD79] transition-all flex items-center justify-center"
               >
-                <Instagram size={15} />
+                <Instagram size={17} className="stroke-[1.8]" />
               </a>
               <a
                 href="https://www.facebook.com/VPrimeCare/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ayurraksha on Facebook"
-                className="w-8 h-8 rounded-full border border-[#C9AD79]/60 text-[#F6F1E7] hover:bg-[#C9AD79] hover:text-[#0D2E22] hover:border-[#C9AD79] transition-all flex items-center justify-center"
+                className="w-9 h-9 rounded-full border border-[#C9AD79]/60 text-[#F6F1E7] hover:bg-[#C9AD79] hover:text-[#0D2E22] hover:border-[#C9AD79] transition-all flex items-center justify-center"
               >
-                <Facebook size={15} />
+                <Facebook size={17} className="stroke-[1.8]" />
               </a>
               <a
                 href="https://www.youtube.com/@ayurrakshaonline"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ayurraksha on YouTube"
-                className="w-8 h-8 rounded-full border border-[#C9AD79]/60 text-[#F6F1E7] hover:bg-[#C9AD79] hover:text-[#0D2E22] hover:border-[#C9AD79] transition-all flex items-center justify-center"
+                className="w-9 h-9 rounded-full border border-[#C9AD79]/60 text-[#F6F1E7] hover:bg-[#C9AD79] hover:text-[#0D2E22] hover:border-[#C9AD79] transition-all flex items-center justify-center"
               >
-                <Youtube size={15} />
+                <Youtube size={17} className="stroke-[1.8]" />
               </a>
             </div>
           </div>
@@ -122,7 +122,7 @@ export const Footer: React.FC = () => {
           {/* Column 2: SHOP (Span 2) with vertical divider matching 11.webp */}
           <div className="lg:col-span-2 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-6 xl:pl-8 space-y-4">
             <div>
-              <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase whitespace-nowrap">
+              <h4 className="font-heading text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase whitespace-nowrap">
                 SHOP
               </h4>
               <div className="w-8 h-[2px] bg-[#C9AD79] mt-2 mb-4" />
@@ -174,7 +174,7 @@ export const Footer: React.FC = () => {
           {/* Column 3: ABOUT AYURRAKSHA (Span 3 - Guaranteed single line) with vertical divider matching 11.webp */}
           <div className="lg:col-span-3 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-6 xl:pl-8 space-y-4">
             <div>
-              <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase whitespace-nowrap">
+              <h4 className="font-heading text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase whitespace-nowrap">
                 ABOUT AYURRAKSHA
               </h4>
               <div className="w-8 h-[2px] bg-[#C9AD79] mt-2 mb-4" />
@@ -206,7 +206,7 @@ export const Footer: React.FC = () => {
           {/* Column 4: CUSTOMER CARE (Span 3) with vertical divider matching 11.webp */}
           <div className="lg:col-span-3 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-6 xl:pl-8 space-y-4">
             <div>
-              <h4 className="font-serif text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase whitespace-nowrap">
+              <h4 className="font-heading text-base sm:text-lg font-bold text-[#C9AD79] tracking-wider uppercase whitespace-nowrap">
                 CUSTOMER CARE
               </h4>
               <div className="w-8 h-[2px] bg-[#C9AD79] mt-2 mb-4" />

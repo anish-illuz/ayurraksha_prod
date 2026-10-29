@@ -43,11 +43,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
   const secondaryImage = product.images[1] || primaryImage;
 
   // Determine size/pack label accurately based on product title or category
-  const titleSizeMatch = product.name.match(/\b(\d+\s*ml|\d+\s*g)\b/i);
+  const titleSizeMatch = product.name.match(/\b(\d+)\s*(ml|g)\b/i);
   const isTablet = product.name.toLowerCase().includes('tablet');
 
   const sizeLabel = (product.variants.find(v => v.default) || product.variants[0])?.name || (
-    titleSizeMatch ? titleSizeMatch[1] :
+    titleSizeMatch ? `${titleSizeMatch[1]} ${titleSizeMatch[2]}` :
     isTablet ? '60 Tablets' :
     product.categorySlugs.includes('oil') ? '100 ml' :
     product.categorySlugs.includes('tonic') ? '200 ml' :

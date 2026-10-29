@@ -37,17 +37,20 @@ export const Header: React.FC = () => {
             isScrolled ? 'border-stone-200 shadow-xs' : 'border-stone-100'
           }`}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
-            {/* Left: Mobile Menu & Desktop Brand */}
-            <div className="flex items-center gap-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between relative">
+            {/* Left: Mobile Menu Button */}
+            <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setIsMobileOpen(true)}
                 aria-label="Open mobile navigation menu"
-                className="lg:hidden p-2 text-charcoal hover:text-botanical hover:bg-stone-100 rounded-lg transition-colors"
+                className="p-2 text-charcoal hover:text-botanical hover:bg-stone-100 rounded-lg transition-colors"
               >
                 <Menu size={22} />
               </button>
+            </div>
 
+            {/* Brand Logo - Centered on Mobile, Left-aligned on Desktop */}
+            <div className="flex items-center justify-center lg:justify-start flex-1 lg:flex-initial">
               <Link href="/" className="flex items-center group py-1" aria-label="Ayurraksha Home">
                 <div className="relative h-10 sm:h-12 w-36 sm:w-44 transition-transform duration-200 group-hover:scale-[1.02]">
                   <Image
@@ -56,7 +59,7 @@ export const Header: React.FC = () => {
                     fill
                     priority
                     sizes="(max-width: 640px) 144px, 176px"
-                    className="object-contain object-left"
+                    className="object-contain object-center lg:object-left"
                   />
                 </div>
               </Link>

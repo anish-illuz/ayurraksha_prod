@@ -94,9 +94,9 @@
     ],
     "rating": 4.8,
     "reviewCount": 12,
-    "shortDescription": "Etioment ayurvedic proprietary medicine roll-on has powerful blend of natural herbs that help you get relief from all body pains. Provides instant relief from back pain, joint pain, frozen shoulder, cervical pain, lumbar pain, and migraines. Packed with 100% natural ingredients like Eucalyptus Globulus, Sesame, Camphor, Haritaki, Sida Cordifolia, and Thymus vulgaris for soothing and relaxing effects. Compact and handy, this roll-on is non-greasy, easy-to-use formula.",
+    "shortDescription": "Etioment ayurvedic proprietary medicine roll-on (50 ml) has a powerful blend of natural herbs that help you get fast relief from back pain, joint pain, frozen shoulder, cervical pain, and muscle soreness. Convenient, non-greasy roll-on applicator for targeted daily relief.",
     "description": "<p>Provides instant relief from back pain, joint pain, frozen shoulder, cervical pain, lumbar pain and migraines.</p>\n<p>Packed with 100% natural ingredients like Eucalyptus Globulus, Sesame, Camphor, Haritaki, Sida Cordifolia, and Thymus vulgaris for soothing and relaxing effects.</p>\n<div id=\"renewedProgramDescriptionBtf_feature_div\" class=\"celwidget\" data-feature-name=\"renewedProgramDescriptionBtf\" data-csa-c-type=\"widget\" data-csa-c-content-id=\"renewedProgramDescriptionBtf\" data-csa-c-slot-id=\"renewedProgramDescriptionBtf_feature_div\" data-csa-c-asin=\"\" data-csa-c-is-in-initial-active-row=\"false\" data-csa-c-id=\"t3p6gh-oq6uh-my283z-4pjx4x\" data-cel-widget=\"renewedProgramDescriptionBtf_feature_div\">Our Etioment roll-on designed to provide instant and effective relief from all body aches. It offers soothing comfort for sore joints and muscles.</div>",
-    "cleanDescription": "Provides instant relief from back pain, joint pain, frozen shoulder, cervical pain, lumbar pain and migraines. Packed with 100% natural ingredients like Eucalyptus Globulus, Sesame, Camphor, Haritaki, Sida Cordifolia, and Thymus vulgaris for soothing and relaxing effects. Our Etioment roll-on designed to provide instant and effective relief from all body aches. It offers soothing comfort for sore joints and muscles.",
+    "cleanDescription": "Etioment ayurvedic proprietary medicine roll-on (50 ml) has a powerful blend of natural herbs that help you get fast relief from back pain, joint pain, frozen shoulder, cervical pain, and muscle soreness. Convenient, non-greasy roll-on applicator for targeted daily relief.",
     "inStock": true,
     "variants": [],
     "sku": ""
@@ -220,7 +220,8 @@
       "oil"
     ],
     "healthConcerns": [
-      "Diabetes & Sugar"
+      "Digestive & Gut Health",
+      "Respiratory Wellness"
     ],
     "isBestseller": false,
     "images": [
@@ -229,9 +230,9 @@
     ],
     "rating": 4.8,
     "reviewCount": 12,
-    "shortDescription": "Struggling with recurring headaches, bad breath, or chronic conditions like asthma and diabetes? It&#8217;s time to introduce your body to the power of oil pulling with Ayur Raksha Gargling Oil – a potent Ayurvedic blend designed to detoxify your body from the very first step: your mouth. This ancient practice has now been scientifically validated to prevent and manage over 30 diseases, from migraines to metabolic disorders, by simply swishing 10 ml every morning!",
-    "description": "",
-    "cleanDescription": "",
+    "shortDescription": "Support your oral hygiene and daily wellness with Ayur Raksha Gargling Oil – a classical Ayurvedic oil pulling blend crafted with pure botanicals to freshen breath, strengthen teeth and gums, and promote gentle oral detoxification. Swish 10 ml daily every morning for complete oral protection.",
+    "description": "<p>Support your oral hygiene and daily wellness with Ayur Raksha Gargling Oil – a classical Ayurvedic oil pulling blend crafted with pure botanicals to freshen breath, strengthen teeth and gums, and promote gentle oral detoxification. Swish 10 ml daily every morning for complete oral protection.</p>",
+    "cleanDescription": "Support your oral hygiene and daily wellness with Ayur Raksha Gargling Oil – a classical Ayurvedic oil pulling blend crafted with pure botanicals to freshen breath, strengthen teeth and gums, and promote gentle oral detoxification. Swish 10 ml daily every morning for complete oral protection.",
     "inStock": true,
     "variants": [],
     "sku": ""
@@ -277,7 +278,7 @@
     "slug": "ayur-raksha-creat-capsules",
     "price": 1299,
     "regularPrice": 1299,
-    "salePrice": 1298,
+    "salePrice": 1299,
     "discountPercent": 0,
     "onSale": false,
     "categories": [
@@ -287,7 +288,7 @@
       "capsules"
     ],
     "healthConcerns": [
-      "Immunity & Vitality",
+      "Circulation & Vein Care",
       "Vitality & Rejuvenation"
     ],
     "isBestseller": false,
@@ -310,7 +311,7 @@
     "slug": "ayur-raksha-imu-360",
     "price": 1299,
     "regularPrice": 1299,
-    "salePrice": 1298,
+    "salePrice": 1299,
     "discountPercent": 0,
     "onSale": false,
     "categories": [
@@ -320,9 +321,8 @@
       "capsules"
     ],
     "healthConcerns": [
-      "Sleep & Stress",
-      "Immunity & Vitality",
-      "Vitality & Rejuvenation"
+      "Vitality & Rejuvenation",
+      "Immunity & Vitality"
     ],
     "isBestseller": false,
     "images": [
@@ -1685,10 +1685,10 @@
     "id": 4666,
     "name": "Ayur Raksha Skin Well Pack",
     "slug": "skin-well-pack",
-    "price": 2125,
-    "regularPrice": 2700,
-    "salePrice": 2125,
-    "discountPercent": 21,
+    "price": 2925,
+    "regularPrice": 3599,
+    "salePrice": 2925,
+    "discountPercent": 19,
     "onSale": true,
     "categories": [
       "Health Packs"

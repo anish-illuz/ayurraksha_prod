@@ -1,51 +1,51 @@
 import React from 'react';
-import { ShieldCheck, Stethoscope, Award, Truck, Lock } from 'lucide-react';
+import { ShieldCheck, Stethoscope, Award, Lock } from 'lucide-react';
 
 export const TrustBadges: React.FC = () => {
   const badges = [
     {
       icon: Stethoscope,
       title: 'Doctor Formulated',
-      subtitle: 'Formulated by Dr. Jegajothi Pandian',
+      subtitle: (
+        <span>Formulated by <span className="whitespace-nowrap">Dr.&nbsp;Jegajothi&nbsp;Pandian</span></span>
+      ),
     },
     {
       icon: ShieldCheck,
-      title: '100% Pure & Herbal',
+      title: '100% Natural Herbal Ingredients',
       subtitle: 'Natural botanicals, zero steroids',
     },
     {
       icon: Award,
-      title: 'Lab Tested Quality',
+      title: 'Quality Tested',
       subtitle: 'Rigorous safety & purity testing',
     },
     {
-      icon: Truck,
-      title: 'Free Delivery Across India',
-      subtitle: 'On all prepaid online orders',
-    },
-    {
       icon: Lock,
-      title: 'Safe & Secure Pay',
+      title: 'Secure Checkout',
       subtitle: 'Secure checkout & discreet packaging',
     },
   ];
 
   return (
-    <section className="bg-white py-6 sm:py-12 px-4 sm:px-6 lg:px-8 border-b border-stone-100">
+    <section className="bg-white py-4 sm:py-8 px-4 sm:px-6 lg:px-8 border-b border-stone-100">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5">
           {badges.map((b, idx) => {
             const Icon = b.icon;
             return (
-              <div key={idx} className={`flex items-start gap-2 sm:gap-3.5 ${idx === badges.length - 1 ? 'col-span-2 md:col-span-1 border-t border-stone-100 pt-4 md:border-0 md:pt-0' : ''}`}>
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-2xl bg-sage flex items-center justify-center text-primary flex-shrink-0 shadow-xs">
-                  <Icon size={24} />
+              <div
+                key={idx}
+                className="flex flex-col sm:flex-row items-start gap-2.5 sm:gap-3 p-3 sm:p-4 rounded-xl bg-[#FAF9F5] border border-stone-200/70 transition-all duration-200 hover:border-primary/30 h-full"
+              >
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-sage flex items-center justify-center text-primary flex-shrink-0 shadow-xs">
+                  <Icon size={20} className="stroke-[2.2]" />
                 </div>
-                <div>
-                  <h4 className="text-sm sm:text-base font-bold text-primary leading-snug">
+                <div className="min-w-0">
+                  <h4 className="font-heading text-xs sm:text-base font-bold text-primary leading-tight sm:leading-snug">
                     {b.title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-charcoal-muted mt-1 leading-normal">
+                  <p className="text-[11px] sm:text-xs text-charcoal-muted mt-1 leading-snug">
                     {b.subtitle}
                   </p>
                 </div>

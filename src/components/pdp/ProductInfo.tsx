@@ -86,7 +86,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
       </div>
 
       {/* Product Title */}
-      <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest leading-tight">
+      <h1 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-forest leading-tight">
         {product.name}
       </h1>
 
@@ -98,6 +98,11 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           Verified Formulation
         </span>
       </div>
+
+      {/* Brief product-specific introduction immediately below title/rating before price */}
+      <p className="text-sm sm:text-base text-charcoal/90 leading-relaxed font-sans border-l-2 border-primary/30 pl-3 py-0.5">
+        {product.cleanDescription || product.shortDescription || 'Authentic doctor-formulated classical Ayurvedic preparation crafted with standardized botanical extracts for daily wellness.'}
+      </p>
 
       {/* Dynamic Price & Savings directly linked to selected variation */}
       <div className="p-4 bg-white rounded-xl border border-stone-200/80 space-y-1">

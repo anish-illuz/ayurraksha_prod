@@ -16,7 +16,7 @@ export const Newsletter: React.FC = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 bg-[#FAF9F5] text-charcoal">
+    <section className="py-12 sm:py-16 bg-[#FAF7F2] border-t border-stone-200/50 text-charcoal">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-primary text-xs font-semibold mb-3">
           <Mail size={14} />

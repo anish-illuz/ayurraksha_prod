@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) return {};
 
   return {
-    title: `${post.title} | Ayurraksha Clinical Journal`,
+    title: `${post.title} | AyurRaksha Clinical Journal`,
     description: post.excerpt,
     alternates: {
       canonical: `${SITE_CONFIG.domain}/blog/${post.slug}/`,
@@ -67,7 +67,7 @@ export default function BlogPostDetailPage({ params }: PageProps) {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Ayurraksha',
+      name: 'AyurRaksha',
       logo: {
         '@type': 'ImageObject',
         url: 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/AYUR-RAKSHA_Favicon-e1708027496398.png',

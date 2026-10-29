@@ -3,8 +3,8 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Ayurraksha Online',
-  description: 'Read the terms of service, conditions of purchase, and regulatory notices for Ayurraksha Online.',
+  title: 'Terms of Service | AyurRaksha Online',
+  description: 'Read the terms of service, conditions of purchase, and regulatory notices for AyurRaksha Online.',
   alternates: {
     canonical: `${SITE_CONFIG.domain}/terms-of-service/`,
   },
@@ -23,7 +23,7 @@ export default function TermsOfServicePage() {
 
           <div className="prose prose-stone text-xs sm:text-sm text-charcoal leading-relaxed space-y-4">
             <p>
-              Welcome to <strong>AyurrakshaOnline.com</strong>. This website is owned and operated by <strong>VPrime Innovations</strong>, having its principal place of business at 251, First Floor, New Tiny Sector, Ambattur Industrial Estate, Chennai 600058, Tamil Nadu, India.
+              Welcome to <strong>AyurRakshaOnline.com</strong>. This website is owned and operated by <strong>VPrime Innovations</strong>, having its principal place of business at 251, First Floor, New Tiny Sector, Ambattur Industrial Estate, Chennai 600058, Tamil Nadu, India.
             </p>
 
             <h2 className="font-serif text-lg font-bold text-forest mt-6 mb-2">1. Agreement to Terms</h2>

@@ -86,14 +86,14 @@ export const PRODUCT_FORMATS = [
 ];
 
 export const SITE_CONFIG = {
-  name: 'Ayurraksha Online',
+  name: 'AyurRaksha Online',
   legalName: 'VPrime Innovations',
   domain: 'https://www.ayurrakshaonline.com',
   tagline: 'Natural Ayurvedic Remedies for Everyday Health',
   shortDescription: 'Doctor-formulated Ayurvedic wellness supplements, herbal tonics, and natural personal care formulated in Chennai, India.',
   phone: '+91 9940388877',
   displayPhone: '+91 99403 88877',
-  whatsappUrl: 'https://wa.me/919940388877?text=Hi%20Ayurraksha,%20I%20would%20like%20to%20inquire%20about%20your%20products',
+  whatsappUrl: 'https://wa.me/919940388877?text=Hi%20AyurRaksha,%20I%20would%20like%20to%20inquire%20about%20your%20products',
   email: 'support@ayurrakshaonline.com',
   corporateEmail: 'info@vprimecorp.in',
   ordersEmail: 'orders@vprimecorp.in',

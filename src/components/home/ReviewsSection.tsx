@@ -31,7 +31,7 @@ export const ReviewsSection: React.FC = () => {
               What Our Customers Say
             </h2>
             <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl">
-              Explore genuine customer experiences with Ayurraksha products.
+              Explore genuine customer experiences with AyurRaksha products.
             </p>
           </div>
 

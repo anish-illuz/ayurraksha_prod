@@ -27,7 +27,7 @@ export default function BlogListPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-semibold text-botanical uppercase tracking-wider block mb-2">
-            The Ayurraksha Journal
+            The AyurRaksha Journal
           </span>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-forest">
             Clinical Insights &amp; Real Recovery Stories

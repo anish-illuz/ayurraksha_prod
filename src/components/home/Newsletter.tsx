@@ -28,7 +28,7 @@ export const Newsletter: React.FC = () => {
         </h2>
 
         <p className="mt-2.5 text-sm sm:text-base text-charcoal-muted max-w-lg mx-auto leading-relaxed">
-          Join the Ayurraksha family for natural wellness tips, seasonal health guides, and exclusive subscriber deals.
+          Join the AyurRaksha family for natural wellness tips, seasonal health guides, and exclusive subscriber deals.
         </p>
 
         {isSubmitted ? (

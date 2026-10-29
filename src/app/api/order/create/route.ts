@@ -53,7 +53,7 @@ export async function POST(req: Request) {
     const cartInitRes = await fetch(`${WORDPRESS_STORE_API}/cart?_nocache=${timestamp}`, {
       method: 'GET',
       headers: {
-        'User-Agent': 'Ayurraksha-Storefront/2.0',
+        'User-Agent': 'AyurRaksha-Storefront/2.0',
         'Accept': 'application/json',
         'Cache-Control': 'no-cache, no-store, must-revalidate',
         'Pragma': 'no-cache',
@@ -70,7 +70,7 @@ export async function POST(req: Request) {
       const clearRes = await fetch(`${WORDPRESS_STORE_API}/cart/items?_nocache=${Date.now()}`, {
         method: 'DELETE',
         headers: {
-          'User-Agent': 'Ayurraksha-Storefront/2.0',
+          'User-Agent': 'AyurRaksha-Storefront/2.0',
           'Nonce': nonce,
           'Cart-Token': cartToken,
         },
@@ -93,7 +93,7 @@ export async function POST(req: Request) {
       const addRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
         method: 'POST',
         headers: {
-          'User-Agent': 'Ayurraksha-Storefront/2.0',
+          'User-Agent': 'AyurRaksha-Storefront/2.0',
           'Content-Type': 'application/json',
           'Nonce': nonce,
           'Cart-Token': cartToken,
@@ -145,13 +145,13 @@ export async function POST(req: Request) {
         phone: customer.phone,
       },
       payment_method: paymentMethod === 'cod' ? 'cod' : 'razorpay',
-      customer_note: customerNote || 'Order placed via Ayurraksha Next.js storefront',
+      customer_note: customerNote || 'Order placed via AyurRaksha Next.js storefront',
     };
 
     const checkoutRes = await fetch(`${WORDPRESS_STORE_API}/checkout?_nocache=${Date.now()}`, {
       method: 'POST',
       headers: {
-        'User-Agent': 'Ayurraksha-Storefront/2.0',
+        'User-Agent': 'AyurRaksha-Storefront/2.0',
         'Content-Type': 'application/json',
         'Nonce': nonce,
         'Cart-Token': cartToken,

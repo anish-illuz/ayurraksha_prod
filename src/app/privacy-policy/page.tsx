@@ -3,8 +3,8 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Ayurraksha Online',
-  description: 'Understand how Ayurraksha and VPrime Innovations protect, collect, and handle your personal data and order information.',
+  title: 'Privacy Policy | AyurRaksha Online',
+  description: 'Understand how AyurRaksha and VPrime Innovations protect, collect, and handle your personal data and order information.',
   alternates: {
     canonical: `${SITE_CONFIG.domain}/privacy-policy/`,
   },
@@ -23,12 +23,12 @@ export default function PrivacyPolicyPage() {
 
           <div className="prose prose-stone text-xs sm:text-sm text-charcoal leading-relaxed space-y-4">
             <p>
-              At <strong>AyurrakshaOnline.com</strong> (VPrime Innovations), we value and respect your privacy. This policy outlines how your personal information is gathered, protected, and utilized when you visit or place an order on our platform.
+              At <strong>AyurRakshaOnline.com</strong> (VPrime Innovations), we value and respect your privacy. This policy outlines how your personal information is gathered, protected, and utilized when you visit or place an order on our platform.
             </p>
 
             <h2 className="font-serif text-lg font-bold text-forest mt-6 mb-2">1. Information We Collect</h2>
             <p>
-              When you purchase from Ayurraksha or interact with our consultation desk, we collect essential details to fulfill your orders, including your name, delivery address, phone number, and email address. We do not store your credit card or banking credentials on our servers; payments are processed securely through certified PCI-DSS compliant gateways (such as Razorpay).
+              When you purchase from AyurRaksha or interact with our consultation desk, we collect essential details to fulfill your orders, including your name, delivery address, phone number, and email address. We do not store your credit card or banking credentials on our servers; payments are processed securely through certified PCI-DSS compliant gateways (such as Razorpay).
             </p>
 
             <h2 className="font-serif text-lg font-bold text-forest mt-6 mb-2">2. How We Use Your Data</h2>

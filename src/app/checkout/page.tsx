@@ -79,7 +79,7 @@ export default function CheckoutPage() {
         if (data.key) {
           setRazorpayConfig({
             key: data.key,
-            name: data.name || 'Ayur Raksha',
+            name: data.name || 'AyurRaksha',
             currency: data.currency || 'INR',
           });
         }
@@ -197,7 +197,7 @@ export default function CheckoutPage() {
       key: key,
       amount: Math.round(totalPayable * 100), // in paise
       currency: razorpayConfig?.currency || 'INR',
-      name: razorpayConfig?.name || 'Ayur Raksha',
+      name: razorpayConfig?.name || 'AyurRaksha',
       description: `Order #${wooOrderNumber} (${itemCount} ${itemCount === 1 ? 'item' : 'items'})`,
       image: 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/cropped-Ayur-Raksha-Favicon-192x192.png',
       handler: function (response: any) {
@@ -312,7 +312,7 @@ export default function CheckoutPage() {
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href={`https://wa.me/919940388877?text=Hi%20Ayurraksha,%20I%20placed%20order%20${completedOrder.orderId}.%20Please%20confirm.`}
+              href={`https://wa.me/919940388877?text=Hi%20AyurRaksha,%20I%20placed%20order%20${completedOrder.orderId}.%20Please%20confirm.`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold bg-[#25D366] hover:bg-[#1EBE5D] text-white shadow-md transition-all"
@@ -373,7 +373,7 @@ export default function CheckoutPage() {
             <Link href="/" className="relative h-10 w-36 block">
               <Image
                 src="/images/logo.png"
-                alt="Ayurraksha"
+                alt="AyurRaksha"
                 fill
                 sizes="144px"
                 className="object-contain object-left"

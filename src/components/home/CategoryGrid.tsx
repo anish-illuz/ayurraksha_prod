@@ -52,7 +52,7 @@ export const CategoryGrid: React.FC = () => {
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
             Shop by Health Concern
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-charcoal-muted leading-relaxed">
+          <p className="mt-3 text-base sm:text-lg text-[#37443D] leading-relaxed">
             Explore Ayurvedic wellness products tailored to your needs.
           </p>
         </div>
@@ -91,7 +91,7 @@ export const CategoryGrid: React.FC = () => {
                   </h3>
 
                   {/* 3. One short sentence describing the collection */}
-                  <p className="text-sm text-charcoal-muted mt-2 leading-relaxed flex-grow">
+                  <p className="text-sm text-[#37443D] mt-2 leading-relaxed flex-grow">
                     {description}
                   </p>
 

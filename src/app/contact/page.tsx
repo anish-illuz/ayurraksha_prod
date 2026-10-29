@@ -43,7 +43,7 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white p-6 sm:p-8 rounded-card border border-stone-200 shadow-xs space-y-6">
               <h2 className="font-serif text-xl font-bold text-forest">
-                Ayurraksha Clinic &amp; Office
+                AyurRaksha Clinic &amp; Office
               </h2>
 
               <div className="space-y-4 text-xs sm:text-sm text-charcoal">
@@ -119,7 +119,7 @@ export default function ContactPage() {
                 <CheckCircle size={32} className="text-emerald-700 mx-auto" />
                 <h3 className="font-bold text-forest text-base">Message Sent Successfully!</h3>
                 <p className="text-xs text-charcoal-muted">
-                  Thank you for reaching out. An Ayurraksha wellness specialist will contact you shortly.
+                  Thank you for reaching out. An AyurRaksha wellness specialist will contact you shortly.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
@@ -228,7 +228,7 @@ export default function ContactPage() {
         <div className="mt-12 rounded-2xl overflow-hidden border border-stone-200 shadow-xs h-72 sm:h-96">
           <iframe
             src="https://maps.google.com/maps?q=VPrime%20Innovations%2C%20Ambattur%20Industrial%20Estate%2C%20Chennai%20600058&t=m&z=15&output=embed&iwloc=near"
-            title="Ayurraksha Location in Ambattur Industrial Estate, Chennai"
+            title="AyurRaksha Location in Ambattur Industrial Estate, Chennai"
             className="w-full h-full border-0"
             loading="lazy"
           />

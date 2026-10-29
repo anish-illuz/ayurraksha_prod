@@ -66,7 +66,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
   };
 
   const whatsappInquiryUrl = `https://wa.me/919940388877?text=${encodeURIComponent(
-    `Hello Dr. Jegajothi Pandian & Ayurraksha team, I would like to inquire about ${product.name}${
+    `Hello Dr. Jegajothi Pandian & AyurRaksha team, I would like to inquire about ${product.name}${
       selectedVariant ? ` (${selectedVariant})` : ''
     } (₹${currentPrice}).`
   )}`;
@@ -76,7 +76,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
       {/* Brand & Category badges */}
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs font-semibold text-botanical uppercase tracking-wider">
-          Ayurraksha Classical Formulation
+          AyurRaksha Classical Formulation
         </span>
         {product.healthConcerns[0] && (
           <span className="px-2 py-0.5 rounded-badge text-[11px] font-medium bg-sage text-forest">

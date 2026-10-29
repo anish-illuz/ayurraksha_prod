@@ -49,12 +49,12 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
         </h3>
 
         {/* 3. Short pack-contents summary */}
-        <p className="text-xs sm:text-sm text-charcoal-muted line-clamp-2 leading-relaxed">
+        <p className="text-xs sm:text-sm text-[#37443D] line-clamp-2 leading-relaxed">
           {pack.shortDescription || 'Doctor-recommended synergistic Ayurvedic wellness combo.'}
         </p>
 
         {/* 4. Verified customer rating, if available */}
-        <div className="flex items-center gap-1.5 text-xs text-charcoal-muted">
+        <div className="flex items-center gap-1.5 text-xs text-[#37443D]">
           <div className="flex items-center text-primary font-bold gap-1">
             <Star size={14} className="fill-gold text-gold" />
             <span>{pack.rating.toFixed(1)}</span>
@@ -81,7 +81,7 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
 
         {/* 7. Prepaid offer */}
         <div className="bg-[#FAF9F5] border border-stone-200/80 rounded-xl px-3 py-2 text-xs flex flex-wrap gap-1 items-center justify-between">
-          <span className="text-stone-600 font-medium">⚡ Prepaid Offer:</span>
+          <span className="text-[#37443D] font-medium">⚡ Prepaid Offer:</span>
           <span className="font-bold text-primary">₹{prepaidDiscountPrice.toLocaleString('en-IN')} + Free Ship</span>
         </div>
 

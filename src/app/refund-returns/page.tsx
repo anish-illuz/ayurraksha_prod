@@ -3,7 +3,7 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Refund and Returns Policy | Ayurraksha Online',
+  title: 'Refund and Returns Policy | AyurRaksha Online',
   description: 'Understand our 7-day return terms, conditions for health supplements, and refund procedure.',
   alternates: {
     canonical: `${SITE_CONFIG.domain}/refund-returns/`,
@@ -23,7 +23,7 @@ export default function RefundReturnsPage() {
 
           <div className="prose prose-stone text-xs sm:text-sm text-charcoal leading-relaxed space-y-4">
             <p>
-              At <strong>AyurrakshaOnline.com</strong>, we are committed to complete transparency and customer satisfaction. If you encounter an issue with your delivery, we process returns and refunds under the following clear conditions:
+              At <strong>AyurRakshaOnline.com</strong>, we are committed to complete transparency and customer satisfaction. If you encounter an issue with your delivery, we process returns and refunds under the following clear conditions:
             </p>
 
             <h2 className="font-serif text-lg font-bold text-forest mt-6 mb-2">1. Eligibility for Return</h2>
@@ -48,7 +48,7 @@ export default function RefundReturnsPage() {
 
             <h2 className="font-serif text-lg font-bold text-forest mt-6 mb-2">4. Return Shipping Charges</h2>
             <ul className="list-disc pl-5 space-y-1">
-              <li>If the return is due to a transit defect, leakage, or incorrect SKU delivered, Ayurraksha covers 100% of reverse courier costs and issues an immediate replacement or full refund.</li>
+              <li>If the return is due to a transit defect, leakage, or incorrect SKU delivered, AyurRaksha covers 100% of reverse courier costs and issues an immediate replacement or full refund.</li>
               <li>For returns arising from customer change of mind (on sealed items), reverse shipping charges may be deducted from the refund.</li>
             </ul>
 

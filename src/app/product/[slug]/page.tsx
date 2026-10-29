@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const product = getProductBySlug(params.slug);
   if (!product) return {};
 
-  const title = `${product.name} | Ayurraksha Online`;
-  const desc = product.shortDescription || `${product.name} - authentic classical Ayurvedic formulation by Ayurraksha. Free shipping on prepaid orders.`;
+  const title = `${product.name} | AyurRaksha Online`;
+  const desc = product.shortDescription || `${product.name} - authentic classical Ayurvedic formulation by AyurRaksha. Free shipping on prepaid orders.`;
 
   return {
     title,
@@ -65,7 +65,7 @@ export default function ProductDetailPage({ params }: PageProps) {
     sku: product.sku || `AYUR-${product.id}`,
     brand: {
       '@type': 'Brand',
-      name: 'Ayurraksha',
+      name: 'AyurRaksha',
     },
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -83,7 +83,7 @@ export default function ProductDetailPage({ params }: PageProps) {
         : 'https://schema.org/OutOfStock',
       seller: {
         '@type': 'Organization',
-        name: 'Ayurraksha Online',
+        name: 'AyurRaksha Online',
       },
     },
   };

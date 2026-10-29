@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!format) return {};
 
   return {
-    title: `${format.name} | Ayurraksha Ayurvedic Products`,
+    title: `${format.name} | AyurRaksha Ayurvedic Products`,
     description: `Shop authentic ${format.name.toLowerCase()} prepared using classical Ayurvedic extraction techniques. 100% natural and batch tested.`,
     alternates: {
       canonical: `${SITE_CONFIG.domain}/category/${params.slug}/`,

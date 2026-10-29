@@ -45,7 +45,7 @@ export const TrustBadges: React.FC = () => {
                   <h4 className="font-heading text-xs sm:text-base font-bold text-primary leading-tight sm:leading-snug">
                     {b.title}
                   </h4>
-                  <p className="text-[11px] sm:text-xs text-charcoal-muted mt-1 leading-snug">
+                  <p className="text-[11px] sm:text-xs text-[#37443D] mt-1 leading-snug font-sans">
                     {b.subtitle}
                   </p>
                 </div>

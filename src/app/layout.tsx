@@ -8,13 +8,13 @@ import { SITE_CONFIG } from '@/data/siteConfig';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.domain),
   title: {
-    default: 'Ayurraksha | Health Supplements for Liver Detox, Pain Relief, Skin Care & More',
-    template: '%s | Ayurraksha Online',
+    default: 'AyurRaksha | Health Supplements for Liver Detox, Pain Relief, Skin Care & More',
+    template: '%s | AyurRaksha Online',
   },
   description:
-    'Discover Ayurraksha, your trusted source for natural health supplements. Shop our range of products, including liver detox tonics, pain relief oils, heart care solutions, and skin care remedies. Embrace wellness with Ayurraksha today!',
+    'Discover AyurRaksha, your trusted source for natural health supplements. Shop our range of products, including liver detox tonics, pain relief oils, heart care solutions, and skin care remedies. Embrace wellness with AyurRaksha today!',
   keywords: [
-    'Ayurraksha',
+    'AyurRaksha',
     'Ayurvedic wellness',
     'BoozLiv',
     'Divine Healing Oil',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Dr. Jegajothi Pandian & VPrime Innovations' }],
   creator: 'VPrime Innovations',
-  publisher: 'Ayurraksha Online',
+  publisher: 'AyurRaksha Online',
   robots: {
     index: true,
     follow: true,
@@ -47,22 +47,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: SITE_CONFIG.domain,
-    siteName: 'Ayurraksha',
-    title: 'Ayurraksha | Health Supplements for Liver Detox, Pain Relief, Skin Care & More',
+    siteName: 'AyurRaksha',
+    title: 'AyurRaksha | Health Supplements for Liver Detox, Pain Relief, Skin Care & More',
     description:
-      'Discover Ayurraksha, your trusted source for natural health supplements. Shop our range of products, including liver detox tonics, pain relief oils, heart care solutions, and skin care remedies.',
+      'Discover AyurRaksha, your trusted source for natural health supplements. Shop our range of products, including liver detox tonics, pain relief oils, heart care solutions, and skin care remedies.',
     images: [
       {
         url: 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg',
         width: 1024,
         height: 1024,
-        alt: 'Ayurraksha Ayurvedic Formulations',
+        alt: 'AyurRaksha Ayurvedic Formulations',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ayurraksha | Natural Ayurvedic Health Supplements',
+    title: 'AyurRaksha | Natural Ayurvedic Health Supplements',
     description: 'Shop doctor-formulated herbal solutions for liver detox, pain relief, and holistic health.',
     images: ['https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'],
   },
@@ -80,13 +80,13 @@ export default function RootLayout({
       {
         '@type': 'Organization',
         '@id': `${SITE_CONFIG.domain}/#organization`,
-        name: 'Ayurraksha',
+        name: 'AyurRaksha',
         url: SITE_CONFIG.domain,
         logo: {
           '@type': 'ImageObject',
           '@id': `${SITE_CONFIG.domain}/#logo`,
           url: 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/AYUR-RAKSHA_Favicon-e1708027496398.png',
-          caption: 'Ayurraksha',
+          caption: 'AyurRaksha',
         },
         address: {
           '@type': 'PostalAddress',
@@ -108,7 +108,7 @@ export default function RootLayout({
         '@type': 'WebSite',
         '@id': `${SITE_CONFIG.domain}/#website`,
         url: SITE_CONFIG.domain,
-        name: 'Ayurraksha',
+        name: 'AyurRaksha',
         publisher: {
           '@id': `${SITE_CONFIG.domain}/#organization`,
         },

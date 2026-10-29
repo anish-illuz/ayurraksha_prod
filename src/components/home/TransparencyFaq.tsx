@@ -6,7 +6,7 @@ import { SITE_CONFIG } from '@/data/siteConfig';
 
 const FAQS = [
   {
-    q: 'How are Ayurraksha Ayurvedic formulations prepared?',
+    q: 'How are AyurRaksha Ayurvedic formulations prepared?',
     a: 'Our formulations follow classical Ayurvedic pharmacological principles (Samskara and Shodhana) overseen by Dr. Jegajothi Pandian. Herbs are ethically sourced from indigenous growers, inspected for purity, and processed in GMP-compliant facilities under hygienic temperature-controlled environments.',
   },
   {
@@ -45,7 +45,7 @@ export const TransparencyFaq: React.FC = () => {
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl mx-auto">
+          <p className="mt-3 text-base sm:text-lg text-[#37443D] max-w-xl mx-auto">
             Clear, helpful answers about our natural ingredients, safety, shipping, and doctor consultations.
           </p>
         </div>
@@ -72,7 +72,7 @@ export const TransparencyFaq: React.FC = () => {
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 sm:pb-7 text-sm sm:text-base text-stone-600 leading-relaxed border-t border-stone-100 pt-4">
+                  <div className="px-5 pb-6 sm:px-6 sm:pb-7 text-sm sm:text-base text-[#37443D] leading-relaxed border-t border-stone-100 pt-4">
                     {faq.a}
                   </div>
                 )}

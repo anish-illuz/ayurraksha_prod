@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 const WORDPRESS_BASE = 'https://www.ayurrakshaonline.com';
 const FALLBACK_RAZORPAY_KEY = 'rzp_live_kWyXoOFkrDjUBk';
-const FALLBACK_NAME = 'Ayur Raksha';
+const FALLBACK_NAME = 'AyurRaksha';
 const FALLBACK_CURRENCY = 'INR';
 
 export async function GET() {
@@ -11,7 +11,7 @@ export async function GET() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'User-Agent': 'Ayurraksha-NextJS-Client/1.0',
+        'User-Agent': 'AyurRaksha-NextJS-Client/1.0',
       },
       body: JSON.stringify({}),
       next: { revalidate: 300 }, // Cache for 5 minutes

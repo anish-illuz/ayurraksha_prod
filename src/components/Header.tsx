@@ -51,11 +51,11 @@ export const Header: React.FC = () => {
 
             {/* Brand Logo - Centered on Mobile, Left-aligned on Desktop */}
             <div className="flex items-center justify-center lg:justify-start flex-1 lg:flex-initial">
-              <Link href="/" className="flex items-center group py-1" aria-label="Ayurraksha Home">
+              <Link href="/" className="flex items-center group py-1" aria-label="AyurRaksha Home">
                 <div className="relative h-10 sm:h-12 w-36 sm:w-44 transition-transform duration-200 group-hover:scale-[1.02]">
                   <Image
                     src="/images/logo.png"
-                    alt="Ayurraksha"
+                    alt="AyurRaksha"
                     fill
                     priority
                     sizes="(max-width: 640px) 144px, 176px"

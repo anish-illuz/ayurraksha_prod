@@ -20,11 +20,11 @@ export const BrandStory: React.FC = () => {
               </h2>
             </div>
 
-            <p className="text-base sm:text-lg text-charcoal leading-relaxed font-sans">
-              An initiative of <strong>VPrime Innovations</strong>, AyurRaksha brings traditional Ayurvedic care to everyday family life.
+            <p className="text-base sm:text-lg text-[#37443D] leading-relaxed font-sans font-normal">
+              An initiative of <strong className="font-semibold text-primary">VPrime Innovations</strong>, AyurRaksha brings traditional Ayurvedic care to everyday family life.
             </p>
 
-            <p className="text-sm sm:text-base text-charcoal-muted leading-relaxed font-sans">
+            <p className="text-base sm:text-lg text-[#37443D] leading-relaxed font-sans font-normal">
               Every tonic, oil, and capsule is thoughtfully formulated with careful attention to ingredient quality, purity, and botanical composition under the guidance of Dr. Jegajothi Pandian. We prioritize carefully selected, high-quality herbs and consistent formulation standards to deliver Ayurvedic wellness products you can trust.
             </p>
 
@@ -36,7 +36,7 @@ export const BrandStory: React.FC = () => {
                   <h4 className="font-heading text-sm sm:text-base font-bold text-primary leading-tight">
                     Pure Herbal Ingredients
                   </h4>
-                  <p className="font-sans text-xs text-charcoal-muted mt-1 leading-snug">
+                  <p className="font-sans text-xs sm:text-sm text-[#37443D] mt-1 leading-snug">
                     Zero hidden steroids, chemicals, or artificial fillers.
                   </p>
                 </div>
@@ -48,7 +48,7 @@ export const BrandStory: React.FC = () => {
                   <h4 className="font-heading text-sm sm:text-base font-bold text-primary leading-tight">
                     Doctor Formulated
                   </h4>
-                  <p className="font-sans text-xs text-charcoal-muted mt-1 leading-snug">
+                  <p className="font-sans text-xs sm:text-sm text-[#37443D] mt-1 leading-snug">
                     Guided by Dr. Jegajothi Pandian with 25+ years of Ayurvedic experience.
                   </p>
                 </div>
@@ -60,7 +60,7 @@ export const BrandStory: React.FC = () => {
                   <h4 className="font-heading text-sm sm:text-base font-bold text-primary leading-tight">
                     Lab Tested Quality
                   </h4>
-                  <p className="font-sans text-xs text-charcoal-muted mt-1 leading-snug">
+                  <p className="font-sans text-xs sm:text-sm text-[#37443D] mt-1 leading-snug">
                     Tested for purity, safety, and consistent therapeutic strength.
                   </p>
                 </div>
@@ -81,13 +81,14 @@ export const BrandStory: React.FC = () => {
           {/* Doctor portrait and credentials: Follows the narrative on mobile */}
           <div className="order-2 lg:order-1 lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-card">
-              <div className="relative h-64 sm:h-80 lg:h-[400px] bg-sage">
+              <div className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] w-full bg-sage overflow-hidden">
                 <Image
                   src="/images/brand/dr-jegajothi-pandian.webp"
                   alt="Dr. Jegajothi Pandian"
                   fill
                   sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 448px, 480px"
-                  className="object-cover object-top"
+                  className="object-cover object-[center_8%]"
+                  priority
                 />
               </div>
               <div className="p-4 sm:p-5">
@@ -99,12 +100,12 @@ export const BrandStory: React.FC = () => {
                     <h4 className="font-heading text-lg sm:text-xl font-bold text-primary leading-tight">
                       {SITE_CONFIG.doctor.name}
                     </h4>
-                    <p className="font-sans text-xs text-charcoal-muted mt-0.5">
+                    <p className="font-sans text-xs sm:text-sm text-[#37443D] mt-0.5 font-medium">
                       Chief Ayurvedic Formulation Expert
                     </p>
                   </div>
                 </div>
-                <p className="font-sans mt-2.5 text-xs sm:text-sm text-charcoal-muted leading-snug border-t border-stone-100 pt-2">
+                <p className="font-sans mt-2.5 text-xs sm:text-sm text-[#37443D] leading-snug border-t border-stone-100 pt-2">
                   Over 25 years of devoted clinical experience in Ayurvedic formulations.
                 </p>
               </div>

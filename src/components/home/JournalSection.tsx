@@ -21,7 +21,7 @@ export const JournalSection: React.FC = () => {
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
               From Our Health Blog
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl">
+            <p className="mt-3 text-base sm:text-lg text-[#37443D] max-w-xl">
               Helpful wellness guides, herbal health tips, and recovery stories from our clinical team in Chennai.
             </p>
           </div>
@@ -63,7 +63,7 @@ export const JournalSection: React.FC = () => {
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h3>
 
-                <p className="text-sm text-charcoal-muted line-clamp-3 leading-relaxed flex-grow">
+                <p className="text-sm text-[#37443D] line-clamp-3 leading-relaxed flex-grow">
                   {post.excerpt}
                 </p>
 

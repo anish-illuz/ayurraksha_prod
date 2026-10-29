@@ -3,8 +3,8 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Shipping & Delivery Policy | Ayurraksha Online',
-  description: 'Learn about Ayurraksha delivery timelines, free shipping on prepaid orders, and Cash on Delivery terms across India.',
+  title: 'Shipping & Delivery Policy | AyurRaksha Online',
+  description: 'Learn about AyurRaksha delivery timelines, free shipping on prepaid orders, and Cash on Delivery terms across India.',
   alternates: {
     canonical: `${SITE_CONFIG.domain}/shipping-policy/`,
   },
@@ -23,7 +23,7 @@ export default function ShippingPolicyPage() {
 
           <div className="prose prose-stone text-xs sm:text-sm text-charcoal leading-relaxed space-y-4">
             <p>
-              At <strong>AyurrakshaOnline.com</strong>, an initiative of <strong>VPrime Innovations</strong>, we strive to deliver your products in pristine condition, securely packaged, and on schedule. Below is an overview of our delivery terms:
+              At <strong>AyurRakshaOnline.com</strong>, an initiative of <strong>VPrime Innovations</strong>, we strive to deliver your products in pristine condition, securely packaged, and on schedule. Below is an overview of our delivery terms:
             </p>
 
             <h2 className="font-serif text-lg font-bold text-forest mt-6 mb-2">1. Shipping Locations</h2>

@@ -27,7 +27,7 @@ export const Bestsellers: React.FC = () => {
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
               Our Bestsellers
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl">
+            <p className="mt-3 text-base sm:text-lg text-[#37443D] max-w-xl">
               Our most popular doctor-formulated herbal remedies, trusted by thousands of customers across India.
             </p>
           </div>

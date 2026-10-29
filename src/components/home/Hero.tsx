@@ -27,7 +27,7 @@ const BANNER_SLIDES: BannerSlide[] = [
     tag: 'Flagship Liver Care & Detox',
     desktopImageSrc: '/images/banners/boozliv.webp',
     mobileImageSrc: '/images/banners/boozliv-mobile.webp',
-    imageAlt: 'BoozLiv Herbal Tonic & Sachet by Ayur Raksha - Rooted in Ayurveda',
+    imageAlt: 'BoozLiv Herbal Tonic & Sachet by AyurRaksha - Rooted in Ayurveda',
     primaryLink: '/product/boozliv',
     primaryLabel: 'Explore BoozLiv',
     secondaryLink: '/shop?sort=bestseller',
@@ -39,7 +39,7 @@ const BANNER_SLIDES: BannerSlide[] = [
     tag: 'Heart Vitality & Blood Pressure',
     desktopImageSrc: '/images/banners/cardiac-combo.webp',
     mobileImageSrc: '/images/banners/cardiac-combo-mobile.webp',
-    imageAlt: 'Ayur Raksha Cardiac Health Combo - Save Heart, Laxa Health Tea, Dia Well',
+    imageAlt: 'AyurRaksha Cardiac Health Combo - Save Heart, Laxa Health Tea, Dia Well',
     primaryLink: '/product/ayur-raksha-cardiac-combo',
     primaryLabel: 'Shop Cardiac Combo',
     secondaryLink: '/category/health-packs',
@@ -51,7 +51,7 @@ const BANNER_SLIDES: BannerSlide[] = [
     tag: 'Fast Joint & Muscle Relief',
     desktopImageSrc: '/images/banners/healing-oil.webp',
     mobileImageSrc: '/images/banners/healing-oil-mobile.webp',
-    imageAlt: 'Ayur Raksha Divine Healing Oil - Joint, Muscle & Knee Pain Relief',
+    imageAlt: 'AyurRaksha Divine Healing Oil - Joint, Muscle & Knee Pain Relief',
     primaryLink: '/product/divine-healing-oil',
     primaryLabel: 'Shop Divine Healing Oil',
     secondaryLink: '/concern/pain-joints',
@@ -63,7 +63,7 @@ const BANNER_SLIDES: BannerSlide[] = [
     tag: 'Natural Energy & Stamina',
     desktopImageSrc: '/images/banners/purna-sakthi.webp',
     mobileImageSrc: '/images/banners/purna-sakthi-mobile.webp',
-    imageAlt: 'Purna Sakthi Restorative Herbal Tonic by Ayur Raksha - Energy & Vitality',
+    imageAlt: 'Purna Sakthi Restorative Herbal Tonic by AyurRaksha - Energy & Vitality',
     primaryLink: '/product/purna-sakthi-tonic',
     primaryLabel: 'Shop Purna Sakthi',
     secondaryLink: '/category/tonic',
@@ -153,7 +153,7 @@ export const Hero: React.FC = () => {
       onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}
       onTouchCancel={() => { touchStartX.current = null; touchStartY.current = null; }}
       onClickCapture={(e) => { if (isSwiping.current) { e.preventDefault(); e.stopPropagation(); } }}
-      onKeyDown={handleKeyDown} tabIndex={0} aria-label="Ayur Raksha Featured Formulations" aria-roledescription="carousel">
+      onKeyDown={handleKeyDown} tabIndex={0} aria-label="AyurRaksha Featured Formulations" aria-roledescription="carousel">
       <div className="relative w-full aspect-[2.05/1] sm:aspect-[2.2/1] md:aspect-[2.28/1] min-h-[160px] sm:min-h-[180px] max-h-[720px] select-none">
         {BANNER_SLIDES.map((slide, idx) => {
           const isActive = idx === currentSlide;

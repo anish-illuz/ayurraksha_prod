@@ -7,7 +7,7 @@ import { SITE_CONFIG } from '@/data/siteConfig';
 export const metadata: Metadata = {
   title: 'Shop All Ayurvedic Products & Health Formulations',
   description:
-    'Browse Ayurraksha complete collection of 44 classical Ayurvedic health supplements, tonics, therapeutic oils, herbal powders, and holistic packs. Free prepaid shipping across India.',
+    'Browse AyurRaksha complete collection of 44 classical Ayurvedic health supplements, tonics, therapeutic oils, herbal powders, and holistic packs. Free prepaid shipping across India.',
   alternates: {
     canonical: `${SITE_CONFIG.domain}/shop/`,
   },

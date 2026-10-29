@@ -54,7 +54,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
           <Link href="/" onClick={onClose} className="relative h-9 w-32 block">
             <Image
               src="/images/logo.png"
-              alt="Ayurraksha"
+              alt="AyurRaksha"
               fill
               sizes="128px"
               className="object-contain object-left"

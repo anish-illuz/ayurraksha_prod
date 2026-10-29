@@ -47,8 +47,8 @@ module.exports = {
         },
         charcoal: {
           DEFAULT: '#26352D', // Dark charcoal green
-          light: '#3C4D43',
-          muted: '#66736A', // Muted grey green
+          light: '#37443D',
+          muted: '#37443D', // Darker charcoal-green shade (#37443D) for high-contrast readability
         },
         border: {
           botanical: 'rgba(32, 74, 59, 0.15)',

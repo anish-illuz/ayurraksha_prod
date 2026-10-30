@@ -1,5 +1,47 @@
 [
   {
+    "id": 27739,
+    "name": "AyurRaksha Detox Tea",
+    "slug": "ayurraksha-detox-tea",
+    "price": 750,
+    "regularPrice": 750,
+    "salePrice": 750,
+    "discountPercent": 0,
+    "onSale": false,
+    "categories": [
+      "Powder"
+    ],
+    "categorySlugs": [
+      "powder"
+    ],
+    "healthConcerns": [
+      "Digestive & Gut Health",
+      "Liver Wellness & Detox"
+    ],
+    "isBestseller": false,
+    "images": [
+      "/images/products/ayur-raksha-detox-tea.webp",
+      "https://ayur.edigimark.com/wp-content/uploads/2026/10/ayurraksha-detox-tea.png"
+    ],
+    "rating": 4.8,
+    "reviewCount": 8,
+    "shortDescription": "A powerful Ayurvedic Detox Tea formulated with the goodness of Triphala and traditional Ayurvedic herbs. Supports natural detoxification, helps relieve constipation, promotes healthy digestion, healthy weight management, and healthy blood sugar management.",
+    "description": "<p><strong>AyurRaksha Detox Tea (40 Sachets × 5g)</strong></p><p>A powerful Ayurvedic Detox Tea formulated with the goodness of Triphala and traditional Ayurvedic herbs.</p><h4>Key Benefits:</h4><ul><li>Supports Natural Detoxification</li><li>Helps Relieve Constipation</li><li>Supports Healthy Digestion</li><li>Promotes Healthy Weight Management</li><li>Supports Healthy Blood Sugar Management</li></ul><h4>Ingredients:</h4><ul><li>Indigofera Tinctoria (Avuri / Neeli)</li><li>Terminalia Chebula (Kadukkai)</li><li>Terminalia Bellirica (Thanrikkai)</li><li>Phyllanthus Emblica (Nellikai)</li></ul><h4>Usage Instructions:</h4><p>One sachet to be boiled in 100 ml water for 5 minutes and consumed as the last drink of the day.</p><p><strong>Pack Details:</strong> 40 Sachets × 5g</p><p><strong>MRP:</strong> ₹750</p>",
+    "cleanDescription": "AyurRaksha Detox Tea is a powerful Ayurvedic formulation prepared with the goodness of Triphala and traditional Ayurvedic herbs. Key benefits include supporting natural detoxification, relieving constipation, supporting healthy digestion, promoting healthy weight management, and supporting healthy blood sugar management. Ingredients: Indigofera Tinctoria (Avuri / Neeli), Terminalia Chebula (Kadukkai), Terminalia Bellirica (Thanrikkai), Phyllanthus Emblica (Nellikai). Pack: 40 Sachets x 5g. Usage: Boil one sachet in 100 ml water for 5 minutes and consume as the last drink of the day.",
+    "inStock": true,
+    "variants": [
+      {
+        "id": 27739,
+        "name": "40 Sachets × 5g",
+        "price": 750,
+        "regularPrice": 750,
+        "inStock": true,
+        "default": true
+      }
+    ],
+    "sku": "AYUR-DETOX-TEA"
+  },
+  {
     "id": 26823,
     "name": "Migro Prime Tablets",
     "slug": "migro-prime-tablets",
@@ -25,40 +67,6 @@
     "rating": 4.8,
     "reviewCount": 12,
     "shortDescription": "Migro Prime from VPrime Health Care is a scientifically formulated Ayurvedic blend designed to address all types of headaches and migraine conditions. It enhances proper blood flow in the brain, reduces stress, and restores mind–body balance.",
-    "description": "",
-    "cleanDescription": "",
-    "inStock": true,
-    "variants": [],
-    "sku": ""
-  },
-  {
-    "id": 26348,
-    "name": "AyurRaksha Foot Bath Powder",
-    "slug": "ayur-raksha-foot-bath-powder",
-    "price": 999,
-    "regularPrice": 999,
-    "salePrice": 999,
-    "discountPercent": 0,
-    "onSale": false,
-    "categories": [
-      "Powder"
-    ],
-    "categorySlugs": [
-      "powder"
-    ],
-    "healthConcerns": [
-      "Sleep & Stress",
-      "Vascular & Piles",
-      "Circulation & Vein Care"
-    ],
-    "isBestseller": false,
-    "images": [
-      "/images/products/ayur-raksha-foot-bath-powder.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/08/ayurraksha-footbath.jpeg"
-    ],
-    "rating": 4.8,
-    "reviewCount": 12,
-    "shortDescription": "AyurRaksha Foot Bath Powder is a natural blend of salts, herbs, and oils designed to detoxify the body, improve circulation, and promote deep, restful sleep.",
     "description": "",
     "cleanDescription": "",
     "inStock": true,
@@ -1630,7 +1638,7 @@
     "rating": 4.8,
     "reviewCount": 12,
     "shortDescription": "AyurRaksha Flow Well Pack is a comprehensive Ayurvedic therapy clinically curated for Varicose Veins, Leg Blackening, Diabetic Neuropathy, and Non-Healing Foot Ulcers. It combines our synergistic internal and external formulations to restore healthy microcirculation and relieve leg heaviness.",
-    "description": "<p>The Flow Well Pack provides holistic care for severe vascular and circulatory disorders affecting the lower limbs. By enhancing venous return, detoxifying the vascular channels (Srotas), and promoting oxygenated blood flow, it addresses the root cause of varicose veins and diabetic leg complications.</p>\n<p><strong>Available Pack Options & Included Products:</strong></p>\n<ul>\n<li><strong>Pack 1 (Basic Varicose Veins Care):</strong> Save Heart Capsules (60 caps) + Divine Healing Oil (100ml) for mild vein swelling and localized leg ache.</li>\n<li><strong>Pack 2 (Value Combination Pack):</strong> Save Heart Capsules + Flow Well Capsules + Divine Healing Oil for chronic spider veins, visible pooling, and leg fatigue.</li>\n<li><strong>Pack 3 (Advanced 30-Day Circulation Therapy):</strong> Save Heart Capsules + Flow Well Capsules + Divine Healing Oil + Medicated Foot Bath Powder for severe venous insufficiency and leg discoloration.</li>\n<li><strong>Pack 4 (Gangrene & Diabetic Foot Ulcer Pack):</strong> Flow Well Capsules + SuperHeal O3 Cream + Divine Healing Oil for non-healing diabetic wounds and tissue necrosis.</li>\n</ul>",
+    "description": "<p>The Flow Well Pack provides holistic care for severe vascular and circulatory disorders affecting the lower limbs. By enhancing venous return, detoxifying the vascular channels (Srotas), and promoting oxygenated blood flow, it addresses the root cause of varicose veins and diabetic leg complications.</p>\n<p><strong>Available Pack Options & Included Products:</strong></p>\n<ul>\n<li><strong>Pack 1 (Basic Varicose Veins Care):</strong> Save Heart Capsules (60 caps) + Divine Healing Oil (100ml) for mild vein swelling and localized leg ache.</li>\n<li><strong>Pack 2 (Value Combination Pack):</strong> Save Heart Capsules + Flow Well Capsules + Divine Healing Oil for chronic spider veins, visible pooling, and leg fatigue.</li>\n<li><strong>Pack 3 (Advanced 30-Day Circulation Therapy):</strong> Save Heart Capsules + Flow Well Capsules + Divine Healing Oil for severe venous insufficiency and leg discoloration.</li>\n<li><strong>Pack 4 (Gangrene & Diabetic Foot Ulcer Pack):</strong> Flow Well Capsules + SuperHeal O3 Cream + Divine Healing Oil for non-healing diabetic wounds and tissue necrosis.</li>\n</ul>",
     "cleanDescription": "The Flow Well Pack provides holistic care for severe vascular and circulatory disorders affecting lower limbs. Available in 4 specialized combinations addressing mild varicose veins up to advanced diabetic foot ulcers and leg blackening.",
     "inStock": true,
     "variants": [

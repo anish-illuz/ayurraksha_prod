@@ -101,9 +101,13 @@ export default function ComboBuilderPage() {
     });
   };
 
-  // Filtered products calculation (strictly among the 13 approved products)
+  // Filtered products calculation: When a symptom is selected, ONLY approved products appear!
   const filteredProducts = useMemo(() => {
     return products.filter((p) => {
+      // Symptom / Concern filter: If a specific symptom is selected, strictly ONLY approved products appear
+      if (activeConcern.id !== 'browse' && !activeConcern.highlightedProductIds.includes(p.id)) {
+        return false;
+      }
       // Category filter
       if (activeCategory !== 'All products' && p.category !== activeCategory) {
         return false;
@@ -121,7 +125,7 @@ export default function ComboBuilderPage() {
       }
       return true;
     });
-  }, [products, activeCategory, searchQuery]);
+  }, [products, activeConcern, activeCategory, searchQuery]);
 
   // Selected products for modal context
   const selectedProductsList = useMemo(() => {
@@ -211,39 +215,56 @@ export default function ComboBuilderPage() {
               />
 
               {/* Navigation Tools: Categories and Search Filter */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white p-3 rounded-[16px] border border-[#e4e7df] shadow-xs">
-                {/* Horizontal Category Tabs */}
-                <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
-                  {MERCHANDISING_CATEGORIES.map((cat) => {
-                    const isActive = activeCategory === cat;
-                    return (
-                      <button
-                        key={cat}
-                        type="button"
-                        onClick={() => setActiveCategory(cat)}
-                        className={`px-3 py-1.5 rounded-[10px] text-xs font-extrabold whitespace-nowrap transition-colors ${
-                          isActive
-                            ? 'bg-[#244e3b] text-white shadow-xs border border-[#244e3b]'
-                            : 'text-[#3c5445] hover:text-[#18372b] hover:bg-[#eef3ec] border border-transparent'
-                        }`}
-                      >
-                        {cat}
-                      </button>
-                    );
-                  })}
-                </div>
+              <div className="space-y-3">
+                {activeConcern.id !== 'browse' && (
+                  <div className="flex items-center justify-between bg-[#FAF8EE] border border-[#EADBBD] px-4 py-2.5 rounded-[12px] text-xs">
+                    <span className="font-bold text-[#18372b]">
+                      Showing {filteredProducts.length} {filteredProducts.length === 1 ? 'formulation' : 'formulations'} approved for {activeConcern.name}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setActiveConcern(SKIN_CONCERNS[0])}
+                      className="text-[#8a6020] hover:text-[#18372b] font-extrabold underline transition-colors"
+                    >
+                      Show all 13 products ↗
+                    </button>
+                  </div>
+                )}
 
-                {/* Search Bar */}
-                <div className="relative min-w-[200px]">
-                  <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search 13 products..."
-                    aria-label="Search products"
-                    className="w-full pl-8 pr-3 py-1.5 rounded-[9px] bg-stone-50 border border-[#dce5da] text-xs text-[#18372b] placeholder-stone-400 focus:bg-white focus:outline-none focus:border-[#244e3b]"
-                  />
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white p-3 rounded-[16px] border border-[#e4e7df] shadow-xs">
+                  {/* Horizontal Category Tabs */}
+                  <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+                    {MERCHANDISING_CATEGORIES.map((cat) => {
+                      const isActive = activeCategory === cat;
+                      return (
+                        <button
+                          key={cat}
+                          type="button"
+                          onClick={() => setActiveCategory(cat)}
+                          className={`px-3 py-1.5 rounded-[10px] text-xs font-extrabold whitespace-nowrap transition-colors ${
+                            isActive
+                              ? 'bg-[#244e3b] text-white shadow-xs border border-[#244e3b]'
+                              : 'text-[#3c5445] hover:text-[#18372b] hover:bg-[#eef3ec] border border-transparent'
+                          }`}
+                        >
+                          {cat}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Search Bar */}
+                  <div className="relative min-w-[200px]">
+                    <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" />
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search 13 products..."
+                      aria-label="Search products"
+                      className="w-full pl-8 pr-3 py-1.5 rounded-[9px] bg-stone-50 border border-[#dce5da] text-xs text-[#18372b] placeholder-stone-400 focus:bg-white focus:outline-none focus:border-[#244e3b]"
+                    />
+                  </div>
                 </div>
               </div>
 

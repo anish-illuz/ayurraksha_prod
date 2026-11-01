@@ -128,7 +128,7 @@ const STATE_CODE_MAP: Record<string, string> = {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { items, customer, paymentMethod, customerNote } = body;
+    const { items, customer, paymentMethod, customerNote, tierDiscount, tierDiscountPercent } = body;
 
     if (!items || !items.length) {
       return NextResponse.json({ success: false, error: 'Cart is empty' }, { status: 400 });
@@ -136,6 +136,22 @@ export async function POST(req: Request) {
 
     if (!customer || !customer.name || !customer.phone || !customer.address) {
       return NextResponse.json({ success: false, error: 'Missing customer shipping details' }, { status: 400 });
+    }
+
+    // Server-side validation of subtotal and volume tier discount
+    const calculatedSubtotal = items.reduce((acc: number, item: any) => {
+      const product = getProductById(item.product?.id || item.id);
+      const price = item.variantPrice ?? product?.price ?? item.price ?? 0;
+      return acc + price * (item.quantity || 1);
+    }, 0);
+
+    const serverTierPercent = calculatedSubtotal >= 5000 ? 15 : calculatedSubtotal >= 2000 ? 10 : 0;
+    const serverTierDiscount = Math.round(calculatedSubtotal * (serverTierPercent / 100));
+
+    // Append discount record to customer note for WooCommerce admin visibility
+    let enhancedNote = customerNote || '';
+    if (serverTierDiscount > 0) {
+      enhancedNote += ` | Automatic Volume Discount: ${serverTierPercent}% OFF (-₹${serverTierDiscount}) [Subtotal: ₹${calculatedSubtotal}, Net: ₹${calculatedSubtotal - serverTierDiscount}]`;
     }
 
     for (const item of items) {
@@ -280,7 +296,7 @@ export async function POST(req: Request) {
 
     // Step 5: Execute Checkout on WooCommerce Store API
     const formattedNote = [
-      customerNote ? `Customer Note: ${customerNote}` : '',
+      enhancedNote ? `Notes & Discounts: ${enhancedNote}` : '',
       `Order Items: ${itemManifest.join(', ')}`,
       `Payment Mode: ${paymentMethod === 'cod' ? 'Cash on Delivery (COD)' : 'Prepaid Online (Razorpay)'}`,
       'Channel: AyurRaksha Storefront',

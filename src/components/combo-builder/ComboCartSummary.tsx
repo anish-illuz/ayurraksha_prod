@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Copy, Check, ShieldCheck } from 'lucide-react';
+import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Copy, Check, Sparkles, Tag, ShieldCheck } from 'lucide-react';
 import { ComboProduct } from '@/types/combo';
 import { trackComboEvent } from '@/lib/comboAnalytics';
 
@@ -50,7 +50,26 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
     return sum + itemPrice * item.quantity;
   }, 0);
 
-  const genuineSavings = Math.max(0, totalMrp - totalSellingPrice);
+  // Tiered Volume Discount:
+  // - Orders > ₹5,000 -> 15% OFF
+  // - Orders > ₹2,000 -> 10% OFF
+  let tierDiscountPercent = 0;
+  let tierDiscountAmount = 0;
+  let amountToNextTier = 0;
+
+  if (totalSellingPrice >= 5000) {
+    tierDiscountPercent = 15;
+    tierDiscountAmount = Math.round(totalSellingPrice * 0.15);
+  } else if (totalSellingPrice >= 2000) {
+    tierDiscountPercent = 10;
+    tierDiscountAmount = Math.round(totalSellingPrice * 0.10);
+    amountToNextTier = 5000 - totalSellingPrice;
+  } else {
+    amountToNextTier = Math.max(0, 2000 - totalSellingPrice);
+  }
+
+  const finalPayableTotal = Math.max(0, totalSellingPrice - tierDiscountAmount);
+  const totalCombinedSavings = (totalMrp - totalSellingPrice) + tierDiscountAmount;
 
   const handleCopySummary = async () => {
     if (selectedItems.length === 0) return;
@@ -68,9 +87,11 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
       ...lines,
       '----------------------------------------',
       `Items: ${totalItemsCount} across ${selectedItems.length} products`,
-      `Standard MRP Total: ₹${totalMrp.toLocaleString('en-IN')}`,
-      genuineSavings > 0 ? `Product Savings: - ₹${genuineSavings.toLocaleString('en-IN')}` : null,
-      `Estimated Total Payable: ₹${totalSellingPrice.toLocaleString('en-IN')}`,
+      `Standard Product Total: ₹${totalSellingPrice.toLocaleString('en-IN')}`,
+      tierDiscountAmount > 0
+        ? `Flash Volume Discount (${tierDiscountPercent}% OFF): - ₹${tierDiscountAmount.toLocaleString('en-IN')}`
+        : null,
+      `Final Amount Payable: ₹${finalPayableTotal.toLocaleString('en-IN')}`,
       '----------------------------------------',
       'Configured at: https://www.ayurrakshaonline.com/combo-builder',
       'Doctor Consultation available via VPrime Health Care (+91 99403 88877)',
@@ -85,7 +106,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
       trackComboEvent({
         event: 'view_combo',
         item_count: totalItemsCount,
-        total_amount: totalSellingPrice,
+        total_amount: finalPayableTotal,
         has_pending_items: false,
       });
     } catch {
@@ -115,8 +136,45 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
           </p>
         </div>
 
+        {/* Flash Volume Discount Unlock Tier Banner */}
+        <div className="mt-3 p-2.5 rounded-[10px] bg-[#FAF8EE] border border-[#EADBBD] text-xs space-y-1">
+          <div className="flex items-center justify-between font-bold text-[#18372b]">
+            <span className="flex items-center gap-1.5">
+              <Tag size={13} className="text-[#ab8345]" />
+              <span>Volume Offers:</span>
+            </span>
+            <span className="text-[11px] text-[#25764d]">
+              {tierDiscountPercent > 0 ? `${tierDiscountPercent}% OFF Applied` : 'Save up to 15%'}
+            </span>
+          </div>
+
+          {tierDiscountPercent === 15 ? (
+            <p className="text-[11px] text-[#25764d] font-semibold">
+              ✓ Maximum 15% discount unlocked on your order!
+            </p>
+          ) : tierDiscountPercent === 10 ? (
+            <p className="text-[11px] text-[#18372b]">
+              <strong>10% OFF unlocked!</strong> Add ₹{amountToNextTier.toLocaleString('en-IN')} more to unlock <strong>15% OFF</strong>.
+            </p>
+          ) : (
+            <p className="text-[11px] text-[#3c4f44]">
+              Add ₹{amountToNextTier.toLocaleString('en-IN')} more to unlock <strong>10% OFF</strong> automatically at checkout.
+            </p>
+          )}
+
+          {/* Progress bar */}
+          <div className="w-full bg-[#E5DFCC] h-1.5 rounded-full overflow-hidden mt-1">
+            <div
+              className="bg-[#25764d] h-full transition-all duration-300"
+              style={{
+                width: `${Math.min(100, Math.round((totalSellingPrice / 5000) * 100))}%`,
+              }}
+            />
+          </div>
+        </div>
+
         {/* Line Items List matching prototype */}
-        <div className="py-2 space-y-2.5 max-h-[350px] overflow-y-auto divide-y divide-[#f0f2ed] pr-1">
+        <div className="py-2 space-y-2.5 max-h-[320px] overflow-y-auto divide-y divide-[#f0f2ed] pr-1">
           {selectedItems.length === 0 ? (
             <div className="py-8 text-center space-y-2">
               <div className="w-10 h-10 rounded-full bg-[#f4f7f2] text-stone-400 flex items-center justify-center mx-auto">
@@ -194,21 +252,21 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
       <div className="pt-3 border-t border-[#e6ece3] space-y-2.5">
         <div className="space-y-1.5 text-xs text-[#283830] font-sans">
           <div className="flex justify-between items-center">
-            <span>Total standard price</span>
-            <strong className="text-[#18372b]">₹{totalMrp.toLocaleString('en-IN')}</strong>
+            <span>Product Subtotal</span>
+            <strong className="text-[#18372b]">₹{totalSellingPrice.toLocaleString('en-IN')}</strong>
           </div>
 
-          {genuineSavings > 0 && (
+          {tierDiscountAmount > 0 && (
             <div className="flex justify-between items-center text-[#25764d] font-bold">
-              <span>Product offer savings</span>
-              <span>− ₹{genuineSavings.toLocaleString('en-IN')}</span>
+              <span>Volume Discount ({tierDiscountPercent}% OFF)</span>
+              <span>− ₹{tierDiscountAmount.toLocaleString('en-IN')}</span>
             </div>
           )}
 
           <div className="flex justify-between items-center pt-2 border-t border-[#e6ece3] text-sm text-[#123b2d] font-bold">
-            <span className="font-sans text-[13px] font-bold">Estimated total</span>
-            <span className="font-serif text-[19px] font-bold">
-              ₹{totalSellingPrice.toLocaleString('en-IN')}
+            <span className="font-sans text-[13px] font-bold">Final Amount Payable</span>
+            <span className="font-serif text-[20px] font-bold">
+              ₹{finalPayableTotal.toLocaleString('en-IN')}
             </span>
           </div>
         </div>
@@ -228,7 +286,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
           <ArrowRight size={15} />
         </button>
 
-        {/* Copy Summary Button matching prototype */}
+        {/* Copy Summary Button */}
         {selectedItems.length > 0 && (
           <button
             type="button"
@@ -249,13 +307,13 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
           </button>
         )}
 
-        {/* Footnote notes matching prototype */}
+        {/* Footnote notes */}
         <div className="pt-2 text-[10.5px] text-[#4d6355] text-center leading-[1.6]">
-          Live checkout, inventory and pricing are connected to WooCommerce.
+          Applied automatically at checkout. No coupon code needed.
         </div>
 
         <div className="p-3 rounded-[11px] bg-[#fff9ec] border border-[#f0e2bf] text-[11px] text-[#5c4620] leading-[1.6]">
-          Doctor-guided products require confirmation of suitability and instructions. These suggestions do not replace medical evaluation.
+          Doctor-guided formulations require clinical suitability confirmation. Free Ayurvedic doctor consultations are available.
         </div>
       </div>
     </aside>

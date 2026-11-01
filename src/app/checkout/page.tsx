@@ -98,11 +98,18 @@ export default function CheckoutPage() {
   };
 
   // Pricing calculations
+  // Automatic Volume Discount:
+  // - Orders > ₹5,000 -> 15% OFF
+  // - Orders > ₹2,000 -> 10% OFF
+  const tierDiscountPercent = subtotal >= 5000 ? 15 : subtotal >= 2000 ? 10 : 0;
+  const tierDiscount = Math.round(subtotal * (tierDiscountPercent / 100));
+  const discountedSubtotal = subtotal - tierDiscount;
+
   // Prepaid: Free delivery + 5% extra discount
   // COD: Flat ₹100 COD fee
-  const prepaidDiscount = paymentMethod === 'razorpay' ? Math.round(subtotal * 0.05) : 0;
+  const prepaidDiscount = paymentMethod === 'razorpay' ? Math.round(discountedSubtotal * 0.05) : 0;
   const shippingFee = paymentMethod === 'razorpay' ? 0 : 100;
-  const totalPayable = Math.max(0, subtotal - prepaidDiscount + shippingFee);
+  const totalPayable = Math.max(0, discountedSubtotal - prepaidDiscount + shippingFee);
 
   const validateForm = () => {
     if (!formData.name.trim()) return 'Please enter your full name';
@@ -147,6 +154,8 @@ export default function CheckoutPage() {
           customer: formData,
           paymentMethod,
           customerNote: note,
+          tierDiscount,
+          tierDiscountPercent,
         }),
       });
 
@@ -704,6 +713,13 @@ export default function CheckoutPage() {
                       ₹{subtotal.toLocaleString('en-IN')}
                     </span>
                   </div>
+
+                  {tierDiscount > 0 && (
+                    <div className="flex items-center justify-between text-emerald-800 font-bold bg-emerald-50 px-2.5 py-1.5 rounded-lg border border-emerald-200">
+                      <span>Volume Discount ({tierDiscountPercent}% OFF)</span>
+                      <span>-₹{tierDiscount.toLocaleString('en-IN')}</span>
+                    </div>
+                  )}
 
                   {prepaidDiscount > 0 && (
                     <div className="flex items-center justify-between text-botanical font-semibold">

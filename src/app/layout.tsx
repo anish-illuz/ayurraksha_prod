@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import { CartProvider } from '@/lib/cartContext';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { ExitIntentDiscountModal } from '@/components/ExitIntentDiscountModal';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
@@ -140,6 +141,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
+          <ExitIntentDiscountModal />
         </CartProvider>
       </body>
     </html>

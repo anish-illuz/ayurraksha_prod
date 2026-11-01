@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getProductBySlug } from '@/lib/products';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface BannerSlide {
@@ -15,59 +14,59 @@ interface BannerSlide {
   imageAlt: string;
   primaryLink: string;
   primaryLabel: string;
-  secondaryLink: string;
-  secondaryLabel: string;
 }
 
 // Full-bleed master banner artwork across both mobile and desktop
 const BANNER_SLIDES: BannerSlide[] = [
   {
     id: 'boozliv',
-    title: 'BoozLiv. Rooted in Ayurveda.',
+    title: 'Revive Your Liver. Reclaim Your Life with BoozLiv.',
     tag: 'Flagship Liver Care & Detox',
     desktopImageSrc: '/images/banners/boozliv.webp',
     mobileImageSrc: '/images/banners/boozliv-mobile.webp',
-    imageAlt: 'BoozLiv Herbal Tonic & Sachet by AyurRaksha - Rooted in Ayurveda',
+    imageAlt: 'BoozLiv Herbal Supplement by AyurRaksha - Revive Your Liver, Reclaim Your Life',
     primaryLink: '/product/boozliv',
-    primaryLabel: 'Explore BoozLiv',
-    secondaryLink: '/shop?sort=bestseller',
-    secondaryLabel: 'View Bestsellers',
+    primaryLabel: 'Shop BoozLiv',
   },
   {
-    id: 'cardiac-combo',
-    title: 'Nourish Your Heart. Support Healthy Circulation.',
-    tag: 'Heart Vitality & Blood Pressure',
-    desktopImageSrc: '/images/banners/cardiac-combo.webp',
-    mobileImageSrc: '/images/banners/cardiac-combo-mobile.webp',
-    imageAlt: 'AyurRaksha Cardiac Health Combo - Save Heart, Laxa Health Tea, Dia Well',
-    primaryLink: '/product/ayur-raksha-cardiac-combo',
-    primaryLabel: 'Shop Cardiac Combo',
-    secondaryLink: '/category/health-packs',
-    secondaryLabel: 'View All Combos',
+    id: 'skin-well-combo',
+    title: 'Your Skin Deserves the Best of Ayurveda',
+    tag: 'Complete Skin Care Therapy',
+    desktopImageSrc: '/images/banners/skin-well-combo.webp',
+    mobileImageSrc: '/images/banners/skin-well-combo-mobile.webp',
+    imageAlt: 'AyurRaksha Skin Well Combo - Skin Well Capsules, Soap, Healing Oil & Ointment',
+    primaryLink: '/product/skin-well-pack',
+    primaryLabel: 'Shop Skin Well Combo',
   },
   {
-    id: 'healing-oil',
-    title: 'Move With Ease. Soothe Joint & Knee Pain.',
-    tag: 'Fast Joint & Muscle Relief',
-    desktopImageSrc: '/images/banners/healing-oil.webp',
-    mobileImageSrc: '/images/banners/healing-oil-mobile.webp',
-    imageAlt: 'AyurRaksha Divine Healing Oil - Joint, Muscle & Knee Pain Relief',
-    primaryLink: '/product/divine-healing-oil',
-    primaryLabel: 'Shop Divine Healing Oil',
-    secondaryLink: '/concern/pain-joints',
-    secondaryLabel: 'Browse Pain Relief',
+    id: 'varicose-veins',
+    title: 'Care for Your Veins. Move with Confidence.',
+    tag: 'Varicose Veins Wellness Combo',
+    desktopImageSrc: '/images/banners/varicose-veins.webp',
+    mobileImageSrc: '/images/banners/varicose-veins-mobile.webp',
+    imageAlt: 'AyurRaksha Varicose Veins Wellness Combo - Flow Well Pack, Detox Tea, Verico Prime & Foot Bath',
+    primaryLink: '/product/flow-well-pack',
+    primaryLabel: 'Shop Varicose Veins Combo',
+  },
+  {
+    id: 'breathe-well',
+    title: 'Breathe Better. Feel Clearer Every Day.',
+    tag: 'Respiratory Wellness & Relief',
+    desktopImageSrc: '/images/banners/breathe-well.webp',
+    mobileImageSrc: '/images/banners/breathe-well-mobile.webp',
+    imageAlt: 'AyurRaksha Breathe Well Combo - Esnovate Capsules, Detox Tea & Etioment Balm',
+    primaryLink: '/product/ayur-raksha-breathe-well-pack',
+    primaryLabel: 'Shop Breathe Well Combo',
   },
   {
     id: 'purna-sakthi',
-    title: 'Pure Natural Energy. Zero Afternoon Crashes.',
+    title: 'Natural Energy. Everyday Vitality.',
     tag: 'Natural Energy & Stamina',
     desktopImageSrc: '/images/banners/purna-sakthi.webp',
     mobileImageSrc: '/images/banners/purna-sakthi-mobile.webp',
-    imageAlt: 'Purna Sakthi Restorative Herbal Tonic by AyurRaksha - Energy & Vitality',
+    imageAlt: 'Purna Sakthi Ayurvedic Tonic by AyurRaksha - Natural Energy & Everyday Vitality',
     primaryLink: '/product/purna-sakthi-tonic',
     primaryLabel: 'Shop Purna Sakthi',
-    secondaryLink: '/category/tonic',
-    secondaryLabel: 'Browse Tonics',
   },
 ];
 
@@ -168,7 +167,6 @@ export const Hero: React.FC = () => {
               <Link href={slide.primaryLink} tabIndex={isActive ? 0 : -1} className="hidden md:block relative w-full h-full cursor-pointer" aria-label={slide.primaryLabel}>
                 <Image src={slide.desktopImageSrc} alt={slide.imageAlt} fill priority={idx === 0} sizes="100vw" className="object-cover object-center w-full h-full" />
               </Link>
-              {isActive && <Link href={slide.secondaryLink} aria-label={slide.secondaryLabel} className="hidden md:block absolute left-[23%] bottom-[14%] w-[16%] h-[16%] rounded-full focus:ring-2 focus:ring-primary" />}
             </div>
           );
         })}

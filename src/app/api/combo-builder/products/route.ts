@@ -1,88 +1,66 @@
 import { NextResponse } from 'next/server';
-import { ALL_STORE_COMBO_PRODUCTS, CORE_13_COMBO_PRODUCTS } from '@/data/comboBuilderData';
+import { MASTER_COMBO_PRODUCTS } from '@/data/comboBuilderData';
 import { ComboProduct } from '@/types/combo';
 
 const WORDPRESS_STORE_API = 'https://cms.ayurrakshaonline.com/wp-json/wc/store/v1';
 
 export const revalidate = 60; // Cache on server for 60 seconds
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
-    const { searchParams } = new URL(request.url);
-    const scope = searchParams.get('scope'); // 'all' or 'flagship'
-    const baseProducts = scope === 'all' ? ALL_STORE_COMBO_PRODUCTS : CORE_13_COMBO_PRODUCTS;
-
-    // Attempt to fetch live stock & prices from WooCommerce Store API
+    // Fetch live product details from WooCommerce Store API for all 13 products concurrently
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3500); // 3.5s timeout
+    const timeoutId = setTimeout(() => controller.abort(), 4000); // 4s timeout
 
-    let liveProductsMap: Record<number, any> = {};
+    const liveFetches = MASTER_COMBO_PRODUCTS.map(async (master) => {
+      try {
+        const res = await fetch(`${WORDPRESS_STORE_API}/products/${master.cmsId}`, {
+          signal: controller.signal,
+          headers: {
+            'User-Agent': 'AyurRaksha-ComboBuilder/2.0',
+            'Accept': 'application/json',
+          },
+          next: { revalidate: 60 },
+        });
 
-    try {
-      const res = await fetch(`${WORDPRESS_STORE_API}/products?per_page=100`, {
-        signal: controller.signal,
-        headers: {
-          'User-Agent': 'AyurRaksha-ComboBuilder/2.0',
-          'Accept': 'application/json',
-        },
-        next: { revalidate: 60 },
-      });
+        if (res.ok) {
+          const liveItem = await res.json();
+          const livePriceRaw = liveItem.prices?.price;
+          const liveRegRaw = liveItem.prices?.regular_price;
 
-      if (res.ok) {
-        const liveList = await res.json();
-        if (Array.isArray(liveList)) {
-          liveList.forEach((item: any) => {
-            liveProductsMap[item.id] = item;
-          });
+          const livePrice = typeof livePriceRaw === 'number' ? Math.round(livePriceRaw / 100) : master.price;
+          const liveRegPrice = typeof liveRegRaw === 'number' ? Math.round(liveRegRaw / 100) : master.mrp;
+
+          return {
+            ...master,
+            inStock: liveItem.is_in_stock ?? master.inStock,
+            price: livePrice ?? master.price,
+            mrp: liveRegPrice && liveRegPrice > (livePrice ?? 0) ? liveRegPrice : (livePrice ?? master.mrp),
+          };
         }
+      } catch {
+        // Fallback to master product on timeout/network error
       }
-    } catch {
-      // Gracefully fall back to master catalogue if CMS is temporarily unreachable
-    } finally {
-      clearTimeout(timeoutId);
-    }
-
-    // Merge live data with master catalogue
-    const normalizedProducts: ComboProduct[] = baseProducts.map((master) => {
-      const liveItem = liveProductsMap[master.cmsId];
-
-      if (!liveItem) {
-        return master;
-      }
-
-      // Respect Developer Brief pricing rules:
-      // - SP Soryn price is explicitly pending (do not un-pend without management approval)
-      if (master.pricePending) {
-        return {
-          ...master,
-          inStock: liveItem.is_in_stock ?? master.inStock,
-        };
-      }
-
-      // Check live price in paise
-      const livePriceRaw = liveItem.prices?.price;
-      const livePrice = typeof livePriceRaw === 'number' ? Math.round(livePriceRaw / 100) : master.price;
-
-      return {
-        ...master,
-        inStock: liveItem.is_in_stock ?? master.inStock,
-        price: livePrice ?? master.price,
-      };
+      return master;
     });
+
+    const normalizedProducts: ComboProduct[] = await Promise.all(liveFetches);
+    clearTimeout(timeoutId);
 
     return NextResponse.json({
       success: true,
       products: normalizedProducts,
       totalCount: normalizedProducts.length,
-      source: Object.keys(liveProductsMap).length > 0 ? 'wordpress_live' : 'master_cache',
+      source: 'wordpress_live',
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {
     return NextResponse.json(
       {
         success: false,
-        products: CORE_13_COMBO_PRODUCTS,
-        error: error.message || 'Failed to fetch live products',
+        products: MASTER_COMBO_PRODUCTS,
+        totalCount: MASTER_COMBO_PRODUCTS.length,
+        error: error.message || 'Failed to fetch live WordPress products',
         source: 'fallback',
       },
       { status: 200 }

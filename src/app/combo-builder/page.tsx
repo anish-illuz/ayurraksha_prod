@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { Search, SlidersHorizontal, Sparkles, AlertCircle } from 'lucide-react';
+import { Search, Sparkles } from 'lucide-react';
 import { ComboHero } from '@/components/combo-builder/ComboHero';
 import { ComboHowItWorks } from '@/components/combo-builder/ComboHowItWorks';
 import { ComboVideoSection } from '@/components/combo-builder/ComboVideoSection';
@@ -13,7 +13,7 @@ import { ComboCartSummary } from '@/components/combo-builder/ComboCartSummary';
 import { ComboMobileStickyBar } from '@/components/combo-builder/ComboMobileStickyBar';
 import { ComboProductDetailModal } from '@/components/combo-builder/ComboProductDetailModal';
 import { ComboConsultModal } from '@/components/combo-builder/ComboConsultModal';
-import { ALL_STORE_COMBO_PRODUCTS, CORE_13_COMBO_PRODUCTS, MERCHANDISING_CATEGORIES, SKIN_CONCERNS } from '@/data/comboBuilderData';
+import { MASTER_COMBO_PRODUCTS, MERCHANDISING_CATEGORIES, SKIN_CONCERNS } from '@/data/comboBuilderData';
 import { ComboProduct, MerchandisingCategory, SkinConcern } from '@/types/combo';
 import { useCart } from '@/lib/cartContext';
 import { getProductById } from '@/lib/products';
@@ -25,9 +25,8 @@ export default function ComboBuilderPage() {
   const router = useRouter();
   const { addToCart } = useCart();
 
-  // State
-  const [catalogScope, setCatalogScope] = useState<'flagship' | 'all'>('flagship');
-  const [products, setProducts] = useState<ComboProduct[]>(CORE_13_COMBO_PRODUCTS);
+  // State: Exclusively the 13 approved products
+  const [products, setProducts] = useState<ComboProduct[]>(MASTER_COMBO_PRODUCTS);
   const [comboCart, setComboCart] = useState<Record<number, number>>({});
   const [activeCategory, setActiveCategory] = useState<MerchandisingCategory>('All products');
   const [activeConcern, setActiveConcern] = useState<SkinConcern>(SKIN_CONCERNS[0]);
@@ -35,17 +34,6 @@ export default function ComboBuilderPage() {
   const [detailProduct, setDetailProduct] = useState<ComboProduct | null>(null);
   const [isConsultOpen, setIsConsultOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-
-  // Switch catalog scope between Flagship (13) and All Store Products (47)
-  const handleScopeChange = (scope: 'flagship' | 'all') => {
-    setCatalogScope(scope);
-    if (scope === 'flagship') {
-      setProducts(CORE_13_COMBO_PRODUCTS);
-    } else {
-      setProducts(ALL_STORE_COMBO_PRODUCTS);
-    }
-    setActiveCategory('All products');
-  };
 
   // Load saved combo cart from localStorage
   useEffect(() => {
@@ -73,19 +61,19 @@ export default function ComboBuilderPage() {
     }
   }, [comboCart, mounted]);
 
-  // Fetch live product updates from WooCommerce server API layer
+  // Fetch live product updates directly from WooCommerce server API layer
   useEffect(() => {
-    fetch(`/api/combo-builder/products?scope=${catalogScope}`)
+    fetch('/api/combo-builder/products')
       .then((res) => res.json())
       .then((data) => {
-        if (data.success && Array.isArray(data.products)) {
+        if (data.success && Array.isArray(data.products) && data.products.length === 13) {
           setProducts(data.products);
         }
       })
       .catch((err) => {
-        console.warn('Could not fetch live combo products; using master catalog:', err);
+        console.warn('Using master catalog fallback:', err);
       });
-  }, [catalogScope]);
+  }, []);
 
   // Quantity modification
   const handleUpdateQuantity = (productId: number, delta: number) => {
@@ -115,7 +103,7 @@ export default function ComboBuilderPage() {
     });
   };
 
-  // Filtered products calculation
+  // Filtered products calculation (strictly among the 13 approved products)
   const filteredProducts = useMemo(() => {
     return products.filter((p) => {
       // Category filter
@@ -187,7 +175,7 @@ export default function ComboBuilderPage() {
   };
 
   return (
-    <div className="bg-[#FAF9F5] min-h-screen text-[#26352D] pb-44 lg:pb-20 font-sans">
+    <div className="bg-[#FAF9F5] min-h-screen text-[#26352D] pb-32 lg:pb-16 font-sans">
       {/* 1. Hero Section */}
       <ComboHero onOpenConsult={() => setIsConsultOpen(true)} />
 
@@ -218,36 +206,13 @@ export default function ComboBuilderPage() {
                 Build Your Skin Care Combo
               </h2>
               <p className="text-xs sm:text-sm text-stone-600 mt-1">
-                Browse, compare and compose your individual selection — with live verified prices.
+                Browse, compare and compose your individual combination — with live WordPress pricing.
               </p>
             </div>
 
-            {/* Scope Switcher: 13 Skin Care vs All 47 Store Formulations */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
-              <div className="inline-flex p-1 bg-stone-100 border border-stone-200 rounded-2xl shadow-xs">
-                <button
-                  type="button"
-                  onClick={() => handleScopeChange('flagship')}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
-                    catalogScope === 'flagship'
-                      ? 'bg-[#18372b] text-white shadow-xs'
-                      : 'text-stone-600 hover:text-stone-900'
-                  }`}
-                >
-                  Skin Care Essentials (13)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleScopeChange('all')}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
-                    catalogScope === 'all'
-                      ? 'bg-[#18372b] text-white shadow-xs'
-                      : 'text-stone-600 hover:text-stone-900'
-                  }`}
-                >
-                  All Products (47)
-                </button>
-              </div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700">
+              <Sparkles size={13} className="text-[#b59661]" />
+              <span>13 Approved Formulations • 5 Merchandising Categories</span>
             </div>
           </div>
 
@@ -292,7 +257,7 @@ export default function ComboBuilderPage() {
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search 13 products..."
+                    placeholder="Search 13 formulations..."
                     aria-label="Search products"
                     className="w-full pl-8 pr-3 py-1.5 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-800 placeholder-stone-400 focus:bg-white focus:outline-none focus:border-[#18372b]"
                   />

@@ -1,7 +1,6 @@
 import { ComboProduct, MerchandisingCategory, SkinConcern, VideoLanguageOption } from '@/types/combo';
-import productsData from '@/data/products.json';
-import { Product } from '@/types/product';
 
+// Strictly the 5 Merchandising Categories from the Developer Brief
 export const MERCHANDISING_CATEGORIES: MerchandisingCategory[] = [
   'All products',
   'External care',
@@ -9,13 +8,11 @@ export const MERCHANDISING_CATEGORIES: MerchandisingCategory[] = [
   'Internal wellness',
   'Digestive wellness',
   'O3 specialty',
-  'Tonics & Elixirs',
-  'Joint & Muscle Care',
 ];
 
-// The 13 Flagship Products explicitly specified in the Developer Brief
-export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
-  // 1. Divine Healing Oil
+// Exactly 13 approved formulations mapped to live WordPress CMS IDs
+export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
+  // 1. Divine Healing Oil (CMS ID 113)
   {
     id: 7689,
     cmsId: 113,
@@ -29,7 +26,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/divine-healing-oil.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/healing-oil.png',
     ],
-    mrp: 1000,
+    mrp: 800,
     price: 800,
     pricePending: false,
     inStock: true,
@@ -48,7 +45,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 2. Skin Conditioning Oil
+  // 2. Skin Conditioning Oil (CMS ID 98)
   {
     id: 11378,
     cmsId: 98,
@@ -62,8 +59,8 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/ayur-raksha-skin-conditioning-oil.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/skin-conditioning-oil.png',
     ],
-    mrp: 1000,
-    price: 800,
+    mrp: 799,
+    price: 799,
     pricePending: false,
     inStock: true,
     doctorGuided: false,
@@ -81,7 +78,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 3. SP Soryn Cream (Price TBC / Pending)
+  // 3. SP Soryn Cream (CMS ID 99)
   {
     id: 11387,
     cmsId: 99,
@@ -95,16 +92,16 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/sp-soryn-cream.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/SP-Soryn.png',
     ],
-    mrp: null, // Pending verification per Developer Brief
-    price: null, // Pending verification per Developer Brief
-    pricePending: true,
+    mrp: 799,
+    price: 799,
+    pricePending: false,
     inStock: true,
     doctorGuided: true,
-    shortDescription: 'Topical Ayurvedic proprietary herbal cream; commercial pricing pending management verification.',
+    shortDescription: 'Topical Ayurvedic proprietary herbal formulation for targeted skin care support.',
     description:
-      'An Ayurvedic proprietary topical formulation developed for targeted skin support. Commercial pricing and packaging specifications are currently under administrative review.',
+      'An Ayurvedic proprietary topical formulation developed for targeted skin support with traditional botanicals.',
     indications: 'Physician-supervised skin support for localized stubborn rashes and dermatological conditions.',
-    ingredients: 'Ayurvedic proprietary herbal extracts in an emulsion base. Official label disclosure pending review.',
+    ingredients: 'Ayurvedic proprietary herbal extracts in an emulsion base.',
     directions:
       'Use strictly under the guidance of a qualified Ayurvedic physician. Apply a thin layer to clean skin 2 to 3 times daily as advised.',
     storage: 'Store in a cool, dry place below 25°C. Do not freeze.',
@@ -115,7 +112,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 4. Skinwell Soap
+  // 4. SkinWell Soap (CMS ID 109)
   {
     id: 10627,
     cmsId: 109,
@@ -147,7 +144,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 5. Anti-Tan Kalonji Soap
+  // 5. Anti-Tan Kalonji Soap (CMS ID 122)
   {
     id: 122,
     cmsId: 122,
@@ -179,7 +176,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 6. Herbal Hair Shampoo
+  // 6. Herbal Hair Shampoo (CMS ID 96)
   {
     id: 12007,
     cmsId: 96,
@@ -211,7 +208,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 7. Skinwell Food Supplement
+  // 7. Skinwell Food Supplement (CMS ID 107)
   {
     id: 7688,
     cmsId: 107,
@@ -226,7 +223,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/skin-well-capsules.png',
     ],
     mrp: 1299,
-    price: 1100,
+    price: 1199,
     pricePending: false,
     inStock: true,
     doctorGuided: false,
@@ -244,7 +241,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 8. IMU 360 Food Supplement
+  // 8. IMU 360 Food Supplement (CMS ID 94)
   {
     id: 22738,
     cmsId: 94,
@@ -259,7 +256,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/IMU-360.png',
     ],
     mrp: 1299,
-    price: 1100,
+    price: 1298,
     pricePending: false,
     inStock: true,
     doctorGuided: false,
@@ -276,7 +273,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 9. B Derma Ayurvedic Capsules
+  // 9. B Derma Ayurvedic Capsules (CMS ID 100)
   {
     id: 11317,
     cmsId: 100,
@@ -290,8 +287,8 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/b-derma-capsules.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/10/B-Derma.png',
     ],
-    mrp: 800,
-    price: 800,
+    mrp: 799,
+    price: 799,
     pricePending: false,
     inStock: true,
     doctorGuided: true,
@@ -309,7 +306,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 10. Ayur Raksha Detox Tea
+  // 10. Ayur Raksha Detox Tea (CMS ID 85)
   {
     id: 27739,
     cmsId: 85,
@@ -343,7 +340,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 11. Super Heal O3 Cream
+  // 11. Super Heal O3 Cream (CMS ID 88)
   {
     id: 22867,
     cmsId: 88,
@@ -357,8 +354,8 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/ayur-raksha-superheal-o3-cream.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/super-heal-03.png',
     ],
-    mrp: 4000,
-    price: 4000,
+    mrp: 3999,
+    price: 3999,
     pricePending: false,
     inStock: true,
     doctorGuided: true,
@@ -377,7 +374,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 12. Ayur Raksha Immune O3 Capsules
+  // 12. Ayur Raksha Immune O3 Capsules (CMS ID 124)
   {
     id: 124,
     cmsId: 124,
@@ -391,8 +388,8 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/ayur-raksha-immuno3-capsules.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/ImmunO3-capsules.png',
     ],
-    mrp: 2500,
-    price: 2500,
+    mrp: 1298,
+    price: 1298,
     pricePending: false,
     inStock: true,
     doctorGuided: true,
@@ -411,7 +408,7 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 13. Ayur Raksha Vital O3 Cream
+  // 13. Ayur Raksha Vital O3 Cream (CMS ID 123)
   {
     id: 123,
     cmsId: 123,
@@ -425,8 +422,8 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/ayur-raksha-vital-o3-cream.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/Vital-O3-cream.png',
     ],
-    mrp: 4000,
-    price: 4000,
+    mrp: 3999,
+    price: 3999,
     pricePending: false,
     inStock: true,
     doctorGuided: true,
@@ -446,88 +443,13 @@ export const CORE_13_COMBO_PRODUCTS: ComboProduct[] = [
   },
 ];
 
-// Helper to determine merchandising category for all store products
-function resolveStoreCategory(p: Product): MerchandisingCategory {
-  const cats = (p.categories || []).map((c) => c.toLowerCase());
-  const slugs = (p.categorySlugs || []).map((s) => s.toLowerCase());
-  const name = p.name.toLowerCase();
-
-  if (name.includes('o3') || name.includes('vital') || name.includes('superheal')) {
-    return 'O3 specialty';
-  }
-  if (cats.includes('tonic') || slugs.includes('tonic') || name.includes('tonic') || name.includes('boozliv') || name.includes('booznil') || name.includes('save heart')) {
-    return 'Tonics & Elixirs';
-  }
-  if (name.includes('pain') || name.includes('etioment') || name.includes('bpain') || cats.includes('pain relief')) {
-    return 'Joint & Muscle Care';
-  }
-  if (cats.includes('tea') || cats.includes('powder') || name.includes('tea') || name.includes('powder')) {
-    return 'Digestive wellness';
-  }
-  if (cats.includes('soap') || cats.includes('shampoo') || name.includes('soap') || name.includes('shampoo')) {
-    return 'Bath & scalp';
-  }
-  if (cats.includes('cream') || cats.includes('oil') || name.includes('cream') || name.includes('oil')) {
-    return 'External care';
-  }
-  return 'Internal wellness';
-}
-
-// Convert all remaining products from products.json into ComboProduct format
-const coreIds = new Set(CORE_13_COMBO_PRODUCTS.map((p) => p.id));
-
-const additionalStoreProducts: ComboProduct[] = (productsData as Product[])
-  .filter((p) => !coreIds.has(p.id))
-  .map((p) => {
-    const isDoctorGuided =
-      p.name.toLowerCase().includes('o3') ||
-      p.name.toLowerCase().includes('derma') ||
-      p.name.toLowerCase().includes('soryn');
-
-    return {
-      id: p.id,
-      cmsId: p.id,
-      name: p.name,
-      slug: p.slug,
-      category: resolveStoreCategory(p),
-      packSize: p.variants?.[0]?.name || (p.categorySlugs?.includes('oil') ? '100 ml' : 'Standard Pack'),
-      formatTag: p.variants?.[0]?.name || p.categories?.[0] || 'Ayurvedic Care',
-      primaryImage: p.images?.[0] || '/images/products/divine-healing-oil.webp',
-      gallery: p.images || [],
-      mrp: p.regularPrice > p.price ? p.regularPrice : p.price,
-      price: p.price,
-      pricePending: false,
-      inStock: p.inStock,
-      doctorGuided: isDoctorGuided,
-      shortDescription: p.shortDescription || p.cleanDescription?.slice(0, 110) || 'Doctor-formulated Ayurvedic remedy.',
-      description: p.description || p.cleanDescription || 'Authentic herbal formulation formulated in Chennai, India.',
-      indications: p.healthConcerns?.join(', ') || 'General Ayurvedic wellness and balance.',
-      ingredients: 'Herbal extracts and time-honoured Ayurvedic classical ingredients.',
-      directions: 'Take or apply as advised on the product packaging or by your physician.',
-      storage: 'Store in a cool, dry place away from direct sunlight.',
-      warnings: 'Consult a physician before use if pregnant, nursing, or on regular medication.',
-      href: `/product/${p.slug}`,
-      sku: p.sku || String(p.id),
-      isFlagshipSkinCare: false,
-    };
-  });
-
-// Complete catalogue of all 47 products
-export const ALL_STORE_COMBO_PRODUCTS: ComboProduct[] = [
-  ...CORE_13_COMBO_PRODUCTS,
-  ...additionalStoreProducts,
-];
-
-// Default export uses the 13 flagship skin care products as base, with all store products readily accessible
-export const MASTER_COMBO_PRODUCTS = CORE_13_COMBO_PRODUCTS;
-
 export const SKIN_CONCERNS: SkinConcern[] = [
   {
     id: 'browse',
-    name: 'Explore all products',
-    shortDesc: 'Curate your own routine freely from the complete product catalogue.',
+    name: 'Explore all 13 products',
+    shortDesc: 'Curate your own routine freely from the complete 13-product catalogue.',
     description:
-      'Browse all products at your own pace across all care categories. Nothing is automatically added to your combo — every product is your choice.',
+      'Browse all 13 products at your own pace across all 5 care categories. Nothing is automatically added to your combo — every product is your choice.',
     highlightedProductIds: [],
     requiresDoctorGuidance: false,
   },

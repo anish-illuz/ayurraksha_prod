@@ -1847,5 +1847,140 @@
       }
     ],
     "sku": ""
+  },
+  {
+    "id": 122,
+    "name": "AyurRaksha Anti-Tan Kalonji Soap",
+    "slug": "ayurraksha-kalonji-soap",
+    "price": 200,
+    "regularPrice": 200,
+    "salePrice": 200,
+    "discountPercent": 0,
+    "onSale": false,
+    "categories": [
+      "Ayurvedic Soaps",
+      "Personal Care",
+      "Skin & Dermatology"
+    ],
+    "categorySlugs": [
+      "soap",
+      "skin-dermatology"
+    ],
+    "healthConcerns": [
+      "Skin & Botanical Care",
+      "Personal Care"
+    ],
+    "isBestseller": false,
+    "images": [
+      "/images/products/ayur-raksha-kalonji-soap.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/Kalonji-Soap.png"
+    ],
+    "rating": 4.8,
+    "reviewCount": 38,
+    "shortDescription": "Kalonji botanical soap for personal care with anti-tan and deep skin nourishment properties (76% TFM Grade 1).",
+    "description": "Enriched with pure Nigella Sativa (Kalonji / Karunjeeragam) extract and nourishing botanical bases, AyurRaksha Kalonji Soap delivers gentle, therapeutic cleansing for clear, radiant skin.",
+    "cleanDescription": "Kalonji botanical soap for personal care with anti-tan and deep skin nourishment properties (76% TFM Grade 1).",
+    "inStock": true,
+    "variants": [
+      {
+        "id": 122,
+        "name": "Single Bar (75g)",
+        "price": 200,
+        "regularPrice": 200,
+        "inStock": true,
+        "default": true
+      }
+    ],
+    "sku": "AYUR-KALONJI-SOAP"
+  },
+  {
+    "id": 123,
+    "name": "AyurRaksha Vital O3 Cream",
+    "slug": "ayurraksha-vital-o3-anti-vitiligo-cream",
+    "price": 4000,
+    "regularPrice": 4000,
+    "salePrice": 4000,
+    "discountPercent": 0,
+    "onSale": false,
+    "categories": [
+      "Botanical Creams",
+      "Skin & Dermatology",
+      "Specialty Care"
+    ],
+    "categorySlugs": [
+      "cream",
+      "skin-dermatology"
+    ],
+    "healthConcerns": [
+      "Skin & Botanical Care",
+      "Specialty Skin Care"
+    ],
+    "isBestseller": false,
+    "images": [
+      "/images/products/ayur-raksha-vital-o3-cream.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/Vital-O3-cream.png"
+    ],
+    "rating": 4.9,
+    "reviewCount": 24,
+    "shortDescription": "Specialty topical ozonated botanical cream intended for doctor-guided vitiligo-related care.",
+    "description": "AyurRaksha Vital O3 Cream is an advanced ozonated topical herbal formulation developed for targeted skin conditioning and pigmentation support under qualified Ayurvedic medical guidance.",
+    "cleanDescription": "Specialty topical ozonated botanical cream intended for doctor-guided vitiligo-related care.",
+    "inStock": true,
+    "variants": [
+      {
+        "id": 123,
+        "name": "Standard Jar (30g)",
+        "price": 4000,
+        "regularPrice": 4000,
+        "inStock": true,
+        "default": true
+      }
+    ],
+    "sku": "AYUR-VITAL-O3"
+  },
+  {
+    "id": 124,
+    "name": "AyurRaksha Immune O3 Capsules",
+    "slug": "ayurraksha-immuno3-immunity-booster-capsules",
+    "price": 2500,
+    "regularPrice": 2500,
+    "salePrice": 2500,
+    "discountPercent": 0,
+    "onSale": false,
+    "categories": [
+      "Supplement Capsules",
+      "Immunity & Vitality",
+      "Specialty Care"
+    ],
+    "categorySlugs": [
+      "capsules",
+      "immunity-vitality"
+    ],
+    "healthConcerns": [
+      "Immunity & Vitality",
+      "Specialty Skin Care"
+    ],
+    "isBestseller": false,
+    "images": [
+      "/images/products/ayur-raksha-immuno3-capsules.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/ImmunO3-capsules.png"
+    ],
+    "rating": 4.8,
+    "reviewCount": 29,
+    "shortDescription": "Specialty enteric-coated ozonated herbal capsules formulated for targeted intestinal release and cellular vitality.",
+    "description": "AyurRaksha Immune O3 Capsules combine traditional botanical antioxidants with advanced enteric coating technology to support deep tissue rejuvenation and immune equilibrium.",
+    "cleanDescription": "Specialty enteric-coated ozonated herbal capsules formulated for targeted intestinal release and cellular vitality.",
+    "inStock": true,
+    "variants": [
+      {
+        "id": 124,
+        "name": "Bottle of 60 Capsules",
+        "price": 2500,
+        "regularPrice": 2500,
+        "inStock": true,
+        "default": true
+      }
+    ],
+    "sku": "AYUR-IMMUN-O3"
   }
 ]

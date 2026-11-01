@@ -95,6 +95,16 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
             >
               <span>Wellness Packs</span>
             </Link>
+            <Link
+              href="/combo-builder"
+              onClick={onClose}
+              className="flex items-center justify-between py-2.5 text-sm font-bold text-primary hover:text-primary-dark transition-colors"
+            >
+              <span>Combo Builder</span>
+              <span className="text-[10px] font-extrabold bg-sage text-forest px-2 py-0.5 rounded-badge border border-forest/20">
+                Custom
+              </span>
+            </Link>
           </div>
 
           <hr className="border-stone-100" />

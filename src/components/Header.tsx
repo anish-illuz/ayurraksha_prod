@@ -129,6 +129,16 @@ export const Header: React.FC = () => {
               </Link>
 
               <Link
+                href="/combo-builder"
+                className="relative py-2 text-primary font-bold hover:text-primary-dark transition-colors flex items-center gap-1.5 after:absolute after:bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
+              >
+                <span>Combo Builder</span>
+                <span className="text-[10px] font-extrabold bg-sage text-forest px-1.5 py-0.5 rounded-full border border-forest/15">
+                  New
+                </span>
+              </Link>
+
+              <Link
                 href="/about"
                 className="relative py-2 hover:text-primary transition-colors after:absolute after:bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
               >

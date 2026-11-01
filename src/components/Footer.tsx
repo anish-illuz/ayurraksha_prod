@@ -129,6 +129,11 @@ export const Footer: React.FC = () => {
             </div>
             <ul className="space-y-2.5 text-xs sm:text-sm text-[#F6F1E7] font-sans">
               <li>
+                <Link href="/combo-builder" className="text-[#EAD3A2] font-semibold hover:underline transition-colors block">
+                  ★ Combo Builder (Custom)
+                </Link>
+              </li>
+              <li>
                 <Link href="/shop" className="hover:text-[#EAD3A2] transition-colors block">
                   All Products
                 </Link>

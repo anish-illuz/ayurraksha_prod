@@ -30,7 +30,21 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
     product.variants.find((v) => v.default)?.name || product.variants[0]?.name || ''
   );
   const [isAdded, setIsAdded] = useState(false);
+  const [isAddedToCombo, setIsAddedToCombo] = useState(false);
   const [openTab, setOpenTab] = useState<'desc' | 'dosage' | 'shipping'>('desc');
+
+  const handleAddToCombo = () => {
+    try {
+      const saved = localStorage.getItem('ayurraksha_combo_selection_v2');
+      const comboCart = saved ? JSON.parse(saved) : {};
+      comboCart[product.id] = (comboCart[product.id] || 0) + quantity;
+      localStorage.setItem('ayurraksha_combo_selection_v2', JSON.stringify(comboCart));
+      setIsAddedToCombo(true);
+      setTimeout(() => setIsAddedToCombo(false), 2400);
+    } catch {
+      // Ignore
+    }
+  };
 
   // Match selected variation directly from WooCommerce data
   const currentVariant = product.variants.find((v) => v.name === selectedVariant) || product.variants[0];
@@ -250,6 +264,38 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         </div>
 
         {/* WhatsApp Consultation Action */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <button
+            type="button"
+            onClick={handleAddToCombo}
+            disabled={!isAvailable}
+            className={`w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-button text-xs font-bold transition-all border ${
+              isAddedToCombo
+                ? 'bg-emerald-800 text-white border-emerald-800'
+                : 'bg-sage-light hover:bg-sage text-forest border-forest/20'
+            }`}
+          >
+            {isAddedToCombo ? (
+              <>
+                <Check size={14} className="flex-shrink-0" />
+                <span>Added to Combo!</span>
+              </>
+            ) : (
+              <>
+                <Sparkles size={14} className="text-[#b49a70]" />
+                <span>Add to Custom Combo</span>
+              </>
+            )}
+          </button>
+
+          <Link
+            href="/combo-builder"
+            className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-button text-xs font-semibold text-stone-700 bg-white hover:bg-stone-50 border border-stone-200 transition-colors"
+          >
+            <span>Customise in Combo Builder →</span>
+          </Link>
+        </div>
+
         <a
           href={whatsappInquiryUrl}
           target="_blank"

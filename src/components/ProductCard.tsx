@@ -16,6 +16,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
+  const [isComboAdded, setIsComboAdded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleQuickAdd = (e: React.MouseEvent) => {
@@ -25,6 +26,22 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
     addToCart(product, quantity);
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 1800);
+  };
+
+  const handleQuickComboAdd = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!product.inStock) return;
+    try {
+      const saved = localStorage.getItem('ayurraksha_combo_selection_v2');
+      const comboCart = saved ? JSON.parse(saved) : {};
+      comboCart[product.id] = (comboCart[product.id] || 0) + quantity;
+      localStorage.setItem('ayurraksha_combo_selection_v2', JSON.stringify(comboCart));
+      setIsComboAdded(true);
+      setTimeout(() => setIsComboAdded(false), 1800);
+    } catch {
+      // Ignore
+    }
   };
 
   const handleDecrement = (e: React.MouseEvent) => {
@@ -214,6 +231,30 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             )}
           </button>
         </div>
+
+        {/* Add to Custom Combo Action */}
+        <button
+          type="button"
+          onClick={handleQuickComboAdd}
+          disabled={!product.inStock}
+          className={`w-full py-1.5 px-2 rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1 transition-colors border ${
+            isComboAdded
+              ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
+              : 'bg-stone-50 hover:bg-stone-100 text-stone-600 border-stone-200'
+          }`}
+        >
+          {isComboAdded ? (
+            <>
+              <Check size={12} className="text-emerald-700" />
+              <span>Added to Custom Combo!</span>
+            </>
+          ) : (
+            <>
+              <span className="text-[#b49a70] text-xs">✦</span>
+              <span>+ Add to Custom Combo</span>
+            </>
+          )}
+        </button>
       </div>
     </div>
   );

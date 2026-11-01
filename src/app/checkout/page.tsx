@@ -188,6 +188,9 @@ export default function CheckoutPage() {
         totalAmount: totalPayable,
       };
       setCompletedOrder(orderSummary);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('ayurraksha_has_ordered', 'true');
+      }
       clearCart();
       setIsProcessing(false);
       return;
@@ -226,6 +229,9 @@ export default function CheckoutPage() {
           totalAmount: totalPayable,
         };
         setCompletedOrder(orderSummary);
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('ayurraksha_has_ordered', 'true');
+        }
         clearCart();
       },
       prefill: {

@@ -2,39 +2,71 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { X, Sparkles, Tag, ArrowRight, ShieldCheck, Check } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { X, Sparkles, ArrowRight, Check } from 'lucide-react';
 
 export const ExitIntentDiscountModal: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    // Check if dismissed in this session
-    const hasShown = sessionStorage.getItem('ayurraksha_exit_discount_shown');
+    // 1. Strict guard: NEVER show to users who have placed an order
+    const hasOrdered = typeof window !== 'undefined' && localStorage.getItem('ayurraksha_has_ordered') === 'true';
+    if (hasOrdered) return;
+
+    // 2. Check if dismissed or already shown in this session
+    const hasShown = typeof window !== 'undefined' && sessionStorage.getItem('ayurraksha_exit_discount_shown');
     if (hasShown) return;
 
-    // Desktop exit-intent detection: mouse moving towards the browser tab bar
+    // 3. Do not trigger on active checkout completion
+    if (pathname === '/checkout') return;
+
+    let triggered = false;
+
+    const triggerPopup = () => {
+      // Re-verify ordering state before opening
+      const orderConfirmed = typeof window !== 'undefined' && localStorage.getItem('ayurraksha_has_ordered') === 'true';
+      if (orderConfirmed || triggered) return;
+
+      triggered = true;
+      setIsVisible(true);
+      sessionStorage.setItem('ayurraksha_exit_discount_shown', 'true');
+    };
+
+    // Desktop exit-intent: detect cursor moving toward top exit / tab bar
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 15 && !sessionStorage.getItem('ayurraksha_exit_discount_shown')) {
-        setIsVisible(true);
-        sessionStorage.setItem('ayurraksha_exit_discount_shown', 'true');
+      if (e.clientY <= 20) {
+        triggerPopup();
       }
     };
 
     document.addEventListener('mouseleave', handleMouseLeave);
 
-    // Mobile fallback: show after 45 seconds of active browsing if not on checkout
-    const timer = setTimeout(() => {
-      if (!sessionStorage.getItem('ayurraksha_exit_discount_shown') && window.innerWidth < 768) {
-        setIsVisible(true);
-        sessionStorage.setItem('ayurraksha_exit_discount_shown', 'true');
+    // Mobile & tab-switch intent: user switching tabs or switching apps before purchasing
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        sessionStorage.setItem('ayurraksha_exit_intent_primed', 'true');
+      } else if (document.visibilityState === 'visible' && sessionStorage.getItem('ayurraksha_exit_intent_primed') === 'true') {
+        sessionStorage.removeItem('ayurraksha_exit_intent_primed');
+        triggerPopup();
       }
-    }, 45000);
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Mobile fallback: engage after 35 seconds of browsing without placing an order
+    const timer = setTimeout(() => {
+      if (window.innerWidth < 768) {
+        triggerPopup();
+      }
+    }, 35000);
 
     return () => {
       document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       clearTimeout(timer);
     };
-  }, []);
+  }, [pathname]);
 
   const handleClose = () => {
     setIsVisible(false);

@@ -70,7 +70,10 @@ module.exports = {
         'card': '12px',
         'button': '8px',
         'badge': '6px',
-      }
+      },
+      spacing: {
+        '18': '4.5rem', // 72px
+      },
     },
   },
   plugins: [],

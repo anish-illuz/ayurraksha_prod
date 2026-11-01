@@ -98,15 +98,15 @@ export const CartDrawer: React.FC = () => {
             </div>
           ) : (
             items.map((item) => (
-              <div key={`${item.product.id}-${item.selectedVariant || 'default'}`} className="py-4 flex gap-3.5">
+              <div key={`${item.product.id}-${item.selectedVariant || 'default'}`} className="py-4 flex items-start gap-3.5">
                 {/* Thumbnail */}
                 <Link
                   href={`/product/${item.product.slug}`}
                   onClick={closeCart}
-                  className="relative w-18 h-18 bg-[#FDFBF7] rounded border border-stone-200 flex-shrink-0 p-1 overflow-hidden"
+                  className="relative w-18 h-18 aspect-square bg-[#FDFBF7] rounded-lg border border-stone-200 flex-shrink-0 p-1 overflow-hidden self-start"
                 >
                   <Image
-                    src={item.product.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'}
+                    src={item.product.images?.[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'}
                     alt={item.product.name}
                     fill
                     sizes="72px"

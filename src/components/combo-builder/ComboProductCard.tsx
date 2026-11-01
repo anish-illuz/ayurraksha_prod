@@ -70,7 +70,7 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
 
   return (
     <article
-      className={`group relative flex flex-col bg-white rounded-[17px] border transition-all duration-200 overflow-hidden min-h-[345px] ${
+      className={`group relative flex flex-col bg-white rounded-[17px] border transition-all duration-200 overflow-hidden ${
         isSelected
           ? 'border-[#8eb7a0] shadow-[0_0_0_1px_#8eb7a0,0_10px_32px_rgba(17,64,39,0.06)]'
           : isHighlighted
@@ -78,8 +78,8 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
           : 'border-[#e6e7e0] hover:border-stone-300 shadow-[0_4px_14px_rgba(17,64,39,0.025)]'
       } ${isExcluded ? 'opacity-65' : ''}`}
     >
-      {/* Photo Area matching prototype styling */}
-      <div className="relative w-full h-[152px] bg-radial from-[#f4ead7] via-[#f4f4e8] to-[#f0f2e9] p-2.5 flex items-center justify-center overflow-hidden">
+      {/* Photo Area with enlarged product display and minimal empty margin */}
+      <div className="relative w-full aspect-[4/3] min-h-[190px] sm:min-h-[210px] bg-radial from-[#f4ead7] via-[#f4f4e8] to-[#f0f2e9] p-1.5 sm:p-2 flex items-center justify-center overflow-hidden">
         {/* Chips */}
         <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1 z-10 pointer-events-none">
           <span className="text-[9.5px] font-extrabold text-[#3a5242] bg-white/95 backdrop-blur-xs px-2 py-0.5 rounded-[5px] border border-[#e4e3d9] shadow-xs">
@@ -93,7 +93,7 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
           )}
         </div>
 
-        {/* Product Image */}
+        {/* Product Image - Scaled prominently to fill the frame */}
         <div
           onClick={handleOpenDetails}
           className="relative w-full h-full cursor-pointer transition-transform duration-300 group-hover:scale-105"
@@ -103,7 +103,7 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
             alt={product.name}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-contain p-2"
+            className="object-contain w-full h-full scale-[1.04]"
           />
         </div>
 
@@ -116,7 +116,7 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
       </div>
 
       {/* Body Information */}
-      <div className="p-4 sm:p-4.5 flex flex-col flex-1 justify-between space-y-3">
+      <div className="p-3.5 sm:p-4 flex flex-col flex-1 justify-between space-y-2.5">
         <div>
           <h4
             onClick={handleOpenDetails}

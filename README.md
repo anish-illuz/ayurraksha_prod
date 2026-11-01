@@ -31,7 +31,7 @@ A modern, high-performance, mobile-first headless e-commerce storefront for **Ay
 - **Styling**: Tailwind CSS 3.4 (Custom Botanical Design Tokens)
 - **Icons**: Lucide React
 - **State Management**: React Context (`CartContext` with localStorage hydration)
-- **Backend Source of Truth**: WordPress & WooCommerce Store API (`ayur.edigimark.com` / `ayurrakshaonline.com`)
+- **Backend Source of Truth**: WordPress & WooCommerce Store API (`cms.ayurrakshaonline.com`)
 - **Review Provider**: Judge.me Customer Reviews
 
 ---

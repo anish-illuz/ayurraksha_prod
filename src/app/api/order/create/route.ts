@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getProductById } from '@/lib/products';
 
-const WORDPRESS_STORE_API = 'https://www.ayurrakshaonline.com/wp-json/wc/store/v1';
+const WORDPRESS_STORE_API = 'https://cms.ayurrakshaonline.com/wp-json/wc/store/v1';
 
 // State name to state code abbreviation mapping for India
 const STATE_CODE_MAP: Record<string, string> = {

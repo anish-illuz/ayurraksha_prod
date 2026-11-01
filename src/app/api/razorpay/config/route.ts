@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const WORDPRESS_BASE = 'https://www.ayurrakshaonline.com';
+const WORDPRESS_BASE = 'https://cms.ayurrakshaonline.com';
 const FALLBACK_RAZORPAY_KEY = 'rzp_live_kWyXoOFkrDjUBk';
 const FALLBACK_NAME = 'AyurRaksha';
 const FALLBACK_CURRENCY = 'INR';

@@ -10,7 +10,7 @@ export const MERCHANDISING_CATEGORIES: MerchandisingCategory[] = [
   'O3 specialty',
 ];
 
-// Exactly 13 approved formulations mapped to live WordPress CMS IDs
+// Exactly 13 approved formulations with accurate store prices and pack sizes
 export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
   // 1. Divine Healing Oil (CMS ID 113)
   {
@@ -45,7 +45,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 2. Skin Conditioning Oil (CMS ID 98)
+  // 2. Skin Conditioning Oil (CMS ID 98) — Main Store price: ₹799
   {
     id: 11378,
     cmsId: 98,
@@ -78,7 +78,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 3. SP Soryn Cream (CMS ID 99)
+  // 3. SP Soryn Cream (CMS ID 99) — Available in main store for ₹799
   {
     id: 11387,
     cmsId: 99,
@@ -112,15 +112,15 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 4. SkinWell Soap (CMS ID 109)
+  // 4. SkinWell Soap (Pack of 2) (CMS ID 109) — Clarified: Pack of 2 (2 × 75 g = 150 g)
   {
     id: 10627,
     cmsId: 109,
-    name: 'Ayur Raksha SkinWell Soap',
+    name: 'Ayur Raksha SkinWell Soap (Pack of 2)',
     slug: 'ayur-raksha-skinwell-soap-pack-of-2',
     category: 'Bath & scalp',
-    packSize: 'Pack of 2 (150 g)',
-    formatTag: 'Unisex · Botanical Soap',
+    packSize: 'Pack of 2 (2 × 75 g)',
+    formatTag: 'Pack of 2 · Botanical Soap',
     primaryImage: '/images/products/ayur-raksha-skinwell-soap-pack-of-2.webp',
     gallery: [
       '/images/products/ayur-raksha-skinwell-soap-pack-of-2.webp',
@@ -131,9 +131,9 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Aloe vera and vetiver-infused gentle bath bar for daily sensitive and dry skin cleansing.',
+    shortDescription: 'Aloe vera and vetiver-infused gentle bath bar (Pack of 2) for daily sensitive and dry skin cleansing.',
     description:
-      'Enriched with Aloe Vera, Vitamin E, and Avocado Oil, SkinWell Soap gently purifies without stripping natural epidermal oils. Both soaps are independently selectable.',
+      'Enriched with Aloe Vera, Vitamin E, and Avocado Oil, SkinWell Soap gently purifies without stripping natural epidermal oils. Supplied as a convenient Pack of 2 bars. Both soaps are independently selectable.',
     indications: 'Daily bathing, sensitive skin, dryness, mild itching, and family wellness.',
     ingredients: 'Aloe Barbadensis extract, Vetiveria zizanioides oil, Avocado oil, Vitamin E, Vegetable soap base.',
     directions: 'Lather gently over wet body during bath or shower, then rinse thoroughly with tepid water.',
@@ -144,14 +144,14 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 5. Anti-Tan Kalonji Soap (CMS ID 122)
+  // 5. Anti-Tan Kalonji Soap (CMS ID 122) — Main Store price: ₹250
   {
     id: 122,
     cmsId: 122,
     name: 'Ayur Raksha Anti-Tan Kalonji Soap',
     slug: 'ayurraksha-kalonji-soap',
     category: 'Bath & scalp',
-    packSize: '75 g (Grade 1)',
+    packSize: 'Single Bar (75 g)',
     formatTag: 'Kalonji · Bath Bar',
     primaryImage: '/images/products/ayur-raksha-kalonji-soap.webp',
     gallery: [
@@ -176,15 +176,15 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 6. Herbal Hair Shampoo (CMS ID 96)
+  // 6. Herbal Hair Shampoo (CMS ID 96) — Corrected quantity: 100 ml (matching Shop)
   {
     id: 12007,
     cmsId: 96,
     name: 'Ayur Raksha Herbal Hair Shampoo',
     slug: 'ayur-raksha-herbal-shampoo',
     category: 'Bath & scalp',
-    packSize: '200 ml',
-    formatTag: '200 ml · Scalp Cleanser',
+    packSize: '100 ml',
+    formatTag: '100 ml · Scalp Cleanser',
     primaryImage: '/images/products/ayur-raksha-herbal-shampoo.webp',
     gallery: [
       '/images/products/ayur-raksha-herbal-shampoo.webp',
@@ -208,7 +208,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 7. Skinwell Food Supplement (CMS ID 107)
+  // 7. Skinwell Food Supplement (CMS ID 107) — Main Store price: ₹1,199 (MRP ₹1,299)
   {
     id: 7688,
     cmsId: 107,
@@ -241,7 +241,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 8. IMU 360 Food Supplement (CMS ID 94)
+  // 8. IMU 360 Food Supplement (CMS ID 94) — Main Store price: ₹1,299
   {
     id: 22738,
     cmsId: 94,
@@ -256,7 +256,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/IMU-360.png',
     ],
     mrp: 1299,
-    price: 1298,
+    price: 1299,
     pricePending: false,
     inStock: true,
     doctorGuided: false,
@@ -273,7 +273,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 9. B Derma Ayurvedic Capsules (CMS ID 100)
+  // 9. B Derma Ayurvedic Capsules (CMS ID 100) — Main Store price: ₹799
   {
     id: 11317,
     cmsId: 100,
@@ -306,7 +306,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 10. Ayur Raksha Detox Tea (CMS ID 85)
+  // 10. Ayur Raksha Detox Tea (CMS ID 85) — Main Store price: ₹750
   {
     id: 27739,
     cmsId: 85,
@@ -340,7 +340,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 11. Super Heal O3 Cream (CMS ID 88)
+  // 11. Super Heal O3 Cream (CMS ID 88) — Main Store price: ₹3,999
   {
     id: 22867,
     cmsId: 88,
@@ -374,7 +374,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 12. Ayur Raksha Immune O3 Capsules (CMS ID 124)
+  // 12. Ayur Raksha Immune O3 Capsules (CMS ID 124) — Main Store price: ₹2,500
   {
     id: 124,
     cmsId: 124,
@@ -388,8 +388,8 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/ayur-raksha-immuno3-capsules.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/ImmunO3-capsules.png',
     ],
-    mrp: 1298,
-    price: 1298,
+    mrp: 2500,
+    price: 2500,
     pricePending: false,
     inStock: true,
     doctorGuided: true,
@@ -408,7 +408,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 13. Ayur Raksha Vital O3 Cream (CMS ID 123)
+  // 13. Ayur Raksha Vital O3 Cream (CMS ID 123) — Main Store price: ₹3,999
   {
     id: 123,
     cmsId: 123,

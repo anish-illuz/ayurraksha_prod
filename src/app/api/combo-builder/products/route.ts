@@ -8,7 +8,7 @@ export const revalidate = 60; // Cache on server for 60 seconds
 
 export async function GET() {
   try {
-    // Fetch live product details from WooCommerce Store API for all 13 products concurrently
+    // Fetch live product details from WooCommerce Store API for all 13 products
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 4000); // 4s timeout
 
@@ -35,7 +35,7 @@ export async function GET() {
             ...master,
             inStock: liveItem.is_in_stock ?? master.inStock,
             price: livePrice ?? master.price,
-            mrp: liveRegPrice && liveRegPrice > (livePrice ?? 0) ? liveRegPrice : (livePrice ?? master.mrp),
+            mrp: liveRegPrice && liveRegPrice > (livePrice ?? 0) ? liveRegPrice : (master.mrp ?? livePrice),
           };
         }
       } catch {

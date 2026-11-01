@@ -2,11 +2,9 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { Search, Sparkles } from 'lucide-react';
+import { Search, Sparkles, MessageSquare } from 'lucide-react';
 import { ComboHero } from '@/components/combo-builder/ComboHero';
-import { ComboHowItWorks } from '@/components/combo-builder/ComboHowItWorks';
 import { ComboVideoSection } from '@/components/combo-builder/ComboVideoSection';
-import { ComboConsultationStrip } from '@/components/combo-builder/ComboConsultationStrip';
 import { ComboConcernSelector } from '@/components/combo-builder/ComboConcernSelector';
 import { ComboProductCard } from '@/components/combo-builder/ComboProductCard';
 import { ComboCartSummary } from '@/components/combo-builder/ComboCartSummary';
@@ -176,43 +174,28 @@ export default function ComboBuilderPage() {
 
   return (
     <div className="bg-[#FAF9F5] min-h-screen text-[#26352D] pb-32 lg:pb-16 font-sans">
-      {/* 1. Hero Section */}
+      {/* 1. Compact Hero Section with integrated 3-step guide */}
       <ComboHero onOpenConsult={() => setIsConsultOpen(true)} />
 
-      {/* 2. 3-Step Explanation */}
-      <ComboHowItWorks />
-
-      {/* 3. Educational Video Section */}
-      <ComboVideoSection onOpenConsult={() => setIsConsultOpen(true)} />
-
-      {/* 4. Consultation CTA #1 (After explainer) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ComboConsultationStrip
-          placement="after_explainer"
-          onOpenConsult={() => setIsConsultOpen(true)}
-        />
-      </div>
-
-      {/* 5. Main Interactive Builder Workspace */}
-      <section id="builder-catalog" className="pt-6 sm:pt-10 scroll-mt-24">
+      {/* 2. Main Interactive Product Selection directly after Hero */}
+      <section id="builder-catalog" className="pt-6 sm:pt-8 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 pb-4 border-b border-stone-200">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 pb-4 border-b border-[#e4e7df]">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#ab8345] block mb-1">
-                Curate Your Routine
+              <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#8a6020] block mb-1">
+                CURATE YOUR ROUTINE
               </span>
-              <h2 className="font-heading text-3xl sm:text-4xl font-normal text-[#123b2d]">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-normal text-[#18372b] tracking-[-0.035em]">
                 Build Your Skin Care Combo
               </h2>
-              <p className="text-xs sm:text-sm text-stone-600 mt-1">
-                Browse, compare and compose your individual combination — with live WordPress pricing.
+              <p className="text-xs sm:text-[13px] text-[#283830] mt-0.5 leading-relaxed">
+                Browse, compare and customize your selection with live store prices. No products are added without your choice.
               </p>
             </div>
 
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700">
-              <Sparkles size={13} className="text-[#b59661]" />
-              <span>13 Approved Formulations • 5 Merchandising Categories</span>
+            <div className="text-[11px] font-extrabold uppercase tracking-wider text-[#3c5445] bg-white px-3 py-1.5 rounded-full border border-[#d8e4da] self-start sm:self-auto shadow-xs">
+              13 Products • 5 Categories
             </div>
           </div>
 
@@ -228,7 +211,7 @@ export default function ComboBuilderPage() {
               />
 
               {/* Navigation Tools: Categories and Search Filter */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white p-3 rounded-2xl border border-stone-200 shadow-xs">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white p-3 rounded-[16px] border border-[#e4e7df] shadow-xs">
                 {/* Horizontal Category Tabs */}
                 <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
                   {MERCHANDISING_CATEGORIES.map((cat) => {
@@ -238,10 +221,10 @@ export default function ComboBuilderPage() {
                         key={cat}
                         type="button"
                         onClick={() => setActiveCategory(cat)}
-                        className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors ${
+                        className={`px-3 py-1.5 rounded-[10px] text-xs font-extrabold whitespace-nowrap transition-colors ${
                           isActive
-                            ? 'bg-[#18372b] text-white shadow-xs'
-                            : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
+                            ? 'bg-[#244e3b] text-white shadow-xs border border-[#244e3b]'
+                            : 'text-[#3c5445] hover:text-[#18372b] hover:bg-[#eef3ec] border border-transparent'
                         }`}
                       >
                         {cat}
@@ -257,15 +240,15 @@ export default function ComboBuilderPage() {
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search 13 formulations..."
+                    placeholder="Search 13 products..."
                     aria-label="Search products"
-                    className="w-full pl-8 pr-3 py-1.5 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-800 placeholder-stone-400 focus:bg-white focus:outline-none focus:border-[#18372b]"
+                    className="w-full pl-8 pr-3 py-1.5 rounded-[9px] bg-stone-50 border border-[#dce5da] text-xs text-[#18372b] placeholder-stone-400 focus:bg-white focus:outline-none focus:border-[#244e3b]"
                   />
                 </div>
               </div>
 
               {/* Products Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {filteredProducts.length === 0 ? (
                   <div className="col-span-2 py-16 text-center bg-white rounded-2xl border border-stone-200">
                     <p className="text-sm font-semibold text-stone-700">
@@ -302,11 +285,8 @@ export default function ComboBuilderPage() {
                 )}
               </div>
 
-              {/* Consultation Strip #2 (Inside builder) */}
-              <ComboConsultationStrip
-                placement="inside_builder"
-                onOpenConsult={() => setIsConsultOpen(true)}
-              />
+              {/* Optional Expandable Educational Video Guide placed cleanly below products */}
+              <ComboVideoSection />
             </main>
 
             {/* Right Column: Desktop Sticky Cart Summary (Span 4) */}
@@ -324,15 +304,34 @@ export default function ComboBuilderPage() {
         </div>
       </section>
 
-      {/* 6. Final Consultation Invitation #3 (Before checkout) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ComboConsultationStrip
-          placement="before_checkout"
-          onOpenConsult={() => setIsConsultOpen(true)}
-        />
-      </div>
+      {/* 3. Single Elegant Doctor Consultation Strip before footer */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div className="relative overflow-hidden bg-[#123b2d] text-white rounded-[23px] p-8 sm:p-12 shadow-xl">
+          <div className="relative z-10 max-w-2xl space-y-3">
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#e2bf88] block">
+              WE'RE HERE TO GUIDE YOU
+            </span>
+            <h3 className="font-serif text-2xl sm:text-3xl font-normal text-white">
+              Still deciding? Speak with a VPrime Ayurvedic physician.
+            </h3>
+            <p className="text-xs sm:text-sm text-[#d1e2d5] leading-[1.7]">
+              Get a free personal consultation to discuss your skin concerns before choosing a routine. Consultation is completely optional; shopping remains in your hands.
+            </p>
+            <div className="pt-2">
+              <button
+                type="button"
+                onClick={() => setIsConsultOpen(true)}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[11px] bg-[#e5b36d] hover:bg-[#d8a459] text-[#183d2d] font-extrabold text-xs sm:text-[13px] shadow-md transition-all active:scale-[0.98]"
+              >
+                <MessageSquare size={16} />
+                <span>Book My Free Doctor Consultation ↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* 7. Mobile Sticky Bottom Bar and Sheet */}
+      {/* 4. Mobile Sticky Bottom Bar and Sheet */}
       <ComboMobileStickyBar
         comboCart={comboCart}
         products={products}
@@ -342,7 +341,7 @@ export default function ComboBuilderPage() {
         onOpenConsult={() => setIsConsultOpen(true)}
       />
 
-      {/* 8. Modals: Product Details Drawer & Consultation Modal */}
+      {/* 5. Modals: Product Details Drawer & Consultation Modal */}
       <ComboProductDetailModal
         product={detailProduct}
         quantityInCombo={detailProduct ? comboCart[detailProduct.id] || 0 : 0}

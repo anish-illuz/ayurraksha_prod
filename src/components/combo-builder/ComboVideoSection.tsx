@@ -1,16 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Play, Volume2, Globe, ArrowRight, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { ChevronDown, Play, Volume2, Globe, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { VIDEO_LANGUAGES } from '@/data/comboBuilderData';
 import { VideoLanguageOption } from '@/types/combo';
 import { trackComboEvent } from '@/lib/comboAnalytics';
 
-interface ComboVideoSectionProps {
-  onOpenConsult: () => void;
-}
-
-export const ComboVideoSection: React.FC<ComboVideoSectionProps> = ({ onOpenConsult }) => {
+export const ComboVideoSection: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState<VideoLanguageOption>(VIDEO_LANGUAGES[0]);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -32,197 +29,118 @@ export const ComboVideoSection: React.FC<ComboVideoSectionProps> = ({ onOpenCons
     });
   };
 
-  const handleSkipToBuilder = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const el = document.getElementById('builder-catalog');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="video-guide" className="py-12 sm:py-16 bg-[#F8F7F2]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
-          {/* Left Column: Video Player / Thumbnail */}
-          <div className="lg:col-span-6 relative bg-gradient-to-br from-[#123829] to-[#1E5640] min-h-[320px] sm:min-h-[400px] flex items-center justify-center p-6 text-white overflow-hidden">
-            {/* Ambient pattern */}
-            <div
-              className="absolute inset-4 rounded-2xl border border-white/15 pointer-events-none"
-              aria-hidden="true"
-            />
+    <div className="border-t border-[#e4e7df] bg-[#f0eee6]/80 rounded-[18px] overflow-hidden my-6">
+      {/* Expandable Accordion Header */}
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-[#e9e6dc] transition-colors"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-full bg-[#18372b] text-white flex items-center justify-center text-xs pl-0.5 flex-shrink-0">
+            ▶
+          </div>
+          <div>
+            <span className="text-[10.5px] font-extrabold uppercase tracking-[0.16em] text-[#8a6020] block">
+              OPTIONAL CLINICAL GUIDE
+            </span>
+            <strong className="text-sm font-sans text-[#18372b]">
+              Watch Product Explainer Guide (Tamil Master &amp; Dubbed Editions)
+            </strong>
+          </div>
+        </div>
 
+        <div className="flex items-center gap-2 text-xs font-bold text-[#18372b]">
+          <span>{isOpen ? 'Collapse Guide' : 'Watch Explainer'}</span>
+          <ChevronDown
+            size={16}
+            className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          />
+        </div>
+      </button>
+
+      {/* Expanded Content */}
+      {isOpen && (
+        <div className="p-5 sm:p-7 border-t border-[#e4e0d4] bg-white grid grid-cols-1 lg:grid-cols-12 gap-6 items-center animate-in fade-in duration-200">
+          {/* Video Visual Frame */}
+          <div className="lg:col-span-6 relative bg-gradient-to-br from-[#103829] via-[#123d2e] to-[#142e27] min-h-[220px] rounded-[16px] flex items-center justify-center p-6 text-white overflow-hidden">
             {!isPlaying ? (
-              <div className="text-center z-10 space-y-4 max-w-sm">
+              <div className="text-center z-10 space-y-3 max-w-sm">
                 <button
                   type="button"
                   onClick={handlePlayVideo}
                   aria-label={`Play product explainer in ${selectedLanguage.label}`}
-                  className="group relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-white text-[#123829] shadow-xl hover:scale-105 active:scale-95 transition-all mx-auto"
+                  className="w-16 h-16 rounded-full bg-white text-[#123b2d] flex items-center justify-center text-2xl pl-1 mx-auto shadow-md hover:scale-105 active:scale-95 transition-all border-0"
                 >
-                  <span className="absolute inset-0 rounded-full bg-white/20 animate-ping" />
-                  <Play size={32} className="fill-[#123829] translate-x-0.5" />
+                  ▶
                 </button>
-
-                <div className="space-y-1">
-                  <div className="text-xs uppercase tracking-widest text-[#f0c27d] font-bold">
-                    {selectedLanguage.label} {selectedLanguage.isMaster ? '(Original Master)' : 'Edition'}
-                  </div>
-                  <h3 className="font-heading text-xl sm:text-2xl font-normal text-white">
-                    Collection Explainer &amp; Regimen Guide
-                  </h3>
-                  <p className="text-xs text-emerald-100/80 leading-relaxed">
-                    Watch our Ayurvedic practitioner explain how to combine topical and internal formulations safely.
-                  </p>
+                <div className="text-[11px] uppercase tracking-wider text-[#f2e5cf] font-bold">
+                  {selectedLanguage.label} {selectedLanguage.isMaster ? '(Master)' : 'Edition'}
                 </div>
-
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/25 text-[11px] text-emerald-200">
-                  <Volume2 size={13} />
-                  <span>Duration: ~3 mins • Optional educational guide</span>
-                </div>
+                <p className="text-xs text-[#dce8df]">
+                  Learn how to safely combine and apply the 13 formulations.
+                </p>
               </div>
             ) : (
-              <div className="w-full h-full min-h-[300px] flex flex-col items-center justify-center p-4 text-center z-10 bg-black/40 rounded-xl">
-                {selectedLanguage.isAvailable ? (
-                  <div className="space-y-4">
-                    <div className="w-14 h-14 rounded-full bg-[#dba95c] text-[#123829] flex items-center justify-center mx-auto shadow-lg">
-                      <Play size={24} className="fill-[#123829] translate-x-0.5" />
-                    </div>
-                    <div className="space-y-1">
-                      <h4 className="font-heading text-xl font-bold text-white">
-                        Tamil Master Explainer Ready
-                      </h4>
-                      <p className="text-xs text-stone-200 max-w-md">
-                        AyurRaksha 13-product overview and application guidelines. You can skip at any time and build your combo.
-                      </p>
-                    </div>
-                    <div className="pt-2 flex justify-center gap-3">
-                      <button
-                        type="button"
-                        onClick={() => setIsPlaying(false)}
-                        className="px-4 py-2 rounded-lg bg-white/15 hover:bg-white/25 text-xs text-white"
-                      >
-                        Close Preview
-                      </button>
-                      <a
-                        href="#builder-catalog"
-                        onClick={handleSkipToBuilder}
-                        className="px-4 py-2 rounded-lg bg-[#dba95c] text-[#123829] text-xs font-bold"
-                      >
-                        Continue to Builder
-                      </a>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="space-y-3 p-4 bg-white/10 rounded-2xl border border-white/20 max-w-md">
-                    <AlertCircle size={28} className="text-[#f0c27d] mx-auto" />
-                    <h4 className="text-sm font-bold text-white">
-                      {selectedLanguage.label} Audio In Production
-                    </h4>
-                    <p className="text-xs text-emerald-100 leading-relaxed">
-                      {selectedLanguage.statusNote}. To maintain clinical accuracy and dosage precision, AI-dubbed versions are undergoing physician sign-off. Please view the Tamil master or proceed with the builder.
-                    </p>
-                    <button
-                      type="button"
-                      onClick={() => handleSelectLanguage(VIDEO_LANGUAGES[0])}
-                      className="px-4 py-2 rounded-lg bg-white text-[#123829] text-xs font-bold"
-                    >
-                      Switch to Tamil Master
-                    </button>
-                  </div>
-                )}
+              <div className="text-center p-4 z-10 space-y-2">
+                <div className="w-12 h-12 rounded-full bg-[#dba95c] text-[#123b2d] flex items-center justify-center mx-auto text-lg font-bold">
+                  ▶
+                </div>
+                <h4 className="font-serif text-lg font-bold text-white">
+                  {selectedLanguage.label} Video Preview
+                </h4>
+                <p className="text-xs text-stone-200">
+                  {selectedLanguage.statusNote}.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setIsPlaying(false)}
+                  className="mt-2 px-3 py-1.5 rounded-[8px] bg-white/20 text-xs text-white hover:bg-white/30"
+                >
+                  Close Player
+                </button>
               </div>
             )}
           </div>
 
-          {/* Right Column: Explainer Copy and Language Selector */}
-          <div className="lg:col-span-6 p-6 sm:p-8 lg:p-10 flex flex-col justify-center space-y-6">
+          {/* Language Switcher & Notes */}
+          <div className="lg:col-span-6 space-y-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#ab8345] block mb-2">
-                Watch &amp; Learn — Optional
+              <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#8a6020] block mb-1">
+                SELECT A LANGUAGE
               </span>
-              <h2 className="font-heading text-2xl sm:text-3xl font-normal text-[#123b2d] leading-snug">
-                Want to know more about our skin care formulations?
-              </h2>
-              <p className="mt-3 text-xs sm:text-sm text-stone-600 leading-relaxed">
-                Watch our product explainer to understand each formulation, how products are intended to be layered, and how to compare your choices before building your combo.
+              <p className="text-xs text-[#283830] leading-relaxed">
+                Choose a language below. The Tamil recording serves as the verified master audio.
               </p>
             </div>
 
-            {/* Language Selector */}
-            <div className="space-y-3 pt-1">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-stone-700">
-                <Globe size={14} className="text-[#b59661]" />
-                <span>Choose Language for Explainer</span>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {VIDEO_LANGUAGES.map((lang) => {
-                  const isSelected = selectedLanguage.id === lang.id;
-                  return (
-                    <button
-                      key={lang.id}
-                      type="button"
-                      onClick={() => handleSelectLanguage(lang)}
-                      className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                        isSelected
-                          ? 'bg-[#18372b] text-white shadow-xs'
-                          : 'bg-stone-100 hover:bg-stone-200 text-stone-700 border border-stone-200'
-                      }`}
-                    >
-                      <span>{lang.label}</span>
-                      <span className="text-[10px] opacity-75">({lang.nativeLabel})</span>
-                      {lang.isMaster && (
-                        <span className="ml-1 w-2 h-2 rounded-full bg-emerald-400" title="Master video available" />
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Status Note */}
-              <div className="flex items-start gap-2 p-3 rounded-xl bg-[#FAF9F5] border border-stone-200/80 text-[11px] text-stone-600 leading-relaxed">
-                {selectedLanguage.isAvailable ? (
-                  <>
-                    <CheckCircle2 size={15} className="text-emerald-700 flex-shrink-0 mt-0.5" />
-                    <span>
-                      <strong>{selectedLanguage.label}:</strong> {selectedLanguage.statusNote}. Complete overview of all 13 products with application steps.
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <AlertCircle size={15} className="text-amber-700 flex-shrink-0 mt-0.5" />
-                    <span>
-                      <strong>{selectedLanguage.label}:</strong> {selectedLanguage.statusNote}. You can watch the Tamil master or proceed directly to shopping.
-                    </span>
-                  </>
-                )}
-              </div>
+            <div className="flex flex-wrap gap-2">
+              {VIDEO_LANGUAGES.map((lang) => {
+                const isSelected = selectedLanguage.id === lang.id;
+                return (
+                  <button
+                    key={lang.id}
+                    type="button"
+                    onClick={() => handleSelectLanguage(lang)}
+                    className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
+                      isSelected
+                        ? 'bg-[#214a37] text-white shadow-xs'
+                        : 'bg-stone-50 hover:bg-stone-100 text-[#283830] border border-[#d9dfd1]'
+                    }`}
+                  >
+                    {lang.label}
+                  </button>
+                );
+              })}
             </div>
 
-            {/* Actions */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <button
-                type="button"
-                onClick={handlePlayVideo}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#18372b] hover:bg-[#23533e] text-white text-xs sm:text-sm font-bold transition-all shadow-xs"
-              >
-                <Play size={15} className="fill-white" />
-                <span>Watch the Explainer</span>
-              </button>
-
-              <a
-                href="#builder-catalog"
-                onClick={handleSkipToBuilder}
-                className="inline-flex items-center justify-center gap-1.5 text-xs text-stone-600 hover:text-[#18372b] font-semibold py-2 underline transition-colors"
-              >
-                <span>Skip video and build my combo</span>
-                <ArrowRight size={13} />
-              </a>
+            <div className="p-3 rounded-[9px] bg-[#FAF9F5] border border-[#d6ded5] text-xs text-[#203728]">
+              <strong>{selectedLanguage.label}:</strong> {selectedLanguage.statusNote}.
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      )}
+    </div>
   );
 };

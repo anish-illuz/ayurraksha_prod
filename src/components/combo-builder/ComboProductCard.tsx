@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Plus, Minus, Info, ShieldCheck, Check } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import { ComboProduct } from '@/types/combo';
 import { trackComboEvent } from '@/lib/comboAnalytics';
 
@@ -70,24 +70,24 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
 
   return (
     <article
-      className={`group relative flex flex-col bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
+      className={`group relative flex flex-col bg-white rounded-[17px] border transition-all duration-200 overflow-hidden min-h-[345px] ${
         isSelected
-          ? 'border-[#204A3B] shadow-md ring-1 ring-[#204A3B]'
+          ? 'border-[#8eb7a0] shadow-[0_0_0_1px_#8eb7a0,0_10px_32px_rgba(17,64,39,0.06)]'
           : isHighlighted
           ? 'border-[#dba95c] shadow-xs'
-          : 'border-stone-200 hover:border-stone-300 hover:shadow-xs'
+          : 'border-[#e6e7e0] hover:border-stone-300 shadow-[0_4px_14px_rgba(17,64,39,0.025)]'
       } ${isExcluded ? 'opacity-65' : ''}`}
     >
-      {/* Photo Area - Compact and Touch-Optimized */}
-      <div className="relative w-full h-36 sm:h-48 bg-gradient-to-b from-[#F9F7F2] to-[#F1EFEA] p-2 flex items-center justify-center overflow-hidden">
+      {/* Photo Area matching prototype styling */}
+      <div className="relative w-full h-[152px] bg-radial from-[#f4ead7] via-[#f4f4e8] to-[#f0f2e9] p-2.5 flex items-center justify-center overflow-hidden">
         {/* Chips */}
-        <div className="absolute top-2 left-2 right-2 flex items-center justify-between gap-1 z-10 pointer-events-none">
-          <span className="text-[9.5px] sm:text-[10px] font-bold text-stone-700 bg-white/95 backdrop-blur-xs px-2 py-0.5 rounded-md border border-stone-200 shadow-xs">
+        <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1 z-10 pointer-events-none">
+          <span className="text-[9.5px] font-extrabold text-[#3a5242] bg-white/95 backdrop-blur-xs px-2 py-0.5 rounded-[5px] border border-[#e4e3d9] shadow-xs">
             {product.formatTag}
           </span>
 
           {product.doctorGuided && (
-            <span className="text-[9px] sm:text-[9.5px] font-bold text-[#8a5b28] bg-[#fff5e6] px-2 py-0.5 rounded-md border border-[#f0dfc4] shadow-xs">
+            <span className="text-[9px] font-extrabold text-[#7a4e1e] bg-[#fff5e6] px-2 py-0.5 rounded-[5px] border border-[#f0dfc4] shadow-xs">
               Doctor-guided
             </span>
           )}
@@ -103,51 +103,51 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
             alt={product.name}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-contain p-1.5"
+            className="object-contain p-2"
           />
         </div>
 
         {/* Highlight Banner if concern matches */}
         {isHighlighted && !isSelected && (
-          <div className="absolute bottom-1.5 left-2 right-2 bg-[#18372b]/90 backdrop-blur-xs text-white text-[9.5px] sm:text-[10px] font-semibold text-center py-0.5 rounded-md">
+          <div className="absolute bottom-1.5 left-2 right-2 bg-[#1c513d]/90 backdrop-blur-xs text-white text-[9.5px] font-bold text-center py-0.5 rounded-md">
             Suggested for your concern
           </div>
         )}
       </div>
 
       {/* Body Information */}
-      <div className="p-3.5 sm:p-4 flex flex-col flex-1 justify-between space-y-2.5">
+      <div className="p-4 sm:p-4.5 flex flex-col flex-1 justify-between space-y-3">
         <div>
           <h4
             onClick={handleOpenDetails}
-            className="font-heading text-sm sm:text-base font-bold text-[#18372b] hover:text-[#23533e] cursor-pointer line-clamp-2 min-h-[2.25rem] sm:min-h-[2.5rem] leading-snug"
+            className="font-sans text-[14px] font-bold text-[#18372b] hover:text-[#23533e] cursor-pointer line-clamp-2 min-h-[40px] leading-[1.38]"
           >
             {product.name}
           </h4>
 
-          <p className="text-[11px] sm:text-xs text-stone-600 line-clamp-2 mt-0.5 leading-relaxed">
+          <p className="text-[11.5px] text-[#3c4f44] line-clamp-2 mt-1 leading-[1.55] min-h-[36px]">
             {product.shortDescription}
           </p>
         </div>
 
-        {/* Pricing & Actions */}
-        <div className="space-y-2.5 pt-2 border-t border-stone-100">
+        {/* Pricing & Actions matching prototype */}
+        <div className="space-y-3 pt-2 border-t border-[#f0f2ed]">
           <div className="flex items-baseline gap-2 flex-wrap">
             {isPending ? (
-              <span className="text-[11px] sm:text-xs font-bold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">
-                Price pending verification
+              <span className="text-xs font-bold text-amber-900 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">
+                Price pending
               </span>
             ) : (
               <>
-                <span className="font-sans font-bold text-base sm:text-lg text-[#18372b]">
+                <span className="font-sans text-[17px] font-extrabold text-[#18372b]">
                   ₹{product.price?.toLocaleString('en-IN')}
                 </span>
                 {hasVerifiedSavings && (
                   <>
-                    <span className="font-sans text-xs text-stone-400 line-through">
+                    <span className="font-sans text-xs text-[#738478] line-through">
                       ₹{product.mrp?.toLocaleString('en-IN')}
                     </span>
-                    <span className="text-[9.5px] sm:text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">
+                    <span className="text-[10.5px] font-extrabold text-[#25764d]">
                       SAVE {savingsPercent}%
                     </span>
                   </>
@@ -160,10 +160,9 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
             <button
               type="button"
               onClick={handleOpenDetails}
-              className="text-xs font-semibold text-[#204A3B] hover:text-[#17362B] underline inline-flex items-center gap-1 py-1"
+              className="text-[11.5px] font-extrabold text-[#2e6845] hover:text-[#18372b] underline py-1"
             >
-              <span>View details</span>
-              <Info size={12} />
+              View details ↗
             </button>
 
             {/* Selection / Quantity Controls */}
@@ -171,39 +170,39 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
               <button
                 type="button"
                 disabled
-                className="px-3 py-1.5 rounded-lg bg-stone-100 text-stone-400 text-xs font-bold cursor-not-allowed border border-stone-200"
+                className="px-3 py-1.5 rounded-[8px] bg-stone-100 text-stone-500 text-xs font-bold cursor-not-allowed border border-stone-200"
               >
                 Unavailable
               </button>
             ) : isSelected ? (
-              <div className="inline-flex items-center border border-[#18372b] rounded-lg overflow-hidden bg-white shadow-xs">
+              <div className="inline-flex items-center border border-[#dbe3d9] rounded-[8px] overflow-hidden bg-white h-[33px] shadow-xs">
                 <button
                   type="button"
                   onClick={handleDecrement}
                   aria-label="Decrease quantity"
-                  className="w-7 h-7 flex items-center justify-center text-[#18372b] hover:bg-stone-100 active:bg-stone-200 transition-colors"
+                  className="w-[31px] h-[31px] flex items-center justify-center text-[#17482e] hover:bg-stone-100 font-extrabold text-[17px] transition-colors"
                 >
-                  <Minus size={13} />
+                  −
                 </button>
-                <span className="w-7 text-center text-xs font-bold text-[#18372b] select-none">
+                <span className="w-[27px] text-center text-xs font-extrabold text-[#18372b] select-none">
                   {quantityInCombo}
                 </span>
                 <button
                   type="button"
                   onClick={handleIncrement}
                   aria-label="Increase quantity"
-                  className="w-7 h-7 flex items-center justify-center text-[#18372b] hover:bg-stone-100 active:bg-stone-200 transition-colors"
+                  className="w-[31px] h-[31px] flex items-center justify-center text-[#17482e] hover:bg-stone-100 font-extrabold text-[17px] transition-colors"
                 >
-                  <Plus size={13} />
+                  +
                 </button>
               </div>
             ) : (
               <button
                 type="button"
                 onClick={handleAdd}
-                className="px-3.5 py-1.5 rounded-lg bg-[#18372b] hover:bg-[#23533e] text-white text-xs font-bold transition-all shadow-xs active:scale-[0.98]"
+                className="px-3.5 py-2 rounded-[8px] bg-[#1c513b] hover:bg-[#143e2d] text-white text-[11.5px] font-extrabold transition-all shadow-xs active:scale-[0.98]"
               >
-                + Add to Combo
+                + Add
               </button>
             )}
           </div>

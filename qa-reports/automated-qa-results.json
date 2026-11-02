@@ -1,0 +1,254 @@
+{
+  "total": 35,
+  "passed": 35,
+  "failed": 0,
+  "passRate": "100.0",
+  "timestamp": "2026-11-02T20:51:09.485Z",
+  "results": [
+    {
+      "id": "TC-HOM-001",
+      "suite": "Homepage",
+      "name": "Homepage loads with authentic page title",
+      "status": "PASS",
+      "details": "AyurRaksha | Health Supplements for Liver Detox, Pain Relief, Skin Care & More"
+    },
+    {
+      "id": "TC-HOM-002",
+      "suite": "Homepage",
+      "name": "Hero carousel banner rendered and visible",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-HOM-003",
+      "suite": "Homepage",
+      "name": "Health concerns category grid rendered",
+      "status": "PASS",
+      "details": "10 concern links found"
+    },
+    {
+      "id": "TC-HOM-004",
+      "suite": "Homepage",
+      "name": "Bestsellers product cards displayed",
+      "status": "PASS",
+      "details": "31 product links found"
+    },
+    {
+      "id": "TC-HOM-005",
+      "suite": "Homepage",
+      "name": "Trust & convenience credibility badges rendered",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-HOM-006",
+      "suite": "Footer",
+      "name": "Botanical green footer rendered with brand palette",
+      "status": "PASS",
+      "details": "BG: rgb(13, 46, 34)"
+    },
+    {
+      "id": "TC-CAT-001",
+      "suite": "Shop",
+      "name": "Catalogue renders products grid",
+      "status": "PASS",
+      "details": "96 product links displayed"
+    },
+    {
+      "id": "TC-CAT-002",
+      "suite": "Shop",
+      "name": "Out of stock products correctly flagged with disabled buttons",
+      "status": "PASS",
+      "details": "7 out of stock items flagged"
+    },
+    {
+      "id": "TC-PDP-001",
+      "suite": "PDP Redesign",
+      "name": "Header pill badges render above hero",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-002",
+      "suite": "PDP Redesign",
+      "name": "Hero image badge overlays present",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-003",
+      "suite": "PDP Redesign",
+      "name": "4-item feature thumbnail row rendered",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-004",
+      "suite": "PDP Redesign",
+      "name": "SKU badge and serif title verified",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-005",
+      "suite": "PDP Redesign",
+      "name": "Mint green price box with taxes note verified",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-006",
+      "suite": "PDP Redesign",
+      "name": "Select Pack / Course radio selector cards displayed",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-007",
+      "suite": "PDP Redesign",
+      "name": "Pack course selection dynamically updates price and button subtotal",
+      "status": "PASS",
+      "details": "Add to Cart • ₹1,988"
+    },
+    {
+      "id": "TC-PDP-008",
+      "suite": "PDP Redesign",
+      "name": "Quantity stepper updates total price calculation",
+      "status": "PASS",
+      "details": "Add to Cart • ₹1,500"
+    },
+    {
+      "id": "TC-PDP-009",
+      "suite": "PDP Redesign",
+      "name": "Authentic Clinical Heritage Doctor banner displayed",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-010",
+      "suite": "PDP Redesign",
+      "name": "Editorial Ayurvedic Story and Charaka Samhita card verified",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-011",
+      "suite": "PDP Redesign",
+      "name": "Key Features & Therapeutic Benefits 6-card grid rendered",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-012",
+      "suite": "PDP Redesign",
+      "name": "Botanical Ingredients breakdown with all 4 standardized herb cards",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-013",
+      "suite": "PDP Redesign",
+      "name": "The Evening Ritual 4-step decoction guide verified",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-014",
+      "suite": "PDP Redesign",
+      "name": "Target Indications, Advisory Guidelines, and Specifications cards verified",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-PDP-015",
+      "suite": "PDP Redesign",
+      "name": "Quality credibility strip (GMP, Heavy-Metal, Vaidya Formulated) verified",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-STK-001",
+      "suite": "Stock Check",
+      "name": "In-stock formulation displays active Add to Cart & pulse indicator",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-STK-002",
+      "suite": "Stock Check",
+      "name": "Out-of-stock product displays rose alert pill and disabled button",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-CRT-001",
+      "suite": "Cart",
+      "name": "Adding item to cart updates cart counter badge",
+      "status": "PASS",
+      "details": "Cart Count: 1"
+    },
+    {
+      "id": "TC-CRT-002",
+      "suite": "Cart Page",
+      "name": "Dedicated Cart page renders item line and subtotal",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-CHK-001",
+      "suite": "Checkout",
+      "name": "Checkout interface loads populated customer details form and order summary",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-CMB-001",
+      "suite": "Combo Builder",
+      "name": "Interactive Combo Builder loads concerns & products",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-TRK-001",
+      "suite": "Order Tracking",
+      "name": "Dedicated Order Tracking interface active",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-BLG-001",
+      "suite": "Blog",
+      "name": "Clinical case studies & blog archive loaded",
+      "status": "PASS",
+      "details": "40 articles found"
+    },
+    {
+      "id": "TC-MOB-001",
+      "suite": "Mobile Audit",
+      "name": "Mobile homepage renders without horizontal scroll overflow",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-MOB-002",
+      "suite": "Mobile Audit",
+      "name": "Redesigned PDP renders on mobile viewport without horizontal overflow",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-MOB-003",
+      "suite": "Mobile Audit",
+      "name": "Mobile purchase controls active on PDP",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "TC-ERR-001",
+      "suite": "Console Audit",
+      "name": "Zero uncaught JavaScript exceptions during full user flow",
+      "status": "PASS",
+      "details": "0 errors observed"
+    }
+  ]
+}

@@ -12,7 +12,7 @@ import { SITE_CONFIG } from '@/data/siteConfig';
 const allPosts: BlogPost[] = postsData as BlogPost[];
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -22,7 +22,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const post = allPosts.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const post = allPosts.find((p) => p.slug === slug);
   if (!post) return {};
 
   return {
@@ -48,8 +49,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function BlogPostDetailPage({ params }: PageProps) {
-  const post = allPosts.find((p) => p.slug === params.slug);
+export default async function BlogPostDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const post = allPosts.find((p) => p.slug === slug);
   if (!post) notFound();
 
   // Rank Math Schema Article JSON-LD

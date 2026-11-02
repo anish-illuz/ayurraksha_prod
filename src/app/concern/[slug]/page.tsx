@@ -6,7 +6,7 @@ import { getAllProducts, getProductsByConcern } from '@/lib/products';
 import { HEALTH_CONCERNS, SITE_CONFIG } from '@/data/siteConfig';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -16,20 +16,22 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const concern = HEALTH_CONCERNS.find((c) => c.slug === params.slug);
+  const { slug } = await params;
+  const concern = HEALTH_CONCERNS.find((c) => c.slug === slug);
   if (!concern) return {};
 
   return {
     title: `${concern.name} | Ayurvedic Supplements & Formulations`,
     description: `${concern.description} Shop doctor-formulated natural remedies by AyurRaksha. Free shipping on prepaid orders.`,
     alternates: {
-      canonical: `${SITE_CONFIG.domain}/concern/${params.slug}/`,
+      canonical: `${SITE_CONFIG.domain}/concern/${slug}/`,
     },
   };
 }
 
-export default function ConcernPage({ params }: PageProps) {
-  const concern = HEALTH_CONCERNS.find((c) => c.slug === params.slug);
+export default async function ConcernPage({ params }: PageProps) {
+  const { slug } = await params;
+  const concern = HEALTH_CONCERNS.find((c) => c.slug === slug);
   if (!concern) notFound();
 
   const allProducts = getAllProducts();

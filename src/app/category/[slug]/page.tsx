@@ -6,7 +6,7 @@ import { getAllProducts } from '@/lib/products';
 import { PRODUCT_FORMATS, SITE_CONFIG } from '@/data/siteConfig';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -16,20 +16,22 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const format = PRODUCT_FORMATS.find((f) => f.slug === params.slug);
+  const { slug } = await params;
+  const format = PRODUCT_FORMATS.find((f) => f.slug === slug);
   if (!format) return {};
 
   return {
     title: `${format.name} | AyurRaksha Ayurvedic Products`,
     description: `Shop authentic ${format.name.toLowerCase()} prepared using classical Ayurvedic extraction techniques. 100% natural and batch tested.`,
     alternates: {
-      canonical: `${SITE_CONFIG.domain}/category/${params.slug}/`,
+      canonical: `${SITE_CONFIG.domain}/category/${slug}/`,
     },
   };
 }
 
-export default function CategoryPage({ params }: PageProps) {
-  const format = PRODUCT_FORMATS.find((f) => f.slug === params.slug);
+export default async function CategoryPage({ params }: PageProps) {
+  const { slug } = await params;
+  const format = PRODUCT_FORMATS.find((f) => f.slug === slug);
   if (!format) notFound();
 
   const allProducts = getAllProducts();

@@ -78,7 +78,8 @@ export const CategoryGrid: React.FC = () => {
                       src={imgSrc}
                       alt={title}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      loading="lazy"
+                      sizes="(max-width: 640px) 380px, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover object-center"
                     />
                   </div>

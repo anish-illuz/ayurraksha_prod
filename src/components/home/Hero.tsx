@@ -189,7 +189,7 @@ export const Hero: React.FC = () => {
                       alt={slide.imageAlt}
                       fetchPriority={idx === 0 ? 'high' : 'low'}
                       loading={idx === 0 ? 'eager' : 'lazy'}
-                      decoding={idx === 0 ? 'sync' : 'async'}
+                      decoding="async"
                       className="object-cover object-center w-full h-full"
                       width={750}
                       height={373}

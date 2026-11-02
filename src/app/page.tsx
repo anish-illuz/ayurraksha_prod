@@ -2,10 +2,16 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { Hero } from '@/components/home/Hero';
 import { TrustBadges } from '@/components/TrustBadges';
-import { CategoryGrid } from '@/components/home/CategoryGrid';
-import { Bestsellers } from '@/components/home/Bestsellers';
-import { BrandStory } from '@/components/home/BrandStory';
 
+const CategoryGrid = dynamic(
+  () => import('@/components/home/CategoryGrid').then((m) => m.CategoryGrid)
+);
+const Bestsellers = dynamic(
+  () => import('@/components/home/Bestsellers').then((m) => m.Bestsellers)
+);
+const BrandStory = dynamic(
+  () => import('@/components/home/BrandStory').then((m) => m.BrandStory)
+);
 const FeaturedCombos = dynamic(
   () => import('@/components/home/FeaturedCombos').then((m) => m.FeaturedCombos)
 );

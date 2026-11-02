@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { ProductGallery } from '@/components/pdp/ProductGallery';
 import { ProductInfo } from '@/components/pdp/ProductInfo';
+import { ProductDetailsSections } from '@/components/pdp/ProductDetailsSections';
 import { StickyMobileBar } from '@/components/pdp/StickyMobileBar';
 import { ProductCard } from '@/components/ProductCard';
 import { TrustBadges } from '@/components/TrustBadges';
@@ -120,6 +121,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
             <ProductInfo product={product} />
           </div>
         </div>
+
+        {/* Redesigned Complete Product Details Sections as per Template */}
+        <ProductDetailsSections product={product} />
       </div>
 
       {/* Trust Badges */}

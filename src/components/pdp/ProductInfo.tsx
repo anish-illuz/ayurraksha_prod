@@ -326,58 +326,8 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         </div>
       </div>
 
-      {/* Accordion Tabs for Full Description, Ingredients, Dosage, Policies */}
-      <div className="border-t border-stone-200 pt-6 space-y-3">
-        {/* Overview */}
-        <div className="border border-stone-200 rounded-xl overflow-hidden bg-white">
-          <button
-            onClick={() => setOpenTab(openTab === 'desc' ? ('' as any) : 'desc')}
-            className="w-full p-4 flex items-center justify-between text-left text-sm font-bold text-forest"
-          >
-            <span>Overview &amp; Therapeutic Action</span>
-            <ChevronDown
-              size={18}
-              className={`transition-transform duration-200 ${
-                openTab === 'desc' ? 'rotate-180 text-botanical' : ''
-              }`}
-            />
-          </button>
-          {openTab === 'desc' && (
-            <div className="p-4 pt-0 text-xs sm:text-sm text-charcoal-muted leading-relaxed border-t border-stone-100 mt-2">
-              <p className="whitespace-pre-line">
-                {product.cleanDescription || product.shortDescription}
-              </p>
-            </div>
-          )}
-        </div>
-
-        {/* Directions for Use */}
-        <div className="border border-stone-200 rounded-xl overflow-hidden bg-white">
-          <button
-            onClick={() => setOpenTab(openTab === 'dosage' ? ('' as any) : 'dosage')}
-            className="w-full p-4 flex items-center justify-between text-left text-sm font-bold text-forest"
-          >
-            <span>Dosage &amp; Directions for Use</span>
-            <ChevronDown
-              size={18}
-              className={`transition-transform duration-200 ${
-                openTab === 'dosage' ? 'rotate-180 text-botanical' : ''
-              }`}
-            />
-          </button>
-          {openTab === 'dosage' && (
-            <div className="p-4 pt-0 text-xs sm:text-sm text-charcoal-muted leading-relaxed border-t border-stone-100 mt-2 space-y-2">
-              <p>
-                <strong>General Guidance:</strong> For internal tonics and capsules, take with lukewarm water after meals or as directed by an Ayurvedic physician. For external therapeutic oils, warm gently between palms and massage in circular strokes over the affected area.
-              </p>
-              <p className="text-[11px] text-stone-500 italic">
-                Store in a cool, dry place away from direct sunlight. Keep cap tightly closed after every use.
-              </p>
-            </div>
-          )}
-        </div>
-
-        {/* Shipping & Returns */}
+      {/* Shipping & Return Accordion */}
+      <div className="border-t border-stone-200 pt-6">
         <div className="border border-stone-200 rounded-xl overflow-hidden bg-white">
           <button
             onClick={() => setOpenTab(openTab === 'shipping' ? ('' as any) : 'shipping')}

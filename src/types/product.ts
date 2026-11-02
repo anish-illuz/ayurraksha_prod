@@ -32,6 +32,14 @@ export interface Product {
   inStock: boolean;
   variants: ProductVariant[];
   sku?: string;
+  features?: string[];
+  ingredients?: string[];
+  howToUse?: string[];
+  suitableFor?: string;
+  warnings?: string[];
+  storage?: string;
+  netQuantity?: string;
+  fullDescription?: string;
 }
 
 export interface CartItem {

@@ -99,7 +99,7 @@
     "principleBadge": "CHARAKA SAMHITA PRINCIPLES",
     "principleTitle": "Cleansing Agni • Balancing Vata & Pitta",
     "principleText": "Pure botanical blend micro-pulverized for optimal warm water extraction and bioavailability.",
-    "storyImage": "/images/banners/prod-boozliv.webp",
+    "storyImage": "/images/ingredients/traditional-raw-ayurvedic-herbs-mortar.webp",
     "featureCards": [
       {
         "title": "Classical Herb Blend",
@@ -136,7 +136,7 @@
         "desc": "Renowned in South Indian herbal traditions for cooling internal Pitta, supporting liver function, and stimulating natural downward waste elimination.",
         "bioactive": "Bioactive: Indican",
         "derivative": "Derivative: Leaf",
-        "image": "/images/products/ayur-raksha-detox-tea.webp",
+        "image": "/images/ingredients/avuri-neeli.webp",
         "latinName": "Indigofera tinctoria",
         "commonName": "AVURI / NEELI"
       },
@@ -146,7 +146,7 @@
         "desc": "Celebrated as the primary rejuvenator of the digestive tract. Promotes regular peristalsis, clears accumulated ama (toxins), and nourishes colon tissues.",
         "bioactive": "Bioactive: Chebulic Acid",
         "derivative": "Derivative: Colon Tonic",
-        "image": "/images/products/organics-laxahealth-tea-tin.webp",
+        "image": "/images/ingredients/kadukkai-haritaki.webp",
         "latinName": "Terminalia chebula",
         "commonName": "KADUKKAI / HARITAKI"
       },
@@ -156,7 +156,7 @@
         "desc": "Addresses stagnant mucus in the mucosal lining, supports healthy gut microdiversity, and balances the heavy qualities of Kapha dosha.",
         "bioactive": "Bioactive: Tannins & Gallic Acid",
         "derivative": "Derivative: Gut Microbiome",
-        "image": "/images/products/ayur-raksha-alg.webp",
+        "image": "/images/ingredients/thanrikkai-bibhitaki.webp",
         "latinName": "Terminalia bellirica",
         "commonName": "THANRIKKAI / BIBHITAKI"
       },
@@ -166,7 +166,7 @@
         "desc": "One of nature's densest sources of heat-resistant antioxidants. Soothes gastric burning, boosts digestion, and strengthens mucosal defense mechanisms.",
         "bioactive": "Bioactive: Emblicanin A & B",
         "derivative": "Derivative: Cellular Immunity",
-        "image": "/images/products/ayur-raksha-imu-360.webp",
+        "image": "/images/ingredients/nellikai-amla.webp",
         "latinName": "Phyllanthus emblica",
         "commonName": "NELLIKAI / AMLA"
       }
@@ -5471,7 +5471,7 @@
         "description": "Standardized classical botanical extract traditionally revered in Ayurvedic pharmacopeia for balancing biological humors and supporting organ resilience.",
         "bioactive": "Bioactive: Pure Plant Polyphenols",
         "derivative": "Derivative: Whole Botanical Extract",
-        "image": "/images/products/save-heart.webp"
+        "image": "/images/ingredients/dry-ginger-sunthi.png"
       },
       {
         "badge": "Synergistic Herb",

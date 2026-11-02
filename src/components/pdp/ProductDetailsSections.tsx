@@ -118,7 +118,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
         <div className="lg:col-span-5 relative">
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-md border border-stone-200">
             <Image
-              src={product.images[0] || '/images/banners/prod-boozliv.webp'}
+              src={product.storyImage || product.images[0] || '/images/banners/prod-boozliv.webp'}
               alt={product.name}
               fill
               className="object-cover"

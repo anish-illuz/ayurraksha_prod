@@ -1,25 +1,31 @@
 'use client';
 
 import React from 'react';
-import { Sparkles, Stethoscope } from 'lucide-react';
+import { Sparkles, Stethoscope, AlertTriangle, ShieldAlert } from 'lucide-react';
 import { SKIN_CONCERNS } from '@/data/comboBuilderData';
-import { SkinConcern } from '@/types/combo';
+import { ComboConcern, SkinConcern } from '@/types/combo';
 import { trackComboEvent } from '@/lib/comboAnalytics';
 
 interface ComboConcernSelectorProps {
   activeConcernId: string;
-  onSelectConcern: (concern: SkinConcern) => void;
+  onSelectConcern: (concern: ComboConcern) => void;
   onOpenConsult: () => void;
+  concerns?: ComboConcern[];
+  title?: string;
+  description?: string;
 }
 
 export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
   activeConcernId,
   onSelectConcern,
   onOpenConsult,
+  concerns = SKIN_CONCERNS,
+  title = 'What brings you here today?',
+  description = 'Choose a concern to get a suggested starting selection. This is shopping guidance, not a diagnosis. Every selection remains editable.',
 }) => {
-  const activeConcern = SKIN_CONCERNS.find((c) => c.id === activeConcernId) || SKIN_CONCERNS[0];
+  const activeConcern = concerns.find((c) => c.id === activeConcernId) || concerns[0];
 
-  const handleSelect = (concern: SkinConcern) => {
+  const handleSelect = (concern: ComboConcern) => {
     onSelectConcern(concern);
     trackComboEvent({
       event: 'select_concern',
@@ -28,20 +34,23 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
     });
   };
 
+  const isEmergency = Boolean(activeConcern.isEmergencyPathway || activeConcern.emergencyNotice);
+
   return (
     <div className="bg-white rounded-[20px] border border-[#e4e7df] p-6 mb-6 shadow-xs">
       <div className="font-extrabold text-[13px] text-[#18372b] mb-1.5 tracking-wide">
-        What brings you here today?
+        {title}
       </div>
 
       <p className="text-xs text-[#3c4f44] mb-4 leading-relaxed font-sans">
-        Choose a concern to get a suggested starting selection. <em>This is shopping guidance, not a diagnosis.</em> Every selection remains editable.
+        {description}
       </p>
 
-      {/* Concern Chips matching prototype */}
+      {/* Concern Chips */}
       <div className="flex flex-wrap gap-2">
-        {SKIN_CONCERNS.map((concern) => {
+        {concerns.map((concern) => {
           const isActive = concern.id === activeConcern.id;
+          const isWarningChip = Boolean(concern.isEmergencyPathway);
           return (
             <button
               key={concern.id}
@@ -49,7 +58,11 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
               onClick={() => handleSelect(concern)}
               className={`px-3.5 py-2 rounded-full text-xs font-bold transition-all ${
                 isActive
-                  ? 'bg-[#1c513d] text-white shadow-xs border border-[#1c513d]'
+                  ? isWarningChip
+                    ? 'bg-rose-700 text-white shadow-xs border border-rose-700'
+                    : 'bg-[#1c513d] text-white shadow-xs border border-[#1c513d]'
+                  : isWarningChip
+                  ? 'bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200'
                   : 'bg-white hover:bg-stone-50 text-[#283830] border border-[#dce4da]'
               }`}
             >
@@ -59,26 +72,56 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
         })}
       </div>
 
-      {/* Dynamic Concern Description matching prototype mini-desc */}
-      <div className="mt-4 p-3.5 rounded-[9px] bg-[#eef4eb] border border-[#d6e3d6] text-xs text-[#203728] leading-[1.6] space-y-2">
-        <div>
-          <strong>{activeConcern.name}:</strong> {activeConcern.description}
-        </div>
-
-        {activeConcern.clinicalNotice && (
-          <div className="pt-2 border-t border-[#d0dcbe] text-[11.5px] text-[#203728] leading-relaxed flex items-start justify-between gap-3">
-            <span>{activeConcern.clinicalNotice}</span>
+      {/* Dynamic Concern Description */}
+      {isEmergency ? (
+        <div className="mt-4 p-4 rounded-[12px] bg-rose-50 border border-rose-200 text-xs text-rose-950 leading-[1.6] space-y-2.5">
+          <div className="flex items-center gap-2 font-bold text-rose-800 text-[13px]">
+            <ShieldAlert size={16} className="text-rose-700 flex-shrink-0" />
+            <span>Clinical Notice & Medical Safeguard</span>
+          </div>
+          <p className="text-rose-900">
+            <strong>{activeConcern.name}:</strong> {activeConcern.description}
+          </p>
+          {activeConcern.emergencyNotice && (
+            <div className="pt-2 border-t border-rose-200 text-[11.5px] text-rose-900 font-medium">
+              {activeConcern.emergencyNotice}
+            </div>
+          )}
+          <div className="pt-1 flex items-center justify-between gap-3">
+            <span className="text-[11px] text-rose-800">
+              Do not delay standard clinical care for acute symptoms.
+            </span>
             <button
               type="button"
               onClick={onOpenConsult}
-              className="font-extrabold text-[#1c513d] underline hover:text-[#123b2d] whitespace-nowrap inline-flex items-center gap-1"
+              className="font-extrabold text-rose-800 hover:text-rose-950 underline whitespace-nowrap inline-flex items-center gap-1"
             >
-              <span>Consult Doctor</span>
+              <span>Speak to Doctor</span>
               <Stethoscope size={12} />
             </button>
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="mt-4 p-3.5 rounded-[9px] bg-[#eef4eb] border border-[#d6e3d6] text-xs text-[#203728] leading-[1.6] space-y-2">
+          <div>
+            <strong>{activeConcern.name}:</strong> {activeConcern.description}
+          </div>
+
+          {activeConcern.clinicalNotice && (
+            <div className="pt-2 border-t border-[#d0dcbe] text-[11.5px] text-[#203728] leading-relaxed flex items-start justify-between gap-3">
+              <span>{activeConcern.clinicalNotice}</span>
+              <button
+                type="button"
+                onClick={onOpenConsult}
+                className="font-extrabold text-[#1c513d] underline hover:text-[#123b2d] whitespace-nowrap inline-flex items-center gap-1"
+              >
+                <span>Consult Doctor</span>
+                <Stethoscope size={12} />
+              </button>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

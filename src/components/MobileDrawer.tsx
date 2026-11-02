@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { X, ChevronDown, Phone, MessageSquare, ShieldCheck, Heart } from 'lucide-react';
 import { HEALTH_CONCERNS, PRODUCT_FORMATS, SITE_CONFIG } from '@/data/siteConfig';
+import { COMBO_BUILDERS } from '@/data/comboBuilderData';
 
 interface MobileDrawerProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ interface MobileDrawerProps {
 
 export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
   const [concernsOpen, setConcernsOpen] = useState(true);
+  const [combosOpen, setCombosOpen] = useState(true);
   const [formatsOpen, setFormatsOpen] = useState(false);
 
   useEffect(() => {
@@ -95,16 +97,49 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
             >
               <span>Wellness Packs</span>
             </Link>
-            <Link
-              href="/combo-builder"
-              onClick={onClose}
-              className="flex items-center justify-between py-2.5 text-sm font-bold text-primary hover:text-primary-dark transition-colors"
-            >
-              <span>Combo Builder</span>
-              <span className="text-[10px] font-extrabold bg-sage text-forest px-2 py-0.5 rounded-badge border border-forest/20">
-                Custom
-              </span>
-            </Link>
+            {/* Combo Builders Accordion */}
+            <div className="pt-1">
+              <button
+                onClick={() => setCombosOpen(!combosOpen)}
+                className="flex items-center justify-between w-full py-2 text-sm font-bold text-primary hover:text-primary-dark transition-colors"
+                aria-expanded={combosOpen}
+              >
+                <div className="flex items-center gap-1.5">
+                  <span>Combo Builder</span>
+                  <span className="text-[10px] font-extrabold bg-sage text-forest px-2 py-0.5 rounded-badge border border-forest/20">
+                    4 Options
+                  </span>
+                </div>
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform duration-200 text-stone-400 ${combosOpen ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {combosOpen && (
+                <div className="mt-1 pl-2.5 space-y-2 border-l-2 border-primary/20 pb-2">
+                  {COMBO_BUILDERS.map((combo) => (
+                    <Link
+                      key={combo.id}
+                      href={combo.href}
+                      onClick={onClose}
+                      className="block p-2 rounded-lg bg-stone-50 hover:bg-ivory border border-stone-200/60 transition-colors"
+                    >
+                      <div className="flex items-center justify-between gap-1">
+                        <span className="text-xs font-bold text-forest hover:text-primary transition-colors">
+                          {combo.name}
+                        </span>
+                        <span className="text-[9px] font-extrabold bg-sage text-forest px-1.5 py-0.5 rounded-full flex-shrink-0">
+                          {combo.badge}
+                        </span>
+                      </div>
+                      <span className="text-[11px] text-charcoal-muted line-clamp-1 mt-0.5 block">
+                        {combo.description}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           <hr className="border-stone-100" />

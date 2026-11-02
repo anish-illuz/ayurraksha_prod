@@ -88,7 +88,6 @@ export const BrandStory: React.FC = () => {
                   fill
                   sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 448px, 480px"
                   className="object-cover object-[center_8%]"
-                  priority
                 />
               </div>
               <div className="p-4 sm:p-5">

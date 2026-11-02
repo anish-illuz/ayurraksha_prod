@@ -12,6 +12,8 @@ interface ComboMobileStickyBarProps {
   onRemoveItem: (productId: number) => void;
   onProceedToCheckout: () => void;
   onOpenConsult: () => void;
+  comboName?: string;
+  comboUrl?: string;
 }
 
 export const ComboMobileStickyBar: React.FC<ComboMobileStickyBarProps> = ({
@@ -21,6 +23,8 @@ export const ComboMobileStickyBar: React.FC<ComboMobileStickyBarProps> = ({
   onRemoveItem,
   onProceedToCheckout,
   onOpenConsult,
+  comboName = 'Combo Builder',
+  comboUrl = 'https://www.ayurrakshaonline.com/combo-builder',
 }) => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
@@ -87,7 +91,7 @@ export const ComboMobileStickyBar: React.FC<ComboMobileStickyBarProps> = ({
               <div className="flex items-center gap-2">
                 <span className="w-8 h-1 rounded-full bg-stone-300 block" />
                 <span className="text-xs font-bold text-[#18372b] uppercase tracking-wider">
-                  Combo Builder
+                  {comboName}
                 </span>
               </div>
               <button
@@ -116,6 +120,8 @@ export const ComboMobileStickyBar: React.FC<ComboMobileStickyBarProps> = ({
                   onOpenConsult();
                 }}
                 isMobileDrawer={true}
+                comboName={comboName}
+                comboUrl={comboUrl}
                 className="border-0 p-0 shadow-none"
               />
             </div>

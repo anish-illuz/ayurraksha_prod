@@ -41,7 +41,6 @@ export const Footer: React.FC = () => {
                     alt="AyurRaksha - Rooted in Ayurveda"
                     fill
                     sizes="264px"
-                    priority
                     className="object-contain object-left transition-opacity group-hover:opacity-90"
                   />
                 </div>
@@ -130,7 +129,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs sm:text-sm text-[#F6F1E7] font-sans">
               <li>
                 <Link href="/combo-builder" className="text-[#EAD3A2] font-semibold hover:underline transition-colors block">
-                  ★ Combo Builder (Custom)
+                  ★ Combo Builders (4 Routines)
                 </Link>
               </li>
               <li>

@@ -7,9 +7,37 @@ import { trackComboEvent } from '@/lib/comboAnalytics';
 
 interface ComboHeroProps {
   onOpenConsult: () => void;
+  tagline?: string;
+  title?: string;
+  highlight?: string;
+  description?: string;
+  badge?: string;
+  stepGuide?: {
+    step1Title: string;
+    step1Desc: string;
+    step2Title: string;
+    step2Desc: string;
+    step3Title: string;
+    step3Desc: string;
+  };
 }
 
-export const ComboHero: React.FC<ComboHeroProps> = ({ onOpenConsult }) => {
+export const ComboHero: React.FC<ComboHeroProps> = ({
+  onOpenConsult,
+  tagline = 'AyurRaksha Botanical Wellness',
+  title = 'Skin care that begins',
+  highlight = 'with you.',
+  description = 'Choose from 13 doctor-formulated Ayurvedic skin care essentials, select the products that suit your individual routine, and compose your personalized combination at your own pace.',
+  badge = '13 Formulations',
+  stepGuide = {
+    step1Title: 'Choose formulations:',
+    step1Desc: 'Browse common concerns or select any of the products.',
+    step2Title: 'Adjust quantities:',
+    step2Desc: 'Add soaps, oils, tonics, or supplements as desired.',
+    step3Title: 'Instant checkout:',
+    step3Desc: 'View product-level savings and complete order securely.',
+  },
+}) => {
   const handleScrollToBuilder = (e: React.MouseEvent) => {
     e.preventDefault();
     const builderEl = document.getElementById('builder-catalog');
@@ -37,15 +65,15 @@ export const ComboHero: React.FC<ComboHeroProps> = ({ onOpenConsult }) => {
           <div className="lg:col-span-8 space-y-3 sm:space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#dba95c]/20 border border-[#dba95c]/30 text-[#f5d79e] text-[11px] font-extrabold uppercase tracking-wider">
               <Sparkles size={12} className="text-[#f5d79e]" />
-              <span>AyurRaksha Botanical Wellness</span>
+              <span>{tagline}</span>
             </div>
 
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-[46px] font-normal leading-[1.1] tracking-[-0.04em] text-white">
-              Skin care that begins <em className="italic text-[#edc48a] font-serif">with you.</em>
+              {title} <em className="italic text-[#edc48a] font-serif">{highlight}</em>
             </h1>
 
             <p className="text-xs sm:text-sm text-[#e5eee7] leading-[1.6] max-w-xl font-sans">
-              Choose from 13 doctor-formulated Ayurvedic skin care essentials, select the products that suit your individual routine, and compose your personalized combination at your own pace.
+              {description}
             </p>
 
             {/* CTAs */}
@@ -81,7 +109,7 @@ export const ComboHero: React.FC<ComboHeroProps> = ({ onOpenConsult }) => {
                   1
                 </span>
                 <p className="text-emerald-50 leading-tight">
-                  <strong className="text-white">Choose formulations:</strong> Browse common concerns or select any of the 13 products.
+                  <strong className="text-white">{stepGuide.step1Title}</strong> {stepGuide.step1Desc}
                 </p>
               </div>
 
@@ -90,7 +118,7 @@ export const ComboHero: React.FC<ComboHeroProps> = ({ onOpenConsult }) => {
                   2
                 </span>
                 <p className="text-emerald-50 leading-tight">
-                  <strong className="text-white">Adjust quantities:</strong> Add either soap, both soaps, oils, or supplements as desired.
+                  <strong className="text-white">{stepGuide.step2Title}</strong> {stepGuide.step2Desc}
                 </p>
               </div>
 
@@ -99,7 +127,7 @@ export const ComboHero: React.FC<ComboHeroProps> = ({ onOpenConsult }) => {
                   3
                 </span>
                 <p className="text-emerald-50 leading-tight">
-                  <strong className="text-white">Instant checkout:</strong> View product-level savings and complete order securely.
+                  <strong className="text-white">{stepGuide.step3Title}</strong> {stepGuide.step3Desc}
                 </p>
               </div>
             </div>

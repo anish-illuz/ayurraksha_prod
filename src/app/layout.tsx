@@ -1,10 +1,28 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+import { Inter, Cormorant_Garamond } from 'next/font/google';
 import '@/styles/globals.css';
 import { CartProvider } from '@/lib/cartContext';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ExitIntentDiscountModal } from '@/components/ExitIntentDiscountModal';
 import { SITE_CONFIG } from '@/data/siteConfig';
+
+const ExitIntentDiscountModal = dynamic(
+  () => import('@/components/ExitIntentDiscountModal').then((mod) => mod.ExitIntentDiscountModal)
+);
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-heading',
+  weight: ['600'],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.domain),
@@ -123,20 +141,29 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Responsive LCP Hero Image Preload: Mobile loads only mobile banner, Desktop loads only desktop banner */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          as="image"
+          href="/images/banners/boozliv-mobile.webp"
+          media="(max-width: 767px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/banners/boozliv.webp"
+          media="(min-width: 768px)"
+          fetchPriority="high"
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#FAF9F5] text-[#26352D] antialiased">
+      <body className="min-h-screen flex flex-col bg-[#FAF9F5] text-[#26352D] font-sans antialiased">
         <CartProvider>
           <Header />
           <main className="flex-grow">{children}</main>

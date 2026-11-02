@@ -3,13 +3,25 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Menu, Search, ShoppingBag, ChevronDown } from 'lucide-react';
 import { AnnouncementBar } from './AnnouncementBar';
-import { SearchModal } from './SearchModal';
-import { CartDrawer } from './CartDrawer';
-import { MobileDrawer } from './MobileDrawer';
 import { useCart } from '@/lib/cartContext';
 import { HEALTH_CONCERNS, SITE_CONFIG } from '@/data/siteConfig';
+import { COMBO_BUILDERS } from '@/data/comboBuilderData';
+
+const SearchModal = dynamic(
+  () => import('./SearchModal').then((mod) => mod.SearchModal),
+  { ssr: false }
+);
+const CartDrawer = dynamic(
+  () => import('./CartDrawer').then((mod) => mod.CartDrawer),
+  { ssr: false }
+);
+const MobileDrawer = dynamic(
+  () => import('./MobileDrawer').then((mod) => mod.MobileDrawer),
+  { ssr: false }
+);
 
 export const Header: React.FC = () => {
   const { itemCount, openCart } = useCart();
@@ -128,15 +140,85 @@ export const Header: React.FC = () => {
                 Wellness Packs
               </Link>
 
-              <Link
-                href="/combo-builder"
-                className="relative py-2 text-primary font-bold hover:text-primary-dark transition-colors flex items-center gap-1.5 after:absolute after:bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
+              {/* Dropdown: Combo Builder with all 4 dynamic builders */}
+              <div
+                className="relative group py-2"
+                onMouseEnter={() => setActiveDropdown('combo')}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                <span>Combo Builder</span>
-                <span className="text-[10px] font-extrabold bg-sage text-forest px-1.5 py-0.5 rounded-full border border-forest/15">
-                  New
-                </span>
-              </Link>
+                <div className="flex items-center">
+                  <Link
+                    href="/combo-builder"
+                    className="relative py-1 text-primary font-bold hover:text-primary-dark transition-colors flex items-center gap-1.5 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:origin-left"
+                    aria-expanded={activeDropdown === 'combo'}
+                  >
+                    <span>Combo Builder</span>
+                    <span className="text-[10px] font-extrabold bg-sage text-forest px-1.5 py-0.5 rounded-full border border-forest/15">
+                      4 Options
+                    </span>
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => setActiveDropdown(activeDropdown === 'combo' ? null : 'combo')}
+                    aria-label="Toggle Combo Builder menu"
+                    className="p-1 text-stone-400 hover:text-primary transition-colors"
+                  >
+                    <ChevronDown
+                      size={15}
+                      className={`text-stone-400 group-hover:text-primary transition-transform ${
+                        activeDropdown === 'combo' ? 'rotate-180' : 'group-hover:rotate-180'
+                      }`}
+                    />
+                  </button>
+                </div>
+
+                {activeDropdown === 'combo' && (
+                  <div className="absolute top-full -left-28 w-[640px] bg-white rounded-2xl shadow-xl border border-stone-200/80 p-5 animate-in fade-in-50 duration-150 grid grid-cols-2 gap-3.5">
+                    <div className="col-span-2 pb-2 border-b border-stone-100 flex items-center justify-between">
+                      <span className="text-[11px] font-extrabold uppercase tracking-wider text-forest">
+                        Dynamic Combo Builders
+                      </span>
+                      <span className="text-[11px] text-charcoal-muted">
+                        Fully customizable • Live store pricing
+                      </span>
+                    </div>
+
+                    {COMBO_BUILDERS.map((combo) => (
+                      <Link
+                        key={combo.id}
+                        href={combo.href}
+                        onClick={() => setActiveDropdown(null)}
+                        className="flex flex-col p-3.5 rounded-xl bg-stone-50/70 hover:bg-ivory border border-stone-200/60 hover:border-primary/30 transition-all group/item shadow-2xs hover:shadow-xs"
+                      >
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <span className="text-sm font-bold text-forest group-hover/item:text-primary transition-colors">
+                            {combo.name}
+                          </span>
+                          <span className="text-[10px] font-extrabold bg-sage text-forest px-2 py-0.5 rounded-full border border-forest/15 flex-shrink-0">
+                            {combo.badge}
+                          </span>
+                        </div>
+                        <span className="text-xs text-charcoal-muted leading-relaxed line-clamp-2">
+                          {combo.description}
+                        </span>
+                      </Link>
+                    ))}
+
+                    <div className="col-span-2 pt-3 border-t border-stone-100 flex items-center justify-between text-xs">
+                      <span className="text-charcoal-muted">
+                        Doctor-guided options • Free VPrime physician consultation
+                      </span>
+                      <Link
+                        href="/combo-builder/skin-care"
+                        onClick={() => setActiveDropdown(null)}
+                        className="text-primary font-bold hover:underline"
+                      >
+                        Explore Flagship Skin Care →
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
 
               <Link
                 href="/about"

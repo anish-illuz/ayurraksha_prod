@@ -109,7 +109,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
         </div>
 
         {/* Clickable Image */}
-        <Link href={`/product/${product.slug}`} className="relative block w-full h-full">
+        <Link href={`/product/${product.slug}`} prefetch={false} className="relative block w-full h-full">
           <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
             <Image
               src={isHovered && secondaryImage !== primaryImage ? secondaryImage : primaryImage}

@@ -73,12 +73,16 @@ const BANNER_SLIDES: BannerSlide[] = [
 const AUTOPLAY_INTERVAL = 6000; // 6 seconds per slide
 
 export const Hero: React.FC = () => {
-
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
   const isSwiping = useRef<boolean>(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const total = BANNER_SLIDES.length;
 
@@ -156,17 +160,43 @@ export const Hero: React.FC = () => {
       <div className="relative w-full aspect-[2.05/1] sm:aspect-[2.2/1] md:aspect-[2.28/1] min-h-[160px] sm:min-h-[180px] max-h-[720px] select-none">
         {BANNER_SLIDES.map((slide, idx) => {
           const isActive = idx === currentSlide;
+          // Strictly render only the active slide to eliminate all competing image bandwidth on initial load
+          const shouldRenderImage = idx === currentSlide;
+
           return (
-            <div key={slide.id} className={`absolute inset-0 transition-opacity duration-500 ${isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
-              aria-hidden={!isActive} role="group" aria-roledescription="slide" aria-label={`${idx + 1} of ${total}: ${slide.title}`}>
-              {/* Mobile Banner Artwork */}
-              <Link href={slide.primaryLink} tabIndex={isActive ? 0 : -1} className="md:hidden relative w-full h-full block cursor-pointer" aria-label={slide.primaryLabel}>
-                <Image src={slide.mobileImageSrc} alt={slide.imageAlt} fill priority={idx === 0} sizes="100vw" className="object-cover object-center w-full h-full" />
-              </Link>
-              {/* Desktop Banner Artwork */}
-              <Link href={slide.primaryLink} tabIndex={isActive ? 0 : -1} className="hidden md:block relative w-full h-full cursor-pointer" aria-label={slide.primaryLabel}>
-                <Image src={slide.desktopImageSrc} alt={slide.imageAlt} fill priority={idx === 0} sizes="100vw" className="object-cover object-center w-full h-full" />
-              </Link>
+            <div
+              key={slide.id}
+              className={`absolute inset-0 transition-opacity duration-500 ${
+                isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+              }`}
+              aria-hidden={!isActive}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${idx + 1} of ${total}: ${slide.title}`}
+            >
+              {shouldRenderImage ? (
+                <Link
+                  href={slide.primaryLink}
+                  prefetch={false}
+                  tabIndex={isActive ? 0 : -1}
+                  className="relative w-full h-full block cursor-pointer"
+                  aria-label={slide.primaryLabel}
+                >
+                  <picture className="w-full h-full block">
+                    <source media="(min-width: 768px)" srcSet={slide.desktopImageSrc} />
+                    <img
+                      src={slide.mobileImageSrc}
+                      alt={slide.imageAlt}
+                      fetchPriority={idx === 0 ? 'high' : 'low'}
+                      loading={idx === 0 ? 'eager' : 'lazy'}
+                      decoding={idx === 0 ? 'sync' : 'async'}
+                      className="object-cover object-center w-full h-full"
+                      width={750}
+                      height={373}
+                    />
+                  </picture>
+                </Link>
+              ) : null}
             </div>
           );
         })}

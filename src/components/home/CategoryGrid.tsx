@@ -68,6 +68,7 @@ export const CategoryGrid: React.FC = () => {
               <Link
                 key={c.id}
                 href={`/concern/${c.slug}`}
+                prefetch={false}
                 className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-xs transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 hover:-translate-y-1"
               >
                 {/* 1. Category scene image at the top */}

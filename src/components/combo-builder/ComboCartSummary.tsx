@@ -15,6 +15,8 @@ interface ComboCartSummaryProps {
   onOpenConsult: () => void;
   className?: string;
   isMobileDrawer?: boolean;
+  comboName?: string;
+  comboUrl?: string;
 }
 
 export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
@@ -26,6 +28,8 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
   onOpenConsult,
   className = '',
   isMobileDrawer = false,
+  comboName = 'AYURRAKSHA — SKIN CARE COMBO',
+  comboUrl = 'https://www.ayurrakshaonline.com/combo-builder',
 }) => {
   const [copied, setCopied] = useState(false);
 
@@ -82,7 +86,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
     );
 
     const summaryText = [
-      'AYURRAKSHA — SKIN CARE COMBO',
+      comboName.toUpperCase(),
       '----------------------------------------',
       ...lines,
       '----------------------------------------',
@@ -93,7 +97,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
         : null,
       `Final Amount Payable: ₹${finalPayableTotal.toLocaleString('en-IN')}`,
       '----------------------------------------',
-      'Configured at: https://www.ayurrakshaonline.com/combo-builder',
+      `Configured at: ${comboUrl}`,
       'Doctor Consultation available via VPrime Health Care (+91 99403 88877)',
     ]
       .filter(Boolean)
@@ -125,7 +129,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
             YOUR PERSONALIZED SELECTION
           </span>
           <h3 className="font-serif text-[23px] font-normal text-[#18372b] tracking-[-0.02em]">
-            Your Skin Care Combo
+            {comboName.replace(/ Builder/i, '')}
           </h3>
           <p className="text-xs text-[#3c4f44] mt-0.5">
             {totalItemsCount === 0

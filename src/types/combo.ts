@@ -42,9 +42,58 @@ export interface SkinConcern {
   shortDesc: string;
   description: string;
   clinicalNotice?: string;
+  emergencyNotice?: string;
+  isEmergencyPathway?: boolean;
   highlightedProductIds: number[];
   excludedProductIds?: number[];
   requiresDoctorGuidance?: boolean;
+}
+
+export type ComboConcern = SkinConcern;
+
+export interface ComboBuilderInfo {
+  id: string;
+  slug: string;
+  name: string;
+  shortName: string;
+  description: string;
+  badge: string;
+  productCount: number;
+  categoryCount?: number;
+  href: string;
+  accentColor?: string;
+  bgGradient?: string;
+  popular?: boolean;
+}
+
+export interface ComboBuilderConfig {
+  id: string;
+  slug: string;
+  name: string;
+  heroTagline: string;
+  heroTitle: string;
+  heroHighlight: string;
+  heroDescription: string;
+  heroBadge: string;
+  catalogSubtitle: string;
+  catalogCountBadge: string;
+  storageKey: string;
+  stepGuide: {
+    step1Title: string;
+    step1Desc: string;
+    step2Title: string;
+    step2Desc: string;
+    step3Title: string;
+    step3Desc: string;
+  };
+  categories: MerchandisingCategory[];
+  products: ComboProduct[];
+  concerns: ComboConcern[];
+  consultationHeading: string;
+  consultationText: string;
+  consultationFocus: string;
+  metaTitle: string;
+  metaDescription: string;
 }
 
 export interface VideoLanguageOption {

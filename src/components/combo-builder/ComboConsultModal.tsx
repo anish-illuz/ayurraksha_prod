@@ -11,6 +11,9 @@ interface ComboConsultModalProps {
   onClose: () => void;
   selectedConcernName?: string;
   selectedProducts?: ComboProduct[];
+  consultationFocus?: string;
+  consultationHeading?: string;
+  consultationSubtitle?: string;
 }
 
 export const ComboConsultModal: React.FC<ComboConsultModalProps> = ({
@@ -18,6 +21,9 @@ export const ComboConsultModal: React.FC<ComboConsultModalProps> = ({
   onClose,
   selectedConcernName,
   selectedProducts = [],
+  consultationFocus = 'Skin Care Guidance',
+  consultationHeading = 'Free Ayurvedic Doctor Consultation',
+  consultationSubtitle = 'Speak with a certified Ayurvedic physician about your health symptoms and suitable formulations.',
 }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -53,8 +59,8 @@ export const ComboConsultModal: React.FC<ComboConsultModalProps> = ({
     : 'None yet';
 
   const whatsappMessage = encodeURIComponent(
-    `Hello AyurRaksha / VPrime Healthcare,\n\nI would like to book a FREE Ayurvedic Doctor Consultation for skin care guidance.\n\n` +
-      `Skin Concern: ${selectedConcernName || 'General Consultation'}\n` +
+    `Hello AyurRaksha / VPrime Healthcare,\n\nI would like to book a FREE Ayurvedic Doctor Consultation for ${consultationFocus}.\n\n` +
+      `Focus / Concern: ${selectedConcernName || 'General Consultation'}\n` +
       `Preferred Language: ${preferredLanguage}\n` +
       `Selected Products in Combo: ${comboSummary}\n` +
       (name ? `Name: ${name}\n` : '') +
@@ -93,10 +99,10 @@ export const ComboConsultModal: React.FC<ComboConsultModalProps> = ({
               VPrime Health Care • Clinical Support
             </span>
             <h3 id="consult-modal-title" className="font-heading text-xl sm:text-2xl font-normal text-white">
-              Free Ayurvedic Doctor Consultation
+              {consultationHeading}
             </h3>
             <p className="text-xs text-emerald-100/80 mt-1">
-              Speak with a certified Ayurvedic physician about your skin symptoms and suitable formulations.
+              {consultationSubtitle}
             </p>
           </div>
           <button

@@ -243,6 +243,11 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/disclaimer" className="hover:text-[#EAD3A2] transition-colors block">
+                  Medical Disclaimer
+                </Link>
+              </li>
+              <li>
                 <Link href="/#faq" className="hover:text-[#EAD3A2] transition-colors block">
                   FAQs
                 </Link>

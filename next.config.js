@@ -41,6 +41,86 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/terms-and-conditions',
+        destination: '/terms-of-service',
+        permanent: true,
+      },
+      {
+        source: '/terms-and-conditions/',
+        destination: '/terms-of-service',
+        permanent: true,
+      },
+      {
+        source: '/terms',
+        destination: '/terms-of-service',
+        permanent: true,
+      },
+      {
+        source: '/terms/',
+        destination: '/terms-of-service',
+        permanent: true,
+      },
+      {
+        source: '/cancellation-policy',
+        destination: '/refund-returns',
+        permanent: true,
+      },
+      {
+        source: '/cancellation-policy/',
+        destination: '/refund-returns',
+        permanent: true,
+      },
+      {
+        source: '/cancellation-and-refund-policy',
+        destination: '/refund-returns',
+        permanent: true,
+      },
+      {
+        source: '/cancellation-and-refund-policy/',
+        destination: '/refund-returns',
+        permanent: true,
+      },
+      {
+        source: '/shipping-and-delivery-policy',
+        destination: '/shipping-policy',
+        permanent: true,
+      },
+      {
+        source: '/shipping-and-delivery-policy/',
+        destination: '/shipping-policy',
+        permanent: true,
+      },
+      {
+        source: '/delivery-policy',
+        destination: '/shipping-policy',
+        permanent: true,
+      },
+      {
+        source: '/delivery-policy/',
+        destination: '/shipping-policy',
+        permanent: true,
+      },
+      {
+        source: '/medical-disclaimer',
+        destination: '/disclaimer',
+        permanent: true,
+      },
+      {
+        source: '/medical-disclaimer/',
+        destination: '/disclaimer',
+        permanent: true,
+      },
+      {
+        source: '/privacy',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/privacy/',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+      {
         source: '/about-us',
         destination: '/about',
         permanent: true,

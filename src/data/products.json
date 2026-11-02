@@ -1982,5 +1982,50 @@
       }
     ],
     "sku": "AYUR-IMMUN-O3"
+  },
+  {
+    "id": 26348,
+    "name": "Ayur Raksha Foot Bath Powder",
+    "slug": "ayur-raksha-foot-bath-powder",
+    "price": 999,
+    "regularPrice": 999,
+    "salePrice": 999,
+    "discountPercent": 0,
+    "onSale": false,
+    "categories": [
+      "Herbal Powders & Teas",
+      "Skin & Dermatology",
+      "Specialty Care"
+    ],
+    "categorySlugs": [
+      "powder",
+      "skin-dermatology"
+    ],
+    "healthConcerns": [
+      "Skin & Botanical Care",
+      "Joint & Muscle Care"
+    ],
+    "isBestseller": false,
+    "images": [
+      "/images/products/ayur-raksha-foot-bath-powder.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/foot-bath-powder.png"
+    ],
+    "rating": 4.8,
+    "reviewCount": 16,
+    "shortDescription": "Traditional Ayurvedic herbal foot soak powder formulated with natural botanical extracts for soothing tired feet, dry soles, and cracked heels.",
+    "description": "<p><strong>Ayur Raksha Foot Bath Powder (300g)</strong></p><p>A restorative Ayurvedic therapeutic foot soak powder enriched with cooling herbs and botanical minerals. Traditionally formulated to relieve pedal tiredness, soften dry skin and cracked heels, improve circulation to lower extremities, and soothe burning sensations.</p><h4>Key Benefits:</h4><ul><li>Soothes Tired, Aching Feet &amp; Ankles</li><li>Helps Soften Cracked Heels &amp; Dry Soles</li><li>Supports Natural Peripheral Circulation</li><li>Provides Cooling Relief from Burning Sensation</li></ul><h4>Usage Instructions:</h4><p>Add 2–3 tablespoons of Ayur Raksha Foot Bath Powder into a basin of lukewarm water. Soak feet for 15–20 minutes. Gently pat dry and follow with Ayur Raksha Skin Conditioning Oil or SuperHeal O3 Cream.</p>",
+    "cleanDescription": "Ayur Raksha Foot Bath Powder (300g) is a restorative Ayurvedic therapeutic foot soak powder enriched with cooling herbs and botanical minerals. Formulated to relieve pedal tiredness, soften dry skin and cracked heels, improve peripheral circulation, and soothe burning sensations.",
+    "inStock": true,
+    "variants": [
+      {
+        "id": 26348,
+        "name": "Pack of 300g",
+        "price": 999,
+        "regularPrice": 999,
+        "inStock": true,
+        "default": true
+      }
+    ],
+    "sku": "AYUR-FOOT-BATH-300G"
   }
 ]

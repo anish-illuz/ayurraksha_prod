@@ -121,6 +121,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/product/ayurraksha-foot-bath-powder-300g',
+        destination: '/product/ayur-raksha-foot-bath-powder',
+        permanent: true,
+      },
+      {
+        source: '/product/ayurraksha-foot-bath-powder-300g/',
+        destination: '/product/ayur-raksha-foot-bath-powder',
+        permanent: true,
+      },
+      {
         source: '/about-us',
         destination: '/about',
         permanent: true,

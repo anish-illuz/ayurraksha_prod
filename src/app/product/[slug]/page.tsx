@@ -99,21 +99,35 @@ export default async function ProductDetailPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
 
-      {/* Breadcrumb Navigation */}
-      <Breadcrumb
-        items={[
-          { name: 'Shop', url: '/shop' },
-          { name: product.healthConcerns[0] || 'Products', url: '/shop' },
-          { name: product.name, url: `/product/${product.slug}` },
-        ]}
-      />
+      {/* Breadcrumb Navigation & Reference Badges Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-stone-200/60">
+          <Breadcrumb
+            items={[
+              { name: 'Home', url: '/' },
+              { name: 'Shop', url: '/shop' },
+              { name: product.healthConcerns[0] || 'Digestive & Gut Health', url: '/shop' },
+              { name: product.name, url: `/product/${product.slug}` },
+            ]}
+          />
+          <div className="flex items-center gap-2 text-[11px] font-semibold">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+              <span>Ayurvedic Classical Formulation</span>
+            </span>
+            <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200">
+              <span>Doctor Formulated by Dr. Jegajothi Pandian</span>
+            </span>
+          </div>
+        </div>
+      </div>
 
       {/* Main PDP Layout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left: Image Gallery */}
           <div className="lg:col-span-6 lg:sticky lg:top-28">
-            <ProductGallery images={product.images} productName={product.name} />
+            <ProductGallery images={product.images} productName={product.name} product={product} />
           </div>
 
           {/* Right: Product Purchase Information */}
@@ -122,7 +136,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Redesigned Complete Product Details Sections as per Template */}
+        {/* Redesigned Complete Product Details Sections Matching Reference 3.png */}
         <ProductDetailsSections product={product} />
       </div>
 

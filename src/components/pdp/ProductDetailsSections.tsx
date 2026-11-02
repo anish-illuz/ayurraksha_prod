@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import {
   Sparkles,
   ShieldCheck,
@@ -10,9 +12,15 @@ import {
   Clock,
   Package,
   Heart,
-  Droplets,
   Award,
-  ChevronRight
+  ChevronRight,
+  Flame,
+  Moon,
+  Coffee,
+  Check,
+  FlaskConical,
+  Compass,
+  FileText
 } from 'lucide-react';
 import { Product } from '@/types/product';
 
@@ -21,295 +29,351 @@ interface ProductDetailsSectionsProps {
 }
 
 export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ product }) => {
-  const [activeTab, setActiveTab] = useState<'all' | 'features' | 'ingredients' | 'howToUse' | 'safety'>('all');
+  const whatsappConsultationUrl = `https://wa.me/919940388877?text=${encodeURIComponent(
+    `Hello Dr. Jegajothi Pandian, I would like to consult about the dosage and clinical usage of ${product.name}.`
+  )}`;
 
-  const hasFeatures = product.features && product.features.length > 0;
-  const hasIngredients = product.ingredients && product.ingredients.length > 0;
-  const hasHowToUse = product.howToUse && product.howToUse.length > 0;
-  const hasSuitable = Boolean(product.suitableFor);
-  const hasWarnings = product.warnings && product.warnings.length > 0;
-  const hasSpecs = Boolean(product.netQuantity || product.storage);
-  const hasStory = Boolean(product.fullDescription || product.description);
+  // Feature cards icons mapping
+  const featureIcons = [
+    <Sparkles key={0} size={20} className="text-emerald-700" />,
+    <Leaf key={1} size={20} className="text-emerald-700" />,
+    <Heart key={2} size={20} className="text-emerald-700" />,
+    <ShieldCheck key={3} size={20} className="text-emerald-700" />,
+    <Package key={4} size={20} className="text-emerald-700" />,
+    <Moon key={5} size={20} className="text-emerald-700" />
+  ];
 
-  // If no structured fields exist at all, fall back to simple overview
-  if (!hasFeatures && !hasIngredients && !hasHowToUse && !hasStory) {
-    return null;
-  }
+  // Step icons mapping
+  const stepIcons = [
+    <Coffee key={0} size={18} className="text-stone-700" />,
+    <FlaskConical key={1} size={18} className="text-stone-700" />,
+    <Flame key={2} size={18} className="text-stone-700" />,
+    <Moon key={3} size={18} className="text-stone-700" />
+  ];
 
   return (
-    <section className="mt-12 lg:mt-16 border-t border-stone-200/90 pt-12 sm:pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage text-forest text-xs font-semibold uppercase tracking-wider mb-3">
-            <Leaf size={14} className="text-botanical" />
-            <span>Complete Formulation Details</span>
+    <div className="mt-14 space-y-16">
+      {/* 1. Authentic Clinical Heritage & Usage Doctor Banner matching 3.png */}
+      <div className="bg-[#FAF7F2] rounded-3xl border border-stone-200/90 p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs">
+        <div className="flex items-start sm:items-center gap-4">
+          <div className="w-14 h-14 rounded-2xl bg-[#16382C] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+            <Award size={28} className="text-[#C8A25D]" />
           </div>
+          <div>
+            <span className="text-[11px] font-bold text-botanical uppercase tracking-wider block mb-1">
+              AUTHENTIC CLINICAL HERITAGE &amp; USAGE
+            </span>
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-forest leading-snug">
+              {product.doctorBannerTitle || 'Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian'}
+            </h3>
+            <p className="text-xs sm:text-sm text-charcoal/70 mt-1 max-w-2xl leading-relaxed">
+              {product.doctorBannerText || 'Combining India’s timeless Ayurvedic texts with modern analytical quality verification and standardized decoction standards.'}
+            </p>
+          </div>
+        </div>
+
+        <a
+          href={whatsappConsultationUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="self-start md:self-center px-6 py-3 rounded-full bg-[#16382C] hover:bg-[#0E251D] text-white text-xs sm:text-sm font-semibold transition-all shadow-sm hover:shadow whitespace-nowrap flex items-center gap-2"
+        >
+          <span>Discuss Dosage with Doctor</span>
+          <ChevronRight size={16} />
+        </a>
+      </div>
+
+      {/* 2. Traditional Ayurvedic Wellness, Naturally Inspired Section */}
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* Left Column: Editorial Philosophy & Story */}
+        <div className="lg:col-span-7 space-y-4">
+          <span className="text-xs font-bold text-[#B45309] uppercase tracking-wider block">
+            {product.storyEyebrow || 'AYURVEDIC PHILOSOPHY'}
+          </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest leading-tight">
-            Authentic Clinical Heritage &amp; Usage
+            {product.storyTitle || 'Traditional Ayurvedic Wellness, Naturally Inspired'}
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-charcoal/80 leading-relaxed font-sans">
-            Formulated under the clinical guidance of Dr. Jegajothi Pandian, combining India’s classical Ayurvedic traditions with modern quality standards.
+
+          <div className="text-charcoal/80 text-sm sm:text-base leading-relaxed space-y-3.5 font-sans pt-2">
+            <p>
+              Discover the essence of traditional Ayurvedic wellness with {product.name}, a thoughtfully developed herbal formulation inspired by India&apos;s rich botanical heritage.
+            </p>
+            <p>
+              Rooted in time-honoured Ayurvedic practices, this herbal blend brings together traditional plant-based ingredients in a convenient format for modern lifestyles. It reflects Ayurveda&apos;s holistic approach to wellbeing, where mindful daily habits and botanical traditions form an integral part of personal care.
+            </p>
+            <p>
+              {product.name} is designed for individuals who appreciate natural, plant-based wellness products and wish to incorporate traditional herbal preparations into their lifestyle. Its formulation draws on generations of Ayurvedic knowledge while offering the simplicity and convenience expected from a contemporary wellness product.
+            </p>
+            <p>
+              Whether exploring Ayurveda for the first time or continuing an established herbal wellness routine, {product.name} offers a connection to India&apos;s traditional botanical heritage.
+            </p>
+          </div>
+
+          <p className="font-bold text-sm sm:text-base text-forest pt-2 border-l-3 border-botanical pl-3">
+            {product.storyClosing || `Embrace the timeless tradition of Ayurveda with ${product.name} — where herbal heritage meets modern wellness.`}
           </p>
         </div>
 
-        {/* 1. Full Editorial Story / Description */}
-        {hasStory && (
-          <div className="mb-14 bg-gradient-to-br from-white to-[#FAF7F2] rounded-2xl border border-stone-200/80 p-6 sm:p-10 shadow-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-sage/30 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-            <div className="relative z-10">
-              <div className="flex items-center gap-2.5 mb-4 text-botanical font-semibold text-xs uppercase tracking-wider">
-                <Sparkles size={16} />
-                <span>Therapeutic Philosophy &amp; Story</span>
-              </div>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-forest mb-4">
-                The Heritage Behind {product.name}
-              </h3>
-              <div
-                className="prose prose-stone max-w-none text-charcoal/90 text-sm sm:text-base leading-relaxed space-y-4"
-                dangerouslySetInnerHTML={{
-                  __html: product.fullDescription || product.description
-                }}
-              />
+        {/* Right Column: Hero Herb Visual with Charaka Samhita Principles Card */}
+        <div className="lg:col-span-5 relative">
+          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-md border border-stone-200">
+            <Image
+              src={product.images[0] || '/images/banners/prod-boozliv.webp'}
+              alt={product.name}
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+            {/* Bottom Overlay Card */}
+            <div className="absolute bottom-4 left-4 right-4 p-5 rounded-2xl bg-[#16382C]/95 backdrop-blur-md text-white border border-emerald-500/20">
+              <span className="text-[10px] font-bold text-[#E67E22] uppercase tracking-wider block mb-1">
+                {product.principleBadge || 'CHARAKA SAMHITA PRINCIPLES'}
+              </span>
+              <h4 className="font-serif text-lg font-bold text-white mb-1">
+                {product.principleTitle || 'Cleansing Agni • Balancing Vata & Pitta'}
+              </h4>
+              <p className="text-xs text-stone-300 leading-relaxed font-sans">
+                {product.principleText || 'Pure botanical blend micro-pulverized for optimal warm water extraction and natural bioavailability.'}
+              </p>
             </div>
           </div>
-        )}
+        </div>
+      </section>
 
-        {/* 2-Column Grid: Key Benefits & Botanical Ingredients */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 mb-14">
-          {/* Key Benefits (Left / 6 cols) */}
-          {hasFeatures && (
-            <div className="lg:col-span-6 bg-white rounded-2xl border border-stone-200/80 p-6 sm:p-8 shadow-xs flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-6 pb-4 border-b border-stone-100">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center font-bold">
-                      <Heart size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-forest">
-                        Key Features &amp; Benefits
-                      </h3>
-                      <span className="text-xs text-charcoal-muted">Therapeutic actions &amp; wellness properties</span>
-                    </div>
-                  </div>
-                  <span className="px-2.5 py-1 rounded-full bg-sage text-forest text-xs font-bold">
-                    {product.features?.length} Highlights
-                  </span>
-                </div>
-
-                <ul className="space-y-3.5">
-                  {product.features?.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center">
-                        <CheckCircle2 size={13} className="text-emerald-700" />
-                      </div>
-                      <span className="text-sm text-charcoal/90 leading-relaxed font-sans">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-stone-100 flex items-center gap-2 text-xs font-medium text-emerald-800 bg-emerald-50/50 p-3 rounded-xl">
-                <ShieldCheck size={16} className="text-emerald-700 flex-shrink-0" />
-                <span>100% natural herbal ingredients with zero synthetic adulterants.</span>
-              </div>
-            </div>
-          )}
-
-          {/* Botanical Ingredients (Right / 6 cols) */}
-          {hasIngredients && (
-            <div className="lg:col-span-6 bg-white rounded-2xl border border-stone-200/80 p-6 sm:p-8 shadow-xs flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-6 pb-4 border-b border-stone-100">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-800 flex items-center justify-center font-bold">
-                      <Leaf size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-forest">
-                        Botanical Ingredients
-                      </h3>
-                      <span className="text-xs text-charcoal-muted">Active herbs &amp; classical preparations</span>
-                    </div>
-                  </div>
-                  <span className="px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold">
-                    {product.ingredients?.length} Botanicals
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-1 gap-2.5">
-                  {product.ingredients?.map((ing, idx) => {
-                    const parts = ing.split(/–|-/);
-                    const latin = parts[0]?.trim();
-                    const common = parts.slice(1).join('–').trim();
-
-                    return (
-                      <div
-                        key={idx}
-                        className="p-3 rounded-xl bg-stone-50/80 border border-stone-200/60 hover:bg-sage-light/40 transition-colors flex items-center justify-between gap-3"
-                      >
-                        <div className="flex items-center gap-2.5">
-                          <span className="w-2 h-2 rounded-full bg-botanical flex-shrink-0" />
-                          <div>
-                            <span className="text-sm font-semibold text-forest block">
-                              {latin}
-                            </span>
-                            {common && (
-                              <span className="text-xs text-charcoal-muted">
-                                {common}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                        <span className="text-[10px] uppercase font-bold text-botanical/80 px-2 py-0.5 rounded bg-white border border-stone-200/60 flex-shrink-0">
-                          Ayurvedic Herb
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-stone-100 flex items-center gap-2 text-xs font-medium text-amber-900 bg-amber-50/60 p-3 rounded-xl">
-                <Award size={16} className="text-amber-800 flex-shrink-0" />
-                <span>Standardized botanical extracts prepared according to classical texts.</span>
-              </div>
-            </div>
-          )}
+      {/* 3. Key Features & Therapeutic Benefits (6 Cards Grid matching 3.png) */}
+      <section className="bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-10 shadow-xs">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-stone-100">
+          <div>
+            <span className="text-xs font-bold text-botanical uppercase tracking-wider block mb-1">
+              {product.featuresEyebrow || 'TARGETED BIO-ACTIONS'}
+            </span>
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-forest">
+              {product.featuresTitle || 'Key Features & Therapeutic Benefits'}
+            </h3>
+          </div>
+          <span className="px-3.5 py-1.5 rounded-full bg-[#E8EFE6] text-forest text-xs font-bold self-start sm:self-auto border border-forest/10">
+            {product.featuresBadge || '6 Verified Formulation Pillars'}
+          </span>
         </div>
 
-        {/* 3. Directions for Use & Daily Routine */}
-        {hasHowToUse && (
-          <div className="mb-14 bg-white rounded-2xl border border-stone-200/80 p-6 sm:p-10 shadow-xs">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-stone-100">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-800 flex items-center justify-center font-bold">
-                  <Clock size={20} />
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {product.featureCards && product.featureCards.length > 0 ? (
+            product.featureCards.map((card, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-2xl border border-stone-200/80 bg-stone-50/50 hover:bg-[#FAF7F2] transition-colors flex flex-col justify-between"
+              >
                 <div>
-                  <h3 className="font-serif text-2xl font-bold text-forest">
-                    How to Use / Directions
-                  </h3>
-                  <span className="text-xs text-charcoal-muted">Recommended preparation, timing and dosage</span>
+                  <div className="w-10 h-10 rounded-xl bg-white border border-stone-200/80 flex items-center justify-center mb-4 shadow-2xs">
+                    {featureIcons[idx % featureIcons.length]}
+                  </div>
+                  <h4 className="font-serif text-base sm:text-lg font-bold text-forest mb-2">
+                    {card.title}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans">
+                    {card.description}
+                  </p>
                 </div>
               </div>
-              <span className="text-xs font-semibold px-3 py-1 rounded-full bg-sky-100 text-sky-900 self-start sm:self-auto">
-                Step-by-Step Guide
-              </span>
-            </div>
+            ))
+          ) : (
+            <div className="col-span-3 text-sm text-charcoal-muted">Features available in product formulation sheet.</div>
+          )}
+        </div>
+      </section>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {product.howToUse?.map((step, idx) => (
-                <div
-                  key={idx}
-                  className="p-5 rounded-xl border border-stone-200 bg-gradient-to-b from-stone-50/50 to-white relative flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="w-8 h-8 rounded-full bg-forest text-white text-xs font-bold flex items-center justify-center mb-3 shadow-xs">
-                      {idx + 1}
-                    </div>
-                    <span className="text-xs uppercase font-bold text-botanical tracking-wider block mb-1">
-                      Step {idx + 1}
-                    </span>
-                    <p className="text-sm font-medium text-charcoal leading-relaxed">
-                      {step}
-                    </p>
+      {/* 4. Botanical Ingredients Breakdown (4 Detailed Herb Cards matching 3.png) */}
+      <section className="bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-10 shadow-xs">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-xs font-bold text-botanical uppercase tracking-wider block mb-1">
+            {product.ingredientsEyebrow || 'STANDARDIZED ANALYTICAL EXTRACTION'}
+          </span>
+          <h3 className="font-serif text-3xl font-bold text-forest mb-2">
+            {product.ingredientsTitle || 'Botanical Ingredients Breakdown'}
+          </h3>
+          <p className="text-xs sm:text-sm text-charcoal/70">
+            {product.ingredientsSubtitle || '100% natural herb ingredients with zero synthetic adulterants or harsh laxative additives.'}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {product.ingredientCards?.map((herb, idx) => (
+            <div
+              key={idx}
+              className="rounded-2xl border border-stone-200/90 bg-white overflow-hidden shadow-2xs flex flex-col justify-between"
+            >
+              <div>
+                {/* Herb Image with Top Badge */}
+                <div className="relative aspect-[4/3] bg-stone-100 overflow-hidden">
+                  <Image
+                    src={herb.image || product.images[0] || '/images/products/ayur-raksha-detox-tea.webp'}
+                    alt={herb.latinName}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md bg-[#16382C]/90 text-[10px] font-bold text-white uppercase tracking-wider backdrop-blur-xs">
+                    {herb.badge}
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        )}
 
-        {/* 4. Suitability, Warnings & Specifications Strip */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-          {/* Suitable For */}
-          {hasSuitable && (
-            <div className="bg-white rounded-2xl border border-stone-200/80 p-6 shadow-xs flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2.5 text-botanical font-bold text-xs uppercase tracking-wider mb-3">
-                  <CheckCircle2 size={16} />
-                  <span>Suitable For</span>
+                {/* Herb Details */}
+                <div className="p-4 sm:p-5">
+                  <span className="text-[10px] font-bold text-charcoal-muted uppercase tracking-wider block mb-0.5">
+                    {herb.commonName}
+                  </span>
+                  <h4 className="font-serif text-base sm:text-lg font-bold text-forest italic mb-2">
+                    {herb.latinName}
+                  </h4>
+                  <p className="text-xs text-charcoal/80 leading-relaxed font-sans">
+                    {herb.description}
+                  </p>
                 </div>
-                <h4 className="font-serif text-lg font-bold text-forest mb-2">
-                  Target Indications
+              </div>
+
+              {/* Bioactive & Derivative Footer */}
+              <div className="px-4 py-3 bg-stone-50 border-t border-stone-100 flex items-center justify-between text-[10px] font-semibold text-charcoal-muted">
+                <span>{herb.bioactive || 'Bioactive Extract'}</span>
+                <span>{herb.derivative || 'Natural Source'}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. The Evening Ritual • How to Prepare (4 Steps Cards matching 3.png) */}
+      <section className="bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-10 shadow-xs">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-xs font-bold text-botanical uppercase tracking-wider block mb-1">
+            {product.ritualEyebrow || 'PREPARATION & TIMING'}
+          </span>
+          <h3 className="font-serif text-3xl font-bold text-forest mb-2">
+            {product.ritualTitle || 'The Evening Ritual • How to Prepare'}
+          </h3>
+          <p className="text-xs sm:text-sm text-charcoal/70">
+            {product.ritualSubtitle || 'Simple 5-minute decoction method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.'}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          {product.ritualSteps?.map((step, idx) => (
+            <div
+              key={idx}
+              className="p-5 sm:p-6 rounded-2xl border border-stone-200/90 bg-[#FAF7F2] flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-8 h-8 rounded-full bg-[#16382C] text-white text-xs font-bold flex items-center justify-center shadow-xs">
+                    {step.stepNumber}
+                  </div>
+                  <div className="w-7 h-7 rounded-lg bg-white border border-stone-200/80 flex items-center justify-center">
+                    {stepIcons[idx % stepIcons.length]}
+                  </div>
+                </div>
+
+                <span className="text-[10px] font-bold text-botanical uppercase tracking-wider block mb-1">
+                  STEP 0{step.stepNumber}
+                </span>
+                <h4 className="font-serif text-base font-bold text-forest mb-2">
+                  {step.title}
                 </h4>
-                <p className="text-sm text-charcoal/90 leading-relaxed font-sans">
-                  {product.suitableFor}
+                <p className="text-xs text-charcoal/80 leading-relaxed font-sans">
+                  {step.description}
                 </p>
               </div>
-              <div className="mt-4 pt-3 border-t border-stone-100 text-[11px] text-charcoal-muted">
-                Suitable for long-term daily health routines as recommended.
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 6. Target Indications, Advisory Guidelines, Product Specifications (3 Cards) */}
+      <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Card 1: Target Indications */}
+        <div className="bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-7 shadow-xs flex flex-col justify-between">
+          <div>
+            <div className="flex items-center gap-2 text-forest font-bold text-xs uppercase tracking-wider mb-4">
+              <Compass size={18} className="text-botanical" />
+              <span>Target Indications</span>
+            </div>
+            <p className="text-xs sm:text-sm text-charcoal/90 leading-relaxed font-sans mb-4">
+              {product.targetIndications}
+            </p>
+          </div>
+          <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-medium text-emerald-900 leading-snug">
+            {product.targetIndicationsBadge}
+          </div>
+        </div>
+
+        {/* Card 2: Advisory Guidelines */}
+        <div className="bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-7 shadow-xs flex flex-col justify-between">
+          <div>
+            <div className="flex items-center gap-2 text-forest font-bold text-xs uppercase tracking-wider mb-4">
+              <ShieldCheck size={18} className="text-amber-700" />
+              <span>Advisory Guidelines</span>
+            </div>
+            <ul className="space-y-2.5">
+              {product.advisoryGuidelines?.map((guide, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-charcoal/80 leading-relaxed">
+                  <span className="text-amber-700 font-bold mt-0.5">•</span>
+                  <span>{guide}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Card 3: Product Specifications */}
+        <div className="bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-7 shadow-xs flex flex-col justify-between">
+          <div>
+            <div className="flex items-center gap-2 text-forest font-bold text-xs uppercase tracking-wider mb-4">
+              <FileText size={18} className="text-botanical" />
+              <span>Product Specifications</span>
+            </div>
+            <div className="space-y-2.5 text-xs sm:text-sm">
+              <div className="flex items-center justify-between py-1.5 border-b border-stone-100">
+                <span className="text-charcoal-muted">Net Quantity:</span>
+                <span className="font-semibold text-forest">{product.specNetQuantity}</span>
+              </div>
+              <div className="flex items-center justify-between py-1.5 border-b border-stone-100">
+                <span className="text-charcoal-muted">Product Form:</span>
+                <span className="font-semibold text-forest">{product.specProductForm}</span>
+              </div>
+              <div className="flex items-center justify-between py-1.5 border-b border-stone-100">
+                <span className="text-charcoal-muted">Manufacturing Origin:</span>
+                <span className="font-semibold text-forest">{product.specOrigin}</span>
+              </div>
+              <div className="flex items-center justify-between py-1.5 border-b border-stone-100">
+                <span className="text-charcoal-muted">Standard Disclosures:</span>
+                <span className="font-semibold text-forest">{product.specDisclosures}</span>
               </div>
             </div>
-          )}
+          </div>
+        </div>
+      </section>
 
-          {/* Warnings & Precautions */}
-          {hasWarnings && (
-            <div className="bg-white rounded-2xl border border-stone-200/80 p-6 shadow-xs flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2.5 text-amber-800 font-bold text-xs uppercase tracking-wider mb-3">
-                  <AlertCircle size={16} />
-                  <span>Safety &amp; Precautions</span>
-                </div>
-                <h4 className="font-serif text-lg font-bold text-forest mb-2">
-                  Advisory Guidelines
-                </h4>
-                <ul className="space-y-2">
-                  {product.warnings?.map((w, idx) => (
-                    <li key={idx} className="text-xs sm:text-sm text-charcoal/80 flex items-start gap-2">
-                      <span className="text-amber-700 font-bold mt-0.5">•</span>
-                      <span>{w}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-4 pt-3 border-t border-stone-100 text-[11px] text-charcoal-muted">
-                Consult a physician if you are pregnant, nursing, or on prescribed medication.
-              </div>
-            </div>
-          )}
-
-          {/* Specifications: Net Quantity & Storage */}
-          {hasSpecs && (
-            <div className="bg-white rounded-2xl border border-stone-200/80 p-6 shadow-xs flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2.5 text-forest font-bold text-xs uppercase tracking-wider mb-3">
-                  <Package size={16} />
-                  <span>Product Specifications</span>
-                </div>
-                <h4 className="font-serif text-lg font-bold text-forest mb-3">
-                  Packaging &amp; Storage
-                </h4>
-
-                <div className="space-y-3">
-                  {product.netQuantity && (
-                    <div className="p-3 bg-stone-50 rounded-xl border border-stone-200/70">
-                      <span className="text-xs text-charcoal-muted block mb-0.5">Net Quantity / Pack Size:</span>
-                      <span className="text-sm font-bold text-forest">{product.netQuantity}</span>
-                    </div>
-                  )}
-
-                  {product.storage && (
-                    <div className="p-3 bg-stone-50 rounded-xl border border-stone-200/70">
-                      <span className="text-xs text-charcoal-muted block mb-0.5">Storage Instructions:</span>
-                      <span className="text-sm font-semibold text-charcoal">{product.storage}</span>
-                    </div>
-                  )}
-
-                  <div className="p-3 bg-stone-50 rounded-xl border border-stone-200/70">
-                    <span className="text-xs text-charcoal-muted block mb-0.5">Origin &amp; Manufacturing:</span>
-                    <span className="text-sm font-semibold text-charcoal">Formulated in Chennai, India</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+      {/* 7. Credibility Quality Badges Strip matching 3.png */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-white rounded-2xl border border-stone-200/80 shadow-2xs text-center">
+        <div className="flex flex-col items-center">
+          <Award size={22} className="text-botanical mb-1.5" />
+          <span className="text-xs font-bold text-forest">GMP Certified</span>
+          <span className="text-[10px] text-charcoal-muted">Standardized classical extraction</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <ShieldCheck size={22} className="text-botanical mb-1.5" />
+          <span className="text-xs font-bold text-forest">Heavy-Metal Tested</span>
+          <span className="text-[10px] text-charcoal-muted">Zero pesticides &amp; contaminants</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <Heart size={22} className="text-botanical mb-1.5" />
+          <span className="text-xs font-bold text-forest">Vaidya Formulated</span>
+          <span className="text-[10px] text-charcoal-muted">Curated by clinical practitioners</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <Leaf size={22} className="text-botanical mb-1.5" />
+          <span className="text-xs font-bold text-forest">100% Sourced Flora</span>
+          <span className="text-[10px] text-charcoal-muted">Wildcrafted mature botanicals</span>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

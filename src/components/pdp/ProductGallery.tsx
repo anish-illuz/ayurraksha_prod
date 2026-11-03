@@ -52,54 +52,55 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
         </div>
       </div>
 
-      {/* Feature Thumbnails Row matching 3.png reference */}
-      <div className="grid grid-cols-4 gap-2.5 sm:gap-3">
-        {/* Thumbnail 1: Primary Pack Photo */}
+      {/* Compact 4 Key Benefit Tiles Row */}
+      <div className="grid grid-cols-4 gap-2 sm:gap-2.5">
+        {/* Tile 1: Primary Pack Photo Thumbnail */}
         <button
           onClick={() => setSelectedIndex(0)}
-          className={`relative aspect-square rounded-2xl p-1.5 bg-white border-2 transition-all flex items-center justify-center overflow-hidden ${
+          className={`h-16 sm:h-20 rounded-xl p-1 bg-white border-2 transition-all flex items-center justify-center overflow-hidden ${
             selectedIndex === 0
-              ? 'border-botanical shadow-sm'
-              : 'border-stone-200/80 hover:border-stone-300 opacity-90'
+              ? 'border-botanical shadow-2xs'
+              : 'border-stone-200 hover:border-stone-300 opacity-90'
           }`}
+          title="Pack View"
         >
           <div className="relative w-full h-full">
             <Image
               src={displayImages[0]}
               alt={`${productName} pack view`}
               fill
-              sizes="120px"
+              sizes="90px"
               className="object-contain"
             />
           </div>
         </button>
 
-        {/* Thumbnail 2: Individual Unit Card */}
-        <div className="aspect-square rounded-2xl p-2 bg-[#EEF5EE] border border-emerald-900/10 flex flex-col items-center justify-center text-center">
-          <div className="w-8 h-8 rounded-full bg-white text-botanical flex items-center justify-center mb-1.5 shadow-2xs">
-            <Package size={16} />
+        {/* Tile 2: Pre-Measured Packaging */}
+        <div className="h-16 sm:h-20 rounded-xl p-1.5 bg-[#EEF5EE]/80 border border-emerald-900/10 flex flex-col items-center justify-center text-center">
+          <div className="w-6 h-6 rounded-full bg-white text-botanical flex items-center justify-center mb-1 shadow-2xs shrink-0">
+            <Package size={13} />
           </div>
-          <span className="text-[11px] sm:text-xs font-bold text-forest leading-tight">
-            {product?.specNetQuantity?.split('=')[0]?.trim() || 'Pre-Measured Sachets'}
+          <span className="text-[10px] sm:text-[11px] font-bold text-forest leading-tight line-clamp-2">
+            {product?.specNetQuantity?.split('=')[0]?.trim() || 'Pre-Measured'}
           </span>
         </div>
 
-        {/* Thumbnail 3: Whole Botanical Ingredients Card */}
-        <div className="aspect-square rounded-2xl p-2 bg-[#EEF5EE] border border-emerald-900/10 flex flex-col items-center justify-center text-center">
-          <div className="w-8 h-8 rounded-full bg-white text-botanical flex items-center justify-center mb-1.5 shadow-2xs">
-            <Leaf size={16} />
+        {/* Tile 3: Whole Botanical Ingredients */}
+        <div className="h-16 sm:h-20 rounded-xl p-1.5 bg-[#EEF5EE]/80 border border-emerald-900/10 flex flex-col items-center justify-center text-center">
+          <div className="w-6 h-6 rounded-full bg-white text-botanical flex items-center justify-center mb-1 shadow-2xs shrink-0">
+            <Leaf size={13} />
           </div>
-          <span className="text-[11px] sm:text-xs font-bold text-forest leading-tight">
-            Whole Botanical Fruits
+          <span className="text-[10px] sm:text-[11px] font-bold text-forest leading-tight line-clamp-2">
+            Whole Botanicals
           </span>
         </div>
 
-        {/* Thumbnail 4: COA Certified Lab Pure Card */}
-        <div className="aspect-square rounded-2xl p-2 bg-[#EEF5EE] border border-emerald-900/10 flex flex-col items-center justify-center text-center">
-          <div className="w-8 h-8 rounded-full bg-white text-botanical flex items-center justify-center mb-1.5 shadow-2xs">
-            <FileCheck size={16} />
+        {/* Tile 4: Analytical Purity */}
+        <div className="h-16 sm:h-20 rounded-xl p-1.5 bg-[#EEF5EE]/80 border border-emerald-900/10 flex flex-col items-center justify-center text-center">
+          <div className="w-6 h-6 rounded-full bg-white text-botanical flex items-center justify-center mb-1 shadow-2xs shrink-0">
+            <FileCheck size={13} />
           </div>
-          <span className="text-[11px] sm:text-xs font-bold text-forest leading-tight">
+          <span className="text-[10px] sm:text-[11px] font-bold text-forest leading-tight line-clamp-2">
             COA Lab Pure
           </span>
         </div>

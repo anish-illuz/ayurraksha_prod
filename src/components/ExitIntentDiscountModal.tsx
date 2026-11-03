@@ -18,8 +18,8 @@ export const ExitIntentDiscountModal: React.FC = () => {
     const hasShown = typeof window !== 'undefined' && sessionStorage.getItem('ayurraksha_exit_discount_shown');
     if (hasShown) return;
 
-    // 3. Do not trigger on active checkout completion
-    if (pathname === '/checkout') return;
+    // 3. Do not trigger on active checkout completion or on individual product pages
+    if (pathname === '/checkout' || pathname?.startsWith('/product')) return;
 
     let triggered = false;
 

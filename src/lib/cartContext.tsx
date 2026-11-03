@@ -43,9 +43,42 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (Array.isArray(parsed)) setItems(parsed.flatMap((item: CartItem) => {
           const product = getProductById(item.product?.id);
           if (!product?.inStock || !Number.isInteger(item.quantity) || item.quantity < 1) return [];
-          const variant = product.variants.find(v => v.id === item.variantId || v.name === item.selectedVariant) || product.variants.find(v => v.default) || product.variants[0];
-          if (variant?.inStock === false) return [];
-          return [{ ...item, product, selectedVariant: variant?.name, variantId: variant?.id, variantPrice: variant?.price }];
+
+          // 1. Check if matching WooCommerce variant exists
+          const variant = product.variants.find(
+            (v) => (item.variantId !== undefined && v.id === item.variantId) || (item.selectedVariant && v.name === item.selectedVariant)
+          );
+
+          // 2. Check if matching packOption exists on product
+          const packOption = product.packOptions?.find(
+            (p) => p.name === item.selectedVariant || p.id === item.selectedVariant
+          );
+
+          let selectedVariant = item.selectedVariant;
+          let variantPrice = item.variantPrice;
+          let variantId = item.variantId;
+
+          if (variant) {
+            if (variant.inStock === false) return [];
+            selectedVariant = variant.name;
+            variantId = variant.id;
+            variantPrice = item.variantPrice ?? variant.price;
+          } else if (packOption) {
+            selectedVariant = packOption.name;
+            variantPrice = item.variantPrice ?? packOption.price;
+          } else if (item.variantPrice !== undefined) {
+            // Preserve custom pack course pricing
+            selectedVariant = item.selectedVariant || 'Standard';
+            variantPrice = item.variantPrice;
+          } else {
+            const defaultVariant = product.variants.find((v) => v.default) || product.variants[0];
+            if (defaultVariant?.inStock === false) return [];
+            selectedVariant = defaultVariant?.name;
+            variantId = defaultVariant?.id;
+            variantPrice = defaultVariant?.price ?? product.price;
+          }
+
+          return [{ ...item, product, selectedVariant, variantId, variantPrice }];
         }));
       }
     } catch {
@@ -85,11 +118,36 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const canonical = getProductById(product.id);
     if (!canonical?.inStock || !Number.isInteger(quantity) || quantity < 1) return;
     product = canonical;
-    const variant = product.variants.find(v => v.id === variantId || v.name === selectedVariant) || product.variants.find(v => v.default) || product.variants[0];
-    if (variant?.inStock === false) return;
-    selectedVariant = variant?.name;
-    variantId = variant?.id;
-    variantPrice = variant?.price;
+
+    // 1. Check if matching WooCommerce variant exists
+    const variant = product.variants.find(
+      (v) => (variantId !== undefined && v.id === variantId) || (selectedVariant && v.name === selectedVariant)
+    );
+
+    // 2. Check if matching packOption exists on product
+    const packOption = product.packOptions?.find(
+      (p) => p.name === selectedVariant || p.id === selectedVariant
+    );
+
+    if (variant) {
+      if (variant.inStock === false) return;
+      selectedVariant = variant.name;
+      variantId = variant.id;
+      variantPrice = variantPrice ?? variant.price;
+    } else if (packOption) {
+      selectedVariant = packOption.name;
+      variantPrice = variantPrice ?? packOption.price;
+    } else if (variantPrice !== undefined) {
+      // Preserve custom pack course pricing passed by PDP course selector
+      selectedVariant = selectedVariant || 'Standard Course';
+    } else {
+      const defaultVariant = product.variants.find((v) => v.default) || product.variants[0];
+      if (defaultVariant?.inStock === false) return;
+      selectedVariant = defaultVariant?.name;
+      variantId = defaultVariant?.id;
+      variantPrice = defaultVariant?.price ?? product.price;
+    }
+
     setItems((prev) => {
       const existingIndex = prev.findIndex(
         (i) => i.product.id === product.id && i.selectedVariant === selectedVariant

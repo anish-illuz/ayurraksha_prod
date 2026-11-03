@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import {
   ShoppingBag,
   Plus,
@@ -14,66 +13,31 @@ import {
   Award,
   ChevronDown
 } from 'lucide-react';
-import { Product, PackOption } from '@/types/product';
+import { Product } from '@/types/product';
 import { RatingStars } from '@/components/RatingStars';
-import { useCart } from '@/lib/cartContext';
+import { usePDP } from '@/context/PDPContext';
 
 interface ProductInfoProps {
   product: Product;
 }
 
 export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
-  const { addToCart } = useCart();
-  const [quantity, setQuantity] = useState(1);
+  const {
+    packOptions,
+    selectedPack,
+    selectedPackId,
+    setSelectedPackId,
+    quantity,
+    setQuantity,
+    currentPrice,
+    currentRegularPrice,
+    currentDiscount,
+    isAvailable,
+    isAdded,
+    handleAddToCart,
+  } = usePDP();
 
-  // Pack / Course Options
-  const packOptions: PackOption[] = product.packOptions && product.packOptions.length > 0
-    ? product.packOptions
-    : [
-        {
-          id: 'standard',
-          name: 'Standard Course',
-          subtitle: product.specNetQuantity || '40 Sachets × 5g (200g net)',
-          price: product.price,
-          regularPrice: product.regularPrice > product.price ? product.regularPrice : Math.round(product.price * 1.15),
-          isDefault: true
-        },
-        {
-          id: 'family',
-          name: '3-Month Family Regimen',
-          subtitle: '120 Sachets (600g net)',
-          price: Math.round(product.price * 2.65),
-          regularPrice: Math.round(product.price * 3.4),
-          discountBadge: 'Save 22%'
-        }
-      ];
-
-  const [selectedPackId, setSelectedPackId] = useState<string>(
-    packOptions.find(p => p.isDefault)?.id || packOptions[0].id
-  );
-
-  const selectedPack = packOptions.find(p => p.id === selectedPackId) || packOptions[0];
-  const currentPrice = selectedPack.price;
-  const currentRegularPrice = selectedPack.regularPrice || product.regularPrice;
-  const currentDiscount = currentRegularPrice > currentPrice
-    ? Math.round(((currentRegularPrice - currentPrice) / currentRegularPrice) * 100)
-    : product.discountPercent;
-
-  const [isAdded, setIsAdded] = useState(false);
   const [openShipping, setOpenShipping] = useState(false);
-
-  const isAvailable = product.inStock;
-
-  const handleAddToCart = () => {
-    addToCart(
-      product,
-      quantity,
-      selectedPack.name,
-      currentPrice
-    );
-    setIsAdded(true);
-    setTimeout(() => setIsAdded(false), 2000);
-  };
 
   const whatsappInquiryUrl = `https://wa.me/919940388877?text=${encodeURIComponent(
     `Hello Dr. Jegajothi Pandian & AyurRaksha team, I would like to consult about ${product.name} (${selectedPack.name} - ₹${currentPrice}).`
@@ -291,7 +255,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         </div>
       </div>
 
-      {/* 4 Practical Purchase Assurance Badges (Non-repetitive: shipping, returns, COD, packaging) */}
+      {/* 4 Practical Purchase Assurance Badges */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-center text-xs">
         <div className="p-2 sm:p-2.5 bg-white rounded-xl border border-stone-200/90 shadow-2xs flex flex-col items-center justify-center">
           <Truck size={16} className="text-botanical mb-0.5" />

@@ -4,16 +4,23 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ShoppingBag, Check } from 'lucide-react';
 import { Product } from '@/types/product';
-import { useCart } from '@/lib/cartContext';
+import { usePDP } from '@/context/PDPContext';
 
 interface StickyMobileBarProps {
   product: Product;
 }
 
 export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => {
-  const { addToCart } = useCart();
+  const {
+    selectedPack,
+    currentPrice,
+    currentRegularPrice,
+    isAvailable,
+    isAdded,
+    handleAddToCart,
+  } = usePDP();
+
   const [isVisible, setIsVisible] = useState(false);
-  const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,16 +30,6 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleQuickAdd = () => {
-    if (product.variants.length > 1) {
-      document.getElementById('product-purchase-options')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      return;
-    }
-    addToCart(product, 1);
-    setIsAdded(true);
-    setTimeout(() => setIsAdded(false), 1800);
-  };
 
   if (!isVisible) return null;
 
@@ -53,26 +50,29 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
             <h4 className="text-xs font-semibold text-charcoal truncate">
               {product.name}
             </h4>
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-sm font-bold text-forest">
-                ₹{product.price.toLocaleString('en-IN')}
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <span className="text-[10px] text-emerald-800 font-semibold bg-emerald-50 px-1.5 py-0.2 rounded truncate max-w-[140px]">
+                {selectedPack.name}
               </span>
-              {product.regularPrice > product.price && (
+              <span className="text-sm font-bold text-forest">
+                ₹{currentPrice.toLocaleString('en-IN')}
+              </span>
+              {currentRegularPrice > currentPrice && (
                 <span className="text-[10px] text-stone-400 line-through">
-                  ₹{product.regularPrice.toLocaleString('en-IN')}
+                  ₹{currentRegularPrice.toLocaleString('en-IN')}
                 </span>
               )}
             </div>
           </div>
         </div>
 
-        {product.inStock ? (
+        {isAvailable ? (
           <button
-            onClick={handleQuickAdd}
-            className={`flex-shrink-0 inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-button text-xs font-semibold whitespace-nowrap transition-all ${
+            onClick={handleAddToCart}
+            className={`flex-shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-button text-xs font-semibold whitespace-nowrap transition-all shadow-xs active:scale-95 ${
               isAdded
                 ? 'bg-forest text-white'
-                : 'bg-botanical hover:bg-forest text-white'
+                : 'bg-[#16382C] hover:bg-[#0E251D] text-white'
             }`}
           >
             {isAdded ? (
@@ -83,7 +83,7 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
             ) : (
               <>
                 <ShoppingBag size={14} className="flex-shrink-0" />
-                <span className="whitespace-nowrap">{product.variants.length > 1 ? 'Choose pack' : 'Add to Cart'}</span>
+                <span className="whitespace-nowrap">Add to Cart</span>
               </>
             )}
           </button>

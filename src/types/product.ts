@@ -29,6 +29,7 @@ export interface PackOption {
   regularPrice?: number;
   discountBadge?: string;
   isDefault?: boolean;
+  packCount?: number;
 }
 
 export interface ProductVariant {
@@ -129,6 +130,7 @@ export interface CartItem {
   selectedVariant?: string;
   variantPrice?: number;
   variantId?: number;
+  packCount?: number;
 }
 
 export interface BlogPost {

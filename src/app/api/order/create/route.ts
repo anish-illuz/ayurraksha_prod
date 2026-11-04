@@ -201,10 +201,29 @@ export async function POST(req: Request) {
     for (const item of items) {
       const product = getProductById(item.product?.id || item.id);
       const targetId = resolveCmsProductId(item);
-      const quantity = item.quantity || 1;
+
+      // Resolve physical pack quantity: multiplier for multi-pack bundles (e.g. 3-Month Family Regimen = 3 packs)
+      const packMultiplier = item.packCount || (
+        (item.selectedVariant || '').toLowerCase().includes('3-month') ||
+        (item.selectedVariant || '').toLowerCase().includes('3 pack') ||
+        (item.selectedVariant || '').toLowerCase().includes('three pack')
+          ? 3
+          : (item.selectedVariant || '').toLowerCase().includes('2-month') ||
+            (item.selectedVariant || '').toLowerCase().includes('2 pack') ||
+            (item.selectedVariant || '').toLowerCase().includes('two bottle') ||
+            (item.selectedVariant || '').toLowerCase().includes('pack of 2') ||
+            (item.selectedVariant || '').toLowerCase().includes('combo 2')
+          ? 2
+          : (item.selectedVariant || '').toLowerCase().includes('4 bottle')
+          ? 4
+          : 1
+      );
+
+      const targetQuantity = (item.quantity || 1) * packMultiplier;
       const itemName = product?.name || item.name || `Product #${targetId}`;
       const variantName = item.selectedVariant ? ` (${item.selectedVariant})` : '';
-      itemManifest.push(`${itemName}${variantName} x ${quantity}`);
+      const packDetail = packMultiplier > 1 ? ` [${targetQuantity} packs total - ${item.quantity} × ${packMultiplier}-pack bundle]` : '';
+      itemManifest.push(`${itemName}${variantName} x ${item.quantity}${packDetail}`);
 
       const addRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
         method: 'POST',
@@ -216,7 +235,7 @@ export async function POST(req: Request) {
         },
         body: JSON.stringify({
           id: targetId,
-          quantity: quantity,
+          quantity: targetQuantity,
         }),
         cache: 'no-store',
       });
@@ -237,7 +256,7 @@ export async function POST(req: Request) {
           },
           body: JSON.stringify({
             id: DEFAULT_CMS_PRODUCT_ID,
-            quantity: quantity,
+            quantity: targetQuantity,
           }),
           cache: 'no-store',
         });

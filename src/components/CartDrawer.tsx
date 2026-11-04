@@ -134,8 +134,13 @@ export const CartDrawer: React.FC = () => {
                       </button>
                     </div>
                     {item.selectedVariant && (
-                      <p className="text-[11px] text-charcoal-muted mt-0.5">
-                        Pack: <span className="font-medium text-charcoal">{item.selectedVariant}</span>
+                      <p className="text-xs text-charcoal-muted mt-0.5">
+                        Pack: <span className="font-semibold text-emerald-800">{item.selectedVariant}</span>
+                        {item.packCount && item.packCount > 1 && (
+                          <span className="ml-1 text-[11px] font-medium text-stone-500">
+                            ({item.packCount * item.quantity} packs total)
+                          </span>
+                        )}
                       </p>
                     )}
                   </div>

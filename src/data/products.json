@@ -68,7 +68,7 @@
       "Keep out of reach of children."
     ],
     "storage": "",
-    "netQuantity": "40 sachets ×  = ",
+    "netQuantity": "40 sachets × 5g = 200g",
     "subtitle": "Ayurvedic Herbal Tea • Single-Serving Powder Sachets",
     "skuBadge": "SKU: AYUR-DETOX-TEA",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -77,10 +77,11 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "40 sachets ×  = ",
+        "subtitle": "40 sachets × 5g = 200g",
         "price": 750,
         "regularPrice": 862,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -88,7 +89,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 1988,
         "regularPrice": 2586,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -206,7 +208,7 @@
       "Use only as directed on the packaging.",
       "Keep out of reach of children."
     ],
-    "specNetQuantity": "40 sachets ×  = ",
+    "specNetQuantity": "40 sachets × 5g = 200g",
     "specProductForm": "Single-Serving Powder Sachets",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -282,7 +284,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 1299,
         "regularPrice": 1494,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -290,7 +293,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3442,
         "regularPrice": 4482,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -480,7 +484,7 @@
       "Keep out of reach of children."
     ],
     "storage": "",
-    "netQuantity": " – 1 Roll-On Bottle",
+    "netQuantity": "50ml – 1 Roll-On Bottle",
     "subtitle": "Ayurvedic Classical Formulation • Doctor Formulated",
     "skuBadge": "SKU: 26337",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -489,10 +493,11 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": " – 1 Roll-On Bottle",
+        "subtitle": "50ml – 1 Roll-On Bottle",
         "price": 350,
         "regularPrice": 400,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -500,7 +505,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 928,
         "regularPrice": 1200,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -616,7 +622,7 @@
       "Discontinue use if skin irritation occurs.",
       "Keep out of reach of children."
     ],
-    "specNetQuantity": " – 1 Roll-On Bottle",
+    "specNetQuantity": "50ml – 1 Roll-On Bottle",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -691,7 +697,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 3999,
         "regularPrice": 4599,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -699,7 +706,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 10597,
         "regularPrice": 13797,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -874,7 +882,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 450,
         "regularPrice": 518,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -882,7 +891,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 1193,
         "regularPrice": 1554,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -1085,7 +1095,8 @@
         "subtitle": "",
         "price": 650,
         "regularPrice": 747,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -1093,7 +1104,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 1723,
         "regularPrice": 2241,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -1279,7 +1291,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 350,
         "regularPrice": 402,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -1287,7 +1300,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 928,
         "regularPrice": 1206,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -1482,7 +1496,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 1299,
         "regularPrice": 1494,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -1490,7 +1505,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3442,
         "regularPrice": 4482,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -1675,7 +1691,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 1299,
         "regularPrice": 1494,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -1683,7 +1700,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3442,
         "regularPrice": 4482,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -1870,7 +1888,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 1299,
         "regularPrice": 1494,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -1878,7 +1897,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3442,
         "regularPrice": 4482,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -2081,7 +2101,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 600,
         "regularPrice": 690,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -2089,7 +2110,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 1590,
         "regularPrice": 2070,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -2271,7 +2293,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 399,
         "regularPrice": 499,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -2279,7 +2302,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 1057,
         "regularPrice": 1497,
-        "discountBadge": "Save 29%"
+        "discountBadge": "Save 29%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -2463,7 +2487,8 @@
         "subtitle": "60 Capsules per Bottle",
         "price": 1199,
         "regularPrice": 1299,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -2471,7 +2496,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3177,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%"
+        "discountBadge": "Save 18%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -2633,7 +2659,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 2499,
         "regularPrice": 2898,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -2641,7 +2668,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 6622,
         "regularPrice": 8694,
-        "discountBadge": "Save 24%"
+        "discountBadge": "Save 24%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -2826,7 +2854,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 1599,
         "regularPrice": 1800,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -2834,7 +2863,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 4237,
         "regularPrice": 5400,
-        "discountBadge": "Save 22%"
+        "discountBadge": "Save 22%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -2996,7 +3026,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 2499,
         "regularPrice": 2750,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -3004,7 +3035,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 6622,
         "regularPrice": 8250,
-        "discountBadge": "Save 20%"
+        "discountBadge": "Save 20%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -3165,7 +3197,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 1999,
         "regularPrice": 2300,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -3173,7 +3206,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 5297,
         "regularPrice": 6900,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -3357,7 +3391,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 3500,
         "regularPrice": 4100,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -3365,7 +3400,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 9275,
         "regularPrice": 12300,
-        "discountBadge": "Save 25%"
+        "discountBadge": "Save 25%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -3553,7 +3589,8 @@
         "subtitle": "",
         "price": 799,
         "regularPrice": 919,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -3561,7 +3598,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 2117,
         "regularPrice": 2757,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -3733,7 +3771,8 @@
         "subtitle": "",
         "price": 799,
         "regularPrice": 919,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -3741,7 +3780,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 2117,
         "regularPrice": 2757,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -3929,7 +3969,8 @@
         "subtitle": "60 Capsules per Bottle",
         "price": 799,
         "regularPrice": 919,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -3937,7 +3978,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 2117,
         "regularPrice": 2757,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -4078,7 +4120,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 999,
         "regularPrice": 1149,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -4086,7 +4129,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 2647,
         "regularPrice": 3447,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -4256,7 +4300,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 350,
         "regularPrice": 400,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -4264,7 +4309,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 928,
         "regularPrice": 1200,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -4450,7 +4496,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 800,
         "regularPrice": 920,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -4458,7 +4505,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 2120,
         "regularPrice": 2760,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -4644,7 +4692,8 @@
         "subtitle": "60 Capsules per Bottle",
         "price": 1199,
         "regularPrice": 1299,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -4652,7 +4701,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3177,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%"
+        "discountBadge": "Save 18%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -4825,7 +4875,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 799,
         "regularPrice": 919,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -4833,7 +4884,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 2117,
         "regularPrice": 2757,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -5038,7 +5090,8 @@
         "subtitle": "Available in multiple pack variants",
         "price": 2400,
         "regularPrice": 2600,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -5046,7 +5099,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 6360,
         "regularPrice": 7800,
-        "discountBadge": "Save 18%"
+        "discountBadge": "Save 18%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -5216,7 +5270,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 1199,
         "regularPrice": 1299,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -5224,7 +5279,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3177,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%"
+        "discountBadge": "Save 18%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -5406,7 +5462,7 @@
       "Consult a healthcare professional before use if taking prescribed medication, particularly medication for heart conditions, blood pressure or blood glucose."
     ],
     "storage": "",
-    "netQuantity": " – 1 Bottle",
+    "netQuantity": "270ml – 1 Bottle",
     "subtitle": "Ayurvedic Classical Formulation • Doctor Formulated",
     "skuBadge": "SKU: 7695",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -5415,10 +5471,11 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": " – 1 Bottle",
+        "subtitle": "270ml – 1 Bottle",
         "price": 1199,
         "regularPrice": 1299,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -5426,7 +5483,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3177,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%"
+        "discountBadge": "Save 18%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -5527,7 +5585,7 @@
       "Do not exceed the recommended dosage.",
       "Consult a healthcare professional before use if taking prescribed medication, particularly medication for heart conditions, blood pressure or blood glucose."
     ],
-    "specNetQuantity": " – 1 Bottle",
+    "specNetQuantity": "270ml – 1 Bottle",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -5607,7 +5665,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 250,
         "regularPrice": 288,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -5615,7 +5674,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 663,
         "regularPrice": 864,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -5782,7 +5842,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 1199,
         "regularPrice": 1299,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -5790,7 +5851,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3177,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%"
+        "discountBadge": "Save 18%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -5959,7 +6021,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 400,
         "regularPrice": 460,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -5967,7 +6030,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 1060,
         "regularPrice": 1380,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -6162,7 +6226,8 @@
         "subtitle": "",
         "price": 1299,
         "regularPrice": 1699,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -6170,7 +6235,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3442,
         "regularPrice": 5097,
-        "discountBadge": "Save 32%"
+        "discountBadge": "Save 32%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -6398,7 +6464,8 @@
         "subtitle": "",
         "price": 800,
         "regularPrice": 920,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -6406,7 +6473,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 2120,
         "regularPrice": 2760,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -6611,7 +6679,7 @@
       "Consult a healthcare professional before use if you have an existing liver condition or take prescribed medication."
     ],
     "storage": "Store in a cool, dry place",
-    "netQuantity": "60 sachets ×  = ",
+    "netQuantity": "60 sachets × 10ml = 600ml",
     "subtitle": "Ayurvedic Classical Formulation • Doctor Formulated",
     "skuBadge": "SKU: 7694",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -6620,10 +6688,11 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "60 sachets ×  = ",
+        "subtitle": "60 sachets × 10ml = 600ml",
         "price": 2400,
         "regularPrice": 2600,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -6631,7 +6700,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 6360,
         "regularPrice": 7800,
-        "discountBadge": "Save 18%"
+        "discountBadge": "Save 18%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -6732,7 +6802,7 @@
       "Do not exceed the recommended quantity.",
       "Consult a healthcare professional before use if you have an existing liver condition or take prescribed medication."
     ],
-    "specNetQuantity": "60 sachets ×  = ",
+    "specNetQuantity": "60 sachets × 10ml = 600ml",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -6805,7 +6875,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 999,
         "regularPrice": 1149,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -6813,7 +6884,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 2647,
         "regularPrice": 3447,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -7018,7 +7090,8 @@
         "subtitle": "",
         "price": 350,
         "regularPrice": 402,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -7026,7 +7099,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 928,
         "regularPrice": 1206,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -7207,7 +7281,7 @@
       "Consult a healthcare professional before use if taking prescription medication, particularly medicines for Parkinson's disease or psychiatric conditions."
     ],
     "storage": "Store in a cool, dry place away from moisture.",
-    "netQuantity": " – 1 Jar",
+    "netQuantity": "100g – 1 Jar",
     "subtitle": "Classical Herbal Powder • Micro-Fine Traditional Churna",
     "skuBadge": "SKU: 5767",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -7216,10 +7290,11 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": " – 1 Jar",
+        "subtitle": "100g – 1 Jar",
         "price": 800,
         "regularPrice": 920,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -7227,7 +7302,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 2120,
         "regularPrice": 2760,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -7337,7 +7413,7 @@
       "Individuals with liver or kidney disorders should avoid use unless specifically advised by their treating clinician.",
       "Consult a healthcare professional before use if taking prescription medication, particularly medicines for Parkinson's disease or psychiatric conditions."
     ],
-    "specNetQuantity": " – 1 Jar",
+    "specNetQuantity": "100g – 1 Jar",
     "specProductForm": "Micro-Fine Traditional Churna",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -7419,7 +7495,8 @@
         "subtitle": "40 Tea Bags – 1 Tin",
         "price": 400,
         "regularPrice": 460,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -7427,7 +7504,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 1060,
         "regularPrice": 1380,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -7591,7 +7669,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 2299,
         "regularPrice": 2599,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -7599,7 +7678,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 6092,
         "regularPrice": 7797,
-        "discountBadge": "Save 22%"
+        "discountBadge": "Save 22%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -7807,7 +7887,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 1400,
         "regularPrice": 1610,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -7815,7 +7896,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3710,
         "regularPrice": 4830,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -8022,7 +8104,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 2925,
         "regularPrice": 3599,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -8030,7 +8113,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 7751,
         "regularPrice": 10797,
-        "discountBadge": "Save 28%"
+        "discountBadge": "Save 28%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -8225,7 +8309,8 @@
         "subtitle": "60 Capsules per Bottle",
         "price": 1199,
         "regularPrice": 1299,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -8233,7 +8318,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3177,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%"
+        "discountBadge": "Save 18%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -8385,7 +8471,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 1199,
         "regularPrice": 1299,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -8393,7 +8480,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 3177,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%"
+        "discountBadge": "Save 18%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -8567,7 +8655,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 200,
         "regularPrice": 230,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -8575,7 +8664,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 530,
         "regularPrice": 690,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -8749,7 +8839,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 4000,
         "regularPrice": 4600,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -8757,7 +8848,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 10600,
         "regularPrice": 13800,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -8931,7 +9023,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 2500,
         "regularPrice": 2875,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -8939,7 +9032,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 6625,
         "regularPrice": 8625,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",
@@ -9113,7 +9207,8 @@
         "subtitle": "1 Pack Regular Size",
         "price": 999,
         "regularPrice": 1149,
-        "isDefault": true
+        "isDefault": true,
+        "packCount": 1
       },
       {
         "id": "family",
@@ -9121,7 +9216,8 @@
         "subtitle": "3 Packs Value Bundle",
         "price": 2647,
         "regularPrice": 3447,
-        "discountBadge": "Save 23%"
+        "discountBadge": "Save 23%",
+        "packCount": 3
       }
     ],
     "doctorBannerTitle": "Formulated Under the Clinical Guidance of Dr. Jegajothi Pandian",

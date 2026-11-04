@@ -703,8 +703,13 @@ export default function CheckoutPage() {
                               {item.product.name}
                             </p>
                             {item.selectedVariant && (
-                              <p className="text-xs font-medium text-emerald-800 truncate">
+                              <p className="text-xs font-semibold text-emerald-800 truncate">
                                 Pack: {item.selectedVariant}
+                                {item.packCount && item.packCount > 1 && (
+                                  <span className="ml-1 text-[11px] font-normal text-stone-500">
+                                    ({item.packCount * item.quantity} packs total)
+                                  </span>
+                                )}
                               </p>
                             )}
                             <span className="text-xs text-charcoal-muted">

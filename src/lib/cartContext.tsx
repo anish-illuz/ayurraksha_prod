@@ -17,7 +17,8 @@ interface CartContextType {
     quantity?: number,
     selectedVariant?: string,
     variantPrice?: number,
-    variantId?: number
+    variantId?: number,
+    packCount?: number
   ) => void;
   updateQuantity: (productId: number, quantity: number, variant?: string) => void;
   removeFromCart: (productId: number, variant?: string) => void;
@@ -113,7 +114,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     quantity = 1,
     selectedVariant?: string,
     variantPrice?: number,
-    variantId?: number
+    variantId?: number,
+    packCount?: number
   ) => {
     const canonical = getProductById(product.id);
     if (!canonical?.inStock || !Number.isInteger(quantity) || quantity < 1) return;
@@ -137,6 +139,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } else if (packOption) {
       selectedVariant = packOption.name;
       variantPrice = variantPrice ?? packOption.price;
+      if (!packCount && packOption.packCount) {
+        packCount = packOption.packCount;
+      }
     } else if (variantPrice !== undefined) {
       // Preserve custom pack course pricing passed by PDP course selector
       selectedVariant = selectedVariant || 'Standard Course';
@@ -148,6 +153,20 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       variantPrice = defaultVariant?.price ?? product.price;
     }
 
+    if (!packCount) {
+      // Infer pack count from variant name or subtitle if not explicitly supplied
+      const lower = (selectedVariant || '').toLowerCase();
+      if (lower.includes('3-month') || lower.includes('3 month') || lower.includes('3 pack') || lower.includes('three pack')) {
+        packCount = 3;
+      } else if (lower.includes('2-month') || lower.includes('2 month') || lower.includes('2 pack') || lower.includes('two bottle') || lower.includes('pack of 2')) {
+        packCount = 2;
+      } else if (lower.includes('4 bottle') || lower.includes('four bottle')) {
+        packCount = 4;
+      } else {
+        packCount = 1;
+      }
+    }
+
     setItems((prev) => {
       const existingIndex = prev.findIndex(
         (i) => i.product.id === product.id && i.selectedVariant === selectedVariant
@@ -157,9 +176,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         next[existingIndex].quantity += quantity;
         if (variantPrice !== undefined) next[existingIndex].variantPrice = variantPrice;
         if (variantId !== undefined) next[existingIndex].variantId = variantId;
+        if (packCount !== undefined) next[existingIndex].packCount = packCount;
         return next;
       }
-      return [...prev, { product, quantity, selectedVariant, variantPrice, variantId }];
+      return [...prev, { product, quantity, selectedVariant, variantPrice, variantId, packCount }];
     });
     setIsCartOpen(true);
   };

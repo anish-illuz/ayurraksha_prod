@@ -42,14 +42,16 @@ export const PDPProvider: React.FC<{
           price: product.price,
           regularPrice: product.regularPrice > product.price ? product.regularPrice : Math.round(product.price * 1.15),
           isDefault: true,
+          packCount: 1,
         },
         {
           id: 'family',
           name: '3-Month Family Regimen',
-          subtitle: '120 Sachets (600g net)',
+          subtitle: '3 Packs Value Bundle',
           price: Math.round(product.price * 2.65),
           regularPrice: Math.round(product.price * 3.4),
           discountBadge: 'Save 22%',
+          packCount: 3,
         },
       ];
 
@@ -68,7 +70,7 @@ export const PDPProvider: React.FC<{
 
   const handleAddToCart = () => {
     if (!isAvailable) return;
-    addToCart(product, quantity, selectedPack.name, currentPrice);
+    addToCart(product, quantity, selectedPack.name, currentPrice, undefined, selectedPack.packCount || 1);
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 2000);
   };

@@ -13,6 +13,7 @@ interface StickyMobileBarProps {
 export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => {
   const {
     selectedPack,
+    quantity,
     currentPrice,
     currentRegularPrice,
     isAvailable,
@@ -83,7 +84,9 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
             ) : (
               <>
                 <ShoppingBag size={14} className="flex-shrink-0" />
-                <span className="whitespace-nowrap">Add to Cart</span>
+                <span className="whitespace-nowrap">
+                  Add to Cart • ₹{(currentPrice * quantity).toLocaleString('en-IN')}
+                </span>
               </>
             )}
           </button>

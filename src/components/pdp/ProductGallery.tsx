@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Leaf, ShieldCheck, FileCheck, Package } from 'lucide-react';
+import { Leaf, FileCheck, Package } from 'lucide-react';
 import { Product } from '@/types/product';
+import { getCompactPackBadge } from '@/lib/formatPack';
 
 interface ProductGalleryProps {
   images: string[];
@@ -80,8 +81,8 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
           <div className="w-6 h-6 rounded-full bg-white text-botanical flex items-center justify-center mb-1 shadow-2xs shrink-0">
             <Package size={13} />
           </div>
-          <span className="text-[10px] sm:text-[11px] font-bold text-forest leading-tight line-clamp-2">
-            {product?.specNetQuantity?.split('=')[0]?.trim() || 'Pre-Measured'}
+          <span className="text-[10px] sm:text-[11px] font-bold text-forest leading-tight line-clamp-2 px-0.5">
+            {getCompactPackBadge(product?.specNetQuantity)}
           </span>
         </div>
 

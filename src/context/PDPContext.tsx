@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import { Product, PackOption } from '@/types/product';
 import { useCart } from '@/lib/cartContext';
+import { formatPackMeasurement } from '@/lib/formatPack';
 
 interface PDPContextType {
   product: Product;
@@ -37,7 +38,7 @@ export const PDPProvider: React.FC<{
         {
           id: 'standard',
           name: 'Standard Course',
-          subtitle: product.specNetQuantity || '40 Sachets × 5g (200g net)',
+          subtitle: formatPackMeasurement(product.specNetQuantity) || '40 Sachets × 5g (200g net)',
           price: product.price,
           regularPrice: product.regularPrice > product.price ? product.regularPrice : Math.round(product.price * 1.15),
           isDefault: true,

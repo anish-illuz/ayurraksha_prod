@@ -68,7 +68,7 @@
       "Keep out of reach of children."
     ],
     "storage": "",
-    "netQuantity": "40 sachets × 5 g = 200 g",
+    "netQuantity": "40 sachets ×  = ",
     "subtitle": "Ayurvedic Herbal Tea • Single-Serving Powder Sachets",
     "skuBadge": "SKU: AYUR-DETOX-TEA",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -77,7 +77,7 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "40 sachets × 5 g = 200 g",
+        "subtitle": "40 sachets ×  = ",
         "price": 750,
         "regularPrice": 862,
         "isDefault": true
@@ -206,7 +206,7 @@
       "Use only as directed on the packaging.",
       "Keep out of reach of children."
     ],
-    "specNetQuantity": "40 sachets × 5 g = 200 g",
+    "specNetQuantity": "40 sachets ×  = ",
     "specProductForm": "Single-Serving Powder Sachets",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -480,7 +480,7 @@
       "Keep out of reach of children."
     ],
     "storage": "",
-    "netQuantity": "50 ml – 1 Roll-On Bottle",
+    "netQuantity": " – 1 Roll-On Bottle",
     "subtitle": "Ayurvedic Classical Formulation • Doctor Formulated",
     "skuBadge": "SKU: 26337",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -489,7 +489,7 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "50 ml – 1 Roll-On Bottle",
+        "subtitle": " – 1 Roll-On Bottle",
         "price": 350,
         "regularPrice": 400,
         "isDefault": true
@@ -616,7 +616,7 @@
       "Discontinue use if skin irritation occurs.",
       "Keep out of reach of children."
     ],
-    "specNetQuantity": "50 ml – 1 Roll-On Bottle",
+    "specNetQuantity": " – 1 Roll-On Bottle",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -1073,7 +1073,7 @@
       "Individuals with allergies to these ingredients should avoid consumption."
     ],
     "storage": "",
-    "netQuantity": "100 g",
+    "netQuantity": "",
     "subtitle": "Classical Herbal Powder • Micro-Fine Traditional Churna",
     "skuBadge": "SKU: 22733",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -1082,7 +1082,7 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "100 g",
+        "subtitle": "",
         "price": 650,
         "regularPrice": 747,
         "isDefault": true
@@ -1202,7 +1202,7 @@
       "Contains barley (gluten), soy, peanuts and almonds.",
       "Individuals with allergies to these ingredients should avoid consumption."
     ],
-    "specNetQuantity": "100 g",
+    "specNetQuantity": "",
     "specProductForm": "Micro-Fine Traditional Churna",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -3541,7 +3541,7 @@
       "Avoid contact with eyes and mucous membranes."
     ],
     "storage": "",
-    "netQuantity": "100 ml",
+    "netQuantity": "",
     "subtitle": "Authentic Medicated Herbal Oil • External Therapeutic Application",
     "skuBadge": "SKU: 11378",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -3550,7 +3550,7 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "100 ml",
+        "subtitle": "",
         "price": 799,
         "regularPrice": 919,
         "isDefault": true
@@ -3656,7 +3656,7 @@
       "For external use only.",
       "Avoid contact with eyes and mucous membranes."
     ],
-    "specNetQuantity": "100 ml",
+    "specNetQuantity": "",
     "specProductForm": "External Therapeutic Application",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -3721,7 +3721,7 @@
       "Do not apply to broken or severely irritated skin unless advised by a healthcare professional."
     ],
     "storage": "",
-    "netQuantity": "100 mg",
+    "netQuantity": "",
     "subtitle": "Targeted Ayurvedic Topical Formulation • Ozonated Pure Botanical",
     "skuBadge": "SKU: 11387",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -3730,7 +3730,7 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "100 mg",
+        "subtitle": "",
         "price": 799,
         "regularPrice": 919,
         "isDefault": true
@@ -3855,7 +3855,7 @@
       "Avoid contact with eyes and mucous membranes.",
       "Do not apply to broken or severely irritated skin unless advised by a healthcare professional."
     ],
-    "specNetQuantity": "100 mg",
+    "specNetQuantity": "",
     "specProductForm": "Ozonated Pure Botanical",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -5406,7 +5406,7 @@
       "Consult a healthcare professional before use if taking prescribed medication, particularly medication for heart conditions, blood pressure or blood glucose."
     ],
     "storage": "",
-    "netQuantity": "270 ml – 1 Bottle",
+    "netQuantity": " – 1 Bottle",
     "subtitle": "Ayurvedic Classical Formulation • Doctor Formulated",
     "skuBadge": "SKU: 7695",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -5415,7 +5415,7 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "270 ml – 1 Bottle",
+        "subtitle": " – 1 Bottle",
         "price": 1199,
         "regularPrice": 1299,
         "isDefault": true
@@ -5527,7 +5527,7 @@
       "Do not exceed the recommended dosage.",
       "Consult a healthcare professional before use if taking prescribed medication, particularly medication for heart conditions, blood pressure or blood glucose."
     ],
-    "specNetQuantity": "270 ml – 1 Bottle",
+    "specNetQuantity": " – 1 Bottle",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -6150,7 +6150,7 @@
       "Consult a healthcare professional before use during pregnancy or breastfeeding."
     ],
     "storage": "Store in a cool, dry place away from direct sunlight",
-    "netQuantity": "500 ml",
+    "netQuantity": "",
     "subtitle": "Ayurvedic Classical Formulation • Doctor Formulated",
     "skuBadge": "SKU: 4522",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -6159,7 +6159,7 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "500 ml",
+        "subtitle": "",
         "price": 1299,
         "regularPrice": 1699,
         "isDefault": true
@@ -6275,7 +6275,7 @@
       "Do not exceed the recommended daily quantity.",
       "Consult a healthcare professional before use during pregnancy or breastfeeding."
     ],
-    "specNetQuantity": "500 ml",
+    "specNetQuantity": "",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -6386,7 +6386,7 @@
       "Avoid applying to open wounds, burns, ulcers or infected skin without medical guidance."
     ],
     "storage": "Store in a cool, dry place away from direct sunlight",
-    "netQuantity": "100 ml",
+    "netQuantity": "",
     "subtitle": "Authentic Medicated Herbal Oil • External Therapeutic Application",
     "skuBadge": "SKU: 7689",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -6395,7 +6395,7 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "100 ml",
+        "subtitle": "",
         "price": 800,
         "regularPrice": 920,
         "isDefault": true
@@ -6519,7 +6519,7 @@
       "Avoid contact with eyes and mucous membranes.",
       "Avoid applying to open wounds, burns, ulcers or infected skin without medical guidance."
     ],
-    "specNetQuantity": "100 ml",
+    "specNetQuantity": "",
     "specProductForm": "External Therapeutic Application",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -6611,7 +6611,7 @@
       "Consult a healthcare professional before use if you have an existing liver condition or take prescribed medication."
     ],
     "storage": "Store in a cool, dry place",
-    "netQuantity": "60 sachets × 10 ml = 600 ml",
+    "netQuantity": "60 sachets ×  = ",
     "subtitle": "Ayurvedic Classical Formulation • Doctor Formulated",
     "skuBadge": "SKU: 7694",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -6620,7 +6620,7 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "60 sachets × 10 ml = 600 ml",
+        "subtitle": "60 sachets ×  = ",
         "price": 2400,
         "regularPrice": 2600,
         "isDefault": true
@@ -6732,7 +6732,7 @@
       "Do not exceed the recommended quantity.",
       "Consult a healthcare professional before use if you have an existing liver condition or take prescribed medication."
     ],
-    "specNetQuantity": "60 sachets × 10 ml = 600 ml",
+    "specNetQuantity": "60 sachets ×  = ",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -7006,7 +7006,7 @@
       "Keep out of reach of children."
     ],
     "storage": "",
-    "netQuantity": "100 ml",
+    "netQuantity": "",
     "subtitle": "Authentic Medicated Herbal Oil • External Therapeutic Application",
     "skuBadge": "SKU: 5771",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -7015,7 +7015,7 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "100 ml",
+        "subtitle": "",
         "price": 350,
         "regularPrice": 402,
         "isDefault": true
@@ -7136,7 +7136,7 @@
       "Avoid direct contact with eyes.",
       "Keep out of reach of children."
     ],
-    "specNetQuantity": "100 ml",
+    "specNetQuantity": "",
     "specProductForm": "External Therapeutic Application",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -7207,7 +7207,7 @@
       "Consult a healthcare professional before use if taking prescription medication, particularly medicines for Parkinson's disease or psychiatric conditions."
     ],
     "storage": "Store in a cool, dry place away from moisture.",
-    "netQuantity": "100 g – 1 Jar",
+    "netQuantity": " – 1 Jar",
     "subtitle": "Classical Herbal Powder • Micro-Fine Traditional Churna",
     "skuBadge": "SKU: 5767",
     "heroImageBadge": "100% AYURVEDIC FORMULA | Pure Herbal Blends",
@@ -7216,7 +7216,7 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "100 g – 1 Jar",
+        "subtitle": " – 1 Jar",
         "price": 800,
         "regularPrice": 920,
         "isDefault": true
@@ -7337,7 +7337,7 @@
       "Individuals with liver or kidney disorders should avoid use unless specifically advised by their treating clinician.",
       "Consult a healthcare professional before use if taking prescription medication, particularly medicines for Parkinson's disease or psychiatric conditions."
     ],
-    "specNetQuantity": "100 g – 1 Jar",
+    "specNetQuantity": " – 1 Jar",
     "specProductForm": "Micro-Fine Traditional Churna",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"

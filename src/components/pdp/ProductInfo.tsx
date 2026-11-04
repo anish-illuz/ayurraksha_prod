@@ -16,6 +16,7 @@ import {
 import { Product } from '@/types/product';
 import { RatingStars } from '@/components/RatingStars';
 import { usePDP } from '@/context/PDPContext';
+import { formatPackMeasurement } from '@/lib/formatPack';
 
 interface ProductInfoProps {
   product: Product;
@@ -76,12 +77,12 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
       </div>
 
       {/* Short Summary Description (Desktop only) */}
-      <p className="hidden lg:block text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans">
+      <p className="hidden lg:block text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans">
         {product.shortDescription || 'Experience Ayurvedic wellness with this traditional botanical blend crafted to support natural bodily regularity and daily restorative vitality.'}
       </p>
 
       {/* Mint Green Price Box matching Reference 3.png (Desktop only) */}
-      <div className="hidden lg:block p-3.5 sm:p-4 bg-[#EEF5EE] rounded-2xl border border-emerald-900/10 space-y-1">
+      <div className="hidden lg:block p-4 sm:p-5 bg-[#EEF5EE] rounded-2xl border border-emerald-900/10 space-y-1.5">
         <div className="flex items-baseline gap-2.5">
           <span className="text-3xl sm:text-4xl font-serif font-bold text-forest">
             ₹{currentPrice.toLocaleString('en-IN')}
@@ -92,12 +93,12 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
             </span>
           )}
           {currentDiscount > 0 && (
-            <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-[#E67E22] text-white">
+            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#E67E22] text-white">
               Save {currentDiscount}%
             </span>
           )}
         </div>
-        <p className="text-[11px] sm:text-xs text-forest/80 font-medium">
+        <p className="text-xs sm:text-sm text-forest/80 font-medium">
           Inclusive of all taxes. Free express shipping on all prepaid orders across India.
         </p>
       </div>
@@ -108,8 +109,8 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           <label className="text-[11px] font-bold text-charcoal uppercase tracking-wider">
             Select Course / Pack Size:
           </label>
-          <span className="text-[11px] text-charcoal-muted">
-            {selectedPack.subtitle}
+          <span className="text-[11px] text-charcoal-muted whitespace-nowrap">
+            {formatPackMeasurement(selectedPack.subtitle)}
           </span>
         </div>
 
@@ -133,25 +134,25 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
                     }`}>
                       {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-botanical" />}
                     </div>
-                    <span className="text-xs sm:text-sm font-bold text-forest">{pack.name}</span>
+                    <span className="text-xs sm:text-sm font-bold text-forest whitespace-nowrap">{formatPackMeasurement(pack.name)}</span>
                   </div>
                   {pack.discountBadge && (
-                    <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-100 text-amber-900 shrink-0">
+                    <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-100 text-amber-900 shrink-0 whitespace-nowrap">
                       {pack.discountBadge}
                     </span>
                   )}
                 </div>
 
-                <span className="text-[11px] text-charcoal-muted block pl-5 mb-2">
-                  {pack.subtitle}
+                <span className="text-[11px] text-charcoal-muted block pl-5 mb-2 whitespace-nowrap">
+                  {formatPackMeasurement(pack.subtitle)}
                 </span>
 
                 <div className="pt-1.5 border-t border-stone-100 pl-5 flex items-baseline justify-between">
-                  <span className="text-sm sm:text-base font-bold text-forest">
+                  <span className="text-sm sm:text-base font-bold text-forest whitespace-nowrap">
                     ₹{pack.price.toLocaleString('en-IN')}
                   </span>
                   {pack.regularPrice && pack.regularPrice > pack.price && (
-                    <span className="text-[11px] text-stone-400 line-through">
+                    <span className="text-[11px] text-stone-400 line-through whitespace-nowrap">
                       ₹{pack.regularPrice.toLocaleString('en-IN')}
                     </span>
                   )}

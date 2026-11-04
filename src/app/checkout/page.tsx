@@ -677,38 +677,47 @@ export default function CheckoutPage() {
 
                 {/* Items List */}
                 <div className="divide-y divide-stone-100 max-h-80 overflow-y-auto pr-1">
-                  {items.map((item) => (
-                    <div
-                      key={`${item.product.id}-${item.selectedVariant || 'default'}`}
-                      className="py-3 flex items-center justify-between gap-3"
-                    >
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="relative w-14 h-14 bg-[#FAF8F5] rounded-xl border border-stone-200 p-1 flex-shrink-0">
-                          <Image
-                            src={item.product.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png'}
-                            alt={item.product.name}
-                            fill
-                            sizes="56px"
-                            className="object-contain"
-                          />
-                          <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-forest text-white text-[10px] font-bold flex items-center justify-center">
-                            {item.quantity}
-                          </span>
+                  {items.map((item) => {
+                    const unitPrice = item.variantPrice ?? item.product.price;
+                    const lineTotal = unitPrice * item.quantity;
+                    return (
+                      <div
+                        key={`${item.product.id}-${item.selectedVariant || 'default'}`}
+                        className="py-3.5 flex items-center justify-between gap-3"
+                      >
+                        <div className="flex items-center gap-3 min-w-0">
+                          <div className="relative w-14 h-14 bg-[#FAF8F5] rounded-xl border border-stone-200 p-1 flex-shrink-0">
+                            <Image
+                              src={item.product.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png'}
+                              alt={item.product.name}
+                              fill
+                              sizes="56px"
+                              className="object-contain"
+                            />
+                            <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-forest text-white text-[11px] font-bold flex items-center justify-center shadow-xs">
+                              {item.quantity}
+                            </span>
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-xs sm:text-sm font-bold text-charcoal truncate">
+                              {item.product.name}
+                            </p>
+                            {item.selectedVariant && (
+                              <p className="text-xs font-medium text-emerald-800 truncate">
+                                Pack: {item.selectedVariant}
+                              </p>
+                            )}
+                            <span className="text-xs text-charcoal-muted">
+                              Qty: {item.quantity} × ₹{unitPrice.toLocaleString('en-IN')}
+                            </span>
+                          </div>
                         </div>
-                        <div className="min-w-0">
-                          <p className="text-xs sm:text-sm font-semibold text-charcoal truncate">
-                            {item.product.name}
-                          </p>
-                          <span className="text-[11px] text-charcoal-muted">
-                            Qty: {item.quantity}
-                          </span>
-                        </div>
+                        <span className="text-sm sm:text-base font-bold text-forest flex-shrink-0">
+                          ₹{lineTotal.toLocaleString('en-IN')}
+                        </span>
                       </div>
-                      <span className="text-xs sm:text-sm font-bold text-forest flex-shrink-0">
-                        ₹{(item.product.price * item.quantity).toLocaleString('en-IN')}
-                      </span>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
 
                 {/* Cost Breakdown */}

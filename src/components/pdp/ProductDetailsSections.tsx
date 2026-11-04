@@ -12,12 +12,15 @@ import {
   Award,
   ChevronRight,
   ChevronDown,
+  Plus,
+  Minus,
   Flame,
   Moon,
   Coffee,
   FlaskConical,
   Compass,
-  FileText
+  FileText,
+  BookOpen
 } from 'lucide-react';
 import { Product } from '@/types/product';
 import { formatPackMeasurement } from '@/lib/formatPack';
@@ -27,7 +30,21 @@ interface ProductDetailsSectionsProps {
 }
 
 export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ product }) => {
-  const [isRitualOpen, setIsRitualOpen] = useState(false);
+  // Accordion state: all sections collapsed by default
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({
+    description: false,
+    philosophy: false,
+    benefits: false,
+    ingredients: false,
+    howToPrepare: false,
+  });
+
+  const toggleSection = (key: string) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
 
   const whatsappConsultationUrl = `https://wa.me/919940388877?text=${encodeURIComponent(
     `Hello Dr. Jegajothi Pandian, I would like to consult about the dosage and clinical usage of ${product.name}.`
@@ -52,7 +69,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
   ];
 
   return (
-    <div className="mt-8 sm:mt-12 space-y-8 sm:space-y-12">
+    <div className="mt-8 sm:mt-12 space-y-6 sm:space-y-8">
       {/* 1. Authentic Clinical Heritage & Usage Doctor Banner */}
       <div className="bg-[#FAF7F2] rounded-3xl border border-stone-200/90 p-5 sm:p-7 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6 shadow-2xs">
         <div className="flex items-start sm:items-center gap-4">
@@ -84,237 +101,440 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
         </a>
       </div>
 
-      {/* 2. Full Description Section: Editorial Philosophy on Left, Featured Image on Right (Aligned to Page Width) */}
-      <section className="w-full bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-10 shadow-xs">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Column: Full Editorial Philosophy Narrative */}
-          <div className="lg:col-span-7 space-y-4">
-            <span className="text-xs font-bold text-[#B45309] uppercase tracking-wider block">
-              {product.storyEyebrow || 'AYURVEDIC PHILOSOPHY & HERITAGE'}
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest leading-tight">
-              {product.storyTitle || 'Traditional Ayurvedic Wellness, Naturally Inspired'}
-            </h2>
+      {/* ============================================================== */}
+      {/* THE 5 EXPANDABLE CONTENT ACCORDIONS (COLLAPSED BY DEFAULT)      */}
+      {/* ============================================================== */}
+      <div className="space-y-4 sm:space-y-5">
 
-            <div className="text-charcoal/85 text-sm sm:text-base leading-relaxed space-y-3.5 font-sans pt-1">
-              <p>
-                Discover the essence of traditional Ayurvedic wellness with {product.name}, a thoughtfully developed herbal formulation inspired by India&apos;s rich botanical heritage.
-              </p>
-              <p>
-                Rooted in time-honoured Ayurvedic practices, this herbal blend brings together traditional plant-based ingredients in a convenient format for modern lifestyles. It reflects Ayurveda&apos;s holistic approach to wellbeing, where mindful daily habits and botanical traditions form an integral part of personal care.
-              </p>
-              <p>
-                {product.name} is designed for individuals who appreciate natural, plant-based wellness products and wish to incorporate traditional herbal preparations into their lifestyle. Its formulation draws on generations of Ayurvedic knowledge while offering the simplicity and convenience expected from a contemporary wellness product.
-              </p>
-              <p>
-                Whether exploring Ayurveda for the first time or continuing an established herbal wellness routine, {product.name} offers a connection to India&apos;s traditional botanical heritage.
-              </p>
-            </div>
-
-            <p className="font-bold text-sm sm:text-base text-forest pt-2 border-l-3 border-botanical pl-3.5">
-              {product.storyClosing || `Embrace the timeless tradition of Ayurveda with ${product.name} — where herbal heritage meets modern wellness.`}
-            </p>
-          </div>
-
-          {/* Right Column: Featured Description Image Aligned to Full Column Width */}
-          <div className="lg:col-span-5 w-full">
-            <div className="relative aspect-[4/5] min-h-[380px] sm:min-h-[440px] w-full rounded-3xl overflow-hidden shadow-md border border-stone-200 group">
-              <Image
-                src={product.storyImage || product.images[0] || '/images/ingredients/traditional-raw-ayurvedic-herbs-mortar.webp'}
-                alt={product.name}
-                fill
-                sizes="(max-width: 1024px) 100vw, 480px"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
-
-              {/* Bottom Overlay Card */}
-              <div className="absolute bottom-4 left-4 right-4 p-4 sm:p-5 rounded-2xl bg-[#16382C]/95 backdrop-blur-md text-white border border-emerald-500/25">
-                <span className="text-xs font-bold text-[#E67E22] uppercase tracking-wider block mb-1">
-                  {product.principleBadge || 'CHARAKA SAMHITA PRINCIPLES'}
+        {/* ACCORDION 1: Full Product Description */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-stone-200/90 shadow-2xs overflow-hidden transition-all">
+          <button
+            type="button"
+            onClick={() => toggleSection('description')}
+            aria-expanded={openSections.description}
+            className="w-full p-5 sm:p-7 text-left flex items-center justify-between gap-4 hover:bg-stone-50/70 transition-colors cursor-pointer"
+          >
+            <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#FAF7F2] border border-stone-200/80 flex items-center justify-center text-forest shrink-0">
+                <FileText size={22} className="text-botanical" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[11px] sm:text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
+                  COMPREHENSIVE PRODUCT OVERVIEW
                 </span>
-                <h4 className="font-serif text-base sm:text-lg font-bold text-white mb-1">
-                  {product.principleTitle || 'Cleansing Agni • Balancing Vata & Pitta'}
-                </h4>
-                <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-sans">
-                  {product.principleText || 'Pure botanical blend micro-pulverized for optimal warm water extraction and natural bioavailability.'}
-                </p>
+                <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
+                  Full Product Description
+                </h3>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* 3. Key Features & Therapeutic Benefits (6 Cards Grid) */}
-      <section className="bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-8 shadow-xs">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-stone-100">
-          <div>
-            <span className="text-xs font-bold text-botanical uppercase tracking-wider block mb-1">
-              {product.featuresEyebrow || 'TARGETED BIO-ACTIONS'}
-            </span>
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-forest">
-              {product.featuresTitle || 'Key Features & Therapeutic Benefits'}
-            </h3>
-          </div>
-          <span className="px-3.5 py-1.5 rounded-full bg-[#E8EFE6] text-forest text-xs sm:text-sm font-bold self-start sm:self-auto border border-forest/10">
-            {product.featuresBadge || '6 Verified Formulation Pillars'}
-          </span>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          {product.featureCards && product.featureCards.length > 0 ? (
-            product.featureCards.map((card, idx) => (
+            {/* Downward Arrow (+) Indicator */}
+            <div className="flex items-center gap-2.5 shrink-0">
+              <span className="hidden sm:inline text-xs sm:text-sm font-semibold text-charcoal-muted">
+                {openSections.description ? 'Collapse' : 'Tap to expand'}
+              </span>
               <div
-                key={idx}
-                className="p-5 sm:p-6 rounded-2xl border border-stone-200/80 bg-stone-50/50 hover:bg-[#FAF7F2] transition-colors flex flex-col justify-between"
+                className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  openSections.description
+                    ? 'bg-emerald-50 text-emerald-800 rotate-180 border border-emerald-200'
+                    : 'bg-stone-100 text-stone-600 border border-stone-200 hover:bg-stone-200/80'
+                }`}
               >
-                <div>
-                  <div className="w-10 h-10 rounded-xl bg-white border border-stone-200/80 flex items-center justify-center mb-3 shadow-2xs">
-                    {featureIcons[idx % featureIcons.length]}
-                  </div>
-                  <h4 className="font-serif text-base sm:text-lg font-bold text-forest mb-1.5">
-                    {card.title}
-                  </h4>
-                  <p className="text-sm text-charcoal/80 leading-relaxed font-sans">
-                    {card.description}
-                  </p>
-                </div>
+                <ChevronDown size={18} />
               </div>
-            ))
-          ) : (
-            <div className="col-span-3 text-sm text-charcoal-muted">Features available in product formulation sheet.</div>
+            </div>
+          </button>
+
+          {openSections.description && (
+            <div className="p-5 sm:p-8 pt-0 sm:pt-0 border-t border-stone-100 animate-in fade-in duration-200">
+              <div className="pt-5 space-y-4">
+                {product.description ? (
+                  <div
+                    className="prose prose-stone max-w-none text-charcoal/85 text-sm sm:text-base leading-relaxed font-sans space-y-3.5 [&>h3]:font-serif [&>h3]:text-xl [&>h3]:font-bold [&>h3]:text-forest [&>h3]:pt-3 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:space-y-1.5 [&>p]:leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: product.description }}
+                  />
+                ) : (
+                  <div className="text-charcoal/85 text-sm sm:text-base leading-relaxed space-y-3.5 font-sans">
+                    <p>{product.shortDescription}</p>
+                    <p>{product.cleanDescription}</p>
+                  </div>
+                )}
+              </div>
+            </div>
           )}
         </div>
-      </section>
 
-      {/* 4. Botanical Ingredients Breakdown (2-col on Mobile, 4-col on Desktop) */}
-      <section className="bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-8 shadow-xs">
-        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
-          <span className="text-xs font-bold text-botanical uppercase tracking-wider block mb-1">
-            {product.ingredientsEyebrow || 'STANDARDIZED ANALYTICAL EXTRACTION'}
-          </span>
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-forest mb-2">
-            {product.ingredientsTitle || 'Botanical Ingredients Breakdown'}
-          </h3>
-          <p className="text-sm sm:text-base text-charcoal/70">
-            {product.ingredientsSubtitle || '100% natural herb ingredients with zero synthetic adulterants or harsh chemical additives.'}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {product.ingredientCards?.map((herb, idx) => (
-            <div
-              key={idx}
-              className="rounded-2xl border border-stone-200/90 bg-white overflow-hidden shadow-2xs flex flex-col justify-between"
-            >
-              <div>
-                {/* Herb Image with Top Badge */}
-                <div className="relative h-28 sm:h-36 bg-stone-100 overflow-hidden">
-                  <Image
-                    src={herb.image || product.images[0] || '/images/products/ayur-raksha-detox-tea.webp'}
-                    alt={herb.latinName}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md bg-[#16382C]/90 text-[10px] font-bold text-white uppercase tracking-wider backdrop-blur-xs">
-                    {herb.badge}
-                  </div>
-                </div>
-
-                {/* Herb Details */}
-                <div className="p-3.5 sm:p-4">
-                  <span className="text-xs font-bold text-charcoal-muted uppercase tracking-wider block mb-1 truncate">
-                    {herb.commonName}
-                  </span>
-                  <h4 className="font-serif text-sm sm:text-base font-bold text-forest italic mb-1.5 line-clamp-1">
-                    {herb.latinName}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans line-clamp-3">
-                    {herb.description}
-                  </p>
-                </div>
+        {/* ACCORDION 2: Ayurvedic Philosophy */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-stone-200/90 shadow-2xs overflow-hidden transition-all">
+          <button
+            type="button"
+            onClick={() => toggleSection('philosophy')}
+            aria-expanded={openSections.philosophy}
+            className="w-full p-5 sm:p-7 text-left flex items-center justify-between gap-4 hover:bg-stone-50/70 transition-colors cursor-pointer"
+          >
+            <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#FAF7F2] border border-stone-200/80 flex items-center justify-center text-forest shrink-0">
+                <BookOpen size={22} className="text-[#B45309]" />
               </div>
-
-              {/* Bioactive & Derivative Footer */}
-              <div className="px-3.5 py-2 bg-stone-50 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-charcoal-muted">
-                <span className="truncate">{herb.bioactive || 'Active Extract'}</span>
-                <span className="truncate ml-1">{herb.derivative || 'Natural'}</span>
+              <div className="min-w-0">
+                <span className="text-[11px] sm:text-xs font-bold text-[#B45309] uppercase tracking-wider block mb-0.5">
+                  {product.storyEyebrow || 'AYURVEDIC PHILOSOPHY & HERITAGE'}
+                </span>
+                <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
+                  {product.storyTitle || 'Ayurvedic Philosophy & Classical Heritage'}
+                </h3>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
 
-      {/* 5. Expandable Accordion: How to Prepare & Preparation Ritual (Collapsed by Default) */}
-      <section className="bg-white rounded-3xl border border-stone-200/90 overflow-hidden shadow-xs transition-all">
-        <button
-          type="button"
-          onClick={() => setIsRitualOpen(!isRitualOpen)}
-          aria-expanded={isRitualOpen}
-          className="w-full p-5 sm:p-7 text-left flex items-center justify-between gap-4 hover:bg-stone-50/60 transition-colors"
-        >
-          <div className="flex items-center gap-3.5 min-w-0">
-            <div className="w-11 h-11 rounded-xl bg-[#FAF7F2] border border-stone-200/80 flex items-center justify-center text-forest shrink-0">
-              <Clock size={22} className="text-botanical" />
-            </div>
-            <div className="min-w-0">
-              <span className="text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
-                {product.ritualEyebrow || 'PREPARATION & TIMING'}
+            {/* Downward Arrow (+) Indicator */}
+            <div className="flex items-center gap-2.5 shrink-0">
+              <span className="hidden sm:inline text-xs sm:text-sm font-semibold text-charcoal-muted">
+                {openSections.philosophy ? 'Collapse' : 'Tap to expand'}
               </span>
-              <h3 className="font-serif text-lg sm:text-xl font-bold text-forest truncate">
-                {product.ritualTitle || 'How to Prepare • The Daily Ritual'}
-              </h3>
+              <div
+                className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  openSections.philosophy
+                    ? 'bg-emerald-50 text-emerald-800 rotate-180 border border-emerald-200'
+                    : 'bg-stone-100 text-stone-600 border border-stone-200 hover:bg-stone-200/80'
+                }`}
+              >
+                <ChevronDown size={18} />
+              </div>
             </div>
-          </div>
+          </button>
 
-          <div className="flex items-center gap-2.5 shrink-0">
-            <span className="hidden sm:inline text-xs sm:text-sm font-semibold text-charcoal-muted">
-              {isRitualOpen ? 'Collapse' : 'Tap to expand instructions'}
-            </span>
-            <div className={`w-9 h-9 rounded-full bg-stone-100 flex items-center justify-center text-forest transition-transform duration-200 ${isRitualOpen ? 'rotate-180 bg-emerald-50 text-emerald-800' : ''}`}>
-              <ChevronDown size={18} />
-            </div>
-          </div>
-        </button>
+          {openSections.philosophy && (
+            <div className="p-5 sm:p-8 pt-0 sm:pt-0 border-t border-stone-100 animate-in fade-in duration-200">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-6">
+                {/* Left Column: Full Editorial Philosophy Narrative */}
+                <div className="lg:col-span-7 space-y-4">
+                  <span className="text-xs font-bold text-[#B45309] uppercase tracking-wider block">
+                    {product.storyEyebrow || 'AYURVEDIC PHILOSOPHY & HERITAGE'}
+                  </span>
+                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-forest leading-tight">
+                    {product.storyTitle || 'Traditional Ayurvedic Wellness, Naturally Inspired'}
+                  </h2>
 
-        {isRitualOpen && (
-          <div className="p-5 sm:p-7 pt-0 sm:pt-0 border-t border-stone-100 animate-in fade-in duration-200">
-            <p className="text-sm sm:text-base text-charcoal/70 mb-5 pt-4">
-              {product.ritualSubtitle || 'Simple 5-minute decoction method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.'}
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {product.ritualSteps?.map((step, idx) => (
-                <div
-                  key={idx}
-                  className="p-5 rounded-2xl border border-stone-200/90 bg-[#FAF7F2] flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="w-8 h-8 rounded-full bg-[#16382C] text-white text-xs font-bold flex items-center justify-center shadow-2xs">
-                        {step.stepNumber}
-                      </div>
-                      <div className="w-7 h-7 rounded-lg bg-white border border-stone-200/80 flex items-center justify-center">
-                        {stepIcons[idx % stepIcons.length]}
-                      </div>
-                    </div>
-
-                    <span className="text-[10px] font-bold text-botanical uppercase tracking-wider block mb-1">
-                      STEP 0{step.stepNumber}
-                    </span>
-                    <h4 className="font-serif text-base font-bold text-forest mb-1.5">
-                      {step.title}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans">
-                      {step.description}
+                  <div className="text-charcoal/85 text-sm sm:text-base leading-relaxed space-y-3.5 font-sans pt-1">
+                    <p>
+                      Discover the essence of traditional Ayurvedic wellness with {product.name}, a thoughtfully developed herbal formulation inspired by India&apos;s rich botanical heritage.
+                    </p>
+                    <p>
+                      Rooted in time-honoured Ayurvedic practices, this herbal blend brings together traditional plant-based ingredients in a convenient format for modern lifestyles. It reflects Ayurveda&apos;s holistic approach to wellbeing, where mindful daily habits and botanical traditions form an integral part of personal care.
+                    </p>
+                    <p>
+                      {product.name} is designed for individuals who appreciate natural, plant-based wellness products and wish to incorporate traditional herbal preparations into their lifestyle. Its formulation draws on generations of Ayurvedic knowledge while offering the simplicity and convenience expected from a contemporary wellness product.
+                    </p>
+                    <p>
+                      Whether exploring Ayurveda for the first time or continuing an established herbal wellness routine, {product.name} offers a connection to India&apos;s traditional botanical heritage.
                     </p>
                   </div>
+
+                  <p className="font-bold text-sm sm:text-base text-forest pt-2 border-l-3 border-botanical pl-3.5">
+                    {product.storyClosing || `Embrace the timeless tradition of Ayurveda with ${product.name} — where herbal heritage meets modern wellness.`}
+                  </p>
                 </div>
-              ))}
+
+                {/* Right Column: Featured Description Image Aligned to Full Column Width */}
+                <div className="lg:col-span-5 w-full">
+                  <div className="relative aspect-[4/5] min-h-[380px] sm:min-h-[440px] w-full rounded-3xl overflow-hidden shadow-md border border-stone-200 group">
+                    <Image
+                      src={product.storyImage || product.images[0] || '/images/ingredients/traditional-raw-ayurvedic-herbs-mortar.webp'}
+                      alt={product.name}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 480px"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+
+                    {/* Bottom Overlay Card */}
+                    <div className="absolute bottom-4 left-4 right-4 p-4 sm:p-5 rounded-2xl bg-[#16382C]/95 backdrop-blur-md text-white border border-emerald-500/25">
+                      <span className="text-xs font-bold text-[#E67E22] uppercase tracking-wider block mb-1">
+                        {product.principleBadge || 'CHARAKA SAMHITA PRINCIPLES'}
+                      </span>
+                      <h4 className="font-serif text-base sm:text-lg font-bold text-white mb-1">
+                        {product.principleTitle || 'Cleansing Agni • Balancing Vata & Pitta'}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-sans">
+                        {product.principleText || 'Pure botanical blend micro-pulverized for optimal warm water extraction and natural bioavailability.'}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        )}
-      </section>
+          )}
+        </div>
+
+        {/* ACCORDION 3: Product Benefits */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-stone-200/90 shadow-2xs overflow-hidden transition-all">
+          <button
+            type="button"
+            onClick={() => toggleSection('benefits')}
+            aria-expanded={openSections.benefits}
+            className="w-full p-5 sm:p-7 text-left flex items-center justify-between gap-4 hover:bg-stone-50/70 transition-colors cursor-pointer"
+          >
+            <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#FAF7F2] border border-stone-200/80 flex items-center justify-center text-forest shrink-0">
+                <Sparkles size={22} className="text-emerald-700" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[11px] sm:text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
+                  {product.featuresEyebrow || 'TARGETED BIO-ACTIONS'}
+                </span>
+                <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
+                  {product.featuresTitle || 'Key Features & Therapeutic Benefits'}
+                </h3>
+              </div>
+            </div>
+
+            {/* Downward Arrow (+) Indicator */}
+            <div className="flex items-center gap-2.5 shrink-0">
+              <span className="hidden sm:inline text-xs sm:text-sm font-semibold text-charcoal-muted">
+                {openSections.benefits ? 'Collapse' : 'Tap to expand'}
+              </span>
+              <div
+                className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  openSections.benefits
+                    ? 'bg-emerald-50 text-emerald-800 rotate-180 border border-emerald-200'
+                    : 'bg-stone-100 text-stone-600 border border-stone-200 hover:bg-stone-200/80'
+                }`}
+              >
+                <ChevronDown size={18} />
+              </div>
+            </div>
+          </button>
+
+          {openSections.benefits && (
+            <div className="p-5 sm:p-8 pt-0 sm:pt-0 border-t border-stone-100 animate-in fade-in duration-200">
+              <div className="pt-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-stone-100">
+                  <div>
+                    <span className="text-xs font-bold text-botanical uppercase tracking-wider block mb-1">
+                      {product.featuresEyebrow || 'TARGETED BIO-ACTIONS'}
+                    </span>
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-forest">
+                      {product.featuresTitle || 'Key Features & Therapeutic Benefits'}
+                    </h3>
+                  </div>
+                  <span className="px-3.5 py-1.5 rounded-full bg-[#E8EFE6] text-forest text-xs sm:text-sm font-bold self-start sm:self-auto border border-forest/10">
+                    {product.featuresBadge || '6 Verified Formulation Pillars'}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                  {product.featureCards && product.featureCards.length > 0 ? (
+                    product.featureCards.map((card, idx) => (
+                      <div
+                        key={idx}
+                        className="p-5 sm:p-6 rounded-2xl border border-stone-200/80 bg-stone-50/50 hover:bg-[#FAF7F2] transition-colors flex flex-col justify-between"
+                      >
+                        <div>
+                          <div className="w-10 h-10 rounded-xl bg-white border border-stone-200/80 flex items-center justify-center mb-3 shadow-2xs">
+                            {featureIcons[idx % featureIcons.length]}
+                          </div>
+                          <h4 className="font-serif text-base sm:text-lg font-bold text-forest mb-1.5">
+                            {card.title}
+                          </h4>
+                          <p className="text-sm text-charcoal/80 leading-relaxed font-sans">
+                            {card.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="col-span-3 text-sm text-charcoal-muted">
+                      Features available in product formulation sheet.
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* ACCORDION 4: Key Ingredients */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-stone-200/90 shadow-2xs overflow-hidden transition-all">
+          <button
+            type="button"
+            onClick={() => toggleSection('ingredients')}
+            aria-expanded={openSections.ingredients}
+            className="w-full p-5 sm:p-7 text-left flex items-center justify-between gap-4 hover:bg-stone-50/70 transition-colors cursor-pointer"
+          >
+            <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#FAF7F2] border border-stone-200/80 flex items-center justify-center text-forest shrink-0">
+                <Leaf size={22} className="text-emerald-700" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[11px] sm:text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
+                  {product.ingredientsEyebrow || 'STANDARDIZED ANALYTICAL EXTRACTION'}
+                </span>
+                <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
+                  {product.ingredientsTitle || 'Botanical Ingredients Breakdown'}
+                </h3>
+              </div>
+            </div>
+
+            {/* Downward Arrow (+) Indicator */}
+            <div className="flex items-center gap-2.5 shrink-0">
+              <span className="hidden sm:inline text-xs sm:text-sm font-semibold text-charcoal-muted">
+                {openSections.ingredients ? 'Collapse' : 'Tap to expand'}
+              </span>
+              <div
+                className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  openSections.ingredients
+                    ? 'bg-emerald-50 text-emerald-800 rotate-180 border border-emerald-200'
+                    : 'bg-stone-100 text-stone-600 border border-stone-200 hover:bg-stone-200/80'
+                }`}
+              >
+                <ChevronDown size={18} />
+              </div>
+            </div>
+          </button>
+
+          {openSections.ingredients && (
+            <div className="p-5 sm:p-8 pt-0 sm:pt-0 border-t border-stone-100 animate-in fade-in duration-200">
+              <div className="pt-6">
+                <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
+                  <span className="text-xs font-bold text-botanical uppercase tracking-wider block mb-1">
+                    {product.ingredientsEyebrow || 'STANDARDIZED ANALYTICAL EXTRACTION'}
+                  </span>
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-forest mb-2">
+                    {product.ingredientsTitle || 'Botanical Ingredients Breakdown'}
+                  </h3>
+                  <p className="text-sm sm:text-base text-charcoal/70">
+                    {product.ingredientsSubtitle || '100% natural herb ingredients with zero synthetic adulterants or harsh chemical additives.'}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+                  {product.ingredientCards?.map((herb, idx) => (
+                    <div
+                      key={idx}
+                      className="rounded-2xl border border-stone-200/90 bg-white overflow-hidden shadow-2xs flex flex-col justify-between"
+                    >
+                      <div>
+                        {/* Herb Image with Top Badge */}
+                        <div className="relative h-28 sm:h-36 bg-stone-100 overflow-hidden">
+                          <Image
+                            src={herb.image || product.images[0] || '/images/products/ayur-raksha-detox-tea.webp'}
+                            alt={herb.latinName}
+                            fill
+                            className="object-cover"
+                          />
+                          <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md bg-[#16382C]/90 text-[10px] font-bold text-white uppercase tracking-wider backdrop-blur-xs">
+                            {herb.badge}
+                          </div>
+                        </div>
+
+                        {/* Herb Details */}
+                        <div className="p-3.5 sm:p-4">
+                          <span className="text-xs font-bold text-charcoal-muted uppercase tracking-wider block mb-1 truncate">
+                            {herb.commonName}
+                          </span>
+                          <h4 className="font-serif text-sm sm:text-base font-bold text-forest italic mb-1.5 line-clamp-1">
+                            {herb.latinName}
+                          </h4>
+                          <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans line-clamp-3">
+                            {herb.description}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Bioactive & Derivative Footer */}
+                      <div className="px-3.5 py-2 bg-stone-50 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-charcoal-muted">
+                        <span className="truncate">{herb.bioactive || 'Active Extract'}</span>
+                        <span className="truncate ml-1">{herb.derivative || 'Natural'}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* ACCORDION 5: How to Prepare / Usage Instructions */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-stone-200/90 shadow-2xs overflow-hidden transition-all">
+          <button
+            type="button"
+            onClick={() => toggleSection('howToPrepare')}
+            aria-expanded={openSections.howToPrepare}
+            className="w-full p-5 sm:p-7 text-left flex items-center justify-between gap-4 hover:bg-stone-50/70 transition-colors cursor-pointer"
+          >
+            <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#FAF7F2] border border-stone-200/80 flex items-center justify-center text-forest shrink-0">
+                <Clock size={22} className="text-botanical" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[11px] sm:text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
+                  {product.ritualEyebrow || 'PREPARATION & TIMING'}
+                </span>
+                <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
+                  {product.ritualTitle || 'How to Prepare • The Daily Ritual'}
+                </h3>
+              </div>
+            </div>
+
+            {/* Downward Arrow (+) Indicator */}
+            <div className="flex items-center gap-2.5 shrink-0">
+              <span className="hidden sm:inline text-xs sm:text-sm font-semibold text-charcoal-muted">
+                {openSections.howToPrepare ? 'Collapse' : 'Tap to expand'}
+              </span>
+              <div
+                className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  openSections.howToPrepare
+                    ? 'bg-emerald-50 text-emerald-800 rotate-180 border border-emerald-200'
+                    : 'bg-stone-100 text-stone-600 border border-stone-200 hover:bg-stone-200/80'
+                }`}
+              >
+                <ChevronDown size={18} />
+              </div>
+            </div>
+          </button>
+
+          {openSections.howToPrepare && (
+            <div className="p-5 sm:p-8 pt-0 sm:pt-0 border-t border-stone-100 animate-in fade-in duration-200">
+              <div className="pt-6">
+                <p className="text-sm sm:text-base text-charcoal/70 mb-5 max-w-2xl">
+                  {product.ritualSubtitle || 'Simple 5-minute decoction method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.'}
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {product.ritualSteps?.map((step, idx) => (
+                    <div
+                      key={idx}
+                      className="p-5 rounded-2xl border border-stone-200/90 bg-[#FAF7F2] flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between mb-3">
+                          <div className="w-8 h-8 rounded-full bg-[#16382C] text-white text-xs font-bold flex items-center justify-center shadow-2xs">
+                            {step.stepNumber}
+                          </div>
+                          <div className="w-7 h-7 rounded-lg bg-white border border-stone-200/80 flex items-center justify-center">
+                            {stepIcons[idx % stepIcons.length]}
+                          </div>
+                        </div>
+
+                        <span className="text-[10px] font-bold text-botanical uppercase tracking-wider block mb-1">
+                          STEP 0{step.stepNumber}
+                        </span>
+                        <h4 className="font-serif text-base font-bold text-forest mb-1.5">
+                          {step.title}
+                        </h4>
+                        <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+      </div>
 
       {/* 6. Target Indications, Advisory Guidelines, Product Specifications (3 Cards) */}
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-5">

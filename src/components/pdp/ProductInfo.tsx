@@ -29,10 +29,12 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
     selectedPackId,
     setSelectedPackId,
     quantity,
-    setQuantity,
+    incrementQuantity,
+    decrementQuantity,
     currentPrice,
     currentRegularPrice,
     currentDiscount,
+    totalPrice,
     isAvailable,
     isAdded,
     handleAddToCart,
@@ -188,18 +190,20 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           {isAvailable && (
             <div className="flex items-center border border-stone-200 rounded-xl bg-white overflow-hidden shadow-2xs">
               <button
-                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                disabled={quantity <= 1}
+                type="button"
+                onClick={decrementQuantity}
+                disabled={quantity <= (selectedPack.packCount || 1)}
                 aria-label="Decrease quantity"
                 className="p-2.5 sm:p-3 text-stone-600 hover:bg-stone-100 disabled:opacity-40 transition-colors"
               >
                 <Minus size={15} />
               </button>
-              <span className="w-8 text-center text-xs sm:text-sm font-bold text-charcoal">
+              <span className="w-9 text-center text-xs sm:text-sm font-bold text-charcoal">
                 {quantity}
               </span>
               <button
-                onClick={() => setQuantity((q) => q + 1)}
+                type="button"
+                onClick={incrementQuantity}
                 aria-label="Increase quantity"
                 className="p-2.5 sm:p-3 text-stone-600 hover:bg-stone-100 transition-colors"
               >
@@ -226,7 +230,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
               ) : (
                 <>
                   <ShoppingBag size={18} className="flex-shrink-0" />
-                  <span>Add to Cart • ₹{(currentPrice * quantity).toLocaleString('en-IN')}</span>
+                  <span>Add to Cart • ₹{totalPrice.toLocaleString('en-IN')}</span>
                 </>
               )}
             </button>

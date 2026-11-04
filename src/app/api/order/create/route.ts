@@ -202,28 +202,11 @@ export async function POST(req: Request) {
       const product = getProductById(item.product?.id || item.id);
       const targetId = resolveCmsProductId(item);
 
-      // Resolve physical pack quantity: multiplier for multi-pack bundles (e.g. 3-Month Family Regimen = 3 packs)
-      const packMultiplier = item.packCount || (
-        (item.selectedVariant || '').toLowerCase().includes('3-month') ||
-        (item.selectedVariant || '').toLowerCase().includes('3 pack') ||
-        (item.selectedVariant || '').toLowerCase().includes('three pack')
-          ? 3
-          : (item.selectedVariant || '').toLowerCase().includes('2-month') ||
-            (item.selectedVariant || '').toLowerCase().includes('2 pack') ||
-            (item.selectedVariant || '').toLowerCase().includes('two bottle') ||
-            (item.selectedVariant || '').toLowerCase().includes('pack of 2') ||
-            (item.selectedVariant || '').toLowerCase().includes('combo 2')
-          ? 2
-          : (item.selectedVariant || '').toLowerCase().includes('4 bottle')
-          ? 4
-          : 1
-      );
-
-      const targetQuantity = (item.quantity || 1) * packMultiplier;
+      // item.quantity is already the physical pack quantity (e.g. 3 for 3-Month Family Regimen)
+      const targetQuantity = item.quantity || 1;
       const itemName = product?.name || item.name || `Product #${targetId}`;
       const variantName = item.selectedVariant ? ` (${item.selectedVariant})` : '';
-      const packDetail = packMultiplier > 1 ? ` [${targetQuantity} packs total - ${item.quantity} × ${packMultiplier}-pack bundle]` : '';
-      itemManifest.push(`${itemName}${variantName} x ${item.quantity}${packDetail}`);
+      itemManifest.push(`${itemName}${variantName} x ${targetQuantity}`);
 
       const addRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
         method: 'POST',

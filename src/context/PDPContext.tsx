@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Product, PackOption } from '@/types/product';
 import { useCart } from '@/lib/cartContext';
 import { formatPackMeasurement } from '@/lib/formatPack';
@@ -13,9 +13,13 @@ interface PDPContextType {
   setSelectedPackId: (id: string) => void;
   quantity: number;
   setQuantity: React.Dispatch<React.SetStateAction<number>>;
+  incrementQuantity: () => void;
+  decrementQuantity: () => void;
   currentPrice: number;
   currentRegularPrice: number;
   currentDiscount: number;
+  unitPrice: number;
+  totalPrice: number;
   isAvailable: boolean;
   isAdded: boolean;
   handleAddToCart: () => void;
@@ -28,7 +32,6 @@ export const PDPProvider: React.FC<{
   children: React.ReactNode;
 }> = ({ product, children }) => {
   const { addToCart } = useCart();
-  const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
 
   // Compute Pack / Course Options
@@ -55,22 +58,45 @@ export const PDPProvider: React.FC<{
         },
       ];
 
-  const [selectedPackId, setSelectedPackId] = useState<string>(
-    packOptions.find((p) => p.isDefault)?.id || packOptions[0].id
-  );
+  const defaultPack = packOptions.find((p) => p.isDefault) || packOptions[0];
+  const [selectedPackId, setSelectedPackIdState] = useState<string>(defaultPack.id);
+  const [quantity, setQuantity] = useState<number>(defaultPack.packCount || 1);
 
   const selectedPack = packOptions.find((p) => p.id === selectedPackId) || packOptions[0];
+  const packMultiplier = selectedPack.packCount || 1;
+
+  // When switching pack variant, update quantity to match that pack's unit count (e.g. 1 for standard, 3 for 3-month)
+  const setSelectedPackId = (id: string) => {
+    setSelectedPackIdState(id);
+    const newPack = packOptions.find((p) => p.id === id);
+    const newPackCount = newPack?.packCount || 1;
+    setQuantity(newPackCount);
+  };
+
   const currentPrice = selectedPack.price;
   const currentRegularPrice = selectedPack.regularPrice || product.regularPrice;
   const currentDiscount = currentRegularPrice > currentPrice
     ? Math.round(((currentRegularPrice - currentPrice) / currentRegularPrice) * 100)
     : product.discountPercent;
 
+  // Unit price per individual pack
+  const unitPrice = currentPrice / packMultiplier;
+  // Total price based on selected quantity
+  const totalPrice = Math.round(unitPrice * quantity);
+
+  const incrementQuantity = () => {
+    setQuantity((q) => q + packMultiplier);
+  };
+
+  const decrementQuantity = () => {
+    setQuantity((q) => Math.max(packMultiplier, q - packMultiplier));
+  };
+
   const isAvailable = product.inStock;
 
   const handleAddToCart = () => {
     if (!isAvailable) return;
-    addToCart(product, quantity, selectedPack.name, currentPrice, undefined, selectedPack.packCount || 1);
+    addToCart(product, quantity, selectedPack.name, unitPrice, undefined, packMultiplier);
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 2000);
   };
@@ -85,9 +111,13 @@ export const PDPProvider: React.FC<{
         setSelectedPackId,
         quantity,
         setQuantity,
+        incrementQuantity,
+        decrementQuantity,
         currentPrice,
         currentRegularPrice,
         currentDiscount,
+        unitPrice,
+        totalPrice,
         isAvailable,
         isAdded,
         handleAddToCart,

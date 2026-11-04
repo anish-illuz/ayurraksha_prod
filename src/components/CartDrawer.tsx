@@ -138,7 +138,7 @@ export const CartDrawer: React.FC = () => {
                         Pack: <span className="font-semibold text-emerald-800">{item.selectedVariant}</span>
                         {item.packCount && item.packCount > 1 && (
                           <span className="ml-1 text-[11px] font-medium text-stone-500">
-                            ({item.packCount * item.quantity} packs total)
+                            ({item.quantity} packs total)
                           </span>
                         )}
                       </p>
@@ -149,7 +149,10 @@ export const CartDrawer: React.FC = () => {
                     {/* Quantity Selector */}
                     <div className="flex items-center border border-stone-200 rounded-md bg-stone-50 overflow-hidden">
                       <button
-                        onClick={() => updateQuantity(item.product.id, item.quantity - 1, item.selectedVariant)}
+                        onClick={() => {
+                          const step = item.packCount && item.packCount > 1 ? item.packCount : 1;
+                          updateQuantity(item.product.id, item.quantity - step, item.selectedVariant);
+                        }}
                         aria-label="Decrease quantity"
                         className="p-1 text-stone-600 hover:bg-stone-200 transition-colors"
                       >
@@ -159,7 +162,10 @@ export const CartDrawer: React.FC = () => {
                         {item.quantity}
                       </span>
                       <button
-                        onClick={() => updateQuantity(item.product.id, item.quantity + 1, item.selectedVariant)}
+                        onClick={() => {
+                          const step = item.packCount && item.packCount > 1 ? item.packCount : 1;
+                          updateQuantity(item.product.id, item.quantity + step, item.selectedVariant);
+                        }}
                         aria-label="Increase quantity"
                         className="p-1 text-stone-600 hover:bg-stone-200 transition-colors"
                       >
@@ -170,11 +176,11 @@ export const CartDrawer: React.FC = () => {
                     {/* Price with accurate live variation support */}
                     <div className="text-right">
                       <span className="text-xs font-bold text-forest">
-                        ₹{((item.variantPrice ?? item.product.price) * item.quantity).toLocaleString('en-IN')}
+                        ₹{Math.round((item.variantPrice ?? item.product.price) * item.quantity).toLocaleString('en-IN')}
                       </span>
                       {item.product.regularPrice > (item.variantPrice ?? item.product.price) && (
                         <span className="text-[10px] text-stone-400 line-through block">
-                          ₹{(item.product.regularPrice * item.quantity).toLocaleString('en-IN')}
+                          ₹{Math.round(item.product.regularPrice * item.quantity).toLocaleString('en-IN')}
                         </span>
                       )}
                     </div>

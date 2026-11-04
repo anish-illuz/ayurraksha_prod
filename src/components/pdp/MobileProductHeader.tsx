@@ -18,10 +18,12 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
     selectedPackId,
     setSelectedPackId,
     quantity,
-    setQuantity,
+    incrementQuantity,
+    decrementQuantity,
     currentPrice,
     currentRegularPrice,
     currentDiscount,
+    totalPrice,
     isAvailable,
     isAdded,
     handleAddToCart,
@@ -88,11 +90,11 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
         <div className="flex items-baseline justify-between gap-2">
           <div className="flex items-baseline gap-2">
             <span className="text-2xl sm:text-3xl font-serif font-bold text-forest">
-              ₹{(currentPrice * quantity).toLocaleString('en-IN')}
+              ₹{totalPrice.toLocaleString('en-IN')}
             </span>
             {currentRegularPrice > currentPrice && (
               <span className="text-sm text-stone-400 line-through">
-                ₹{(currentRegularPrice * quantity).toLocaleString('en-IN')}
+                ₹{((currentRegularPrice / (selectedPack.packCount || 1)) * quantity).toLocaleString('en-IN')}
               </span>
             )}
             {currentDiscount > 0 && (
@@ -114,8 +116,8 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
             <div className="flex items-center border border-stone-200 rounded-xl bg-white overflow-hidden shadow-2xs">
               <button
                 type="button"
-                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                disabled={quantity <= 1}
+                onClick={decrementQuantity}
+                disabled={quantity <= (selectedPack.packCount || 1)}
                 aria-label="Decrease quantity"
                 className="p-2.5 text-stone-600 hover:bg-stone-100 disabled:opacity-40 transition-colors"
               >
@@ -126,7 +128,7 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
               </span>
               <button
                 type="button"
-                onClick={() => setQuantity((q) => q + 1)}
+                onClick={incrementQuantity}
                 aria-label="Increase quantity"
                 className="p-2.5 text-stone-600 hover:bg-stone-100 transition-colors"
               >
@@ -154,7 +156,7 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
               ) : (
                 <>
                   <ShoppingBag size={16} />
-                  <span>Add to Cart • ₹{(currentPrice * quantity).toLocaleString('en-IN')}</span>
+                  <span>Add to Cart • ₹{totalPrice.toLocaleString('en-IN')}</span>
                 </>
               )}
             </button>

@@ -16,6 +16,7 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
     quantity,
     currentPrice,
     currentRegularPrice,
+    totalPrice,
     isAvailable,
     isAdded,
     handleAddToCart,
@@ -53,16 +54,11 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
             </h4>
             <div className="flex items-center gap-1.5 flex-wrap">
               <span className="text-[10px] text-emerald-800 font-semibold bg-emerald-50 px-1.5 py-0.2 rounded truncate max-w-[140px]">
-                {selectedPack.name}
+                {selectedPack.name} (Qty: {quantity})
               </span>
               <span className="text-sm font-bold text-forest">
-                ₹{currentPrice.toLocaleString('en-IN')}
+                ₹{totalPrice.toLocaleString('en-IN')}
               </span>
-              {currentRegularPrice > currentPrice && (
-                <span className="text-[10px] text-stone-400 line-through">
-                  ₹{currentRegularPrice.toLocaleString('en-IN')}
-                </span>
-              )}
             </div>
           </div>
         </div>
@@ -85,7 +81,7 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
               <>
                 <ShoppingBag size={14} className="flex-shrink-0" />
                 <span className="whitespace-nowrap">
-                  Add to Cart • ₹{(currentPrice * quantity).toLocaleString('en-IN')}
+                  Add to Cart • ₹{totalPrice.toLocaleString('en-IN')}
                 </span>
               </>
             )}

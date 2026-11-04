@@ -707,7 +707,7 @@ export default function CheckoutPage() {
                                 Pack: {item.selectedVariant}
                                 {item.packCount && item.packCount > 1 && (
                                   <span className="ml-1 text-[11px] font-normal text-stone-500">
-                                    ({item.packCount * item.quantity} packs total)
+                                    ({item.quantity} packs total)
                                   </span>
                                 )}
                               </p>

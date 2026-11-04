@@ -417,7 +417,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
                         {/* Herb Image with Top Badge */}
                         <div className="relative h-28 sm:h-36 bg-stone-100 overflow-hidden">
                           <Image
-                            src={herb.image || product.images[0] || '/images/products/ayur-raksha-detox-tea.webp'}
+                            src={herb.image || '/images/ingredients/traditional-raw-ayurvedic-herbs-mortar.webp'}
                             alt={herb.latinName}
                             fill
                             className="object-cover"

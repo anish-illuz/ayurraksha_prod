@@ -1,3 +1,4 @@
+import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Inter, Cormorant_Garamond } from 'next/font/google';
@@ -5,6 +6,7 @@ import '@/styles/globals.css';
 import { CartProvider } from '@/lib/cartContext';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { OrderAttributionTracker } from '@/components/OrderAttributionTracker';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 const ExitIntentDiscountModal = dynamic(
@@ -164,6 +166,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[#FAF9F5] text-[#26352D] font-sans antialiased">
+        <Suspense fallback={null}>
+          <OrderAttributionTracker />
+        </Suspense>
         <CartProvider>
           <Header />
           <main className="flex-grow">{children}</main>

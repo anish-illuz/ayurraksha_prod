@@ -18,6 +18,7 @@ import {
   MessageSquare,
 } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
+import { getOrderAttribution } from '@/lib/orderAttribution';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 declare global {
@@ -144,6 +145,8 @@ export default function CheckoutPage() {
         ? `Switched to ${paymentMethod.toUpperCase()} (Previous attempt: #${previousAttemptOrderId})`
         : `Order placed via ${paymentMethod === 'cod' ? 'Cash on Delivery' : 'Razorpay'}`;
 
+      const attribution = getOrderAttribution();
+
       const orderRes = await fetch('/api/order/create', {
         method: 'POST',
         headers: {
@@ -156,6 +159,7 @@ export default function CheckoutPage() {
           customerNote: note,
           tierDiscount,
           tierDiscountPercent,
+          attribution,
         }),
       });
 

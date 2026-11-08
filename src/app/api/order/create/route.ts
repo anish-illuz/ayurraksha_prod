@@ -128,7 +128,7 @@ const STATE_CODE_MAP: Record<string, string> = {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { items, customer, paymentMethod, customerNote, tierDiscount, tierDiscountPercent } = body;
+    const { items, customer, paymentMethod, customerNote, tierDiscount, tierDiscountPercent, attribution } = body;
 
     if (!items || !items.length) {
       return NextResponse.json({ success: false, error: 'Cart is empty' }, { status: 400 });
@@ -137,6 +137,42 @@ export async function POST(req: Request) {
     if (!customer || !customer.name || !customer.phone || !customer.address) {
       return NextResponse.json({ success: false, error: 'Missing customer shipping details' }, { status: 400 });
     }
+
+    // Extract client network and browser context for authentic order attribution
+    const headerUserAgent = req.headers.get('user-agent') || 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)';
+    const forwardedFor = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || '';
+    const clientIp = forwardedFor ? forwardedFor.split(',')[0].trim() : '';
+    const headerReferer = req.headers.get('referer') || '';
+
+    // Prepare complete WooCommerce 8.5+ Order Attribution payload
+    const nowUtc = new Date().toISOString().replace('T', ' ').slice(0, 19);
+    const clientAttribution = attribution || {};
+
+    const sourceType = clientAttribution.source_type || (
+      clientAttribution.utm_source ? 'utm' :
+      headerReferer.includes('google.') ? 'organic' :
+      headerReferer && !headerReferer.includes('ayurrakshaonline.com') ? 'referral' :
+      'typein'
+    );
+
+    const orderAttribution = {
+      source_type: sourceType,
+      referrer: clientAttribution.referrer || headerReferer || '(none)',
+      utm_source: clientAttribution.utm_source || '(none)',
+      utm_medium: clientAttribution.utm_medium || (sourceType === 'organic' ? 'organic' : sourceType === 'referral' ? 'referral' : '(none)'),
+      utm_campaign: clientAttribution.utm_campaign || '(none)',
+      utm_content: clientAttribution.utm_content || '(none)',
+      utm_id: clientAttribution.utm_id || '(none)',
+      utm_term: clientAttribution.utm_term || '(none)',
+      utm_source_platform: clientAttribution.utm_source_platform || '(none)',
+      utm_creative_format: clientAttribution.utm_creative_format || '(none)',
+      utm_marketing_tactic: clientAttribution.utm_marketing_tactic || '(none)',
+      session_entry: clientAttribution.session_entry || 'https://www.ayurrakshaonline.com/',
+      session_start_time: clientAttribution.session_start_time || nowUtc,
+      session_pages: String(clientAttribution.session_pages || '1'),
+      session_count: String(clientAttribution.session_count || '1'),
+      user_agent: clientAttribution.user_agent || headerUserAgent,
+    };
 
     // Server-side validation of subtotal and volume tier discount
     const calculatedSubtotal = items.reduce((acc: number, item: any) => {
@@ -165,10 +201,16 @@ export async function POST(req: Request) {
 
     // Step 1: Initialize Fresh WooCommerce Cart Session
     // Bypass Hostinger LiteSpeed cache with no-cache headers and timestamp
+    const clientUserAgent = clientAttribution.user_agent || headerUserAgent;
+    const clientIpHeaders: Record<string, string> = clientIp
+      ? { 'X-Forwarded-For': clientIp, 'X-Real-IP': clientIp }
+      : {};
+
     const cartInitRes = await fetch(`${WORDPRESS_STORE_API}/cart?_nocache=${timestamp}`, {
       method: 'GET',
       headers: {
-        'User-Agent': 'AyurRaksha-Storefront/2.0',
+        'User-Agent': clientUserAgent,
+        ...clientIpHeaders,
         'Accept': 'application/json',
         'Cache-Control': 'no-cache, no-store, must-revalidate',
         'Pragma': 'no-cache',
@@ -184,7 +226,8 @@ export async function POST(req: Request) {
       const clearRes = await fetch(`${WORDPRESS_STORE_API}/cart/items?_nocache=${Date.now()}`, {
         method: 'DELETE',
         headers: {
-          'User-Agent': 'AyurRaksha-Storefront/2.0',
+          'User-Agent': clientUserAgent,
+          ...clientIpHeaders,
           'Nonce': nonce,
           'Cart-Token': cartToken,
         },
@@ -211,7 +254,8 @@ export async function POST(req: Request) {
       const addRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
         method: 'POST',
         headers: {
-          'User-Agent': 'AyurRaksha-Storefront/2.0',
+          'User-Agent': clientUserAgent,
+          ...clientIpHeaders,
           'Content-Type': 'application/json',
           'Nonce': nonce,
           'Cart-Token': cartToken,
@@ -232,7 +276,8 @@ export async function POST(req: Request) {
         const fallbackRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
           method: 'POST',
           headers: {
-            'User-Agent': 'AyurRaksha-Storefront/2.0',
+            'User-Agent': clientUserAgent,
+            ...clientIpHeaders,
             'Content-Type': 'application/json',
             'Nonce': nonce,
             'Cart-Token': cartToken,
@@ -260,7 +305,8 @@ export async function POST(req: Request) {
       const updateCustRes = await fetch(`${WORDPRESS_STORE_API}/cart/update-customer?_nocache=${Date.now()}`, {
         method: 'POST',
         headers: {
-          'User-Agent': 'AyurRaksha-Storefront/2.0',
+          'User-Agent': clientUserAgent,
+          ...clientIpHeaders,
           'Content-Type': 'application/json',
           'Nonce': nonce,
           'Cart-Token': cartToken,
@@ -296,11 +342,21 @@ export async function POST(req: Request) {
       console.warn('Customer update error:', custErr);
     }
 
-    // Step 5: Execute Checkout on WooCommerce Store API
+    // Step 5: Execute Checkout on WooCommerce Store API with native Order Attribution extension
+    const originLabel =
+      orderAttribution.source_type === 'utm'
+        ? `Campaign (${orderAttribution.utm_source}${orderAttribution.utm_campaign && orderAttribution.utm_campaign !== '(none)' ? ' / ' + orderAttribution.utm_campaign : ''})`
+        : orderAttribution.source_type === 'organic'
+        ? `Organic Search (${orderAttribution.utm_source})`
+        : orderAttribution.source_type === 'referral'
+        ? `Referral (${orderAttribution.referrer})`
+        : 'Direct (Storefront)';
+
     const formattedNote = [
       enhancedNote ? `Notes & Discounts: ${enhancedNote}` : '',
       `Order Items: ${itemManifest.join(', ')}`,
       `Payment Mode: ${paymentMethod === 'cod' ? 'Cash on Delivery (COD)' : 'Prepaid Online (Razorpay)'}`,
+      `Origin: ${originLabel}`,
       'Channel: AyurRaksha Storefront',
     ].filter(Boolean).join(' | ');
 
@@ -328,12 +384,16 @@ export async function POST(req: Request) {
       },
       payment_method: paymentMethod === 'cod' ? 'cod' : 'razorpay',
       customer_note: formattedNote,
+      extensions: {
+        'woocommerce/order-attribution': orderAttribution,
+      },
     };
 
     const checkoutRes = await fetch(`${WORDPRESS_STORE_API}/checkout?_nocache=${Date.now()}`, {
       method: 'POST',
       headers: {
-        'User-Agent': 'AyurRaksha-Storefront/2.0',
+        'User-Agent': clientUserAgent,
+        ...clientIpHeaders,
         'Content-Type': 'application/json',
         'Nonce': nonce,
         'Cart-Token': cartToken,

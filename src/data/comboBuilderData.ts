@@ -39,7 +39,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Pre-bath topical herbal oil for targeted soothing of dry, irritated skin, rashes, and scaling.',
+    shortDescription: 'Soothe dry-feeling skin with a traditional pre-bath herbal oil massage.',
     description:
       'A time-honoured botanical formulation traditionally used for soothing topical discomfort, itching, dermatitis, and skin irritation prior to bathing.',
     indications: 'Dry skin, scaling, mild rashes, itching, and general pre-bath skin nourishment.',
@@ -72,7 +72,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Post-bath botanical conditioning oil engineered to lock in moisture and alleviate persistent dryness.',
+    shortDescription: 'Nourish post-bath skin with Vetpalai and coconut oil for a soft, supple feel.',
     description:
       'Formulated with nutrient-dense herbal extracts to deeply hydrate and condition dry, tight skin after cleansing.',
     indications: 'Post-shower skin hydration, rough texture, xerosis, and moisture barrier restoration.',
@@ -105,7 +105,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: true,
-    shortDescription: 'Topical Ayurvedic proprietary herbal formulation for targeted skin care support.',
+    shortDescription: 'Give stubborn skin concerns the focused care of traditional Ayurvedic herbs.',
     description:
       'An Ayurvedic proprietary topical formulation developed for targeted skin support with traditional botanicals.',
     indications: 'Physician-supervised skin support for localized stubborn rashes and dermatological conditions.',
@@ -139,7 +139,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Aloe vera and vetiver-infused gentle bath bar (Pack of 2) for daily sensitive and dry skin cleansing.',
+    shortDescription: 'Cleanse gently with aloe vera, vitamin E and nourishing avocado oil.',
     description:
       'Enriched with Aloe Vera, Vitamin E, and Avocado Oil, SkinWell Soap gently purifies without stripping natural epidermal oils. Supplied as a convenient Pack of 2 bars. Both soaps are independently selectable.',
     indications: 'Daily bathing, sensitive skin, dryness, mild itching, and family wellness.',
@@ -171,7 +171,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Pure Nigella Sativa (Kalonji) herbal bath soap with 76% TFM for anti-tan skin refreshment.',
+    shortDescription: 'Refresh dull, sun-exposed skin with the botanical goodness of kalonji.',
     description:
       'Harnesses the traditional properties of Kalonji (Black Seed / Karunjeeragam) to soothe sun-exposed skin, reduce the appearance of tanning, and provide deep botanical nourishment.',
     indications: 'Sun-exposed skin, tanning, everyday body cleansing, and uneven skin tone.',
@@ -203,7 +203,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Aloe vera-enriched botanical shampoo formulated to cleanse itchy, scaly scalps and maintain root health.',
+    shortDescription: 'Refresh your scalp and soften your hair with aloe, hibiscus and amla.',
     description:
       'A gentle, sulfate-conscious Ayurvedic formulation combining Aloe vera, Shikakai, and Bhringraj to cleanse the scalp without irritation.',
     indications: 'Scalp flaking, itchiness, dryness, and gentle hair cleansing.',
@@ -235,7 +235,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Herbal dietary supplement designed to provide internal micronutrient and antioxidant skin support.',
+    shortDescription: 'Nourish your skin-wellness routine from within with eight traditional Ayurvedic botanicals.',
     description:
       'Features eight traditional Ayurvedic botanicals including Manjistha, Sariva, and Khadira, curated to nurture skin balance from within.',
     indications: 'Internal nutritional support for skin radiance, cellular defense, and metabolic balance.',
@@ -268,7 +268,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'General nutritional and herbal wellness supplement supporting natural defenses and daily vitality.',
+    shortDescription: 'Support everyday immunity and vitality with seven traditional Ayurvedic botanicals.',
     description:
       'A multi-botanical dietary capsule formulation featuring Amla, Ashwagandha, and Guduchi to support physical stamina and bodily homeostasis.',
     indications: 'General vitality, immune equilibrium, antioxidant protection, and fatigue resistance.',
@@ -300,7 +300,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: true,
-    shortDescription: 'Ayurvedic proprietary formulation advised under VPrime physician guidance for persistent concerns.',
+    shortDescription: 'Bring Ayurvedic skin wellness from within into your doctor-guided routine.',
     description:
       'A specialized classical Ayurvedic proprietary composition recommended for persistent or recurring skin disharmonies under professional clinical oversight.',
     indications: 'Physician-directed support for chronic dermatological balance and Rakta Shodhana.',
@@ -333,7 +333,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Digestive herbal infusion with Triphala and Senna supporting natural gut equilibrium and comfort.',
+    shortDescription: 'Support digestive wellness and natural regularity with Triphala and Avuri.',
     description:
       'A time-tested herbal blend of Triphala, Avuri, and warm digestive carminatives created to encourage comfortable overnight gut motility and elimination.',
     indications: 'Digestive sluggishness, occasional constipation, abdominal heaviness, and metabolic reset.',
@@ -367,7 +367,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: true,
-    shortDescription: 'Advanced ozonated topical herbal formulation designed for targeted conditioning under clinical supervision.',
+    shortDescription: 'Discover physician-guided O3 care for eczema- and psoriasis-related skin concerns.',
     description:
       'Combines ozonated botanical oils with traditional Ayurvedic healing herbs to deliver oxygen-rich topical support for complex, stubborn skin concerns.',
     indications: 'Targeted skin conditioning, persistent scaling, dryness, and stubborn localized patches.',
@@ -401,7 +401,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: true,
-    shortDescription: 'Specialty enteric-coated ozonated herbal capsules formulated for targeted intestinal delivery.',
+    shortDescription: 'Take wellness beyond the surface with O3 capsules designed for intestinal release.',
     description:
       'Developed with enteric-coating technology to protect active botanical ozonides past gastric acids, delivering systemic antioxidant support directly to the intestinal tract.',
     indications: 'Cellular protection, deep tissue rejuvenation, and systemic immune balance.',
@@ -435,7 +435,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: true,
-    shortDescription: 'Specialty topical ozonated botanical cream designed for doctor-guided vitiligo-related care.',
+    shortDescription: 'Explore specialized, doctor-guided O3 care for vitiligo-related pigmentation concerns.',
     description:
       'A specialized ozonated botanical cream formulated to nurture melanocyte micro-environment and nourish depigmented areas under physician guidance.',
     indications: 'Doctor-guided supportive topical application for localized depigmentation and vitiligo concerns.',

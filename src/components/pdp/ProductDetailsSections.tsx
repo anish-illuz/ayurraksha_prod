@@ -16,17 +16,60 @@ import {
   Minus,
   Flame,
   Moon,
+  Sun,
   Coffee,
   FlaskConical,
   Compass,
   FileText,
-  BookOpen
+  BookOpen,
+  Droplets,
+  Truck,
+  CheckCircle2
 } from 'lucide-react';
-import { Product } from '@/types/product';
+import { Product, RitualStep } from '@/types/product';
 import { formatPackMeasurement } from '@/lib/formatPack';
 
 interface ProductDetailsSectionsProps {
   product: Product;
+}
+
+// Dynamic icon resolver that matches the actual step action
+function getStepActionIcon(step: RitualStep, idx: number) {
+  const text = `${step.title} ${step.description}`.toLowerCase();
+  if (text.includes('lather') || text.includes('soap') || text.includes('wash') || text.includes('rinse')) {
+    return <Droplets key={idx} size={20} className="text-stone-700" />;
+  }
+  if (text.includes('apply') || text.includes('massage') || text.includes('roll') || text.includes('spread')) {
+    return <Sparkles key={idx} size={20} className="text-stone-700" />;
+  }
+  if (text.includes('swish') || text.includes('spit') || text.includes('gargle') || text.includes('brush') || text.includes('teeth')) {
+    return <Droplets key={idx} size={20} className="text-stone-700" />;
+  }
+  if (text.includes('boil') || text.includes('simmer') || text.includes('heat') || text.includes('warm water') || text.includes('infuse')) {
+    return <Flame key={idx} size={20} className="text-stone-700" />;
+  }
+  if (text.includes('night') || text.includes('bedtime') || text.includes('sleep') || text.includes('dinner')) {
+    return <Moon key={idx} size={20} className="text-stone-700" />;
+  }
+  if (text.includes('morning') || text.includes('empty stomach') || text.includes('breakfast')) {
+    return <Sun key={idx} size={20} className="text-stone-700" />;
+  }
+  if (text.includes('shake') || text.includes('measure') || text.includes('drops') || text.includes('tablespoon') || text.includes('pinch')) {
+    return <FlaskConical key={idx} size={20} className="text-stone-700" />;
+  }
+  if (text.includes('tea') || text.includes('sachet') || text.includes('brew') || text.includes('sip') || text.includes('drink')) {
+    return <Coffee key={idx} size={20} className="text-stone-700" />;
+  }
+  if (text.includes('dry') || text.includes('leave on') || text.includes('wait') || text.includes('minutes')) {
+    return <Clock key={idx} size={20} className="text-stone-700" />;
+  }
+  const fallbackIcons = [
+    <CheckCircle2 key={idx} size={20} className="text-stone-700" />,
+    <Sparkles key={idx} size={20} className="text-stone-700" />,
+    <Heart key={idx} size={20} className="text-stone-700" />,
+    <Leaf key={idx} size={20} className="text-stone-700" />
+  ];
+  return fallbackIcons[idx % fallbackIcons.length];
 }
 
 export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ product }) => {
@@ -85,7 +128,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
               <span className="whitespace-nowrap">Dr. Jegajothi Pandian</span>
             </h3>
             <p className="text-sm sm:text-base text-charcoal/80 mt-1 max-w-2xl leading-relaxed font-sans">
-              {product.doctorBannerText || 'Combining India’s timeless Ayurvedic texts with modern analytical quality verification and standardized decoction standards.'}
+              {product.doctorBannerText || 'Combining India’s timeless traditional texts with modern analytical quality verification and standardized clinical purity.'}
             </p>
           </div>
         </div>
@@ -120,10 +163,10 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
               </div>
               <div className="min-w-0">
                 <span className="text-[11px] sm:text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
-                  COMPREHENSIVE PRODUCT OVERVIEW
+                  PRODUCT OVERVIEW
                 </span>
                 <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
-                  Full Product Description
+                  About this product
                 </h3>
               </div>
             </div>
@@ -178,10 +221,14 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
               </div>
               <div className="min-w-0">
                 <span className="text-[11px] sm:text-xs font-bold text-[#B45309] uppercase tracking-wider block mb-0.5">
-                  {product.storyEyebrow || 'AYURVEDIC PHILOSOPHY & HERITAGE'}
+                  {product.slug === 'boozliv'
+                    ? 'SIDDHA HERITAGE & FORMULATION'
+                    : product.storyEyebrow || 'AYURVEDIC PHILOSOPHY & HERITAGE'}
                 </span>
                 <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
-                  {product.storyTitle || 'Ayurvedic Philosophy & Classical Heritage'}
+                  {product.slug === 'boozliv'
+                    ? 'Traditional Siddha Wellness, Naturally Inspired'
+                    : product.storyTitle || 'Traditional Wellness Philosophy & Heritage'}
                 </h3>
               </div>
             </div>
@@ -209,29 +256,48 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
                 {/* Left Column: Full Editorial Philosophy Narrative */}
                 <div className="lg:col-span-7 space-y-4">
                   <span className="text-xs font-bold text-[#B45309] uppercase tracking-wider block">
-                    {product.storyEyebrow || 'AYURVEDIC PHILOSOPHY & HERITAGE'}
+                    {product.slug === 'boozliv'
+                      ? 'SIDDHA HERITAGE & FORMULATION'
+                      : product.storyEyebrow || 'AYURVEDIC PHILOSOPHY & HERITAGE'}
                   </span>
                   <h2 className="font-serif text-2xl sm:text-3xl font-bold text-forest leading-tight">
-                    {product.storyTitle || 'Traditional Ayurvedic Wellness, Naturally Inspired'}
+                    {product.slug === 'boozliv'
+                      ? 'Traditional Siddha Wellness, Naturally Inspired'
+                      : product.storyTitle || 'Traditional Ayurvedic Wellness, Naturally Inspired'}
                   </h2>
 
                   <div className="text-charcoal/85 text-sm sm:text-base leading-relaxed space-y-3.5 font-sans pt-1">
-                    <p>
-                      Discover the essence of traditional Ayurvedic wellness with {product.name}, a thoughtfully developed herbal formulation inspired by India&apos;s rich botanical heritage.
-                    </p>
-                    <p>
-                      Rooted in time-honoured Ayurvedic practices, this herbal blend brings together traditional plant-based ingredients in a convenient format for modern lifestyles. It reflects Ayurveda&apos;s holistic approach to wellbeing, where mindful daily habits and botanical traditions form an integral part of personal care.
-                    </p>
-                    <p>
-                      {product.name} is designed for individuals who appreciate natural, plant-based wellness products and wish to incorporate traditional herbal preparations into their lifestyle. Its formulation draws on generations of Ayurvedic knowledge while offering the simplicity and convenience expected from a contemporary wellness product.
-                    </p>
-                    <p>
-                      Whether exploring Ayurveda for the first time or continuing an established herbal wellness routine, {product.name} offers a connection to India&apos;s traditional botanical heritage.
-                    </p>
+                    {product.slug === 'boozliv' ? (
+                      <>
+                        <p>
+                          Discover the essence of classical Siddha wellness with {product.name}, a specialized botanical formulation inspired by South India&apos;s profound Siddha medical heritage.
+                        </p>
+                        <p>
+                          Rooted in revered Siddha pharmacopoeia, this herbal blend brings together potent botanicals such as Karisalankanni and Keezhanelli, traditionally used for hepatic vitality and metabolic balance.
+                        </p>
+                        <p>
+                          BoozLiv is crafted under the clinical oversight of experienced Siddha researchers, offering pure herbal extracts with zero synthetic additives to help maintain liver equilibrium as part of daily living.
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <p>
+                          Discover the essence of traditional wellness with {product.name}, a thoughtfully developed herbal formulation inspired by India&apos;s rich botanical heritage.
+                        </p>
+                        <p>
+                          Rooted in time-honoured practices, this herbal formulation brings together traditional plant-based ingredients in a convenient format for modern lifestyles, supporting mindful personal care.
+                        </p>
+                        <p>
+                          {product.name} is designed for individuals who appreciate natural, plant-based wellness products and wish to incorporate traditional herbal care into their lifestyle with clinical confidence.
+                        </p>
+                      </>
+                    )}
                   </div>
 
                   <p className="font-bold text-sm sm:text-base text-forest pt-2 border-l-3 border-botanical pl-3.5">
-                    {product.storyClosing || `Embrace the timeless tradition of Ayurveda with ${product.name} — where herbal heritage meets modern wellness.`}
+                    {product.storyClosing || (product.slug === 'boozliv'
+                      ? `Embrace the wisdom of Siddha medicine with ${product.name} — where clinical research meets botanical tradition.`
+                      : `Embrace the timeless tradition of wellness with ${product.name} — where botanical heritage meets modern care.`)}
                   </p>
                 </div>
 
@@ -250,13 +316,19 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
                     {/* Bottom Overlay Card */}
                     <div className="absolute bottom-4 left-4 right-4 p-4 sm:p-5 rounded-2xl bg-[#16382C]/95 backdrop-blur-md text-white border border-emerald-500/25">
                       <span className="text-xs font-bold text-[#E67E22] uppercase tracking-wider block mb-1">
-                        {product.principleBadge || 'CHARAKA SAMHITA PRINCIPLES'}
+                        {product.slug === 'boozliv'
+                          ? 'SIDDHA CLINICAL PRINCIPLES'
+                          : product.principleBadge || 'CLASSICAL FORMULATION PRINCIPLES'}
                       </span>
                       <h4 className="font-serif text-base sm:text-lg font-bold text-white mb-1">
-                        {product.principleTitle || 'Cleansing Agni • Balancing Vata & Pitta'}
+                        {product.slug === 'boozliv'
+                          ? 'Liver Vitality • Balancing Pitha & Vatha'
+                          : product.principleTitle || 'Balancing Natural Bodily Equilibrium'}
                       </h4>
                       <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-sans">
-                        {product.principleText || 'Pure botanical blend micro-pulverized for optimal warm water extraction and natural bioavailability.'}
+                        {product.slug === 'boozliv'
+                          ? 'Standardized Siddha botanical extraction verified for optimal bioactive retention and gentle digestive absorption.'
+                          : product.principleText || 'Standardized analytical extraction preserving full botanical actives for natural bioavailability.'}
                       </p>
                     </div>
                   </div>
@@ -280,10 +352,10 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
               </div>
               <div className="min-w-0">
                 <span className="text-[11px] sm:text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
-                  {product.featuresEyebrow || 'TARGETED BIO-ACTIONS'}
+                  {product.featuresEyebrow || 'KEY BENEFITS'}
                 </span>
                 <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
-                  {product.featuresTitle || 'Key Features & Therapeutic Benefits'}
+                  {product.featuresTitle || 'Key benefits'}
                 </h3>
               </div>
             </div>
@@ -311,14 +383,14 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-stone-100">
                   <div>
                     <span className="text-xs font-bold text-botanical uppercase tracking-wider block mb-1">
-                      {product.featuresEyebrow || 'TARGETED BIO-ACTIONS'}
+                      {product.featuresEyebrow || 'KEY BENEFITS'}
                     </span>
                     <h3 className="font-serif text-xl sm:text-2xl font-bold text-forest">
-                      {product.featuresTitle || 'Key Features & Therapeutic Benefits'}
+                      {product.featuresTitle || 'Key benefits'}
                     </h3>
                   </div>
                   <span className="px-3.5 py-1.5 rounded-full bg-[#E8EFE6] text-forest text-xs sm:text-sm font-bold self-start sm:self-auto border border-forest/10">
-                    {product.featuresBadge || '6 Verified Formulation Pillars'}
+                    {product.featuresBadge || `${product.featureCards?.length || 6} Key Benefits`}
                   </span>
                 </div>
 
@@ -367,10 +439,10 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
               </div>
               <div className="min-w-0">
                 <span className="text-[11px] sm:text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
-                  {product.ingredientsEyebrow || 'STANDARDIZED ANALYTICAL EXTRACTION'}
+                  {product.ingredientsEyebrow || 'INGREDIENTS'}
                 </span>
                 <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
-                  {product.ingredientsTitle || 'Botanical Ingredients Breakdown'}
+                  {product.ingredientsTitle || 'Ingredients'}
                 </h3>
               </div>
             </div>
@@ -397,10 +469,10 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
               <div className="pt-6">
                 <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
                   <span className="text-xs font-bold text-botanical uppercase tracking-wider block mb-1">
-                    {product.ingredientsEyebrow || 'STANDARDIZED ANALYTICAL EXTRACTION'}
+                    {product.ingredientsEyebrow || 'INGREDIENTS'}
                   </span>
                   <h3 className="font-serif text-2xl sm:text-3xl font-bold text-forest mb-2">
-                    {product.ingredientsTitle || 'Botanical Ingredients Breakdown'}
+                    {product.ingredientsTitle || 'Ingredients'}
                   </h3>
                   <p className="text-sm sm:text-base text-charcoal/70">
                     {product.ingredientsSubtitle || '100% natural herb ingredients with zero synthetic adulterants or harsh chemical additives.'}
@@ -454,7 +526,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
           )}
         </div>
 
-        {/* ACCORDION 5: How to Prepare / Usage Instructions */}
+        {/* ACCORDION 5: How to Use / Usage Instructions */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border border-stone-200/90 shadow-2xs overflow-hidden transition-all">
           <button
             type="button"
@@ -468,10 +540,10 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
               </div>
               <div className="min-w-0">
                 <span className="text-[11px] sm:text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
-                  {product.ritualEyebrow || 'PREPARATION & TIMING'}
+                  {product.ritualEyebrow || 'HOW TO USE'}
                 </span>
                 <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
-                  {product.ritualTitle || 'How to Prepare • The Daily Ritual'}
+                  {product.ritualTitle || 'How to use'}
                 </h3>
               </div>
             </div>
@@ -497,38 +569,54 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
             <div className="p-5 sm:p-8 pt-0 sm:pt-0 border-t border-stone-100 animate-in fade-in duration-200">
               <div className="pt-6">
                 <p className="text-sm sm:text-base text-charcoal/70 mb-5 max-w-2xl">
-                  {product.ritualSubtitle || 'Simple 5-minute decoction method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.'}
+                  {product.ritualSubtitle && !product.ritualSubtitle.toLowerCase().includes('decoction') && !product.ritualSubtitle.toLowerCase().includes('burning delicate')
+                    ? product.ritualSubtitle
+                    : 'Follow the approved application and dosage directions for optimal results.'}
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {product.ritualSteps?.map((step, idx) => (
-                    <div
-                      key={idx}
-                      className="p-5 rounded-2xl border border-stone-200/90 bg-[#FAF7F2] flex flex-col justify-between"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-3">
-                          <div className="w-8 h-8 rounded-full bg-[#16382C] text-white text-xs font-bold flex items-center justify-center shadow-2xs">
-                            {step.stepNumber}
-                          </div>
-                          <div className="w-7 h-7 rounded-lg bg-white border border-stone-200/80 flex items-center justify-center">
-                            {stepIcons[idx % stepIcons.length]}
+                {(() => {
+                  const stepCount = product.ritualSteps?.length || 4;
+                  const gridColsClass =
+                    stepCount <= 2
+                      ? 'grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl'
+                      : stepCount === 3
+                      ? 'grid grid-cols-1 sm:grid-cols-3 gap-4'
+                      : stepCount === 4
+                      ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'
+                      : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4';
+
+                  return (
+                    <div className={gridColsClass}>
+                      {product.ritualSteps?.map((step, idx) => (
+                        <div
+                          key={idx}
+                          className="p-5 rounded-2xl border border-stone-200/90 bg-[#FAF7F2] flex flex-col justify-between"
+                        >
+                          <div>
+                            <div className="flex items-center justify-between mb-3">
+                              <div className="w-8 h-8 rounded-full bg-[#16382C] text-white text-xs font-bold flex items-center justify-center shadow-2xs">
+                                {step.stepNumber}
+                              </div>
+                              <div className="w-7 h-7 rounded-lg bg-white border border-stone-200/80 flex items-center justify-center">
+                                {getStepActionIcon(step, idx)}
+                              </div>
+                            </div>
+
+                            <span className="text-[10px] font-bold text-botanical uppercase tracking-wider block mb-1">
+                              STEP {step.stepNumber < 10 ? `0${step.stepNumber}` : step.stepNumber}
+                            </span>
+                            <h4 className="font-serif text-base font-bold text-forest mb-1.5">
+                              {step.title}
+                            </h4>
+                            <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans">
+                              {step.description}
+                            </p>
                           </div>
                         </div>
-
-                        <span className="text-[10px] font-bold text-botanical uppercase tracking-wider block mb-1">
-                          STEP 0{step.stepNumber}
-                        </span>
-                        <h4 className="font-serif text-base font-bold text-forest mb-1.5">
-                          {step.title}
-                        </h4>
-                        <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans">
-                          {step.description}
-                        </p>
-                      </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  );
+                })()}
               </div>
             </div>
           )}
@@ -536,7 +624,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
 
       </div>
 
-      {/* 6. Target Indications, Advisory Guidelines, Product Specifications (3 Cards) */}
+      {/* 6. Target Indications, Precautions, Product Specifications (3 Cards) */}
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Card 1: Target Indications */}
         <div className="bg-white rounded-3xl border border-stone-200/90 p-5 sm:p-6 shadow-xs flex flex-col justify-between">
@@ -554,12 +642,12 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
           </div>
         </div>
 
-        {/* Card 2: Advisory Guidelines */}
+        {/* Card 2: Precautions */}
         <div className="bg-white rounded-3xl border border-stone-200/90 p-5 sm:p-6 shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 text-forest font-bold text-xs uppercase tracking-wider mb-3">
               <ShieldCheck size={18} className="text-amber-700" />
-              <span>Advisory Guidelines</span>
+              <span>Precautions</span>
             </div>
             <ul className="space-y-2.5">
               {product.advisoryGuidelines?.map((guide, idx) => (
@@ -572,7 +660,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
           </div>
         </div>
 
-        {/* Card 3: Product Specifications */}
+        {/* Card 3: Product Specifications & Delivery */}
         <div className="bg-white rounded-3xl border border-stone-200/90 p-5 sm:p-6 shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 text-forest font-bold text-xs uppercase tracking-wider mb-3">
@@ -596,6 +684,16 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
                 <span className="text-charcoal-muted">Disclosures:</span>
                 <span className="font-semibold text-forest">{product.specDisclosures}</span>
               </div>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-stone-100 space-y-1">
+              <div className="flex items-center gap-1.5 font-bold text-forest text-xs mb-1">
+                <Truck size={14} className="text-botanical" />
+                <span>Delivery &amp; Returns</span>
+              </div>
+              <p className="text-[11px] text-charcoal-muted leading-relaxed">
+                Free shipping on all prepaid orders across India. 7-day return policy on unopened items.
+              </p>
             </div>
           </div>
         </div>

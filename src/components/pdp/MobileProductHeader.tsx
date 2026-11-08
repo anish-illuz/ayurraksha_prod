@@ -61,9 +61,9 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
         {product.shortDescription || product.subtitle || 'Traditional botanical formulation crafted for authentic wellness.'}
       </p>
 
-      {/* Synchronized Course Selector Pills */}
+      {/* Synchronized Course Selector Cards - Full width on mobile so labels are never cut off */}
       {packOptions.length > 1 && (
-        <div className="grid grid-cols-2 gap-2 mb-3.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3.5">
           {packOptions.map((pack) => {
             const isSelected = selectedPackId === pack.id;
             return (
@@ -71,14 +71,21 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
                 key={pack.id}
                 type="button"
                 onClick={() => setSelectedPackId(pack.id)}
-                className={`py-2 px-3 rounded-xl text-left border transition-all text-xs sm:text-sm flex items-center justify-between ${
+                className={`py-2.5 px-3 rounded-xl text-left border transition-all text-xs sm:text-sm flex items-center justify-between ${
                   isSelected
                     ? 'border-botanical bg-emerald-50/70 font-bold text-forest shadow-2xs'
                     : 'border-stone-200 bg-stone-50/60 text-charcoal/80 hover:bg-stone-100/70'
                 }`}
               >
-                <span className="truncate whitespace-nowrap">{formatPackMeasurement(pack.name)}</span>
-                <span className="font-bold ml-1.5 text-forest whitespace-nowrap">₹{pack.price}</span>
+                <div className="flex items-center gap-2 min-w-0 pr-2">
+                  <span className="font-bold text-forest">{formatPackMeasurement(pack.name)}</span>
+                  {pack.discountBadge && (
+                    <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 shrink-0 whitespace-nowrap">
+                      {pack.discountBadge}
+                    </span>
+                  )}
+                </div>
+                <span className="font-bold text-forest shrink-0 whitespace-nowrap">₹{pack.price.toLocaleString('en-IN')}</span>
               </button>
             );
           })}

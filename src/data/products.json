@@ -76,7 +76,7 @@
     "packOptions": [
       {
         "id": "standard",
-        "name": "Standard Course",
+        "name": "1 pack · 40 sachets",
         "subtitle": "40 sachets × 5g = 200g",
         "price": 750,
         "regularPrice": 862,
@@ -85,8 +85,8 @@
       },
       {
         "id": "family",
-        "name": "3-Month Family Regimen",
-        "subtitle": "3 Packs Value Bundle",
+        "name": "3 packs · 120 sachets",
+        "subtitle": "120 sachets value bundle",
         "price": 1988,
         "regularPrice": 2586,
         "discountBadge": "Save 23%",
@@ -175,28 +175,28 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Take one sachet of AyurRaksha Detox Tea."
+        "title": "Take One Sachet",
+        "description": "Take one single-serving sachet (5 g) of AyurRaksha Detox Tea."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Add the contents to 100 ml of water."
+        "title": "Add to Water",
+        "description": "Add the sachet contents to 100 ml of fresh drinking water in a saucepan."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Boil for 5 minutes."
+        "title": "Boil & Simmer",
+        "description": "Bring to a gentle boil and simmer for 5 minutes until reduced to approximately 75 ml."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Consume the prepared herbal drink as the last drink of the day."
+        "title": "Consume at Bedtime",
+        "description": "Strain if desired and sip warm as the last drink of the day before sleep."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Mindful herbal brewing method to release active water-soluble plant essences.",
     "targetIndications": "Individuals seeking traditional Ayurvedic herbal support for digestive wellbeing and bowel regularity.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -333,40 +333,49 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "CEREBRAL CIRCULATION",
+        "badge": "Therapeutic Active",
         "commonName": "Thippili / Long Pepper",
         "latinName": "Piper longum",
-        "description": "Penetrating warming spice that enhances blood flow across cerebral microcapillaries, clears cranial stiffness, and magnifies the bioavailability of neuro-active botanicals.",
-        "bioactive": "Piperine & Piperlongumine",
-        "derivative": "Dried Mature Spikes",
+        "description": "Traditional heating herb used in classical formulations for head clarity and circulation.",
+        "bioactive": "Piperine",
+        "derivative": "Fruit Extract",
         "image": "/images/ingredients/black-pepper-seeds.jpg"
       },
       {
-        "badge": "NEURO-COOLING BITTER",
+        "badge": "Cooling Bitter",
         "commonName": "Katuki / Kutki",
         "latinName": "Picrorhiza kurroa",
-        "description": "Himalayan root renowned in Ayurveda for clearing deep-seated Pitta heat from the liver and head, reducing throbbing vascular tension and sensory hypersensitivity.",
-        "bioactive": "Picrosides I & II",
-        "derivative": "Dried Underground Rhizomes",
+        "description": "Revered bitter tonic traditionally used for internal cooling and metabolic balance.",
+        "bioactive": "Kutkin",
+        "derivative": "Root Extract",
         "image": "/images/ingredients/turmeric-rhizome.jpg"
       },
       {
-        "badge": "SOOTHING HYDRATOR",
+        "badge": "Hydrating Botanical",
         "commonName": "Vellarikkai / Cucumber",
         "latinName": "Cucumis sativus",
-        "description": "Naturally cooling seed extract that soothes burning cranial sensation, promotes systemic hydration balance, and calms heat-aggravated temple pressure.",
-        "bioactive": "Cucurbitacins & Flavonoids",
-        "derivative": "Cold-Pressed Whole Seeds",
-        "image": "/images/ingredients/sesame-seeds.jpg"
+        "description": "Naturally cooling botanical seed extract supporting hydration and cellular soothe.",
+        "bioactive": "Cucurbitacins",
+        "derivative": "Seed Extract",
+        "image": "/images/ingredients/cucurbita-maxima-pumpkin.jpg"
       },
       {
-        "badge": "NERVOUS EQUILIBRIUM",
+        "badge": "Nervine Tonic",
         "commonName": "Shankhpushpi / Butterfly Pea",
         "latinName": "Clitoria ternatea",
-        "description": "Vibrant classical Medhya Rasayana botanical that calms hyperactive cranial neural firing, moderates neurological stress responses, and restores mental tranquility.",
-        "bioactive": "Ternatins & Delphinidin Glycosides",
-        "derivative": "Whole Flowering Tops",
+        "description": "Classical Medhya herb supporting nervous system ease, mental calm and focus.",
+        "bioactive": "Taraxerol",
+        "derivative": "Whole Herb",
         "image": "/images/ingredients/clitoria-ternatea-butterfly-pea.jpg"
+      },
+      {
+        "badge": "Digestive Carminative",
+        "commonName": "Chukku / Dry Ginger",
+        "latinName": "Zingiber officinale",
+        "description": "Warm digestive rhizome traditionally valued for assisting vascular clarity and nutrient absorption.",
+        "bioactive": "Gingerols",
+        "derivative": "Rhizome Extract",
+        "image": "/images/ingredients/dry-ginger-sunthi.png"
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -375,28 +384,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Measure Recommended Dose",
+        "description": "Take 1 tablet after meals (subject to product label verification)."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Take with Water",
+        "description": "Swallow whole with a full glass of fresh water."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
-      },
-      {
-        "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Daily Timing & Frequency",
+        "description": "Take 1 tablet two to three times daily after meals, or as clinically advised by your healthcare practitioner."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Take with water after meals as directed.",
     "targetIndications": "Adults interested in traditional Ayurvedic herbal preparations and general wellness",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -585,38 +589,38 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Ensure the intended application area is clean and dry."
+        "title": "Clean & Dry Area",
+        "description": "Ensure the intended application area is thoroughly clean and dry."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Shake the roll-on before use."
+        "title": "Shake Before Use",
+        "description": "Shake the roll-on bottle gently to blend active botanical oils."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Roll the applicator gently over the desired area using light, even pressure."
+        "title": "Apply with Light Pressure",
+        "description": "Roll the applicator ball gently over the affected muscle or joint using light, even pressure."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Allow the product to dry before covering the area with clothing."
+        "title": "Allow to Dry",
+        "description": "Allow the non-greasy lotion to dry completely before covering the area with clothing."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Clean, targeted roll-on application for quick local soothing.",
     "targetIndications": "Individuals seeking an Ayurvedic topical product for localized muscle and joint care.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "For external use only.",
-      "Avoid contact with eyes and mucous membranes.",
-      "Do not apply to broken or irritated skin unless specifically permitted by the label.",
-      "Discontinue use if skin irritation occurs.",
+      "For external topical use only. Do not swallow.",
+      "Avoid contact with eyes, nostrils, and mucous membranes.",
+      "Do not apply over broken, blistered, or irritated skin.",
+      "Discontinue use immediately if skin redness or irritation occurs.",
       "Keep out of reach of children."
     ],
-    "specNetQuantity": "50ml – 1 Roll-On Bottle",
+    "specNetQuantity": "50 ml",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -744,39 +748,39 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "DEEP CELLULAR HYDRATION",
+        "badge": "Carrier Base",
         "commonName": "Extra Virgin Olive Oil",
         "latinName": "Olea europaea",
-        "description": "Cold-pressed extra virgin olive oil rich in squalene and oleic acid, providing an intensive lipid matrix that deeply moisturizes, conditions, and softens damaged skin tissue.",
-        "bioactive": "Oleic Acid, Polyphenols & Squalene",
-        "derivative": "First Cold-Pressed Organic Olives",
+        "description": "Cold-pressed extra virgin olive oil rich in squalene and polyphenols.",
+        "bioactive": "Oleic Acid",
+        "derivative": "Cold-Pressed Oil",
         "image": "/images/ingredients/olive-oil-olives.jpg"
       },
       {
-        "badge": "ACTIVATED BIO-OXYGEN",
+        "badge": "Oxygen Active",
         "commonName": "Medical Grade Ozone (O₃)",
-        "latinName": "Active Ozonides Complex",
-        "description": "Specialized micro-bubble ozonation process that infuses nascent trioxygen into pure botanical plant oils, delivering localized oxygenation to accelerate skin repair.",
-        "bioactive": "Ozonides & Oxygen Radicals",
-        "derivative": "Pure Ozonated Lipid Salve",
+        "latinName": "Trioxygen Complex",
+        "description": "Ozonides bonded in vegetable oil matrix providing oxygenating epidermal care.",
+        "bioactive": "Ozonides",
+        "derivative": "Ozonated Matrix",
         "image": "/images/ingredients/olive-oil-olives.jpg"
       },
       {
-        "badge": "ANTIMICROBIAL BARRIER",
+        "badge": "Purifying Herb",
         "commonName": "Neem Leaf Extract",
         "latinName": "Azadirachta indica",
-        "description": "Time-honored botanical with bitter limonoids that purify skin microflora, prevent superficial skin contamination, and support resilient wound healing.",
-        "bioactive": "Nimbin & Azadirachtin",
-        "derivative": "Hydro-Ethanolic Leaf Extract",
+        "description": "Traditional purifying botanical recognized for antimicrobial skin support.",
+        "bioactive": "Azadirachtin",
+        "derivative": "Leaf Extract",
         "image": "/images/ingredients/neem-leaves.jpg"
       },
       {
-        "badge": "EPITHELIAL RESTORATION",
+        "badge": "Restorative Rhizome",
         "commonName": "Wild Turmeric / Haridra",
-        "latinName": "Curcuma longa",
-        "description": "Golden Ayurvedic rhizome celebrated for its soothing antioxidant polyphenols that calm reactive dermal redness and stimulate healthy collagen formation.",
-        "bioactive": "Curcuminoids & Turmerone",
-        "derivative": "Supercritical CO2 Rhizome Extract",
+        "latinName": "Curcuma aromatica",
+        "description": "Pure Kasturi Manjal traditionally used for soothing skin inflammation.",
+        "bioactive": "Curcuminoids",
+        "derivative": "Rhizome Extract",
         "image": "/images/ingredients/turmeric-rhizome.jpg"
       }
     ],
@@ -786,34 +790,35 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Clean the intended area gently with water and pat dry."
+        "title": "Clean & Pat Dry",
+        "description": "Cleanse the skin area gently with mild soap and water, then pat completely dry."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Apply a small amount of SuperHeal O3 Cream."
+        "title": "Dispense Cream",
+        "description": "Take a small amount of SuperHeal O3 Cream onto clean fingertips."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Massage lightly until absorbed."
+        "title": "Apply & Massage Lightly",
+        "description": "Gently apply over the affected area and massage lightly in circular motions until absorbed."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Use 2–3 times daily or as directed by a physician."
+        "title": "Repeat as Directed",
+        "description": "Apply 2–3 times daily or as clinically guided by your physician."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Topical ozonated botanical application for localized skin conditioning.",
     "targetIndications": "Individuals seeking a topical product for skin conditioning and routine external skincare.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "For external use only.",
-      "Avoid direct contact with eyes and mucous membranes.",
-      "Discontinue use if irritation or an allergic reaction occurs."
+      "For external dermatological use only. Do not swallow.",
+      "Avoid direct contact with eyes and open wounds.",
+      "Perform a 24-hour patch test before first use.",
+      "Store in a cool place, preferably refrigerated (4°C–10°C) after opening."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "Ozonated Pure Botanical",
@@ -947,39 +952,39 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "GINGIVAL STIMULANT",
+        "badge": "Digestive Warmth",
         "commonName": "Chukku / Dry Ginger",
         "latinName": "Zingiber officinale",
-        "description": "Pungent classical rhizome that stimulates periodontal microcirculation, reduces gum tenderness, and leaves oral breath refreshed and invigorated.",
-        "bioactive": "Gingerols & Shogaols",
-        "derivative": "Sun-Dried Peeled Rhizome",
+        "description": "Traditional cleansing carminative root for oral freshening and gum tone.",
+        "bioactive": "Gingerols",
+        "derivative": "Rhizome Powder",
         "image": "/images/ingredients/dry-ginger-sunthi.png"
       },
       {
-        "badge": "ENAMEL-SAFE REMINERALIZER",
+        "badge": "Mineral Purity",
         "commonName": "Induppu / Rock Salt",
-        "latinName": "Saindhava Lavana",
-        "description": "Pure mineral salt crystals containing 84 micro-trace electrolytes that naturally balance oral pH, dislodge dental tartar, and strengthen gum enamel adhesion.",
-        "bioactive": "Ionic Trace Minerals (Na, Mg, Ca, K)",
-        "derivative": "Micro-Milled Rock Crystals",
+        "latinName": "Mineral Halite",
+        "description": "Natural mineral crystals supporting oral osmotic cleansing and pH equilibrium.",
+        "bioactive": "Trace Minerals",
+        "derivative": "Natural Salt",
         "image": "/images/ingredients/rock-salt.png"
       },
       {
-        "badge": "PURIFYING COOLING AGENT",
+        "badge": "Cooling Sensation",
         "commonName": "Puthina Uppu / Mint Crystals",
         "latinName": "Mentha arvensis",
-        "description": "Steam-crystallized natural menthol providing enduring antimicrobial breath freshness while soothing sensitive gum pockets and tooth sensitivity.",
-        "bioactive": "Natural L-Menthol Crystals",
-        "derivative": "Steam-Distilled Pure Crystals",
+        "description": "Natural cooling menthol crystals providing lasting breath freshness.",
+        "bioactive": "L-Menthol",
+        "derivative": "Essential Crystal",
         "image": "/images/ingredients/menthol-peppermint.png"
       },
       {
-        "badge": "ORAL MICROFLORA DEFENSE",
+        "badge": "Dental Bioactive",
         "commonName": "Lavangam / Clove Flower Buds",
         "latinName": "Syzygium aromaticum",
-        "description": "The golden standard of Ayurvedic dental care, releasing potent eugenol to relieve tooth discomfort, eliminate odor-causing bacteria, and firm spongy gums.",
-        "bioactive": "Eugenol & Caryophyllene",
-        "derivative": "Sun-Cured Unopened Flower Buds",
+        "description": "Classical clove flower buds with high natural eugenol concentration for gum comfort.",
+        "bioactive": "Eugenol",
+        "derivative": "Bud Extract",
         "image": "/images/ingredients/clove-buds.jpg"
       }
     ],
@@ -989,33 +994,34 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Take a small quantity of Dant Swasthya tooth powder."
+        "title": "Measure Tooth Powder",
+        "description": "Take a small pinch (about 1–2 g) of Dant Swasthya tooth powder."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Apply to a wet, soft-bristled toothbrush."
+        "title": "Apply to Toothbrush",
+        "description": "Apply onto a wet, soft-bristled toothbrush or onto a clean index finger."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Brush teeth gently."
+        "title": "Clean Gently",
+        "description": "Brush teeth and massage gums gently in small circular motions for 2–3 minutes."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Rinse the mouth thoroughly after brushing."
+        "title": "Rinse Thoroughly",
+        "description": "Rinse the mouth thoroughly with clean water. Spit out completely; do not swallow."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Herbal oral hygiene routine for healthy teeth, fresh breath, and firm gums.",
     "targetIndications": "Individuals seeking a traditional herbal tooth powder as part of their regular oral hygiene routine.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
       "For oral hygiene use only. Do not swallow.",
-      "Avoid contact with eyes."
+      "Avoid contact with eyes.",
+      "Close container tightly after use to prevent moisture absorption."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "Doctor Formulated",
@@ -1198,33 +1204,34 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Take 3 tablespoons of AyurRaksha Health Mix"
+        "title": "Measure Health Mix",
+        "description": "Take 3 tablespoons of AyurRaksha Health Mix."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Add it to 1 cup of milk and stir thoroughly to avoid lumps"
+        "title": "Mix with Milk",
+        "description": "Add to 1 cup (200 ml) of milk and stir thoroughly to avoid any lumps."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Heat on low flame for 3 minutes, stirring continuously"
+        "title": "Simmer on Low Flame",
+        "description": "Heat on a low flame for 3 minutes, stirring continuously until cooked and smooth."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Add jaggery, honey, or natural sweetener as per your taste. Enjoy warm for a comforting and healthy drink!"
+        "title": "Sweeten & Serve",
+        "description": "Add jaggery, honey, or your preferred natural sweetener. Serve warm for a comforting, nutritious meal."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Wholesome porridge preparation with milk for nourishing family nutrition.",
     "targetIndications": "Individuals seeking a convenient multigrain nutritional mix as part of a varied and balanced diet.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Contains barley (gluten), soy, peanuts and almonds.",
-      "Individuals with allergies to these ingredients should avoid consumption."
+      "Allergy Warning: Contains barley (gluten), soy, peanuts, and almonds.",
+      "Individuals with known sensitivities or allergies to these ingredients should avoid consumption.",
+      "Store in an airtight container in a cool, dry place after opening."
     ],
     "specNetQuantity": "",
     "specProductForm": "Micro-Fine Traditional Churna",
@@ -1398,33 +1405,34 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
+        "title": "Measure the Oil",
         "description": "Measure 10 ml of AyurRaksha Gargling Oil in the morning on an empty stomach."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Swish gently around the mouth for 5–10 minutes."
+        "title": "Swish as Directed",
+        "description": "Swish gently between teeth and around the mouth for 5–10 minutes without swallowing."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Spit out the oil completely. Do not swallow."
+        "title": "Spit Out Completely",
+        "description": "Spit out the oil completely into a trash bin or basin. Never swallow the oil."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Rinse the mouth with warm water if desired."
+        "title": "Rinse Thoroughly",
+        "description": "Rinse mouth thoroughly with warm water and proceed with regular brushing."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Traditional oil pulling (Gandusha / Kavala) technique for complete oral balance.",
     "targetIndications": "Adults interested in traditional Ayurvedic oil pulling as a complementary oral-hygiene practice.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "For oral swishing only. Do not swallow.",
-      "Avoid use if allergic to sesame, coconut or any listed ingredient."
+      "For oral swishing and gargling only. Do not swallow.",
+      "Avoid use if allergic to sesame, coconut, or any listed ingredient.",
+      "Keep bottle tightly sealed in a cool, dry place."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "External Therapeutic Application",
@@ -1603,23 +1611,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Take 2 capsules daily."
+        "title": "Recommended Dosage",
+        "description": "Take 2 capsules daily or as prescribed by your healthcare practitioner."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Consume with a glass of water after food."
+        "title": "Take with Water",
+        "description": "Swallow with a glass of fresh drinking water after food."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Do not exceed the recommended dosage."
+        "title": "Consistent Routine",
+        "description": "Take consistently as part of your daily wellness routine without exceeding the recommended dose."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Herbal capsule regimen for respiratory and seasonal support.",
     "targetIndications": "Individuals interested in traditional Ayurvedic herbal preparations associated with seasonal and respiratory wellness.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -1798,23 +1806,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Take 2 capsules daily."
+        "title": "Recommended Dosage",
+        "description": "Take 2 capsules daily as directed on the label."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Consume with a glass of water after food."
+        "title": "Take with Water",
+        "description": "Consume with a glass of fresh water after food."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Do not exceed the recommended dosage."
+        "title": "Daily Timing",
+        "description": "Take consistently morning and evening for optimal nutritional absorption."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Botanical capsule regimen for holistic metabolic equilibrium.",
     "targetIndications": "Adults interested in traditional Ayurvedic herbal formulations associated with kidney and urinary wellness, subject to professional guidance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -1994,23 +2002,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
+        "title": "Recommended Dosage",
         "description": "Take 2 capsules daily."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Consume with a glass of water after food."
+        "title": "Take with Water",
+        "description": "Swallow with a glass of water after food."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Do not exceed the recommended dosage."
+        "title": "Consistent Routine",
+        "description": "Maintain a regular daily schedule for sustained physical vitality and antioxidant support."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Seven-botanical wellness regimen to support everyday immune balance.",
     "targetIndications": "Adults interested in traditional Ayurvedic herbal formulations associated with seasonal and general wellness, subject to professional guidance..",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -2207,28 +2215,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Recommended Dosage",
+        "description": "Take 1 to 2 capsules as advised on the package."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Take with Warm Water",
+        "description": "Swallow with a glass of warm water after meals."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
-      },
-      {
-        "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Timing and Frequency",
+        "description": "Take twice daily, morning and evening, for balanced joint comfort."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Targeted botanical extract capsules for joint and muscular ease.",
     "targetIndications": "Adults interested in traditional Ayurvedic wellness products associated with joint and muscle care, subject to healthcare professional guidance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -2408,36 +2411,41 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Take 15 ml of AyurRaksha Herbal Shampoo and dilute it with water."
+        "title": "Wet Hair and Scalp",
+        "description": "Wet your hair and scalp thoroughly with lukewarm water."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Gently massage the diluted shampoo onto the scalp and hair, ensuring even coverage."
+        "title": "Apply and Lather",
+        "description": "Take 10–15 ml of shampoo, dilute slightly with water, and massage gently onto scalp and roots."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Leave on for 2–3 minutes."
+        "title": "Leave On",
+        "description": "Allow the botanical lather to rest on the hair and scalp for 2–3 minutes."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Rinse thoroughly with clean water."
+        "title": "Rinse Thoroughly",
+        "description": "Rinse hair thoroughly with clean water until free of all residue."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Use Twice a Week",
+        "description": "Use twice a week for optimal scalp balance and natural hair vitality."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Gentle scalp and hair cleansing routine with twice-a-week usage.",
     "targetIndications": "Individuals looking for a botanical-inspired shampoo for routine hair and scalp cleansing.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "For external use only.",
-      "Avoid contact with eyes. If contact occurs, rinse thoroughly with water.",
-      "Discontinue use if irritation or an allergic reaction occurs."
+      "For external use only. Do not swallow.",
+      "Avoid contact with eyes. If contact occurs, rinse thoroughly with fresh water.",
+      "Discontinue use if skin or scalp irritation occurs."
     ],
-    "specNetQuantity": "Standard Pack",
+    "specNetQuantity": "100 ml",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -2568,39 +2576,39 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "FOLLICLE NOURISHMENT",
+        "badge": "Nutrient Dense",
         "commonName": "Murungai / Moringa Leaf",
         "latinName": "Moringa oleifera",
-        "description": "Superfood leaf extract delivering complete amino acid profiles, zinc, and iron necessary for robust keratin synthesis and active hair regrowth.",
-        "bioactive": "Plant Zinc, Iron & 18 Amino Acids",
-        "derivative": "Shade-Dried Leaf Micro-Powder",
+        "description": "Rich in iron, plant proteins, and antioxidants supporting cellular vitality.",
+        "bioactive": "Phyto-Iron",
+        "derivative": "Leaf Powder",
         "image": "/images/ingredients/moringa-leaves.jpg"
       },
       {
-        "badge": "MELANIN & ROOT RETENTION",
+        "badge": "Traditional Follicular Care",
         "commonName": "Curry Leaf / Karuveppilai",
         "latinName": "Murraya koenigii",
-        "description": "Traditional Indian hair secret packed with beta-carotene and antioxidants that arrest premature hair thinning and promote deep natural hair pigmentation.",
-        "bioactive": "Carbazole Alkaloids & Beta-Carotene",
-        "derivative": "Fresh Foliage Aqueous Extract",
-        "image": "/images/ingredients/neem-leaves.jpg"
+        "description": "Time-tested botanical prized in South Indian tradition for hair pigmentation and strength.",
+        "bioactive": "Carbazole Alkaloids",
+        "derivative": "Whole Leaf Extract",
+        "image": "/images/ingredients/traditional-raw-ayurvedic-herbs-mortar.webp"
       },
       {
-        "badge": "CELLULAR NUTRIENT DELIVERY",
+        "badge": "Botanical Protein",
         "commonName": "Agathi / Hummingbird Tree",
         "latinName": "Sesbania grandiflora",
-        "description": "Siddha-revered green botanical celebrated for cooling internal excess Pitta heat, nourishing connective dermal papillae, and anchoring hair roots.",
-        "bioactive": "Flavonol Glycosides & Calcium",
-        "derivative": "Tender Aerial Leaves",
+        "description": "Traditional dietary leafy green rich in calcium, minerals, and restorative amino acids.",
+        "bioactive": "Trace Minerals",
+        "derivative": "Leaf Extract",
         "image": "/images/ingredients/sesbania-grandiflora-agathi.jpg"
       },
       {
-        "badge": "STRESS-INDUCED SHEDDING DEFENSE",
+        "badge": "Adaptogenic Root",
         "commonName": "Ashwagandha / Indian Ginseng",
         "latinName": "Withania somnifera",
-        "description": "Premier adaptogenic root that normalizes cortisol levels, mitigates telogen effluvium (stress-induced hair loss), and boosts scalp microvascular perfusion.",
-        "bioactive": "Withanolides & Sitoindosides",
-        "derivative": "Wild Forest Mature Roots",
+        "description": "Revered Rasayana root supporting stress balance, micro-circulation, and stamina.",
+        "bioactive": "Withanolides",
+        "derivative": "Root Extract",
         "image": "/images/ingredients/ashwagandha-root.jpg"
       }
     ],
@@ -2610,28 +2618,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
+        "title": "Recommended Dosage",
         "description": "Take 2 capsules daily."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Consume at night after a meal."
+        "title": "Take with Water",
+        "description": "Swallow with a glass of water after food."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Take with a glass of water."
-      },
-      {
-        "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Do not exceed the recommended daily dosage."
+        "title": "Daily Timing",
+        "description": "Take consistently each day to support internal nutritional equilibrium."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Botanical nutritional supplement supporting hair follicle nourishment.",
     "targetIndications": "Adults interested in traditional botanical food supplements as part of a balanced hair-care and general wellness routine.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -2782,34 +2785,34 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Review Included Products",
+        "description": "Unpack your AyurRaksha Cardiac Combo and review individual instructions on each included item."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Internal Wellness Protocol",
+        "description": "Take capsules or herbal supplements with water after meals as directed on the respective package."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Topical Application Routine",
+        "description": "Apply oils, soaps, or balms externally to clean, dry skin as directed in your personalized regimen."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Consult Clinical Team",
+        "description": "Reach out to our clinical team on WhatsApp for free dosage schedule personalization."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Comprehensive synergistic wellness regimen using each included product as directed.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "Follow individual product instructions and dosage labels for each included item.",
+      "Consult a healthcare professional before starting any comprehensive herbal wellness regimen.",
+      "Do not exceed recommended quantities on individual product labels."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "Doctor Formulated",
@@ -2977,34 +2980,34 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Review Included Products",
+        "description": "Unpack your AyurRaksha Breathe Well Pack and review individual instructions on each included item."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Internal Wellness Protocol",
+        "description": "Take capsules or herbal supplements with water after meals as directed on the respective package."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Topical Application Routine",
+        "description": "Apply oils, soaps, or balms externally to clean, dry skin as directed in your personalized regimen."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Consult Clinical Team",
+        "description": "Reach out to our clinical team on WhatsApp for free dosage schedule personalization."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Comprehensive synergistic wellness regimen using each included product as directed.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "Follow individual product instructions and dosage labels for each included item.",
+      "Consult a healthcare professional before starting any comprehensive herbal wellness regimen.",
+      "Do not exceed recommended quantities on individual product labels."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "Doctor Formulated",
@@ -3149,34 +3152,34 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Review Included Products",
+        "description": "Unpack your AyurRaksha Joint Well Pack and review individual instructions on each included item."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Internal Wellness Protocol",
+        "description": "Take capsules or herbal supplements with water after meals as directed on the respective package."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Topical Application Routine",
+        "description": "Apply oils, soaps, or balms externally to clean, dry skin as directed in your personalized regimen."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Consult Clinical Team",
+        "description": "Reach out to our clinical team on WhatsApp for free dosage schedule personalization."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Comprehensive synergistic wellness regimen using each included product as directed.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "Follow individual product instructions and dosage labels for each included item.",
+      "Consult a healthcare professional before starting any comprehensive herbal wellness regimen.",
+      "Do not exceed recommended quantities on individual product labels."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "Doctor Formulated",
@@ -3320,34 +3323,34 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Review Included Products",
+        "description": "Unpack your AyurRaksha Sleep Well Pack and review individual instructions on each included item."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Internal Wellness Protocol",
+        "description": "Take capsules or herbal supplements with water after meals as directed on the respective package."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Topical Application Routine",
+        "description": "Apply oils, soaps, or balms externally to clean, dry skin as directed in your personalized regimen."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Consult Clinical Team",
+        "description": "Reach out to our clinical team on WhatsApp for free dosage schedule personalization."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Comprehensive synergistic wellness regimen using each included product as directed.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "Follow individual product instructions and dosage labels for each included item.",
+      "Consult a healthcare professional before starting any comprehensive herbal wellness regimen.",
+      "Do not exceed recommended quantities on individual product labels."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "Doctor Formulated",
@@ -3514,34 +3517,34 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Review Included Products",
+        "description": "Unpack your AyurRaksha Dia Well Pack and review individual instructions on each included item."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Internal Wellness Protocol",
+        "description": "Take capsules or herbal supplements with water after meals as directed on the respective package."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Topical Application Routine",
+        "description": "Apply oils, soaps, or balms externally to clean, dry skin as directed in your personalized regimen."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Consult Clinical Team",
+        "description": "Reach out to our clinical team on WhatsApp for free dosage schedule personalization."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Comprehensive synergistic wellness regimen using each included product as directed.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "Follow individual product instructions and dosage labels for each included item.",
+      "Consult a healthcare professional before starting any comprehensive herbal wellness regimen.",
+      "Do not exceed recommended quantities on individual product labels."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "Doctor Formulated",
@@ -3550,7 +3553,7 @@
   },
   {
     "id": 11378,
-    "name": "AyurRaksha skin conditioning oil",
+    "name": "AyurRaksha Skin Conditioning Oil",
     "slug": "ayur-raksha-skin-conditioning-oil",
     "price": 799,
     "regularPrice": 799,
@@ -3670,40 +3673,22 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "EPIDERMAL PURIFICATION",
+        "badge": "Dermatological Botanical",
         "commonName": "Vetpalai / Sweet Indrajao",
         "latinName": "Wrightia tinctoria",
-        "description": "The legendary Siddha dermal herb renowned for its remarkable affinity for scaling, flaking skin, soothing chronic irritation and normalizing epidermal turnover.",
-        "bioactive": "Wrightial, Triterpenoids & Flavonoids",
-        "derivative": "Sun-Steeped Mature Leaves",
-        "image": "/images/ingredients/neem-leaves.jpg"
+        "description": "Classical Siddha & Ayurvedic botanical traditionally used for skin flaking, scaling, and epidermal soothe.",
+        "bioactive": "Widdrol & Terpenes",
+        "derivative": "Leaf Macerate",
+        "image": "/images/ingredients/traditional-raw-ayurvedic-herbs-mortar.webp"
       },
       {
-        "badge": "EMOLLIENT NOURISHING BASE",
+        "badge": "Nourishing Lipid Base",
         "commonName": "Virgin Coconut Oil",
         "latinName": "Cocos nucifera",
-        "description": "Pure cold-expressed coconut oil that replenishes the moisture barrier, seals in hydration, and penetrates deep into dry, compromised skin layers.",
-        "bioactive": "Lauric Acid & Medium Chain Triglycerides",
-        "derivative": "First Cold-Pressed Kernels",
+        "description": "Pure cold-pressed virgin coconut oil base rich in medium-chain fatty acids for skin moisture barrier support.",
+        "bioactive": "Lauric Acid",
+        "derivative": "Cold-Pressed Oil",
         "image": "/images/ingredients/virgin-coconut-oil.jpg"
-      },
-      {
-        "badge": "SOOTHING RADIANCE",
-        "commonName": "Kasturi Manjal / Wild Turmeric",
-        "latinName": "Curcuma aromatica",
-        "description": "Non-staining wild turmeric rhizome that delivers intensive skin-calming antioxidants, relieving redness and refining delicate skin texture.",
-        "bioactive": "Curcuminoids & Camphoraceous Terpenes",
-        "derivative": "Shade-Cured Wild Rhizome",
-        "image": "/images/ingredients/turmeric-rhizome.jpg"
-      },
-      {
-        "badge": "BLOOD PURIFYING RUBIA",
-        "commonName": "Manjistha / Indian Madder",
-        "latinName": "Rubia cordifolia",
-        "description": "Classical Ayurvedic root valued for cooling inflamed Pitta heat in dermal layers, clearing blemishes, and supporting uniform skin tone.",
-        "bioactive": "Purpurin, Alizarin & Rubiadin",
-        "derivative": "Mature Root Bark Extract",
-        "image": "/images/ingredients/rubia-cordifolia-manjistha.jpg"
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -3712,42 +3697,43 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Cleanse the skin and pat dry after showering."
+        "title": "Clean & Pat Dry",
+        "description": "After bathing, gently pat the skin dry with a soft towel."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Apply AyurRaksha Skin Conditioning Oil to the desired areas."
+        "title": "Dispense Oil",
+        "description": "Pour a few drops of Skin Conditioning Oil into clean palms."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Massage gently until the oil is evenly distributed and absorbed."
+        "title": "Apply & Smooth Gently",
+        "description": "Apply smoothly across dry or tight skin areas using light, upward strokes."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Use daily after showering"
+        "title": "Allow to Absorb",
+        "description": "Allow 3–5 minutes for full absorption into the skin barrier before dressing."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Post-bath botanical oil hydration for soft, conditioned skin.",
     "targetIndications": "Individuals seeking traditional Ayurvedic topical oil care for skin conditioning, moisturization and maintaining a soft, supple skin feel.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "For external use only.",
+      "For external dermatological application only. Do not swallow.",
+      "Perform a 24-hour patch test before first use.",
       "Avoid contact with eyes and mucous membranes."
     ],
-    "specNetQuantity": "",
+    "specNetQuantity": "100 ml",
     "specProductForm": "External Therapeutic Application",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
   },
   {
     "id": 11387,
-    "name": "SP Soryn cream",
+    "name": "SP Soryn Cream",
     "slug": "sp-soryn-cream",
     "price": 799,
     "regularPrice": 799,
@@ -3912,36 +3898,36 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Apply SP Soryn Cream to the intended skin area."
+        "title": "Clean the Area",
+        "description": "Gently wash the affected skin area with tepid water and pat completely dry."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Massage gently using circular motions until absorbed."
+        "title": "Apply Thin Layer",
+        "description": "Take a small amount of SP Soryn Cream and apply directly over the localized area."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Use 2–3 times daily, as directed"
+        "title": "Smooth Gently",
+        "description": "Spread smoothly in light strokes without vigorous rubbing until absorbed."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Follow the recommended duration of application provided"
+        "title": "Follow Routine",
+        "description": "Apply twice daily, morning and bedtime, or as specifically advised by your doctor."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Topical cream application under Ayurvedic clinician guidance.",
     "targetIndications": "Individuals seeking a traditional Ayurvedic topical preparation for localized skin care and comfort.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "For external use only.",
-      "Avoid contact with eyes and mucous membranes.",
-      "Do not apply to broken or severely irritated skin unless advised by a healthcare professional."
+      "For external topical use only. Do not swallow.",
+      "Avoid contact with eyes, mouth, and open wounds.",
+      "Store in a cool, dry place away from direct heat."
     ],
-    "specNetQuantity": "",
+    "specNetQuantity": "50 g",
     "specProductForm": "Ozonated Pure Botanical",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -4110,23 +4096,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Take 1 capsule in the morning after food."
+        "title": "Prescribed Dosage",
+        "description": "Take dosage strictly as advised by your Ayurvedic physician (typically 1 capsule)."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Take 1 capsule in the evening after food."
+        "title": "Take with Warm Water",
+        "description": "Swallow with a glass of warm water after meals."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Consume with water."
+        "title": "Daily Timing",
+        "description": "Take twice daily, morning and evening, following clinical guidance."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Doctor-guided herbal capsule protocol for internal dermatological harmony.",
     "targetIndications": "Adults interested in traditional Ayurvedic herbal formulations associated with skin wellness and general personal care.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -4237,39 +4223,39 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "ASTRINGENT REHYDRATION",
+        "badge": "Skin Soothing",
         "commonName": "Thanrikkai / Bibhitaki",
         "latinName": "Terminalia bellirica",
-        "description": "A traditional Ayurvedic botanical associated with personal-care preparations, offering gentle toning and natural moisture barrier preservation.",
-        "bioactive": "Gallic Acid & Belleric Acid",
-        "derivative": "De-Seeded Fruit Extract",
+        "description": "Revered Triphala fruit extract supporting natural skin texture and barrier calm.",
+        "bioactive": "Tannins",
+        "derivative": "Fruit Extract",
         "image": "/images/ingredients/thanrikkai-bibhitaki.webp"
       },
       {
-        "badge": "ANTIOXIDANT NOURISHMENT",
+        "badge": "Antioxidant Vitality",
         "commonName": "Amalaki / Amla",
         "latinName": "Phyllanthus emblica",
-        "description": "Classic botanical traditionally used in Ayurvedic beauty formulations to deliver potent bioavailable Vitamin C and protect against environmental drying.",
-        "bioactive": "Ascorbic Acid & Emblicanins",
-        "derivative": "Fresh Pulp Hydro-Infusion",
+        "description": "Natural phyto-ascorbic acid and bioflavonoids for skin radiance and defense.",
+        "bioactive": "Natural Vitamin C",
+        "derivative": "Fruit Extract",
         "image": "/images/ingredients/nellikai-amla.webp"
       },
       {
-        "badge": "COOLING DERMAL COMPLEXION",
+        "badge": "Cooling Botanical",
         "commonName": "Rakta Chandana / Red Sandalwood",
         "latinName": "Pterocarpus santalinus",
-        "description": "Sacred red heartwood valued in classical Indian skincare for calming irritated dermal redness, improving blemish clarity, and maintaining smooth texture.",
-        "bioactive": "Santalin A & B Pigments",
-        "derivative": "Fine Heartwood Micro-Grind",
+        "description": "Precious cooling wood extract traditionally used to soothe heat, itching, and redness.",
+        "bioactive": "Santalin",
+        "derivative": "Heartwood Extract",
         "image": "/images/ingredients/red-sandalwood.jpg"
       },
       {
-        "badge": "PLANT-BASED GEL BASE",
+        "badge": "Hydrating Base",
         "commonName": "Aloe Vera / Kattralai Gel",
         "latinName": "Aloe barbadensis",
-        "description": "Pure succulent inner fillet gel that absorbs instantly into thirsty skin cells, delivering non-comedogenic hydration and cooling soothing relief.",
-        "bioactive": "Polysaccharides & Phytosterols",
-        "derivative": "Fresh Inner Fillet Gel",
+        "description": "Pure inner-leaf fillet gel providing intense soothing hydration without pore-clogging grease.",
+        "bioactive": "Acemannan",
+        "derivative": "Inner Leaf Gel",
         "image": "/images/ingredients/aloe-vera-gel.jpg"
       }
     ],
@@ -4279,37 +4265,38 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Clean & Dry Skin",
+        "description": "Gently clean the affected skin area with water and pat thoroughly dry."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Apply the Gel",
+        "description": "Take a small amount of Skin Well Moisturising Gel onto clean fingertips."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Spread Gently",
+        "description": "Spread the gel smoothly in light, circular strokes across the skin."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Allow to Absorb",
+        "description": "Allow 2–3 minutes for complete absorption into the skin barrier before covering with clothing."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Hydrating, non-greasy botanical gel application for irritated or dry skin.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "For external dermatological use only. Do not ingest or drink.",
+      "Avoid contact with eyes and mucous membranes. If contact occurs, rinse immediately with clean water.",
+      "Perform a 24-hour patch test on a small area of intact skin before first use.",
+      "Discontinue use if redness, burning, or irritation develops."
     ],
-    "specNetQuantity": "Standard Pack",
-    "specProductForm": "Ozonated Pure Botanical",
+    "specNetQuantity": "50 g",
+    "specProductForm": "Topical Hydrating Gel",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants",
     "fullDescription": "<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mb-3 leading-snug\">Botanical Hydration for Soft, Nourished Skin</h3>\n<p class=\"leading-relaxed mb-4\">Discover AyurRaksha Skin Well Food Moisturising Gel, a botanical-inspired skincare formulation developed to bring lightweight hydration and everyday comfort to your skin.</p>\n<p class=\"leading-relaxed mb-4\">Daily exposure to heat, dry air, frequent washing and changing weather can leave skin feeling tight or lacking softness. A consistent moisturising routine helps maintain a comfortable skin feel and a smooth, cared-for appearance. Skin Well Food Moisturising Gel offers an easy addition to that routine, with a refreshing gel texture designed to spread comfortably and absorb without a heavy, greasy finish.</p>\n<p class=\"leading-relaxed mb-4\">Inspired by traditional Indian botanical care, the formulation brings a heritage-led approach to contemporary skincare. Its emphasis on moisturising and conditioning makes it especially appealing to those who prefer a lighter texture over richer creams.</p>\n<p class=\"leading-relaxed mb-4\">Used as part of regular personal care, the gel is intended to leave skin feeling hydrated, soft and supple. Its convenient format fits into a simple daily routine, whether at home or after a busy day.</p>\n<p class=\"leading-relaxed mb-4\">Choose AyurRaksha Skin Well Food Moisturising Gel for a straightforward approach to botanical-inspired moisturising, everyday skin comfort and a naturally cared-for feel.</p>\n<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mt-6 mb-3 leading-snug\">Key Features &amp; Benefits</h3>\n<ul class=\"list-disc pl-5 space-y-1.5 mb-4\">\n  <li class=\"leading-relaxed\">Provides moisturising care for dry and dehydrated skin.</li>\n  <li class=\"leading-relaxed\">Lightweight, non-greasy gel texture.</li>\n  <li class=\"leading-relaxed\">Designed to absorb without leaving a heavy residue.</li>\n  <li class=\"leading-relaxed\">Helps maintain a soft, smooth and supple skin feel.</li>\n  <li class=\"leading-relaxed\">Features botanical ingredients associated with traditional herbal skincare.</li>\n  <li class=\"leading-relaxed\">Suitable for inclusion in everyday skincare routines.</li>\n</ul>",
@@ -4324,7 +4311,7 @@
   },
   {
     "id": 6319,
-    "name": "Etioment Pain Relief Cream",
+    "name": "Etioment Balm",
     "slug": "etionment-pain-relief-cream",
     "price": 350,
     "regularPrice": 400,
@@ -4468,37 +4455,38 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Clean & Dry Area",
+        "description": "Clean the affected joint or muscular area gently and pat dry."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Apply Balm",
+        "description": "Take a small quantity of Etioment Balm on your fingertips."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Massage Lightly",
+        "description": "Gently massage into the skin until completely absorbed."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Repeat as Needed",
+        "description": "Apply 2 to 3 times daily or as needed for soothing joint and muscle comfort."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Soothing herbal balm application for joints, muscles, and stiffness.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "For external topical use only. Do not swallow or consume.",
+      "Do not apply over damaged, blistered, broken, or freshly wounded skin.",
+      "Avoid contact with eyes and mucous membranes.",
+      "Discontinue use if skin irritation or rash occurs."
     ],
-    "specNetQuantity": "Standard Pack",
-    "specProductForm": "Ozonated Pure Botanical",
+    "specNetQuantity": "50 g",
+    "specProductForm": "Topical Pain Relief Balm",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants",
     "fullDescription": "<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mb-3 leading-snug\">Traditional Herbal Care for Everyday Body Comfort</h3>\n<p class=\"leading-relaxed mb-4\">Discover Etioment Balm, a traditional herbal topical formulation that brings the familiar experience of botanical body care into modern everyday routines.</p>\n<p class=\"leading-relaxed mb-4\">Designed for targeted external application, Etioment Balm offers a practical way to care for specific areas of the body as part of a regular personal-care routine. Whether after a busy workday, physical activity or travel, its convenient format makes focused topical care simple and accessible.</p>\n<p class=\"leading-relaxed mb-4\">Inspired by traditional Indian herbal practices, Etioment Balm reflects AyurRaksha's approach to combining botanical heritage with contemporary convenience. The formulation brings together traditional ingredients in a ready-to-use balm designed for localized application.</p>\n<p class=\"leading-relaxed mb-4\">Its compact jar makes it convenient to keep at home, in your work bag or among your travel essentials. The straightforward topical format allows the product to become part of a mindful body-care routine without elaborate preparation.</p>\n<p class=\"leading-relaxed mb-4\">Created for individuals who appreciate traditional herbal products, Etioment Balm offers a familiar approach to caring for the body while embracing the practicality of modern personal care.</p>\n<p class=\"leading-relaxed mb-4\">Etioment Balm – traditional herbal body care, made convenient for everyday comfort.</p>\n<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mt-6 mb-3 leading-snug\">Key Features &amp; Benefits</h3>\n<ul class=\"list-disc pl-5 space-y-1.5 mb-4\">\n  <li class=\"leading-relaxed\">Traditional herbal topical balm formulation.</li>\n  <li class=\"leading-relaxed\">Designed for targeted muscle and joint care.</li>\n  <li class=\"leading-relaxed\">Features seven traditional ingredients.</li>\n  <li class=\"leading-relaxed\">Convenient, ready-to-use balm format.</li>\n  <li class=\"leading-relaxed\">Suitable for localized topical application as directed.</li>\n  <li class=\"leading-relaxed\">Compact jar packaging for home and travel use.</li>\n</ul>",
@@ -4669,28 +4657,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Measure One Pinch",
+        "description": "Take one pinch (approx. 1 g) of Beta Powder in the morning."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Take on Empty Stomach",
+        "description": "Consume on an empty stomach with a sip of lukewarm water."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
-      },
-      {
-        "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Daily Routine",
+        "description": "Take consistently each morning as part of your dietary wellness regimen."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Traditional morning herbal powder protocol (subject to label confirmation).",
     "targetIndications": "Individuals considering a traditional wellness preparation associated with metabolic health",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -4827,39 +4810,39 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "GLYCEMIC BALANCE",
+        "badge": "Metabolic Herb",
         "commonName": "Vendhayam / Fenugreek Seed",
         "latinName": "Trigonella foenum-graecum",
-        "description": "Standardized seed extract that enhances peripheral insulin sensitivity, improves fasting blood sugar levels, and curbs post-meal glycemic swings.",
-        "bioactive": "4-Hydroxyisoleucine",
-        "derivative": "Aqueous Seed Extract",
+        "description": "Traditional carminative and metabolic seed supporting healthy glucose absorption.",
+        "bioactive": "Galactomannan",
+        "derivative": "Seed Extract",
         "image": "/images/ingredients/fenugreek-seeds.jpg"
       },
       {
-        "badge": "SUGAR ABSORPTION INHIBITOR",
+        "badge": "The Sugar Destroyer",
         "commonName": "Gurmar / Sirukurinjan",
         "latinName": "Gymnema sylvestre",
-        "description": "Classical herb that supports healthy pancreatic beta-cell function, suppresses carbohydrate cravings, and prevents sudden glucose surges.",
-        "bioactive": "Gymnemic Acids Complex",
-        "derivative": "Standardized Leaf Extract",
+        "description": "Revered Ayurvedic vine traditionally used to modulate sweet taste perception and insulin sensitivity.",
+        "bioactive": "Gymnemic Acids",
+        "derivative": "Leaf Extract",
         "image": "/images/ingredients/gymnema-sylvestre-gurmar.jpg"
       },
       {
-        "badge": "NUTRITIONAL METABOLISM",
+        "badge": "Nutrient Dense",
         "commonName": "Murungai / Moringa Leaf",
         "latinName": "Moringa oleifera",
-        "description": "Nutrient-rich drumstick leaves abundant in quercetin and chlorogenic acid that assist in moderating post-meal blood sugar levels.",
-        "bioactive": "Chlorogenic Acid & Quercetin",
-        "derivative": "Shade-Dried Leaf Micro-Powder",
+        "description": "Nutrient-rich botanical providing bioavailable micronutrients and antioxidant support.",
+        "bioactive": "Polyphenols",
+        "derivative": "Leaf Powder",
         "image": "/images/ingredients/moringa-leaves.jpg"
       },
       {
-        "badge": "PANCREATIC ENDOCRINE TONIC",
+        "badge": "Glycemic Support",
         "commonName": "Naval Kottai / Jamun Seed",
         "latinName": "Syzygium cumini",
-        "description": "Ancient Ayurvedic seed prized for jamboline and ellagic acid that prevent the pathological conversion of starch into excess blood sugar.",
-        "bioactive": "Jamboline & Ellagic Acid",
-        "derivative": "Cold-Milled Seed Kernels",
+        "description": "Traditional Indian blackberry seed valued for supporting carbohydrate metabolic balance.",
+        "bioactive": "Jamboline",
+        "derivative": "Seed Extract",
         "image": "/images/ingredients/syzygium-cumini-jamun.jpg"
       }
     ],
@@ -4869,29 +4852,29 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "2 capsules in the morning with water."
+        "title": "Recommended Dosage",
+        "description": "Take 1 to 2 capsules as advised on the product label."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "2 capsules at night with water."
+        "title": "Take with Water",
+        "description": "Consume with a glass of water after food."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Best taken with meals."
+        "title": "Monitor Glucose Levels",
+        "description": "Maintain routine blood glucose monitoring and take consistently."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Targeted botanical extract capsules for metabolic and glucose balance.",
     "targetIndications": "Individuals interested in traditional botanical food supplements as part of a balanced wellness routine",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Follow the dosage on the product label.",
-      "Do not exceed the recommended daily quantity.",
-      "Consult a healthcare professional before use, particularly if taking insulin, glucose-lowering medication or other prescribed medicines."
+      "Consult your healthcare professional before use, especially if taking insulin, oral glucose-lowering drugs, or other prescription medications.",
+      "Regular blood glucose monitoring is strongly recommended.",
+      "Do not exceed the recommended daily dosage."
     ],
     "specNetQuantity": "60 Capsules per Bottle",
     "specProductForm": "Standardized Botanical Extract",
@@ -5019,39 +5002,30 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "CARMINATIVE ROOT AROMA",
+        "badge": "Digestive Herb",
         "commonName": "Vettiveroides / Kuruver",
         "latinName": "Coleus vettiveroides",
-        "description": "Fragrant wetland root with cooling carminative volatiles that relieve trapped intestinal flatulence, dispel abdominal colic, and ease bloating.",
-        "bioactive": "Essential Volatiles & Sesquiterpenes",
-        "derivative": "Aromatic Dried Rootlets",
+        "description": "Traditional cooling aromatic root used to soothe abdominal heat and gastric discomfort.",
+        "bioactive": "Essential Terpenes",
+        "derivative": "Root Extract",
         "image": "/images/ingredients/coleus-vettiveroides-kuruver.jpg"
       },
       {
-        "badge": "DIGESTIVE REJUVENATOR",
+        "badge": "Digestive Regulating",
         "commonName": "Kadukkai / Haritaki",
         "latinName": "Terminalia chebula",
-        "description": "The premier Ayurvedic colon toner that coordinates regular peristaltic evacuation, removes fermented Ama toxins, and relieves abdominal fullness.",
-        "bioactive": "Chebulic Acid & Tannins",
-        "derivative": "Dried Fruit Pericarp",
+        "description": "King of herbs in classical tradition, supporting peristaltic motility and gut cleansing.",
+        "bioactive": "Chebulic Acid",
+        "derivative": "Fruit Extract",
         "image": "/images/ingredients/kadukkai-haritaki.webp"
       },
       {
-        "badge": "GUT LINING PROTECTOR",
+        "badge": "Gastric Comfort",
         "commonName": "Vendhayam / Fenugreek",
         "latinName": "Trigonella foenum-graecum",
-        "description": "Rich in demulcent soluble mucilage that coats hyperacidic stomach linings, soothing acid regurgitation and digestive irritability.",
-        "bioactive": "Galactomannan Mucilage",
-        "derivative": "Slow-Cured Whole Seeds",
-        "image": "/images/ingredients/fenugreek-seeds.jpg"
-      },
-      {
-        "badge": "ANTISPASMODIC FENNEL",
-        "commonName": "Sombu / Sweet Fennel",
-        "latinName": "Foeniculum vulgare",
-        "description": "Sweet aromatic seeds releasing anethole and fenchone to relax intestinal smooth muscle spasms, promote easy digestion, and eliminate gastric discomfort.",
-        "bioactive": "Anethole & Fenchone",
-        "derivative": "Sun-Dried Ripe Seeds",
+        "description": "Mucilage-rich seed traditionally used to soothe gastric mucosa and balance acid.",
+        "bioactive": "Galactomannan",
+        "derivative": "Seed Extract",
         "image": "/images/ingredients/fenugreek-seeds.jpg"
       }
     ],
@@ -5061,28 +5035,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Morning Dose",
+        "description": "Take 1 capsule before breakfast with a glass of fresh water (subject to label confirmation)."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Evening Dose",
+        "description": "Take 1 capsule before dinner with a glass of fresh water."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
-      },
-      {
-        "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Consistent Routine",
+        "description": "Take consistently before meals to support natural carminative balance and digestive comfort."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Pre-meal botanical capsule routine for comfortable digestive transit.",
     "targetIndications": "Adults interested in traditional Siddha herbal preparations associated with digestive wellness and gastrointestinal comfort",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -5284,28 +5253,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Morning Sachet",
+        "description": "Take 1 sachet before breakfast with water (confirm against product label)."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Evening Sachet",
+        "description": "Take 1 sachet before dinner with water."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
-      },
-      {
-        "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Daily Regularity",
+        "description": "Take consistently twice daily to support continuous internal rejuvenation."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Pre-meal herbal sachet protocol for metabolic and liver support.",
     "targetIndications": "Adults considering a traditional Ayurvedic proprietary formulation in the context of alcohol-related wellness",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -5347,7 +5311,7 @@
     "rating": 4.8,
     "reviewCount": 12,
     "shortDescription": "Discover Skin Well Capsules by AyurRaksha, a botanical food supplement featuring eight traditional herbal ingredients, thoughtfully formulated to complement everyday skin wellness.",
-    "description": "<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mb-3 leading-snug\">Botanical Wellness for Healthy-Looking Skin</h3>\n<p class=\"leading-relaxed mb-4\">Discover Skin Well Capsules, a thoughtfully developed botanical food supplement from AyurRaksha, inspired by India's traditional approach to herbal wellness and personal care.</p>\n<p class=\"leading-relaxed mb-4\">Healthy-looking skin is an important part of overall wellbeing, and maintaining its natural appearance involves more than external skincare alone. Balanced nutrition, adequate hydration, restful sleep and consistent daily habits all contribute to a mindful approach to skin care.</p>\n<p class=\"leading-relaxed mb-4\">Skin Well Capsules reflect this holistic philosophy by bringing traditional botanical knowledge into a convenient supplement format. Developed for individuals who appreciate plant-based wellness products, the formulation offers an opportunity to explore traditional herbal preparations alongside everyday personal-care practices.</p>\n<p class=\"leading-relaxed mb-4\">Rooted in India's rich botanical heritage, Skin Well Capsules represent AyurRaksha's commitment to connecting established herbal traditions with contemporary wellness lifestyles.</p>\n<p class=\"leading-relaxed mb-4\">Its convenient capsule format makes it a practical addition to a professionally guided wellness routine, without the need for elaborate preparation.</p>\n<p class=\"leading-relaxed mb-4\">Whether maintaining an established skincare routine or exploring a broader approach to personal wellbeing, Skin Well Capsules offer a connection to traditional botanical practices.</p>\n<p class=\"leading-relaxed mb-4\">Discover botanical-inspired wellness with Skin Well Capsules by AyurRaksha – where traditional herbal heritage meets modern self-care.</p>\n<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mt-6 mb-3 leading-snug\">Key Features &amp; Benefits</h3>\n<ul class=\"list-disc pl-5 space-y-1.5 mb-4\">\n  <li class=\"leading-relaxed\">Botanical food supplement developed with a focus on skin wellness.</li>\n  <li class=\"leading-relaxed\">Features eight plant-derived ingredients.</li>\n  <li class=\"leading-relaxed\">Inspired by traditional Indian herbal preparations.</li>\n  <li class=\"leading-relaxed\">Designed to complement a balanced skincare and wellness routine.</li>\n  <li class=\"leading-relaxed\">Convenient capsule format for straightforward consumption.</li>\n</ul>",
+    "description": "<p>Skin Well Food Supplement Capsules bring together eight classical botanicals—Wrightia tinctoria, Rubia cordifolia (Manjistha), Tinospora cordifolia (Guduchi), Curcuma longa, Azadirachta indica (Neem), Phyllanthus emblica (Amla), Terminalia chebula (Haritaki), and Terminalia bellirica (Bibhitaki)—formulated to nourish the skin from within and support natural bodily detoxification.</p>",
     "cleanDescription": "Discover Skin Well Capsules, a thoughtfully developed botanical food supplement from AyurRaksha, inspired by India's traditional approach to herbal wellness and personal care. Healthy-looking skin is an important part of overall wellbeing, and maintaining its natural appearance involves more than external skincare alone. Balanced nutrition, adequate hydration, restful sleep and consistent daily habits all contribute to a mindful approach to skin care. Skin Well Capsules reflect this holistic philosophy by bringing traditional botanical knowledge into a convenient supplement format. Developed for individuals who appreciate plant-based wellness products, the formulation offers an opportunity to explore traditional herbal preparations alongside everyday personal-care practices. Rooted in India's rich botanical heritage, Skin Well Capsules represent AyurRaksha's commitment to connecting established herbal traditions with contemporary wellness lifestyles. Its convenient capsule format makes it a practical addition to a professionally guided wellness routine, without the need for elaborate preparation. Whether maintaining an established skincare routine or exploring a broader approach to personal wellbeing, Skin Well Capsules offer a connection to traditional botanical practices. Discover botanical-inspired wellness with Skin Well Capsules by AyurRaksha – where traditional herbal heritage meets modern self-care.",
     "inStock": true,
     "variants": [
@@ -5464,28 +5428,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Recommended Dosage",
+        "description": "Take 2 capsules at night (confirm dosage against product label)."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Take with Water",
+        "description": "Consume with a full glass of water after dinner."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
-      },
-      {
-        "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Nightly Consistency",
+        "description": "Maintain this nightly routine consistently to support overnight skin and tissue replenishment."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Overnight botanical nourishment supporting skin tissue balance from within.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -5672,36 +5631,36 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "For individuals without existing heart conditions:"
+        "title": "Measure Morning Dose",
+        "description": "Measure 15–20 ml of Save Heart tonic in the morning."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "10 ml in the morning on an empty stomach."
+        "title": "Dilute & Consume",
+        "description": "Mix with half a glass of lukewarm water and take on an empty stomach."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "For individuals with existing heart conditions:"
+        "title": "Night-Time Regimen for Existing Heart Conditions",
+        "description": "For individuals managing existing heart conditions, take an additional 15 ml after dinner before bedtime as clinically advised by your doctor."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "10 ml in the morning on an empty stomach."
+        "title": "Consistent Wellness Routine",
+        "description": "Take daily alongside healthy dietary habits and regular physician monitoring."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Traditional cardiac wellness tonic protocol for daily cardiovascular vitality.",
     "targetIndications": "Adults interested in a premium liquid wellness product as part of a balanced, heart-conscious lifestyle",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Follow the directions and recommended quantity.",
-      "Do not exceed the recommended dosage.",
-      "Consult a healthcare professional before use if taking prescribed medication, particularly medication for heart conditions, blood pressure or blood glucose."
+      "Consult your cardiologist or physician before use if you are taking blood thinners, blood pressure medication, or glucose-lowering drugs.",
+      "Do not discontinue or modify any prescribed cardiovascular medication without doctor consultation.",
+      "Store in a cool, dark place. Shake bottle well before each use."
     ],
-    "specNetQuantity": "270ml – 1 Bottle",
+    "specNetQuantity": "500 ml",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -5876,36 +5835,36 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Wet your skin with water."
+        "title": "Wet the Skin",
+        "description": "Moisten your skin thoroughly with lukewarm water in the shower or bath."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Lather SkinWell Soap between your hands or using a washcloth."
+        "title": "Lather and Apply",
+        "description": "Rub the SkinWell Soap bar gently between your hands or over the body to create a rich, creamy lather."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Gently massage the lather onto the skin in circular motions."
+        "title": "Cleanse Gently",
+        "description": "Massage the botanical lather smoothly over the body, allowing aloe vera and avocado oil to cleanse without stripping."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Rinse thoroughly with clean water."
+        "title": "Rinse Thoroughly",
+        "description": "Rinse off thoroughly with clean water and pat dry with a soft towel."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Ultra-gentle botanical bathing for sensitive, delicate, or dry skin.",
     "targetIndications": "Individuals looking for a botanical cleansing soap for everyday bathing and personal hygiene.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "For external use only.",
-      "Avoid direct contact with eyes.",
-      "Rinse thoroughly with water if the product enters the eyes."
+      "For external bathing use only. Do not swallow.",
+      "Avoid contact with eyes. In case of eye contact, rinse immediately with clean water.",
+      "Keep in a well-drained soap tray after use to extend bar longevity."
     ],
-    "specNetQuantity": "Standard Pack",
+    "specNetQuantity": "Pack of 2 (2 × 75 g)",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -6011,39 +5970,39 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "LIPID METABOLISM & CIRCULATION",
+        "badge": "Circulation Botanical",
         "commonName": "Malabar Tamarind / Kudampuli",
         "latinName": "Garcinia cambogia",
-        "description": "A traditional botanical rich in hydroxycitric acid that supports healthy blood flow, regulates lipid accumulation, and optimizes vascular tone.",
-        "bioactive": "Hydroxycitric Acid (HCA 60%)",
-        "derivative": "Sun-Dried Smoky Fruit Rind",
+        "description": "Traditional fruit extract valued for assisting lipid balance and vascular wellness.",
+        "bioactive": "Hydroxycitric Acid (HCA)",
+        "derivative": "Fruit Rind Extract",
         "image": "/images/ingredients/garcinia-cambogia-kudampuli.jpg"
       },
       {
-        "badge": "VASCULAR ENDOTHELIAL TONIC",
+        "badge": "Vascular Tone",
         "commonName": "Arjuna Bark / Marudha Maram",
         "latinName": "Terminalia arjuna",
-        "description": "Revered classical tree bark that strengthens venous wall integrity, improves valvular elasticity, and supports smooth venous return from extremities.",
-        "bioactive": "Arjunolic Acid & Oligomeric Tannins",
-        "derivative": "Mature Trunk Bark Extract",
+        "description": "Classical cardiovascular tree bark traditionally used to support blood vessel elasticity.",
+        "bioactive": "Arjunolic Acid",
+        "derivative": "Bark Extract",
         "image": "/images/ingredients/arjuna-bark.jpg"
       },
       {
-        "badge": "MICROVASCULAR INTEGRITY",
-        "commonName": "Draksha / Grape Seed",
+        "badge": "Phyto-Antioxidant",
+        "commonName": "Draksha / Vitis vinifera Fruit Dried Powder",
         "latinName": "Vitis vinifera",
-        "description": "Concentrated grape seed extract rich in proanthocyanidins (OPCs) that reinforces fragile micro-capillary walls, reducing leg swelling and heaviness.",
-        "bioactive": "Proanthocyanidins (OPCs 95%)",
-        "derivative": "De-Fatted Whole Seed Extract",
+        "description": "Standardized Vitis vinifera fruit dried powder rich in proanthocyanidins supporting venous integrity.",
+        "bioactive": "Oligomeric Proanthocyanidins",
+        "derivative": "Fruit Powder",
         "image": "/images/ingredients/grape-seed.jpg"
       },
       {
-        "badge": "MICROCIRCULATION PURIFIER",
+        "badge": "Micro-Circulatory Care",
         "commonName": "Manjistha / Indian Madder",
         "latinName": "Rubia cordifolia",
-        "description": "Ayurvedic blood cleanser that dispels venous congestion and localized discolouration in lower extremities caused by sluggish blood circulation.",
-        "bioactive": "Purpurin & Xanthopurpurin",
-        "derivative": "Sun-Cured Taproot Decoction",
+        "description": "Classical Rakta Prasadaka root traditionally used for blood purification and micro-circulation.",
+        "bioactive": "Purpurin",
+        "derivative": "Root Extract",
         "image": "/images/ingredients/rubia-cordifolia-manjistha.jpg"
       }
     ],
@@ -6053,28 +6012,28 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Evening Dose",
+        "description": "Take 2 capsules at night after dinner (subject to clinician and label confirmation)."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Take with Warm Water",
+        "description": "Swallow with a full glass of warm water."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Circulation Routine",
+        "description": "Rest with legs slightly elevated when seated; maintain light daily walking as recommended."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Staged Clinical Protocol",
+        "description": "Follow the progressive protocol outlined by your Ayurvedic doctor or practitioner."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Staged botanical capsule regimen supporting peripheral circulation and lower-leg comfort.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -6240,37 +6199,38 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Prepare Fresh Boiled Water",
+        "description": "Boil 150 ml of fresh drinking water and pour into a clean cup."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Infuse Tea Bag 3–5 Minutes",
+        "description": "Place one LaxaHealth tea bag into the cup. Cover and steep for 3 to 5 minutes to release active herbal essences."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Remove Bag · Do Not Add Milk",
+        "description": "Remove the tea bag gently without squeezing. Do not add milk."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Sip Warm at Bedtime",
+        "description": "Sip warm before sleep as an evening routine for comfortable morning elimination."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Herbal tea infusion method for gentle overnight bowel regularity.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "Contains Senna (Cassia angustifolia). Do not use continuously for more than 7 days without medical advice.",
+      "Not recommended for children under 12 years of age.",
+      "Do not use during pregnancy or while breastfeeding.",
+      "Avoid use in cases of intestinal obstruction, acute inflammatory bowel disease, or unexplained abdominal pain."
     ],
-    "specNetQuantity": "Standard Pack",
-    "specProductForm": "Single-Serving Powder Sachets",
+    "specNetQuantity": "40 Tea Bags (approx. 80 g)",
+    "specProductForm": "40 Tea Bags in Tin",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants",
     "fullDescription": "<p class=\"leading-relaxed mb-4\">Discover LAXA HEALTH TEA by 18 Herbs Organics, a traditional herbal infusion created for adults seeking occasional support for bowel regularity.</p>\n<p class=\"leading-relaxed mb-4\">Inspired by longstanding herbal wellness traditions, this tea offers a familiar botanical format for those who appreciate straightforward, plant-based preparations. Its convenient tea bags make it easy to incorporate into an occasional digestive-care routine without complicated preparation.</p>\n<p class=\"leading-relaxed mb-4\">Digestive wellbeing is influenced by many everyday habits. Drinking enough water, eating fibre-rich foods, staying active and maintaining regular meal times can all contribute to healthy bowel function. LAXA HEALTH TEA is intended for short-term use when occasional constipation requires additional attention, rather than as a daily long-term wellness drink.</p>\n<p class=\"leading-relaxed mb-4\">Presented in a reusable tin containing 40 tea bags, the product brings traditional herbal preparation into a practical, easy-to-store format. It is designed for responsible use according to the product directions and appropriate health guidance.</p>\n<p class=\"leading-relaxed mb-4\">Explore a traditional approach to occasional digestive care with LAXA HEALTH TEA by 18 Herbs Organics.</p>\n<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mt-6 mb-3 leading-snug\">Key Features &amp; Benefits</h3>\n<ul class=\"list-disc pl-5 space-y-1.5 mb-4\">\n  <li class=\"leading-relaxed\">Made from pure cut Senna leaves.</li>\n  <li class=\"leading-relaxed\">Traditionally used for short-term relief from occasional constipation.</li>\n  <li class=\"leading-relaxed\">Supports bowel movements through Senna's natural stimulant laxative action.</li>\n  <li class=\"leading-relaxed\">Naturally caffeine-free herbal infusion.</li>\n  <li class=\"leading-relaxed\">Convenient, individually packed tea bags.</li>\n  <li class=\"leading-relaxed\">Available in a reusable tin containing 40 tea bags</li>\n</ul>",
@@ -6454,28 +6414,28 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Measure 7 ml of PURNA SAKTHI."
+        "title": "Measure Recommended Quantity",
+        "description": "Measure 15–20 ml of Purna Sakthi tonic using a measuring cup."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Dilute with 100 ml of water."
+        "title": "Dilute as Desired",
+        "description": "Mix with an equal quantity of warm water or lukewarm milk after food."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Consume after food."
+        "title": "Take Twice Daily",
+        "description": "Consume twice a day, once after breakfast and once after dinner."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "twice-daily use"
+        "title": "Routine Consistency",
+        "description": "Take consistently for 3 to 6 months to support balanced hormones, regular cycles, and sustained vitality."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Nourishing herbal tonic protocol for female reproductive wellness and daily stamina.",
     "targetIndications": "Adult women interested in a traditional herbal nutraceutical product as part of their general wellness routine.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -6483,8 +6443,8 @@
       "Do not exceed the recommended daily quantity.",
       "Consult a healthcare professional before use during pregnancy or breastfeeding."
     ],
-    "specNetQuantity": "",
-    "specProductForm": "Doctor Formulated",
+    "specNetQuantity": "500 ml",
+    "specProductForm": "Ayurvedic Herbal Tonic",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
   },
@@ -6697,38 +6657,38 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Take a small quantity of DIVINE HEALING OIL."
+        "title": "Prepare the Area",
+        "description": "Cleanse the skin area gently and pat dry before application."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Apply to the intended area."
+        "title": "Dispense the Oil",
+        "description": "Pour 10–15 ml of Divine Healing Oil into the palm of your hand."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Massage gently until the oil is absorbed."
+        "title": "Apply and Massage Gently",
+        "description": "Massage gently over affected intact skin 15–20 minutes before bathing. Use smooth, upward circular strokes without applying heavy pressure over bulging veins."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Repeat as needed"
+        "title": "Wash Off with Mild Cleanser",
+        "description": "Wash off thoroughly in the bath or shower using a gentle soap such as SkinWell Soap."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Pre-bath external botanical application for skin conditioning and soothing comfort.",
     "targetIndications": "Adults seeking a traditional Ayurvedic topical preparation for skin conditioning, external massage and body care",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "For external use only.",
-      "Do not swallow.",
+      "For external topical application on intact skin only. Do not swallow.",
+      "Do not apply over open wounds, weeping ulcers, or infected lesions without medical supervision.",
       "Avoid contact with eyes and mucous membranes.",
-      "Avoid applying to open wounds, burns, ulcers or infected skin without medical guidance."
+      "Perform a 24-hour patch test before first use."
     ],
-    "specNetQuantity": "",
-    "specProductForm": "External Therapeutic Application",
+    "specNetQuantity": "100 ml",
+    "specProductForm": "Classical Botanical Massage Oil",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
   },
@@ -6876,40 +6836,58 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "PRIMARY HEPATOPROTECTIVE",
+        "badge": "Hepatic Tonic",
         "commonName": "Karisalankanni / Bhringraj",
         "latinName": "Eclipta alba",
-        "description": "Traditional herbal ingredient (Karicalai) celebrated in Siddha medicine for revitalizing sluggish liver parenchyma and stimulating antioxidant glutathione.",
-        "bioactive": "Wedelolactone & Demethylwedelolactone",
-        "derivative": "Whole Fresh Herb Decoction",
+        "description": "Classical Siddha herb renowned for supporting liver parenchyma regeneration and bile flow.",
+        "bioactive": "Wedelolactone",
+        "derivative": "Whole Plant Extract",
         "image": "/images/ingredients/eclipta-alba-bhringraj.jpg"
       },
       {
-        "badge": "ENZYMATIC CLEANSING",
+        "badge": "Liver Shield",
         "commonName": "Keelanelli / Bhumyamalaki",
         "latinName": "Phyllanthus niruri",
-        "description": "Traditional Siddha botanical renowned for protecting hepatocytes against alcohol-induced oxidative insults and regulating normal transaminase levels.",
-        "bioactive": "Phyllanthin & Hypophyllanthin",
-        "derivative": "Whole Plant Aqueous Extract",
+        "description": "Revered hepatoprotective botanical traditionally used for jaundice, viral balance, and cellular defense.",
+        "bioactive": "Phyllanthin",
+        "derivative": "Whole Herb",
         "image": "/images/ingredients/phyllanthus-niruri-keelanelli.jpg"
       },
       {
-        "badge": "METABOLIC ENHANCER",
+        "badge": "Bio-Enhancer",
         "commonName": "Milagu / Black Pepper",
         "latinName": "Piper nigrum",
-        "description": "Traditional warming spice that clears deep metabolic sluggishness, stimulates digestive enzymes, and accelerates systemic toxin clearance.",
-        "bioactive": "Natural Piperine Alkaloid",
-        "derivative": "Dried Whole Peppercorn",
+        "description": "Natural bioavailability enhancer that assists hepatic microcirculation and nutrient uptake.",
+        "bioactive": "Piperine",
+        "derivative": "Fruit Extract",
         "image": "/images/ingredients/black-pepper-seeds.jpg"
       },
       {
-        "badge": "DIGESTIVE CALMING TONIC",
+        "badge": "Digestive Root",
         "commonName": "Vilvaver / Bael Root",
         "latinName": "Aegle marmelos",
-        "description": "Sacred Bael root (Vilvaver) traditionally used to cool heated gastric tissues, stop nausea, and restore balanced appetite and vitality.",
-        "bioactive": "Marmelosin & Psoralen",
-        "derivative": "Wild Forest Mature Roots",
+        "description": "Traditional cooling root supporting gastro-hepatic equilibrium and mucosal tone.",
+        "bioactive": "Marmelosin",
+        "derivative": "Root Extract",
         "image": "/images/ingredients/arjuna-bark.jpg"
+      },
+      {
+        "badge": "Carminative Herbal",
+        "commonName": "Shombu / Sweet Fennel",
+        "latinName": "Foeniculum vulgare",
+        "description": "Traditional aromatic carminative supporting digestive ease and smooth bile clearance.",
+        "bioactive": "Anethole",
+        "derivative": "Seed Extract",
+        "image": "/images/ingredients/fenugreek-seeds.jpg"
+      },
+      {
+        "badge": "Cellular Purifier",
+        "commonName": "Nilavembu / Kalmegh",
+        "latinName": "Andrographis paniculata",
+        "description": "Preeminent Siddha bitter botanical valued for immune and systemic liver detoxification.",
+        "bioactive": "Andrographolide",
+        "derivative": "Whole Herb Extract",
+        "image": "/images/ingredients/traditional-raw-ayurvedic-herbs-mortar.webp"
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -6918,23 +6896,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Take one 10 ml sachet approximately 30 minutes after breakfast."
+        "title": "Measure Sachet",
+        "description": "Take one single-serving sachet of BoozLiv."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Take another 10 ml sachet after dinner."
+        "title": "Mix with Water",
+        "description": "Empty contents into 100 ml of fresh drinking water and stir thoroughly."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Follow the recommended dosage"
+        "title": "Consume as Directed",
+        "description": "Drink before food in the morning and evening, or as advised by your healthcare practitioner."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Pre-meal botanical sachet routine to support healthy liver function and metabolic detox.",
     "targetIndications": "Adults considering traditional Siddha herbal preparations associated with liver wellness",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -6942,8 +6920,8 @@
       "Do not exceed the recommended quantity.",
       "Consult a healthcare professional before use if you have an existing liver condition or take prescribed medication."
     ],
-    "specNetQuantity": "60 sachets × 10ml = 600ml",
-    "specProductForm": "Doctor Formulated",
+    "specNetQuantity": "Single-Serving Sachets",
+    "specProductForm": "Siddha Herbal Supplement",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
   },
@@ -7068,40 +7046,49 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "RESPIRATORY BRONCHODILATOR",
+        "badge": "Bronchial Care",
         "commonName": "Adathodai / Malabar Nut",
-        "latinName": "Justicia adhatoda / Adhatoda vasica",
-        "description": "Revered Ayurvedic respiratory botanical that liquefies viscous bronchial phlegm, dilates bronchial passages, and supports unobstructed breathing.",
-        "bioactive": "Vasicine & Vasicinone Alkaloids",
-        "derivative": "Mature Shade-Dried Leaves",
-        "image": "/images/ingredients/neem-leaves.jpg"
+        "latinName": "Justicia adhatoda",
+        "description": "Renowned respiratory botanical traditionally used to liquefy tenacious phlegm and clear airways.",
+        "bioactive": "Vasicine",
+        "derivative": "Leaf Extract",
+        "image": "/images/ingredients/traditional-raw-ayurvedic-herbs-mortar.webp"
       },
       {
-        "badge": "SOUTH INDIAN RESPIRATORY TONIC",
+        "badge": "Respiratory Soothe",
         "commonName": "Thooduvalai / Purple Fruited Pea",
         "latinName": "Solanum trilobatum",
-        "description": "Classical Siddha herb renowned for strengthening pulmonary immunity, expelling deep chest congestion, and relieving chronic throat irritation.",
-        "bioactive": "Solasodine & Steroidal Alkaloids",
-        "derivative": "Thorny Stems & Leaves",
+        "description": "Classical herbal defense against chronic sneezing, cold, cough, and throat irritation.",
+        "bioactive": "Solamarine",
+        "derivative": "Whole Herb",
         "image": "/images/ingredients/solanum-trilobatum-thooduvalai.jpg"
       },
       {
-        "badge": "BIOAVAILABILITY CATALYST",
+        "badge": "Mucolytic Active",
         "commonName": "Thippili / Indian Long Pepper",
         "latinName": "Piper longum",
-        "description": "Penetrating warming spike that dispels accumulated Kapha moisture from lung airways while magnifying the potency of companion respiratory herbs.",
-        "bioactive": "Piperine & Piperlonguminine",
-        "derivative": "Sun-Cured Mature Spikes",
+        "description": "Deep warming rejuvenator for respiratory microcirculation and lung tissue vitality.",
+        "bioactive": "Piperine",
+        "derivative": "Fruit Extract",
         "image": "/images/ingredients/black-pepper-seeds.jpg"
       },
       {
-        "badge": "PULMONARY DEFENSE",
+        "badge": "Sacred Defender",
         "commonName": "Krishna Tulasi / Holy Basil",
         "latinName": "Ocimum tenuiflorum",
-        "description": "Sacred Indian basil containing volatile eugenol that soothes irritated respiratory mucosa, calms spasmodic coughing, and bolsters natural resistance.",
+        "description": "Adaptogenic holy basil prized for antimicrobial immunity and bronchial clarity.",
         "bioactive": "Eugenol & Ursolic Acid",
-        "derivative": "Whole Fresh Basil Foliage",
+        "derivative": "Leaf Extract",
         "image": "/images/ingredients/tulsi-holy-basil.jpg"
+      },
+      {
+        "badge": "Warming Root",
+        "commonName": "Chukku / Dry Ginger",
+        "latinName": "Zingiber officinale",
+        "description": "Traditional warming carminative supporting sinus drainage and throat comfort.",
+        "bioactive": "Gingerols",
+        "derivative": "Rhizome Extract",
+        "image": "/images/ingredients/dry-ginger-sunthi.png"
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -7110,28 +7097,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Recommended Dosage",
+        "description": "Take 1 to 2 capsules daily with water (confirm against product label)."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Take with Water",
+        "description": "Swallow with a full glass of lukewarm water after meals."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
-      },
-      {
-        "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Daily Timing",
+        "description": "Take once or twice daily, morning and evening, for consistent respiratory comfort and ease."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Herbal capsule regimen for upper and lower respiratory defense.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -7288,39 +7270,39 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "HYDRATING SCALP TONIC",
+        "badge": "Scalp Soother",
         "commonName": "Kattralai / Pure Aloe Vera",
         "latinName": "Aloe barbadensis",
-        "description": "Fresh inner leaf gel that delivers enzymatic conditioning, balances scalp pH, soothes itching, and locks moisture deep into dry hair follicles.",
-        "bioactive": "Acemannan Polysaccharides",
-        "derivative": "Fresh Inner Fillet Gel",
+        "description": "Natural moisture-retaining mucilage supporting healthy scalp pH and root hydration.",
+        "bioactive": "Barbaloin",
+        "derivative": "Inner Leaf Extract",
         "image": "/images/ingredients/aloe-vera-gel.jpg"
       },
       {
-        "badge": "SULFUR FOLLICLE STIMULANT",
+        "badge": "Follicle Stimulator",
         "commonName": "Vengayam / Red Onion Bulb",
         "latinName": "Allium cepa",
-        "description": "Rich in dietary organic sulfur and quercetin that reactivate dormant hair follicles, increase scalp blood flow, and minimize premature hair loss.",
-        "bioactive": "Organic Sulfur Compounds & Quercetin",
-        "derivative": "Cold-Expressed Red Onion Juice",
-        "image": "/images/ingredients/raw-garlic-bulb.jpg"
+        "description": "Rich in organic sulphur and flavonoids traditionally valued for hair density and scalp nourishment.",
+        "bioactive": "Quercetin & Sulphur",
+        "derivative": "Bulb Extract",
+        "image": "/images/ingredients/traditional-raw-ayurvedic-herbs-mortar.webp"
       },
       {
-        "badge": "FOLLICLE NOURISHING LIPID",
+        "badge": "Nourishing Carrier",
         "commonName": "Black Sesame Seed Oil",
         "latinName": "Sesamum indicum",
-        "description": "The premier classical hair oil base with exceptional micro-penetration (Sukshma), feeding essential lignans deep into hair roots to arrest split ends.",
-        "bioactive": "Sesamin, Sesamolin & Vitamin E",
-        "derivative": "First Cold-Pressed Black Seeds",
+        "description": "Cold-pressed black sesame oil providing deep penetration and essential lipids to hair follicles.",
+        "bioactive": "Sesamin & Sesamol",
+        "derivative": "Cold-Pressed Seed Oil",
         "image": "/images/ingredients/sesame-seeds.jpg"
       },
       {
-        "badge": "PROTEIN & CONDITIONING",
+        "badge": "Protein Support",
         "commonName": "Vendhayam / Sprouted Fenugreek",
         "latinName": "Trigonella foenum-graecum",
-        "description": "Traditional South Indian hair-care seed rich in natural proteins, nicotinic acid, and mucilage that rebuild broken hair cuticle scales.",
-        "bioactive": "Nicotinic Acid & Lecithin",
-        "derivative": "Sprouted Seed Hydro-Infusion",
+        "description": "High in amino acids and lecithin to condition brittle hair strands and soothe dry scalp.",
+        "bioactive": "Trigonelline",
+        "derivative": "Sprouted Seed Extract",
         "image": "/images/ingredients/fenugreek-seeds.jpg"
       }
     ],
@@ -7330,28 +7312,33 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Before Bath:"
+        "title": "Apply to Scalp & Roots",
+        "description": "Pour 10–15 ml of Dhayani Herbal Hair Oil onto palms and apply evenly across scalp and hair roots."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Take a suitable quantity of Dhayani Herbal Hair Oil."
+        "title": "Massage Gently",
+        "description": "Massage gently with fingertips in circular motions for 5–10 minutes to stimulate follicular microcirculation."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Apply evenly to the scalp and hair."
+        "title": "45-Minute Leave-On Period",
+        "description": "Leave the oil on the scalp for at least 45 minutes to allow deep absorption. (For regular hair-care maintenance, it may also be left on overnight as preferred)."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Massage gently using your fingertips."
+        "title": "Rinse with Herbal Shampoo",
+        "description": "Wash off thoroughly with AyurRaksha Herbal Shampoo and lukewarm water."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Repeat 2–3 Times Weekly",
+        "description": "Use 2 to 3 times a week for optimal scalp nourishment and hair strength."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Complete hair and scalp care routine with 45-minute leave-on period.",
     "targetIndications": "Individuals seeking a traditional botanical hair oil for regular scalp massage, hair conditioning and maintaining soft, manageable hair.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -7359,7 +7346,7 @@
       "Avoid direct contact with eyes.",
       "Keep out of reach of children."
     ],
-    "specNetQuantity": "",
+    "specNetQuantity": "100 ml",
     "specProductForm": "External Therapeutic Application",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -7491,39 +7478,39 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "100% PURE BOTANICAL ACTIVE",
+        "badge": "Vitality Tonic",
         "commonName": "Poonaikali / Velvet Bean",
         "latinName": "Mucuna pruriens",
-        "description": "100% pure Mucuna pruriens (Kapikachhu / Velvet Bean) seeds naturally rich in plant proteins, essential amino acids, and bioavailable L-DOPA to support neuro-muscular vitality and physical stamina.",
-        "bioactive": "Natural L-DOPA (Levodopa) & Amino Acids",
-        "derivative": "Pure Milled Velvet Bean Seed Powder",
+        "description": "Traditional Ayurvedic botanical prized for supporting neuro-muscular vitality and physical stamina.",
+        "bioactive": "L-DOPA",
+        "derivative": "Seed Powder",
         "image": "/images/ingredients/mucuna-pruriens-velvet-bean.jpg"
       },
       {
-        "badge": "ENDURANCE & RECOVERY",
+        "badge": "Adaptogen Power",
         "commonName": "Amukkira / Ashwagandha",
         "latinName": "Withania somnifera",
-        "description": "Premier Ayurvedic adaptogen that reduces muscle breakdown during exertion, promotes lean muscle synthesis, and enhances energy resilience.",
-        "bioactive": "Withanolides & Sitoindosides",
-        "derivative": "Wild Forest Mature Roots",
+        "description": "Revered classical Rasayana root aiding muscle recovery, stress balance, and stamina.",
+        "bioactive": "Withanolides",
+        "derivative": "Root Extract",
         "image": "/images/ingredients/ashwagandha-root.jpg"
       },
       {
-        "badge": "STAMINA & VIGOR",
+        "badge": "Endurance Herb",
         "commonName": "Nerunjil / Gokshura",
         "latinName": "Tribulus terrestris",
-        "description": "Traditional spiny fruit botanical revered in Ayurveda for supporting male vigor, optimizing energy output, and promoting muscular vitality.",
-        "bioactive": "Protodioscin & Saponins",
-        "derivative": "Spiny Dried Fruit Pods",
+        "description": "Classical fruit extract supporting urinary and reproductive vitality and muscular tone.",
+        "bioactive": "Saponins",
+        "derivative": "Fruit Extract",
         "image": "/images/ingredients/tribulus-terrestris-gokshura.jpg"
       },
       {
-        "badge": "NUTRIENT REBUILDER",
+        "badge": "Rejuvenator",
         "commonName": "Safed Musli / Swetha Musli",
         "latinName": "Chlorophytum borivilianum",
-        "description": "Revered Rasayana tuber high in natural saponins and polysaccharides that replenishes depleted bodily tissues (Dhatus) and sustains vigor.",
-        "bioactive": "Steroidal Saponins & Polysaccharides",
-        "derivative": "Sun-Dried White Tubers",
+        "description": "Nutritive tonic root traditionally used to support bodily strength and healthy tissue renewal.",
+        "bioactive": "Stigmasterol",
+        "derivative": "Tuber Extract",
         "image": "/images/ingredients/chlorophytum-borivilianum-musli.jpg"
       }
     ],
@@ -7533,28 +7520,28 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Measure Health Powder",
+        "description": "Take 1 to 2 scoops (approx. 20–30 g) of Herbo Protein Powder."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Mix with Milk or Water",
+        "description": "Add to 200 ml of warm milk, water, or your preferred plant-based drink."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Stir or Blend Thoroughly",
+        "description": "Shake in a shaker or blend thoroughly until smooth and lump-free."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Consume Daily",
+        "description": "Drink once daily, preferably with breakfast or post-exercise, for sustained natural vitality."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Wholesome botanical protein beverage preparation for daily energy.",
     "targetIndications": "Adults interested in traditional botanical preparations containing Mucuna pruriens, subject to appropriate professional guidance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -7693,40 +7680,22 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "VIBRANT FLORAL INFUSION",
+        "badge": "Antioxidant Petals",
         "commonName": "Sembaruthi / Red Hibiscus Petals",
         "latinName": "Hibiscus sabdariffa",
-        "description": "99% pure whole dried hibiscus flower petal cuts delivering a tart, ruby-red infusion packed with natural organic acids, polyphenols, and cellular antioxidants.",
-        "bioactive": "Anthocyanins, Hibiscin & Citric Acid",
-        "derivative": "99% Pure Cut Dried Flower Petals",
+        "description": "Deep ruby floral calyces packed with anthocyanins, organic acids, and refreshing botanical hydration.",
+        "bioactive": "Anthocyanins",
+        "derivative": "Dried Petals",
         "image": "/images/ingredients/hibiscus-petals.jpg"
       },
       {
-        "badge": "HIGH-GROWN WHOLE LEAF",
+        "badge": "Whole Leaf Polyphenols",
         "commonName": "Green Tea Whole Leaf",
         "latinName": "Camellia sinensis",
-        "description": "1% delicate whole green tea leaves delivering gentle catechins and L-theanine to harmonize the floral tartness and support clean metabolic focus.",
-        "bioactive": "Epigallocatechin Gallate (EGCG)",
-        "derivative": "1% Whole Dried Tea Leaves",
+        "description": "Premium whole green tea leaves delivering clean antioxidant catechins for daily metabolic wellness.",
+        "bioactive": "EGCG & Catechins",
+        "derivative": "Whole Leaf",
         "image": "/images/ingredients/camellia-sinensis-tea.jpg"
-      },
-      {
-        "badge": "CIRCULATORY WELLNESS",
-        "commonName": "Natural Phyto-Ascorbates",
-        "latinName": "Hibiscus Bioactive Complex",
-        "description": "Naturally occurring plant Vitamin C and bioflavonoids that support healthy cardiovascular tone, normal blood pressure rhythm, and vascular integrity.",
-        "bioactive": "Ascorbic Acid & Organic Fruit Acids",
-        "derivative": "Whole Petal Cold Infusion",
-        "image": "/images/ingredients/hibiscus-petals.jpg"
-      },
-      {
-        "badge": "PURE BOTANICAL PURITY",
-        "commonName": "100% Organically Grown Whole Leaf",
-        "latinName": "Zero Additive Floral Matrix",
-        "description": "Grown without synthetic pesticides or chemical fertilizers, shade-dried to lock in volatile therapeutic aromas and ruby pigments.",
-        "bioactive": "Zero Synthetic Additives",
-        "derivative": "Whole Dried Petal Cuts",
-        "image": "/images/ingredients/hibiscus-petals.jpg"
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -7735,28 +7704,28 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Place one HIBISCUS TEA bag in a cup."
+        "title": "Measure Tea",
+        "description": "Take 1 to 2 teaspoons of dried hibiscus tea petals per serving."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Add hot or cold water."
+        "title": "Infuse in Hot or Cold Water",
+        "description": "Add to 150–200 ml of freshly boiled water (or cold water for an overnight cold brew)."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Allow the tea to infuse for 3–5 minutes."
+        "title": "Steep 3–5 Minutes",
+        "description": "Allow to steep for 3 to 5 minutes until a deep ruby red color and refreshing tart flavor develop."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Routine",
-        "description": "Remove the tea bag."
+        "title": "Strain & Enjoy",
+        "description": "Strain petals. Enjoy warm, or chill with ice cubes and sweeten with natural honey or jaggery as desired."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Refreshing hot or cold brewing method for ruby-red botanical infusion.",
     "targetIndications": "Individuals seeking a floral herbal tea or botanical beverage as part of their regular beverage choices.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -7931,34 +7900,34 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Review Included Products",
+        "description": "Unpack your AyurRaksha Piles Well Pack and review individual instructions on each included item."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Internal Wellness Protocol",
+        "description": "Take capsules or herbal supplements with water after meals as directed on the respective package."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Topical Application Routine",
+        "description": "Apply oils, soaps, or balms externally to clean, dry skin as directed in your personalized regimen."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Consult Clinical Team",
+        "description": "Reach out to our clinical team on WhatsApp for free dosage schedule personalization."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Comprehensive synergistic wellness regimen using each included product as directed.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "Follow individual product instructions and dosage labels for each included item.",
+      "Consult a healthcare professional before starting any comprehensive herbal wellness regimen.",
+      "Do not exceed recommended quantities on individual product labels."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "Doctor Formulated",
@@ -8149,34 +8118,34 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Review Included Products",
+        "description": "Unpack your Flow Well Pack (Varicose Veins, Leg Blackening, Diabetic Neuropathy, and Gangrene Wounds/Foot Ulcers) and review individual instructions on each included item."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Internal Wellness Protocol",
+        "description": "Take capsules or herbal supplements with water after meals as directed on the respective package."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Topical Application Routine",
+        "description": "Apply oils, soaps, or balms externally to clean, dry skin as directed in your personalized regimen."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Consult Clinical Team",
+        "description": "Reach out to our clinical team on WhatsApp for free dosage schedule personalization."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Comprehensive synergistic wellness regimen using each included product as directed.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "Follow individual product instructions and dosage labels for each included item.",
+      "Consult a healthcare professional before starting any comprehensive herbal wellness regimen.",
+      "Do not exceed recommended quantities on individual product labels."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "Doctor Formulated",
@@ -8366,34 +8335,34 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Review Included Products",
+        "description": "Unpack your AyurRaksha Skin Well Pack and review individual instructions on each included item."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Internal Wellness Protocol",
+        "description": "Take capsules or herbal supplements with water after meals as directed on the respective package."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Topical Application Routine",
+        "description": "Apply oils, soaps, or balms externally to clean, dry skin as directed in your personalized regimen."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Consult Clinical Team",
+        "description": "Reach out to our clinical team on WhatsApp for free dosage schedule personalization."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Comprehensive synergistic wellness regimen using each included product as directed.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "Follow individual product instructions and dosage labels for each included item.",
+      "Consult a healthcare professional before starting any comprehensive herbal wellness regimen.",
+      "Do not exceed recommended quantities on individual product labels."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "Doctor Formulated",
@@ -8525,40 +8494,31 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "RECTAL MUCOSAL TONIC",
+        "badge": "Nutritive Seed",
         "commonName": "Poosanikai / Pumpkin Seed",
         "latinName": "Cucurbita maxima",
-        "description": "Botanical pumpkin seed extract rich in zinc, cucurbitin, and soothing essential fatty acids that reduce pelvic congestion and soothe rectal veins.",
-        "bioactive": "Cucurbitin, Phytosterols & Organic Zinc",
-        "derivative": "De-Husked Seed Kernels",
+        "description": "Traditional zinc-rich seed supporting smooth muscle relaxation and tissue soothing.",
+        "bioactive": "Phytosterols",
+        "derivative": "Seed Extract",
         "image": "/images/ingredients/cucurbita-maxima-pumpkin.jpg"
       },
       {
-        "badge": "MICROBIAL & ITCH DEFENSE",
+        "badge": "Purifying Active",
         "commonName": "Vembu / Neem Leaves & Seed",
         "latinName": "Azadirachta indica",
-        "description": "Traditional bitter Indian botanical that cools burning sensations, purifies localized tissue microflora, and halts acute itching and bleeding.",
-        "bioactive": "Nimbin & Bitter Limonoids",
-        "derivative": "Mature Leaves & Seed Kernel Extract",
+        "description": "Revered bitter botanical traditionally used for purifying tissue tone and antimicrobial protection.",
+        "bioactive": "Nimbin",
+        "derivative": "Leaf & Seed Extract",
         "image": "/images/ingredients/neem-leaves.jpg"
       },
       {
-        "badge": "INFLAMMATORY PACIFIER",
+        "badge": "Soothing Adaptogen",
         "commonName": "Tulsi / Holy Basil",
         "latinName": "Ocimum sanctum",
-        "description": "Sacred basil containing natural ursolic acid and eugenol that calms inflamed hemorrhoidal tissue and accelerates mucosal healing.",
-        "bioactive": "Ursolic Acid & Eugenol",
-        "derivative": "Shade-Dried Leaf Extract",
+        "description": "Sacred basil supporting digestive soothe, normal circulation, and natural defense.",
+        "bioactive": "Eugenol",
+        "derivative": "Leaf Extract",
         "image": "/images/ingredients/tulsi-holy-basil.jpg"
-      },
-      {
-        "badge": "SMOOTH EVACUATION COMPLEX",
-        "commonName": "Senna Leaves / Nilavagai",
-        "latinName": "Cassia angustifolia",
-        "description": "Gentle classical laxative herb that prevents hard stools and painful straining, ensuring effortless bowel evacuation without aggravating piles.",
-        "bioactive": "Sennoside Glycosides",
-        "derivative": "Fine Cut Senna Leaf Extract",
-        "image": "/images/ingredients/senna-leaves.jpg"
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -8567,23 +8527,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take Recommended Dose",
-        "description": "Take 2 capsules daily at night."
+        "title": "Recommended Dosage",
+        "description": "Take 2 capsules daily."
       },
       {
         "stepNumber": 2,
-        "title": "Prepare with Water",
-        "description": "Consume with a glass of water."
+        "title": "Take with Lukewarm Water",
+        "description": "Swallow with a glass of lukewarm water after meals."
       },
       {
         "stepNumber": 3,
-        "title": "Simmer or Dissolve",
-        "description": "Best taken with meals."
+        "title": "Daily Timing",
+        "description": "Take morning and evening consistently to promote comfortable digestion and tissue soothing."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Targeted botanical extract capsules supporting anorectal comfort and healthy bowel habits.",
     "targetIndications": "Adults interested in traditional herbal formulations associated with digestive and bowel wellness",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -8742,34 +8702,29 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Bedtime Dosage",
+        "description": "Take 1 to 2 capsules 30–45 minutes before sleep."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Take with Warm Water or Milk",
+        "description": "Swallow with a glass of warm water or warm milk."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
-      },
-      {
-        "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Restful Sleep Routine",
+        "description": "Dim ambient lights and disconnect from screens to support natural melatonin rhythm and restorative sleep."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Calming bedtime botanical routine for deep, restorative sleep.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "Consult your healthcare professional before use if you are taking prescription sleeping pills, sedatives, antidepressants, or other central nervous system medicines.",
+      "Do not operate heavy machinery or drive vehicles immediately after taking this product.",
+      "Keep out of reach of children. Store in a cool, dry place."
     ],
     "specNetQuantity": "Standard Pack",
     "specProductForm": "Standardized Botanical Extract",
@@ -8934,36 +8889,35 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Wet the Skin",
+        "description": "Moisten your skin with fresh water in the bath or shower."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Lather & Apply",
+        "description": "Work the soap into a rich lather between wet palms and apply gently over face and body."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Leave for 1–2 Minutes",
+        "description": "Allow the nourishing kalonji seed actives to rest on sun-exposed areas for 1–2 minutes."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Rinse Thoroughly",
+        "description": "Rinse off completely with clean water and pat dry."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Botanical black seed bathing routine for sun-exposed and uneven skin.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "For external bathing use only. Do not swallow.",
+      "Avoid contact with eyes; rinse with clean water if contact occurs."
     ],
-    "specNetQuantity": "Standard Pack",
+    "specNetQuantity": "Single Bar (75 g)",
     "specProductForm": "Doctor Formulated",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -9118,36 +9072,36 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Clean the Area",
+        "description": "Cleanse the skin area gently and pat completely dry."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Apply a Small Amount",
+        "description": "Apply a small quantity of Vital O3 Cream onto the localized area."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
+        "title": "Massage Lightly",
+        "description": "Massage lightly in smooth circular motions until absorbed into the skin."
       },
       {
         "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Follow Doctor Guidance",
+        "description": "Apply twice daily under the clinical oversight of your physician."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Doctor-guided topical application for localized skin conditioning.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "For external topical use only under doctor guidance. Do not ingest.",
+      "Avoid contact with eyes and open lesions.",
+      "Perform a 24-hour patch test before first use."
     ],
-    "specNetQuantity": "Standard Pack",
+    "specNetQuantity": "30 g",
     "specProductForm": "Ozonated Pure Botanical",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
@@ -9302,28 +9256,23 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Take One Unit / Sachet",
-        "description": "Take the pre-measured unit or recommended quantity of formulation. Observe the fine-mesh natural botanical texture."
+        "title": "Recommended Dosage",
+        "description": "Take 1 to 2 capsules daily as directed."
       },
       {
         "stepNumber": 2,
-        "title": "Add to Lukewarm Water",
-        "description": "Pour into approximately 100 ml (1/2 cup) of fresh lukewarm water or consume directly with water as indicated."
+        "title": "Take with Water",
+        "description": "Swallow with a glass of water after food."
       },
       {
         "stepNumber": 3,
-        "title": "Prepare & Dissolve",
-        "description": "Stir or simmer gently for a few moments to allow the active water-soluble plant essences to release completely."
-      },
-      {
-        "stepNumber": 4,
-        "title": "Consume as Prescribed",
-        "description": "Sip warm after food or before sleep as the closing step of your restorative daily Ayurvedic wellness regimen."
+        "title": "Daily Regularity",
+        "description": "Take consistently each day to support natural immunity and systemic balance."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Herbal capsule regimen to support internal cellular equilibrium.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
@@ -9331,14 +9280,14 @@
       "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
       "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
     ],
-    "specNetQuantity": "Standard Pack",
+    "specNetQuantity": "60 Capsules",
     "specProductForm": "Standardized Botanical Extract",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants"
   },
   {
     "id": 26348,
-    "name": "Ayur Raksha Foot Bath Powder",
+    "name": "AyurRaksha Foot Bath Powder",
     "slug": "ayur-raksha-foot-bath-powder",
     "price": 999,
     "regularPrice": 999,
@@ -9486,36 +9435,36 @@
     "ritualSteps": [
       {
         "stepNumber": 1,
-        "title": "Add to Lukewarm Water",
-        "description": "Add 2–3 tablespoons of Ayur Raksha Foot Bath Powder into a basin of lukewarm water."
+        "title": "Prepare Lukewarm Water",
+        "description": "Fill a basin with comfortable lukewarm water (about 4–5 litres)."
       },
       {
         "stepNumber": 2,
-        "title": "Dissolve Botanical Crystals",
-        "description": "Stir gently to disperse the cooling herbal actives, camphor, and pure mineral salts completely."
+        "title": "Dissolve Crystals",
+        "description": "Add 2–3 tablespoons of AyurRaksha Foot Bath Powder and stir until dissolved."
       },
       {
         "stepNumber": 3,
-        "title": "Immerse & Soak Feet",
-        "description": "Soak feet for 15–20 minutes to relieve pedal tiredness, reduce burning sensations, and soften calluses."
+        "title": "Soak Feet 15–20 Minutes",
+        "description": "Immerse feet in the basin and relax for 15 to 20 minutes."
       },
       {
         "stepNumber": 4,
         "title": "Pat Dry & Condition",
-        "description": "Gently pat dry with a soft towel and follow with Ayur Raksha Skin Conditioning Oil or SuperHeal O3 Cream."
+        "description": "Remove feet, pat thoroughly dry with a soft towel, and apply a conditioning oil if desired."
       }
     ],
     "ritualEyebrow": "PREPARATION & TIMING",
-    "ritualTitle": "The Daily Ritual • How to Prepare",
-    "ritualSubtitle": "Simple, mindful application method to extract full water-soluble botanical actives without burning delicate herbal polyphenols.",
+    "ritualTitle": "How to use",
+    "ritualSubtitle": "Therapeutic foot soak routine for tired feet, swelling, and lower leg relief.",
     "targetIndications": "Specifically crafted for individuals seeking authentic Ayurvedic herbal support for holistic vitality, daily organ nourishment, and natural restorative balance.",
     "targetIndicationsBadge": "Ideal for continuing long-term daily health routines without dependency.",
     "advisoryGuidelines": [
-      "Consult a qualified healthcare professional before use if pregnant, breastfeeding, or taking prescription medication.",
-      "Use strictly as directed on the packaging; do not exceed the recommended daily dose.",
-      "Keep it stored in a cool, dry place away from direct sunlight. Keep out of reach of children."
+      "For external foot soak only. Do not ingest or drink the soaking solution.",
+      "Do not use on open ulcers, infected sores, or gangrene wounds without clinician approval.",
+      "Ensure water temperature is comfortable before immersing feet."
     ],
-    "specNetQuantity": "Standard Pack",
+    "specNetQuantity": "100 g",
     "specProductForm": "Micro-Fine Traditional Churna",
     "specOrigin": "Formulated in Chennai, India",
     "specDisclosures": "0% Synthetic Adulterants",

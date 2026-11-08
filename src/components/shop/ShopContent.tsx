@@ -156,7 +156,7 @@ export const ShopContent: React.FC<ShopContentProps> = ({
           <span className="text-xs text-charcoal-muted">Active Filters:</span>
           {selectedConcern !== 'all' && (
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-badge text-xs bg-sage text-forest">
-              <span>Concern: {selectedConcern}</span>
+              <span>{HEALTH_CONCERNS.find((c) => c.slug === selectedConcern)?.name || selectedConcern}</span>
               <button onClick={() => setSelectedConcern('all')} aria-label="Remove filter">
                 <X size={12} />
               </button>

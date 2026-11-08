@@ -118,17 +118,17 @@ export default async function ProductDetailPage({ params }: PageProps) {
         {/* Main PDP Layout */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
           <div className="flex flex-col lg:grid lg:grid-cols-12 gap-5 lg:gap-10 items-start">
-            {/* Mobile Above-the-Fold: Prominent Title, Rating, Key Benefit, Price, Discount & Add to Cart */}
-            <div className="order-1 lg:hidden w-full">
-              <MobileProductHeader product={product} />
-            </div>
-
-            {/* Left: Product Image Gallery */}
-            <div className="order-2 lg:order-1 lg:col-span-6 lg:sticky lg:top-28 w-full">
+            {/* Left: Product Image Gallery (Visible early on both mobile and desktop) */}
+            <div className="order-1 lg:order-1 lg:col-span-6 lg:sticky lg:top-28 w-full">
               <ProductGallery images={product.images} productName={product.name} product={product} />
             </div>
 
-            {/* Right: Product Purchase Information (Desktop & Detailed Options) */}
+            {/* Mobile Purchase Header: Title, Rating, Pack Selector, Price, and Add to Cart */}
+            <div className="order-2 lg:hidden w-full">
+              <MobileProductHeader product={product} />
+            </div>
+
+            {/* Right: Product Purchase Information (Desktop) */}
             <div className="order-3 lg:order-2 lg:col-span-6 w-full">
               <ProductInfo product={product} />
             </div>

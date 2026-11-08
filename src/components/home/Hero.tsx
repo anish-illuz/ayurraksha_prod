@@ -179,7 +179,7 @@ export const Hero: React.FC = () => {
                   href={slide.primaryLink}
                   prefetch={false}
                   tabIndex={isActive ? 0 : -1}
-                  className="relative w-full h-full block cursor-pointer"
+                  className="relative w-full h-full block cursor-pointer group"
                   aria-label={slide.primaryLabel}
                 >
                   <picture className="w-full h-full block">
@@ -195,6 +195,14 @@ export const Hero: React.FC = () => {
                       height={373}
                     />
                   </picture>
+
+                  {/* Prominent Shop Now CTA Button - Clearly visible and separated from navigation arrows */}
+                  <div className="absolute bottom-5 left-5 sm:bottom-6 sm:left-10 md:bottom-8 md:left-24 z-20">
+                    <span className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-[#16382C] text-white hover:bg-[#0E251D] text-xs sm:text-sm font-bold shadow-md transition-all group-hover:scale-105 active:scale-95 border border-white/20">
+                      <span>Shop Now</span>
+                      <ChevronRight size={15} />
+                    </span>
+                  </div>
                 </Link>
               ) : null}
             </div>

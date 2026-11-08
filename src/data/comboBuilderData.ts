@@ -24,7 +24,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
   {
     id: 7689,
     cmsId: 113,
-    name: 'Ayur Raksha Divine Healing Oil',
+    name: 'AyurRaksha Divine Healing Oil',
     slug: 'divine-healing-oil',
     category: 'External care',
     packSize: '100 ml',
@@ -57,7 +57,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
   {
     id: 11378,
     cmsId: 98,
-    name: 'Ayur Raksha Skin Conditioning Oil',
+    name: 'AyurRaksha Skin Conditioning Oil',
     slug: 'ayur-raksha-skin-conditioning-oil',
     category: 'External care',
     packSize: '100 ml',
@@ -124,7 +124,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
   {
     id: 10627,
     cmsId: 109,
-    name: 'Ayur Raksha SkinWell Soap (Pack of 2)',
+    name: 'AyurRaksha SkinWell Soap (Pack of 2)',
     slug: 'ayur-raksha-skinwell-soap-pack-of-2',
     category: 'Bath & scalp',
     packSize: 'Pack of 2 (2 × 75 g)',
@@ -152,11 +152,11 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 5. Anti-Tan Kalonji Soap (CMS ID 122) — Main Store price: ₹250
+  // 5. Anti-Tan Kalonji Soap (CMS ID 122) — Main Store price: ₹200
   {
     id: 122,
     cmsId: 122,
-    name: 'Ayur Raksha Anti-Tan Kalonji Soap',
+    name: 'AyurRaksha Anti-Tan Kalonji Soap',
     slug: 'ayurraksha-kalonji-soap',
     category: 'Bath & scalp',
     packSize: 'Single Bar (75 g)',
@@ -166,8 +166,8 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/ayur-raksha-kalonji-soap.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/Kalonji-Soap.png',
     ],
-    mrp: 250,
-    price: 250,
+    mrp: 200,
+    price: 200,
     pricePending: false,
     inStock: true,
     doctorGuided: false,
@@ -188,7 +188,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
   {
     id: 12007,
     cmsId: 96,
-    name: 'Ayur Raksha Herbal Hair Shampoo',
+    name: 'AyurRaksha Herbal Hair Shampoo',
     slug: 'ayur-raksha-herbal-shampoo',
     category: 'Bath & scalp',
     packSize: '100 ml',
@@ -314,11 +314,11 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 10. Ayur Raksha Detox Tea (CMS ID 85) — Main Store price: ₹750
+  // 10. AyurRaksha Detox Tea (CMS ID 85) — Main Store price: ₹750
   {
     id: 27739,
     cmsId: 85,
-    name: 'Ayur Raksha Detox Tea',
+    name: 'AyurRaksha Detox Tea',
     slug: 'ayurraksha-detox-tea',
     category: 'Digestive wellness',
     packSize: '40 Sachets × 5 g',
@@ -335,9 +335,9 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     doctorGuided: false,
     shortDescription: 'Support digestive wellness and natural regularity with Triphala and Avuri.',
     description:
-      'A time-tested herbal blend of Triphala, Avuri, and warm digestive carminatives created to encourage comfortable overnight gut motility and elimination.',
+      'A time-tested herbal blend of Avuri and the three Triphala fruits (Haritaki, Bibhitaki, Amalaki) created to encourage comfortable overnight gut motility and elimination.',
     indications: 'Digestive sluggishness, occasional constipation, abdominal heaviness, and metabolic reset.',
-    ingredients: 'Triphala (Haritaki, Bibhitaki, Amalaki), Cassia angustifolia (Avuri / Senna), Ginger, Cumin.',
+    ingredients: 'Avuri (Indigofera tinctoria) and the three Triphala fruits (Haritaki, Bibhitaki, Amalaki), Ginger, Cumin.',
     directions:
       'Empty one 5 g sachet into 100 ml of boiling water. Simmer gently until reduced to about 75 ml, strain if preferred or sip warm before bedtime.',
     storage: 'Store sachets in airtight container after opening outer carton.',
@@ -382,11 +382,11 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 12. Ayur Raksha Immune O3 Capsules (CMS ID 124) — Main Store price: ₹2,500
+  // 12. AyurRaksha Immune O3 Capsules (CMS ID 124) — Main Store price: ₹2,500
   {
     id: 124,
     cmsId: 124,
-    name: 'Ayur Raksha Immune O3 Capsules',
+    name: 'AyurRaksha Immune O3 Capsules',
     slug: 'ayurraksha-immuno3-immunity-booster-capsules',
     category: 'O3 specialty',
     packSize: '60 Capsules',
@@ -416,11 +416,11 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 13. Ayur Raksha Vital O3 Cream (CMS ID 123) — Main Store price: ₹3,999
+  // 13. AyurRaksha Vital O3 Cream (CMS ID 123) — Main Store price: ₹4,000
   {
     id: 123,
     cmsId: 123,
-    name: 'Ayur Raksha Vital O3 Cream',
+    name: 'AyurRaksha Vital O3 Cream',
     slug: 'ayurraksha-vital-o3-anti-vitiligo-cream',
     category: 'O3 specialty',
     packSize: '30 g',
@@ -430,8 +430,8 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/ayur-raksha-vital-o3-cream.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/Vital-O3-cream.png',
     ],
-    mrp: 3999,
-    price: 3999,
+    mrp: 4000,
+    price: 4000,
     pricePending: false,
     inStock: true,
     doctorGuided: true,
@@ -637,8 +637,8 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/flow-well-food-supplement-capsules.webp',
     gallery: [
       '/images/products/flow-well-food-supplement-capsules.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Flow-Well-Food-Supplement-Capsules-1.png',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Flow-Well-Food-Supplement-Capsules-2.png',
+      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/AyurRaksha-Flow-Well-Food-Supplement-Capsules-1.png',
+      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/AyurRaksha-Flow-Well-Food-Supplement-Capsules-2.png',
     ],
     mrp: 1299,
     price: 1199,
@@ -657,11 +657,11 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     sku: '4254',
   },
 
-  // 2. Ayur Raksha Divine Healing Oil (CMS ID 113)
+  // 2. AyurRaksha Divine Healing Oil (CMS ID 113)
   {
     id: 7689,
     cmsId: 113,
-    name: 'Ayur Raksha Divine Healing Oil',
+    name: 'AyurRaksha Divine Healing Oil',
     slug: 'divine-healing-oil',
     category: 'External care',
     packSize: '100 ml',
@@ -690,11 +690,11 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     sku: '7689',
   },
 
-  // 3. Ayur Raksha SkinWell Soap (Pack of 2) (CMS ID 109)
+  // 3. AyurRaksha SkinWell Soap (Pack of 2) (CMS ID 109)
   {
     id: 10627,
     cmsId: 109,
-    name: 'Ayur Raksha SkinWell Soap (Pack of 2)',
+    name: 'AyurRaksha SkinWell Soap (Pack of 2)',
     slug: 'ayur-raksha-skinwell-soap-pack-of-2',
     category: 'Bath & scalp',
     packSize: 'Pack of 2 (2 × 75 g)',
@@ -721,11 +721,11 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     sku: '10627',
   },
 
-  // 4. Ayur Raksha Super Heal O3 Cream (CMS ID 88)
+  // 4. AyurRaksha Super Heal O3 Cream (CMS ID 88)
   {
     id: 22867,
     cmsId: 88,
-    name: 'Ayur Raksha Super Heal O3 Cream',
+    name: 'AyurRaksha Super Heal O3 Cream',
     slug: 'ayur-raksha-superheal-o3-cream',
     category: 'O3 specialty',
     packSize: '30 g',
@@ -733,7 +733,7 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/ayur-raksha-superheal-o3-cream.webp',
     gallery: [
       '/images/products/ayur-raksha-superheal-o3-cream.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-SuperHeal-O3-Cream.png',
+      'https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/AyurRaksha-SuperHeal-O3-Cream.png',
     ],
     mrp: 3999,
     price: 3999,
@@ -754,11 +754,11 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     sku: '22867',
   },
 
-  // 5. Ayur Raksha Detox Tea (CMS ID 85)
+  // 5. AyurRaksha Detox Tea (CMS ID 85)
   {
     id: 27739,
     cmsId: 85,
-    name: 'Ayur Raksha Detox Tea',
+    name: 'AyurRaksha Detox Tea',
     slug: 'ayurraksha-detox-tea',
     category: 'Digestive wellness',
     packSize: '40 Sachets × 5 g',
@@ -918,11 +918,11 @@ export const BREATH_EASY_PRODUCTS: ComboProduct[] = [
     sku: '6319',
   },
 
-  // 3. Ayur Raksha Detox Tea (CMS ID 85)
+  // 3. AyurRaksha Detox Tea (CMS ID 85)
   {
     id: 27739,
     cmsId: 85,
-    name: 'Ayur Raksha Detox Tea',
+    name: 'AyurRaksha Detox Tea',
     slug: 'ayurraksha-detox-tea',
     category: 'Digestive wellness',
     packSize: '40 Sachets × 5 g',
@@ -939,9 +939,9 @@ export const BREATH_EASY_PRODUCTS: ComboProduct[] = [
     doctorGuided: false,
     shortDescription: 'Make digestive wellness part of your routine with a refreshing herbal tea ritual.',
     description:
-      'A soothing digestive infusion made with Triphala, Senna, and carminative herbs to support smooth overnight digestion and natural gut regularity.',
+      'A time-tested herbal blend of Avuri and the three Triphala fruits (Haritaki, Bibhitaki, Amalaki) created to encourage comfortable overnight gut motility and elimination.',
     indications: 'Digestive wellness, comfortable elimination, and metabolic reset.',
-    ingredients: 'Triphala (Haritaki, Bibhitaki, Amalaki), Cassia angustifolia (Avuri / Senna), Ginger, Cumin.',
+    ingredients: 'Avuri (Indigofera tinctoria) and the three Triphala fruits (Haritaki, Bibhitaki, Amalaki), Ginger, Cumin.',
     directions: 'Simmer 1 sachet in 100 ml water for 5 minutes (reduced to ~75 ml) and drink warm before bed.',
     storage: 'Store sachets in an airtight container.',
     warnings: 'Not for acute respiratory complaints or during pregnancy.',
@@ -974,7 +974,7 @@ export const BREATH_EASY_CONCERNS: ComboConcern[] = [
   {
     id: 'digestive-routine',
     name: 'Digestive routine',
-    shortDesc: 'Suggested starting item: Ayur Raksha Detox Tea.',
+    shortDesc: 'Suggested starting item: AyurRaksha Detox Tea.',
     description:
       'Highlights Detox Tea as an optional herbal infusion to support comfortable evening digestion and natural gut equilibrium.',
     clinicalNotice:
@@ -1064,7 +1064,7 @@ export const CARDIAC_WELLNESS_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/flow-well-food-supplement-capsules.webp',
     gallery: [
       '/images/products/flow-well-food-supplement-capsules.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Flow-Well-Food-Supplement-Capsules-1.png',
+      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/AyurRaksha-Flow-Well-Food-Supplement-Capsules-1.png',
     ],
     mrp: 1299,
     price: 1199,
@@ -1083,11 +1083,11 @@ export const CARDIAC_WELLNESS_PRODUCTS: ComboProduct[] = [
     sku: '4254',
   },
 
-  // 3. Ayur Raksha Detox Tea (CMS ID 85)
+  // 3. AyurRaksha Detox Tea (CMS ID 85)
   {
     id: 27739,
     cmsId: 85,
-    name: 'Ayur Raksha Detox Tea',
+    name: 'AyurRaksha Detox Tea',
     slug: 'ayurraksha-detox-tea',
     category: 'Digestive wellness',
     packSize: '40 Sachets × 5 g',
@@ -1150,7 +1150,7 @@ export const CARDIAC_WELLNESS_CONCERNS: ComboConcern[] = [
   {
     id: 'digestive-interest',
     name: 'Digestive-wellness interest',
-    shortDesc: 'Optional separate ritual: Ayur Raksha Detox Tea.',
+    shortDesc: 'Optional separate ritual: AyurRaksha Detox Tea.',
     description:
       'Keep digestive balance an easy, separate part of your evening routine with Detox Tea.',
     clinicalNotice:
@@ -1228,7 +1228,7 @@ export const VARICOSE_VEINS_CONFIG: ComboBuilderConfig = {
   heroTitle: 'Vascular wellness that supports',
   heroHighlight: 'every step.',
   heroDescription:
-    'Build your personalized routine for healthy circulation, heavy-feeling legs, and gentle skin care from 5 doctor-formulated Ayurvedic preparations. Every product is individually selectable.',
+    'Choose from 5 doctor-formulated preparations for circulation, heavy legs, and skin comfort. Individually selectable with automatic volume savings.',
   heroBadge: '5 Products',
   catalogSubtitle:
     'Select the capsules, pre-bath massage oil, botanical soap, O3 cream, or tea that match your routine. No forced items.',

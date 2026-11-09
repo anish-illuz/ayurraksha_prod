@@ -68,6 +68,19 @@ export const ExitIntentDiscountModal: React.FC = () => {
     };
   }, [pathname]);
 
+  // Keyboard accessibility: Escape key listener
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsVisible(false);
+      }
+    };
+    if (isVisible) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isVisible]);
+
   const handleClose = () => {
     setIsVisible(false);
   };

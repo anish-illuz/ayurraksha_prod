@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ShoppingBag,
   Plus,
@@ -17,6 +17,7 @@ import { Product } from '@/types/product';
 import { RatingStars } from '@/components/RatingStars';
 import { usePDP } from '@/context/PDPContext';
 import { formatPackMeasurement } from '@/lib/formatPack';
+import { trackViewItem } from '@/lib/storefrontAnalytics';
 
 interface ProductInfoProps {
   product: Product;
@@ -41,6 +42,10 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
   } = usePDP();
 
   const [openShipping, setOpenShipping] = useState(false);
+
+  useEffect(() => {
+    trackViewItem(product);
+  }, [product]);
 
   const whatsappInquiryUrl = `https://wa.me/919940388877?text=${encodeURIComponent(
     `Hello Dr. Jegajothi Pandian & AyurRaksha team, I would like to consult about ${product.name} (${selectedPack.name} - ₹${currentPrice}).`

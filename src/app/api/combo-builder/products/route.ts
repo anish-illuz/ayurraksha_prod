@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import { MASTER_COMBO_PRODUCTS } from '@/data/comboBuilderData';
 import { ComboProduct } from '@/types/combo';
 
-const WORDPRESS_STORE_API = 'https://cms.ayurrakshaonline.com/wp-json/wc/store/v1';
+const WORDPRESS_BASE = process.env.WORDPRESS_API_URL || process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://cms.ayurrakshaonline.com';
+const WORDPRESS_STORE_API = `${WORDPRESS_BASE}/wp-json/wc/store/v1`;
 
 export const revalidate = 60; // Cache on server for 60 seconds
 

@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getProductById } from '@/lib/products';
 
-const WORDPRESS_STORE_API = 'https://cms.ayurrakshaonline.com/wp-json/wc/store/v1';
+const WORDPRESS_BASE = process.env.WORDPRESS_API_URL || process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://cms.ayurrakshaonline.com';
+const WORDPRESS_STORE_API = `${WORDPRESS_BASE}/wp-json/wc/store/v1`;
 
 // Comprehensive mapping from storefront product slugs/IDs to live WooCommerce product IDs on cms.ayurrakshaonline.com
 const CMS_PRODUCT_ID_MAP: Record<string, number> = {

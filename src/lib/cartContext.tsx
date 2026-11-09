@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Product, CartItem } from '@/types/product';
 import { getProductById } from '@/lib/products';
+import { trackAddToCart as dispatchAddToCart, trackRemoveFromCart as dispatchRemoveFromCart } from '@/lib/storefrontAnalytics';
 
 interface CartContextType {
   items: CartItem[];
@@ -181,6 +182,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
       return [...prev, { product, quantity, selectedVariant, variantPrice, variantId, packCount }];
     });
+    dispatchAddToCart(product, quantity, selectedVariant, variantPrice);
     setIsCartOpen(true);
   };
 
@@ -200,6 +202,12 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const removeFromCart = (productId: number, variant?: string) => {
+    const itemToRemove = items.find(
+      (item) => item.product.id === productId && item.selectedVariant === variant
+    );
+    if (itemToRemove) {
+      dispatchRemoveFromCart(itemToRemove.product, itemToRemove.quantity, itemToRemove.selectedVariant);
+    }
     setItems((prev) =>
       prev.filter(
         (item) => !(item.product.id === productId && item.selectedVariant === variant)

@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
 import { getOrderAttribution } from '@/lib/orderAttribution';
+import { trackBeginCheckout, trackPurchase } from '@/lib/storefrontAnalytics';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 declare global {
@@ -73,6 +74,11 @@ export default function CheckoutPage() {
   } | null>(null);
 
   useEffect(() => {
+    // Track begin_checkout when items are loaded
+    if (items.length > 0) {
+      trackBeginCheckout(items, totalPayable);
+    }
+
     // Fetch live Razorpay details from WordPress backend route
     fetch('/api/razorpay/config')
       .then((res) => res.json())
@@ -88,6 +94,7 @@ export default function CheckoutPage() {
       .catch((err) => {
         console.error('Error fetching Razorpay config:', err);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -192,6 +199,7 @@ export default function CheckoutPage() {
         totalAmount: totalPayable,
       };
       setCompletedOrder(orderSummary);
+      trackPurchase(orderSummary);
       if (typeof window !== 'undefined') {
         localStorage.setItem('ayurraksha_has_ordered', 'true');
       }
@@ -233,6 +241,7 @@ export default function CheckoutPage() {
           totalAmount: totalPayable,
         };
         setCompletedOrder(orderSummary);
+        trackPurchase(orderSummary);
         if (typeof window !== 'undefined') {
           localStorage.setItem('ayurraksha_has_ordered', 'true');
         }

@@ -42,10 +42,10 @@ export const TrustBadges: React.FC = () => {
                   <Icon size={20} className="stroke-[2.2]" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="font-heading text-xs sm:text-base font-bold text-primary leading-tight sm:leading-snug">
+                  <h4 className="font-heading text-sm sm:text-base font-bold text-primary leading-tight sm:leading-snug">
                     {b.title}
                   </h4>
-                  <p className="text-[11px] sm:text-xs text-[#37443D] mt-1 leading-snug font-sans">
+                  <p className="text-xs sm:text-sm text-[#24332B] mt-1 leading-snug font-sans">
                     {b.subtitle}
                   </p>
                 </div>

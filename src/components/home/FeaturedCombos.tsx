@@ -25,7 +25,7 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
   };
 
   const imageSrc = pack.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/join-well-combo.webp';
-  const prepaidDiscountPrice = Math.round(pack.price * 0.9);
+  const prepaidDiscountPrice = Math.round(pack.price * 0.95);
 
   return (
     <div className="flex flex-col bg-white rounded-2xl border border-stone-200/90 overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 group">

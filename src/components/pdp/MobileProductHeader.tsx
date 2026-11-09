@@ -50,14 +50,14 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
 
       {/* Rating & Review Count */}
       <div className="flex items-center gap-2 mb-2.5">
-        <RatingStars rating={product.rating} reviewCount={product.reviewCount} size={15} />
-        <span className="text-xs sm:text-sm text-charcoal-muted font-medium">
+        <RatingStars rating={product.rating} reviewCount={product.reviewCount} size={15} showText={false} />
+        <span className="text-xs sm:text-sm text-charcoal font-semibold">
           {product.rating} ({product.reviewCount || 19} reviews)
         </span>
       </div>
 
       {/* Key Benefit Summary */}
-      <p className="text-xs sm:text-sm text-charcoal/85 leading-relaxed font-sans mb-3.5">
+      <p className="text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans mb-3.5">
         {product.shortDescription || product.subtitle || 'Traditional botanical formulation crafted for authentic wellness.'}
       </p>
 
@@ -105,7 +105,7 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
               </span>
             )}
             {currentDiscount > 0 && (
-              <span className="px-2 py-0.5 rounded text-xs font-bold bg-[#E67E22] text-white">
+              <span className="px-2 py-0.5 rounded text-xs font-bold bg-[#8C3A00] text-white shadow-2xs">
                 Save {currentDiscount}%
               </span>
             )}

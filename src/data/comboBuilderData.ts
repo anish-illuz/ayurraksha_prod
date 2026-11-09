@@ -581,7 +581,7 @@ export const COMBO_BUILDERS: ComboBuilderInfo[] = [
     description: '5 targeted formulations for healthy circulation, heavy legs, and intact lower-leg skin comfort.',
     badge: '5 Products',
     productCount: 5,
-    categoryCount: 4,
+    categoryCount: 5,
     href: '/combo-builder/varicose-veins',
     accentColor: '#1c513d',
   },
@@ -777,7 +777,7 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     description:
       'An optional digestive-wellness herbal infusion featuring Triphala and warm carminatives. Completely independent of varicose care; supports comfortable overnight elimination and metabolic freshness.',
     indications: 'Digestive regularity, occasional sluggishness, and general metabolic wellness.',
-    ingredients: 'Triphala (Haritaki, Bibhitaki, Amalaki), Cassia angustifolia (Avuri / Senna), Ginger, Cumin.',
+    ingredients: 'Triphala (Haritaki, Bibhitaki, Amalaki), Avuri (Indigofera tinctoria), Ginger, Cumin.',
     directions:
       'Empty one 5 g sachet into 100 ml boiling water, simmer gently until reduced to about 75 ml, and sip warm before bedtime.',
     storage: 'Store sachets in an airtight container in a dry place.',

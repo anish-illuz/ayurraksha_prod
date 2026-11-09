@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Search, X, ArrowRight } from 'lucide-react';
 import { Product } from '@/types/product';
 import { searchProducts } from '@/lib/products';
+import { trackSearch } from '@/lib/storefrontAnalytics';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -58,7 +59,9 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
   const handleSearch = (term: string) => {
     setQuery(term);
     if (term.trim().length > 1) {
-      setResults(searchProducts(term));
+      const found = searchProducts(term);
+      setResults(found);
+      trackSearch(term, found.length);
     } else {
       setResults([]);
     }

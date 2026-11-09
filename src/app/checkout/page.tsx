@@ -439,7 +439,7 @@ export default function CheckoutPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1.5">
+                    <label className="block text-sm font-bold text-stone-800 tracking-wide mb-1.5">
                       Full Name *
                     </label>
                     <input
@@ -449,12 +449,12 @@ export default function CheckoutPage() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Ramesh Kumar"
-                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-botanical focus:ring-1 focus:ring-botanical"
+                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm placeholder:text-stone-500 focus:outline-none focus:border-botanical focus:ring-1 focus:ring-botanical"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1.5">
+                    <label className="block text-sm font-bold text-stone-800 tracking-wide mb-1.5">
                       Mobile Number *
                     </label>
                     <input
@@ -464,12 +464,12 @@ export default function CheckoutPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="10-digit mobile number"
-                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-botanical focus:ring-1 focus:ring-botanical"
+                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm placeholder:text-stone-500 focus:outline-none focus:border-botanical focus:ring-1 focus:ring-botanical"
                     />
                   </div>
 
                   <div className="sm:col-span-2">
-                    <label className="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1.5">
+                    <label className="block text-sm font-bold text-stone-800 tracking-wide mb-1.5">
                       Email Address (Optional)
                     </label>
                     <input
@@ -478,7 +478,7 @@ export default function CheckoutPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="For invoice and receipt"
-                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-botanical focus:ring-1 focus:ring-botanical"
+                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm placeholder:text-stone-500 focus:outline-none focus:border-botanical focus:ring-1 focus:ring-botanical"
                     />
                   </div>
                 </div>
@@ -495,7 +495,7 @@ export default function CheckoutPage() {
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1.5">
+                    <label className="block text-sm font-bold text-stone-800 tracking-wide mb-1.5">
                       Street Address / House / Flat *
                     </label>
                     <textarea
@@ -505,13 +505,13 @@ export default function CheckoutPage() {
                       value={formData.address}
                       onChange={handleChange}
                       placeholder="Door no, Building name, Street, Landmark"
-                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-botanical focus:ring-1 focus:ring-botanical"
+                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm placeholder:text-stone-500 focus:outline-none focus:border-botanical focus:ring-1 focus:ring-botanical"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1.5">
+                      <label className="block text-sm font-bold text-stone-800 tracking-wide mb-1.5">
                         City *
                       </label>
                       <input
@@ -521,19 +521,19 @@ export default function CheckoutPage() {
                         value={formData.city}
                         onChange={handleChange}
                         placeholder="City"
-                        className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-botanical focus:ring-1 focus:ring-botanical"
+                        className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm placeholder:text-stone-500 focus:outline-none focus:border-botanical focus:ring-1 focus:ring-botanical"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-charcoal uppercase tracking-wider mb-1.5">
+                      <label className="block text-sm font-bold text-stone-800 tracking-wide mb-1.5">
                         State *
                       </label>
                       <select
                         name="state"
                         value={formData.state}
                         onChange={handleChange}
-                        className="w-full px-3 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-botanical bg-white"
+                        className="w-full px-3 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-botanical bg-white cursor-pointer"
                       >
                         {[
                           'Tamil Nadu',

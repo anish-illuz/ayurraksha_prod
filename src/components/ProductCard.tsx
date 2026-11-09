@@ -65,6 +65,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
 
   const sizeLabel = (product.variants.find(v => v.default) || product.variants[0])?.name || (
     titleSizeMatch ? `${titleSizeMatch[1]} ${titleSizeMatch[2]}` :
+    product.specNetQuantity ? product.specNetQuantity :
     isTablet ? '60 Tablets' :
     product.categorySlugs.includes('oil') ? '100 ml' :
     product.categorySlugs.includes('tonic') ? '200 ml' :
@@ -92,17 +93,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
               BESTSELLER
             </span>
           ) : product.discountPercent >= 15 ? (
-            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-botanical text-white shadow-xs">
+            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-[#18372b] text-white shadow-xs">
               POPULAR
             </span>
           ) : (
-            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-stone-700 text-white shadow-xs">
+            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-stone-800 text-white shadow-xs">
               AYURVEDIC
             </span>
           )}
 
           {product.discountPercent > 0 && (
-            <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] sm:text-xs whitespace-nowrap font-bold bg-amber-100 text-amber-900 border border-amber-300">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] sm:text-xs whitespace-nowrap font-bold bg-[#8C3A00] text-white shadow-xs">
               {product.discountPercent}% OFF
             </span>
           )}
@@ -126,26 +127,26 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       {/* Product Information Body with responsive padding */}
       <div className="flex flex-col flex-grow p-2 sm:p-4 bg-white space-y-2 sm:space-y-3">
         {/* Product Title (Larger and clearer for mobile scanning) */}
-        <h3 className="font-heading font-bold text-base sm:text-base md:text-lg text-forest group-hover:text-botanical transition-colors line-clamp-2 min-h-[2.85rem] leading-snug">
+        <h3 className="font-heading font-bold text-[15px] sm:text-base md:text-lg text-forest group-hover:text-botanical transition-colors line-clamp-2 min-h-[2.85rem] leading-snug">
           <Link href={`/product/${product.slug}`}>{product.name}</Link>
         </h3>
 
         {/* Rating & Concern Row: ★ 4.8 (840) | Liver Wellness */}
-        <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-charcoal-muted">
+        <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-charcoal">
           <div className="flex items-center text-botanical font-bold gap-1">
             <Star size={12} className="fill-botanical text-botanical flex-shrink-0" />
             <span>{product.rating.toFixed(1)}</span>
           </div>
-          <span className="text-stone-400 text-[10px] sm:text-xs">({product.reviewCount})</span>
+          <span className="text-stone-600 font-semibold text-[11px] sm:text-xs">({product.reviewCount})</span>
           <span className="text-stone-300">|</span>
-          <span className="truncate font-medium text-stone-600 text-[11px] sm:text-xs">
+          <span className="truncate max-w-[130px] font-medium text-stone-700 text-[11px] sm:text-xs">
             {product.healthConcerns[0] || 'Ayurvedic Care'}
           </span>
         </div>
 
         {/* Pack / Size Pill Badge */}
         <div>
-          <span className="inline-block text-[11px] sm:text-xs font-semibold text-stone-700 bg-stone-100 px-2.5 py-1 rounded-full border border-stone-200">
+          <span className="inline-block text-[11px] sm:text-xs font-semibold text-stone-800 bg-stone-100 px-2.5 py-1 rounded-full border border-stone-200">
             {sizeLabel}
           </span>
         </div>
@@ -156,12 +157,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             ₹{product.price.toLocaleString('en-IN')}
           </span>
           {product.regularPrice > product.price && (
-            <span className="text-[11px] sm:text-sm text-stone-400 line-through">
+            <span className="text-[11px] sm:text-sm text-stone-500 font-normal line-through">
               ₹{product.regularPrice.toLocaleString('en-IN')}
             </span>
           )}
           {product.discountPercent > 0 && (
-            <span className="text-[10px] sm:text-xs font-bold text-botanical">
+            <span className="text-[11px] sm:text-xs font-bold text-botanical">
               {product.discountPercent}% OFF
             </span>
           )}

@@ -76,7 +76,6 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
   // Accordion state: all sections collapsed by default
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     description: false,
-    philosophy: false,
     benefits: false,
     ingredients: false,
     howToPrepare: false,
@@ -207,138 +206,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
           )}
         </div>
 
-        {/* ACCORDION 2: Ayurvedic Philosophy */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-stone-200/90 shadow-2xs overflow-hidden transition-all">
-          <button
-            type="button"
-            onClick={() => toggleSection('philosophy')}
-            aria-expanded={openSections.philosophy}
-            className="w-full p-5 sm:p-7 text-left flex items-center justify-between gap-4 hover:bg-stone-50/70 transition-colors cursor-pointer"
-          >
-            <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
-              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#FAF7F2] border border-stone-200/80 flex items-center justify-center text-forest shrink-0">
-                <BookOpen size={22} className="text-[#B45309]" />
-              </div>
-              <div className="min-w-0">
-                <span className="text-[11px] sm:text-xs font-bold text-[#B45309] uppercase tracking-wider block mb-0.5">
-                  {product.slug === 'boozliv'
-                    ? 'SIDDHA HERITAGE & FORMULATION'
-                    : product.storyEyebrow || 'AYURVEDIC PHILOSOPHY & HERITAGE'}
-                </span>
-                <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
-                  {product.slug === 'boozliv'
-                    ? 'Traditional Siddha Wellness, Naturally Inspired'
-                    : product.storyTitle || 'Traditional Wellness Philosophy & Heritage'}
-                </h3>
-              </div>
-            </div>
-
-            {/* Downward Arrow (+) Indicator */}
-            <div className="flex items-center gap-2.5 shrink-0">
-              <span className="hidden sm:inline text-xs sm:text-sm font-semibold text-charcoal-muted">
-                {openSections.philosophy ? 'Collapse' : 'Tap to expand'}
-              </span>
-              <div
-                className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                  openSections.philosophy
-                    ? 'bg-emerald-50 text-emerald-800 rotate-180 border border-emerald-200'
-                    : 'bg-stone-100 text-stone-600 border border-stone-200 hover:bg-stone-200/80'
-                }`}
-              >
-                <ChevronDown size={18} />
-              </div>
-            </div>
-          </button>
-
-          {openSections.philosophy && (
-            <div className="p-5 sm:p-8 pt-0 sm:pt-0 border-t border-stone-100 animate-in fade-in duration-200">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-6">
-                {/* Left Column: Full Editorial Philosophy Narrative */}
-                <div className="lg:col-span-7 space-y-4">
-                  <span className="text-xs font-bold text-[#B45309] uppercase tracking-wider block">
-                    {product.slug === 'boozliv'
-                      ? 'SIDDHA HERITAGE & FORMULATION'
-                      : product.storyEyebrow || 'AYURVEDIC PHILOSOPHY & HERITAGE'}
-                  </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-forest leading-tight">
-                    {product.slug === 'boozliv'
-                      ? 'Traditional Siddha Wellness, Naturally Inspired'
-                      : product.storyTitle || 'Traditional Ayurvedic Wellness, Naturally Inspired'}
-                  </h2>
-
-                  <div className="text-charcoal/85 text-sm sm:text-base leading-relaxed space-y-3.5 font-sans pt-1">
-                    {product.slug === 'boozliv' ? (
-                      <>
-                        <p>
-                          Discover the essence of classical Siddha wellness with {product.name}, a specialized botanical formulation inspired by South India&apos;s profound Siddha medical heritage.
-                        </p>
-                        <p>
-                          Rooted in revered Siddha pharmacopoeia, this herbal blend brings together potent botanicals such as Karisalankanni and Keezhanelli, traditionally used for hepatic vitality and metabolic balance.
-                        </p>
-                        <p>
-                          BoozLiv is crafted under the clinical oversight of experienced Siddha researchers, offering pure herbal extracts with zero synthetic additives to help maintain liver equilibrium as part of daily living.
-                        </p>
-                      </>
-                    ) : (
-                      <>
-                        <p>
-                          Discover the essence of traditional wellness with {product.name}, a thoughtfully developed herbal formulation inspired by India&apos;s rich botanical heritage.
-                        </p>
-                        <p>
-                          Rooted in time-honoured practices, this herbal formulation brings together traditional plant-based ingredients in a convenient format for modern lifestyles, supporting mindful personal care.
-                        </p>
-                        <p>
-                          {product.name} is designed for individuals who appreciate natural, plant-based wellness products and wish to incorporate traditional herbal care into their lifestyle with clinical confidence.
-                        </p>
-                      </>
-                    )}
-                  </div>
-
-                  <p className="font-bold text-sm sm:text-base text-forest pt-2 border-l-3 border-botanical pl-3.5">
-                    {product.storyClosing || (product.slug === 'boozliv'
-                      ? `Embrace the wisdom of Siddha medicine with ${product.name} — where clinical research meets botanical tradition.`
-                      : `Embrace the timeless tradition of wellness with ${product.name} — where botanical heritage meets modern care.`)}
-                  </p>
-                </div>
-
-                {/* Right Column: Featured Description Image Aligned to Full Column Width */}
-                <div className="lg:col-span-5 w-full">
-                  <div className="relative aspect-[4/5] min-h-[380px] sm:min-h-[440px] w-full rounded-3xl overflow-hidden shadow-md border border-stone-200 group">
-                    <Image
-                      src={product.storyImage || product.images[0] || '/images/ingredients/traditional-raw-ayurvedic-herbs-mortar.webp'}
-                      alt={product.name}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 480px"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
-
-                    {/* Bottom Overlay Card */}
-                    <div className="absolute bottom-4 left-4 right-4 p-4 sm:p-5 rounded-2xl bg-[#16382C]/95 backdrop-blur-md text-white border border-emerald-500/25">
-                      <span className="text-xs font-bold text-[#E67E22] uppercase tracking-wider block mb-1">
-                        {product.slug === 'boozliv'
-                          ? 'SIDDHA CLINICAL PRINCIPLES'
-                          : product.principleBadge || 'CLASSICAL FORMULATION PRINCIPLES'}
-                      </span>
-                      <h4 className="font-serif text-base sm:text-lg font-bold text-white mb-1">
-                        {product.slug === 'boozliv'
-                          ? 'Liver Vitality • Balancing Pitha & Vatha'
-                          : product.principleTitle || 'Balancing Natural Bodily Equilibrium'}
-                      </h4>
-                      <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-sans">
-                        {product.slug === 'boozliv'
-                          ? 'Standardized Siddha botanical extraction verified for optimal bioactive retention and gentle digestive absorption.'
-                          : product.principleText || 'Standardized analytical extraction preserving full botanical actives for natural bioavailability.'}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* ACCORDION 3: Product Benefits */}
+        {/* ACCORDION 2: Product Benefits */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border border-stone-200/90 shadow-2xs overflow-hidden transition-all">
           <button
             type="button"
@@ -352,10 +220,10 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
               </div>
               <div className="min-w-0">
                 <span className="text-[11px] sm:text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
-                  {product.featuresEyebrow || 'KEY BENEFITS'}
+                  KEY BENEFITS
                 </span>
                 <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
-                  {product.featuresTitle || 'Key benefits'}
+                  Key benefits
                 </h3>
               </div>
             </div>
@@ -439,10 +307,10 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
               </div>
               <div className="min-w-0">
                 <span className="text-[11px] sm:text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
-                  {product.ingredientsEyebrow || 'INGREDIENTS'}
+                  INGREDIENTS
                 </span>
                 <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
-                  {product.ingredientsTitle || 'Ingredients'}
+                  Ingredients
                 </h3>
               </div>
             </div>
@@ -540,10 +408,10 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
               </div>
               <div className="min-w-0">
                 <span className="text-[11px] sm:text-xs font-bold text-botanical uppercase tracking-wider block mb-0.5">
-                  {product.ritualEyebrow || 'HOW TO USE'}
+                  HOW TO USE
                 </span>
                 <h3 className="font-serif text-lg sm:text-2xl font-bold text-forest truncate">
-                  {product.ritualTitle || 'How to use'}
+                  How to use
                 </h3>
               </div>
             </div>
@@ -568,6 +436,23 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
           {openSections.howToPrepare && (
             <div className="p-5 sm:p-8 pt-0 sm:pt-0 border-t border-stone-100 animate-in fade-in duration-200">
               <div className="pt-6">
+                {/* External Use Notice for Topical & Rinse Products */}
+                {(product.categorySlugs.some((c) => ['oil', 'cream', 'soap', 'shampoo'].includes(c)) ||
+                  product.name.toLowerCase().includes('oil') ||
+                  product.name.toLowerCase().includes('cream') ||
+                  product.name.toLowerCase().includes('gel') ||
+                  product.name.toLowerCase().includes('soap') ||
+                  product.name.toLowerCase().includes('shampoo') ||
+                  product.name.toLowerCase().includes('balm') ||
+                  product.name.toLowerCase().includes('roll-on') ||
+                  product.name.toLowerCase().includes('gargling') ||
+                  product.name.toLowerCase().includes('tooth powder')) && (
+                  <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold uppercase tracking-wider">
+                    <ShieldCheck size={16} className="text-amber-700 shrink-0" />
+                    <span>For External / Topical Use Only • Do Not Swallow</span>
+                  </div>
+                )}
+
                 <p className="text-sm sm:text-base text-charcoal/70 mb-5 max-w-2xl">
                   {product.ritualSubtitle && !product.ritualSubtitle.toLowerCase().includes('decoction') && !product.ritualSubtitle.toLowerCase().includes('burning delicate')
                     ? product.ritualSubtitle

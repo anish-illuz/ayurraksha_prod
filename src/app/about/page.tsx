@@ -120,7 +120,7 @@ export default function AboutPage() {
               <p>Former Director, Central Council for Research in Siddha</p>
               <p>Honorary Consultant, VPrime Healthcare &amp; Therapeutic Center</p>
             </div>
-            <div className="text-sm sm:text-base text-[#37443D] leading-relaxed space-y-3 font-sans text-left sm:text-center pt-2">
+            <div className="text-sm sm:text-base text-[#37443D] leading-relaxed space-y-3 font-sans text-left pt-2">
               <p>
                 Dr. Jegajothi Pandian is a Siddha physician and researcher with more than 30 years of clinical experience. His work spans Siddha medicine, medicinal plants, clinical research and the care of people living with long-term health concerns.
               </p>
@@ -183,7 +183,7 @@ export default function AboutPage() {
               <ShieldCheck size={22} />
             </div>
             <h3 className="font-heading text-base font-bold text-forest">Zero Steroids or Adulterants</h3>
-            <p className="text-xs sm:text-sm text-[#37443D] leading-relaxed font-sans">
+            <p className="text-sm sm:text-base text-[#24332B] leading-relaxed font-sans">
               We never use synthetic steroids, heavy metal enhancers, or hidden drugs. Our products are 100% natural herbal extracts.
             </p>
           </div>
@@ -193,7 +193,7 @@ export default function AboutPage() {
               <Award size={22} />
             </div>
             <h3 className="font-heading text-base font-bold text-forest">Standardized Extraction</h3>
-            <p className="text-xs sm:text-sm text-[#37443D] leading-relaxed font-sans">
+            <p className="text-sm sm:text-base text-[#24332B] leading-relaxed font-sans">
               Herbs are extracted at specific active phyto-chemical concentrations to ensure identical therapeutic strength in every batch.
             </p>
           </div>
@@ -203,7 +203,7 @@ export default function AboutPage() {
               <HeartHandshake size={22} />
             </div>
             <h3 className="font-heading text-base font-bold text-forest">Ethical Botanical Sourcing</h3>
-            <p className="text-xs sm:text-sm text-[#37443D] leading-relaxed font-sans">
+            <p className="text-sm sm:text-base text-[#24332B] leading-relaxed font-sans">
               We partner directly with sustainable Ayurvedic growers and regional botanical collectors across South India.
             </p>
           </div>
@@ -213,7 +213,7 @@ export default function AboutPage() {
               <CheckCircle2 size={22} />
             </div>
             <h3 className="font-heading text-base font-bold text-forest">Doctor Consultation</h3>
-            <p className="text-xs sm:text-sm text-[#37443D] leading-relaxed font-sans">
+            <p className="text-sm sm:text-base text-[#24332B] leading-relaxed font-sans">
               Every customer has direct access to our clinical team on WhatsApp and phone for personalized dosage guidance.
             </p>
           </div>

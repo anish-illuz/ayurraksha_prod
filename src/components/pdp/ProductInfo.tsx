@@ -77,8 +77,8 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 
       {/* Rating with Verified Reviews Count (Desktop only) */}
       <div className="hidden lg:flex items-center gap-2.5">
-        <RatingStars rating={product.rating} reviewCount={product.reviewCount} size={15} />
-        <span className="text-xs text-charcoal-muted">
+        <RatingStars rating={product.rating} reviewCount={product.reviewCount} size={15} showText={false} />
+        <span className="text-xs text-charcoal font-semibold">
           {product.rating} ({product.reviewCount || 19} verified reviews)
         </span>
       </div>
@@ -100,7 +100,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
             </span>
           )}
           {currentDiscount > 0 && (
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#E67E22] text-white">
+            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#8C3A00] text-white shadow-2xs">
               Save {currentDiscount}%
             </span>
           )}

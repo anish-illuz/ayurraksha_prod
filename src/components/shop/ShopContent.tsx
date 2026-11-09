@@ -1,11 +1,35 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { SlidersHorizontal, X, ChevronDown, Check } from 'lucide-react';
 import { Product } from '@/types/product';
 import { ProductCard } from '@/components/ProductCard';
 import { HEALTH_CONCERNS, PRODUCT_FORMATS } from '@/data/siteConfig';
 import { CONCERN_SLUG_MAP } from '@/lib/products';
+
+function SearchParamsSync({
+  onSort,
+  onConcern,
+  onCategory,
+}: {
+  onSort: (s: string) => void;
+  onConcern: (c: string) => void;
+  onCategory: (cat: string) => void;
+}) {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const s = searchParams.get('sort');
+    if (s) onSort(s);
+    const c = searchParams.get('concern');
+    if (c) onConcern(c);
+    const cat = searchParams.get('category');
+    if (cat) onCategory(cat);
+  }, [searchParams, onSort, onConcern, onCategory]);
+
+  return null;
+}
 
 interface ShopContentProps {
   initialProducts: Product[];
@@ -13,6 +37,7 @@ interface ShopContentProps {
   description: string;
   initialConcern?: string;
   initialCategory?: string;
+  initialSort?: string;
 }
 
 export const ShopContent: React.FC<ShopContentProps> = ({
@@ -21,12 +46,17 @@ export const ShopContent: React.FC<ShopContentProps> = ({
   description,
   initialConcern,
   initialCategory,
+  initialSort,
 }) => {
   const [selectedConcern, setSelectedConcern] = useState<string>(initialConcern || 'all');
   const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory || 'all');
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>('all');
-  const [sortBy, setSortBy] = useState<string>('featured');
+  const [sortBy, setSortBy] = useState<string>(initialSort || 'featured');
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+
+  const handleSortChange = useCallback((s: string) => setSortBy(s), []);
+  const handleConcernChange = useCallback((c: string) => setSelectedConcern(c), []);
+  const handleCategoryChange = useCallback((cat: string) => setSelectedCategory(cat), []);
 
   // Filter and Sort Pipeline
   const filteredProducts = useMemo(() => {
@@ -94,6 +124,14 @@ export const ShopContent: React.FC<ShopContentProps> = ({
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <Suspense fallback={null}>
+        <SearchParamsSync
+          onSort={handleSortChange}
+          onConcern={handleConcernChange}
+          onCategory={handleCategoryChange}
+        />
+      </Suspense>
+
       {/* Category Header */}
       <div className="mb-8 pb-6 border-b border-stone-200">
         <h1 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-forest">

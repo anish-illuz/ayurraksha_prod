@@ -8,6 +8,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { OrderAttributionTracker } from '@/components/OrderAttributionTracker';
 import { AnalyticsScripts } from '@/components/AnalyticsScripts';
+import { MetaPixel } from '@/components/MetaPixel';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 const ExitIntentDiscountModal = dynamic(
@@ -168,6 +169,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col bg-[#FAF9F5] text-[#26352D] font-sans antialiased">
         <AnalyticsScripts />
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
         <Suspense fallback={null}>
           <OrderAttributionTracker />
         </Suspense>

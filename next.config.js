@@ -2,9 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
-  experimental: {
-    optimizePackageImports: ['lucide-react'],
-  },
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
@@ -251,6 +248,18 @@ const nextConfig = {
         source: '/our-locations/',
         destination: '/contact',
         permanent: true,
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/catalog/meta-feed.xml',
+        destination: '/api/catalog/meta-feed',
+      },
+      {
+        source: '/wp-json/meta/v1/catalog',
+        destination: '/api/catalog/meta-feed',
       },
     ];
   },

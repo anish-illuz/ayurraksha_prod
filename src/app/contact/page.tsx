@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { MapPin, Phone, Mail, Clock, MessageSquare, CheckCircle, Send } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/siteConfig';
+import { trackLead } from '@/lib/storefrontAnalytics';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -17,6 +18,11 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackLead(`Contact Inquiry: ${formData.concern}`, {
+      email: formData.email,
+      phone: formData.phone,
+      firstName: formData.name,
+    });
     setIsSubmitted(true);
     setFormData({ name: '', email: '', phone: '', concern: 'Order Related', message: '' });
   };

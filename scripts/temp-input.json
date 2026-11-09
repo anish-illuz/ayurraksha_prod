@@ -1,0 +1,1 @@
+{"code":"return wp_count_posts('post');"}

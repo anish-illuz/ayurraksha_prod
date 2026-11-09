@@ -13,6 +13,9 @@
  * - begin_checkout
  */
 
+import { getCmsProductId } from '@/lib/metaProductMap';
+import { trackMetaEvent } from '@/lib/metaPixel';
+
 export type ComboAnalyticsEvent =
   | { event: 'select_concern'; concern_id: string; concern_name: string }
   | { event: 'video_play'; language: string; is_master: boolean }
@@ -43,22 +46,30 @@ export function trackComboEvent(payload: ComboAnalyticsEvent): void {
       win.gtag('event', event, rest);
     }
 
-    // 3. Meta Pixel (fbq) if present
-    if (typeof win.fbq === 'function') {
-      if (payload.event === 'add_combo_to_cart') {
-        win.fbq('track', 'AddToCart', {
-          content_type: 'product_group',
-          value: payload.total_amount,
-          currency: 'INR',
-          num_items: payload.item_count,
-        });
-      } else if (payload.event === 'begin_checkout') {
-        win.fbq('track', 'InitiateCheckout', {
-          value: payload.total_amount,
-          currency: 'INR',
-          num_items: payload.item_count,
-        });
-      }
+    // 3. Meta Pixel & Conversions API (deduplicated)
+    if (payload.event === 'add_combo_to_cart') {
+      const contentIds = payload.items.map((i) => getCmsProductId({ id: i.id }));
+      const contents = payload.items.map((i) => ({
+        id: getCmsProductId({ id: i.id }),
+        quantity: i.quantity,
+      }));
+
+      trackMetaEvent('AddToCart', {
+        content_name: 'Custom Ayurvedic Combo',
+        content_type: 'product_group',
+        content_ids: contentIds,
+        contents,
+        value: payload.total_amount,
+        currency: 'INR',
+        num_items: payload.item_count,
+      });
+    } else if (payload.event === 'begin_checkout') {
+      trackMetaEvent('InitiateCheckout', {
+        content_type: 'product_group',
+        value: payload.total_amount,
+        currency: 'INR',
+        num_items: payload.item_count,
+      });
     }
 
     // Development logging

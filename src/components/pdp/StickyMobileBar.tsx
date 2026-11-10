@@ -17,6 +17,7 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
     currentPrice,
     currentRegularPrice,
     totalPrice,
+    isSecondVariant,
     isAvailable,
     isAdded,
     handleAddToCart,
@@ -59,6 +60,11 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
               <span className="text-sm font-bold text-forest">
                 ₹{totalPrice.toLocaleString('en-IN')}
               </span>
+              {isSecondVariant && currentRegularPrice > totalPrice && (
+                <span className="text-[10px] text-stone-400 line-through">
+                  ₹{currentRegularPrice.toLocaleString('en-IN')}
+                </span>
+              )}
             </div>
           </div>
         </div>

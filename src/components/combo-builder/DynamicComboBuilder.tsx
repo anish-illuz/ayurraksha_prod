@@ -183,11 +183,11 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
       total_amount: totalAmount,
     });
 
-    // Add each selected item to the global CartContext
+    // Add each selected item to the global CartContext as a Combo Builder item
     itemsToAdd.forEach(({ product, quantity }) => {
       const canonical = getProductById(product.id);
       if (canonical && product.price !== null) {
-        addToCart(canonical, quantity);
+        addToCart(canonical, quantity, undefined, undefined, undefined, 1, true);
       }
     });
 

@@ -9,6 +9,10 @@ interface CartContextType {
   items: CartItem[];
   itemCount: number;
   subtotal: number;
+  comboSubtotal: number;
+  comboDiscount: number;
+  comboDiscountPercent: number;
+  totalPayable: number;
   isCartOpen: boolean;
   openCart: () => void;
   closeCart: () => void;
@@ -19,7 +23,10 @@ interface CartContextType {
     selectedVariant?: string,
     variantPrice?: number,
     variantId?: number,
-    packCount?: number
+    packCount?: number,
+    isComboItem?: boolean,
+    isSecondVariantOffer?: boolean,
+    originalUnitPrice?: number
   ) => void;
   updateQuantity: (productId: number, quantity: number, variant?: string) => void;
   removeFromCart: (productId: number, variant?: string) => void;
@@ -59,6 +66,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
           let selectedVariant = item.selectedVariant;
           let variantPrice = item.variantPrice;
           let variantId = item.variantId;
+          const isSecondVariantOffer = item.isSecondVariantOffer || packOption?.id === 'family';
 
           if (variant) {
             if (variant.inStock === false) return [];
@@ -67,9 +75,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             variantPrice = item.variantPrice ?? variant.price;
           } else if (packOption) {
             selectedVariant = packOption.name;
-            variantPrice = item.variantPrice ?? packOption.price;
+            if (isSecondVariantOffer) {
+              // 5% discount on 3-pack bundle
+              variantPrice = Math.round(product.price * 3 * 0.95) / 3;
+            } else {
+              variantPrice = item.variantPrice ?? packOption.price;
+            }
           } else if (item.variantPrice !== undefined) {
-            // Preserve custom pack course pricing
             selectedVariant = item.selectedVariant || 'Standard';
             variantPrice = item.variantPrice;
           } else {
@@ -80,7 +92,15 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             variantPrice = defaultVariant?.price ?? product.price;
           }
 
-          return [{ ...item, product, selectedVariant, variantId, variantPrice }];
+          return [{
+            ...item,
+            product,
+            selectedVariant,
+            variantId,
+            variantPrice,
+            isSecondVariantOffer,
+            originalUnitPrice: item.originalUnitPrice ?? product.price,
+          }];
         }));
       }
     } catch {
@@ -106,6 +126,18 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return sum + itemPrice * item.quantity;
   }, 0);
 
+  // Combo Builder eligible cart value and discounts:
+  // - Cart value above ₹3,000 -> 10% discount on combo builder items
+  // - Cart value above ₹5,000 -> 15% discount on combo builder items
+  // Applies dynamically, single tier only, never stacked.
+  const comboSubtotal = items
+    .filter((i) => i.isComboItem)
+    .reduce((sum, item) => sum + (item.variantPrice ?? item.product.price) * item.quantity, 0);
+
+  const comboDiscountPercent = comboSubtotal > 5000 ? 15 : comboSubtotal > 3000 ? 10 : 0;
+  const comboDiscount = Math.round(comboSubtotal * (comboDiscountPercent / 100));
+  const totalPayable = Math.max(0, subtotal - comboDiscount);
+
   const openCart = () => setIsCartOpen(true);
   const closeCart = () => setIsCartOpen(false);
   const toggleCart = () => setIsCartOpen((prev) => !prev);
@@ -116,7 +148,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     selectedVariant?: string,
     variantPrice?: number,
     variantId?: number,
-    packCount?: number
+    packCount?: number,
+    isComboItem = false,
+    isSecondVariantOffer = false,
+    originalUnitPrice?: number
   ) => {
     const canonical = getProductById(product.id);
     if (!canonical?.inStock || !Number.isInteger(quantity) || quantity < 1) return;
@@ -143,8 +178,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (!packCount && packOption.packCount) {
         packCount = packOption.packCount;
       }
+      if (packOption.id === 'family') {
+        isSecondVariantOffer = true;
+      }
     } else if (variantPrice !== undefined) {
-      // Preserve custom pack course pricing passed by PDP course selector
       selectedVariant = selectedVariant || 'Standard Course';
     } else {
       const defaultVariant = product.variants.find((v) => v.default) || product.variants[0];
@@ -155,7 +192,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
 
     if (!packCount) {
-      // Infer pack count from variant name or subtitle if not explicitly supplied
       const lower = (selectedVariant || '').toLowerCase();
       if (lower.includes('3-month') || lower.includes('3 month') || lower.includes('3 pack') || lower.includes('three pack')) {
         packCount = 3;
@@ -168,6 +204,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     }
 
+    originalUnitPrice = originalUnitPrice ?? product.price;
+
     setItems((prev) => {
       const existingIndex = prev.findIndex(
         (i) => i.product.id === product.id && i.selectedVariant === selectedVariant
@@ -178,9 +216,25 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (variantPrice !== undefined) next[existingIndex].variantPrice = variantPrice;
         if (variantId !== undefined) next[existingIndex].variantId = variantId;
         if (packCount !== undefined) next[existingIndex].packCount = packCount;
+        if (isComboItem) next[existingIndex].isComboItem = true;
+        if (isSecondVariantOffer) next[existingIndex].isSecondVariantOffer = true;
+        next[existingIndex].originalUnitPrice = originalUnitPrice;
         return next;
       }
-      return [...prev, { product, quantity, selectedVariant, variantPrice, variantId, packCount }];
+      return [
+        ...prev,
+        {
+          product,
+          quantity,
+          selectedVariant,
+          variantPrice,
+          variantId,
+          packCount,
+          isComboItem,
+          isSecondVariantOffer,
+          originalUnitPrice,
+        },
+      ];
     });
     dispatchAddToCart(product, quantity, selectedVariant, variantPrice);
     setIsCartOpen(true);
@@ -226,6 +280,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         items,
         itemCount,
         subtotal,
+        comboSubtotal,
+        comboDiscount,
+        comboDiscountPercent,
+        totalPayable,
         isCartOpen,
         openCart,
         closeCart,

@@ -55,21 +55,21 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
   }, 0);
 
   // Tiered Volume Discount:
-  // - Orders > ₹5,000 -> 15% OFF
-  // - Orders > ₹2,000 -> 10% OFF
+  // - Orders above ₹5,000 -> 15% OFF
+  // - Orders above ₹3,000 -> 10% OFF
   let tierDiscountPercent = 0;
   let tierDiscountAmount = 0;
   let amountToNextTier = 0;
 
-  if (totalSellingPrice >= 5000) {
+  if (totalSellingPrice > 5000) {
     tierDiscountPercent = 15;
     tierDiscountAmount = Math.round(totalSellingPrice * 0.15);
-  } else if (totalSellingPrice >= 2000) {
+  } else if (totalSellingPrice > 3000) {
     tierDiscountPercent = 10;
     tierDiscountAmount = Math.round(totalSellingPrice * 0.10);
-    amountToNextTier = 5000 - totalSellingPrice;
+    amountToNextTier = 5000 - totalSellingPrice + 1;
   } else {
-    amountToNextTier = Math.max(0, 2000 - totalSellingPrice);
+    amountToNextTier = Math.max(0, 3000 - totalSellingPrice + 1);
   }
 
   const finalPayableTotal = Math.max(0, totalSellingPrice - tierDiscountAmount);

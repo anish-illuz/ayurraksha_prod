@@ -135,7 +135,7 @@ export const ExitIntentDiscountModal: React.FC = () => {
                 10% OFF
               </div>
               <p className="text-[11px] text-[#283830] leading-snug">
-                Orders above <strong>₹2,000</strong>
+                Orders above <strong>₹3,000</strong>
               </p>
             </div>
 

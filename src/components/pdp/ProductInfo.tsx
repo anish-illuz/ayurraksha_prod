@@ -36,6 +36,8 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
     currentRegularPrice,
     currentDiscount,
     totalPrice,
+    isSecondVariant,
+    savingsAmount,
     isAvailable,
     isAdded,
     handleAddToCart,
@@ -92,21 +94,23 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
       <div className="hidden lg:block p-4 sm:p-5 bg-[#EEF5EE] rounded-2xl border border-emerald-900/10 space-y-1.5">
         <div className="flex items-baseline gap-2.5">
           <span className="text-3xl sm:text-4xl font-serif font-bold text-forest">
-            ₹{currentPrice.toLocaleString('en-IN')}
+            ₹{totalPrice.toLocaleString('en-IN')}
           </span>
-          {currentRegularPrice > currentPrice && (
+          {isSecondVariant && currentRegularPrice > totalPrice && (
             <span className="text-base sm:text-lg text-stone-400 line-through">
               ₹{currentRegularPrice.toLocaleString('en-IN')}
             </span>
           )}
-          {currentDiscount > 0 && (
+          {isSecondVariant && (
             <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#8C3A00] text-white shadow-2xs">
-              Save {currentDiscount}%
+              Save 5%
             </span>
           )}
         </div>
         <p className="text-xs sm:text-sm text-forest/80 font-medium">
-          Inclusive of all taxes. Free express shipping on all prepaid orders across India.
+          {isSecondVariant
+            ? `Special 5% second-variant bundle savings applied (Save ₹${savingsAmount.toLocaleString('en-IN')} on 3 units). Inclusive of all taxes.`
+            : 'Inclusive of all taxes. Free express shipping on all prepaid orders across India.'}
         </p>
       </div>
 

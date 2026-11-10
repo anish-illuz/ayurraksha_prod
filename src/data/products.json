@@ -36,7 +36,9 @@
         "price": 750,
         "regularPrice": 750,
         "inStock": true,
-        "default": true
+        "default": true,
+        "salePrice": 750,
+        "discountPercent": 0
       }
     ],
     "sku": "AYUR-DETOX-TEA",
@@ -79,7 +81,7 @@
         "name": "1 pack · 40 sachets",
         "subtitle": "40 sachets × 5g = 200g",
         "price": 750,
-        "regularPrice": 862,
+        "regularPrice": 750,
         "isDefault": true,
         "packCount": 1
       },
@@ -87,9 +89,9 @@
         "id": "family",
         "name": "3 packs · 120 sachets",
         "subtitle": "120 sachets value bundle",
-        "price": 1988,
-        "regularPrice": 2586,
-        "discountBadge": "Save 23%",
+        "price": 2138,
+        "regularPrice": 2250,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -279,7 +281,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 1299,
-        "regularPrice": 1494,
+        "regularPrice": 1299,
         "isDefault": true,
         "packCount": 1
       },
@@ -287,9 +289,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 3442,
-        "regularPrice": 4482,
-        "discountBadge": "Save 23%",
+        "price": 3702,
+        "regularPrice": 3897,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -419,11 +421,11 @@
     "id": 26337,
     "name": "Etioment Pain Relief Roll-On, 50ml",
     "slug": "etioment-pain-relief-roll-on-50ml",
-    "price": 350,
+    "price": 400,
     "regularPrice": 400,
-    "salePrice": 350,
-    "discountPercent": 12,
-    "onSale": true,
+    "salePrice": 400,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Herbal Oils",
       "Pain Relief"
@@ -492,7 +494,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "50ml – 1 Roll-On Bottle",
-        "price": 350,
+        "price": 400,
         "regularPrice": 400,
         "isDefault": true,
         "packCount": 1
@@ -501,9 +503,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 928,
+        "price": 1140,
         "regularPrice": 1200,
-        "discountBadge": "Save 23%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -692,7 +694,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 3999,
-        "regularPrice": 4599,
+        "regularPrice": 3999,
         "isDefault": true,
         "packCount": 1
       },
@@ -700,9 +702,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 10597,
-        "regularPrice": 13797,
-        "discountBadge": "Save 23%",
+        "price": 11397,
+        "regularPrice": 11997,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -895,7 +897,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 450,
-        "regularPrice": 518,
+        "regularPrice": 450,
         "isDefault": true,
         "packCount": 1
       },
@@ -903,9 +905,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 1193,
-        "regularPrice": 1554,
-        "discountBadge": "Save 23%",
+        "price": 1283,
+        "regularPrice": 1350,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -1107,9 +1109,9 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "",
+        "subtitle": "1 Pack",
         "price": 650,
-        "regularPrice": 747,
+        "regularPrice": 650,
         "isDefault": true,
         "packCount": 1
       },
@@ -1117,9 +1119,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 1723,
-        "regularPrice": 2241,
-        "discountBadge": "Save 23%",
+        "price": 1853,
+        "regularPrice": 1950,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -1306,7 +1308,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 350,
-        "regularPrice": 402,
+        "regularPrice": 350,
         "isDefault": true,
         "packCount": 1
       },
@@ -1314,9 +1316,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 928,
-        "regularPrice": 1206,
-        "discountBadge": "Save 23%",
+        "price": 998,
+        "regularPrice": 1050,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -1512,7 +1514,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 1299,
-        "regularPrice": 1494,
+        "regularPrice": 1299,
         "isDefault": true,
         "packCount": 1
       },
@@ -1520,9 +1522,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 3442,
-        "regularPrice": 4482,
-        "discountBadge": "Save 23%",
+        "price": 3702,
+        "regularPrice": 3897,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -1707,7 +1709,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 1299,
-        "regularPrice": 1494,
+        "regularPrice": 1299,
         "isDefault": true,
         "packCount": 1
       },
@@ -1715,9 +1717,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 3442,
-        "regularPrice": 4482,
-        "discountBadge": "Save 23%",
+        "price": 3702,
+        "regularPrice": 3897,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -1903,7 +1905,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 1299,
-        "regularPrice": 1494,
+        "regularPrice": 1299,
         "isDefault": true,
         "packCount": 1
       },
@@ -1911,9 +1913,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 3442,
-        "regularPrice": 4482,
-        "discountBadge": "Save 23%",
+        "price": 3702,
+        "regularPrice": 3897,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -2031,9 +2033,9 @@
     "id": 14561,
     "name": "BPain Out Capsules",
     "slug": "bpain-out-capsules",
-    "price": 600,
-    "regularPrice": 600,
-    "salePrice": 600,
+    "price": 1200,
+    "regularPrice": 1200,
+    "salePrice": 1200,
     "discountPercent": 0,
     "onSale": false,
     "categories": [
@@ -2062,9 +2064,9 @@
         "id": 14562,
         "name": "15 days pack",
         "slug": "bpain-out-capsules-30-days-pack",
-        "price": 600,
-        "regularPrice": 600,
-        "salePrice": 600,
+        "price": 1200,
+        "regularPrice": 1200,
+        "salePrice": 1200,
         "discountPercent": 0,
         "inStock": true,
         "default": true
@@ -2115,8 +2117,8 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
-        "price": 600,
-        "regularPrice": 690,
+        "price": 1200,
+        "regularPrice": 1200,
         "isDefault": true,
         "packCount": 1
       },
@@ -2124,9 +2126,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 1590,
-        "regularPrice": 2070,
-        "discountBadge": "Save 23%",
+        "price": 3420,
+        "regularPrice": 3600,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -2244,11 +2246,11 @@
     "id": 12007,
     "name": "AyurRaksha Herbal Shampoo",
     "slug": "ayur-raksha-herbal-shampoo",
-    "price": 399,
+    "price": 499,
     "regularPrice": 499,
-    "salePrice": 399,
-    "discountPercent": 20,
-    "onSale": true,
+    "salePrice": 499,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Shampoo",
       "Oil"
@@ -2311,7 +2313,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
-        "price": 399,
+        "price": 499,
         "regularPrice": 499,
         "isDefault": true,
         "packCount": 1
@@ -2320,9 +2322,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 1057,
+        "price": 1422,
         "regularPrice": 1497,
-        "discountBadge": "Save 29%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -2450,11 +2452,11 @@
     "id": 11989,
     "name": "Hair Well Food Supplement Capsules",
     "slug": "hair-well-food-supplement-capsules",
-    "price": 1199,
+    "price": 1299,
     "regularPrice": 1299,
-    "salePrice": 1199,
-    "discountPercent": 8,
-    "onSale": true,
+    "salePrice": 1299,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Capsules"
     ],
@@ -2517,7 +2519,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "60 Capsules per Bottle",
-        "price": 1199,
+        "price": 1299,
         "regularPrice": 1299,
         "isDefault": true,
         "packCount": 1
@@ -2526,9 +2528,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 3177,
+        "price": 3702,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -2647,10 +2649,10 @@
     "name": "AyurRaksha Cardiac Combo",
     "slug": "ayur-raksha-cardiac-combo",
     "price": 2499,
-    "regularPrice": 2898,
+    "regularPrice": 2499,
     "salePrice": 2499,
-    "discountPercent": 14,
-    "onSale": true,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Health Packs"
     ],
@@ -2685,7 +2687,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 2499,
-        "regularPrice": 2898,
+        "regularPrice": 2499,
         "isDefault": true,
         "packCount": 1
       },
@@ -2693,9 +2695,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 6622,
-        "regularPrice": 8694,
-        "discountBadge": "Save 24%",
+        "price": 7122,
+        "regularPrice": 7497,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -2820,10 +2822,10 @@
     "name": "AyurRaksha Breathe Well Pack",
     "slug": "ayur-raksha-breathe-well-pack",
     "price": 1599,
-    "regularPrice": 1800,
+    "regularPrice": 1599,
     "salePrice": 1599,
-    "discountPercent": 11,
-    "onSale": true,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Health Packs"
     ],
@@ -2851,9 +2853,9 @@
         "name": "1 Month",
         "slug": "ayur-raksha-breathe-well-pack-1-month",
         "price": 1599,
-        "regularPrice": 1800,
+        "regularPrice": 1599,
         "salePrice": 1599,
-        "discountPercent": 11,
+        "discountPercent": 0,
         "inStock": true,
         "default": true
       },
@@ -2880,7 +2882,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 1599,
-        "regularPrice": 1800,
+        "regularPrice": 1599,
         "isDefault": true,
         "packCount": 1
       },
@@ -2888,9 +2890,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 4237,
-        "regularPrice": 5400,
-        "discountBadge": "Save 22%",
+        "price": 4557,
+        "regularPrice": 4797,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -3015,10 +3017,10 @@
     "name": "AyurRaksha Joint Well Pack",
     "slug": "ayur-raksha-join-well-pack",
     "price": 2499,
-    "regularPrice": 2750,
+    "regularPrice": 2499,
     "salePrice": 2499,
-    "discountPercent": 9,
-    "onSale": true,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Health Packs"
     ],
@@ -3052,7 +3054,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 2499,
-        "regularPrice": 2750,
+        "regularPrice": 2499,
         "isDefault": true,
         "packCount": 1
       },
@@ -3060,9 +3062,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 6622,
-        "regularPrice": 8250,
-        "discountBadge": "Save 20%",
+        "price": 7122,
+        "regularPrice": 7497,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -3187,10 +3189,10 @@
     "name": "AyurRaksha Sleep Well Pack",
     "slug": "ayur-raksha-sleep-well-pack",
     "price": 1999,
-    "regularPrice": 2300,
+    "regularPrice": 1999,
     "salePrice": 1999,
-    "discountPercent": 13,
-    "onSale": true,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Health Packs"
     ],
@@ -3223,7 +3225,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 1999,
-        "regularPrice": 2300,
+        "regularPrice": 1999,
         "isDefault": true,
         "packCount": 1
       },
@@ -3231,9 +3233,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 5297,
-        "regularPrice": 6900,
-        "discountBadge": "Save 23%",
+        "price": 5697,
+        "regularPrice": 5997,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -3358,10 +3360,10 @@
     "name": "AyurRaksha Dia Well Pack",
     "slug": "ayur-raksha-dia-well-pack",
     "price": 3500,
-    "regularPrice": 4100,
+    "regularPrice": 3500,
     "salePrice": 3500,
-    "discountPercent": 15,
-    "onSale": true,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Health Packs"
     ],
@@ -3388,9 +3390,9 @@
         "name": "Dia Well Combo 1",
         "slug": "ayur-raksha-dia-well-pack-dia-well-combo-1",
         "price": 3500,
-        "regularPrice": 4100,
+        "regularPrice": 3500,
         "salePrice": 3500,
-        "discountPercent": 15,
+        "discountPercent": 0,
         "inStock": true,
         "default": true
       },
@@ -3417,7 +3419,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 3500,
-        "regularPrice": 4100,
+        "regularPrice": 3500,
         "isDefault": true,
         "packCount": 1
       },
@@ -3425,9 +3427,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 9275,
-        "regularPrice": 12300,
-        "discountBadge": "Save 25%",
+        "price": 9975,
+        "regularPrice": 10500,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -3613,9 +3615,9 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "",
+        "subtitle": "100 ml",
         "price": 799,
-        "regularPrice": 919,
+        "regularPrice": 799,
         "isDefault": true,
         "packCount": 1
       },
@@ -3623,9 +3625,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 2117,
-        "regularPrice": 2757,
-        "discountBadge": "Save 23%",
+        "price": 2277,
+        "regularPrice": 2397,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -3796,9 +3798,9 @@
       {
         "id": "standard",
         "name": "Standard Course",
-        "subtitle": "",
+        "subtitle": "50 g",
         "price": 799,
-        "regularPrice": 919,
+        "regularPrice": 799,
         "isDefault": true,
         "packCount": 1
       },
@@ -3806,9 +3808,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 2117,
-        "regularPrice": 2757,
-        "discountBadge": "Save 23%",
+        "price": 2277,
+        "regularPrice": 2397,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -3996,7 +3998,7 @@
         "name": "Standard Course",
         "subtitle": "60 Capsules per Bottle",
         "price": 799,
-        "regularPrice": 919,
+        "regularPrice": 799,
         "isDefault": true,
         "packCount": 1
       },
@@ -4004,9 +4006,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 2117,
-        "regularPrice": 2757,
-        "discountBadge": "Save 23%",
+        "price": 2277,
+        "regularPrice": 2397,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -4125,9 +4127,9 @@
     "id": 11270,
     "name": "AyurRaksha Skin Well Moisturising Gel",
     "slug": "ayur-raksha-skin-well-food-moisturising-gel",
-    "price": 999,
-    "regularPrice": 999,
-    "salePrice": 999,
+    "price": 1000,
+    "regularPrice": 1000,
+    "salePrice": 1000,
     "discountPercent": 0,
     "onSale": false,
     "categories": [
@@ -4164,8 +4166,8 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
-        "price": 999,
-        "regularPrice": 1149,
+        "price": 1000,
+        "regularPrice": 1000,
         "isDefault": true,
         "packCount": 1
       },
@@ -4173,9 +4175,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 2647,
-        "regularPrice": 3447,
-        "discountBadge": "Save 23%",
+        "price": 2850,
+        "regularPrice": 3000,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -4308,11 +4310,11 @@
     "id": 6319,
     "name": "AyurRaksha Etioment Pain Relief Cream / Balm",
     "slug": "etionment-pain-relief-cream",
-    "price": 350,
+    "price": 400,
     "regularPrice": 400,
-    "salePrice": 350,
-    "discountPercent": 12,
-    "onSale": true,
+    "salePrice": 400,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Cream"
     ],
@@ -4340,7 +4342,11 @@
       {
         "name": "Single",
         "slug": "single",
-        "default": false
+        "default": false,
+        "price": 400,
+        "regularPrice": 400,
+        "salePrice": 400,
+        "discountPercent": 0
       }
     ],
     "sku": "",
@@ -4353,7 +4359,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
-        "price": 350,
+        "price": 400,
         "regularPrice": 400,
         "isDefault": true,
         "packCount": 1
@@ -4362,9 +4368,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 928,
+        "price": 1140,
         "regularPrice": 1200,
-        "discountBadge": "Save 23%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -4559,7 +4565,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 800,
-        "regularPrice": 920,
+        "regularPrice": 800,
         "isDefault": true,
         "packCount": 1
       },
@@ -4567,9 +4573,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 2120,
-        "regularPrice": 2760,
-        "discountBadge": "Save 23%",
+        "price": 2280,
+        "regularPrice": 2400,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -4683,11 +4689,11 @@
     "id": 7692,
     "name": "Dia Well Food Supplement Capsules",
     "slug": "dia-well-food-supplement-capsules",
-    "price": 1199,
+    "price": 1299,
     "regularPrice": 1299,
-    "salePrice": 1199,
-    "discountPercent": 8,
-    "onSale": true,
+    "salePrice": 1299,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Capsules"
     ],
@@ -4749,7 +4755,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "60 Capsules per Bottle",
-        "price": 1199,
+        "price": 1299,
         "regularPrice": 1299,
         "isDefault": true,
         "packCount": 1
@@ -4758,9 +4764,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 3177,
+        "price": 3702,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -4941,7 +4947,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 799,
-        "regularPrice": 919,
+        "regularPrice": 799,
         "isDefault": true,
         "packCount": 1
       },
@@ -4949,9 +4955,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 2117,
-        "regularPrice": 2757,
-        "discountBadge": "Save 23%",
+        "price": 2277,
+        "regularPrice": 2397,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -5060,11 +5066,11 @@
     "id": 11803,
     "name": "BoozNil",
     "slug": "booznil",
-    "price": 2400,
+    "price": 2600,
     "regularPrice": 2600,
-    "salePrice": 2400,
-    "discountPercent": 8,
-    "onSale": true,
+    "salePrice": 2600,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Tonic"
     ],
@@ -5091,10 +5097,10 @@
         "id": 11810,
         "name": "30 Days Pack",
         "slug": "booznil-30-days-pack",
-        "price": 2400,
+        "price": 2600,
         "regularPrice": 2600,
-        "salePrice": 2400,
-        "discountPercent": 8,
+        "salePrice": 2600,
+        "discountPercent": 0,
         "inStock": true,
         "default": true
       },
@@ -5149,7 +5155,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "Available in multiple pack variants",
-        "price": 2400,
+        "price": 2600,
         "regularPrice": 2600,
         "isDefault": true,
         "packCount": 1
@@ -5158,9 +5164,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 6360,
+        "price": 7410,
         "regularPrice": 7800,
-        "discountBadge": "Save 18%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -5278,11 +5284,11 @@
     "id": 7688,
     "name": "Skin Well Food Supplement Capsules",
     "slug": "skin-well-food-supplement-capsules",
-    "price": 1199,
+    "price": 1299,
     "regularPrice": 1299,
-    "salePrice": 1199,
-    "discountPercent": 8,
-    "onSale": true,
+    "salePrice": 1299,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Capsules"
     ],
@@ -5311,7 +5317,11 @@
       {
         "name": "Single",
         "slug": "single",
-        "default": false
+        "default": false,
+        "price": 1299,
+        "regularPrice": 1299,
+        "salePrice": 1299,
+        "discountPercent": 0
       }
     ],
     "sku": "",
@@ -5324,7 +5334,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
-        "price": 1199,
+        "price": 1299,
         "regularPrice": 1299,
         "isDefault": true,
         "packCount": 1
@@ -5333,9 +5343,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 3177,
+        "price": 3702,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -5462,11 +5472,11 @@
     "id": 7695,
     "name": "AyurRaksha Save Heart",
     "slug": "save-heart",
-    "price": 1199,
+    "price": 1299,
     "regularPrice": 1299,
-    "salePrice": 1199,
-    "discountPercent": 8,
-    "onSale": true,
+    "salePrice": 1299,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Tonic"
     ],
@@ -5531,7 +5541,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "500 ml – 1 Bottle",
-        "price": 1199,
+        "price": 1299,
         "regularPrice": 1299,
         "isDefault": true,
         "packCount": 1
@@ -5540,9 +5550,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Bottles Value Bundle (1500 ml)",
-        "price": 3177,
+        "price": 3702,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -5732,7 +5742,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 250,
-        "regularPrice": 288,
+        "regularPrice": 250,
         "isDefault": true,
         "packCount": 1
       },
@@ -5740,9 +5750,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 663,
-        "regularPrice": 864,
-        "discountBadge": "Save 23%",
+        "price": 713,
+        "regularPrice": 750,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -5866,11 +5876,11 @@
     "id": 4254,
     "name": "Flow Well Food Supplement Capsules",
     "slug": "flow-well-food-supplement-capsules",
-    "price": 1199,
+    "price": 1299,
     "regularPrice": 1299,
-    "salePrice": 1199,
-    "discountPercent": 8,
-    "onSale": true,
+    "salePrice": 1299,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Capsules"
     ],
@@ -5908,7 +5918,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
-        "price": 1199,
+        "price": 1299,
         "regularPrice": 1299,
         "isDefault": true,
         "packCount": 1
@@ -5917,9 +5927,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 3177,
+        "price": 3702,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -6082,7 +6092,11 @@
       {
         "name": "Single",
         "slug": "single",
-        "default": false
+        "default": false,
+        "price": 400,
+        "regularPrice": 400,
+        "salePrice": 400,
+        "discountPercent": 0
       }
     ],
     "sku": "",
@@ -6096,7 +6110,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 400,
-        "regularPrice": 460,
+        "regularPrice": 400,
         "isDefault": true,
         "packCount": 1
       },
@@ -6104,9 +6118,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 1060,
-        "regularPrice": 1380,
-        "discountBadge": "Save 23%",
+        "price": 1140,
+        "regularPrice": 1200,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -6240,11 +6254,11 @@
     "id": 4522,
     "name": "Purna Sakthi Tonic",
     "slug": "purna-sakthi-tonic",
-    "price": 1299,
+    "price": 1699,
     "regularPrice": 1699,
-    "salePrice": 1299,
-    "discountPercent": 24,
-    "onSale": true,
+    "salePrice": 1699,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Tonic"
     ],
@@ -6310,8 +6324,8 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "500 ml – 1 Bottle",
-        "price": 1299,
-        "regularPrice": 1399,
+        "price": 1699,
+        "regularPrice": 1699,
         "isDefault": true,
         "packCount": 1
       },
@@ -6319,9 +6333,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Bottles Value Bundle (1500 ml)",
-        "price": 3442,
-        "regularPrice": 4197,
-        "discountBadge": "Save 18%",
+        "price": 4842,
+        "regularPrice": 5097,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -6445,9 +6459,9 @@
     "id": 7689,
     "name": "AyurRaksha Divine Healing Oil",
     "slug": "divine-healing-oil",
-    "price": 800,
-    "regularPrice": 800,
-    "salePrice": 800,
+    "price": 450,
+    "regularPrice": 450,
+    "salePrice": 450,
     "discountPercent": 0,
     "onSale": false,
     "categories": [
@@ -6484,9 +6498,9 @@
         "id": 9630,
         "name": "One Bottle",
         "slug": "divine-healing-oil-one-bottle",
-        "price": 800,
-        "regularPrice": 800,
-        "salePrice": 800,
+        "price": 450,
+        "regularPrice": 450,
+        "salePrice": 450,
         "discountPercent": 0,
         "inStock": true,
         "default": true
@@ -6557,8 +6571,8 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "100 ml – 1 Bottle",
-        "price": 800,
-        "regularPrice": 900,
+        "price": 450,
+        "regularPrice": 450,
         "isDefault": true,
         "packCount": 1
       },
@@ -6566,9 +6580,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Bottles Value Bundle (300 ml)",
-        "price": 2120,
-        "regularPrice": 2700,
-        "discountBadge": "Save 21%",
+        "price": 1283,
+        "regularPrice": 1350,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -6688,11 +6702,11 @@
     "id": 7694,
     "name": "BoozLiv",
     "slug": "boozliv",
-    "price": 2400,
+    "price": 2600,
     "regularPrice": 2600,
-    "salePrice": 2400,
-    "discountPercent": 8,
-    "onSale": true,
+    "salePrice": 2600,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Tonic"
     ],
@@ -6724,10 +6738,10 @@
         "id": 7726,
         "name": "30 Days Pack",
         "slug": "boozliv-30-days-pack-2",
-        "price": 2400,
+        "price": 2600,
         "regularPrice": 2600,
-        "salePrice": 2400,
-        "discountPercent": 8,
+        "salePrice": 2600,
+        "discountPercent": 0,
         "inStock": true,
         "default": true
       },
@@ -6781,7 +6795,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "60 sachets × 10ml = 600ml",
-        "price": 2400,
+        "price": 2600,
         "regularPrice": 2600,
         "isDefault": true,
         "packCount": 1
@@ -6790,9 +6804,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 6360,
+        "price": 7410,
         "regularPrice": 7800,
-        "discountBadge": "Save 18%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -6984,7 +6998,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 999,
-        "regularPrice": 1149,
+        "regularPrice": 999,
         "isDefault": true,
         "packCount": 1
       },
@@ -6992,9 +7006,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 2647,
-        "regularPrice": 3447,
-        "discountBadge": "Save 23%",
+        "price": 2847,
+        "regularPrice": 2997,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -7161,7 +7175,11 @@
         "name": "Single",
         "slug": "single",
         "default": false,
-        "inStock": false
+        "inStock": false,
+        "price": 350,
+        "regularPrice": 350,
+        "salePrice": 350,
+        "discountPercent": 0
       }
     ],
     "sku": "",
@@ -7212,7 +7230,7 @@
         "name": "Standard Course",
         "subtitle": "100 ml – 1 Bottle",
         "price": 350,
-        "regularPrice": 400,
+        "regularPrice": 350,
         "isDefault": true,
         "packCount": 1
       },
@@ -7220,9 +7238,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Bottles Value Bundle (300 ml)",
-        "price": 928,
-        "regularPrice": 1200,
-        "discountBadge": "Save 23%",
+        "price": 998,
+        "regularPrice": 1050,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -7378,7 +7396,11 @@
         "name": "Single",
         "slug": "single",
         "default": false,
-        "inStock": false
+        "inStock": false,
+        "price": 800,
+        "regularPrice": 800,
+        "salePrice": 800,
+        "discountPercent": 0
       }
     ],
     "sku": "",
@@ -7420,7 +7442,7 @@
         "name": "Standard Course",
         "subtitle": "100g – 1 Jar",
         "price": 800,
-        "regularPrice": 920,
+        "regularPrice": 800,
         "isDefault": true,
         "packCount": 1
       },
@@ -7428,9 +7450,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 2120,
-        "regularPrice": 2760,
-        "discountBadge": "Save 23%",
+        "price": 2280,
+        "regularPrice": 2400,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -7581,7 +7603,11 @@
         "name": "Single",
         "slug": "single",
         "default": false,
-        "inStock": false
+        "inStock": false,
+        "price": 400,
+        "regularPrice": 400,
+        "salePrice": 400,
+        "discountPercent": 0
       }
     ],
     "sku": "",
@@ -7622,7 +7648,7 @@
         "name": "Standard Course",
         "subtitle": "40 Tea Bags – 1 Tin",
         "price": 400,
-        "regularPrice": 460,
+        "regularPrice": 400,
         "isDefault": true,
         "packCount": 1
       },
@@ -7630,9 +7656,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 1060,
-        "regularPrice": 1380,
-        "discountBadge": "Save 23%",
+        "price": 1140,
+        "regularPrice": 1200,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -7734,10 +7760,10 @@
     "name": "AyurRaksha Piles Well Pack",
     "slug": "piles-well-pack",
     "price": 2299,
-    "regularPrice": 2599,
+    "regularPrice": 2299,
     "salePrice": 2299,
-    "discountPercent": 12,
-    "onSale": true,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Health Packs"
     ],
@@ -7770,7 +7796,11 @@
         "name": "1 Month Pack",
         "slug": "1 Month Pack",
         "default": false,
-        "inStock": false
+        "inStock": false,
+        "price": 2299,
+        "regularPrice": 2299,
+        "salePrice": 2299,
+        "discountPercent": 0
       },
       {
         "name": "2 Month Pack",
@@ -7796,7 +7826,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 2299,
-        "regularPrice": 2599,
+        "regularPrice": 2299,
         "isDefault": true,
         "packCount": 1
       },
@@ -7804,9 +7834,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 6092,
-        "regularPrice": 7797,
-        "discountBadge": "Save 22%",
+        "price": 6552,
+        "regularPrice": 6897,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -8014,7 +8044,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 1400,
-        "regularPrice": 1610,
+        "regularPrice": 1400,
         "isDefault": true,
         "packCount": 1
       },
@@ -8022,9 +8052,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 3710,
-        "regularPrice": 4830,
-        "discountBadge": "Save 23%",
+        "price": 3990,
+        "regularPrice": 4200,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -8149,10 +8179,10 @@
     "name": "AyurRaksha Skin Well Pack",
     "slug": "skin-well-pack",
     "price": 2925,
-    "regularPrice": 3599,
+    "regularPrice": 2925,
     "salePrice": 2925,
-    "discountPercent": 19,
-    "onSale": true,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Health Packs"
     ],
@@ -8180,9 +8210,9 @@
         "name": "Pack 1",
         "slug": "ayur-raksha-skin-well-pack-pack-1",
         "price": 2925,
-        "regularPrice": 3599,
+        "regularPrice": 2925,
         "salePrice": 2925,
-        "discountPercent": 19,
+        "discountPercent": 0,
         "inStock": true,
         "default": true
       },
@@ -8231,7 +8261,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 2925,
-        "regularPrice": 3599,
+        "regularPrice": 2925,
         "isDefault": true,
         "packCount": 1
       },
@@ -8239,9 +8269,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 7751,
-        "regularPrice": 10797,
-        "discountBadge": "Save 28%",
+        "price": 8336,
+        "regularPrice": 8775,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -8365,11 +8395,11 @@
     "id": 4485,
     "name": "PI Well Food Supplement Capsules",
     "slug": "pi-well-food-supplement-capsules",
-    "price": 1199,
+    "price": 1299,
     "regularPrice": 1299,
-    "salePrice": 1199,
-    "discountPercent": 8,
-    "onSale": true,
+    "salePrice": 1299,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Capsules"
     ],
@@ -8435,7 +8465,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "60 Capsules per Bottle",
-        "price": 1199,
+        "price": 1299,
         "regularPrice": 1299,
         "isDefault": true,
         "packCount": 1
@@ -8444,9 +8474,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 3177,
+        "price": 3702,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -8552,11 +8582,11 @@
     "id": 4238,
     "name": "Sleep Well Food Supplement Capsules",
     "slug": "sleep-well-food-supplement-capsules",
-    "price": 1199,
+    "price": 1299,
     "regularPrice": 1299,
-    "salePrice": 1199,
-    "discountPercent": 8,
-    "onSale": true,
+    "salePrice": 1299,
+    "discountPercent": 0,
+    "onSale": false,
     "categories": [
       "Capsules"
     ],
@@ -8584,7 +8614,11 @@
       {
         "name": "Single",
         "slug": "single",
-        "default": false
+        "default": false,
+        "price": 1299,
+        "regularPrice": 1299,
+        "salePrice": 1299,
+        "discountPercent": 0
       }
     ],
     "sku": "",
@@ -8597,7 +8631,7 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
-        "price": 1199,
+        "price": 1299,
         "regularPrice": 1299,
         "isDefault": true,
         "packCount": 1
@@ -8606,9 +8640,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 3177,
+        "price": 3702,
         "regularPrice": 3897,
-        "discountBadge": "Save 18%",
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -8771,7 +8805,9 @@
         "price": 200,
         "regularPrice": 200,
         "inStock": true,
-        "default": true
+        "default": true,
+        "salePrice": 200,
+        "discountPercent": 0
       }
     ],
     "sku": "AYUR-KALONJI-SOAP",
@@ -8785,7 +8821,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 200,
-        "regularPrice": 230,
+        "regularPrice": 200,
         "isDefault": true,
         "packCount": 1
       },
@@ -8793,9 +8829,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 530,
-        "regularPrice": 690,
-        "discountBadge": "Save 23%",
+        "price": 570,
+        "regularPrice": 600,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -8954,7 +8990,9 @@
         "price": 4000,
         "regularPrice": 4000,
         "inStock": true,
-        "default": true
+        "default": true,
+        "salePrice": 4000,
+        "discountPercent": 0
       }
     ],
     "sku": "AYUR-VITAL-O3",
@@ -8968,7 +9006,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 4000,
-        "regularPrice": 4600,
+        "regularPrice": 4000,
         "isDefault": true,
         "packCount": 1
       },
@@ -8976,9 +9014,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 10600,
-        "regularPrice": 13800,
-        "discountBadge": "Save 23%",
+        "price": 11400,
+        "regularPrice": 12000,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -9102,9 +9140,9 @@
     "id": 124,
     "name": "AyurRaksha Immune O3 Capsules",
     "slug": "ayurraksha-immuno3-immunity-booster-capsules",
-    "price": 2500,
-    "regularPrice": 2500,
-    "salePrice": 2500,
+    "price": 1298,
+    "regularPrice": 1298,
+    "salePrice": 1298,
     "discountPercent": 0,
     "onSale": false,
     "categories": [
@@ -9135,10 +9173,12 @@
       {
         "id": 124,
         "name": "Bottle of 60 Capsules",
-        "price": 2500,
-        "regularPrice": 2500,
+        "price": 1298,
+        "regularPrice": 1298,
         "inStock": true,
-        "default": true
+        "default": true,
+        "salePrice": 1298,
+        "discountPercent": 0
       }
     ],
     "sku": "AYUR-IMMUN-O3",
@@ -9151,8 +9191,8 @@
         "id": "standard",
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
-        "price": 2500,
-        "regularPrice": 2875,
+        "price": 1298,
+        "regularPrice": 1298,
         "isDefault": true,
         "packCount": 1
       },
@@ -9160,9 +9200,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 6625,
-        "regularPrice": 8625,
-        "discountBadge": "Save 23%",
+        "price": 3699,
+        "regularPrice": 3894,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],
@@ -9317,7 +9357,9 @@
         "price": 999,
         "regularPrice": 999,
         "inStock": true,
-        "default": true
+        "default": true,
+        "salePrice": 999,
+        "discountPercent": 0
       }
     ],
     "sku": "AYUR-FOOT-BATH-300G",
@@ -9331,7 +9373,7 @@
         "name": "Standard Course",
         "subtitle": "1 Pack Regular Size",
         "price": 999,
-        "regularPrice": 1149,
+        "regularPrice": 999,
         "isDefault": true,
         "packCount": 1
       },
@@ -9339,9 +9381,9 @@
         "id": "family",
         "name": "3-Month Family Regimen",
         "subtitle": "3 Packs Value Bundle",
-        "price": 2647,
-        "regularPrice": 3447,
-        "discountBadge": "Save 23%",
+        "price": 2847,
+        "regularPrice": 2997,
+        "discountBadge": "Save 5%",
         "packCount": 3
       }
     ],

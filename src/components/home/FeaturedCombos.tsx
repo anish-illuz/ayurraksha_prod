@@ -25,8 +25,6 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
   };
 
   const imageSrc = pack.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/join-well-combo.webp';
-  const prepaidDiscountPrice = Math.round(pack.price * 0.95);
-
   return (
     <div className="flex flex-col bg-white rounded-2xl border border-stone-200/90 overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 group">
       {/* 1. Pack photograph - Full display framing */}
@@ -62,7 +60,7 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
           <span>({pack.reviewCount} verified reviews)</span>
         </div>
 
-        {/* 5. Original price and current price & 6. Discount percentage */}
+        {/* 5. Original price and current price */}
         <div className="pt-1 flex items-baseline gap-2.5 flex-wrap">
           <span className="font-heading font-bold text-xl sm:text-2xl text-primary">
             ₹{pack.price.toLocaleString('en-IN')}
@@ -72,17 +70,6 @@ const PackCard: React.FC<PackCardProps> = ({ pack }) => {
               ₹{pack.regularPrice.toLocaleString('en-IN')}
             </span>
           )}
-          {pack.discountPercent > 0 && (
-            <span className="text-xs sm:text-sm font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
-              {pack.discountPercent}% OFF
-            </span>
-          )}
-        </div>
-
-        {/* 7. Prepaid offer */}
-        <div className="bg-[#FAF9F5] border border-stone-200/80 rounded-xl px-3 py-2 text-xs flex flex-wrap gap-1 items-center justify-between">
-          <span className="text-[#37443D] font-medium">⚡ Prepaid Offer:</span>
-          <span className="font-bold text-primary">₹{prepaidDiscountPrice.toLocaleString('en-IN')} + Free Ship</span>
         </div>
 
         {/* 8. Add to Cart button */}

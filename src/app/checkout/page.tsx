@@ -44,7 +44,7 @@ interface OrderSuccess {
 }
 
 export default function CheckoutPage() {
-  const { items, itemCount, subtotal, clearCart } = useCart();
+  const { items, itemCount, subtotal, comboSubtotal, comboDiscount, comboDiscountPercent, clearCart } = useCart();
 
   // Form Fields
   const [formData, setFormData] = useState({
@@ -72,6 +72,15 @@ export default function CheckoutPage() {
     name: string;
     currency: string;
   } | null>(null);
+
+  // Pricing calculations
+  // Combo Builder Volume Discount:
+  // - Orders above ₹5,000 -> 15% OFF
+  // - Orders above ₹3,000 -> 10% OFF
+  // Calculated dynamically on eligible combo builder items only.
+  // Individual product pages have their own variant offers and do not stack with Combo Builder discounts.
+  const shippingFee = paymentMethod === 'razorpay' ? 0 : 100;
+  const totalPayable = Math.max(0, subtotal - comboDiscount + shippingFee);
 
   useEffect(() => {
     // Track begin_checkout when items are loaded
@@ -104,20 +113,6 @@ export default function CheckoutPage() {
     }));
     if (errorMessage) setErrorMessage(null);
   };
-
-  // Pricing calculations
-  // Automatic Volume Discount:
-  // - Orders > ₹5,000 -> 15% OFF
-  // - Orders > ₹2,000 -> 10% OFF
-  const tierDiscountPercent = subtotal >= 5000 ? 15 : subtotal >= 2000 ? 10 : 0;
-  const tierDiscount = Math.round(subtotal * (tierDiscountPercent / 100));
-  const discountedSubtotal = subtotal - tierDiscount;
-
-  // Prepaid: Free delivery + 5% extra discount
-  // COD: Flat ₹100 COD fee
-  const prepaidDiscount = paymentMethod === 'razorpay' ? Math.round(discountedSubtotal * 0.05) : 0;
-  const shippingFee = paymentMethod === 'razorpay' ? 0 : 100;
-  const totalPayable = Math.max(0, discountedSubtotal - prepaidDiscount + shippingFee);
 
   const validateForm = () => {
     if (!formData.name.trim()) return 'Please enter your full name';
@@ -164,8 +159,8 @@ export default function CheckoutPage() {
           customer: formData,
           paymentMethod,
           customerNote: note,
-          tierDiscount,
-          tierDiscountPercent,
+          tierDiscount: comboDiscount,
+          tierDiscountPercent: comboDiscountPercent,
           attribution,
         }),
       });
@@ -718,7 +713,12 @@ export default function CheckoutPage() {
                             {item.selectedVariant && (
                               <p className="text-xs font-semibold text-emerald-800 truncate">
                                 Pack: {item.selectedVariant}
-                                {item.packCount && item.packCount > 1 && (
+                                {item.isSecondVariantOffer && (
+                                  <span className="ml-1.5 px-1.5 py-0.2 rounded text-[10px] font-bold bg-[#8C3A00] text-white">
+                                    Save 5%
+                                  </span>
+                                )}
+                                {item.packCount && item.packCount > 1 && !item.isSecondVariantOffer && (
                                   <span className="ml-1 text-[11px] font-normal text-stone-500">
                                     ({item.quantity} packs total)
                                   </span>
@@ -726,13 +726,20 @@ export default function CheckoutPage() {
                               </p>
                             )}
                             <span className="text-xs text-charcoal-muted">
-                              Qty: {item.quantity} × ₹{unitPrice.toLocaleString('en-IN')}
+                              Qty: {item.quantity} × ₹{Math.round(unitPrice).toLocaleString('en-IN')}
                             </span>
                           </div>
                         </div>
-                        <span className="text-sm sm:text-base font-bold text-forest flex-shrink-0">
-                          ₹{lineTotal.toLocaleString('en-IN')}
-                        </span>
+                        <div className="text-right flex-shrink-0">
+                          <span className="text-sm sm:text-base font-bold text-forest block">
+                            ₹{Math.round(lineTotal).toLocaleString('en-IN')}
+                          </span>
+                          {item.isSecondVariantOffer && (
+                            <span className="text-[11px] text-stone-400 line-through block">
+                              ₹{Math.round((item.originalUnitPrice ?? item.product.price) * item.quantity).toLocaleString('en-IN')}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     );
                   })}
@@ -747,17 +754,10 @@ export default function CheckoutPage() {
                     </span>
                   </div>
 
-                  {tierDiscount > 0 && (
+                  {comboDiscount > 0 && (
                     <div className="flex items-center justify-between text-emerald-800 font-bold bg-emerald-50 px-2.5 py-1.5 rounded-lg border border-emerald-200">
-                      <span>Volume Discount ({tierDiscountPercent}% OFF)</span>
-                      <span>-₹{tierDiscount.toLocaleString('en-IN')}</span>
-                    </div>
-                  )}
-
-                  {prepaidDiscount > 0 && (
-                    <div className="flex items-center justify-between text-botanical font-semibold">
-                      <span>Prepaid Special Discount (5%)</span>
-                      <span>-₹{prepaidDiscount.toLocaleString('en-IN')}</span>
+                      <span>Combo Builder Discount ({comboDiscountPercent}% OFF)</span>
+                      <span>-₹{comboDiscount.toLocaleString('en-IN')}</span>
                     </div>
                   )}
 

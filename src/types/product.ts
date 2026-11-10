@@ -131,6 +131,9 @@ export interface CartItem {
   variantPrice?: number;
   variantId?: number;
   packCount?: number;
+  isComboItem?: boolean;
+  isSecondVariantOffer?: boolean;
+  originalUnitPrice?: number;
 }
 
 export interface BlogPost {

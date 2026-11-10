@@ -34,8 +34,8 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/divine-healing-oil.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/healing-oil.png',
     ],
-    mrp: 800,
-    price: 800,
+    mrp: 450,
+    price: 450,
     pricePending: false,
     inStock: true,
     doctorGuided: false,
@@ -199,7 +199,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/herbal-shampoo.png',
     ],
     mrp: 499,
-    price: 399,
+    price: 499,
     pricePending: false,
     inStock: true,
     doctorGuided: false,
@@ -216,7 +216,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 7. Skinwell Food Supplement (CMS ID 107) — Main Store price: ₹1,199 (MRP ₹1,299)
+  // 7. Skinwell Food Supplement (CMS ID 107) — Main Store price: ₹1,299
   {
     id: 7688,
     cmsId: 107,
@@ -231,7 +231,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/skin-well-capsules.png',
     ],
     mrp: 1299,
-    price: 1199,
+    price: 1299,
     pricePending: false,
     inStock: true,
     doctorGuided: false,
@@ -382,7 +382,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 12. AyurRaksha Immune O3 Capsules (CMS ID 124) — Main Store price: ₹2,500
+  // 12. AyurRaksha Immune O3 Capsules (CMS ID 124) — Main Store price: ₹1,298
   {
     id: 124,
     cmsId: 124,
@@ -396,8 +396,8 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/ayur-raksha-immuno3-capsules.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/ImmunO3-capsules.png',
     ],
-    mrp: 2500,
-    price: 2500,
+    mrp: 1298,
+    price: 1298,
     pricePending: false,
     inStock: true,
     doctorGuided: true,

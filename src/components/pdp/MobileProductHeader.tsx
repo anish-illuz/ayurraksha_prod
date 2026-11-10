@@ -24,6 +24,8 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
     currentRegularPrice,
     currentDiscount,
     totalPrice,
+    isSecondVariant,
+    savingsAmount,
     isAvailable,
     isAdded,
     handleAddToCart,
@@ -99,14 +101,14 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
             <span className="text-2xl sm:text-3xl font-serif font-bold text-forest">
               ₹{totalPrice.toLocaleString('en-IN')}
             </span>
-            {currentRegularPrice > currentPrice && (
+            {isSecondVariant && currentRegularPrice > totalPrice && (
               <span className="text-sm text-stone-400 line-through">
-                ₹{((currentRegularPrice / (selectedPack.packCount || 1)) * quantity).toLocaleString('en-IN')}
+                ₹{currentRegularPrice.toLocaleString('en-IN')}
               </span>
             )}
-            {currentDiscount > 0 && (
+            {isSecondVariant && (
               <span className="px-2 py-0.5 rounded text-xs font-bold bg-[#8C3A00] text-white shadow-2xs">
-                Save {currentDiscount}%
+                Save 5%
               </span>
             )}
           </div>

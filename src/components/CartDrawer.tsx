@@ -11,6 +11,9 @@ export const CartDrawer: React.FC = () => {
     items,
     itemCount,
     subtotal,
+    comboDiscount,
+    comboDiscountPercent,
+    totalPayable,
     isCartOpen,
     closeCart,
     updateQuantity,
@@ -136,7 +139,12 @@ export const CartDrawer: React.FC = () => {
                     {item.selectedVariant && (
                       <p className="text-xs text-charcoal-muted mt-0.5">
                         Pack: <span className="font-semibold text-emerald-800">{item.selectedVariant}</span>
-                        {item.packCount && item.packCount > 1 && (
+                        {item.isSecondVariantOffer && (
+                          <span className="ml-1.5 px-1.5 py-0.2 rounded text-[10px] font-bold bg-[#8C3A00] text-white">
+                            Save 5%
+                          </span>
+                        )}
+                        {item.packCount && item.packCount > 1 && !item.isSecondVariantOffer && (
                           <span className="ml-1 text-[11px] font-medium text-stone-500">
                             ({item.quantity} packs total)
                           </span>
@@ -175,14 +183,18 @@ export const CartDrawer: React.FC = () => {
 
                     {/* Price with accurate live variation support */}
                     <div className="text-right">
-                      <span className="text-xs font-bold text-forest">
+                      <span className="text-xs font-bold text-forest block">
                         ₹{Math.round((item.variantPrice ?? item.product.price) * item.quantity).toLocaleString('en-IN')}
                       </span>
-                      {item.product.regularPrice > (item.variantPrice ?? item.product.price) && (
+                      {item.isSecondVariantOffer ? (
+                        <span className="text-[10px] text-stone-400 line-through block">
+                          ₹{Math.round((item.originalUnitPrice ?? item.product.price) * item.quantity).toLocaleString('en-IN')}
+                        </span>
+                      ) : item.product.regularPrice > (item.variantPrice ?? item.product.price) ? (
                         <span className="text-[10px] text-stone-400 line-through block">
                           ₹{Math.round(item.product.regularPrice * item.quantity).toLocaleString('en-IN')}
                         </span>
-                      )}
+                      ) : null}
                     </div>
                   </div>
                 </div>
@@ -200,6 +212,20 @@ export const CartDrawer: React.FC = () => {
                 ₹{subtotal.toLocaleString('en-IN')}
               </span>
             </div>
+            {comboDiscount > 0 && (
+              <div className="flex items-center justify-between mb-2 text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-1 rounded">
+                <span>Combo Discount ({comboDiscountPercent}% OFF)</span>
+                <span>-₹{comboDiscount.toLocaleString('en-IN')}</span>
+              </div>
+            )}
+            {comboDiscount > 0 && (
+              <div className="flex items-center justify-between mb-1.5 pt-1.5 border-t border-stone-200">
+                <span className="text-sm font-bold text-charcoal">Total</span>
+                <span className="text-lg font-bold text-forest">
+                  ₹{totalPayable.toLocaleString('en-IN')}
+                </span>
+              </div>
+            )}
             <p className="text-[11px] text-charcoal-muted mb-4">
               Taxes included. Standard delivery across India.
             </p>

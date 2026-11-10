@@ -75,9 +75,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
     'Standard Pack'
   );
 
-  // Calculate promotional prepaid price (5% extra on prepaid, matching checkout)
-  const prepaidDiscountPrice = Math.round(product.price * 0.95);
-
   return (
     <div
       className="group relative flex flex-col bg-white rounded-2xl border border-stone-200 overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:border-botanical/50"
@@ -92,19 +89,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-forest text-white shadow-xs">
               BESTSELLER
             </span>
-          ) : product.discountPercent >= 15 ? (
-            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-[#18372b] text-white shadow-xs">
-              POPULAR
-            </span>
           ) : (
             <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-stone-800 text-white shadow-xs">
               AYURVEDIC
-            </span>
-          )}
-
-          {product.discountPercent > 0 && (
-            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] sm:text-xs whitespace-nowrap font-bold bg-[#8C3A00] text-white shadow-xs">
-              {product.discountPercent}% OFF
             </span>
           )}
         </div>
@@ -166,17 +153,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
               {product.discountPercent}% OFF
             </span>
           )}
-        </div>
-
-        {/* Special Offer Pill: ⚡ Prepaid: ₹X */}
-        <div className="bg-[#F4F7EE] border border-[#DCE4CF] rounded-lg sm:rounded-xl px-2 sm:px-2.5 py-1 sm:py-1.5 flex items-center justify-between text-[10px] sm:text-xs md:text-sm">
-          <span className="flex items-center gap-1 text-stone-700 font-medium">
-            <span className="text-botanical font-bold">⚡</span>
-            <span>Prepaid<span className="hidden sm:inline"> Special</span>:</span>
-          </span>
-          <span className="font-bold text-forest ml-1">
-            ₹{prepaidDiscountPrice.toLocaleString('en-IN')}
-          </span>
         </div>
 
         {/* Quantity Stepper + Primary Add to Cart Action Row */}

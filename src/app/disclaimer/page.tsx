@@ -4,7 +4,7 @@ import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Regulatory & Medical Disclaimer | AyurRaksha Online',
-  description: 'Read the official AYUSH regulatory, dietary supplement, and medical guidance disclaimers for AyurRaksha products formulated under Dr. Jegajothi Pandian.',
+  description: 'Read the official AYUSH regulatory, dietary supplement, and medical guidance disclaimers for AyurRaksha products and clinical consultations with Dr. Jegajothi Pandian.',
   alternates: {
     canonical: `${SITE_CONFIG.domain}/disclaimer/`,
   },
@@ -31,7 +31,7 @@ export default function DisclaimerPage() {
 
             <h2 className="font-serif text-lg font-bold text-forest pt-2">1. Nature of Ayurvedic Formulations</h2>
             <p>
-              AyurRaksha formulations—including our classical herbal tonics (e.g., BoozLiv, Purna Sakthi), topical soothing oils (e.g., Divine Healing Oil, Etioment Roll-on), and dietary supplement capsules—are formulated in Chennai under the direction of <strong>Dr. Jegajothi Pandian</strong> using time-honored Ayurvedic botanical principles. These products are classified as Ayurvedic Proprietary Medicines and Dietary Supplements under applicable Indian AYUSH guidelines.
+              AyurRaksha formulations—including our classical herbal tonics (e.g., BoozLiv, Purna Sakthi), topical soothing oils (e.g., Divine Healing Oil, Etioment Roll-on), and dietary supplement capsules—are prepared in Chennai using time-honored classical Ayurvedic botanical principles. <strong>Dr. Jegajothi Pandian</strong> provides medical consultation and clinical guidance for individualized care. These products are classified as Ayurvedic Proprietary Medicines and Dietary Supplements under applicable Indian AYUSH guidelines.
             </p>
 
             <h2 className="font-serif text-lg font-bold text-forest pt-2">2. Drugs &amp; Magic Remedies (DMR) Act Compliance</h2>
@@ -69,7 +69,7 @@ export default function DisclaimerPage() {
             </p>
             <div className="bg-stone-50 rounded-xl p-4 border border-stone-200 space-y-1.5 font-sans">
               <p><strong>Entity:</strong> VPrime Innovations (AyurRaksha Online)</p>
-              <p><strong>Chief Formulation Scientist:</strong> Dr. Jegajothi Pandian</p>
+              <p><strong>Medical Consultant:</strong> Dr. Jegajothi Pandian</p>
               <p><strong>Registered Address:</strong> 251, First Floor, New Tiny Sector, Ambattur Industrial Estate, Chennai 600058, Tamil Nadu, India</p>
               <p><strong>Clinical WhatsApp Desk:</strong> <a href={SITE_CONFIG.whatsappUrl} className="text-botanical font-semibold underline">{SITE_CONFIG.displayPhone}</a></p>
               <p><strong>Email:</strong> <a href={`mailto:${SITE_CONFIG.email}`} className="text-botanical font-semibold underline">{SITE_CONFIG.email}</a></p>

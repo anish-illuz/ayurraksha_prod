@@ -5,9 +5,9 @@ export const TrustBadges: React.FC = () => {
   const badges = [
     {
       icon: Stethoscope,
-      title: 'Doctor Formulated',
+      title: 'Medical Consultation',
       subtitle: (
-        <span>Formulated by <span className="whitespace-nowrap">Dr.&nbsp;Jegajothi&nbsp;Pandian</span></span>
+        <span>Consultations with <span className="whitespace-nowrap">Dr.&nbsp;Jegajothi&nbsp;Pandian</span></span>
       ),
     },
     {

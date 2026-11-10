@@ -193,7 +193,9 @@ export async function POST(req: Request) {
 
     for (const item of items) {
       const product = getProductById(item.product?.id || item.id);
-      const variant = product?.variants.find(v => v.id === item.variantId || v.name === item.selectedVariant) || product?.variants.find(v => v.default) || product?.variants[0];
+      const variant = product?.variants && product.variants.length > 0
+        ? (product.variants.find(v => v.id === item.variantId || v.name === item.selectedVariant) || product.variants.find(v => v.default) || product.variants[0])
+        : undefined;
       if (!product?.inStock || variant?.inStock === false || !Number.isInteger(item.quantity) || item.quantity < 1) {
         return NextResponse.json({ success: false, error: 'An item is unavailable or has an invalid quantity. Please refresh your cart.' }, { status: 400 });
       }

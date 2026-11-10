@@ -54,42 +54,25 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
           if (!product?.inStock || !Number.isInteger(item.quantity) || item.quantity < 1) return [];
 
           // 1. Check if matching WooCommerce variant exists
-          const variant = product.variants.find(
+          const variant = product.variants && product.variants.length > 0 ? product.variants.find(
             (v) => (item.variantId !== undefined && v.id === item.variantId) || (item.selectedVariant && v.name === item.selectedVariant)
-          );
-
-          // 2. Check if matching packOption exists on product
-          const packOption = product.packOptions?.find(
-            (p) => p.name === item.selectedVariant || p.id === item.selectedVariant
-          );
+          ) : undefined;
 
           let selectedVariant = item.selectedVariant;
-          let variantPrice = item.variantPrice;
+          let variantPrice = item.variantPrice ?? product.price;
           let variantId = item.variantId;
-          const isSecondVariantOffer = item.isSecondVariantOffer || packOption?.id === 'family';
+          let isSecondVariantOffer = false;
 
           if (variant) {
             if (variant.inStock === false) return [];
             selectedVariant = variant.name;
             variantId = variant.id;
-            variantPrice = item.variantPrice ?? variant.price;
-          } else if (packOption) {
-            selectedVariant = packOption.name;
-            if (isSecondVariantOffer) {
-              // 5% discount on 3-pack bundle
-              variantPrice = Math.round(product.price * 3 * 0.95) / 3;
-            } else {
-              variantPrice = item.variantPrice ?? packOption.price;
-            }
-          } else if (item.variantPrice !== undefined) {
-            selectedVariant = item.selectedVariant || 'Standard';
-            variantPrice = item.variantPrice;
+            variantPrice = item.variantPrice ?? variant.price ?? product.price;
           } else {
-            const defaultVariant = product.variants.find((v) => v.default) || product.variants[0];
-            if (defaultVariant?.inStock === false) return [];
-            selectedVariant = defaultVariant?.name;
-            variantId = defaultVariant?.id;
-            variantPrice = defaultVariant?.price ?? product.price;
+            // Simple product without backend-configured variants
+            selectedVariant = undefined;
+            variantId = undefined;
+            variantPrice = product.price;
           }
 
           return [{
@@ -158,51 +141,24 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     product = canonical;
 
     // 1. Check if matching WooCommerce variant exists
-    const variant = product.variants.find(
+    const variant = product.variants && product.variants.length > 0 ? product.variants.find(
       (v) => (variantId !== undefined && v.id === variantId) || (selectedVariant && v.name === selectedVariant)
-    );
-
-    // 2. Check if matching packOption exists on product
-    const packOption = product.packOptions?.find(
-      (p) => p.name === selectedVariant || p.id === selectedVariant
-    );
+    ) : undefined;
 
     if (variant) {
       if (variant.inStock === false) return;
       selectedVariant = variant.name;
       variantId = variant.id;
       variantPrice = variantPrice ?? variant.price;
-    } else if (packOption) {
-      selectedVariant = packOption.name;
-      variantPrice = variantPrice ?? packOption.price;
-      if (!packCount && packOption.packCount) {
-        packCount = packOption.packCount;
-      }
-      if (packOption.id === 'family') {
-        isSecondVariantOffer = true;
-      }
-    } else if (variantPrice !== undefined) {
-      selectedVariant = selectedVariant || 'Standard Course';
     } else {
-      const defaultVariant = product.variants.find((v) => v.default) || product.variants[0];
-      if (defaultVariant?.inStock === false) return;
-      selectedVariant = defaultVariant?.name;
-      variantId = defaultVariant?.id;
-      variantPrice = defaultVariant?.price ?? product.price;
+      // Simple product without backend-configured variants
+      selectedVariant = undefined;
+      variantId = undefined;
+      variantPrice = product.price;
     }
 
-    if (!packCount) {
-      const lower = (selectedVariant || '').toLowerCase();
-      if (lower.includes('3-month') || lower.includes('3 month') || lower.includes('3 pack') || lower.includes('three pack')) {
-        packCount = 3;
-      } else if (lower.includes('2-month') || lower.includes('2 month') || lower.includes('2 pack') || lower.includes('two bottle') || lower.includes('pack of 2')) {
-        packCount = 2;
-      } else if (lower.includes('4 bottle') || lower.includes('four bottle')) {
-        packCount = 4;
-      } else {
-        packCount = 1;
-      }
-    }
+    packCount = 1;
+    isSecondVariantOffer = false;
 
     originalUnitPrice = originalUnitPrice ?? product.price;
 

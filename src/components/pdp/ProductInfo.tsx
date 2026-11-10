@@ -25,6 +25,7 @@ interface ProductInfoProps {
 
 export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
   const {
+    hasVariants,
     packOptions,
     selectedPack,
     selectedPackId,
@@ -49,9 +50,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
     trackViewItem(product);
   }, [product]);
 
-  const whatsappInquiryUrl = `https://wa.me/919940388877?text=${encodeURIComponent(
-    `Hello Dr. Jegajothi Pandian & AyurRaksha team, I would like to consult about ${product.name} (${selectedPack.name} - ₹${currentPrice}).`
-  )}`;
+  const whatsappInquiryUrl = 'https://wa.me/919940388877';
 
   const categoryName = product.healthConcerns[0] || product.categories[0] || 'Digestive & Gut Health';
 
@@ -96,83 +95,87 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           <span className="text-3xl sm:text-4xl font-serif font-bold text-forest">
             ₹{totalPrice.toLocaleString('en-IN')}
           </span>
-          {isSecondVariant && currentRegularPrice > totalPrice && (
+          {currentRegularPrice * quantity > totalPrice && (
             <span className="text-base sm:text-lg text-stone-400 line-through">
-              ₹{currentRegularPrice.toLocaleString('en-IN')}
+              ₹{(currentRegularPrice * quantity).toLocaleString('en-IN')}
             </span>
           )}
-          {isSecondVariant && (
+          {currentDiscount > 0 && (
             <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#8C3A00] text-white shadow-2xs">
-              Save 5%
+              Save {currentDiscount}%
             </span>
           )}
         </div>
         <p className="text-xs sm:text-sm text-forest/80 font-medium">
-          {isSecondVariant
-            ? `Special 5% second-variant bundle savings applied (Save ₹${savingsAmount.toLocaleString('en-IN')} on 3 units). Inclusive of all taxes.`
-            : 'Inclusive of all taxes. Free express shipping on all prepaid orders across India.'}
+          Inclusive of all taxes. Free express shipping on all prepaid orders across India.
         </p>
       </div>
 
-      {/* Select Pack / Course Radio Cards */}
-      <div className="space-y-2.5">
-        <div className="flex items-center justify-between">
-          <label className="text-[11px] font-bold text-charcoal uppercase tracking-wider">
-            Select Course / Pack Size:
-          </label>
-          <span className="text-[11px] text-charcoal-muted whitespace-nowrap">
-            {formatPackMeasurement(selectedPack.subtitle)}
-          </span>
-        </div>
+      {/* Select Variant Radio Cards - ONLY when backend-configured variants exist */}
+      {hasVariants && packOptions.length > 1 && (
+        <div className="space-y-2.5">
+          <div className="flex items-center justify-between">
+            <label className="text-[11px] font-bold text-charcoal uppercase tracking-wider">
+              Select Variant:
+            </label>
+            {selectedPack.subtitle && (
+              <span className="text-[11px] text-charcoal-muted whitespace-nowrap">
+                {formatPackMeasurement(selectedPack.subtitle)}
+              </span>
+            )}
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          {packOptions.map((pack) => {
-            const isSelected = selectedPackId === pack.id;
-            return (
-              <div
-                key={pack.id}
-                onClick={() => setSelectedPackId(pack.id)}
-                className={`cursor-pointer p-3 sm:p-3.5 rounded-xl border-2 transition-all flex flex-col justify-between relative ${
-                  isSelected
-                    ? 'border-botanical bg-white shadow-2xs'
-                    : 'border-stone-200/90 bg-white hover:border-stone-300'
-                }`}
-              >
-                <div className="flex items-start justify-between gap-1.5 mb-1.5">
-                  <div className="flex items-center gap-2">
-                    <div className={`w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center shrink-0 ${
-                      isSelected ? 'border-botanical' : 'border-stone-300'
-                    }`}>
-                      {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-botanical" />}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {packOptions.map((pack) => {
+              const isSelected = selectedPackId === pack.id;
+              return (
+                <div
+                  key={pack.id}
+                  onClick={() => setSelectedPackId(pack.id)}
+                  className={`cursor-pointer p-3 sm:p-3.5 rounded-xl border-2 transition-all flex flex-col justify-between relative ${
+                    isSelected
+                      ? 'border-botanical bg-white shadow-2xs'
+                      : 'border-stone-200/90 bg-white hover:border-stone-300'
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-1.5 mb-1.5">
+                    <div className="flex items-center gap-2">
+                      <div className={`w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                        isSelected ? 'border-botanical' : 'border-stone-300'
+                      }`}>
+                        {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-botanical" />}
+                      </div>
+                      <span className="text-xs sm:text-sm font-bold text-forest whitespace-nowrap">{formatPackMeasurement(pack.name)}</span>
                     </div>
-                    <span className="text-xs sm:text-sm font-bold text-forest whitespace-nowrap">{formatPackMeasurement(pack.name)}</span>
+                    {pack.discountBadge && (
+                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-100 text-amber-900 shrink-0 whitespace-nowrap">
+                        {pack.discountBadge}
+                      </span>
+                    )}
                   </div>
-                  {pack.discountBadge && (
-                    <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-100 text-amber-900 shrink-0 whitespace-nowrap">
-                      {pack.discountBadge}
+
+                  {pack.subtitle && (
+                    <span className="text-[11px] text-charcoal-muted block pl-5 mb-2 whitespace-nowrap">
+                      {formatPackMeasurement(pack.subtitle)}
                     </span>
                   )}
-                </div>
 
-                <span className="text-[11px] text-charcoal-muted block pl-5 mb-2 whitespace-nowrap">
-                  {formatPackMeasurement(pack.subtitle)}
-                </span>
-
-                <div className="pt-1.5 border-t border-stone-100 pl-5 flex items-baseline justify-between">
-                  <span className="text-sm sm:text-base font-bold text-forest whitespace-nowrap">
-                    ₹{pack.price.toLocaleString('en-IN')}
-                  </span>
-                  {pack.regularPrice && pack.regularPrice > pack.price && (
-                    <span className="text-[11px] text-stone-400 line-through whitespace-nowrap">
-                      ₹{pack.regularPrice.toLocaleString('en-IN')}
+                  <div className="pt-1.5 border-t border-stone-100 pl-5 flex items-baseline justify-between">
+                    <span className="text-sm sm:text-base font-bold text-forest whitespace-nowrap">
+                      ₹{pack.price.toLocaleString('en-IN')}
                     </span>
-                  )}
+                    {pack.regularPrice && pack.regularPrice > pack.price && (
+                      <span className="text-[11px] text-stone-400 line-through whitespace-nowrap">
+                        ₹{pack.regularPrice.toLocaleString('en-IN')}
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Stock Status Indicator */}
       {isAvailable ? (
@@ -201,7 +204,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
               <button
                 type="button"
                 onClick={decrementQuantity}
-                disabled={quantity <= (selectedPack.packCount || 1)}
+                disabled={quantity <= 1}
                 aria-label="Decrease quantity"
                 className="p-2.5 sm:p-3 text-stone-600 hover:bg-stone-100 disabled:opacity-40 transition-colors"
               >
@@ -256,7 +259,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 
         {/* Doctor Consultation Link */}
         <div className="flex items-center justify-center gap-2 text-xs text-charcoal/80 pt-1">
-          <span>Need dosage guidance?</span>
+          <span>Need guidance?</span>
           <a
             href={whatsappInquiryUrl}
             target="_blank"
@@ -264,7 +267,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
             className="inline-flex items-center gap-1 font-semibold text-emerald-800 hover:text-emerald-950 underline underline-offset-4"
           >
             <MessageSquare size={13} className="text-emerald-700" />
-            <span>Chat with Vaidya Team</span>
+            <span>Chat on WhatsApp</span>
           </a>
         </div>
       </div>

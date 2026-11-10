@@ -24,7 +24,7 @@ export default function ShopPage() {
         <ShopContent
           initialProducts={products}
           title="All Ayurvedic Formulations"
-          description="Explore 44 scientifically prepared, doctor-formulated classical herbal supplements, restorative oils, and specialized packs developed for everyday vitality."
+          description="Explore authentic classical herbal supplements, restorative oils, and specialized packs developed for everyday vitality."
         />
       </Suspense>
     </div>

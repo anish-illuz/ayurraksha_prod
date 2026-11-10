@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     'skin well soap',
     'cardiac care ayurveda',
   ],
-  authors: [{ name: 'Dr. Jegajothi Pandian & VPrime Innovations' }],
+  authors: [{ name: 'VPrime Innovations' }],
   creator: 'VPrime Innovations',
   publisher: 'AyurRaksha Online',
   robots: {
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AyurRaksha | Natural Ayurvedic Health Supplements',
-    description: 'Shop doctor-formulated herbal solutions for liver detox, pain relief, and holistic health.',
+    description: 'Shop authentic classical Ayurvedic herbal solutions for liver detox, pain relief, and holistic health.',
     images: ['https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'],
   },
 };

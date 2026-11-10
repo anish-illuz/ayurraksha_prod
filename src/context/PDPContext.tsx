@@ -7,6 +7,7 @@ import { formatPackMeasurement } from '@/lib/formatPack';
 
 interface PDPContextType {
   product: Product;
+  hasVariants: boolean;
   packOptions: PackOption[];
   selectedPack: PackOption;
   selectedPackId: string;
@@ -36,93 +37,88 @@ export const PDPProvider: React.FC<{
   const { addToCart } = useCart();
   const [isAdded, setIsAdded] = useState(false);
 
-  // Compute Pack / Course Options
-  // Variant 1: Standard / 1 Unit (normal price)
-  // Variant 2: 3 Units Bundle with 5% discount on the 3 units total
-  const threePackDiscountedPrice = Math.round(product.price * 3 * 0.95);
-  const threePackRegularPrice = product.price * 3;
+  // Requirement: Display variants ONLY when available and configured in the backend (cms)
+  // Backend is the single source of truth. Simple products must be displayed as simple products without artificial variants.
+  const hasVariants = Boolean(product.variants && product.variants.length > 1);
 
-  const packOptions: PackOption[] = product.packOptions && product.packOptions.length > 0
-    ? product.packOptions
-    : [
-        {
-          id: 'standard',
-          name: 'Standard Course',
-          subtitle: formatPackMeasurement(product.specNetQuantity) || '40 Sachets × 5g (200g net)',
-          price: product.price,
-          regularPrice: product.price,
-          isDefault: true,
-          packCount: 1,
-        },
-        {
-          id: 'family',
-          name: '3-Month Family Regimen',
-          subtitle: '3 Packs Value Bundle',
-          price: threePackDiscountedPrice,
-          regularPrice: threePackRegularPrice,
-          discountBadge: 'Save 5%',
-          packCount: 3,
-        },
-      ];
+  const packOptions: PackOption[] = hasVariants
+    ? product.variants.map((v, idx) => ({
+        id: v.slug || String(v.id || idx),
+        name: v.name,
+        subtitle: (v as any).attributes ? Object.values((v as any).attributes).join(', ') : (formatPackMeasurement(product.specNetQuantity) || ''),
+        price: v.price ?? product.price,
+        regularPrice: v.regularPrice ?? v.price ?? product.price,
+        discountBadge: v.discountPercent && v.discountPercent > 0 ? `Save ${v.discountPercent}%` : undefined,
+        isDefault: v.default || idx === 0,
+        packCount: 1,
+      }))
+    : [];
 
-  const defaultPack = packOptions.find((p) => p.isDefault) || packOptions[0];
+  const defaultPack: PackOption = hasVariants && packOptions.length > 0
+    ? (packOptions.find((p) => p.isDefault) || packOptions[0])
+    : {
+        id: 'simple',
+        name: 'Standard',
+        subtitle: formatPackMeasurement(product.specNetQuantity) || '',
+        price: product.price,
+        regularPrice: product.regularPrice || product.price,
+        isDefault: true,
+        packCount: 1,
+      };
+
   const [selectedPackId, setSelectedPackIdState] = useState<string>(defaultPack.id);
-  const [quantity, setQuantity] = useState<number>(defaultPack.packCount || 1);
+  const [quantity, setQuantity] = useState<number>(1);
 
-  const selectedPack = packOptions.find((p) => p.id === selectedPackId) || packOptions[0];
-  const isSecondVariant = packOptions.length > 1 && selectedPack.id === packOptions[1].id;
+  const selectedPack = hasVariants && packOptions.length > 0
+    ? (packOptions.find((p) => p.id === selectedPackId) || defaultPack)
+    : defaultPack;
 
-  // When switching pack variant:
-  // - If selecting the 2nd variant: automatically set quantity to 3
-  // - If switching back to the 1st variant: restore normal quantity (1)
   const setSelectedPackId = (id: string) => {
     setSelectedPackIdState(id);
-    const isSecond = packOptions.length > 1 && id === packOptions[1].id;
-    if (isSecond) {
-      setQuantity(3);
-    } else {
-      setQuantity(1);
-    }
   };
 
   // Pricing calculations
-  // Variant 1: normal price, 0% discount
-  // Variant 2: 5% discount on 3 units
-  const currentRegularPrice = isSecondVariant
-    ? quantity * product.price
-    : product.price * quantity;
+  // Single/Simple Product: unit price = product.price, total = product.price * quantity
+  // Variable Product: unit price = variant.price, total = variant.price * quantity
+  const unitPrice = selectedPack.price;
+  const currentPrice = selectedPack.price;
+  const currentRegularPrice = selectedPack.regularPrice || selectedPack.price;
+  const currentDiscount = currentRegularPrice > currentPrice
+    ? Math.round(((currentRegularPrice - currentPrice) / currentRegularPrice) * 100)
+    : 0;
 
-  const currentPrice = isSecondVariant
-    ? Math.round(quantity * (product.price * 0.95))
-    : product.price * quantity;
+  const totalPrice = unitPrice * quantity;
+  const savingsAmount = Math.max(0, (currentRegularPrice - currentPrice) * quantity);
 
-  const currentDiscount = isSecondVariant ? 5 : 0;
-  const unitPrice = isSecondVariant ? Math.round(3 * product.price * 0.95) / 3 : product.price;
-  const totalPrice = currentPrice;
-  const savingsAmount = Math.max(0, currentRegularPrice - currentPrice);
+  // Backward compatibility flag for components expecting boolean
+  const isSecondVariant = false;
 
   const incrementQuantity = () => {
-    setQuantity((q) => q + (isSecondVariant ? 3 : 1));
+    setQuantity((q) => q + 1);
   };
 
   const decrementQuantity = () => {
-    setQuantity((q) => Math.max(isSecondVariant ? 3 : 1, q - (isSecondVariant ? 3 : 1)));
+    setQuantity((q) => Math.max(1, q - 1));
   };
 
   const isAvailable = product.inStock;
 
   const handleAddToCart = () => {
     if (!isAvailable) return;
+    const matchingVariant = hasVariants
+      ? product.variants.find((v) => (v.slug && v.slug === selectedPack.id) || v.name === selectedPack.name)
+      : undefined;
+
     addToCart(
       product,
       quantity,
-      selectedPack.name,
-      isSecondVariant ? unitPrice : product.price,
-      undefined,
-      isSecondVariant ? 3 : 1,
-      false, // isComboItem = false (individual product page offer)
-      isSecondVariant, // isSecondVariantOffer = true when 2nd variant
-      product.price
+      hasVariants ? selectedPack.name : undefined,
+      unitPrice,
+      matchingVariant?.id,
+      1,
+      false,
+      false,
+      currentRegularPrice
     );
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 2000);
@@ -132,6 +128,7 @@ export const PDPProvider: React.FC<{
     <PDPContext.Provider
       value={{
         product,
+        hasVariants,
         packOptions,
         selectedPack,
         selectedPackId,

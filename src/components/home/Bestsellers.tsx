@@ -28,7 +28,7 @@ export const Bestsellers: React.FC = () => {
               Our Bestsellers
             </h2>
             <p className="mt-3 text-base sm:text-lg text-[#37443D] max-w-xl">
-              Our most popular doctor-formulated herbal remedies, trusted by thousands of customers across India.
+              Our most popular authentic Ayurvedic herbal remedies, trusted by thousands of customers across India.
             </p>
           </div>
 

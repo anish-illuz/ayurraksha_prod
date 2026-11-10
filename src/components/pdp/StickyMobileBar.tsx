@@ -12,6 +12,7 @@ interface StickyMobileBarProps {
 
 export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => {
   const {
+    hasVariants,
     selectedPack,
     quantity,
     currentPrice,
@@ -55,14 +56,14 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({ product }) => 
             </h4>
             <div className="flex items-center gap-1.5 flex-wrap">
               <span className="text-[10px] text-emerald-800 font-semibold bg-emerald-50 px-1.5 py-0.2 rounded truncate max-w-[140px]">
-                {selectedPack.name} (Qty: {quantity})
+                {hasVariants && selectedPack?.name ? `${selectedPack.name} (Qty: ${quantity})` : `Qty: ${quantity}`}
               </span>
               <span className="text-sm font-bold text-forest">
                 ₹{totalPrice.toLocaleString('en-IN')}
               </span>
-              {isSecondVariant && currentRegularPrice > totalPrice && (
+              {currentRegularPrice * quantity > totalPrice && (
                 <span className="text-[10px] text-stone-400 line-through">
-                  ₹{currentRegularPrice.toLocaleString('en-IN')}
+                  ₹{(currentRegularPrice * quantity).toLocaleString('en-IN')}
                 </span>
               )}
             </div>

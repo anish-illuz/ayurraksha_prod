@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${concern.name} | Ayurvedic Supplements & Formulations`,
-    description: `${concern.description} Shop doctor-formulated natural remedies by AyurRaksha. Free shipping on prepaid orders.`,
+    description: `${concern.description} Shop authentic natural Ayurvedic remedies by AyurRaksha. Free shipping on prepaid orders.`,
     alternates: {
       canonical: `${SITE_CONFIG.domain}/concern/${slug}/`,
     },

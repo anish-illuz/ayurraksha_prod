@@ -7,7 +7,7 @@ import { SITE_CONFIG } from '@/data/siteConfig';
 const FAQS = [
   {
     q: 'How are AyurRaksha Ayurvedic formulations prepared?',
-    a: 'Our formulations follow classical Ayurvedic pharmacological principles (Samskara and Shodhana) overseen by Dr. Jegajothi Pandian. Herbs are ethically sourced from indigenous growers, inspected for purity, and processed in GMP-compliant facilities under hygienic temperature-controlled environments.',
+    a: 'Our products follow classical Ayurvedic pharmacological principles (Samskara and Shodhana) and traditional botanical texts. Medical consultations for health guidance are offered by Dr. Jegajothi Pandian. Herbs are ethically sourced, inspected for purity, and processed in GMP-compliant facilities under hygienic temperature-controlled environments.',
   },
   {
     q: 'Are these supplements safe to use with my ongoing wellness routine?',

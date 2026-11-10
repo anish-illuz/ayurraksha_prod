@@ -160,7 +160,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
                 Have a Similar Health Concern?
               </h3>
               <p className="text-xs text-charcoal-muted mt-0.5">
-                Consult with Dr. Jegajothi Pandian &amp; our clinical team in Chennai.
+                Consult with our Ayurvedic clinical team in Chennai.
               </p>
             </div>
             <a

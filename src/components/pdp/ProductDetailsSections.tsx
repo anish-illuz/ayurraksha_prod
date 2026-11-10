@@ -88,9 +88,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
     }));
   };
 
-  const whatsappConsultationUrl = `https://wa.me/919940388877?text=${encodeURIComponent(
-    `Hello Dr. Jegajothi Pandian, I would like to consult about the dosage and clinical usage of ${product.name}.`
-  )}`;
+  const whatsappConsultationUrl = 'https://wa.me/919940388877';
 
   // Feature cards icons mapping
   const featureIcons = [
@@ -120,14 +118,13 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
           </div>
           <div>
             <span className="text-xs font-bold text-botanical uppercase tracking-wider block mb-1">
-              AUTHENTIC CLINICAL HERITAGE &amp; USAGE
+              AUTHENTIC CLINICAL HERITAGE &amp; CARE
             </span>
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-forest leading-snug">
-              Formulated Under the Clinical Guidance of{' '}
-              <span className="whitespace-nowrap">Dr. Jegajothi Pandian</span>
+              Authentic Classical Heritage &amp; Medical Consultation
             </h3>
             <p className="text-sm sm:text-base text-charcoal/80 mt-1 max-w-2xl leading-relaxed font-sans">
-              {product.doctorBannerText || 'Combining India’s timeless traditional texts with modern analytical quality verification and standardized clinical purity.'}
+              {product.doctorBannerText || 'Rooted in classical Ayurvedic principles and botanical purity. Medical consultations are available with Dr. Jegajothi Pandian for personalized wellness guidance.'}
             </p>
           </div>
         </div>
@@ -138,7 +135,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
           rel="noopener noreferrer"
           className="self-start md:self-center px-6 py-3 rounded-full bg-[#16382C] hover:bg-[#0E251D] text-white text-sm font-semibold transition-all shadow-2xs hover:shadow whitespace-nowrap flex items-center gap-2 shrink-0"
         >
-          <span>Discuss Dosage with Doctor</span>
+          <span>Consult on WhatsApp</span>
           <ChevronRight size={16} />
         </a>
       </div>

@@ -59,12 +59,7 @@ export const ComboConsultModal: React.FC<ComboConsultModalProps> = ({
     : 'None yet';
 
   const whatsappMessage = encodeURIComponent(
-    `Hello AyurRaksha / VPrime Healthcare,\n\nI would like to book a FREE Ayurvedic Doctor Consultation for ${consultationFocus}.\n\n` +
-      `Focus / Concern: ${selectedConcernName || 'General Consultation'}\n` +
-      `Preferred Language: ${preferredLanguage}\n` +
-      `Selected Products in Combo: ${comboSummary}\n` +
-      (name ? `Name: ${name}\n` : '') +
-      (userNote ? `Note: ${userNote}\n` : '')
+    'Hello AyurRaksha, I would like to request an Ayurvedic consultation.'
   );
 
   const directWhatsappUrl = `https://wa.me/919940388877?text=${whatsappMessage}`;
@@ -275,7 +270,7 @@ export const ComboConsultModal: React.FC<ComboConsultModalProps> = ({
               <div className="flex items-center gap-2 pt-2 text-[11px] text-stone-500 border-t border-stone-100">
                 <ShieldCheck size={14} className="text-emerald-700 flex-shrink-0" />
                 <span>
-                  Consultations conducted by Dr. Jegajothi Pandian &amp; qualified VPrime Ayurvedic physicians.
+                  Medical consultations conducted by Dr. Jegajothi Pandian &amp; qualified VPrime Ayurvedic physicians.
                 </span>
               </div>
             </>

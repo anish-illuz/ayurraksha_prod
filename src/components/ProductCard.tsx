@@ -63,7 +63,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
   const titleSizeMatch = product.name.match(/\b(\d+)\s*(ml|g)\b/i);
   const isTablet = product.name.toLowerCase().includes('tablet');
 
-  const sizeLabel = (product.variants.find(v => v.default) || product.variants[0])?.name || (
+  const sizeLabel = (product.variants && product.variants.length > 0 ? (product.variants.find(v => v.default) || product.variants[0])?.name : undefined) || (
     titleSizeMatch ? `${titleSizeMatch[1]} ${titleSizeMatch[2]}` :
     product.specNetQuantity ? product.specNetQuantity :
     isTablet ? '60 Tablets' :

@@ -13,6 +13,7 @@ interface MobileProductHeaderProps {
 
 export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ product }) => {
   const {
+    hasVariants,
     packOptions,
     selectedPack,
     selectedPackId,
@@ -63,8 +64,8 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
         {product.shortDescription || product.subtitle || 'Traditional botanical formulation crafted for authentic wellness.'}
       </p>
 
-      {/* Synchronized Course Selector Cards - Full width on mobile so labels are never cut off */}
-      {packOptions.length > 1 && (
+      {/* Synchronized Variant Selector Cards - Only when backend-configured variants exist */}
+      {hasVariants && packOptions.length > 1 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3.5">
           {packOptions.map((pack) => {
             const isSelected = selectedPackId === pack.id;
@@ -101,14 +102,14 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
             <span className="text-2xl sm:text-3xl font-serif font-bold text-forest">
               ₹{totalPrice.toLocaleString('en-IN')}
             </span>
-            {isSecondVariant && currentRegularPrice > totalPrice && (
+            {currentRegularPrice * quantity > totalPrice && (
               <span className="text-sm text-stone-400 line-through">
-                ₹{currentRegularPrice.toLocaleString('en-IN')}
+                ₹{(currentRegularPrice * quantity).toLocaleString('en-IN')}
               </span>
             )}
-            {isSecondVariant && (
+            {currentDiscount > 0 && (
               <span className="px-2 py-0.5 rounded text-xs font-bold bg-[#8C3A00] text-white shadow-2xs">
-                Save 5%
+                Save {currentDiscount}%
               </span>
             )}
           </div>
@@ -126,7 +127,7 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
               <button
                 type="button"
                 onClick={decrementQuantity}
-                disabled={quantity <= (selectedPack.packCount || 1)}
+                disabled={quantity <= 1}
                 aria-label="Decrease quantity"
                 className="p-2.5 text-stone-600 hover:bg-stone-100 disabled:opacity-40 transition-colors"
               >

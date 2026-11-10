@@ -25,7 +25,7 @@ export const BrandStory: React.FC = () => {
             </p>
 
             <p className="text-base sm:text-lg text-[#37443D] leading-relaxed font-sans font-normal">
-              Every tonic, oil, and capsule is thoughtfully formulated with careful attention to ingredient quality, purity, and botanical composition under the guidance of Dr. Jegajothi Pandian. We prioritize carefully selected, high-quality herbs and consistent formulation standards to deliver Ayurvedic wellness products you can trust.
+              Every tonic, oil, and capsule is prepared following classical Ayurvedic principles, with careful attention to ingredient quality, purity, and botanical composition. Medical consultations are provided by Dr. Jegajothi Pandian to help guide your personalized holistic wellness routine.
             </p>
 
             {/* 3 Core Pillars - Compact layout with icon on left and text aligned beside */}
@@ -46,10 +46,10 @@ export const BrandStory: React.FC = () => {
                 <CheckCircle2 size={18} className="text-primary flex-shrink-0 mt-0.5" />
                 <div className="min-w-0">
                   <h4 className="font-heading text-sm sm:text-base font-bold text-primary leading-tight">
-                    Doctor Formulated
+                    Doctor Consultations
                   </h4>
                   <p className="font-sans text-xs sm:text-sm text-[#37443D] mt-1 leading-snug">
-                    Guided by Dr. Jegajothi Pandian with 25+ years of Ayurvedic experience.
+                    Medical consultations guided by Dr. Jegajothi Pandian with 25+ years of clinical experience.
                   </p>
                 </div>
               </div>
@@ -100,12 +100,12 @@ export const BrandStory: React.FC = () => {
                       {SITE_CONFIG.doctor.name}
                     </h4>
                     <p className="font-sans text-xs sm:text-sm text-[#37443D] mt-0.5 font-medium">
-                      Chief Ayurvedic Formulation Expert
+                      Senior Ayurvedic Medical Consultant
                     </p>
                   </div>
                 </div>
                 <p className="font-sans mt-2.5 text-xs sm:text-sm text-[#37443D] leading-snug border-t border-stone-100 pt-2">
-                  Over 25 years of devoted clinical experience in Ayurvedic formulations.
+                  Over 25 years of devoted clinical experience in Ayurvedic medical consultations.
                 </p>
               </div>
             </div>

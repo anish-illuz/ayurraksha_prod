@@ -142,7 +142,7 @@ export async function GET() {
   <channel>
     <title>AyurRaksha Meta Ecommerce Product Catalogue</title>
     <link>${escapeXml(BASE_DOMAIN)}</link>
-    <description>Authentic doctor-formulated classical Ayurvedic wellness supplements and tonics by AyurRaksha.</description>
+    <description>Authentic classical Ayurvedic wellness supplements and tonics by AyurRaksha.</description>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${feedItems
   .map(

@@ -201,7 +201,7 @@ export default function CartPage() {
                   <span>Doctor Consultation Support</span>
                 </div>
                 <p className="text-[11px]">
-                  Need guidance on dosage or formulation compatibility? Consult Dr. Jegajothi Pandian on WhatsApp at{' '}
+                  Need guidance on product selection or holistic compatibility? Consult our clinical team on WhatsApp at{' '}
                   <a
                     href={SITE_CONFIG.whatsappUrl}
                     target="_blank"

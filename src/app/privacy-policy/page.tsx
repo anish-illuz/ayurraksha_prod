@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <p>
-              At <strong>AyurRakshaOnline.com</strong> (operated by <strong>VPrime Innovations</strong>, Ambattur, Chennai), we value your trust and are committed to safeguarding your personal data and privacy. This Privacy Policy details our practices regarding the collection, processing, protection, and disclosure of information when you access our website or order our doctor-formulated Ayurvedic wellness products.
+              At <strong>AyurRakshaOnline.com</strong> (operated by <strong>VPrime Innovations</strong>, Ambattur, Chennai), we value your trust and are committed to safeguarding your personal data and privacy. This Privacy Policy details our practices regarding the collection, processing, protection, and disclosure of information when you access our website or order our authentic Ayurvedic wellness products.
             </p>
 
             <h2 className="font-serif text-lg font-bold text-forest pt-2">1. Personal Information We Collect</h2>

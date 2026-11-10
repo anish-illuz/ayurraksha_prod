@@ -117,7 +117,7 @@ export const Header: React.FC = () => {
                       </Link>
                     ))}
                     <div className="col-span-2 pt-3 border-t border-stone-100 flex items-center justify-between text-sm">
-                      <span className="text-charcoal-muted text-xs">Doctor-formulated Ayurvedic wellness • Chennai, India</span>
+                      <span className="text-charcoal-muted text-xs">Authentic Ayurvedic wellness • Chennai, India</span>
                       <Link href="/shop" className="text-primary font-bold hover:underline">
                         View All Formulations →
                       </Link>

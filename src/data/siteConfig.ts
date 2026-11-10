@@ -91,10 +91,10 @@ export const SITE_CONFIG = {
   domain: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ayurrakshaonline.com',
   cmsDomain: process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://cms.ayurrakshaonline.com',
   tagline: 'Natural Ayurvedic Remedies for Everyday Health',
-  shortDescription: 'Doctor-formulated Ayurvedic wellness supplements, herbal tonics, and natural personal care formulated in Chennai, India.',
+  shortDescription: 'Authentic classical Ayurvedic wellness supplements, herbal tonics, and natural personal care crafted in Chennai, India.',
   phone: '+91 9940388877',
   displayPhone: '+91 99403 88877',
-  whatsappUrl: 'https://wa.me/919940388877?text=Hi%20AyurRaksha,%20I%20would%20like%20to%20inquire%20about%20your%20products',
+  whatsappUrl: 'https://wa.me/919940388877',
   email: 'support@ayurrakshaonline.com',
   corporateEmail: 'info@vprimecorp.in',
   ordersEmail: 'orders@vprimecorp.in',
@@ -108,8 +108,8 @@ export const SITE_CONFIG = {
   },
   doctor: {
     name: 'Dr. Jegajothi Pandian',
-    title: 'Chief Ayurvedic Medical Officer & Formulation Scientist',
-    experience: 'Over 25 years of experience in Ayurvedic formulations and holistic therapeutics.',
+    title: 'Senior Ayurvedic Medical Consultant & Physician',
+    experience: 'Over 25 years of clinical medical consultation experience in Ayurvedic care.',
   },
   shipping: {
     prepaidThreshold: 0, // Free on all prepaid orders

@@ -27,7 +27,7 @@ export const ComboHero: React.FC<ComboHeroProps> = ({
   tagline = 'AyurRaksha Botanical Wellness',
   title = 'Skin care that begins',
   highlight = 'with you.',
-  description = 'Choose from 13 doctor-formulated Ayurvedic skin care essentials, select the products that suit your individual routine, and compose your personalized combination at your own pace.',
+  description = 'Choose from 13 authentic Ayurvedic skin care essentials, select the products that suit your individual routine, and compose your personalized combination at your own pace.',
   badge = '13 Formulations',
   stepGuide = {
     step1Title: 'Choose formulations:',

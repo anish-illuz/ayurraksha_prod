@@ -1195,7 +1195,7 @@ export const SKIN_CARE_CONFIG: ComboBuilderConfig = {
   heroTitle: 'Skin care that begins',
   heroHighlight: 'with you.',
   heroDescription:
-    'Choose from 13 doctor-formulated Ayurvedic skin care essentials, select the products that suit your individual routine, and compose your personalized combination at your own pace.',
+    'Choose from 13 authentic Ayurvedic skin care essentials, select the products that suit your individual routine, and compose your personalized combination at your own pace.',
   heroBadge: '13 Formulations',
   catalogSubtitle: 'Browse, compare and customize your selection with live store prices. No products are added without your choice.',
   catalogCountBadge: '13 Products • 5 Categories',
@@ -1217,7 +1217,7 @@ export const SKIN_CARE_CONFIG: ComboBuilderConfig = {
   consultationFocus: 'Skin Care Guidance',
   metaTitle: 'Skin Care Combo Builder — Build Your Routine | AyurRaksha Online',
   metaDescription:
-    'Build your personalized Ayurvedic skin care combo from 13 doctor-formulated herbal products. Enjoy live savings and optional free physician consultations.',
+    'Build your personalized Ayurvedic skin care combo from 13 authentic herbal products. Enjoy live savings and optional free physician consultations.',
 };
 
 export const VARICOSE_VEINS_CONFIG: ComboBuilderConfig = {
@@ -1228,7 +1228,7 @@ export const VARICOSE_VEINS_CONFIG: ComboBuilderConfig = {
   heroTitle: 'Vascular wellness that supports',
   heroHighlight: 'every step.',
   heroDescription:
-    'Choose from 5 doctor-formulated preparations for circulation, heavy legs, and skin comfort. Individually selectable with automatic volume savings.',
+    'Choose from 5 authentic preparations for circulation, heavy legs, and skin comfort. Individually selectable with automatic volume savings.',
   heroBadge: '5 Products',
   catalogSubtitle:
     'Select the capsules, pre-bath massage oil, botanical soap, O3 cream, or tea that match your routine. No forced items.',

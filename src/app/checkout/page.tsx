@@ -367,7 +367,7 @@ export default function CheckoutPage() {
           </div>
           <h2 className="font-heading text-2xl font-bold text-forest">Your cart is empty</h2>
           <p className="text-sm text-charcoal-muted mt-2">
-            Please add doctor-formulated remedies to your cart before proceeding to checkout.
+            Please add authentic Ayurvedic remedies to your cart before proceeding to checkout.
           </p>
           <Link
             href="/shop"

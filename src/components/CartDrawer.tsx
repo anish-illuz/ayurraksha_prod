@@ -89,7 +89,7 @@ export const CartDrawer: React.FC = () => {
               </div>
               <h3 className="text-base font-heading font-bold text-charcoal">Your cart is empty</h3>
               <p className="text-xs text-charcoal-muted mt-1.5 max-w-xs">
-                Explore our doctor-formulated natural Ayurvedic remedies, tonics, and health combos.
+                Explore our authentic natural Ayurvedic remedies, tonics, and health combos.
               </p>
               <button
                 onClick={closeCart}

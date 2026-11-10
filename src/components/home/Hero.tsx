@@ -22,7 +22,7 @@ const BANNER_SLIDES: BannerSlide[] = [
     id: 'boozliv',
     title: 'Revive Your Liver. Reclaim Your Life with BoozLiv.',
     tag: 'Flagship Liver Care & Detox',
-    desktopImageSrc: '/images/banners/boozliv.webp',
+    desktopImageSrc: '/images/banners/boozliv-desktop.webp',
     mobileImageSrc: '/images/banners/boozliv-mobile.webp',
     imageAlt: 'BoozLiv Herbal Supplement by AyurRaksha - Revive Your Liver, Reclaim Your Life',
     primaryLink: '/product/boozliv',
@@ -191,8 +191,8 @@ export const Hero: React.FC = () => {
                       loading={idx === 0 ? 'eager' : 'lazy'}
                       decoding="async"
                       className="object-cover object-center w-full h-full"
-                      width={750}
-                      height={373}
+                      width={1895}
+                      height={830}
                     />
                   </picture>
 

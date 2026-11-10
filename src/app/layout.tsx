@@ -158,7 +158,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/banners/boozliv.webp"
+          href="/images/banners/boozliv-desktop.webp"
           media="(min-width: 768px)"
           fetchPriority="high"
         />

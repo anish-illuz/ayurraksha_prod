@@ -144,10 +144,10 @@ export default async function ProductDetailPage({ params }: PageProps) {
             <div className="border-t border-stone-200/80 pt-6 sm:pt-8">
               <div className="mb-4 sm:mb-6">
                 <span className="text-[11px] font-semibold text-botanical uppercase tracking-wider block mb-0.5">
-                  Synergistic Formulations
+                  Complete Your Wellness Routine
                 </span>
                 <h2 className="font-serif text-xl sm:text-2xl font-bold text-forest">
-                  Recommended to Pair With {product.name}
+                  Explore more from the AyurRaksha collection
                 </h2>
               </div>
 

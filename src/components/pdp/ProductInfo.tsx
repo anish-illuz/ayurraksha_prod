@@ -89,26 +89,21 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         {product.shortDescription || 'Experience Ayurvedic wellness with this traditional botanical blend crafted to support natural bodily regularity and daily restorative vitality.'}
       </p>
 
-      {/* Mint Green Price Box matching Reference 3.png (Desktop only) */}
-      <div className="hidden lg:block p-4 sm:p-5 bg-[#EEF5EE] rounded-2xl border border-emerald-900/10 space-y-1.5">
-        <div className="flex items-baseline gap-2.5">
-          <span className="text-3xl sm:text-4xl font-serif font-bold text-forest">
-            ₹{totalPrice.toLocaleString('en-IN')}
+      {/* Compact Price Row: Price + Original Price + Savings (Desktop only) */}
+      <div className="hidden lg:flex flex-wrap items-baseline gap-x-3 gap-y-1.5 p-3.5 bg-[#EEF5EE] rounded-xl border border-emerald-900/10">
+        <span className="text-2xl sm:text-3xl font-serif font-bold text-forest">
+          ₹{totalPrice.toLocaleString('en-IN')}
+        </span>
+        {currentRegularPrice * quantity > totalPrice && (
+          <span className="text-sm sm:text-base text-stone-400 line-through">
+            ₹{(currentRegularPrice * quantity).toLocaleString('en-IN')}
           </span>
-          {currentRegularPrice * quantity > totalPrice && (
-            <span className="text-base sm:text-lg text-stone-400 line-through">
-              ₹{(currentRegularPrice * quantity).toLocaleString('en-IN')}
-            </span>
-          )}
-          {currentDiscount > 0 && (
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#8C3A00] text-white shadow-2xs">
-              Save {currentDiscount}%
-            </span>
-          )}
-        </div>
-        <p className="text-xs sm:text-sm text-forest/80 font-medium">
-          Inclusive of all taxes. Free express shipping on all prepaid orders across India.
-        </p>
+        )}
+        {savingsAmount > 0 && (
+          <span className="text-xs sm:text-sm font-bold text-emerald-800">
+            You save ₹{savingsAmount.toLocaleString('en-IN')} ({currentDiscount}%)
+          </span>
+        )}
       </div>
 
       {/* Select Variant Radio Cards - ONLY when backend-configured variants exist */}
@@ -272,46 +267,46 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         </div>
       </div>
 
-      {/* 4 Practical Purchase Assurance Badges */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-center text-xs">
-        <div className="p-2 sm:p-2.5 bg-white rounded-xl border border-stone-200/90 shadow-2xs flex flex-col items-center justify-center">
-          <Truck size={16} className="text-botanical mb-0.5" />
-          <span className="font-bold text-forest block text-[11px]">Free Shipping</span>
-          <span className="text-[9px] text-charcoal/70">Prepaid orders</span>
-        </div>
-        <div className="p-2 sm:p-2.5 bg-white rounded-xl border border-stone-200/90 shadow-2xs flex flex-col items-center justify-center">
-          <RefreshCw size={16} className="text-botanical mb-0.5" />
-          <span className="font-bold text-forest block text-[11px]">7-Day Return</span>
-          <span className="text-[9px] text-charcoal/70">Unopened packs</span>
-        </div>
-        <div className="p-2 sm:p-2.5 bg-white rounded-xl border border-stone-200/90 shadow-2xs flex flex-col items-center justify-center">
-          <ShieldCheck size={16} className="text-botanical mb-0.5" />
-          <span className="font-bold text-forest block text-[11px]">Cash on Delivery</span>
-          <span className="text-[9px] text-charcoal/70">Pan-India available</span>
-        </div>
-        <div className="p-2 sm:p-2.5 bg-white rounded-xl border border-stone-200/90 shadow-2xs flex flex-col items-center justify-center">
-          <Award size={16} className="text-botanical mb-0.5" />
-          <span className="font-bold text-forest block text-[11px]">AyurRaksha Care</span>
-          <span className="text-[9px] text-charcoal/70">Doctor guidance</span>
-        </div>
-      </div>
-
-      {/* Shipping terms expandable toggle */}
+      {/* Single Compact Trust & Delivery Row with Expandable Details */}
       <div className="pt-1">
-        <button
-          onClick={() => setOpenShipping(!openShipping)}
-          className="text-[11px] text-charcoal-muted hover:text-forest flex items-center justify-between w-full py-1.5 border-t border-stone-200"
-        >
-          <span>Shipping, Dispatch &amp; Return Policy Details</span>
-          <ChevronDown size={13} className={`transition-transform ${openShipping ? 'rotate-180' : ''}`} />
-        </button>
-        {openShipping && (
-          <div className="p-3 bg-white rounded-xl text-xs text-charcoal/80 space-y-1 mt-1 border border-stone-100">
-            <p>• <strong>Free Prepaid Delivery:</strong> All prepaid orders ship free anywhere in India.</p>
-            <p>• <strong>Cash on Delivery:</strong> Available across India with standard courier handling.</p>
-            <p>• <strong>Standard Transit:</strong> 2–4 business days metro, 4–6 days non-metro.</p>
+        <p className="text-xs font-bold text-forest mb-1.5">You can expect</p>
+        <div className="bg-white rounded-xl border border-stone-200/90 shadow-2xs p-2.5 sm:p-3">
+          <div className="flex flex-wrap items-center gap-x-3.5 gap-y-1.5">
+            <div className="flex items-center gap-1.5">
+              <Truck size={15} className="text-botanical shrink-0" />
+              <span className="text-[11px] sm:text-xs font-bold text-forest">Free Shipping</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <RefreshCw size={15} className="text-botanical shrink-0" />
+              <span className="text-[11px] sm:text-xs font-bold text-forest">7-Day Return</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <ShieldCheck size={15} className="text-botanical shrink-0" />
+              <span className="text-[11px] sm:text-xs font-bold text-forest">Cash on Delivery</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Award size={15} className="text-botanical shrink-0" />
+              <span className="text-[11px] sm:text-xs font-bold text-forest">AyurRaksha Care</span>
+            </div>
           </div>
-        )}
+
+          <button
+            onClick={() => setOpenShipping(!openShipping)}
+            aria-expanded={openShipping}
+            className="mt-1.5 text-[11px] font-semibold text-charcoal-muted hover:text-forest flex items-center gap-1"
+          >
+            <span>How it works</span>
+            <ChevronDown size={12} className={`transition-transform ${openShipping ? 'rotate-180' : ''}`} />
+          </button>
+          {openShipping && (
+            <div className="mt-1.5 pt-2 border-t border-stone-100 text-[11px] sm:text-xs text-charcoal/80 space-y-1">
+              <p><strong>Free Prepaid Delivery:</strong> All prepaid orders ship free anywhere in India.</p>
+              <p><strong>7-Day Return:</strong> Unopened packs can be returned within 7 days.</p>
+              <p><strong>Cash on Delivery:</strong> Pay at your doorstep, pan-India. Transit: 2–4 days metro, 4–6 days non-metro.</p>
+              <p><strong>AyurRaksha Care:</strong> Doctor guidance available on WhatsApp for personal recommendations.</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

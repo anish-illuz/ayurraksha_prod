@@ -97,9 +97,10 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
 
       {/* Price Box + Quantity Stepper + Add to Cart Action Row */}
       <div className="space-y-3 pt-3 border-t border-stone-100">
-        <div className="flex items-baseline justify-between gap-2">
+        {/* Compact Price Row: Price + Original Price + Savings + Stock */}
+        <div className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1.5">
           <div className="flex items-baseline gap-2">
-            <span className="text-2xl sm:text-3xl font-serif font-bold text-forest">
+            <span className="text-xl sm:text-2xl font-serif font-bold text-forest">
               ₹{totalPrice.toLocaleString('en-IN')}
             </span>
             {currentRegularPrice * quantity > totalPrice && (
@@ -107,9 +108,9 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
                 ₹{(currentRegularPrice * quantity).toLocaleString('en-IN')}
               </span>
             )}
-            {currentDiscount > 0 && (
-              <span className="px-2 py-0.5 rounded text-xs font-bold bg-[#8C3A00] text-white shadow-2xs">
-                Save {currentDiscount}%
+            {savingsAmount > 0 && (
+              <span className="text-xs font-bold text-emerald-800">
+                You save ₹{savingsAmount.toLocaleString('en-IN')} ({currentDiscount}%)
               </span>
             )}
           </div>

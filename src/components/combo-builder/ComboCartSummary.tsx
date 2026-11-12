@@ -55,21 +55,21 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
   }, 0);
 
   // Tiered Volume Discount:
-  // - Orders above ₹5,000 -> 15% OFF
-  // - Orders above ₹3,000 -> 10% OFF
+  // - Orders at or above ₹5,000 -> 15% OFF
+  // - Orders at or above ₹3,000 -> 10% OFF
   let tierDiscountPercent = 0;
   let tierDiscountAmount = 0;
   let amountToNextTier = 0;
 
-  if (totalSellingPrice > 5000) {
+  if (totalSellingPrice >= 5000) {
     tierDiscountPercent = 15;
     tierDiscountAmount = Math.round(totalSellingPrice * 0.15);
-  } else if (totalSellingPrice > 3000) {
+  } else if (totalSellingPrice >= 3000) {
     tierDiscountPercent = 10;
     tierDiscountAmount = Math.round(totalSellingPrice * 0.10);
-    amountToNextTier = 5000 - totalSellingPrice + 1;
+    amountToNextTier = Math.max(0, 5000 - totalSellingPrice);
   } else {
-    amountToNextTier = Math.max(0, 3000 - totalSellingPrice + 1);
+    amountToNextTier = Math.max(0, 3000 - totalSellingPrice);
   }
 
   const finalPayableTotal = Math.max(0, totalSellingPrice - tierDiscountAmount);
@@ -120,72 +120,95 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
 
   return (
     <aside
-      className={`bg-white rounded-[19px] border border-[#dfe7dc] p-6 shadow-[0_16px_40px_rgba(22,63,45,0.065)] flex flex-col justify-between ${className}`}
+      className={`bg-white rounded-[18px] border border-[#dfe7dc] p-4 sm:p-5 shadow-[0_12px_32px_rgba(22,63,45,0.06)] flex flex-col justify-between ${className}`}
     >
       <div>
         {/* Header */}
-        <div className="pb-3 border-b border-[#edf0eb]">
-          <span className="text-[11px] font-extrabold uppercase tracking-[0.17em] text-[#ab8345] block mb-1">
-            YOUR PERSONALIZED SELECTION
-          </span>
-          <h3 className="font-serif text-[23px] font-normal text-[#18372b] tracking-[-0.02em]">
+        <div className="pb-2.5 border-b border-[#edf0eb]">
+          <div className="flex items-center justify-between">
+            <span className="text-[10.5px] font-extrabold uppercase tracking-[0.16em] text-[#ab8345] block">
+              COMBO BASKET
+            </span>
+            {totalItemsCount > 0 && (
+              <span className="text-[11px] font-extrabold text-[#25764d] bg-[#eef7f0] px-2 py-0.5 rounded-full">
+                {totalItemsCount} {totalItemsCount === 1 ? 'item' : 'items'}
+              </span>
+            )}
+          </div>
+          <h3 className="font-serif text-xl sm:text-[22px] font-normal text-[#18372b] tracking-[-0.02em] mt-0.5">
             {comboName.replace(/ Builder/i, '')}
           </h3>
-          <p className="text-xs text-[#3c4f44] mt-0.5">
+          <p className="text-[11.5px] text-[#4d6355]">
             {totalItemsCount === 0
-              ? 'Add products to see your combination take shape.'
-              : `${totalItemsCount} ${totalItemsCount === 1 ? 'item' : 'items'} across ${selectedItems.length} ${
-                  selectedItems.length === 1 ? 'product' : 'products'
-                }`}
+              ? 'Select products on the left to start building.'
+              : `${selectedItems.length} unique ${selectedItems.length === 1 ? 'product' : 'products'} selected`}
           </p>
         </div>
 
-        {/* Flash Volume Discount Unlock Tier Banner */}
-        <div className="mt-3 p-2.5 rounded-[10px] bg-[#FAF8EE] border border-[#EADBBD] text-xs space-y-1">
+        {/* Tiered Volume Discount Presentation */}
+        <div className="mt-2.5 p-2.5 rounded-[11px] bg-[#FAF8EE] border border-[#EADBBD] text-xs space-y-1.5">
           <div className="flex items-center justify-between font-bold text-[#18372b]">
-            <span className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1.5 text-[11.5px]">
               <Tag size={13} className="text-[#ab8345]" />
-              <span>Volume Offers:</span>
+              <span>Volume Discounts:</span>
             </span>
-            <span className="text-[11px] text-[#25764d]">
-              {tierDiscountPercent > 0 ? `${tierDiscountPercent}% OFF Applied` : 'Save up to 15%'}
+            <span className="text-[11px] font-extrabold text-[#25764d]">
+              {tierDiscountPercent === 15
+                ? '15% OFF Applied'
+                : tierDiscountPercent === 10
+                ? '10% OFF Applied'
+                : '10% & 15% OFF'}
             </span>
           </div>
 
-          {tierDiscountPercent === 15 ? (
-            <p className="text-[11px] text-[#25764d] font-semibold">
-              ✓ Maximum 15% discount unlocked on your order!
-            </p>
-          ) : tierDiscountPercent === 10 ? (
-            <p className="text-[11px] text-[#18372b]">
-              <strong>10% OFF unlocked!</strong> Add ₹{amountToNextTier.toLocaleString('en-IN')} more to unlock <strong>15% OFF</strong>.
-            </p>
-          ) : (
-            <p className="text-[11px] text-[#3c4f44]">
-              Add ₹{amountToNextTier.toLocaleString('en-IN')} more to unlock <strong>10% OFF</strong> automatically at checkout.
-            </p>
-          )}
+          {/* Threshold Explanation */}
+          <div className="text-[10.5px] text-[#5c4a28] flex items-center justify-between border-t border-[#eadbbd]/60 pt-1">
+            <span>• Above ₹3,000: <strong>10% OFF</strong></span>
+            <span>• Above ₹5,000: <strong>15% OFF</strong></span>
+          </div>
 
-          {/* Progress bar */}
-          <div className="w-full bg-[#E5DFCC] h-1.5 rounded-full overflow-hidden mt-1">
-            <div
-              className="bg-[#25764d] h-full transition-all duration-300"
-              style={{
-                width: `${Math.min(100, Math.round((totalSellingPrice / 5000) * 100))}%`,
-              }}
-            />
+          {/* Dynamic Next-Offer Guidance */}
+          <div className="text-[11px] text-[#18372b] pt-0.5">
+            {tierDiscountPercent === 15 ? (
+              <p className="text-[#25764d] font-bold flex items-center gap-1">
+                <span>✓ Maximum 15% discount unlocked on your order!</span>
+              </p>
+            ) : tierDiscountPercent === 10 ? (
+              <p>
+                <strong className="text-[#25764d]">10% OFF unlocked!</strong> Add <strong className="text-[#8a6020]">₹{amountToNextTier.toLocaleString('en-IN')}</strong> more to unlock <strong className="text-[#25764d]">15% OFF</strong>.
+              </p>
+            ) : (
+              <p>
+                Add <strong className="text-[#8a6020]">₹{amountToNextTier.toLocaleString('en-IN')}</strong> more to unlock <strong className="text-[#25764d]">10% OFF</strong> at checkout.
+              </p>
+            )}
+          </div>
+
+          {/* Milestone Progress bar */}
+          <div className="space-y-1 pt-0.5">
+            <div className="w-full bg-[#E5DFCC] h-2 rounded-full overflow-hidden relative">
+              <div
+                className="bg-[#25764d] h-full transition-all duration-300 rounded-full"
+                style={{
+                  width: `${Math.min(100, Math.round((totalSellingPrice / 5000) * 100))}%`,
+                }}
+              />
+            </div>
+            <div className="flex justify-between text-[9.5px] text-stone-500 font-medium px-0.5">
+              <span>₹0</span>
+              <span className={totalSellingPrice >= 3000 ? 'text-[#25764d] font-bold' : ''}>₹3,000 (10%)</span>
+              <span className={totalSellingPrice >= 5000 ? 'text-[#25764d] font-bold' : ''}>₹5,000 (15%)</span>
+            </div>
           </div>
         </div>
 
-        {/* Line Items List matching prototype */}
-        <div className="py-2 space-y-2.5 max-h-[320px] overflow-y-auto divide-y divide-[#f0f2ed] pr-1">
+        {/* Line Items List */}
+        <div className="py-2 space-y-2 max-h-[300px] overflow-y-auto divide-y divide-[#f0f2ed] pr-0.5">
           {selectedItems.length === 0 ? (
-            <div className="py-8 text-center space-y-2">
-              <div className="w-10 h-10 rounded-full bg-[#f4f7f2] text-stone-400 flex items-center justify-center mx-auto">
-                <ShoppingBag size={18} />
-              </div>
-              <p className="text-xs text-[#3c4f44] leading-relaxed">
-                Your selection is empty.<br />Choose a product to get started.
+            <div className="py-5 px-3 text-center rounded-[12px] bg-stone-50/70 border border-dashed border-stone-200 my-1 space-y-1.5">
+              <ShoppingBag size={18} className="text-stone-400 mx-auto" />
+              <p className="text-xs text-[#4d6355]">
+                Your combo basket is empty.<br />Add products on the left to begin.
               </p>
             </div>
           ) : (
@@ -193,7 +216,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
               const lineTotal = (product.price || 0) * quantity;
 
               return (
-                <div key={product.id} className="pt-2.5 first:pt-0 flex items-start justify-between gap-3">
+                <div key={product.id} className="pt-2.5 first:pt-0 flex items-start justify-between gap-2.5">
                   {/* Thumbnail & Title */}
                   <div className="flex-1 min-w-0">
                     <h4 className="text-[12px] font-bold text-[#18372b] leading-[1.3] line-clamp-2">
@@ -252,8 +275,8 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
         </div>
       </div>
 
-      {/* Calculations & Checkout matching prototype cart-math */}
-      <div className="pt-3 border-t border-[#e6ece3] space-y-2.5">
+      {/* Calculations & Checkout */}
+      <div className="pt-2.5 border-t border-[#e6ece3] space-y-2">
         <div className="space-y-1.5 text-xs text-[#283830] font-sans">
           <div className="flex justify-between items-center">
             <span>Product Subtotal</span>
@@ -280,7 +303,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
           type="button"
           disabled={selectedItems.length === 0}
           onClick={onProceedToCheckout}
-          className={`w-full py-3.5 px-4 rounded-[11px] text-xs sm:text-[13px] font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] ${
+          className={`w-full py-3 px-4 rounded-[11px] text-xs sm:text-[13px] font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] ${
             selectedItems.length === 0
               ? 'bg-stone-200 text-stone-400 cursor-not-allowed'
               : 'bg-[#123b2d] hover:bg-[#235b43] text-white'
@@ -295,7 +318,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
           <button
             type="button"
             onClick={handleCopySummary}
-            className="w-full py-2.5 px-4 rounded-[11px] text-xs font-bold text-[#183d2d] bg-white hover:bg-stone-50 flex items-center justify-center gap-2 border border-[#d5dfd4] transition-colors shadow-2xs"
+            className="w-full py-2 px-4 rounded-[11px] text-xs font-bold text-[#183d2d] bg-white hover:bg-stone-50 flex items-center justify-center gap-2 border border-[#d5dfd4] transition-colors shadow-2xs"
           >
             {copied ? (
               <>
@@ -312,12 +335,8 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
         )}
 
         {/* Footnote notes */}
-        <div className="pt-2 text-[10.5px] text-[#4d6355] text-center leading-[1.6]">
+        <div className="pt-1 text-[10.5px] text-[#4d6355] text-center leading-tight">
           Applied automatically at checkout. No coupon code needed.
-        </div>
-
-        <div className="p-3 rounded-[11px] bg-[#fff9ec] border border-[#f0e2bf] text-[11px] text-[#5c4620] leading-[1.6]">
-          Doctor-guided formulations require clinical suitability confirmation. Free Ayurvedic doctor consultations are available.
         </div>
       </div>
     </aside>

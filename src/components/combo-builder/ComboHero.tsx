@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import { ArrowDown, MessageSquare, Sparkles } from 'lucide-react';
+import { ArrowDown, MessageSquare, Sparkles, Layers, SlidersHorizontal, Tag, ArrowRight } from 'lucide-react';
 import { trackComboEvent } from '@/lib/comboAnalytics';
 
 interface ComboHeroProps {
@@ -25,17 +24,17 @@ interface ComboHeroProps {
 export const ComboHero: React.FC<ComboHeroProps> = ({
   onOpenConsult,
   tagline = 'AyurRaksha Botanical Wellness',
-  title = 'Skin care that begins',
-  highlight = 'with you.',
-  description = 'Choose from 13 authentic Ayurvedic skin care essentials, select the products that suit your individual routine, and compose your personalized combination at your own pace.',
+  title = 'Build Your Own',
+  highlight = 'Skin Care Combo',
+  description = "Explore 13 Ayurvedic essentials and create a skincare routine that's uniquely yours.",
   badge = '13 Formulations',
   stepGuide = {
-    step1Title: 'Choose formulations:',
-    step1Desc: 'Browse common concerns or select any of the products.',
-    step2Title: 'Adjust quantities:',
-    step2Desc: 'Add soaps, oils, tonics, or supplements as desired.',
-    step3Title: 'Instant checkout:',
-    step3Desc: 'View product-level savings and complete order securely.',
+    step1Title: 'Choose Products',
+    step1Desc: 'Pick from 13 essentials',
+    step2Title: 'Adjust Quantities',
+    step2Desc: 'Customize to your routine',
+    step3Title: 'Checkout & Save',
+    step3Desc: 'Unlock up to 15% discount',
   },
 }) => {
   const handleScrollToBuilder = (e: React.MouseEvent) => {
@@ -55,80 +54,93 @@ export const ComboHero: React.FC<ComboHeroProps> = ({
     <section className="relative overflow-hidden bg-gradient-to-r from-[#103829] via-[#164736] to-[#1E5640] text-white">
       {/* Ambient background decoration */}
       <div
-        className="pointer-events-none absolute -right-32 -bottom-48 h-[550px] w-[550px] rounded-full border border-[#e8d9b1]/15"
+        className="pointer-events-none absolute -right-32 -bottom-48 h-[500px] w-[500px] rounded-full border border-[#e8d9b1]/15"
         aria-hidden="true"
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6 lg:py-7">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-center">
           {/* Left: Compact Heading & Actions */}
-          <div className="lg:col-span-8 space-y-3 sm:space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#dba95c]/20 border border-[#dba95c]/30 text-[#f5d79e] text-[11px] font-extrabold uppercase tracking-wider">
+          <div className="lg:col-span-7 space-y-2.5 sm:space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-[#dba95c]/20 border border-[#dba95c]/30 text-[#f5d79e] text-[11px] font-extrabold uppercase tracking-wider">
               <Sparkles size={12} className="text-[#f5d79e]" />
               <span>{tagline}</span>
             </div>
 
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-[46px] font-normal leading-[1.1] tracking-[-0.04em] text-white">
-              {title} <em className="italic text-[#edc48a] font-serif">{highlight}</em>
+            <h1 className="font-serif text-2xl sm:text-3xl lg:text-[40px] font-normal leading-[1.12] tracking-[-0.035em] text-white">
+              {title}{' '}
+              {highlight && <em className="italic text-[#edc48a] font-serif">{highlight}</em>}
             </h1>
 
-            <p className="text-xs sm:text-sm text-[#e5eee7] leading-[1.6] max-w-xl font-sans">
+            <p className="text-xs sm:text-sm text-[#e5eee7] leading-[1.55] max-w-xl font-sans">
               {description}
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center gap-2.5 pt-0.5">
               <a
                 href="#builder-catalog"
                 onClick={handleScrollToBuilder}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[11px] bg-[#e5b36d] hover:bg-[#d8a459] text-[#183d2d] font-extrabold text-xs tracking-wide transition-all shadow-md active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-[10px] bg-[#e5b36d] hover:bg-[#d8a459] text-[#183d2d] font-extrabold text-xs tracking-wide transition-all shadow-md active:scale-[0.98]"
               >
                 <span>Select Products Below</span>
-                <ArrowDown size={14} />
+                <ArrowDown size={13} />
               </a>
 
               <button
                 type="button"
                 onClick={handleConsultClick}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[11px] bg-white/10 hover:bg-white/20 border border-white/25 text-white font-extrabold text-xs transition-all shadow-xs"
+                className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-[10px] bg-white/10 hover:bg-white/20 border border-white/25 text-white font-extrabold text-xs transition-all shadow-xs"
               >
-                <MessageSquare size={14} className="text-[#f5d79e]" />
+                <MessageSquare size={13} className="text-[#f5d79e]" />
                 <span>Talk to an Ayurvedic Doctor</span>
               </button>
             </div>
           </div>
 
-          {/* Right: Quick 3-Step Guide (Compact, non-intrusive) */}
-          <div className="lg:col-span-4 bg-white/10 backdrop-blur-md rounded-[18px] border border-white/20 p-4 sm:p-5 text-white space-y-2.5">
-            <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#edc48a] block">
+          {/* Right: Simplified 3-Step Guide with Icons */}
+          <div className="lg:col-span-5 bg-white/10 backdrop-blur-md rounded-[16px] border border-white/20 p-3.5 sm:p-4 text-white">
+            <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#edc48a] block mb-2.5">
               HOW COMBO BUILDER WORKS
             </span>
-            <div className="space-y-2 text-xs">
-              <div className="flex items-start gap-2.5">
-                <span className="w-5 h-5 rounded-full bg-[#e5b36d] text-[#183d2d] font-bold text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  1
+            <div className="grid grid-cols-3 gap-2 text-center items-start">
+              {/* Step 1 */}
+              <div className="flex flex-col items-center">
+                <div className="w-8 h-8 rounded-full bg-[#e5b36d] text-[#183d2d] flex items-center justify-center mb-1.5 shadow-xs">
+                  <Layers size={15} />
+                </div>
+                <strong className="text-[11px] sm:text-xs text-white font-bold leading-tight block">
+                  {stepGuide.step1Title}
+                </strong>
+                <span className="text-[9.5px] sm:text-[10px] text-emerald-100/80 leading-tight mt-0.5">
+                  {stepGuide.step1Desc}
                 </span>
-                <p className="text-emerald-50 leading-tight">
-                  <strong className="text-white">{stepGuide.step1Title}</strong> {stepGuide.step1Desc}
-                </p>
               </div>
 
-              <div className="flex items-start gap-2.5">
-                <span className="w-5 h-5 rounded-full bg-[#e5b36d] text-[#183d2d] font-bold text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  2
+              {/* Step 2 */}
+              <div className="flex flex-col items-center relative">
+                <div className="w-8 h-8 rounded-full bg-[#e5b36d] text-[#183d2d] flex items-center justify-center mb-1.5 shadow-xs">
+                  <SlidersHorizontal size={15} />
+                </div>
+                <strong className="text-[11px] sm:text-xs text-white font-bold leading-tight block">
+                  {stepGuide.step2Title}
+                </strong>
+                <span className="text-[9.5px] sm:text-[10px] text-emerald-100/80 leading-tight mt-0.5">
+                  {stepGuide.step2Desc}
                 </span>
-                <p className="text-emerald-50 leading-tight">
-                  <strong className="text-white">{stepGuide.step2Title}</strong> {stepGuide.step2Desc}
-                </p>
               </div>
 
-              <div className="flex items-start gap-2.5">
-                <span className="w-5 h-5 rounded-full bg-[#e5b36d] text-[#183d2d] font-bold text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  3
+              {/* Step 3 */}
+              <div className="flex flex-col items-center">
+                <div className="w-8 h-8 rounded-full bg-[#e5b36d] text-[#183d2d] flex items-center justify-center mb-1.5 shadow-xs">
+                  <Tag size={15} />
+                </div>
+                <strong className="text-[11px] sm:text-xs text-white font-bold leading-tight block">
+                  {stepGuide.step3Title}
+                </strong>
+                <span className="text-[9.5px] sm:text-[10px] text-emerald-100/80 leading-tight mt-0.5">
+                  {stepGuide.step3Desc}
                 </span>
-                <p className="text-emerald-50 leading-tight">
-                  <strong className="text-white">{stepGuide.step3Title}</strong> {stepGuide.step3Desc}
-                </p>
               </div>
             </div>
           </div>

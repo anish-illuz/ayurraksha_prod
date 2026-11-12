@@ -37,17 +37,18 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
   const isEmergency = Boolean(activeConcern.isEmergencyPathway || activeConcern.emergencyNotice);
 
   return (
-    <div className="bg-white rounded-[20px] border border-[#e4e7df] p-6 mb-6 shadow-xs">
-      <div className="font-extrabold text-[13px] text-[#18372b] mb-1.5 tracking-wide">
-        {title}
+    <div className="bg-white rounded-[16px] border border-[#e4e7df] p-3.5 sm:p-4 mb-4 shadow-xs">
+      <div className="flex items-center justify-between gap-2 mb-2.5">
+        <span className="font-extrabold text-xs sm:text-[13px] text-[#18372b] tracking-wide">
+          Filter by Concern
+        </span>
+        <span className="text-[11px] text-[#55695c]">
+          Choose a concern to highlight recommended products
+        </span>
       </div>
 
-      <p className="text-xs text-[#3c4f44] mb-4 leading-relaxed font-sans">
-        {description}
-      </p>
-
       {/* Concern Chips */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5 sm:gap-2">
         {concerns.map((concern) => {
           const isActive = concern.id === activeConcern.id;
           const isWarningChip = Boolean(concern.isEmergencyPathway);
@@ -56,14 +57,14 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
               key={concern.id}
               type="button"
               onClick={() => handleSelect(concern)}
-              className={`px-3.5 py-2 rounded-full text-xs font-bold transition-all ${
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
                 isActive
                   ? isWarningChip
                     ? 'bg-rose-700 text-white shadow-xs border border-rose-700'
-                    : 'bg-[#1c513d] text-white shadow-xs border border-[#1c513d]'
+                    : 'bg-[#18372b] text-white shadow-xs border border-[#18372b]'
                   : isWarningChip
                   ? 'bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200'
-                  : 'bg-white hover:bg-stone-50 text-[#283830] border border-[#dce4da]'
+                  : 'bg-stone-50 hover:bg-stone-100 text-[#283830] border border-[#dce4da]'
               }`}
             >
               {concern.name}
@@ -72,53 +73,39 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
         })}
       </div>
 
-      {/* Dynamic Concern Description */}
+      {/* Single Small Information Strip */}
       {isEmergency ? (
-        <div className="mt-4 p-4 rounded-[12px] bg-rose-50 border border-rose-200 text-xs text-rose-950 leading-[1.6] space-y-2.5">
-          <div className="flex items-center gap-2 font-bold text-rose-800 text-[13px]">
-            <ShieldAlert size={16} className="text-rose-700 flex-shrink-0" />
-            <span>Clinical Notice & Medical Safeguard</span>
+        <div className="mt-3 p-3 rounded-[10px] bg-rose-50 border border-rose-200 text-xs text-rose-950 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div className="flex items-start gap-2">
+            <ShieldAlert size={15} className="text-rose-700 flex-shrink-0 mt-0.5" />
+            <p className="text-rose-900 text-[11.5px] leading-snug">
+              <strong>{activeConcern.name}:</strong> {activeConcern.emergencyNotice || activeConcern.description}
+            </p>
           </div>
-          <p className="text-rose-900">
-            <strong>{activeConcern.name}:</strong> {activeConcern.description}
-          </p>
-          {activeConcern.emergencyNotice && (
-            <div className="pt-2 border-t border-rose-200 text-[11.5px] text-rose-900 font-medium">
-              {activeConcern.emergencyNotice}
-            </div>
-          )}
-          <div className="pt-1 flex items-center justify-between gap-3">
-            <span className="text-[11px] text-rose-800">
-              Do not delay standard clinical care for acute symptoms.
-            </span>
+          <button
+            type="button"
+            onClick={onOpenConsult}
+            className="font-extrabold text-xs text-rose-800 hover:text-rose-950 underline whitespace-nowrap self-end sm:self-auto flex-shrink-0"
+          >
+            Consult Doctor →
+          </button>
+        </div>
+      ) : (
+        <div className="mt-2.5 px-3 py-2 rounded-[9px] bg-[#f4f7f2] border border-[#dbe6d9] text-[11.5px] text-[#203728] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-3">
+          <div className="leading-snug">
+            <span className="font-bold text-[#18372b]">{activeConcern.name}: </span>
+            <span className="text-[#3c5445]">{activeConcern.shortDesc || activeConcern.description}</span>
+          </div>
+
+          {activeConcern.requiresDoctorGuidance && (
             <button
               type="button"
               onClick={onOpenConsult}
-              className="font-extrabold text-rose-800 hover:text-rose-950 underline whitespace-nowrap inline-flex items-center gap-1"
+              className="font-extrabold text-[#1c513d] hover:text-[#123b2d] underline whitespace-nowrap self-start sm:self-auto flex-shrink-0 inline-flex items-center gap-1"
             >
-              <span>Speak to Doctor</span>
-              <Stethoscope size={12} />
+              <span>Consult Doctor</span>
+              <Stethoscope size={11} />
             </button>
-          </div>
-        </div>
-      ) : (
-        <div className="mt-4 p-3.5 rounded-[9px] bg-[#eef4eb] border border-[#d6e3d6] text-xs text-[#203728] leading-[1.6] space-y-2">
-          <div>
-            <strong>{activeConcern.name}:</strong> {activeConcern.description}
-          </div>
-
-          {activeConcern.clinicalNotice && (
-            <div className="pt-2 border-t border-[#d0dcbe] text-[11.5px] text-[#203728] leading-relaxed flex items-start justify-between gap-3">
-              <span>{activeConcern.clinicalNotice}</span>
-              <button
-                type="button"
-                onClick={onOpenConsult}
-                className="font-extrabold text-[#1c513d] underline hover:text-[#123b2d] whitespace-nowrap inline-flex items-center gap-1"
-              >
-                <span>Consult Doctor</span>
-                <Stethoscope size={12} />
-              </button>
-            </div>
           )}
         </div>
       )}

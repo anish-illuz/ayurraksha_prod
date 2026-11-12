@@ -57,10 +57,17 @@ export const Footer: React.FC = () => {
             <div className="flex items-start gap-3.5 text-xs sm:text-sm text-[#F6F1E7] pt-1">
               <MapPin size={18} className="text-[#EAD3A2] flex-shrink-0 mt-0.5 stroke-[1.8]" />
               <address className="not-italic leading-relaxed font-sans">
-                251, First Floor,<br />
-                New Tiny Sector,<br />
-                Ambattur Industrial Estate,<br />
-                Chennai 600058
+                <a
+                  href="https://maps.google.com/?q=251+First+Floor+New+Tiny+Sector+Ambattur+Industrial+Estate+Chennai+600058"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#EAD3A2] transition-colors"
+                >
+                  251, First Floor,<br />
+                  New Tiny Sector,<br />
+                  Ambattur Industrial Estate,<br />
+                  Chennai 600058
+                </a>
               </address>
             </div>
 
@@ -68,10 +75,10 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3.5">
               <Phone size={18} className="text-[#EAD3A2] flex-shrink-0 stroke-[1.8]" />
               <a
-                href={`tel:${SITE_CONFIG.phone}`}
+                href="tel:+919940388877"
                 className="text-sm sm:text-base font-bold text-[#F6F1E7] hover:text-[#EAD3A2] transition-colors tracking-wide font-sans"
               >
-                99403-88877
+                +91 99403 88877
               </a>
             </div>
 
@@ -118,7 +125,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: SHOP (Span 2) with vertical divider matching 11.webp */}
+          {/* Column 2: SHOP (Span 2) with vertical divider */}
           <div className="lg:col-span-2 lg:border-l lg:border-[#1E4D3A]/60 lg:pl-6 xl:pl-8 space-y-4">
             <div>
               <h4 className="font-heading text-base sm:text-lg font-bold text-[#EAD3A2] tracking-wider uppercase whitespace-nowrap">
@@ -129,17 +136,12 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs sm:text-sm text-[#F6F1E7] font-sans">
               <li>
                 <Link href="/combo-builder" className="text-[#EAD3A2] font-semibold hover:underline transition-colors block">
-                  ★ Combo Builders (4 Routines)
+                  ★ Build Your Own Combo
                 </Link>
               </li>
               <li>
                 <Link href="/shop" className="hover:text-[#EAD3A2] transition-colors block">
-                  All Products
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-[#EAD3A2] transition-colors block">
-                  Shop by Concern
+                  All Formulations
                 </Link>
               </li>
               <li>
@@ -148,28 +150,28 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/category/health-packs" className="hover:text-[#EAD3A2] transition-colors block">
-                  Wellness Packs
+                <Link href="/concern/liver-wellness" className="hover:text-[#EAD3A2] transition-colors block">
+                  Liver Wellness
                 </Link>
               </li>
               <li>
-                <Link href="/category/powder" className="hover:text-[#EAD3A2] transition-colors block">
-                  Ayurvedic Teas
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/oil" className="hover:text-[#EAD3A2] transition-colors block">
-                  Personal Care
+                <Link href="/combo-builder/skin-care" className="hover:text-[#EAD3A2] transition-colors block">
+                  Skin Care Combo
                 </Link>
               </li>
               <li>
                 <Link href="/concern/pain-joints" className="hover:text-[#EAD3A2] transition-colors block">
-                  Pain Relief
+                  Joint &amp; Muscle Care
                 </Link>
               </li>
               <li>
                 <Link href="/concern/digestive-health" className="hover:text-[#EAD3A2] transition-colors block">
-                  Digestive Health
+                  Digestive Wellness
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/oil" className="hover:text-[#EAD3A2] transition-colors block">
+                  Herbal Oils
                 </Link>
               </li>
             </ul>

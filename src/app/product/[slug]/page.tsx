@@ -8,7 +8,8 @@ import { ProductDetailsSections } from '@/components/pdp/ProductDetailsSections'
 import { StickyMobileBar } from '@/components/pdp/StickyMobileBar';
 import { ProductCard } from '@/components/ProductCard';
 import { PDPProvider } from '@/context/PDPContext';
-import { getAllProducts, getProductBySlug, getRelatedProducts } from '@/lib/products';
+import { getAllProducts, getProductBySlug } from '@/lib/products';
+import { fetchCmsProduct, resolveRecommendedProducts } from '@/lib/cms';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 interface PageProps {
@@ -54,10 +55,37 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ProductDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
-  if (!product) notFound();
+  const baseProduct = getProductBySlug(slug);
+  if (!baseProduct) notFound();
 
-  const relatedProducts = getRelatedProducts(product, 4);
+  // Fetch live dynamic ACF data and content directly from WordPress CMS (cms.ayurrakshaonline.com)
+  const cmsData = await fetchCmsProduct(slug);
+
+  // Merge CMS backend data dynamically with the selected product
+  const product = {
+    ...baseProduct,
+    description: cmsData?.description || baseProduct.description,
+    shortDescription: cmsData?.shortDescription || baseProduct.shortDescription,
+    acf: {
+      ...(baseProduct.acf || {}),
+      ...(cmsData?.acf || {}),
+    },
+    keyBenefits: cmsData?.acf?.key_benefits || baseProduct.keyBenefits || baseProduct.acf?.key_benefits,
+    ingredientsText: cmsData?.acf?.ingredients || baseProduct.ingredientsText || baseProduct.acf?.ingredients,
+    howToUseText: cmsData?.acf?.how_to_use || baseProduct.howToUseText || baseProduct.acf?.how_to_use,
+    careBeforeUse: cmsData?.acf?.care_before_use || baseProduct.careBeforeUse || baseProduct.acf?.care_before_use,
+    productSpecifications:
+      cmsData?.acf?.product_specifications || baseProduct.productSpecifications || baseProduct.acf?.product_specifications,
+    recommendedProductsText:
+      cmsData?.acf?.recommended_products || baseProduct.recommendedProductsText || baseProduct.acf?.recommended_products,
+  };
+
+  // Map recommended products dynamically from ACF `recommended_products` field
+  const recommendedProducts = resolveRecommendedProducts(
+    product.recommendedProductsText || product.acf?.recommended_products,
+    product,
+    4
+  );
 
   // Rank Math Schema.org Product & Offer JSON-LD
   const productSchema = {
@@ -138,21 +166,21 @@ export default async function ProductDetailPage({ params }: PageProps) {
           <ProductDetailsSections product={product} />
         </div>
 
-        {/* Complementary & Related Formulations */}
-        {relatedProducts.length > 0 && (
+        {/* Recommended Products dynamically mapped from WordPress ACF `recommended_products` */}
+        {recommendedProducts.length > 0 && (
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
             <div className="border-t border-stone-200/80 pt-6 sm:pt-8">
               <div className="mb-4 sm:mb-6">
                 <span className="text-[11px] font-semibold text-botanical uppercase tracking-wider block mb-0.5">
-                  Complete Your Wellness Routine
+                  Recommended Products
                 </span>
                 <h2 className="font-serif text-xl sm:text-2xl font-bold text-forest">
-                  Explore more from the AyurRaksha collection
+                  Complete Your Wellness Routine
                 </h2>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5">
-                {relatedProducts.map((rel) => (
+                {recommendedProducts.map((rel) => (
                   <ProductCard key={rel.id} product={rel} />
                 ))}
               </div>

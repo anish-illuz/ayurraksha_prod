@@ -80,16 +80,6 @@ export const CMS_PRODUCT_ID_MAP: Record<string, number> = {
   'ayurraksha-kalonji-soap': 122,
   'ayurraksha-vital-o3-anti-vitiligo-cream': 123,
   'ayurraksha-immuno3-immunity-booster-capsules': 124,
-
-  // Curated Combo Packs mapped to their primary flagship formulation on CMS
-  'ayur-raksha-cardiac-combo': 108, // Save Heart
-  'ayur-raksha-breathe-well-pack': 115, // Esnovate
-  'ayur-raksha-join-well-pack': 113, // Divine Healing Oil
-  'ayur-raksha-sleep-well-pack': 120, // Sleep Well
-  'ayur-raksha-dia-well-pack': 104, // Dia Well
-  'piles-well-pack': 119, // PI Well
-  'flow-well-pack': 110, // Flow Well
-  'skin-well-pack': 107, // Skin Well
 };
 
 const DEFAULT_CMS_PRODUCT_ID = 114; // BoozLiv flagship

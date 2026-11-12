@@ -73,14 +73,51 @@ export default function CheckoutPage() {
     currency: string;
   } | null>(null);
 
+  // Coupon code state (supports WELCOME10 from newsletter)
+  const [couponInput, setCouponInput] = useState('');
+  const [appliedCoupon, setAppliedCoupon] = useState<string | null>(null);
+  const [couponError, setCouponError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Check if user has a welcome coupon from newsletter subscription
+    if (typeof window !== 'undefined') {
+      const savedCoupon = localStorage.getItem('ayurraksha_welcome_coupon');
+      if (savedCoupon && savedCoupon.toUpperCase() === 'WELCOME10') {
+        setAppliedCoupon('WELCOME10');
+      }
+    }
+  }, []);
+
+  const handleApplyCoupon = (e: React.FormEvent) => {
+    e.preventDefault();
+    setCouponError(null);
+    const cleaned = couponInput.trim().toUpperCase();
+    if (!cleaned) return;
+
+    if (cleaned === 'WELCOME10') {
+      setAppliedCoupon('WELCOME10');
+      setCouponInput('');
+    } else {
+      setCouponError('Invalid coupon code. Try WELCOME10 for 10% off your first order.');
+    }
+  };
+
+  const handleRemoveCoupon = () => {
+    setAppliedCoupon(null);
+    setCouponError(null);
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('ayurraksha_welcome_coupon');
+    }
+  };
+
   // Pricing calculations
   // Combo Builder Volume Discount:
   // - Orders above ₹5,000 -> 15% OFF
   // - Orders above ₹3,000 -> 10% OFF
-  // Calculated dynamically on eligible combo builder items only.
-  // Individual product pages have their own variant offers and do not stack with Combo Builder discounts.
+  // Welcome Coupon: WELCOME10 gives 10% off subtotal
+  const couponDiscount = appliedCoupon === 'WELCOME10' ? Math.round(subtotal * 0.1) : 0;
   const shippingFee = paymentMethod === 'razorpay' ? 0 : 100;
-  const totalPayable = Math.max(0, subtotal - comboDiscount + shippingFee);
+  const totalPayable = Math.max(0, subtotal - comboDiscount - couponDiscount + shippingFee);
 
   useEffect(() => {
     // Track begin_checkout when items are loaded
@@ -161,6 +198,8 @@ export default function CheckoutPage() {
           customerNote: note,
           tierDiscount: comboDiscount,
           tierDiscountPercent: comboDiscountPercent,
+          couponCode: appliedCoupon,
+          couponDiscount: couponDiscount,
           attribution,
         }),
       });
@@ -747,12 +786,62 @@ export default function CheckoutPage() {
 
                 {/* Cost Breakdown */}
                 <div className="border-t border-stone-200 pt-4 space-y-2.5 text-xs sm:text-sm">
+                  {/* Coupon Code Input */}
+                  <div className="pb-2 border-b border-stone-100">
+                    {!appliedCoupon ? (
+                      <form onSubmit={handleApplyCoupon} className="space-y-1.5">
+                        <div className="flex gap-2">
+                          <input
+                            type="text"
+                            value={couponInput}
+                            onChange={(e) => {
+                              setCouponInput(e.target.value);
+                              if (couponError) setCouponError(null);
+                            }}
+                            placeholder="Discount code (e.g. WELCOME10)"
+                            className="flex-grow px-3 py-2 text-xs border border-stone-300 rounded-lg uppercase tracking-wider focus:outline-none focus:border-botanical"
+                          />
+                          <button
+                            type="submit"
+                            className="px-3.5 py-2 text-xs font-bold bg-[#18372b] hover:bg-[#235b43] text-white rounded-lg transition-colors"
+                          >
+                            Apply
+                          </button>
+                        </div>
+                        {couponError && (
+                          <p className="text-[11px] text-red-600 font-medium">{couponError}</p>
+                        )}
+                      </form>
+                    ) : (
+                      <div className="flex items-center justify-between p-2 rounded-lg bg-emerald-50 border border-emerald-200 text-xs">
+                        <div className="flex items-center gap-1.5 text-emerald-800 font-bold">
+                          <CheckCircle2 size={14} />
+                          <span>Code &ldquo;{appliedCoupon}&rdquo; applied (10% OFF)</span>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={handleRemoveCoupon}
+                          className="text-[11px] text-stone-500 hover:text-red-600 font-semibold underline"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
                   <div className="flex items-center justify-between text-charcoal-muted">
                     <span>Subtotal</span>
                     <span className="font-semibold text-charcoal">
                       ₹{subtotal.toLocaleString('en-IN')}
                     </span>
                   </div>
+
+                  {couponDiscount > 0 && (
+                    <div className="flex items-center justify-between text-emerald-800 font-bold bg-emerald-50 px-2.5 py-1.5 rounded-lg border border-emerald-200">
+                      <span>Welcome Coupon (10% OFF)</span>
+                      <span>-₹{couponDiscount.toLocaleString('en-IN')}</span>
+                    </div>
+                  )}
 
                   {comboDiscount > 0 && (
                     <div className="flex items-center justify-between text-emerald-800 font-bold bg-emerald-50 px-2.5 py-1.5 rounded-lg border border-emerald-200">

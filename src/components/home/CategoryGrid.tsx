@@ -30,14 +30,14 @@ const CONCERN_TITLES: Record<string, string> = {
 
 // Approved category descriptions from master design document
 const CONCERN_DESCRIPTIONS: Record<string, string> = {
-  'liver-wellness': 'Natural liver support for detox and everyday vitality.',
-  'pain-joints': 'Soothing Ayurvedic care for flexible joints and active living.',
-  'skin-dermatology': 'Nourishing herbal care for healthy, radiant skin.',
-  'heart-cardiac': 'Comprehensive herbal support for a healthy heart and better circulation.',
-  'digestive-health': 'Gentle herbal support for smooth digestion and gut balance.',
-  'vascular-veins': 'Herbal support for healthy blood flow and lighter legs.',
-  'respiratory-care': 'Ayurvedic support for clear breathing and seasonal comfort.',
-  'immunity-vitality': 'Natural herbal care to boost stamina, energy and immunity.',
+  'liver-wellness': 'Your liver works hard every day. Give it the herbal care it deserves.',
+  'pain-joints': 'Keep moving, keep doing what you love. Discover herbal care for everyday comfort.',
+  'skin-dermatology': "Love the skin you're in! Discover botanical care for a naturally radiant glow.",
+  'heart-cardiac': 'Show your heart some love with thoughtfully crafted Ayurvedic wellness essentials.',
+  'digestive-health': 'A happier gut starts with mindful care. Discover herbal support for digestive wellness.',
+  'vascular-veins': 'Your legs carry you through life. Give them the care and attention they deserve.',
+  'respiratory-care': 'Every breath matters. Discover traditional herbal care for respiratory wellness.',
+  'immunity-vitality': 'Bring back the joy of feeling your best with Ayurvedic vitality and wellness essentials.',
 };
 
 export const CategoryGrid: React.FC = () => {

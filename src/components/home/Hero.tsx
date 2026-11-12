@@ -35,8 +35,8 @@ const BANNER_SLIDES: BannerSlide[] = [
     desktopImageSrc: '/images/banners/skin-well-combo.webp',
     mobileImageSrc: '/images/banners/skin-well-combo-mobile.webp',
     imageAlt: 'AyurRaksha Skin Well Combo - Skin Well Capsules, Soap, Healing Oil & Ointment',
-    primaryLink: '/product/skin-well-pack',
-    primaryLabel: 'Shop Skin Well Combo',
+    primaryLink: '/combo-builder/skin-care',
+    primaryLabel: 'Build Skin Care Combo',
   },
   {
     id: 'varicose-veins',
@@ -45,8 +45,8 @@ const BANNER_SLIDES: BannerSlide[] = [
     desktopImageSrc: '/images/banners/varicose-veins.webp',
     mobileImageSrc: '/images/banners/varicose-veins-mobile.webp',
     imageAlt: 'AyurRaksha Varicose Veins Wellness Combo - Flow Well Pack, Detox Tea, Verico Prime & Foot Bath',
-    primaryLink: '/product/flow-well-pack',
-    primaryLabel: 'Shop Varicose Veins Combo',
+    primaryLink: '/combo-builder/varicose-veins',
+    primaryLabel: 'Build Varicose Veins Combo',
   },
   {
     id: 'breathe-well',
@@ -55,8 +55,8 @@ const BANNER_SLIDES: BannerSlide[] = [
     desktopImageSrc: '/images/banners/breathe-well.webp',
     mobileImageSrc: '/images/banners/breathe-well-mobile.webp',
     imageAlt: 'AyurRaksha Breathe Well Combo - Esnovate Capsules, Detox Tea & Etioment Balm',
-    primaryLink: '/product/ayur-raksha-breathe-well-pack',
-    primaryLabel: 'Shop Breathe Well Combo',
+    primaryLink: '/combo-builder/breath-easy',
+    primaryLabel: 'Build Breathe Well Combo',
   },
   {
     id: 'purna-sakthi',

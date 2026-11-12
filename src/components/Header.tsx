@@ -133,13 +133,6 @@ export const Header: React.FC = () => {
                 Bestsellers
               </Link>
 
-              <Link
-                href="/category/health-packs"
-                className="relative py-2 hover:text-primary transition-colors after:absolute after:bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
-              >
-                Wellness Packs
-              </Link>
-
               {/* Dropdown: Combo Builder with all 4 dynamic builders */}
               <div
                 className="relative group py-2"

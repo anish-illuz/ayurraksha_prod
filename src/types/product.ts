@@ -1,3 +1,13 @@
+export interface ProductAcf {
+  key_benefits?: string;
+  ingredients?: string;
+  how_to_use?: string;
+  care_before_use?: string;
+  product_specifications?: string;
+  recommended_products?: string;
+  [key: string]: any;
+}
+
 export interface FeatureCard {
   title: string;
   description: string;
@@ -66,6 +76,15 @@ export interface Product {
   inStock: boolean;
   variants: ProductVariant[];
   sku?: string;
+
+  // Dynamic WordPress ACF Fields from cms.ayurrakshaonline.com
+  acf?: ProductAcf;
+  keyBenefits?: string;
+  ingredientsText?: string;
+  howToUseText?: string;
+  careBeforeUse?: string;
+  productSpecifications?: string;
+  recommendedProductsText?: string;
 
   // Comprehensive ACF Structured Fields matching Document & Reference UI
   subtitle?: string;

@@ -68,17 +68,17 @@ export const ReviewsSection: React.FC = () => {
                     )}
                   </div>
 
-                  <h3 className="font-heading text-lg sm:text-xl font-bold text-primary mb-2 leading-snug">
+                  <h3 className="font-heading text-lg sm:text-xl font-bold text-primary mb-2.5 leading-snug">
                     &ldquo;{rev.title}&rdquo;
                   </h3>
 
-                  <p className="text-sm text-charcoal leading-relaxed italic">
+                  <p className="font-sans text-sm sm:text-[15px] text-[#2D3A34] leading-relaxed">
                     {rev.content}
                   </p>
                 </div>
 
                 {/* Author & Linked Product Thumbnail at Bottom */}
-                <div className="mt-4 pt-3 border-t border-stone-200/80 flex flex-wrap items-center justify-between gap-3">
+                <div className="mt-5 pt-4 border-t border-stone-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
                     <span className="text-sm font-bold text-charcoal block">
                       {rev.author}
@@ -88,22 +88,22 @@ export const ReviewsSection: React.FC = () => {
                     </span>
                   </div>
 
-                  {/* Small Authentic Product Thumbnail linking to Product Page */}
+                  {/* Clean Authentic Product Thumbnail with Full Name Display */}
                   <Link
                     href={`/product/${rev.productSlug}`}
-                    className="flex items-center gap-2.5 p-1.5 pr-3 bg-white hover:bg-sage/50 border border-stone-200/90 rounded-xl transition-all group/prod max-w-[190px]"
+                    className="inline-flex items-center gap-2.5 p-1.5 pr-3 bg-white hover:bg-sage/40 border border-stone-200/90 rounded-xl transition-all group/prod self-start sm:self-auto"
                     title={`View ${rev.productName}`}
                   >
-                    <div className="relative w-9 h-9 rounded-lg bg-[#F7F9F5] flex-shrink-0 overflow-hidden p-1">
+                    <div className="relative w-10 h-10 rounded-lg bg-[#F7F9F5] flex-shrink-0 overflow-hidden p-1 border border-stone-100">
                       <Image
                         src={thumbImg}
                         alt={rev.productName}
                         fill
-                        sizes="36px"
+                        sizes="40px"
                         className="object-contain"
                       />
                     </div>
-                    <span className="text-xs font-semibold text-primary truncate group-hover/prod:underline">
+                    <span className="text-xs font-semibold text-primary leading-tight group-hover/prod:underline">
                       {rev.productName}
                     </span>
                   </Link>

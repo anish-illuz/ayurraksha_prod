@@ -9,8 +9,8 @@ const CategoryGrid = dynamic(
 const Bestsellers = dynamic(
   () => import('@/components/home/Bestsellers').then((m) => m.Bestsellers)
 );
-const BrandStory = dynamic(
-  () => import('@/components/home/BrandStory').then((m) => m.BrandStory)
+const FeaturedVideos = dynamic(
+  () => import('@/components/home/FeaturedVideos').then((m) => m.FeaturedVideos)
 );
 const FeaturedCombos = dynamic(
   () => import('@/components/home/FeaturedCombos').then((m) => m.FeaturedCombos)
@@ -43,10 +43,10 @@ export default function HomePage() {
       {/* 4. Verified Bestsellers Showcase */}
       <Bestsellers />
 
-      {/* 5. Editorial Brand Story & Clinical Formulation */}
-      <BrandStory />
+      {/* 4b. Featured Videos Showcase */}
+      <FeaturedVideos />
 
-      {/* 6. Featured Combos & Health Packs */}
+      {/* 5. Featured Combos & Health Packs */}
       <FeaturedCombos />
 
       {/* 7. Real Patient Case Studies & Judge.me Reviews */}

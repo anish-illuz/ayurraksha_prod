@@ -95,12 +95,29 @@ export function getProductsByConcern(concernSlug: string): Product[] {
   const normalizedSlug = concernSlug.toLowerCase().trim();
   const searchTerms = CONCERN_SLUG_MAP[normalizedSlug] || [normalizedSlug, normalizedSlug.replace(/-/g, ' ')];
 
-  return allProducts.filter((p) =>
+  const matched = allProducts.filter((p) =>
     p.healthConcerns.some((c) => {
       const cLower = c.toLowerCase();
       return searchTerms.some((term) => cLower.includes(term) || term.includes(cLower));
     })
   );
+
+  // Guarantee required priority products appear first per client requirement
+  if (normalizedSlug === 'liver-wellness') {
+    const boozliv = matched.find((p) => p.slug === 'boozliv');
+    if (boozliv) {
+      return [boozliv, ...matched.filter((p) => p.slug !== 'boozliv')];
+    }
+  }
+
+  if (normalizedSlug === 'skin-dermatology') {
+    const divine = matched.find((p) => p.slug === 'divine-healing-oil');
+    if (divine) {
+      return [divine, ...matched.filter((p) => p.slug !== 'divine-healing-oil')];
+    }
+  }
+
+  return matched;
 }
 
 export function getProductsByCategory(categorySlug: string): Product[] {

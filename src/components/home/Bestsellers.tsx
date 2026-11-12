@@ -8,7 +8,7 @@ import { getBestsellers } from '@/lib/products';
 
 export const Bestsellers: React.FC = () => {
   const bestsellers = getBestsellers(8);
-  const [filter, setFilter] = useState<'all' | 'tonic' | 'oil' | 'capsules' | 'health-packs'>('all');
+  const [filter, setFilter] = useState<'all' | 'tonic' | 'oil' | 'capsules'>('all');
 
   const filtered = filter === 'all'
     ? bestsellers
@@ -28,7 +28,7 @@ export const Bestsellers: React.FC = () => {
               Our Bestsellers
             </h2>
             <p className="mt-3 text-base sm:text-lg text-[#37443D] max-w-xl">
-              Our most popular authentic Ayurvedic herbal remedies, trusted by thousands of customers across India.
+              Discover customer favourites and thoughtfully crafted Ayurvedic essentials for your everyday wellness.
             </p>
           </div>
 
@@ -39,7 +39,6 @@ export const Bestsellers: React.FC = () => {
               { label: 'Tonics & Syrups', val: 'tonic' },
               { label: 'Herbal Oils', val: 'oil' },
               { label: 'Capsules', val: 'capsules' },
-              { label: 'Wellness Packs', val: 'health-packs' },
             ].map((tab) => (
               <button
                 key={tab.val}
@@ -55,8 +54,6 @@ export const Bestsellers: React.FC = () => {
             ))}
           </div>
         </div>
-
-        <p className="mb-4 rounded-xl bg-sage px-4 py-3 text-sm text-primary">Free shipping across India on all prepaid orders.</p>
 
         {/* Product Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">

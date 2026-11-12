@@ -16,13 +16,13 @@ export const JournalSection: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage text-primary text-xs font-semibold mb-2.5">
               <BookOpen size={14} className="text-primary" />
-              <span>Health Guides &amp; Ayurvedic Tips</span>
+              <span className="tracking-wider uppercase">THE AYURRAKSHA JOURNAL</span>
             </div>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
-              From Our Health Blog
+              Discover Wellness, Naturally
             </h2>
             <p className="mt-3 text-base sm:text-lg text-[#37443D] max-w-xl">
-              Helpful wellness guides, herbal health tips, and recovery stories from our clinical team in Chennai.
+              Explore Ayurvedic wisdom, expert insights and practical wellness tips to inspire healthier everyday living.
             </p>
           </div>
 

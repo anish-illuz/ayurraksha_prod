@@ -90,13 +90,6 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
             >
               <span>Bestsellers</span>
             </Link>
-            <Link
-              href="/category/health-packs"
-              onClick={onClose}
-              className="flex items-center py-2.5 text-sm font-semibold text-charcoal hover:text-primary transition-colors"
-            >
-              <span>Wellness Packs</span>
-            </Link>
             {/* Combo Builders Accordion */}
             <div className="pt-1">
               <button

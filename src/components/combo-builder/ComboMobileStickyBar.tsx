@@ -47,29 +47,28 @@ export const ComboMobileStickyBar: React.FC<ComboMobileStickyBarProps> = ({
   return (
     <>
       {/* Sticky Bottom Bar on Mobile with Safe Area Padding */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-stone-200 px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))] shadow-[0_-8px_24px_rgba(0,0,0,0.08)] flex items-center justify-between gap-3">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#103829] text-white px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))] shadow-[0_-8px_24px_rgba(0,0,0,0.18)] flex items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
-          <div className="w-10 h-10 rounded-xl bg-[#E8EFE7] flex items-center justify-center text-[#204A3B] flex-shrink-0">
-            <ShoppingBag size={20} />
+          <div className="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center text-[#f4e2b5] flex-shrink-0">
+            <ShoppingBag size={18} />
           </div>
           <div>
-            <span className="text-[11px] text-stone-500 block leading-tight">
-              {totalCount} {totalCount === 1 ? 'item' : 'items'} in combo
+            <span className="text-[10px] text-emerald-100/80 block leading-tight">
+              {totalCount} {totalCount === 1 ? 'item' : 'items'} · ₹{totalAmount.toLocaleString('en-IN')}
             </span>
-            <strong className="text-sm font-bold text-[#18372b] leading-tight">
-              ₹{totalAmount.toLocaleString('en-IN')}
-              {hasPending ? '*' : ''}
-            </strong>
+            <span className="text-[11px] font-bold text-[#f4e2b5] leading-tight block">
+              {hasPending ? 'Price pending at checkout' : totalCount >= 1 ? '10–15% volume savings applied' : 'Add products to unlock savings'}
+            </span>
           </div>
         </div>
 
         <button
           type="button"
           onClick={() => setIsSheetOpen(true)}
-          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#18372b] hover:bg-[#23533e] text-white text-xs font-bold shadow-xs active:scale-[0.98]"
+          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#e5b36d] hover:bg-[#d8a459] text-[#183d2d] text-xs font-extrabold shadow-md active:scale-[0.98]"
         >
           <span>View Combo</span>
-          <ChevronUp size={15} />
+          <ChevronUp size={14} />
         </button>
       </div>
 

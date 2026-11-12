@@ -86,9 +86,9 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
             {product.formatTag}
           </span>
 
-          {product.doctorGuided && (
-            <span className="text-[9px] font-extrabold text-[#7a4e1e] bg-[#fff5e6] px-2 py-0.5 rounded-[5px] border border-[#f0dfc4] shadow-xs">
-              Doctor-guided
+          {isHighlighted && !isSelected && (
+            <span className="text-[9px] font-extrabold text-white bg-[#1c513d] px-2 py-0.5 rounded-full shadow-xs">
+              Suggested
             </span>
           )}
         </div>
@@ -107,11 +107,11 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
           />
         </div>
 
-        {/* Highlight Banner if concern matches */}
-        {isHighlighted && !isSelected && (
-          <div className="absolute bottom-1.5 left-2 right-2 bg-[#1c513d]/90 backdrop-blur-xs text-white text-[9.5px] font-bold text-center py-0.5 rounded-md">
-            Suggested for your concern
-          </div>
+        {/* Doctor-guided tag (bottom-left) */}
+        {product.doctorGuided && (
+          <span className="absolute bottom-2.5 left-2.5 text-[9px] font-extrabold text-[#7a4e1e] bg-[#fff5e6]/95 backdrop-blur-xs px-2 py-0.5 rounded-[5px] border border-[#f0dfc4] shadow-xs z-10 pointer-events-none">
+            Doctor-guided
+          </span>
         )}
       </div>
 
@@ -200,9 +200,10 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
               <button
                 type="button"
                 onClick={handleAdd}
-                className="px-3.5 py-2 rounded-[8px] bg-[#1c513b] hover:bg-[#143e2d] text-white text-[11.5px] font-extrabold transition-all shadow-xs active:scale-[0.98]"
+                className="px-3.5 py-2 rounded-[8px] bg-[#2f7d54] hover:bg-[#276a47] text-white text-[11.5px] font-extrabold transition-all shadow-xs active:scale-[0.98] whitespace-nowrap"
               >
-                + Add
+                + <span className="sm:hidden">Add</span>
+                <span className="hidden sm:inline">Add to Combo</span>
               </button>
             )}
           </div>

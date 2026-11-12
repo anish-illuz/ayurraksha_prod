@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Search, Sparkles, MessageSquare, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Sparkles, MessageSquare, ArrowRight, CheckCircle2, ChevronDown, Tag, Droplets, Footprints, Wind, HeartPulse, type LucideIcon } from 'lucide-react';
 import { ComboHero } from '@/components/combo-builder/ComboHero';
 import { ComboVideoSection } from '@/components/combo-builder/ComboVideoSection';
 import { ComboConcernSelector } from '@/components/combo-builder/ComboConcernSelector';
@@ -17,6 +17,14 @@ import { ComboBuilderConfig, ComboProduct, MerchandisingCategory, ComboConcern }
 import { useCart } from '@/lib/cartContext';
 import { getProductById } from '@/lib/products';
 import { trackComboEvent } from '@/lib/comboAnalytics';
+
+// Builder icon lookup (per slug)
+const BUILDER_ICONS: Record<string, LucideIcon> = {
+  'skin-care': Droplets,
+  'varicose-veins': Footprints,
+  'breath-easy': Wind,
+  'cardiac-wellness': HeartPulse,
+};
 
 interface DynamicComboBuilderProps {
   config: ComboBuilderConfig;
@@ -42,6 +50,7 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
     highlightedProductIds: [],
   });
   const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('featured');
   const [detailProduct, setDetailProduct] = useState<ComboProduct | null>(null);
   const [isConsultOpen, setIsConsultOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -110,7 +119,7 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
 
   // Filtered products calculation
   const filteredProducts = useMemo(() => {
-    return products.filter((p) => {
+    const filtered = products.filter((p) => {
       // If active concern is an emergency safeguard pathway, do not display routine products
       if (activeConcern.isEmergencyPathway) {
         return false;
@@ -144,7 +153,31 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
       }
       return true;
     });
-  }, [products, activeConcern, activeCategory, searchQuery]);
+
+    // Sort
+    const sorted = [...filtered];
+    switch (sortBy) {
+      case 'price-asc':
+        sorted.sort((a, b) => (a.price ?? 0) - (b.price ?? 0));
+        break;
+      case 'price-desc':
+        sorted.sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
+        break;
+      case 'name':
+        sorted.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      default:
+        // featured: keep original order (flagship products first via a stable marker)
+        sorted.sort((a, b) => {
+          if (a.isFlagshipSkinCare && !b.isFlagshipSkinCare) return -1;
+          if (!a.isFlagshipSkinCare && b.isFlagshipSkinCare) return 1;
+          return 0;
+        });
+        break;
+    }
+
+    return sorted;
+  }, [products, activeConcern, activeCategory, searchQuery, sortBy]);
 
   // Selected products for modal and checkout context
   const selectedProductsList = useMemo(() => {
@@ -201,7 +234,6 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
     <div className="bg-[#FAF9F5] min-h-screen text-[#26352D] pb-32 lg:pb-16 font-sans">
       {/* 1. Dynamic Hero Section */}
       <ComboHero
-        onOpenConsult={() => setIsConsultOpen(true)}
         tagline={config.heroTagline}
         title={config.heroTitle}
         highlight={config.heroHighlight}
@@ -210,40 +242,46 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
         stepGuide={config.stepGuide}
       />
 
-      {/* 2. Horizontal Combo Switcher Strip (Quick cross-navigation between all 4 builders) */}
+      {/* 2. Horizontal Combo Switcher Strip (numbered icon chips) */}
       <section className="bg-white border-b border-[#e4e7df] shadow-2xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5">
-          <div className="flex items-center justify-between gap-2.5 flex-wrap">
-            <span className="text-[10.5px] font-extrabold uppercase tracking-wider text-forest/70 whitespace-nowrap">
-              Explore Combo Builders:
-            </span>
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 sm:pb-0 scrollbar-none w-full sm:w-auto">
-              {COMBO_BUILDERS.map((builder) => {
-                const isCurrent = builder.slug === config.slug;
-                return (
-                  <Link
-                    key={builder.id}
-                    href={builder.href}
-                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
-                      isCurrent
-                        ? 'bg-[#18372b] text-white shadow-xs'
-                        : 'bg-stone-100 hover:bg-stone-200/80 text-charcoal'
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3">
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 sm:pb-0 scrollbar-none">
+            {COMBO_BUILDERS.map((builder, index) => {
+              const isCurrent = builder.slug === config.slug;
+              const Icon = BUILDER_ICONS[builder.slug] || Droplets;
+              return (
+                <Link
+                  key={builder.id}
+                  href={builder.href}
+                  className={`inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-[13px] font-bold transition-all whitespace-nowrap border ${
+                    isCurrent
+                      ? 'bg-[#18372b] text-white border-[#18372b] shadow-xs'
+                      : 'bg-white text-[#3c5445] hover:bg-stone-50 border-[#dbe4da]'
+                  }`}
+                >
+                  <span
+                    className={`flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-extrabold ${
+                      isCurrent ? 'bg-white/20 text-white' : 'bg-[#eef3ec] text-[#2e6845]'
                     }`}
                   >
-                    <span>{builder.name}</span>
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <Icon size={14} className={isCurrent ? 'text-white' : 'text-[#2e6845]'} />
+                    {builder.shortName}
+                  </span>
+                  {builder.popular && (
                     <span
-                      className={`text-[9.5px] px-1.5 py-0.2 rounded-full ${
-                        isCurrent
-                          ? 'bg-white/20 text-white'
-                          : 'bg-stone-200 text-stone-600'
+                      className={`text-[9px] px-1.5 py-0.5 rounded-full font-extrabold uppercase tracking-wide ${
+                        isCurrent ? 'bg-white/20 text-white' : 'bg-[#eaf6ee] text-[#2e6845]'
                       }`}
                     >
-                      {builder.badge}
+                      Most Popular
                     </span>
-                  </Link>
-                );
-              })}
-            </div>
+                  )}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -265,8 +303,13 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
               </p>
             </div>
 
-            <div className="text-[10.5px] font-extrabold uppercase tracking-wider text-[#3c5445] bg-white px-2.5 py-1 rounded-full border border-[#d8e4da] self-start sm:self-auto shadow-xs">
-              {config.catalogCountBadge}
+            <div className="flex flex-col gap-1.5 self-start sm:self-auto">
+              <div className="text-[10.5px] font-extrabold uppercase tracking-wider text-[#3c5445] bg-white px-2.5 py-1 rounded-full border border-[#d8e4da] shadow-xs">
+                {config.catalogCountBadge}
+              </div>
+              <div className="text-[10px] font-extrabold uppercase tracking-wider text-white bg-[#2f7d54] px-2.5 py-1 rounded-full shadow-xs">
+                3 Simple Steps
+              </div>
             </div>
           </div>
 
@@ -282,45 +325,67 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
                 concerns={config.concerns}
               />
 
-              {/* Navigation Tools: Categories and Search Filter */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 bg-white p-2 sm:p-2.5 rounded-[14px] border border-[#e4e7df] shadow-xs">
-                {/* Horizontal Category Tabs */}
-                <div className="flex items-center gap-1 overflow-x-auto pb-0.5 sm:pb-0 scrollbar-none">
-                  {config.categories.map((cat) => {
-                    const isActive = activeCategory === cat;
-                    return (
-                      <button
-                        key={cat}
-                        type="button"
-                        onClick={() => setActiveCategory(cat)}
-                        className={`px-2.5 py-1.5 rounded-[9px] text-xs font-extrabold whitespace-nowrap transition-colors ${
-                          isActive
-                            ? 'bg-[#244e3b] text-white shadow-xs border border-[#244e3b]'
-                            : 'text-[#3c5445] hover:text-[#18372b] hover:bg-[#eef3ec] border border-transparent'
-                        }`}
-                      >
-                        {cat}
-                      </button>
-                    );
-                  })}
+              {/* Catalog sub-header + compact control row */}
+              <div className="space-y-2.5">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-[15px] sm:text-base font-extrabold text-[#18372b]">
+                    {activeCategory === 'All products' ? 'Browse All' : activeCategory}
+                  </h3>
+                  <span className="text-[10.5px] text-[#5c6f63]">
+                    {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
+                  </span>
                 </div>
 
-                {/* Search Bar */}
-                <div className="relative min-w-[180px] sm:min-w-[200px]">
-                  <Search size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-stone-400" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder={`Search ${products.length} products...`}
-                    aria-label="Search products"
-                    className="w-full pl-7 pr-3 py-1 rounded-[8px] bg-stone-50 border border-[#dce5da] text-xs text-[#18372b] placeholder-stone-400 focus:bg-white focus:outline-none focus:border-[#244e3b]"
-                  />
+                <div className="flex flex-wrap items-center justify-between gap-2.5 bg-white p-2.5 sm:p-3 rounded-[14px] border border-[#e4e7df] shadow-xs">
+                  {/* Category dropdown */}
+                  <div className="relative">
+                    <select
+                      value={activeCategory}
+                      onChange={(e) => setActiveCategory(e.target.value as MerchandisingCategory)}
+                      aria-label="Filter by category"
+                      className="appearance-none pl-3 pr-8 py-1.5 rounded-[9px] bg-stone-50 border border-[#dce5da] text-xs font-extrabold text-[#18372b] focus:bg-white focus:outline-none focus:border-[#244e3b] cursor-pointer"
+                    >
+                      {config.categories.map((cat) => (
+                        <option key={cat} value={cat}>
+                          {cat === 'All products' ? 'All Products' : cat}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown
+                      size={13}
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 text-stone-400 pointer-events-none"
+                    />
+                  </div>
+
+                  {/* Sort dropdown */}
+                  <div className="relative">
+                    <select
+                      value={sortBy}
+                      onChange={(e) => setSortBy(e.target.value)}
+                      aria-label="Sort products"
+                      className="appearance-none pl-3 pr-8 py-1.5 rounded-[9px] bg-stone-50 border border-[#dce5da] text-xs font-extrabold text-[#18372b] focus:bg-white focus:outline-none focus:border-[#244e3b] cursor-pointer"
+                    >
+                      <option value="featured">Sort: Featured</option>
+                      <option value="price-asc">Price: Low to High</option>
+                      <option value="price-desc">Price: High to Low</option>
+                      <option value="name">Name: A to Z</option>
+                    </select>
+                    <ChevronDown
+                      size={13}
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 text-stone-400 pointer-events-none"
+                    />
+                  </div>
+
+                  {/* Volume-discount badge */}
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[9px] bg-[#faf6ea] border border-[#e8dcc0] text-[11px] font-extrabold text-[#8a6020]">
+                    <Tag size={13} />
+                    <span>10-15% Volume Discounts</span>
+                  </span>
                 </div>
               </div>
 
               {/* Products Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
                 {activeConcern.isEmergencyPathway ? (
                   <div className="col-span-2 py-12 px-6 text-center bg-rose-50 rounded-2xl border border-rose-200 space-y-3">
                     <p className="text-sm font-bold text-rose-900 max-w-lg mx-auto">

@@ -1,11 +1,9 @@
 'use client';
 
 import React from 'react';
-import { ArrowDown, MessageSquare, Sparkles, Layers, SlidersHorizontal, Tag, ArrowRight } from 'lucide-react';
-import { trackComboEvent } from '@/lib/comboAnalytics';
+import { ArrowDown, Sparkles, Layers, SlidersHorizontal, Tag, ArrowRight } from 'lucide-react';
 
 interface ComboHeroProps {
-  onOpenConsult: () => void;
   tagline?: string;
   title?: string;
   highlight?: string;
@@ -22,7 +20,6 @@ interface ComboHeroProps {
 }
 
 export const ComboHero: React.FC<ComboHeroProps> = ({
-  onOpenConsult,
   tagline = 'AyurRaksha Botanical Wellness',
   title = 'Build Your Own',
   highlight = 'Skin Care Combo',
@@ -43,11 +40,6 @@ export const ComboHero: React.FC<ComboHeroProps> = ({
     if (builderEl) {
       builderEl.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const handleConsultClick = () => {
-    trackComboEvent({ event: 'consult_click', placement: 'hero' });
-    onOpenConsult();
   };
 
   return (
@@ -76,72 +68,101 @@ export const ComboHero: React.FC<ComboHeroProps> = ({
               {description}
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-2.5 pt-0.5">
+            {/* Primary CTA */}
+            <div className="flex flex-wrap items-center gap-2.5 pt-1">
               <a
                 href="#builder-catalog"
                 onClick={handleScrollToBuilder}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-[10px] bg-[#e5b36d] hover:bg-[#d8a459] text-[#183d2d] font-extrabold text-xs tracking-wide transition-all shadow-md active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[10px] bg-[#1c513b] hover:bg-[#143e2d] text-white font-extrabold text-xs tracking-wide transition-all shadow-md active:scale-[0.98]"
               >
-                <span>Select Products Below</span>
+                <span>Select Products</span>
                 <ArrowDown size={13} />
               </a>
-
-              <button
-                type="button"
-                onClick={handleConsultClick}
-                className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-[10px] bg-white/10 hover:bg-white/20 border border-white/25 text-white font-extrabold text-xs transition-all shadow-xs"
-              >
-                <MessageSquare size={13} className="text-[#f5d79e]" />
-                <span>Talk to an Ayurvedic Doctor</span>
-              </button>
             </div>
           </div>
 
-          {/* Right: Simplified 3-Step Guide with Icons */}
-          <div className="lg:col-span-5 bg-white/10 backdrop-blur-md rounded-[16px] border border-white/20 p-3.5 sm:p-4 text-white">
-            <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#edc48a] block mb-2.5">
-              HOW COMBO BUILDER WORKS
-            </span>
-            <div className="grid grid-cols-3 gap-2 text-center items-start">
-              {/* Step 1 */}
-              <div className="flex flex-col items-center">
-                <div className="w-8 h-8 rounded-full bg-[#e5b36d] text-[#183d2d] flex items-center justify-center mb-1.5 shadow-xs">
-                  <Layers size={15} />
-                </div>
-                <strong className="text-[11px] sm:text-xs text-white font-bold leading-tight block">
-                  {stepGuide.step1Title}
-                </strong>
-                <span className="text-[9.5px] sm:text-[10px] text-emerald-100/80 leading-tight mt-0.5">
-                  {stepGuide.step1Desc}
+          {/* Right: How Combo Builder Works — white card with numbered steps */}
+          <div className="lg:col-span-5">
+            <div className="bg-white text-[#26352d] rounded-2xl border border-[#dbe4da] shadow-[0_10px_30px_rgba(16,40,29,0.18)] p-4 sm:p-5">
+              <div className="flex items-center justify-between gap-2 mb-4">
+                <h2 className="text-[15px] sm:text-base font-extrabold text-[#18372b]">
+                  How Combo Builder Works
+                </h2>
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#8a6020] bg-[#faf6ea] border border-[#e8dcc0] px-2 py-0.5 rounded-full">
+                  3 Simple Steps
                 </span>
               </div>
 
-              {/* Step 2 */}
-              <div className="flex flex-col items-center relative">
-                <div className="w-8 h-8 rounded-full bg-[#e5b36d] text-[#183d2d] flex items-center justify-center mb-1.5 shadow-xs">
-                  <SlidersHorizontal size={15} />
+              <div className="space-y-3.5">
+                {/* Step 1 */}
+                <div className="flex items-start gap-3">
+                  <div className="w-7 h-7 rounded-full bg-[#1c513b] text-white text-[11px] font-extrabold flex items-center justify-center flex-shrink-0">
+                    01
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-[#1c513b] mt-0.5 flex-shrink-0">
+                      <Layers size={17} />
+                    </span>
+                    <div>
+                      <strong className="text-[12.5px] sm:text-[13px] font-extrabold text-[#18372b] block leading-tight">
+                        {stepGuide.step1Title}
+                      </strong>
+                      <span className="text-[10.5px] sm:text-[11px] text-[#5c6f63] leading-snug block mt-0.5">
+                        {stepGuide.step1Desc}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <strong className="text-[11px] sm:text-xs text-white font-bold leading-tight block">
-                  {stepGuide.step2Title}
-                </strong>
-                <span className="text-[9.5px] sm:text-[10px] text-emerald-100/80 leading-tight mt-0.5">
-                  {stepGuide.step2Desc}
-                </span>
+
+                {/* Step 2 */}
+                <div className="flex items-start gap-3">
+                  <div className="w-7 h-7 rounded-full bg-[#1c513b] text-white text-[11px] font-extrabold flex items-center justify-center flex-shrink-0">
+                    02
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-[#1c513b] mt-0.5 flex-shrink-0">
+                      <SlidersHorizontal size={17} />
+                    </span>
+                    <div>
+                      <strong className="text-[12.5px] sm:text-[13px] font-extrabold text-[#18372b] block leading-tight">
+                        {stepGuide.step2Title}
+                      </strong>
+                      <span className="text-[10.5px] sm:text-[11px] text-[#5c6f63] leading-snug block mt-0.5">
+                        {stepGuide.step2Desc}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="flex items-start gap-3">
+                  <div className="w-7 h-7 rounded-full bg-[#1c513b] text-white text-[11px] font-extrabold flex items-center justify-center flex-shrink-0">
+                    03
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-[#1c513b] mt-0.5 flex-shrink-0">
+                      <Tag size={17} />
+                    </span>
+                    <div>
+                      <strong className="text-[12.5px] sm:text-[13px] font-extrabold text-[#18372b] block leading-tight">
+                        {stepGuide.step3Title}
+                      </strong>
+                      <span className="text-[10.5px] sm:text-[11px] text-[#5c6f63] leading-snug block mt-0.5">
+                        {stepGuide.step3Desc}
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Step 3 */}
-              <div className="flex flex-col items-center">
-                <div className="w-8 h-8 rounded-full bg-[#e5b36d] text-[#183d2d] flex items-center justify-center mb-1.5 shadow-xs">
-                  <Tag size={15} />
-                </div>
-                <strong className="text-[11px] sm:text-xs text-white font-bold leading-tight block">
-                  {stepGuide.step3Title}
-                </strong>
-                <span className="text-[9.5px] sm:text-[10px] text-emerald-100/80 leading-tight mt-0.5">
-                  {stepGuide.step3Desc}
-                </span>
-              </div>
+              <a
+                href="#builder-catalog"
+                onClick={handleScrollToBuilder}
+                className="mt-4 text-[11.5px] font-extrabold text-[#2e6845] inline-flex items-center gap-1"
+              >
+                Start your combo
+                <ArrowRight size={13} />
+              </a>
             </div>
           </div>
         </div>

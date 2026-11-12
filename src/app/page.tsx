@@ -15,9 +15,6 @@ const FeaturedVideos = dynamic(
 const ReviewsSection = dynamic(
   () => import('@/components/home/ReviewsSection').then((m) => m.ReviewsSection)
 );
-const FeaturedCombos = dynamic(
-  () => import('@/components/home/FeaturedCombos').then((m) => m.FeaturedCombos)
-);
 const TransparencyFaq = dynamic(
   () => import('@/components/home/TransparencyFaq').then((m) => m.TransparencyFaq)
 );
@@ -49,10 +46,7 @@ export default function HomePage() {
       {/* 7. Real Patient Case Studies & Judge.me Reviews */}
       <ReviewsSection />
 
-      {/* 8. Build Your Own Combo (Above FAQ) */}
-      <FeaturedCombos />
-
-      {/* 9. Ingredients & Clinical Transparency FAQ */}
+      {/* 8. Ingredients & Clinical Transparency FAQ */}
       <TransparencyFaq />
 
       {/* 9. The Wellness Journal Highlights */}

@@ -8,7 +8,7 @@ import { ProductDetailsSections } from '@/components/pdp/ProductDetailsSections'
 import { StickyMobileBar } from '@/components/pdp/StickyMobileBar';
 import { ProductCard } from '@/components/ProductCard';
 import { PDPProvider } from '@/context/PDPContext';
-import { getAllProducts, getProductBySlug } from '@/lib/products';
+import { getProductBySlug, getStaticParamSlugs } from '@/lib/products';
 import { fetchCmsProduct, resolveRecommendedProducts } from '@/lib/cms';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
@@ -16,10 +16,14 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Pre-render every Product at both URL shapes it can be reached at: the
+// bundled slug and the CMS post_name alias (when they differ). This is what
+// lets a CMS-native URL such as /product/ayurraksha-hair-well-.../ render
+// alongside the storefront slug /product/hair-well-.../, keeping the PDP
+// catalog in sync with the live CMS without re-hardcoding any content.
 export async function generateStaticParams() {
-  const products = getAllProducts();
-  return products.map((p) => ({
-    slug: p.slug,
+  return getStaticParamSlugs().map((slug) => ({
+    slug,
   }));
 }
 

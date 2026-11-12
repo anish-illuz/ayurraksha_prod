@@ -1,41 +1,13 @@
 import { Product, ProductAcf } from '@/types/product';
-import { getAllProducts } from './products';
+import { getAllProducts, SLUG_ALIASES } from './products';
 import { matchRecommendedProducts } from './recommendedProducts';
 
 const CMS_DOMAIN = 'https://cms.ayurrakshaonline.com';
 
-// Slug aliases between frontend storefront slugs and WordPress CMS post_name slugs
-export const SLUG_ALIASES: Record<string, string> = {
-  'etionment-pain-relief-cream': 'etioment-balm',
-  'skin-well-food-supplement-capsules': 'skin-well-capsules',
-  'flow-well-food-supplement-capsules': 'flow-well-capsules',
-  'esnovate-immunity-boosting-capsules': 'esnovate-capsules',
-  'sleep-well-food-supplement-capsules': 'sleep-well-capsules',
-  'organics-hibiscus-tea-tin': 'hibiscus-tea-tin',
-  'organics-herbo-protein-powder': 'herbo-protein-powder',
-  'organics-laxahealth-tea-tin': 'laxa-health-tea-tin',
-  'purna-sakthi-tonic': 'purna-sakthi',
-  'ayur-raksha-superheal-o3-cream': 'ayurraksha-superheal-o3-cream',
-  'ayur-raksha-skinwell-soap-pack-of-2': 'skinwell-soap-pack-of-2',
-  'ayurraksha-skinwell-soap-pack-of-2': 'skinwell-soap-pack-of-2',
-  'ayur-raksha-detox-tea': 'ayurraksha-detox-tea',
-  'ayur-raksha-beta-powder': 'ayurraksha-beta-powder',
-  'ayur-raksha-gargling-oil': 'ayurraksha-gargling-oil',
-  'ayur-raksha-alg': 'ayurraksha-alg',
-  'ayur-raksha-creat-capsules': 'ayurraksha-creat-capsules',
-  'ayur-raksha-imu-360': 'ayurraksha-imu-360',
-  'ayur-raksha-skin-conditioning-oil': 'ayurraksha-skin-conditioning-oil',
-  'ayur-raksha-herbal-shampoo': 'ayurraksha-herbal-shampoo',
-  'ayur-raksha-premium-high-fiber-health-mix': 'ayurraksha-premium-high-fiber-health-mix',
-  'ayur-raksha-skin-well-food-moisturising-gel': 'ayurraksha-skin-well-food-moisturising-gel',
-  'ayur-raksha-dant-swasthya': 'ayur-raksha-dant-swasthya',
-  'ayur-raksha-foot-bath-powder': 'ayurraksha-foot-bath-powder-300g',
-  'hair-well-food-supplement-capsules': 'ayurraksha-hair-well-food-supplement-capsules',
-  'sp-soryn-cream': 'ayurraksha-sp-soryn-cream',
-  'b-derma-capsules': 'ayurraksha-b-derma-capsules',
-  'bpain-out-capsules': 'ayurraksha-bpain-out-capsules',
-  'b-gasonil': 'b-gasonil-capsules',
-};
+// SLUG_ALIASES (bundle slug -> CMS post_name) lives in lib/products.ts so
+// catalog slug resolution and CMS content fetching share one authoritative
+// table. Re-exported here for any existing importer of lib/cms.
+export { SLUG_ALIASES };
 
 export interface CmsProductResponse {
   id: number;

@@ -183,9 +183,16 @@ export async function POST(req: Request) {
 
     for (const item of items) {
       const product = getProductById(item.product?.id || item.id);
-      const variant = product?.variants && product.variants.length > 0
-        ? (product.variants.find(v => v.id === item.variantId || v.name === item.selectedVariant) || product.variants.find(v => v.default) || product.variants[0])
-        : undefined;
+      let variant: any;
+      if (item.variantId) {
+        // A variation was selected: it must match a real, in-stock variant of this product.
+        variant = product?.variants?.find(v => v.id === item.variantId);
+        if (!variant) {
+          return NextResponse.json({ success: false, error: 'An item in your cart is no longer available. Please refresh your cart.' }, { status: 400 });
+        }
+      } else if (product?.variants && product.variants.length > 0) {
+        variant = product.variants.find(v => v.name === item.selectedVariant) || undefined;
+      }
       if (!product?.inStock || variant?.inStock === false || !Number.isInteger(item.quantity) || item.quantity < 1) {
         return NextResponse.json({ success: false, error: 'An item is unavailable or has an invalid quantity. Please refresh your cart.' }, { status: 400 });
       }
@@ -244,6 +251,17 @@ export async function POST(req: Request) {
       const variantName = item.selectedVariant ? ` (${item.selectedVariant})` : '';
       itemManifest.push(`${itemName}${variantName} x ${targetQuantity}`);
 
+      // The WooCommerce Store API selects a variation via its attribute map
+      // (e.g. { pa_packs: "30-days-pack" }), not by variation id. Resolve it from
+      // the matching variant in the catalog (which carries the synced attribute map).
+      const matchedVariant = item.variantId
+        ? product?.variants?.find((v) => v.id === item.variantId)
+        : undefined;
+      const variationAttributes: Record<string, string> | undefined =
+        matchedVariant?.attributes && Object.keys(matchedVariant.attributes).length > 0
+          ? matchedVariant.attributes
+          : undefined;
+
       const addRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
         method: 'POST',
         headers: {
@@ -256,6 +274,7 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           id: targetId,
           quantity: targetQuantity,
+          ...(variationAttributes ? { attributes: variationAttributes } : {}),
         }),
         cache: 'no-store',
       });
@@ -278,6 +297,7 @@ export async function POST(req: Request) {
           body: JSON.stringify({
             id: DEFAULT_CMS_PRODUCT_ID,
             quantity: targetQuantity,
+            variation_id: 0,
           }),
           cache: 'no-store',
         });

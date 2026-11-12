@@ -98,7 +98,7 @@ export default function CartPage() {
                           </p>
                         )}
                         <span className="text-xs font-bold text-forest sm:hidden block mt-1">
-                          ₹{item.product.price.toLocaleString('en-IN')}
+                          ₹{(item.variantPrice ?? item.product.price).toLocaleString('en-IN')}
                         </span>
                       </div>
                     </div>
@@ -127,7 +127,7 @@ export default function CartPage() {
 
                       <div className="text-right min-w-[5rem]">
                         <span className="text-sm font-bold text-forest">
-                          ₹{(item.product.price * item.quantity).toLocaleString('en-IN')}
+                          ₹{((item.variantPrice ?? item.product.price) * item.quantity).toLocaleString('en-IN')}
                         </span>
                       </div>
 

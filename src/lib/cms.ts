@@ -1,5 +1,6 @@
 import { Product, ProductAcf } from '@/types/product';
-import { getAllProducts, getRelatedProducts } from '@/lib/products';
+import { getAllProducts } from './products';
+import { matchRecommendedProducts } from './recommendedProducts';
 
 const CMS_DOMAIN = 'https://cms.ayurrakshaonline.com';
 
@@ -12,10 +13,11 @@ export const SLUG_ALIASES: Record<string, string> = {
   'sleep-well-food-supplement-capsules': 'sleep-well-capsules',
   'organics-hibiscus-tea-tin': 'hibiscus-tea-tin',
   'organics-herbo-protein-powder': 'herbo-protein-powder',
-  'organics-laxahealth-tea-tin': 'laxa-health-tea',
+  'organics-laxahealth-tea-tin': 'laxa-health-tea-tin',
+  'purna-sakthi-tonic': 'purna-sakthi',
   'ayur-raksha-superheal-o3-cream': 'ayurraksha-superheal-o3-cream',
-  'ayur-raksha-skinwell-soap-pack-of-2': 'ayurraksha-skinwell-soap',
-  'ayurraksha-skinwell-soap-pack-of-2': 'ayurraksha-skinwell-soap',
+  'ayur-raksha-skinwell-soap-pack-of-2': 'skinwell-soap-pack-of-2',
+  'ayurraksha-skinwell-soap-pack-of-2': 'skinwell-soap-pack-of-2',
   'ayur-raksha-detox-tea': 'ayurraksha-detox-tea',
   'ayur-raksha-beta-powder': 'ayurraksha-beta-powder',
   'ayur-raksha-gargling-oil': 'ayurraksha-gargling-oil',
@@ -27,6 +29,12 @@ export const SLUG_ALIASES: Record<string, string> = {
   'ayur-raksha-premium-high-fiber-health-mix': 'ayurraksha-premium-high-fiber-health-mix',
   'ayur-raksha-skin-well-food-moisturising-gel': 'ayurraksha-skin-well-food-moisturising-gel',
   'ayur-raksha-dant-swasthya': 'ayur-raksha-dant-swasthya',
+  'ayur-raksha-foot-bath-powder': 'ayurraksha-foot-bath-powder-300g',
+  'hair-well-food-supplement-capsules': 'ayurraksha-hair-well-food-supplement-capsules',
+  'sp-soryn-cream': 'ayurraksha-sp-soryn-cream',
+  'b-derma-capsules': 'ayurraksha-b-derma-capsules',
+  'bpain-out-capsules': 'ayurraksha-bpain-out-capsules',
+  'b-gasonil': 'b-gasonil-capsules',
 };
 
 export interface CmsProductResponse {
@@ -93,76 +101,21 @@ export async function fetchCmsProduct(slug: string): Promise<CmsProductResponse 
 }
 
 /**
- * Resolve recommended products from the WordPress ACF `recommended_products` field.
- * Matches product names against the active catalog.
+ * Resolve recommended products strictly from the WordPress ACF
+ * `recommended_products` field.
+ *
+ * The ACF field is the single source of truth: only the products explicitly
+ * selected there are returned. No related, similar, bestseller, category or
+ * tag based fallback is ever applied. When the field is empty - or nothing in
+ * it resolves to a catalog product - an empty list is returned and the PDP
+ * hides the entire Recommended Products section.
  */
 export function resolveRecommendedProducts(
   recommendedText: string | undefined,
   currentProduct: Product,
   limit = 4
 ): Product[] {
-  const all = getAllProducts();
-  if (!recommendedText || !recommendedText.trim()) {
-    return getRelatedProducts(currentProduct, limit);
-  }
-
-  // Split by newlines, commas, or common separators
-  const rawTerms = recommendedText
-    .split(/[\r\n,]+/)
-    .map((s) => s.trim())
-    .filter(Boolean);
-
-  const matched: Product[] = [];
-  const matchedIds = new Set<number>([currentProduct.id]);
-
-  for (const term of rawTerms) {
-    const termClean = term.toLowerCase().replace(/[^a-z0-9]/g, ' ').trim();
-    if (!termClean) continue;
-
-    // 1. Direct match
-    const exact = all.find(
-      (p) =>
-        !matchedIds.has(p.id) &&
-        (p.name.toLowerCase() === termClean ||
-          p.slug.toLowerCase() === termClean ||
-          p.name.toLowerCase().includes(termClean) ||
-          termClean.includes(p.name.toLowerCase()))
-    );
-
-    if (exact) {
-      matched.push(exact);
-      matchedIds.add(exact.id);
-      if (matched.length >= limit) break;
-      continue;
-    }
-
-    // 2. Token overlap match (e.g. "BoozLiv", "Hibiscus Tea", "Detox Tea")
-    const words = termClean.split(/\s+/).filter((w) => w.length > 3);
-    if (words.length > 0) {
-      const partial = all.find((p) => {
-        if (matchedIds.has(p.id)) return false;
-        const pName = p.name.toLowerCase();
-        return words.filter((w) => pName.includes(w)).length >= Math.min(2, words.length);
-      });
-      if (partial) {
-        matched.push(partial);
-        matchedIds.add(partial.id);
-        if (matched.length >= limit) break;
-      }
-    }
-  }
-
-  if (matched.length > 0) {
-    if (matched.length < limit) {
-      const fallbackRelated = getRelatedProducts(currentProduct, limit - matched.length).filter(
-        (p) => !matchedIds.has(p.id)
-      );
-      return [...matched, ...fallbackRelated];
-    }
-    return matched.slice(0, limit);
-  }
-
-  return getRelatedProducts(currentProduct, limit);
+  return matchRecommendedProducts(recommendedText, getAllProducts(), currentProduct, limit);
 }
 
 function stripTags(html: string): string {

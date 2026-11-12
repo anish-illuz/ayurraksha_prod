@@ -123,26 +123,37 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {packOptions.map((pack) => {
               const isSelected = selectedPackId === pack.id;
+              const isOutOfStock = pack.inStock === false;
               return (
                 <div
                   key={pack.id}
                   onClick={() => setSelectedPackId(pack.id)}
-                  className={`cursor-pointer p-3 sm:p-3.5 rounded-xl border-2 transition-all flex flex-col justify-between relative ${
-                    isSelected
-                      ? 'border-botanical bg-white shadow-2xs'
-                      : 'border-stone-200/90 bg-white hover:border-stone-300'
+                  aria-disabled={isOutOfStock}
+                  className={`p-3 sm:p-3.5 rounded-xl border-2 transition-all flex flex-col justify-between relative ${
+                    isOutOfStock
+                      ? 'border-stone-200/70 bg-stone-50 opacity-60 cursor-not-allowed'
+                      : isSelected
+                        ? 'cursor-pointer border-botanical bg-white shadow-2xs'
+                        : 'cursor-pointer border-stone-200/90 bg-white hover:border-stone-300'
                   }`}
                 >
+                  {isOutOfStock && (
+                    <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-stone-200 text-stone-600 whitespace-nowrap">
+                      Out of stock
+                    </span>
+                  )}
                   <div className="flex items-start justify-between gap-1.5 mb-1.5">
                     <div className="flex items-center gap-2">
                       <div className={`w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center shrink-0 ${
-                        isSelected ? 'border-botanical' : 'border-stone-300'
+                        isSelected ? 'border-botanical' : isOutOfStock ? 'border-stone-200' : 'border-stone-300'
                       }`}>
                         {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-botanical" />}
                       </div>
-                      <span className="text-xs sm:text-sm font-bold text-forest whitespace-nowrap">{formatPackMeasurement(pack.name)}</span>
+                      <span className={`text-xs sm:text-sm font-bold whitespace-nowrap ${isOutOfStock ? 'text-stone-400 line-through' : 'text-forest'}`}>
+                        {formatPackMeasurement(pack.name)}
+                      </span>
                     </div>
-                    {pack.discountBadge && (
+                    {!isOutOfStock && pack.discountBadge && (
                       <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-100 text-amber-900 shrink-0 whitespace-nowrap">
                         {pack.discountBadge}
                       </span>
@@ -150,13 +161,13 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
                   </div>
 
                   {pack.subtitle && (
-                    <span className="text-[11px] text-charcoal-muted block pl-5 mb-2 whitespace-nowrap">
+                    <span className={`text-[11px] block pl-5 mb-2 whitespace-nowrap ${isOutOfStock ? 'text-stone-300' : 'text-charcoal-muted'}`}>
                       {formatPackMeasurement(pack.subtitle)}
                     </span>
                   )}
 
-                  <div className="pt-1.5 border-t border-stone-100 pl-5 flex items-baseline justify-between">
-                    <span className="text-sm sm:text-base font-bold text-forest whitespace-nowrap">
+                  <div className={`pt-1.5 border-t pl-5 flex items-baseline justify-between ${isOutOfStock ? 'border-stone-200/60' : 'border-stone-100'}`}>
+                    <span className={`text-sm sm:text-base font-bold whitespace-nowrap ${isOutOfStock ? 'text-stone-400' : 'text-forest'}`}>
                       ₹{pack.price.toLocaleString('en-IN')}
                     </span>
                     {pack.regularPrice && pack.regularPrice > pack.price && (

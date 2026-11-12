@@ -34,7 +34,30 @@
     "description": "<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mb-3 leading-snug\">Traditional Siddha Wisdom for Liver Wellness</h3>\n<p class=\"leading-relaxed mb-4\">Discover BoozLiv Syrup, a thoughtfully developed Siddha herbal formulation from AyurRaksha, inspired by India's rich heritage of traditional botanical medicine and holistic wellbeing.</p>\n<p class=\"leading-relaxed mb-4\">Created with a focus on liver wellness, BoozLiv brings together a selection of traditional botanical extracts in a convenient, ready-to-use liquid format. The formulation reflects the principles of Siddha medicine, where carefully selected herbs have long been incorporated into traditional wellness practices.</p>\n<p class=\"leading-relaxed mb-4\">The liver plays an important role in the body's natural metabolic processes, making responsible lifestyle choices an essential part of maintaining overall wellbeing. Balanced nutrition, regular physical activity and limiting alcohol consumption are important considerations in a liver-conscious lifestyle.</p>\n<p class=\"leading-relaxed mb-4\">BoozLiv Syrup represents AyurRaksha's approach to combining traditional Siddha knowledge with contemporary product convenience. Its individually packed sachets offer a practical format for people who appreciate traditional herbal preparations and prefer pre-measured servings.</p>\n<p class=\"leading-relaxed mb-4\">Developed for adults exploring botanical wellness under appropriate professional guidance, BoozLiv connects traditional Indian medicinal heritage with modern wellness practices.</p>\n<p class=\"leading-relaxed mb-4\">Experience the heritage of Siddha medicine with BoozLiv Syrup by AyurRaksha – where traditional botanical knowledge meets modern convenience.</p>\n<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mt-6 mb-3 leading-snug\">Key Features &amp; Benefits</h3>\n<ul class=\"list-disc pl-5 space-y-1.5 mb-4\">\n  <li class=\"leading-relaxed\">Traditional Siddha proprietary herbal formulation.</li>\n  <li class=\"leading-relaxed\">Features six botanical ingredients associated with traditional liver-care preparations.</li>\n  <li class=\"leading-relaxed\">Developed with a focus on liver wellness.</li>\n  <li class=\"leading-relaxed\">Contains plant-derived extracts in a liquid syrup formulation.</li>\n</ul>",
     "cleanDescription": "Discover BoozLiv Syrup, a thoughtfully developed Siddha herbal formulation from AyurRaksha, inspired by India's rich heritage of traditional botanical medicine and holistic wellbeing. Created with a focus on liver wellness, BoozLiv brings together a selection of traditional botanical extracts in a convenient, ready-to-use liquid format. The formulation reflects the principles of Siddha medicine, where carefully selected herbs have long been incorporated into traditional wellness practices. The liver plays an important role in the body's natural metabolic processes, making responsible lifestyle choices an essential part of maintaining overall wellbeing. Balanced nutrition, regular physical activity and limiting alcohol consumption are important considerations in a liver-conscious lifestyle. BoozLiv Syrup represents AyurRaksha's approach to combining traditional Siddha knowledge with contemporary product convenience. Its individually packed sachets offer a practical format for people who appreciate traditional herbal preparations and prefer pre-measured servings. Developed for adults exploring botanical wellness under appropriate professional guidance, BoozLiv connects traditional Indian medicinal heritage with modern wellness practices. Experience the heritage of Siddha medicine with BoozLiv Syrup by AyurRaksha – where traditional botanical knowledge meets modern convenience.",
     "inStock": true,
-    "variants": [],
+    "variants": [
+      {
+        "id": 28305,
+        "name": "30 Days Pack",
+        "slug": "syrup-30-days-pack",
+        "price": 2400,
+        "regularPrice": 2600,
+        "salePrice": 2400,
+        "discountPercent": 8,
+        "inStock": true,
+        "default": true
+      },
+      {
+        "id": 28306,
+        "name": "60 Days Pack",
+        "slug": "syrup-60-days-pack",
+        "price": 3850,
+        "regularPrice": 5200,
+        "salePrice": 3850,
+        "discountPercent": 26,
+        "inStock": true,
+        "default": false
+      }
+    ],
     "sku": "",
     "fullDescription": "<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mb-3 leading-snug\">Traditional Siddha Wisdom for Liver Wellness</h3>\n<p class=\"leading-relaxed mb-4\">Discover BoozLiv Syrup, a thoughtfully developed Siddha herbal formulation from AyurRaksha, inspired by India's rich heritage of traditional botanical medicine and holistic wellbeing.</p>\n<p class=\"leading-relaxed mb-4\">Created with a focus on liver wellness, BoozLiv brings together a selection of traditional botanical extracts in a convenient, ready-to-use liquid format. The formulation reflects the principles of Siddha medicine, where carefully selected herbs have long been incorporated into traditional wellness practices.</p>\n<p class=\"leading-relaxed mb-4\">The liver plays an important role in the body's natural metabolic processes, making responsible lifestyle choices an essential part of maintaining overall wellbeing. Balanced nutrition, regular physical activity and limiting alcohol consumption are important considerations in a liver-conscious lifestyle.</p>\n<p class=\"leading-relaxed mb-4\">BoozLiv Syrup represents AyurRaksha's approach to combining traditional Siddha knowledge with contemporary product convenience. Its individually packed sachets offer a practical format for people who appreciate traditional herbal preparations and prefer pre-measured servings.</p>\n<p class=\"leading-relaxed mb-4\">Developed for adults exploring botanical wellness under appropriate professional guidance, BoozLiv connects traditional Indian medicinal heritage with modern wellness practices.</p>\n<p class=\"leading-relaxed mb-4\">Experience the heritage of Siddha medicine with BoozLiv Syrup by AyurRaksha – where traditional botanical knowledge meets modern convenience.</p>\n<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mt-6 mb-3 leading-snug\">Key Features &amp; Benefits</h3>\n<ul class=\"list-disc pl-5 space-y-1.5 mb-4\">\n  <li class=\"leading-relaxed\">Traditional Siddha proprietary herbal formulation.</li>\n  <li class=\"leading-relaxed\">Features six botanical ingredients associated with traditional liver-care preparations.</li>\n  <li class=\"leading-relaxed\">Developed with a focus on liver wellness.</li>\n  <li class=\"leading-relaxed\">Contains plant-derived extracts in a liquid syrup formulation.</li>\n</ul>",
     "features": [
@@ -4407,7 +4430,41 @@
     "description": "<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mb-3 leading-snug\">Traditional Ayurvedic Wisdom for a Balanced Lifestyle</h3>\n<p class=\"leading-relaxed mb-4\">Discover BoozNil, a thoughtfully developed Ayurvedic proprietary herbal formulation inspired by India's rich heritage of traditional botanical medicine and holistic wellness.</p>\n<p class=\"leading-relaxed mb-4\">Created with a focus on alcohol-related wellbeing, BoozNil brings together a selection of botanicals traditionally valued in Ayurvedic preparations. The formulation reflects a heritage-based approach to personal care that recognizes the importance of balance, responsible lifestyle choices and professional health guidance.</p>\n<p class=\"leading-relaxed mb-4\">Making positive changes to everyday habits can involve several aspects of wellbeing, including nutrition, rest, emotional support and maintaining a consistent routine. BoozNil is positioned within AyurRaksha's specialized wellness collection for individuals exploring traditional herbal preparations alongside these broader lifestyle considerations.</p>\n<p class=\"leading-relaxed mb-4\">Combining traditional botanical knowledge with a convenient liquid format, BoozNil represents AyurRaksha's approach to making established herbal practices accessible to contemporary consumers.</p>\n<p class=\"leading-relaxed mb-4\">Its formulation draws inspiration from India's longstanding use of botanical ingredients while emphasizing the importance of informed and responsible wellness choices.</p>\n<p class=\"leading-relaxed mb-4\">For individuals seeking to make positive lifestyle changes, traditional herbal products should be considered within a broader approach that includes appropriate professional guidance and evidence-based support.</p>\n<p class=\"leading-relaxed mb-4\">BoozNil – inspired by Ayurvedic heritage and a thoughtful approach to personal wellness.</p>\n<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mt-6 mb-3 leading-snug\">Key Features &amp; Benefits</h3>\n<ul class=\"list-disc pl-5 space-y-1.5 mb-4\">\n  <li class=\"leading-relaxed\">Ayurvedic proprietary herbal formulation</li>\n  <li class=\"leading-relaxed\">Features a blend of traditional botanical extracts.</li>\n  <li class=\"leading-relaxed\">Contains seven ingredients.</li>\n  <li class=\"leading-relaxed\">Presented in a convenient oral liquid format.</li>\n  <li class=\"leading-relaxed\">Developed within AyurRaksha's alcohol-related wellness range.</li>\n  <li class=\"leading-relaxed\">Designed for use under appropriate professional guidance.</li>\n</ul>",
     "cleanDescription": "Discover BoozNil, a thoughtfully developed Ayurvedic proprietary herbal formulation inspired by India's rich heritage of traditional botanical medicine and holistic wellness. Created with a focus on alcohol-related wellbeing, BoozNil brings together a selection of botanicals traditionally valued in Ayurvedic preparations. The formulation reflects a heritage-based approach to personal care that recognizes the importance of balance, responsible lifestyle choices and professional health guidance. Making positive changes to everyday habits can involve several aspects of wellbeing, including nutrition, rest, emotional support and maintaining a consistent routine. BoozNil is positioned within AyurRaksha's specialized wellness collection for individuals exploring traditional herbal preparations alongside these broader lifestyle considerations. Combining traditional botanical knowledge with a convenient liquid format, BoozNil represents AyurRaksha's approach to making established herbal practices accessible to contemporary consumers. Its formulation draws inspiration from India's longstanding use of botanical ingredients while emphasizing the importance of informed and responsible wellness choices. For individuals seeking to make positive lifestyle changes, traditional herbal products should be considered within a broader approach that includes appropriate professional guidance and evidence-based support. BoozNil – inspired by Ayurvedic heritage and a thoughtful approach to personal wellness.",
     "inStock": true,
-    "variants": [],
+    "variants": [
+      {
+        "id": 28315,
+        "name": "10 Days",
+        "slug": "10-days",
+        "price": 800,
+        "regularPrice": 800,
+        "salePrice": 800,
+        "discountPercent": 0,
+        "inStock": true,
+        "default": true
+      },
+      {
+        "id": 28316,
+        "name": "20 Days",
+        "slug": "20-days",
+        "price": 1600,
+        "regularPrice": 1600,
+        "salePrice": 1600,
+        "discountPercent": 0,
+        "inStock": true,
+        "default": false
+      },
+      {
+        "id": 28317,
+        "name": "1 Month",
+        "slug": "1-month",
+        "price": 2400,
+        "regularPrice": 2400,
+        "salePrice": 2400,
+        "discountPercent": 0,
+        "inStock": true,
+        "default": false
+      }
+    ],
     "sku": "",
     "fullDescription": "<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mb-3 leading-snug\">Traditional Ayurvedic Wisdom for a Balanced Lifestyle</h3>\n<p class=\"leading-relaxed mb-4\">Discover BoozNil, a thoughtfully developed Ayurvedic proprietary herbal formulation inspired by India's rich heritage of traditional botanical medicine and holistic wellness.</p>\n<p class=\"leading-relaxed mb-4\">Created with a focus on alcohol-related wellbeing, BoozNil brings together a selection of botanicals traditionally valued in Ayurvedic preparations. The formulation reflects a heritage-based approach to personal care that recognizes the importance of balance, responsible lifestyle choices and professional health guidance.</p>\n<p class=\"leading-relaxed mb-4\">Making positive changes to everyday habits can involve several aspects of wellbeing, including nutrition, rest, emotional support and maintaining a consistent routine. BoozNil is positioned within AyurRaksha's specialized wellness collection for individuals exploring traditional herbal preparations alongside these broader lifestyle considerations.</p>\n<p class=\"leading-relaxed mb-4\">Combining traditional botanical knowledge with a convenient liquid format, BoozNil represents AyurRaksha's approach to making established herbal practices accessible to contemporary consumers.</p>\n<p class=\"leading-relaxed mb-4\">Its formulation draws inspiration from India's longstanding use of botanical ingredients while emphasizing the importance of informed and responsible wellness choices.</p>\n<p class=\"leading-relaxed mb-4\">For individuals seeking to make positive lifestyle changes, traditional herbal products should be considered within a broader approach that includes appropriate professional guidance and evidence-based support.</p>\n<p class=\"leading-relaxed mb-4\">BoozNil – inspired by Ayurvedic heritage and a thoughtful approach to personal wellness.</p>\n<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mt-6 mb-3 leading-snug\">Key Features &amp; Benefits</h3>\n<ul class=\"list-disc pl-5 space-y-1.5 mb-4\">\n  <li class=\"leading-relaxed\">Ayurvedic proprietary herbal formulation</li>\n  <li class=\"leading-relaxed\">Features a blend of traditional botanical extracts.</li>\n  <li class=\"leading-relaxed\">Contains seven ingredients.</li>\n  <li class=\"leading-relaxed\">Presented in a convenient oral liquid format.</li>\n  <li class=\"leading-relaxed\">Developed within AyurRaksha's alcohol-related wellness range.</li>\n  <li class=\"leading-relaxed\">Designed for use under appropriate professional guidance.</li>\n</ul>",
     "features": [
@@ -6084,7 +6141,30 @@
     "description": "<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mb-3 leading-snug\">Traditional Botanical Nutrition Inspired by Siddha Heritage</h3>\n<p class=\"leading-relaxed mb-4\">Discover HERBO PROTEIN Powder by 18 Herbs Organics, a distinctive plant-based formulation inspired by India's longstanding traditions of botanical nutrition and Siddha wellness.</p>\n<p class=\"leading-relaxed mb-4\">Rooted in traditional Indian herbal knowledge, HERBO PROTEIN brings together the familiarity of a naturally derived botanical ingredient with the convenience of a modern powdered preparation.</p>\n<p class=\"leading-relaxed mb-4\">Unlike conventional protein blends made from multiple ingredients, HERBO PROTEIN is formulated around a single traditional botanical source. Its uncomplicated composition reflects the brand's focus on herbal preparations and naturally derived plant ingredients.</p>\n<p class=\"leading-relaxed mb-4\">Developed for individuals interested in exploring traditional botanical nutrition, this product represents a connection between India's heritage of medicinal plants and contemporary approaches to wellness.</p>\n<p class=\"leading-relaxed mb-4\">The convenient powdered format offers a practical way to incorporate a traditional preparation into an individually guided nutritional routine. Its formulation reflects the philosophy of Siddha wellness, which values botanical knowledge and considered approaches to personal wellbeing.</p>\n<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mt-6 mb-3 leading-snug\">Key Features &amp; Benefits</h3>\n<ul class=\"list-disc pl-5 space-y-1.5 mb-4\">\n  <li class=\"leading-relaxed\">Single-ingredient botanical powder made from Mucuna pruriens.</li>\n  <li class=\"leading-relaxed\">Plant-derived formulation inspired by traditional Siddha practices.</li>\n  <li class=\"leading-relaxed\">Contains naturally occurring plant proteins.</li>\n  <li class=\"leading-relaxed\">contains 23–35% protein</li>\n  <li class=\"leading-relaxed\">Siddha functional food</li>\n</ul>",
     "cleanDescription": "Discover HERBO PROTEIN Powder by 18 Herbs Organics, a distinctive plant-based formulation inspired by India's longstanding traditions of botanical nutrition and Siddha wellness. Rooted in traditional Indian herbal knowledge, HERBO PROTEIN brings together the familiarity of a naturally derived botanical ingredient with the convenience of a modern powdered preparation. Unlike conventional protein blends made from multiple ingredients, HERBO PROTEIN is formulated around a single traditional botanical source. Its uncomplicated composition reflects the brand's focus on herbal preparations and naturally derived plant ingredients. Developed for individuals interested in exploring traditional botanical nutrition, this product represents a connection between India's heritage of medicinal plants and contemporary approaches to wellness. The convenient powdered format offers a practical way to incorporate a traditional preparation into an individually guided nutritional routine. Its formulation reflects the philosophy of Siddha wellness, which values botanical knowledge and considered approaches to personal wellbeing.",
     "inStock": true,
-    "variants": [],
+    "variants": [
+      {
+        "id": 28320,
+        "name": "Box",
+        "slug": "box",
+        "price": 500,
+        "regularPrice": 500,
+        "salePrice": 500,
+        "discountPercent": 0,
+        "inStock": true,
+        "default": true
+      },
+      {
+        "id": 28321,
+        "name": "Packet",
+        "slug": "packet",
+        "price": 800,
+        "regularPrice": 800,
+        "salePrice": 800,
+        "discountPercent": 0,
+        "inStock": true,
+        "default": false
+      }
+    ],
     "sku": "",
     "fullDescription": "<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mb-3 leading-snug\">Traditional Botanical Nutrition Inspired by Siddha Heritage</h3>\n<p class=\"leading-relaxed mb-4\">Discover HERBO PROTEIN Powder by 18 Herbs Organics, a distinctive plant-based formulation inspired by India's longstanding traditions of botanical nutrition and Siddha wellness.</p>\n<p class=\"leading-relaxed mb-4\">Rooted in traditional Indian herbal knowledge, HERBO PROTEIN brings together the familiarity of a naturally derived botanical ingredient with the convenience of a modern powdered preparation.</p>\n<p class=\"leading-relaxed mb-4\">Unlike conventional protein blends made from multiple ingredients, HERBO PROTEIN is formulated around a single traditional botanical source. Its uncomplicated composition reflects the brand's focus on herbal preparations and naturally derived plant ingredients.</p>\n<p class=\"leading-relaxed mb-4\">Developed for individuals interested in exploring traditional botanical nutrition, this product represents a connection between India's heritage of medicinal plants and contemporary approaches to wellness.</p>\n<p class=\"leading-relaxed mb-4\">The convenient powdered format offers a practical way to incorporate a traditional preparation into an individually guided nutritional routine. Its formulation reflects the philosophy of Siddha wellness, which values botanical knowledge and considered approaches to personal wellbeing.</p>\n<h3 class=\"font-serif text-xl sm:text-2xl font-bold text-forest mt-6 mb-3 leading-snug\">Key Features &amp; Benefits</h3>\n<ul class=\"list-disc pl-5 space-y-1.5 mb-4\">\n  <li class=\"leading-relaxed\">Single-ingredient botanical powder made from Mucuna pruriens.</li>\n  <li class=\"leading-relaxed\">Plant-derived formulation inspired by traditional Siddha practices.</li>\n  <li class=\"leading-relaxed\">Contains naturally occurring plant proteins.</li>\n  <li class=\"leading-relaxed\">contains 23–35% protein</li>\n  <li class=\"leading-relaxed\">Siddha functional food</li>\n</ul>",
     "features": [

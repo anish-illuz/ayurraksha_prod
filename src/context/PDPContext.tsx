@@ -39,7 +39,7 @@ export const PDPProvider: React.FC<{
 
   // Requirement: Display variants ONLY when available and configured in the backend (cms)
   // Backend is the single source of truth. Simple products must be displayed as simple products without artificial variants.
-  const hasVariants = Boolean(product.variants && product.variants.length > 1);
+  const hasVariants = Boolean(product.variants && product.variants.length > 0);
 
   const packOptions: PackOption[] = hasVariants
     ? product.variants.map((v, idx) => ({
@@ -51,11 +51,12 @@ export const PDPProvider: React.FC<{
         discountBadge: v.discountPercent && v.discountPercent > 0 ? `Save ${v.discountPercent}%` : undefined,
         isDefault: v.default || idx === 0,
         packCount: 1,
+        inStock: v.inStock,
       }))
     : [];
 
   const defaultPack: PackOption = hasVariants && packOptions.length > 0
-    ? (packOptions.find((p) => p.isDefault) || packOptions[0])
+    ? (packOptions.find((p) => p.isDefault && p.inStock !== false) || packOptions.find((p) => p.inStock !== false) || packOptions[0])
     : {
         id: 'simple',
         name: 'Standard',
@@ -74,6 +75,9 @@ export const PDPProvider: React.FC<{
     : defaultPack;
 
   const setSelectedPackId = (id: string) => {
+    // Never allow selecting an out-of-stock variant (requirement: prevent adding it to cart).
+    const target = packOptions.find((p) => p.id === id);
+    if (target && target.inStock === false) return;
     setSelectedPackIdState(id);
   };
 
@@ -101,7 +105,8 @@ export const PDPProvider: React.FC<{
     setQuantity((q) => Math.max(1, q - 1));
   };
 
-  const isAvailable = product.inStock;
+  // Stock reflects the selected variant for variable products; the parent flag for simple ones.
+  const isAvailable = hasVariants ? selectedPack.inStock !== false : product.inStock;
 
   const handleAddToCart = () => {
     if (!isAvailable) return;

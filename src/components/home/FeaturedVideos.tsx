@@ -27,7 +27,7 @@ const VIDEOS: VideoItem[] = [
     linkHref: '/product/boozliv',
     linkLabel: 'Explore BoozLiv',
     tag: 'Clinical Research Backed',
-    thumbnail: 'https://i.ytimg.com/vi/SNldVaowTzU/hqdefault.jpg',
+    thumbnail: '/images/videos/boozliv-video-thumb.webp',
   },
   {
     id: 'skincare-video',
@@ -38,7 +38,7 @@ const VIDEOS: VideoItem[] = [
     linkHref: '/combo-builder/skin-care',
     linkLabel: 'Build Skin Care Combo',
     tag: 'Customizable Regimen',
-    thumbnail: 'https://i.ytimg.com/vi/pcjHM-aCKJE/hqdefault.jpg',
+    thumbnail: '/images/videos/skin-care-combo-video-thumb.webp',
   },
 ];
 

@@ -76,8 +76,14 @@ export default async function ProductDetailPage({ params }: PageProps) {
     careBeforeUse: cmsData?.acf?.care_before_use || baseProduct.careBeforeUse || baseProduct.acf?.care_before_use,
     productSpecifications:
       cmsData?.acf?.product_specifications || baseProduct.productSpecifications || baseProduct.acf?.product_specifications,
+    // Live CMS ACF is the single source of truth whenever the CMS row loaded.
+    // An empty field therefore stays empty (the section hides) instead of
+    // falling back to a stale bundled snapshot. Only when the CMS row itself
+    // could not be fetched do we use the bundled products.json text.
     recommendedProductsText:
-      cmsData?.acf?.recommended_products || baseProduct.recommendedProductsText || baseProduct.acf?.recommended_products,
+      cmsData
+        ? cmsData.acf?.recommended_products || ''
+        : baseProduct.recommendedProductsText || baseProduct.acf?.recommended_products,
   };
 
   // Map recommended products dynamically from ACF `recommended_products` field

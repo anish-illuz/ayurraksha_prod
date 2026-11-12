@@ -40,6 +40,7 @@ export interface PackOption {
   discountBadge?: string;
   isDefault?: boolean;
   packCount?: number;
+  inStock?: boolean;
 }
 
 export interface ProductVariant {
@@ -52,6 +53,9 @@ export interface ProductVariant {
   discountPercent?: number;
   inStock?: boolean;
   default?: boolean;
+  /** WooCommerce variation attribute map, e.g. { pa_packs: "30-days-pack" }.
+   *  Used to add the exact variation to the WooCommerce cart via the Store API. */
+  attributes?: Record<string, string>;
 }
 
 export interface Product {

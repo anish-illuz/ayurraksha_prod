@@ -69,26 +69,39 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3.5">
           {packOptions.map((pack) => {
             const isSelected = selectedPackId === pack.id;
+            const isOutOfStock = pack.inStock === false;
             return (
               <button
                 key={pack.id}
                 type="button"
                 onClick={() => setSelectedPackId(pack.id)}
-                className={`py-2.5 px-3 rounded-xl text-left border transition-all text-xs sm:text-sm flex items-center justify-between ${
-                  isSelected
-                    ? 'border-botanical bg-emerald-50/70 font-bold text-forest shadow-2xs'
-                    : 'border-stone-200 bg-stone-50/60 text-charcoal/80 hover:bg-stone-100/70'
+                disabled={isOutOfStock}
+                className={`relative py-2.5 px-3 rounded-xl text-left border transition-all text-xs sm:text-sm flex items-center justify-between ${
+                  isOutOfStock
+                    ? 'border-stone-200 bg-stone-50 opacity-50 cursor-not-allowed'
+                    : isSelected
+                      ? 'border-botanical bg-emerald-50/70 font-bold text-forest shadow-2xs'
+                      : 'border-stone-200 bg-stone-50/60 text-charcoal/80 hover:bg-stone-100/70'
                 }`}
               >
+                {isOutOfStock && (
+                  <span className="absolute -top-1.5 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-stone-200 text-stone-600 whitespace-nowrap">
+                    Out of stock
+                  </span>
+                )}
                 <div className="flex items-center gap-2 min-w-0 pr-2">
-                  <span className="font-bold text-forest">{formatPackMeasurement(pack.name)}</span>
-                  {pack.discountBadge && (
+                  <span className={`font-bold ${isOutOfStock ? 'text-stone-400 line-through' : 'text-forest'}`}>
+                    {formatPackMeasurement(pack.name)}
+                  </span>
+                  {!isOutOfStock && pack.discountBadge && (
                     <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 shrink-0 whitespace-nowrap">
                       {pack.discountBadge}
                     </span>
                   )}
                 </div>
-                <span className="font-bold text-forest shrink-0 whitespace-nowrap">₹{pack.price.toLocaleString('en-IN')}</span>
+                <span className={`font-bold shrink-0 whitespace-nowrap ${isOutOfStock ? 'text-stone-400' : 'text-forest'}`}>
+                  ₹{pack.price.toLocaleString('en-IN')}
+                </span>
               </button>
             );
           })}

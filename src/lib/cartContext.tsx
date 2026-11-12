@@ -68,6 +68,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             selectedVariant = variant.name;
             variantId = variant.id;
             variantPrice = item.variantPrice ?? variant.price ?? product.price;
+          } else if (product.variants && product.variants.length > 0) {
+            // Variable product whose saved selection no longer matches: default to the first in-stock variation.
+            const fallback = product.variants.find((v) => (v.default || v.inStock !== false)) || product.variants[0];
+            if (fallback.inStock === false) return [];
+            selectedVariant = fallback.name;
+            variantId = fallback.id;
+            variantPrice = item.variantPrice ?? fallback.price ?? product.price;
           } else {
             // Simple product without backend-configured variants
             selectedVariant = undefined;
@@ -150,6 +157,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       selectedVariant = variant.name;
       variantId = variant.id;
       variantPrice = variantPrice ?? variant.price;
+    } else if (product.variants && product.variants.length > 0) {
+      // Variable product with no explicit selection: default to the first in-stock variation
+      // so the correct variation id and price are always used (Woo requires a variation for variable products).
+      const fallback = product.variants.find((v) => (v.default || v.inStock !== false)) || product.variants[0];
+      if (fallback.inStock === false) return;
+      selectedVariant = fallback.name;
+      variantId = fallback.id;
+      variantPrice = variantPrice ?? fallback.price;
     } else {
       // Simple product without backend-configured variants
       selectedVariant = undefined;

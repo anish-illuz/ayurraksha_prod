@@ -12,11 +12,11 @@ const Bestsellers = dynamic(
 const FeaturedVideos = dynamic(
   () => import('@/components/home/FeaturedVideos').then((m) => m.FeaturedVideos)
 );
-const FeaturedCombos = dynamic(
-  () => import('@/components/home/FeaturedCombos').then((m) => m.FeaturedCombos)
-);
 const ReviewsSection = dynamic(
   () => import('@/components/home/ReviewsSection').then((m) => m.ReviewsSection)
+);
+const FeaturedCombos = dynamic(
+  () => import('@/components/home/FeaturedCombos').then((m) => m.FeaturedCombos)
 );
 const TransparencyFaq = dynamic(
   () => import('@/components/home/TransparencyFaq').then((m) => m.TransparencyFaq)
@@ -46,13 +46,13 @@ export default function HomePage() {
       {/* 4b. Featured Videos Showcase */}
       <FeaturedVideos />
 
-      {/* 5. Featured Combos & Health Packs */}
-      <FeaturedCombos />
-
       {/* 7. Real Patient Case Studies & Judge.me Reviews */}
       <ReviewsSection />
 
-      {/* 8. Ingredients & Clinical Transparency FAQ */}
+      {/* 8. Build Your Own Combo (Above FAQ) */}
+      <FeaturedCombos />
+
+      {/* 9. Ingredients & Clinical Transparency FAQ */}
       <TransparencyFaq />
 
       {/* 9. The Wellness Journal Highlights */}

@@ -24,10 +24,10 @@ export const FeaturedCombos: React.FC = () => {
               <span>Personalized Wellness</span>
             </div>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
-              Doctor-Guided Combo Builders
+              Build Your Own Combo
             </h2>
             <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl">
-              Build your customized healing regimen from authentic Ayurvedic formulations. Select your preferred products and save 10% on complete combos.
+              Build your customized routine from authentic Ayurvedic formulations. Select your preferred products and save up to 15% with volume discounts.
             </p>
           </div>
 
@@ -74,11 +74,11 @@ export const FeaturedCombos: React.FC = () => {
                 </Link>
 
                 <div className="flex flex-col flex-grow p-5 space-y-3">
-                  <h3 className="font-heading text-lg sm:text-xl font-bold text-primary group-hover:text-primary-dark transition-colors line-clamp-1 min-h-[1.75rem] leading-snug">
+                  <h3 className="font-heading text-lg sm:text-xl font-bold text-primary group-hover:text-primary-dark transition-colors line-clamp-2 min-h-[3.25rem] leading-snug">
                     <Link href={combo.href}>{combo.name}</Link>
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#37443D] line-clamp-3 leading-relaxed flex-grow">
+                  <p className="text-xs sm:text-sm text-[#37443D] leading-relaxed flex-grow">
                     {combo.description}
                   </p>
 

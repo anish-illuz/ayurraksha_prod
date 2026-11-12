@@ -249,10 +249,10 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
       </section>
 
       {/* 3. Main Interactive Product Selection directly after Hero */}
-      <section id="builder-catalog" className="pt-4 sm:pt-5 scroll-mt-16">
+      <section id="builder-catalog" className="pt-3 sm:pt-4 scroll-mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 mb-3.5 pb-2.5 border-b border-[#e4e7df]">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-3 pb-2 border-b border-[#e4e7df]">
             <div>
               <span className="text-[10.5px] font-extrabold uppercase tracking-[0.18em] text-[#8a6020] block mb-0.5">
                 CURATE YOUR ROUTINE
@@ -402,15 +402,15 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
       </section>
 
       {/* 4. Compact Horizontal Doctor Consultation Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-10">
-        <div className="relative overflow-hidden bg-[#123b2d] text-white rounded-[20px] p-5 sm:p-7 lg:p-8 shadow-lg">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8">
+        <div className="relative overflow-hidden bg-[#123b2d] text-white rounded-[18px] p-4 sm:p-6 lg:p-7 shadow-lg">
           {/* Subtle ambient decoration */}
           <div
             className="pointer-events-none absolute -right-20 -bottom-36 w-80 h-80 rounded-full border border-[#f4e2b5]/15"
             aria-hidden="true"
           />
 
-          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 lg:gap-8">
+          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-8">
             {/* Left: Concise Text */}
             <div className="space-y-1.5 max-w-2xl">
               <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#e2bf88] block">

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Copy, Check, Sparkles, Tag, ShieldCheck } from 'lucide-react';
+import { Trash2, Plus, Minus, ArrowRight, Copy, Check, Sparkles, Tag, ShieldCheck } from 'lucide-react';
 import { ComboProduct } from '@/types/combo';
 import { trackComboEvent } from '@/lib/comboAnalytics';
 
@@ -54,17 +54,18 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
     return sum + itemPrice * item.quantity;
   }, 0);
 
-  // Tiered Volume Discount:
-  // - Orders at or above ₹5,000 -> 15% OFF
-  // - Orders at or above ₹3,000 -> 10% OFF
+  // Tiered Volume Discount (mirrors the store's configured rules in cartContext):
+  // - Combo value above ₹5,000 -> 15% OFF
+  // - Combo value above ₹3,000 -> 10% OFF
+  // Single tier only, never stacked.
   let tierDiscountPercent = 0;
   let tierDiscountAmount = 0;
   let amountToNextTier = 0;
 
-  if (totalSellingPrice >= 5000) {
+  if (totalSellingPrice > 5000) {
     tierDiscountPercent = 15;
     tierDiscountAmount = Math.round(totalSellingPrice * 0.15);
-  } else if (totalSellingPrice >= 3000) {
+  } else if (totalSellingPrice > 3000) {
     tierDiscountPercent = 10;
     tierDiscountAmount = Math.round(totalSellingPrice * 0.10);
     amountToNextTier = Math.max(0, 5000 - totalSellingPrice);
@@ -162,30 +163,31 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
           </div>
 
           {/* Threshold Explanation */}
-          <div className="text-[10.5px] text-[#5c4a28] flex items-center justify-between border-t border-[#eadbbd]/60 pt-1">
-            <span>• Above ₹3,000: <strong>10% OFF</strong></span>
-            <span>• Above ₹5,000: <strong>15% OFF</strong></span>
+          <div className="text-[10.5px] text-[#5c4a28] flex items-center justify-between border-t border-[#eadbbd]/60 pt-1.5">
+            <span>Above <strong>₹3,000</strong>: <strong>10% OFF</strong></span>
+            <span>Above <strong>₹5,000</strong>: <strong>15% OFF</strong></span>
           </div>
 
           {/* Dynamic Next-Offer Guidance */}
-          <div className="text-[11px] text-[#18372b] pt-0.5">
+          <div className="text-[11px] text-[#18372b] pt-1">
             {tierDiscountPercent === 15 ? (
               <p className="text-[#25764d] font-bold flex items-center gap-1">
-                <span>✓ Maximum 15% discount unlocked on your order!</span>
+                <Check size={13} className="flex-shrink-0" />
+                <span>Maximum 15% discount unlocked on your order.</span>
               </p>
             ) : tierDiscountPercent === 10 ? (
               <p>
-                <strong className="text-[#25764d]">10% OFF unlocked!</strong> Add <strong className="text-[#8a6020]">₹{amountToNextTier.toLocaleString('en-IN')}</strong> more to unlock <strong className="text-[#25764d]">15% OFF</strong>.
+                <strong className="text-[#25764d]">10% OFF unlocked.</strong> Add <strong className="text-[#8a6020]">₹{amountToNextTier.toLocaleString('en-IN')}</strong> more to unlock <strong className="text-[#25764d]">15% OFF</strong>.
               </p>
             ) : (
               <p>
-                Add <strong className="text-[#8a6020]">₹{amountToNextTier.toLocaleString('en-IN')}</strong> more to unlock <strong className="text-[#25764d]">10% OFF</strong> at checkout.
+                You&apos;re at the base price. Add <strong className="text-[#8a6020]">₹{amountToNextTier.toLocaleString('en-IN')}</strong> more to unlock <strong className="text-[#25764d]">10% OFF</strong>.
               </p>
             )}
           </div>
 
           {/* Milestone Progress bar */}
-          <div className="space-y-1 pt-0.5">
+          <div className="space-y-1 pt-1">
             <div className="w-full bg-[#E5DFCC] h-2 rounded-full overflow-hidden relative">
               <div
                 className="bg-[#25764d] h-full transition-all duration-300 rounded-full"
@@ -196,8 +198,8 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
             </div>
             <div className="flex justify-between text-[9.5px] text-stone-500 font-medium px-0.5">
               <span>₹0</span>
-              <span className={totalSellingPrice >= 3000 ? 'text-[#25764d] font-bold' : ''}>₹3,000 (10%)</span>
-              <span className={totalSellingPrice >= 5000 ? 'text-[#25764d] font-bold' : ''}>₹5,000 (15%)</span>
+              <span className={totalSellingPrice > 3000 ? 'text-[#25764d] font-bold' : ''}>₹3,000 · 10%</span>
+              <span className={totalSellingPrice > 5000 ? 'text-[#25764d] font-bold' : ''}>₹5,000 · 15%</span>
             </div>
           </div>
         </div>
@@ -205,10 +207,9 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
         {/* Line Items List */}
         <div className="py-2 space-y-2 max-h-[300px] overflow-y-auto divide-y divide-[#f0f2ed] pr-0.5">
           {selectedItems.length === 0 ? (
-            <div className="py-5 px-3 text-center rounded-[12px] bg-stone-50/70 border border-dashed border-stone-200 my-1 space-y-1.5">
-              <ShoppingBag size={18} className="text-stone-400 mx-auto" />
-              <p className="text-xs text-[#4d6355]">
-                Your combo basket is empty.<br />Add products on the left to begin.
+            <div className="py-3 px-3 text-center rounded-[10px] bg-stone-50/70 border border-dashed border-stone-200 my-1">
+              <p className="text-[11px] text-[#4d6355] leading-snug">
+                Your basket is empty. Add a product to see your running total and savings.
               </p>
             </div>
           ) : (

@@ -90,6 +90,14 @@ export interface Product {
   productSpecifications?: string;
   recommendedProductsText?: string;
 
+  /**
+   * Set when a live CMS row was successfully fetched for this product.
+   * When true, the CMS is the single source of truth for the product sections:
+   * empty backend fields hide their section instead of falling back to the
+   * bundled products.json structured snapshots.
+   */
+  cmsLoaded?: boolean;
+
   // Comprehensive ACF Structured Fields matching Document & Reference UI
   subtitle?: string;
   skuBadge?: string;

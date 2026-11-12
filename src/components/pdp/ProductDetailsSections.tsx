@@ -307,9 +307,17 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
     <Moon key={4} size={22} className="text-emerald-700" />,
   ];
 
+  // When a live CMS row is loaded, the backend is the single source of truth:
+  // each section renders only its matching ACF field, and an empty field hides
+  // the section. Bundled products.json structured data is used as an
+  // offline fallback only when the CMS row could not be fetched.
+  const cmsLoaded = Boolean(product.cmsLoaded);
+
   // 1. Product Overview: Check if overview / description exists
   const overviewHtml = product.description?.trim() || '';
-  const overviewFallback = product.cleanDescription?.trim() || product.shortDescription?.trim() || '';
+  const overviewFallback = cmsLoaded
+    ? ''
+    : product.cleanDescription?.trim() || product.shortDescription?.trim() || '';
   const hasOverview = Boolean(overviewHtml || overviewFallback);
 
   // 2. Why Choose This Product: ACF `key_benefits`
@@ -318,6 +326,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
     if (rawKeyBenefits.trim()) {
       return splitDelimitedText(rawKeyBenefits);
     }
+    if (cmsLoaded) return [];
     if (product.featureCards && product.featureCards.length > 0) {
       return product.featureCards.map((c) => `${c.title}: ${c.description}`);
     }
@@ -325,21 +334,21 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
       return product.features;
     }
     return [];
-  }, [rawKeyBenefits, product.featureCards, product.features]);
+  }, [rawKeyBenefits, product.featureCards, product.features, cmsLoaded]);
   const hasWhyChoose = parsedBenefits.length > 0;
 
   // 3. What's Inside: ACF `ingredients`
   const rawIngredients = product.acf?.ingredients || product.ingredientsText || '';
   const parsedIngredients = useMemo(() => {
-    return parseIngredientsAcf(rawIngredients, product.ingredientCards);
-  }, [rawIngredients, product.ingredientCards]);
+    return parseIngredientsAcf(rawIngredients, cmsLoaded ? undefined : product.ingredientCards);
+  }, [rawIngredients, product.ingredientCards, cmsLoaded]);
   const hasWhatsInside = parsedIngredients.length > 0;
 
   // 4. How to Use: ACF `how_to_use`
   const rawHowToUse = product.acf?.how_to_use || product.howToUseText || '';
   const parsedSteps = useMemo(() => {
-    return parseHowToUseAcf(rawHowToUse, product.ritualSteps);
-  }, [rawHowToUse, product.ritualSteps]);
+    return parseHowToUseAcf(rawHowToUse, cmsLoaded ? undefined : product.ritualSteps);
+  }, [rawHowToUse, product.ritualSteps, cmsLoaded]);
   const hasHowToUse = parsedSteps.length > 0;
 
   // 5. Care Before Use: ACF `care_before_use`
@@ -348,6 +357,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
     if (rawCareBeforeUse.trim()) {
       return splitDelimitedText(rawCareBeforeUse);
     }
+    if (cmsLoaded) return [];
     if (product.advisoryGuidelines && product.advisoryGuidelines.length > 0) {
       return product.advisoryGuidelines;
     }
@@ -355,20 +365,22 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
       return product.warnings;
     }
     return [];
-  }, [rawCareBeforeUse, product.advisoryGuidelines, product.warnings]);
+  }, [rawCareBeforeUse, product.advisoryGuidelines, product.warnings, cmsLoaded]);
   const hasCareBeforeUse = parsedCareItems.length > 0;
 
   // 6. Product Specifications: ACF `product_specifications`
   const rawSpecs = product.acf?.product_specifications || product.productSpecifications || '';
   const parsedSpecRows = useMemo(() => {
-    const fallbackSpecRows = [
-      { label: 'Net Quantity', value: formatPackMeasurement(product.specNetQuantity) },
-      { label: 'Product Form', value: product.specProductForm || '' },
-      { label: 'Origin', value: product.specOrigin || '' },
-      { label: 'Disclosures', value: product.specDisclosures || '' },
-    ];
+    const fallbackSpecRows = cmsLoaded
+      ? []
+      : [
+          { label: 'Net Quantity', value: formatPackMeasurement(product.specNetQuantity) },
+          { label: 'Product Form', value: product.specProductForm || '' },
+          { label: 'Origin', value: product.specOrigin || '' },
+          { label: 'Disclosures', value: product.specDisclosures || '' },
+        ];
     return parseSpecificationsAcf(rawSpecs, fallbackSpecRows);
-  }, [rawSpecs, product.specNetQuantity, product.specProductForm, product.specOrigin, product.specDisclosures]);
+  }, [rawSpecs, product.specNetQuantity, product.specProductForm, product.specOrigin, product.specDisclosures, cmsLoaded]);
   const hasSpecifications = parsedSpecRows.length > 0;
 
   return (

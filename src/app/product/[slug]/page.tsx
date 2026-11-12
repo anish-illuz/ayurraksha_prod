@@ -60,29 +60,35 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
   // Fetch live dynamic ACF data and content directly from WordPress CMS (cms.ayurrakshaonline.com)
   const cmsData = await fetchCmsProduct(slug);
+  const cmsLoaded = Boolean(cmsData);
 
-  // Merge CMS backend data dynamically with the selected product
+  // Merge CMS backend data dynamically with the selected product.
+  // The WordPress CMS is the single source of truth for all product-related
+  // content. When a live CMS row loaded, every section field is read
+  // strictly from the CMS - an empty field stays empty so the matching PDP
+  // section hides instead of surfacing a stale bundled snapshot. Only when
+  // the CMS row itself could not be fetched do we fall back to the bundled
+  // products.json content (offline / first-render resilience).
   const product = {
     ...baseProduct,
-    description: cmsData?.description || baseProduct.description,
-    shortDescription: cmsData?.shortDescription || baseProduct.shortDescription,
+    cmsLoaded,
+    description: cmsLoaded ? cmsData!.description : baseProduct.description,
+    shortDescription: cmsLoaded ? cmsData!.shortDescription : baseProduct.shortDescription,
     acf: {
       ...(baseProduct.acf || {}),
       ...(cmsData?.acf || {}),
     },
-    keyBenefits: cmsData?.acf?.key_benefits || baseProduct.keyBenefits || baseProduct.acf?.key_benefits,
-    ingredientsText: cmsData?.acf?.ingredients || baseProduct.ingredientsText || baseProduct.acf?.ingredients,
-    howToUseText: cmsData?.acf?.how_to_use || baseProduct.howToUseText || baseProduct.acf?.how_to_use,
-    careBeforeUse: cmsData?.acf?.care_before_use || baseProduct.careBeforeUse || baseProduct.acf?.care_before_use,
+    keyBenefits: cmsLoaded ? cmsData!.acf?.key_benefits || '' : baseProduct.keyBenefits || baseProduct.acf?.key_benefits,
+    ingredientsText: cmsLoaded ? cmsData!.acf?.ingredients || '' : baseProduct.ingredientsText || baseProduct.acf?.ingredients,
+    howToUseText: cmsLoaded ? cmsData!.acf?.how_to_use || '' : baseProduct.howToUseText || baseProduct.acf?.how_to_use,
+    careBeforeUse: cmsLoaded ? cmsData!.acf?.care_before_use || '' : baseProduct.careBeforeUse || baseProduct.acf?.care_before_use,
     productSpecifications:
-      cmsData?.acf?.product_specifications || baseProduct.productSpecifications || baseProduct.acf?.product_specifications,
-    // Live CMS ACF is the single source of truth whenever the CMS row loaded.
-    // An empty field therefore stays empty (the section hides) instead of
-    // falling back to a stale bundled snapshot. Only when the CMS row itself
-    // could not be fetched do we use the bundled products.json text.
+      cmsLoaded
+        ? cmsData!.acf?.product_specifications || ''
+        : baseProduct.productSpecifications || baseProduct.acf?.product_specifications,
     recommendedProductsText:
-      cmsData
-        ? cmsData.acf?.recommended_products || ''
+      cmsLoaded
+        ? cmsData!.acf?.recommended_products || ''
         : baseProduct.recommendedProductsText || baseProduct.acf?.recommended_products,
   };
 

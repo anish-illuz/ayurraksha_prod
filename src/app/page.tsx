@@ -46,11 +46,11 @@ export default function HomePage() {
       {/* 7. Real Patient Case Studies & Judge.me Reviews */}
       <ReviewsSection />
 
-      {/* 8. Ingredients & Clinical Transparency FAQ */}
-      <TransparencyFaq />
-
-      {/* 9. The Wellness Journal Highlights */}
+      {/* 8. The Wellness Journal Highlights */}
       <JournalSection />
+
+      {/* 9. Ingredients & Clinical Transparency FAQ */}
+      <TransparencyFaq />
 
       {/* 10. Newsletter Dispatch */}
       <Newsletter />

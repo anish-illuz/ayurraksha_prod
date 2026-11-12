@@ -196,8 +196,8 @@ export const Hero: React.FC = () => {
                     />
                   </picture>
 
-                  {/* Prominent Shop Now CTA Button - Clearly visible and separated from navigation arrows */}
-                  <div className="absolute bottom-5 left-5 sm:bottom-6 sm:left-10 md:bottom-10 md:left-24 lg:left-32 z-20">
+                  {/* Prominent Shop Now CTA Button - aligned with the annotated target zone: ~4.8% from the left, ~27% up from the banner bottom */}
+                  <div className="absolute left-[4.8%] bottom-[27%] z-20">
                     <span className="inline-flex items-center gap-2.5 px-5 py-3 sm:px-6 sm:py-3.5 md:px-9 md:py-4 lg:px-10 lg:py-5 rounded-full bg-[#16382C] text-white hover:bg-[#0E251D] md:hover:bg-[#0b1f19] text-sm sm:text-base md:text-lg lg:text-xl font-bold shadow-lg md:shadow-2xl transition-all duration-300 group-hover:scale-[1.03] md:group-hover:scale-[1.05] active:scale-95 border border-white/25 md:border-white/35 backdrop-blur-sm">
                       <span>{slide.primaryLabel}</span>
                       <ChevronRight className="h-5 w-5 -translate-x-0.5 transition-transform group-hover:translate-x-0.5" />

@@ -37,18 +37,13 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
   const isEmergency = Boolean(activeConcern.isEmergencyPathway || activeConcern.emergencyNotice);
 
   return (
-    <div className="bg-white rounded-[16px] border border-[#e4e7df] p-3.5 sm:p-4 mb-4 shadow-xs">
-      <div className="flex items-center justify-between gap-2 mb-2.5">
-        <span className="font-extrabold text-xs sm:text-[13px] text-[#18372b] tracking-wide">
-          Filter by Concern
-        </span>
-        <span className="text-[11px] text-[#55695c]">
-          Choose a concern to highlight recommended products
-        </span>
-      </div>
+    <div className="bg-white rounded-[14px] border border-[#e4e7df] p-3 sm:p-3.5 mb-3.5 shadow-xs">
+      <span className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#8a6020] block mb-2">
+        Filter by Concern
+      </span>
 
       {/* Concern Chips */}
-      <div className="flex flex-wrap gap-1.5 sm:gap-2">
+      <div className="flex flex-wrap gap-1.5">
         {concerns.map((concern) => {
           const isActive = concern.id === activeConcern.id;
           const isWarningChip = Boolean(concern.isEmergencyPathway);
@@ -75,7 +70,7 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
 
       {/* Single Small Information Strip */}
       {isEmergency ? (
-        <div className="mt-3 p-3 rounded-[10px] bg-rose-50 border border-rose-200 text-xs text-rose-950 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div className="mt-2.5 p-2.5 rounded-[10px] bg-rose-50 border border-rose-200 text-xs text-rose-950 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div className="flex items-start gap-2">
             <ShieldAlert size={15} className="text-rose-700 flex-shrink-0 mt-0.5" />
             <p className="text-rose-900 text-[11.5px] leading-snug">
@@ -91,7 +86,7 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
           </button>
         </div>
       ) : (
-        <div className="mt-2.5 px-3 py-2 rounded-[9px] bg-[#f4f7f2] border border-[#dbe6d9] text-[11.5px] text-[#203728] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-3">
+        <div className="mt-2 px-3 py-1.5 rounded-[9px] bg-[#f4f7f2] border border-[#dbe6d9] text-[11px] text-[#203728] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
           <div className="leading-snug">
             <span className="font-bold text-[#18372b]">{activeConcern.name}: </span>
             <span className="text-[#3c5445]">{activeConcern.shortDesc || activeConcern.description}</span>

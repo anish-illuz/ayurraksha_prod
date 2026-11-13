@@ -40,6 +40,7 @@ lh-*.json
 # One-off debug / inspection scratch (local CMS & catalog tooling)
 AyurRaksha_Product_Catalogue_Export.xlsx
 public/AyurRaksha_Product_Catalogue_Export.xlsx
+/scripts/audit-cms-sync.mjs
 /scripts/check-acf-groups.js
 /scripts/check-cms-coupons.js
 /scripts/check-descriptions.js

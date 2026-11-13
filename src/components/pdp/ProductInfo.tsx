@@ -76,17 +76,19 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         </p>
       </div>
 
-      {/* Rating with Verified Reviews Count (Desktop only) */}
+      {/* Rating with Verified Reviews Count (Desktop only). The count is the
+          live WooCommerce review total from the CMS - no hardcoded default. */}
       <div className="hidden lg:flex items-center gap-2.5">
         <RatingStars rating={product.rating} reviewCount={product.reviewCount} size={15} showText={false} />
         <span className="text-xs text-charcoal font-semibold">
-          {product.rating} ({product.reviewCount || 19} verified reviews)
+          {product.rating} ({product.reviewCount} verified reviews)
         </span>
       </div>
 
-      {/* Short Summary Description (Desktop only) */}
+      {/* Short Summary Description (Desktop only) - live CMS excerpt; offline
+          fallback is the bundled short description, never fake marketing copy. */}
       <p className="hidden lg:block text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans">
-        {product.shortDescription || 'Experience Ayurvedic wellness with this traditional botanical blend crafted to support natural bodily regularity and daily restorative vitality.'}
+        {product.shortDescription}
       </p>
 
       {/* Compact Price Row: Price + Original Price + Savings (Desktop only) */}

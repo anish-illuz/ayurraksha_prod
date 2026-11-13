@@ -51,17 +51,19 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
         {product.name}
       </h1>
 
-      {/* Rating & Review Count */}
+      {/* Rating & Review Count - live WooCommerce review total from the CMS;
+          no hardcoded default. */}
       <div className="flex items-center gap-2 mb-2.5">
         <RatingStars rating={product.rating} reviewCount={product.reviewCount} size={15} showText={false} />
         <span className="text-xs sm:text-sm text-charcoal font-semibold">
-          {product.rating} ({product.reviewCount || 19} reviews)
+          {product.rating} ({product.reviewCount} reviews)
         </span>
       </div>
 
-      {/* Key Benefit Summary */}
+      {/* Key Benefit Summary - live CMS excerpt; offline fallback is the bundled
+          subtitle, never fake marketing copy. */}
       <p className="text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans mb-3.5">
-        {product.shortDescription || product.subtitle || 'Traditional botanical formulation crafted for authentic wellness.'}
+        {product.shortDescription || product.subtitle}
       </p>
 
       {/* Synchronized Variant Selector Cards - Only when backend-configured variants exist */}

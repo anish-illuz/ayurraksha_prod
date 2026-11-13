@@ -9,7 +9,7 @@ import { StickyMobileBar } from '@/components/pdp/StickyMobileBar';
 import { ProductCard } from '@/components/ProductCard';
 import { PDPProvider } from '@/context/PDPContext';
 import { getProductBySlug, getStaticParamSlugs } from '@/lib/products';
-import { fetchCmsProduct, resolveRecommendedProducts } from '@/lib/cms';
+import { fetchCmsProduct, fetchCmsCommerce, resolveRecommendedProducts } from '@/lib/cms';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 interface PageProps {
@@ -62,17 +62,41 @@ export default async function ProductDetailPage({ params }: PageProps) {
   const baseProduct = getProductBySlug(slug);
   if (!baseProduct) notFound();
 
-  // Fetch live dynamic ACF data and content directly from WordPress CMS (cms.ayurrakshaonline.com)
-  const cmsData = await fetchCmsProduct(slug);
+  // Fetch live ACF content AND live commerce data (prices, variations,
+  // images, stock, ratings) directly from the WordPress CMS backend.
+  // Both come from cms.ayurrakshaonline.com - the single source of truth.
+  const [cmsData, cmsCommerce] = await Promise.all([
+    fetchCmsProduct(slug),
+    fetchCmsCommerce(slug),
+  ]);
   const cmsLoaded = Boolean(cmsData);
+  const commerceLoaded = Boolean(cmsCommerce);
+
+  // Map live WooCommerce variations (cms.ayurrakshaonline.com) into the PDP
+  // variant model so per-pack pricing, availability and the cart variation id
+  // all come from the backend rather than the bundled snapshot.
+  const liveVariants = commerceLoaded
+    ? cmsCommerce!.variantDetails.map((v) => ({
+        id: v.id,
+        name: v.variationLabel.replace(/^Packs:\s*/i, '').trim() || `Variation ${v.id}`,
+        slug: String(v.id),
+        price: Number.isFinite(v.price) && v.price > 0 ? v.price : undefined,
+        regularPrice: Number.isFinite(v.regularPrice) && v.regularPrice > 0 ? v.regularPrice : undefined,
+        salePrice: Number.isFinite(v.salePrice) && v.salePrice > 0 ? v.salePrice : undefined,
+        discountPercent:
+          v.regularPrice > v.price
+            ? Math.round(((v.regularPrice - v.price) / v.regularPrice) * 100)
+            : 0,
+        inStock: v.inStock,
+      }))
+    : undefined;
 
   // Merge CMS backend data dynamically with the selected product.
-  // The WordPress CMS is the single source of truth for all product-related
-  // content. When a live CMS row loaded, every section field is read
-  // strictly from the CMS - an empty field stays empty so the matching PDP
-  // section hides instead of surfacing a stale bundled snapshot. Only when
-  // the CMS row itself could not be fetched do we fall back to the bundled
-  // products.json content (offline / first-render resilience).
+  // When a live CMS row loaded, every content + commerce field is read strictly
+  // from the CMS - an empty field stays empty so the matching PDP section hides
+  // instead of surfacing a stale bundled snapshot. Only when the CMS row itself
+  // could not be fetched do we fall back to the bundled products.json content
+  // (offline / first-render resilience).
   const product = {
     ...baseProduct,
     cmsLoaded,
@@ -94,13 +118,56 @@ export default async function ProductDetailPage({ params }: PageProps) {
       cmsLoaded
         ? cmsData!.acf?.recommended_products || ''
         : baseProduct.recommendedProductsText || baseProduct.acf?.recommended_products,
+    // Live commerce fields: prices, variation pricing, images, stock, ratings.
+    // Only applied when the CMS commerce fetch succeeded; otherwise the bundled
+    // products.json values are retained as the offline fallback.
+    price: commerceLoaded ? cmsCommerce!.price : baseProduct.price,
+    regularPrice: commerceLoaded ? cmsCommerce!.regularPrice : baseProduct.regularPrice,
+    salePrice: commerceLoaded ? cmsCommerce!.salePrice : baseProduct.salePrice,
+    discountPercent: commerceLoaded
+      ? Math.max(0, Math.round(((cmsCommerce!.regularPrice - cmsCommerce!.price) / (cmsCommerce!.regularPrice || 1)) * 100))
+      : baseProduct.discountPercent,
+    onSale: commerceLoaded ? cmsCommerce!.onSale : baseProduct.onSale,
+    inStock: commerceLoaded ? cmsCommerce!.inStock : baseProduct.inStock,
+    rating: commerceLoaded && cmsCommerce!.rating > 0 ? cmsCommerce!.rating : baseProduct.rating,
+    reviewCount: commerceLoaded ? cmsCommerce!.reviewCount : baseProduct.reviewCount,
+    sku: commerceLoaded && cmsCommerce!.sku ? cmsCommerce!.sku : baseProduct.sku,
+    images: commerceLoaded && cmsCommerce!.images.length > 0 ? cmsCommerce!.images : baseProduct.images,
+    variants: commerceLoaded ? (liveVariants && liveVariants.length > 0 ? liveVariants : []) : baseProduct.variants,
+    cmsProductId: commerceLoaded ? cmsCommerce!.cmsProductId : (baseProduct as any).cmsProductId,
   };
 
-  // Map recommended products dynamically from ACF `recommended_products` field
-  const recommendedProducts = resolveRecommendedProducts(
+  // Map recommended products dynamically from ACF `recommended_products` field.
+  // Each recommended card is enriched with its own live CMS commerce data
+  // (price, image, stock, rating) so the section never surfaces stale bundled
+  // values - the CMS stays the source of truth for recommended products too.
+  const recommendedBase = resolveRecommendedProducts(
     product.recommendedProductsText || product.acf?.recommended_products,
     product,
     4
+  );
+  const recommendedProducts = await Promise.all(
+    recommendedBase.map(async (rel) => {
+      const relCommerce = await fetchCmsCommerce(rel.slug);
+      if (!relCommerce) return rel;
+      return {
+        ...rel,
+        price: relCommerce.price,
+        regularPrice: relCommerce.regularPrice,
+        salePrice: relCommerce.salePrice,
+        discountPercent: Math.max(
+          0,
+          Math.round(((relCommerce.regularPrice - relCommerce.price) / (relCommerce.regularPrice || 1)) * 100),
+        ),
+        onSale: relCommerce.onSale,
+        inStock: relCommerce.inStock,
+        rating: relCommerce.rating > 0 ? relCommerce.rating : rel.rating,
+        reviewCount: relCommerce.reviewCount,
+        images:
+          relCommerce.images.length > 0 ? relCommerce.images : rel.images,
+        cmsProductId: relCommerce.cmsProductId,
+      };
+    })
   );
 
   // Rank Math Schema.org Product & Offer JSON-LD

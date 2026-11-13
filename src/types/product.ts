@@ -81,6 +81,10 @@ export interface Product {
   variants: ProductVariant[];
   sku?: string;
 
+  /** Live WooCommerce product id on the CMS (cms.ayurrakshaonline.com), when a
+   *  live commerce fetch succeeded. Lets the order flow address the CMS row. */
+  cmsProductId?: number;
+
   // Dynamic WordPress ACF Fields from cms.ayurrakshaonline.com
   acf?: ProductAcf;
   keyBenefits?: string;

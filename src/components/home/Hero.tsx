@@ -196,9 +196,9 @@ export const Hero: React.FC = () => {
                     />
                   </picture>
 
-                  {/* Refined Shop Now CTA Button - kept at the annotated target zone, sized down */}
-                  <div className="absolute left-[4.8%] bottom-[27%] z-20">
-                    <span className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 rounded-full bg-[#16382C] text-white hover:bg-[#0E251D] text-xs sm:text-sm md:text-base font-semibold shadow-md md:shadow-lg transition-all duration-300 group-hover:scale-[1.03] active:scale-95 border border-white/25 backdrop-blur-xs">
+                  {/* Refined Shop Now CTA Button - positioned in clear space below the banner typography */}
+                  <div className="absolute left-[4.8%] sm:left-[5.5%] md:left-[6%] bottom-[8%] sm:bottom-[10%] md:bottom-[11%] z-20">
+                    <span className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2 rounded-full bg-[#16382C] text-white hover:bg-[#0E251D] text-xs sm:text-sm font-semibold shadow-md md:shadow-lg transition-all duration-300 group-hover:scale-[1.03] active:scale-95 border border-white/25 backdrop-blur-xs">
                       <span>{slide.primaryLabel}</span>
                       <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 -translate-x-0.5 transition-transform group-hover:translate-x-0.5" />
                     </span>

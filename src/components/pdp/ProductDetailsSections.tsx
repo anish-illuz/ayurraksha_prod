@@ -20,8 +20,9 @@ import {
   CheckCircle2,
   HeartHandshake
 } from 'lucide-react';
-import { Product, RitualStep, FeatureCard, IngredientCard } from '@/types/product';
+import { Product } from '@/types/product';
 import { formatPackMeasurement } from '@/lib/formatPack';
+import { parseIngredients, parseHowToUse } from '@/lib/acfContent';
 
 interface ProductDetailsSectionsProps {
   product: Product;
@@ -118,118 +119,6 @@ function splitDelimitedText(rawText: string | undefined): string[] {
     .split(/[\r\n]+|(?<=[.!?])\s{2,}|(?<=[.!?])\s+(?=[A-Z0-9•\-])|[•\t]+/)
     .map((s) => s.trim())
     .filter((s) => s.length > 0);
-}
-
-/**
- * Parse ACF ingredients string into structured herb items
- */
-interface ParsedHerb {
-  commonName: string;
-  latinName?: string;
-  description?: string;
-  badge?: string;
-  image?: string;
-}
-
-function parseIngredientsAcf(rawText: string | undefined, existingCards?: IngredientCard[]): ParsedHerb[] {
-  if (existingCards && existingCards.length > 0) {
-    return existingCards.map((c) => ({
-      commonName: c.commonName,
-      latinName: c.latinName,
-      description: c.description,
-      badge: c.badge,
-      image: c.image,
-    }));
-  }
-
-  if (!rawText || !rawText.trim()) return [];
-
-  const items = splitDelimitedText(rawText);
-  return items.map((item, idx) => {
-    // Check for delimiter like " — " or " - "
-    if (item.includes('—')) {
-      const [common, latin] = item.split('—').map((s) => s.trim());
-      return {
-        commonName: common,
-        latinName: latin,
-        badge: `HERB 0${idx + 1}`,
-      };
-    }
-    if (item.includes(' - ')) {
-      const [common, latin] = item.split(' - ').map((s) => s.trim());
-      return {
-        commonName: common,
-        latinName: latin,
-        badge: `HERB 0${idx + 1}`,
-      };
-    }
-    return {
-      commonName: item,
-      badge: `HERB 0${idx + 1}`,
-    };
-  });
-}
-
-/**
- * Parse ACF how_to_use string into structured step items
- */
-interface ParsedStep {
-  stepNumber: number;
-  title: string;
-  description: string;
-}
-
-function parseHowToUseAcf(rawText: string | undefined, existingSteps?: RitualStep[]): ParsedStep[] {
-  if (existingSteps && existingSteps.length > 0) {
-    return existingSteps.map((s, idx) => ({
-      stepNumber: s.stepNumber || idx + 1,
-      title: s.title,
-      description: s.description,
-    }));
-  }
-
-  if (!rawText || !rawText.trim()) return [];
-
-  // Check if numbered: "1. ... 2. ..."
-  const numberedMatch = rawText.split(/(?:^|\s+)(?:Step\s*)?(\d+)[\.\:\)]\s*/i).filter(Boolean);
-  if (numberedMatch.length > 2) {
-    const steps: ParsedStep[] = [];
-    for (let i = 0; i < numberedMatch.length; i += 2) {
-      const num = parseInt(numberedMatch[i], 10);
-      const text = numberedMatch[i + 1]?.trim();
-      if (text) {
-        const parts = text.split(/(?<=[.!?])\s+/);
-        steps.push({
-          stepNumber: num || steps.length + 1,
-          title: parts[0]?.slice(0, 50) || `Step ${steps.length + 1}`,
-          description: text,
-        });
-      }
-    }
-    if (steps.length > 0) return steps;
-  }
-
-  // Split by sentences or double spaces
-  const sentences = splitDelimitedText(rawText);
-  return sentences.map((sentence, idx) => {
-    const colonIdx = sentence.indexOf(':');
-    let title = `Step 0${idx + 1}`;
-    let desc = sentence;
-
-    if (colonIdx > 0 && colonIdx < 40) {
-      title = sentence.slice(0, colonIdx).trim();
-      desc = sentence.slice(colonIdx + 1).trim();
-    } else {
-      const firstWords = sentence.split(' ').slice(0, 4).join(' ');
-      title = firstWords;
-    }
-
-    return {
-      stepNumber: idx + 1,
-      title,
-      description: desc,
-    };
-  });
 }
 
 /**
@@ -337,18 +226,44 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
   }, [rawKeyBenefits, product.featureCards, product.features, cmsLoaded]);
   const hasWhyChoose = parsedBenefits.length > 0;
 
-  // 3. What's Inside: ACF `ingredients`
+  // 3. What's Inside: ACF `ingredients`. Parsed from the live backend text
+  // into individual, image-mapped herb cards. When the CMS row has no
+  // ingredients field, fall back to the bundled structured cards.
   const rawIngredients = product.acf?.ingredients || product.ingredientsText || '';
   const parsedIngredients = useMemo(() => {
-    return parseIngredientsAcf(rawIngredients, cmsLoaded ? undefined : product.ingredientCards);
-  }, [rawIngredients, product.ingredientCards, cmsLoaded]);
+    if (rawIngredients.trim()) {
+      return parseIngredients(rawIngredients).map((it) => ({
+        ...it,
+        description: it.description,
+      }));
+    }
+    if (cmsLoaded) return [];
+    const cards = product.ingredientCards || [];
+    return cards.map((c, i) => ({
+      commonName: c.commonName,
+      latinName: c.latinName,
+      description: c.description,
+      badge: c.badge || `HERB ${i < 9 ? '0' : ''}${i + 1}`,
+      image: c.image,
+    }));
+  }, [rawIngredients, cmsLoaded, product.ingredientCards]);
   const hasWhatsInside = parsedIngredients.length > 0;
 
-  // 4. How to Use: ACF `how_to_use`
+  // 4. How to Use: ACF `how_to_use`. Parsed from the live backend text into
+  // numbered step cards. Falls back to the bundled ritual steps when the
+  // CMS row has no how_to_use field.
   const rawHowToUse = product.acf?.how_to_use || product.howToUseText || '';
   const parsedSteps = useMemo(() => {
-    return parseHowToUseAcf(rawHowToUse, cmsLoaded ? undefined : product.ritualSteps);
-  }, [rawHowToUse, product.ritualSteps, cmsLoaded]);
+    if (rawHowToUse.trim()) {
+      return parseHowToUse(rawHowToUse);
+    }
+    if (cmsLoaded) return [];
+    return (product.ritualSteps || []).map((s, idx) => ({
+      stepNumber: s.stepNumber || idx + 1,
+      title: s.title,
+      description: s.description,
+    }));
+  }, [rawHowToUse, cmsLoaded, product.ritualSteps]);
   const hasHowToUse = parsedSteps.length > 0;
 
   // 5. Care Before Use: ACF `care_before_use`

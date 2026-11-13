@@ -7,7 +7,10 @@ import { ProductCard } from '@/components/ProductCard';
 import { getBestsellers } from '@/lib/products';
 
 export const Bestsellers: React.FC = () => {
-  const bestsellers = getBestsellers(8);
+  // Show exactly the client-approved bestseller set (7 products) without the
+  // "fill with highest rated" padding, so the grid never surfaces a product
+  // that isn't explicitly flagged as a bestseller.
+  const bestsellers = getBestsellers(7);
   const [filter, setFilter] = useState<'all' | 'tonic' | 'oil' | 'capsules'>('all');
 
   const filtered = filter === 'all'

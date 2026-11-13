@@ -71,6 +71,42 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
     setMounted(true);
   }, [config.storageKey]);
 
+  // Pull live prices, MRP and stock from the CMS backend (cms.ayurrakshaonline.com)
+  // so the builder never shows a stale bundled price. The static config values
+  // render immediately and are replaced in place once the live fetch resolves;
+  // on a fetch failure the bundled snapshot is kept.
+  useEffect(() => {
+    let cancelled = false;
+    async function loadLivePrices() {
+      try {
+        const res = await fetch(`/api/combo-builder/products?slug=${encodeURIComponent(config.slug)}`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (cancelled || !Array.isArray(data?.products) || data.products.length === 0) return;
+        // Merge live commerce fields into the catalog products by id.
+        setProducts((prev) =>
+          prev.map((p) => {
+            const live = data.products.find((l: ComboProduct) => l.id === p.id);
+            if (!live) return p;
+            return {
+              ...p,
+              price: live.price ?? p.price,
+              mrp: live.mrp ?? p.mrp,
+              inStock: live.inStock ?? p.inStock,
+              pricePending: live.pricePending ?? p.pricePending,
+            };
+          })
+        );
+      } catch {
+        // Offline / transient failure: retain the bundled prices.
+      }
+    }
+    loadLivePrices();
+    return () => {
+      cancelled = true;
+    };
+  }, [config.slug]);
+
   // Save combo cart to localStorage on change
   useEffect(() => {
     if (!mounted) return;

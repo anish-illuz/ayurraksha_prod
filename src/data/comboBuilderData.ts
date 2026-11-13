@@ -625,10 +625,10 @@ export const VARICOSE_VEINS_CATEGORIES: MerchandisingCategory[] = [
 ];
 
 export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
-  // 1. Flow Well Food Supplement Capsules (CMS ID 4254)
+  // 1. Flow Well Food Supplement Capsules (CMS ID 110)
   {
     id: 4254,
-    cmsId: 4254,
+    cmsId: 110,
     name: 'Flow Well Food Supplement Capsules',
     slug: 'flow-well-food-supplement-capsules',
     category: 'Internal wellness',
@@ -887,10 +887,10 @@ export const BREATH_EASY_PRODUCTS: ComboProduct[] = [
     sku: '11317',
   },
 
-  // 2. Etionment Pain Relief Cream (CMS ID 6319)
+  // 2. Etionment Pain Relief Cream (CMS ID 103)
   {
     id: 6319,
-    cmsId: 6319,
+    cmsId: 103,
     name: 'Etionment Pain Relief Cream (50 g)',
     slug: 'etionment-pain-relief-cream',
     category: 'Joint & Muscle Care',
@@ -1019,10 +1019,10 @@ export const CARDIAC_WELLNESS_CATEGORIES: MerchandisingCategory[] = [
 ];
 
 export const CARDIAC_WELLNESS_PRODUCTS: ComboProduct[] = [
-  // 1. AyurRaksha Save Heart (CMS ID 7695)
+  // 1. AyurRaksha Save Heart (CMS ID 108)
   {
     id: 7695,
-    cmsId: 7695,
+    cmsId: 108,
     name: 'AyurRaksha Save Heart Tonic',
     slug: 'save-heart',
     category: 'Tonics & Elixirs',
@@ -1052,10 +1052,10 @@ export const CARDIAC_WELLNESS_PRODUCTS: ComboProduct[] = [
     sku: '7695',
   },
 
-  // 2. Flow Well Food Supplement Capsules (CMS ID 4254)
+  // 2. Flow Well Food Supplement Capsules (CMS ID 110)
   {
     id: 4254,
-    cmsId: 4254,
+    cmsId: 110,
     name: 'Flow Well Food Supplement Capsules',
     slug: 'flow-well-food-supplement-capsules',
     category: 'Internal wellness',

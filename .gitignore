@@ -94,4 +94,14 @@ public/AyurRaksha_Product_Catalogue_Export.xlsx
 /scripts/verify-public-changes.js
 /scripts/verify-public-pdp-prices.js
 /scripts/verify-recommended-mapping.js
+/scripts/acf-fixtures.json
+/scripts/.acf-parser-build/
+/scripts/check-ingredient-delimiters.mjs
+/scripts/count-subtitle-fields.mjs
+/scripts/dump-acf-fixtures.mjs
+/scripts/dump-subtitles.mjs
+/scripts/inspect-ingredients-acf.mjs
+/scripts/probe-acf-image-groups.mjs
+/scripts/run-acf-parser-test.mjs
+/scripts/test-acf-parsers.mts
 

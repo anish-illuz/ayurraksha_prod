@@ -5,6 +5,7 @@ import { ProductGallery } from '@/components/pdp/ProductGallery';
 import { ProductInfo } from '@/components/pdp/ProductInfo';
 import { MobileProductHeader } from '@/components/pdp/MobileProductHeader';
 import { ProductDetailsSections } from '@/components/pdp/ProductDetailsSections';
+import { BoozlivSpecialSections } from '@/components/pdp/BoozlivSpecialSections';
 import { StickyMobileBar } from '@/components/pdp/StickyMobileBar';
 import { ProductCard } from '@/components/ProductCard';
 import { PDPProvider } from '@/context/PDPContext';
@@ -178,6 +179,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
           {/* Redesigned Complete Product Details Sections Matching Reference 3.png */}
           <ProductDetailsSections product={product} />
+
+          {/* BoozLiv-only additions: Clinical Report banner + Doctor Insights video hub */}
+          {product.slug === 'boozliv' && <BoozlivSpecialSections />}
         </div>
 
         {/* Recommended Products dynamically mapped from WordPress ACF `recommended_products` */}

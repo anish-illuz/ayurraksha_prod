@@ -830,18 +830,6 @@ export const VARICOSE_VEINS_CONCERNS: ComboConcern[] = [
     highlightedProductIds: [10627, 7689, 22867],
     requiresDoctorGuidance: true,
   },
-  {
-    id: 'open-wound',
-    name: 'Open wound / bleeding / rapidly swollen leg',
-    shortDesc: 'Clinical safeguard: Immediate medical evaluation is required.',
-    description:
-      'Open sores, active venous ulcers, sudden calf swelling, or bleeding veins require urgent clinical medical assessment. Topical products and self-care oils are NOT recommended for unhealed ulcers.',
-    emergencyNotice:
-      'IMPORTANT MEDICAL SAFEGUARD: Do not self-treat active ulcers, bleeding, or sudden asymmetrical leg swelling with topical oils or creams. Please consult a qualified vascular surgeon or visit an emergency medical facility.',
-    isEmergencyPathway: true,
-    highlightedProductIds: [],
-    requiresDoctorGuidance: true,
-  },
 ];
 
 // ============================================================================
@@ -991,18 +979,6 @@ export const BREATH_EASY_CONCERNS: ComboConcern[] = [
     clinicalNotice:
       'B Derma is an Ayurvedic proprietary medicine for skin wellness. It does not provide pulmonary or respiratory benefits.',
     highlightedProductIds: [11317],
-    requiresDoctorGuidance: true,
-  },
-  {
-    id: 'breathing-difficulty',
-    name: 'Breathing difficulty / wheeze / chest tightness',
-    shortDesc: 'Clinical safeguard: Urgent medical evaluation required.',
-    description:
-      'Shortness of breath, acute wheezing, or chest tightness requires prompt medical attention. These wellness products are not a substitute for emergency respiratory medical care.',
-    emergencyNotice:
-      'EMERGENCY CLINICAL NOTICE: Severe shortness of breath, asthma attacks, or chest tightness require immediate hospital emergency or pulmonologist evaluation. Do not delay seeking medical care.',
-    isEmergencyPathway: true,
-    highlightedProductIds: [],
     requiresDoctorGuidance: true,
   },
 ];
@@ -1167,18 +1143,6 @@ export const CARDIAC_WELLNESS_CONCERNS: ComboConcern[] = [
     clinicalNotice:
       'MEDICATION SAFETY CHECK: Always review any supplement with your treating cardiologist before adding it to prescribed heart medicines. Never discontinue or adjust prescription medications.',
     highlightedProductIds: [7695, 4254],
-    requiresDoctorGuidance: true,
-  },
-  {
-    id: 'chest-pain',
-    name: 'Chest pain / severe breathlessness',
-    shortDesc: 'Emergency medical care warning: Seek emergency care immediately.',
-    description:
-      'Chest pain, tightness, radiation to the arm or jaw, or acute shortness of breath is a medical emergency. Emergency symptoms must never enter a shopping routine.',
-    emergencyNotice:
-      'URGENT MEDICAL WARNING: If you or someone you are caring for experiences chest pain, pressure, or acute breathlessness, call emergency medical services immediately or go to the nearest emergency room. Do not purchase or consume wellness products.',
-    isEmergencyPathway: true,
-    highlightedProductIds: [],
     requiresDoctorGuidance: true,
   },
 ];

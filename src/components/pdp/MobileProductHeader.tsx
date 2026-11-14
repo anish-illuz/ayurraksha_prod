@@ -32,18 +32,24 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
     handleAddToCart,
   } = usePDP();
 
-  const categoryName = product.healthConcerns[0] || product.categories[0] || 'Ayurvedic Wellness';
+  const categoryName = product.categories[0] || '';
 
   return (
     <div className="bg-white rounded-2xl p-4 sm:p-5 border border-stone-200/90 shadow-2xs">
       {/* Category Eyebrow & SKU */}
       <div className="flex items-center justify-between gap-2 mb-2">
-        <span className="text-xs font-bold text-botanical uppercase tracking-wider">
-          {categoryName}
-        </span>
-        <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#E8EFE6] text-forest border border-forest/10">
-          {product.skuBadge || `SKU: ${product.sku || product.id}`}
-        </span>
+        {categoryName ? (
+          <span className="text-xs font-bold text-botanical uppercase tracking-wider">
+            {categoryName}
+          </span>
+        ) : (
+          <span />
+        )}
+        {(product.sku || product.skuBadge) && (
+          <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#E8EFE6] text-forest border border-forest/10">
+            {product.skuBadge || `SKU: ${product.sku}`}
+          </span>
+        )}
       </div>
 
       {/* Product Title */}
@@ -60,11 +66,12 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
         </span>
       </div>
 
-      {/* Key Benefit Summary - live CMS excerpt; offline fallback is the bundled
-          subtitle, never fake marketing copy. */}
-      <p className="text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans mb-3.5">
-        {product.shortDescription || product.subtitle}
-      </p>
+      {/* Key Benefit Summary - live CMS excerpt */}
+      {product.shortDescription && (
+        <p className="text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans mb-3.5">
+          {product.shortDescription}
+        </p>
+      )}
 
       {/* Synchronized Variant Selector Cards - Only when backend-configured variants exist */}
       {hasVariants && packOptions.length > 1 && (

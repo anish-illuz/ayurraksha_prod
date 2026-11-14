@@ -335,13 +335,6 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
             onToggle={() => toggleSection('whyChoose')}
           >
             <div>
-              {product.featuresBadge && (
-                <div className="mb-4 pb-3 border-b border-stone-100">
-                  <span className="px-3 py-1 rounded-full bg-[#E8EFE6] text-forest text-xs font-bold border border-forest/10">
-                    {product.featuresBadge}
-                  </span>
-                </div>
-              )}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {parsedBenefits.map((benefit, idx) => {
                   const colonIdx = benefit.indexOf(':');
@@ -383,11 +376,6 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
             onToggle={() => toggleSection('whatsInside')}
           >
             <div>
-              {product.ingredientsSubtitle && (
-                <p className="text-xs sm:text-sm text-charcoal/70 mb-4">
-                  {product.ingredientsSubtitle}
-                </p>
-              )}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {parsedIngredients.map((herb, idx) => (
                   <div
@@ -465,12 +453,6 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
                   <ShieldCheck size={14} className="text-amber-700 shrink-0" />
                   <span>For External / Topical Use Only • Do Not Swallow</span>
                 </div>
-              )}
-
-              {product.ritualSubtitle && (
-                <p className="text-xs sm:text-sm text-charcoal/70 mb-4 max-w-2xl">
-                  {product.ritualSubtitle}
-                </p>
               )}
 
               {(() => {

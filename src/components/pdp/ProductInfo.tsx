@@ -52,18 +52,26 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 
   const whatsappInquiryUrl = 'https://wa.me/919940388877';
 
-  const categoryName = product.healthConcerns[0] || product.categories[0] || 'Digestive & Gut Health';
+  // Category eyebrow is always sourced from the live WooCommerce taxonomy.
+  // No hardcoded fallback category name is rendered.
+  const categoryName = product.categories[0] || '';
 
   return (
     <div className="flex flex-col space-y-4 sm:space-y-5">
       {/* Category Eyebrow & SKU Pill Header (Desktop only - mobile shown in MobileProductHeader) */}
       <div className="hidden lg:flex items-center justify-between gap-2">
-        <span className="text-xs font-bold text-botanical uppercase tracking-wider">
-          {categoryName}
-        </span>
-        <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#E8EFE6] text-forest border border-forest/10">
-          {product.skuBadge || `SKU: ${product.sku || product.id}`}
-        </span>
+        {categoryName ? (
+          <span className="text-xs font-bold text-botanical uppercase tracking-wider">
+            {categoryName}
+          </span>
+        ) : (
+          <span />
+        )}
+        {(product.sku || product.skuBadge) && (
+          <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#E8EFE6] text-forest border border-forest/10">
+            {product.skuBadge || `SKU: ${product.sku}`}
+          </span>
+        )}
       </div>
 
       {/* Product Title & Subtitle (Desktop only) */}
@@ -71,9 +79,11 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-forest leading-tight">
           {product.name}
         </h1>
-        <p className="mt-1 text-xs sm:text-sm text-charcoal/70 font-sans">
-          {product.subtitle || 'Ayurvedic Herbal Blend • Single-Serving Powder Sachets'}
-        </p>
+        {product.subtitle && (
+          <p className="mt-1 text-xs sm:text-sm text-charcoal/70 font-sans">
+            {product.subtitle}
+          </p>
+        )}
       </div>
 
       {/* Rating with Verified Reviews Count (Desktop only). The count is the

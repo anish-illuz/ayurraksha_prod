@@ -53,58 +53,87 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
         </div>
       </div>
 
-      {/* Compact 4 Key Benefit Tiles Row */}
+      {/* Gallery Thumbnails: If multiple images exist from CMS, show image thumbnails. Otherwise show authentic highlights */}
       <div className="grid grid-cols-4 gap-2 sm:gap-2.5">
-        {/* Tile 1: Primary Pack Photo Thumbnail */}
-        <button
-          onClick={() => setSelectedIndex(0)}
-          className={`h-16 sm:h-20 rounded-xl p-1 bg-white border-2 transition-all flex items-center justify-center overflow-hidden ${
-            selectedIndex === 0
-              ? 'border-botanical shadow-2xs'
-              : 'border-stone-200 hover:border-stone-300 opacity-90'
-          }`}
-          title="Pack View"
-        >
-          <div className="relative w-full h-full">
-            <Image
-              src={displayImages[0]}
-              alt={`${productName} pack view`}
-              fill
-              sizes="90px"
-              className="object-contain"
-            />
-          </div>
-        </button>
+        {displayImages.length > 1 ? (
+          displayImages.slice(0, 4).map((img, idx) => (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => setSelectedIndex(idx)}
+              className={`h-16 sm:h-20 rounded-xl p-1 bg-white border-2 transition-all flex items-center justify-center overflow-hidden cursor-pointer ${
+                selectedIndex === idx
+                  ? 'border-botanical shadow-2xs'
+                  : 'border-stone-200 hover:border-stone-300 opacity-80'
+              }`}
+              title={`${productName} view ${idx + 1}`}
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src={img}
+                  alt={`${productName} view ${idx + 1}`}
+                  fill
+                  sizes="90px"
+                  className="object-contain"
+                />
+              </div>
+            </button>
+          ))
+        ) : (
+          <>
+            {/* Tile 1: Primary Pack Photo Thumbnail */}
+            <button
+              type="button"
+              onClick={() => setSelectedIndex(0)}
+              className={`h-16 sm:h-20 rounded-xl p-1 bg-white border-2 transition-all flex items-center justify-center overflow-hidden ${
+                selectedIndex === 0
+                  ? 'border-botanical shadow-2xs'
+                  : 'border-stone-200 hover:border-stone-300 opacity-90'
+              }`}
+              title="Pack View"
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src={displayImages[0]}
+                  alt={`${productName} pack view`}
+                  fill
+                  sizes="90px"
+                  className="object-contain"
+                />
+              </div>
+            </button>
 
-        {/* Tile 2: Pre-Measured Packaging */}
-        <div className="h-16 sm:h-20 rounded-xl p-1.5 bg-[#EEF5EE]/80 border border-emerald-900/10 flex flex-col items-center justify-center text-center">
-          <div className="w-6 h-6 rounded-full bg-white text-botanical flex items-center justify-center mb-1 shadow-2xs shrink-0">
-            <Package size={13} />
-          </div>
-          <span className="text-[10px] sm:text-[11px] font-bold text-forest leading-tight line-clamp-2 px-0.5">
-            {getCompactPackBadge(product?.specNetQuantity)}
-          </span>
-        </div>
+            {/* Tile 2: Pre-Measured Packaging */}
+            <div className="h-16 sm:h-20 rounded-xl p-1.5 bg-[#EEF5EE]/80 border border-emerald-900/10 flex flex-col items-center justify-center text-center">
+              <div className="w-6 h-6 rounded-full bg-white text-botanical flex items-center justify-center mb-1 shadow-2xs shrink-0">
+                <Package size={13} />
+              </div>
+              <span className="text-[10px] sm:text-[11px] font-bold text-forest leading-tight line-clamp-2 px-0.5">
+                {getCompactPackBadge(product?.specNetQuantity)}
+              </span>
+            </div>
 
-        {/* Tile 3: Whole Botanical Ingredients */}
-        <div className="h-16 sm:h-20 rounded-xl p-1.5 bg-[#EEF5EE]/80 border border-emerald-900/10 flex flex-col items-center justify-center text-center">
-          <div className="w-6 h-6 rounded-full bg-white text-botanical flex items-center justify-center mb-1 shadow-2xs shrink-0">
-            <Leaf size={13} />
-          </div>
-          <span className="text-[10px] sm:text-[11px] font-bold text-forest leading-tight line-clamp-2">
-            Whole Botanicals
-          </span>
-        </div>
+            {/* Tile 3: Whole Botanical Ingredients */}
+            <div className="h-16 sm:h-20 rounded-xl p-1.5 bg-[#EEF5EE]/80 border border-emerald-900/10 flex flex-col items-center justify-center text-center">
+              <div className="w-6 h-6 rounded-full bg-white text-botanical flex items-center justify-center mb-1 shadow-2xs shrink-0">
+                <Leaf size={13} />
+              </div>
+              <span className="text-[10px] sm:text-[11px] font-bold text-forest leading-tight line-clamp-2">
+                Whole Botanicals
+              </span>
+            </div>
 
-        {/* Tile 4: Analytical Purity */}
-        <div className="h-16 sm:h-20 rounded-xl p-1.5 bg-[#EEF5EE]/80 border border-emerald-900/10 flex flex-col items-center justify-center text-center">
-          <div className="w-6 h-6 rounded-full bg-white text-botanical flex items-center justify-center mb-1 shadow-2xs shrink-0">
-            <FileCheck size={13} />
-          </div>
-          <span className="text-[10px] sm:text-[11px] font-bold text-forest leading-tight line-clamp-2">
-            COA Lab Pure
-          </span>
-        </div>
+            {/* Tile 4: Analytical Purity */}
+            <div className="h-16 sm:h-20 rounded-xl p-1.5 bg-[#EEF5EE]/80 border border-emerald-900/10 flex flex-col items-center justify-center text-center">
+              <div className="w-6 h-6 rounded-full bg-white text-botanical flex items-center justify-center mb-1 shadow-2xs shrink-0">
+                <FileCheck size={13} />
+              </div>
+              <span className="text-[10px] sm:text-[11px] font-bold text-forest leading-tight line-clamp-2">
+                COA Lab Pure
+              </span>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

@@ -125,10 +125,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             <span>{product.rating.toFixed(1)}</span>
           </div>
           <span className="text-stone-600 font-semibold text-[11px] sm:text-xs">({product.reviewCount})</span>
-          <span className="text-stone-300">|</span>
-          <span className="truncate max-w-[130px] font-medium text-stone-700 text-[11px] sm:text-xs">
-            {product.healthConcerns[0] || 'Ayurvedic Care'}
-          </span>
+          {product.healthConcerns[0] && (
+            <>
+              <span className="text-stone-300">|</span>
+              <span className="truncate max-w-[130px] font-medium text-stone-700 text-[11px] sm:text-xs">
+                {product.healthConcerns[0]}
+              </span>
+            </>
+          )}
         </div>
 
         {/* Pack / Size Pill Badge */}

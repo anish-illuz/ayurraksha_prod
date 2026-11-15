@@ -95,11 +95,13 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
         </span>
       </div>
 
-      {/* Short Summary Description (Desktop only) - live CMS excerpt; offline
-          fallback is the bundled short description, never fake marketing copy. */}
-      <p className="hidden lg:block text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans">
-        {product.shortDescription}
-      </p>
+      {/* Short Summary Description (Desktop only) - live CMS Product Short
+          Description; rendered only when the backend field has content. */}
+      {product.shortDescription && (
+        <p className="hidden lg:block text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans">
+          {product.shortDescription}
+        </p>
+      )}
 
       {/* Compact Price Row: Price + Original Price + Savings (Desktop only) */}
       <div className="hidden lg:flex flex-wrap items-baseline gap-x-3 gap-y-1.5 p-3.5 bg-[#EEF5EE] rounded-xl border border-emerald-900/10">

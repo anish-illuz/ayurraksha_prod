@@ -38,7 +38,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!product) return {};
 
   const title = `${product.name} | AyurRaksha Online`;
-  const desc = product.shortDescription || `${product.name} - authentic classical Ayurvedic formulation by AyurRaksha. Free shipping on prepaid orders.`;
+  // SEO copy comes strictly from the CMS Product Short Description. When the
+  // backend field is empty we emit no meta description rather than fabricated
+  // marketing copy.
+  const desc = product.shortDescription || '';
 
   return {
     title,
@@ -144,14 +147,21 @@ export default async function ProductDetailPage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
         />
 
-        {/* Clean Breadcrumb Navigation */}
+        {/* Clean Breadcrumb Navigation - the category crumb is the live
+            WooCommerce category name/slug from the CMS, never a hardcoded
+            fallback. When the product has no category the crumb is omitted. */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4">
           <div className="pb-1.5 sm:pb-2 border-b border-stone-200/60">
             <Breadcrumb
               items={[
                 { name: 'Home', url: '/' },
                 { name: 'Shop', url: '/shop' },
-                { name: product.healthConcerns[0] || 'Digestive & Gut Health', url: '/shop' },
+                ...(product.categories[0]
+                  ? [{
+                      name: product.categories[0],
+                      url: product.categorySlugs[0] ? `/category/${product.categorySlugs[0]}` : '/shop',
+                    }]
+                  : []),
                 { name: product.name, url: `/product/${product.slug}` },
               ]}
             />

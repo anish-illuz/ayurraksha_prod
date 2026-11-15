@@ -1,100 +1,9 @@
 import { NextResponse } from 'next/server';
+import { fetchCmsCommerce } from '@/lib/cms';
 import { getProductById } from '@/lib/products';
 
 const WORDPRESS_BASE = process.env.WORDPRESS_API_URL || process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://cms.ayurrakshaonline.com';
 const WORDPRESS_STORE_API = `${WORDPRESS_BASE}/wp-json/wc/store/v1`;
-
-// Comprehensive mapping from storefront product slugs/IDs to live WooCommerce product IDs on cms.ayurrakshaonline.com
-const CMS_PRODUCT_ID_MAP: Record<string, number> = {
-  // Individual formulations
-  'ayurraksha-detox-tea': 85,
-  'migro-prime-tablets': 86,
-  'etioment-pain-relief-roll-on-50ml': 87,
-  'ayur-raksha-superheal-o3-cream': 88,
-  'ayurraksha-superheal-o3-cream': 88,
-  'ayur-raksha-dant-swasthya': 89,
-  'ayurraksha-dant-swasthya': 89,
-  'ayur-raksha-premium-high-fiber-health-mix': 90,
-  'ayurraksha-premium-high-fiber-health-mix': 90,
-  'ayur-raksha-gargling-oil': 91,
-  'ayurraksha-gargling-oil': 91,
-  'ayur-raksha-alg': 92,
-  'ayurraksha-alg': 92,
-  'ayur-raksha-creat-capsules': 93,
-  'ayurraksha-creat-capsules': 93,
-  'ayur-raksha-imu-360': 94,
-  'ayurraksha-imu-360': 94,
-  'bpain-out-capsules': 95,
-  'ayurraksha-bpain-out-capsules': 95,
-  'ayur-raksha-herbal-shampoo': 96,
-  'ayurraksha-herbal-shampoo': 96,
-  'hair-well-food-supplement-capsules': 97,
-  'ayurraksha-hair-well-food-supplement-capsules': 97,
-  'ayur-raksha-skin-conditioning-oil': 98,
-  'ayurraksha-skin-conditioning-oil': 98,
-  'sp-soryn-cream': 99,
-  'ayurraksha-sp-soryn-cream': 99,
-  'b-derma-capsules': 100,
-  'ayurraksha-b-derma-capsules': 100,
-  'ayur-raksha-skin-well-food-moisturising-gel': 101,
-  'ayurraksha-skin-well-food-moisturising-gel': 101,
-  'ayur-raksha-beta-powder': 102,
-  'ayurraksha-beta-powder': 102,
-  'etionment-pain-relief-cream': 103,
-  'etioment-balm': 103,
-  'dia-well-food-supplement-capsules': 104,
-  'b-gasonil': 105,
-  'b-gasonil-capsules': 105,
-  'booznil': 106,
-  'skin-well-food-supplement-capsules': 107,
-  'skin-well-capsules': 107,
-  'save-heart': 108,
-  'ayur-raksha-skinwell-soap-pack-of-2': 109,
-  'skinwell-soap-pack-of-2': 109,
-  'flow-well-food-supplement-capsules': 110,
-  'flow-well-capsules': 110,
-  'organics-laxahealth-tea-tin': 111,
-  'laxa-health-tea-tin': 111,
-  'purna-sakthi-tonic': 112,
-  'purna-sakthi': 112,
-  'divine-healing-oil': 113,
-  'boozliv': 114,
-  'esnovate-immunity-boosting-capsules': 115,
-  'esnovate-capsules': 115,
-  'dhayani-herbal-hair-oil-100ml': 116,
-  'organics-herbo-protein-powder': 117,
-  'herbo-protein-powder': 117,
-  'organics-hibiscus-tea-tin': 118,
-  'hibiscus-tea-tin': 118,
-  'pi-well-food-supplement-capsules': 119,
-  'sleep-well-food-supplement-capsules': 120,
-  'sleep-well-capsules': 120,
-  'ayurraksha-foot-bath-powder-300g': 121,
-  'ayur-raksha-foot-bath-powder': 121,
-  'ayurraksha-kalonji-soap': 122,
-  'ayurraksha-vital-o3-anti-vitiligo-cream': 123,
-  'ayurraksha-immuno3-immunity-booster-capsules': 124,
-};
-
-// Fallback product ID if a product cannot be mapped
-const DEFAULT_CMS_PRODUCT_ID = 114; // BoozLiv
-
-function resolveCmsProductId(item: any): number {
-  const product = getProductById(item.product?.id || item.id);
-  const slug = (item.product?.slug || product?.slug || item.slug || '').toLowerCase();
-
-  if (slug && CMS_PRODUCT_ID_MAP[slug]) {
-    return CMS_PRODUCT_ID_MAP[slug];
-  }
-
-  // Check if ID is already a valid CMS ID (between 85 and 124)
-  const numericId = Number(item.product?.id || item.id);
-  if (numericId >= 85 && numericId <= 124) {
-    return numericId;
-  }
-
-  return DEFAULT_CMS_PRODUCT_ID;
-}
 
 // State name to state code abbreviation mapping for India
 const STATE_CODE_MAP: Record<string, string> = {
@@ -165,37 +74,34 @@ export async function POST(req: Request) {
       user_agent: clientAttribution.user_agent || headerUserAgent,
     };
 
-    // Server-side validation of subtotal and volume tier discount
-    const calculatedSubtotal = items.reduce((acc: number, item: any) => {
-      const product = getProductById(item.product?.id || item.id);
-      const price = item.variantPrice ?? product?.price ?? item.price ?? 0;
-      return acc + price * (item.quantity || 1);
-    }, 0);
+    const resolvedItems = await Promise.all(items.map(async (item: any) => {
+      const bundled = getProductById(item.product?.id || item.id);
+      const slug = bundled?.slug || item.product?.slug || item.slug;
+      const product = typeof slug === 'string' ? await fetchCmsCommerce(slug) : null;
+      if (!product?.inStock || !Number.isInteger(item.quantity) || item.quantity < 1) return null;
 
+      const variant = product.variantDetails.find((entry) => entry.id === item.variantId);
+      if ((product.type === 'variable' || item.variantId !== undefined) && !variant?.inStock) return null;
+
+      return {
+        id: variant?.id ?? product.cmsProductId,
+        name: product.name,
+        variantName: variant?.variationLabel,
+        quantity: item.quantity as number,
+        price: variant?.price ?? product.price,
+      };
+    }));
+    const orderItems = resolvedItems.filter((item): item is NonNullable<typeof item> => item !== null);
+    if (orderItems.length !== items.length) {
+      return NextResponse.json({ success: false, error: 'An item is unavailable or has an invalid quantity. Please refresh your cart.' }, { status: 400 });
+    }
+
+    const calculatedSubtotal = orderItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const serverTierPercent = calculatedSubtotal >= 5000 ? 15 : calculatedSubtotal >= 2000 ? 10 : 0;
     const serverTierDiscount = Math.round(calculatedSubtotal * (serverTierPercent / 100));
-
-    // Append discount record to customer note for WooCommerce admin visibility
     let enhancedNote = customerNote || '';
     if (serverTierDiscount > 0) {
       enhancedNote += ` | Automatic Volume Discount: ${serverTierPercent}% OFF (-₹${serverTierDiscount}) [Subtotal: ₹${calculatedSubtotal}, Net: ₹${calculatedSubtotal - serverTierDiscount}]`;
-    }
-
-    for (const item of items) {
-      const product = getProductById(item.product?.id || item.id);
-      let variant: any;
-      if (item.variantId) {
-        // A variation was selected: it must match a real, in-stock variant of this product.
-        variant = product?.variants?.find(v => v.id === item.variantId);
-        if (!variant) {
-          return NextResponse.json({ success: false, error: 'An item in your cart is no longer available. Please refresh your cart.' }, { status: 400 });
-        }
-      } else if (product?.variants && product.variants.length > 0) {
-        variant = product.variants.find(v => v.name === item.selectedVariant) || undefined;
-      }
-      if (!product?.inStock || variant?.inStock === false || !Number.isInteger(item.quantity) || item.quantity < 1) {
-        return NextResponse.json({ success: false, error: 'An item is unavailable or has an invalid quantity. Please refresh your cart.' }, { status: 400 });
-      }
     }
     const timestamp = Date.now();
 
@@ -241,26 +147,9 @@ export async function POST(req: Request) {
 
     // Step 3: Add the order items using resolved live CMS product IDs
     const itemManifest: string[] = [];
-    for (const item of items) {
-      const product = getProductById(item.product?.id || item.id);
-      const targetId = resolveCmsProductId(item);
-
-      // item.quantity is already the physical pack quantity (e.g. 3 for 3-Month Family Regimen)
-      const targetQuantity = item.quantity || 1;
-      const itemName = product?.name || item.name || `Product #${targetId}`;
-      const variantName = item.selectedVariant ? ` (${item.selectedVariant})` : '';
-      itemManifest.push(`${itemName}${variantName} x ${targetQuantity}`);
-
-      // The WooCommerce Store API selects a variation via its attribute map
-      // (e.g. { pa_packs: "30-days-pack" }), not by variation id. Resolve it from
-      // the matching variant in the catalog (which carries the synced attribute map).
-      const matchedVariant = item.variantId
-        ? product?.variants?.find((v) => v.id === item.variantId)
-        : undefined;
-      const variationAttributes: Record<string, string> | undefined =
-        matchedVariant?.attributes && Object.keys(matchedVariant.attributes).length > 0
-          ? matchedVariant.attributes
-          : undefined;
+    for (const item of orderItems) {
+      const variantName = item.variantName ? ` (${item.variantName})` : '';
+      itemManifest.push(`${item.name}${variantName} x ${item.quantity}`);
 
       const addRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
         method: 'POST',
@@ -272,9 +161,8 @@ export async function POST(req: Request) {
           'Cart-Token': cartToken,
         },
         body: JSON.stringify({
-          id: targetId,
-          quantity: targetQuantity,
-          ...(variationAttributes ? { attributes: variationAttributes } : {}),
+          id: item.id,
+          quantity: item.quantity,
         }),
         cache: 'no-store',
       });
@@ -283,26 +171,7 @@ export async function POST(req: Request) {
       if (addRes.headers.get('Cart-Token')) cartToken = addRes.headers.get('Cart-Token') || cartToken;
 
       if (!addRes.ok) {
-        console.warn(`Failed to add item ${targetId} to WooCommerce cart. Retrying with default product.`);
-        // Graceful fallback to default CMS product so order is recorded in WooCommerce
-        const fallbackRes = await fetch(`${WORDPRESS_STORE_API}/cart/add-item?_nocache=${Date.now()}`, {
-          method: 'POST',
-          headers: {
-            'User-Agent': clientUserAgent,
-            ...clientIpHeaders,
-            'Content-Type': 'application/json',
-            'Nonce': nonce,
-            'Cart-Token': cartToken,
-          },
-          body: JSON.stringify({
-            id: DEFAULT_CMS_PRODUCT_ID,
-            quantity: targetQuantity,
-            variation_id: 0,
-          }),
-          cache: 'no-store',
-        });
-        if (fallbackRes.headers.get('Nonce')) nonce = fallbackRes.headers.get('Nonce') || nonce;
-        if (fallbackRes.headers.get('Cart-Token')) cartToken = fallbackRes.headers.get('Cart-Token') || cartToken;
+        throw new Error(`WooCommerce could not add product ${item.id} to the cart`);
       }
     }
 
@@ -434,10 +303,8 @@ export async function POST(req: Request) {
     });
   } catch (error: any) {
     console.error('Error creating order in WooCommerce:', error);
-    const fallbackNumber = `WC-${Date.now().toString().slice(-6)}`;
     return NextResponse.json({
       success: false,
-      fallbackOrderNumber: fallbackNumber,
       error: error.message || 'Failed to record order in WooCommerce',
     }, { status: 500 });
   }

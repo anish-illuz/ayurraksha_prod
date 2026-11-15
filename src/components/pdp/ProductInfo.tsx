@@ -141,7 +141,16 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
               return (
                 <div
                   key={pack.id}
+                  role="button"
+                  tabIndex={isOutOfStock ? -1 : 0}
+                  aria-pressed={isSelected}
                   onClick={() => setSelectedPackId(pack.id)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      setSelectedPackId(pack.id);
+                    }
+                  }}
                   aria-disabled={isOutOfStock}
                   className={`p-3 sm:p-3.5 rounded-xl border-2 transition-all flex flex-col justify-between relative ${
                     isOutOfStock

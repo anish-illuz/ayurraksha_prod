@@ -50,12 +50,12 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed)) setItems(parsed.flatMap((item: CartItem) => {
-          const product = getProductById(item.product?.id);
+          const product = item.product?.cmsProductId ? item.product : getProductById(item.product?.id);
           if (!product?.inStock || !Number.isInteger(item.quantity) || item.quantity < 1) return [];
 
           // 1. Check if matching WooCommerce variant exists
           const variant = product.variants && product.variants.length > 0 ? product.variants.find(
-            (v) => (item.variantId !== undefined && v.id === item.variantId) || (item.selectedVariant && v.name === item.selectedVariant)
+            (v) => item.variantId !== undefined ? v.id === item.variantId : v.name === item.selectedVariant
           ) : undefined;
 
           let selectedVariant = item.selectedVariant;
@@ -69,8 +69,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             variantId = variant.id;
             variantPrice = item.variantPrice ?? variant.price ?? product.price;
           } else if (product.variants && product.variants.length > 0) {
-            // Variable product whose saved selection no longer matches: default to the first in-stock variation.
-            const fallback = product.variants.find((v) => (v.default || v.inStock !== false)) || product.variants[0];
+            if (item.variantId !== undefined || item.selectedVariant) return [];
+            const fallback = product.variants.find((v) => v.default && v.inStock !== false) || product.variants.find((v) => v.inStock !== false) || product.variants[0];
             if (fallback.inStock === false) return [];
             selectedVariant = fallback.name;
             variantId = fallback.id;
@@ -143,13 +143,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     isSecondVariantOffer = false,
     originalUnitPrice?: number
   ) => {
-    const canonical = getProductById(product.id);
+    const canonical = product.cmsProductId ? product : getProductById(product.id);
     if (!canonical?.inStock || !Number.isInteger(quantity) || quantity < 1) return;
     product = canonical;
 
     // 1. Check if matching WooCommerce variant exists
     const variant = product.variants && product.variants.length > 0 ? product.variants.find(
-      (v) => (variantId !== undefined && v.id === variantId) || (selectedVariant && v.name === selectedVariant)
+      (v) => variantId !== undefined ? v.id === variantId : v.name === selectedVariant
     ) : undefined;
 
     if (variant) {
@@ -158,9 +158,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       variantId = variant.id;
       variantPrice = variantPrice ?? variant.price;
     } else if (product.variants && product.variants.length > 0) {
+      if (variantId !== undefined || selectedVariant) return;
       // Variable product with no explicit selection: default to the first in-stock variation
       // so the correct variation id and price are always used (Woo requires a variation for variable products).
-      const fallback = product.variants.find((v) => (v.default || v.inStock !== false)) || product.variants[0];
+      const fallback = product.variants.find((v) => v.default && v.inStock !== false) || product.variants.find((v) => v.inStock !== false) || product.variants[0];
       if (fallback.inStock === false) return;
       selectedVariant = fallback.name;
       variantId = fallback.id;
@@ -183,6 +184,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       );
       if (existingIndex > -1) {
         const next = [...prev];
+        next[existingIndex] = { ...next[existingIndex], product };
         next[existingIndex].quantity += quantity;
         if (variantPrice !== undefined) next[existingIndex].variantPrice = variantPrice;
         if (variantId !== undefined) next[existingIndex].variantId = variantId;

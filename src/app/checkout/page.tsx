@@ -205,16 +205,17 @@ export default function CheckoutPage() {
       });
 
       const orderData = await orderRes.json();
-      if (orderData.orderNumber) {
-        wooOrderNumber = String(orderData.orderNumber);
-        wooOrderId = String(orderData.orderId || orderData.orderNumber);
-        setPreviousAttemptOrderId(wooOrderNumber);
-      } else {
-        wooOrderNumber = orderData.fallbackOrderNumber || `AYUR-${Date.now().toString().slice(-6)}`;
+      if (!orderRes.ok || orderData.success !== true || !orderData.orderId || !orderData.orderNumber) {
+        throw new Error('WooCommerce did not confirm the order');
       }
+      wooOrderNumber = String(orderData.orderNumber);
+      wooOrderId = String(orderData.orderId);
+      setPreviousAttemptOrderId(wooOrderNumber);
     } catch (err) {
       console.error('WooCommerce order recording error:', err);
-      wooOrderNumber = `AYUR-${Date.now().toString().slice(-6)}`;
+      setErrorMessage('We could not confirm your order. Your cart is still available. If you retry, check for an order confirmation first.');
+      setIsProcessing(false);
+      return;
     }
 
     if (paymentMethod === 'cod') {

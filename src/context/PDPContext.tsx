@@ -111,7 +111,7 @@ export const PDPProvider: React.FC<{
   const handleAddToCart = () => {
     if (!isAvailable) return;
     const matchingVariant = hasVariants
-      ? product.variants.find((v) => (v.slug && v.slug === selectedPack.id) || v.name === selectedPack.name)
+      ? product.variants.find((v, index) => (v.slug || String(v.id || index)) === selectedPack.id)
       : undefined;
 
     addToCart(

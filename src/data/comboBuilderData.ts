@@ -216,7 +216,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 7. Skinwell Food Supplement (CMS ID 107) — Main Store price: ₹1,299
+  // 7. Skinwell Food Supplement (CMS ID 107) — Main Store price: ₹1,100
   {
     id: 7688,
     cmsId: 107,
@@ -230,8 +230,8 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
       '/images/products/skin-well-food-supplement-capsules.webp',
       'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/skin-well-capsules.png',
     ],
-    mrp: 1299,
-    price: 1299,
+    mrp: 1100,
+    price: 1100,
     pricePending: false,
     inStock: true,
     doctorGuided: false,

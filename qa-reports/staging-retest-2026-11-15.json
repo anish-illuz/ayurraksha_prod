@@ -1,0 +1,482 @@
+{
+  "catalog": [
+    {
+      "slug": "divine-healing-oil",
+      "type": "simple",
+      "status": 200,
+      "expected": 999,
+      "cta": [
+        "Add to Cart • ₹999"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-vital-o3-anti-vitiligo-cream",
+      "type": "simple",
+      "status": 200,
+      "expected": 4000,
+      "cta": [
+        "Add to Cart • ₹4,000"
+      ],
+      "match": true
+    },
+    {
+      "slug": "boozliv",
+      "type": "variable",
+      "status": 200,
+      "expected": 2400,
+      "cta": [
+        "Add to Cart • ₹2,400"
+      ],
+      "match": true
+    },
+    {
+      "slug": "hibiscus-tea-tin",
+      "type": "simple",
+      "status": 200,
+      "expected": 400,
+      "cta": [
+        "Add to Cart • ₹400"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-kalonji-soap",
+      "type": "simple",
+      "status": 200,
+      "expected": 150,
+      "cta": [
+        "Add to Cart • ₹200"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹150"
+      ]
+    },
+    {
+      "slug": "laxa-health-tea-tin",
+      "type": "simple",
+      "status": 200,
+      "expected": 400,
+      "cta": [
+        "Add to Cart • ₹0"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹400"
+      ]
+    },
+    {
+      "slug": "ayurraksha-foot-bath-powder-300g",
+      "type": "simple",
+      "status": 200,
+      "expected": 1000,
+      "cta": [
+        "Add to Cart • ₹1,000"
+      ],
+      "match": true
+    },
+    {
+      "slug": "sleep-well-capsules",
+      "type": "simple",
+      "status": 200,
+      "expected": 1100,
+      "cta": [
+        "Add to Cart • ₹0"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹1,100"
+      ]
+    },
+    {
+      "slug": "__trashed-2",
+      "type": "simple",
+      "status": 200,
+      "expected": 500,
+      "cta": [
+        "Add to Cart • ₹500"
+      ],
+      "match": true
+    },
+    {
+      "slug": "booznil",
+      "type": "variable",
+      "status": 200,
+      "expected": 800,
+      "cta": [
+        "Add to Cart • ₹800"
+      ],
+      "match": true
+    },
+    {
+      "slug": "dhayani-herbal-hair-oil-100ml",
+      "type": "simple",
+      "status": 200,
+      "expected": 750,
+      "cta": [
+        "Add to Cart • ₹750"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-skin-well-food-moisturising-gel",
+      "type": "simple",
+      "status": 200,
+      "expected": 1100,
+      "cta": [
+        "Add to Cart • ₹1,100"
+      ],
+      "match": true
+    },
+    {
+      "slug": "esnovate-capsules",
+      "type": "simple",
+      "status": 200,
+      "expected": 999,
+      "cta": [
+        "Add to Cart • ₹999"
+      ],
+      "match": true
+    },
+    {
+      "slug": "herbo-protein-powder",
+      "type": "variable",
+      "status": 200,
+      "expected": 500,
+      "cta": [
+        "Add to Cart • ₹500"
+      ],
+      "match": true
+    },
+    {
+      "slug": "pi-well-food-supplement-capsules",
+      "type": "simple",
+      "status": 200,
+      "expected": 1100,
+      "cta": [
+        "Add to Cart • ₹1,100"
+      ],
+      "match": true
+    },
+    {
+      "slug": "skinwell-soap-pack-of-2",
+      "type": "simple",
+      "status": 200,
+      "expected": 260,
+      "cta": [
+        "Add to Cart • ₹260"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-herbal-shampoo",
+      "type": "simple",
+      "status": 200,
+      "expected": 499,
+      "cta": [
+        "Add to Cart • ₹0"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹499"
+      ]
+    },
+    {
+      "slug": "dia-well-food-supplement-capsules",
+      "type": "simple",
+      "status": 200,
+      "expected": 1299,
+      "cta": [
+        "Add to Cart • ₹1,299"
+      ],
+      "match": true
+    },
+    {
+      "slug": "flow-well-capsules",
+      "type": "simple",
+      "status": 200,
+      "expected": 1100,
+      "cta": [
+        "Add to Cart • ₹1,100"
+      ],
+      "match": true,
+      "repeatCta": [
+        "Add to Cart • ₹1,100"
+      ]
+    },
+    {
+      "slug": "purna-sakthi",
+      "type": "simple",
+      "status": 200,
+      "expected": 1299,
+      "cta": [
+        "Add to Cart • ₹1,299"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-gargling-oil",
+      "type": "simple",
+      "status": 200,
+      "expected": 250,
+      "cta": [
+        "Add to Cart • ₹250"
+      ],
+      "match": true
+    },
+    {
+      "slug": "save-heart",
+      "type": "simple",
+      "status": 200,
+      "expected": 1199,
+      "cta": [
+        "Add to Cart • ₹1,199"
+      ],
+      "match": true,
+      "repeatCta": [
+        "Add to Cart • ₹1,199"
+      ]
+    },
+    {
+      "slug": "etioment-balm",
+      "type": "simple",
+      "status": 200,
+      "expected": 400,
+      "cta": [
+        "Add to Cart • ₹400"
+      ],
+      "match": true
+    },
+    {
+      "slug": "b-gasonil-capsules",
+      "type": "simple",
+      "status": 200,
+      "expected": 800,
+      "cta": [
+        "Add to Cart • ₹799"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹800"
+      ]
+    },
+    {
+      "slug": "ayurraksha-sp-soryn-cream",
+      "type": "simple",
+      "status": 200,
+      "expected": 800,
+      "cta": [
+        "Add to Cart • ₹799"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹800"
+      ]
+    },
+    {
+      "slug": "skin-well-capsules",
+      "type": "simple",
+      "status": 200,
+      "expected": 1100,
+      "cta": [
+        "Add to Cart • ₹1,100"
+      ],
+      "match": true,
+      "repeatCta": [
+        "Add to Cart • ₹1,100"
+      ]
+    },
+    {
+      "slug": "migro-prime-tablets",
+      "type": "simple",
+      "status": 200,
+      "expected": 1299,
+      "cta": [
+        "Add to Cart • ₹1,299"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-skin-conditioning-oil",
+      "type": "simple",
+      "status": 200,
+      "expected": 799,
+      "cta": [
+        "Add to Cart • ₹799"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-beta-powder",
+      "type": "simple",
+      "status": 200,
+      "expected": 800,
+      "cta": [
+        "Add to Cart • ₹800"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-b-derma-capsules",
+      "type": "simple",
+      "status": 200,
+      "expected": 800,
+      "cta": [
+        "Add to Cart • ₹800"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-hair-well-food-supplement-capsules",
+      "type": "simple",
+      "status": 200,
+      "expected": 1299,
+      "cta": [
+        "Add to Cart • ₹1,299"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-creat-capsules",
+      "type": "simple",
+      "status": 200,
+      "expected": 1100,
+      "cta": [
+        "Add to Cart • ₹0"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹1,100"
+      ]
+    },
+    {
+      "slug": "ayurraksha-imu-360",
+      "type": "simple",
+      "status": 200,
+      "expected": 1100,
+      "cta": [
+        "Add to Cart • ₹1,299"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹1,100"
+      ]
+    },
+    {
+      "slug": "ayurraksha-bpain-out-capsules",
+      "type": "simple",
+      "status": 200,
+      "expected": 800,
+      "cta": [
+        "Add to Cart • ₹1,200"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹800"
+      ]
+    },
+    {
+      "slug": "ayur-raksha-dant-swasthya",
+      "type": "simple",
+      "status": 200,
+      "expected": 200,
+      "cta": [
+        "Add to Cart • ₹200"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-alg",
+      "type": "simple",
+      "status": 200,
+      "expected": 1100,
+      "cta": [
+        "Add to Cart • ₹1,100"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-premium-high-fiber-health-mix",
+      "type": "simple",
+      "status": 200,
+      "expected": 500,
+      "cta": [
+        "Add to Cart • ₹500"
+      ],
+      "match": true
+    },
+    {
+      "slug": "ayurraksha-superheal-o3-cream",
+      "type": "simple",
+      "status": 200,
+      "expected": 3999,
+      "cta": [
+        "Add to Cart • ₹0"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹0"
+      ]
+    },
+    {
+      "slug": "ayurraksha-detox-tea",
+      "type": "simple",
+      "status": 200,
+      "expected": 650,
+      "cta": [
+        "Add to Cart • ₹750"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹650"
+      ]
+    },
+    {
+      "slug": "etioment-pain-relief-roll-on-50ml",
+      "type": "simple",
+      "status": 200,
+      "expected": 500,
+      "cta": [
+        "Add to Cart • ₹400"
+      ],
+      "match": false,
+      "repeatCta": [
+        "Add to Cart • ₹500"
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "width": 1440,
+      "label": "Add to Cart • ₹3,850",
+      "cart": "Home\nShopping Cart\nYour Shopping Cart\n\nReview your selected Ayurvedic formulations before continuing to secure checkout.\n\nPRODUCT DETAILS (1 ITEM)\nClear Cart\nBoozLiv Syrup\n\nPack: 60 Days Pack\n\n1\n₹3,850\nOrder Summary\nItems Subtotal\n₹3,850\nPrepaid Delivery\nFREE\nApplicable Taxes\nIncluded\nTotal Payable\n₹3,850\nPROCEED TO SECURE CHECKOUT\n\nPayments processed securely via Razorpay gateway.\n\nUPI, Cards, NetBanking, and Cash on Delivery supported.\n\nDoctor Consultation Support\n\nNeed guidance on product selection or holistic compatibility? Consult our clinical team on WhatsApp at +91 99403 88877.",
+      "checkout": "ing.\n\nDirect instant verification via Razorpay • 100% Encrypted\nCash on Delivery (COD)\n+₹100 COD fee\n\nPay in cash or UPI when your order arrives at your doorstep.\n\nPAY ₹3,850 VIA RAZORPAY\nOrder Summary (1 item)\nEdit Cart\n1\n\nBoozLiv Syrup\n\nPack: 60 Days Pack\n\nQty: 1 × ₹3,850\n₹3,850\nApply\nSubtotal\n₹3,850\nDelivery Charges\nFREE\nTotal Payable\n₹3,850\nVerified Razorpay Secured Checkout\n\nUPI • Google Pay • PhonePe • Paytm • Visa • Mastercard • NetBanking\n\nNeed Order Assistance?\n\nConnect directly with our Chennai clinic team on WhatsApp: +91 99403 88877",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "label": "Add to Cart • ₹3,850",
+      "cart": "Home\nShopping Cart\nYour Shopping Cart\n\nReview your selected Ayurvedic formulations before continuing to secure checkout.\n\nPRODUCT DETAILS (1 ITEM)\nClear Cart\nBoozLiv Syrup\n\nPack: 60 Days Pack\n\n₹3,850\n1\n₹3,850\nOrder Summary\nItems Subtotal\n₹3,850\nPrepaid Delivery\nFREE\nApplicable Taxes\nIncluded\nTotal Payable\n₹3,850\nPROCEED TO SECURE CHECKOUT\n\nPayments processed securely via Razorpay gateway.\n\nUPI, Cards, NetBanking, and Cash on Delivery supported.\n\nDoctor Consultation Support\n\nNeed guidance on product selection or holistic compatibility? Consult our clinical team on WhatsApp at +91 99403 88877.",
+      "checkout": "ing.\n\nDirect instant verification via Razorpay • 100% Encrypted\nCash on Delivery (COD)\n+₹100 COD fee\n\nPay in cash or UPI when your order arrives at your doorstep.\n\nPAY ₹3,850 VIA RAZORPAY\nOrder Summary (1 item)\nEdit Cart\n1\n\nBoozLiv Syrup\n\nPack: 60 Days Pack\n\nQty: 1 × ₹3,850\n₹3,850\nApply\nSubtotal\n₹3,850\nDelivery Charges\nFREE\nTotal Payable\n₹3,850\nVerified Razorpay Secured Checkout\n\nUPI • Google Pay • PhonePe • Paytm • Visa • Mastercard • NetBanking\n\nNeed Order Assistance?\n\nConnect directly with our Chennai clinic team on WhatsApp: +91 99403 88877",
+      "errors": []
+    }
+  ],
+  "gateway": "live or unknown",
+  "rejections": [
+    {
+      "width": 1440,
+      "submissions": 1,
+      "cart": 1,
+      "couponResult": "PAY ₹3,465 VIA RAZORPAY / Code “WELCOME10” applied (10% OFF) / ₹3,465",
+      "rejected": true
+    },
+    {
+      "width": 390,
+      "submissions": 1,
+      "cart": 1,
+      "couponResult": "PAY ₹3,465 VIA RAZORPAY / Code “WELCOME10” applied (10% OFF) / ₹3,465",
+      "rejected": true
+    }
+  ]
+}

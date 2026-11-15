@@ -1,0 +1,626 @@
+{
+  "gateway": "live",
+  "rows": [
+    {
+      "slug": "divine-healing-oil",
+      "type": "simple",
+      "expected": 999,
+      "checks": [
+        {
+          "status": 200,
+          "price": 999
+        },
+        {
+          "status": 200,
+          "price": 999
+        }
+      ]
+    },
+    {
+      "slug": "__trashed-2",
+      "type": "simple",
+      "expected": 500,
+      "checks": [
+        {
+          "status": 200,
+          "price": 500
+        },
+        {
+          "status": 200,
+          "price": 500
+        }
+      ]
+    },
+    {
+      "slug": "boozliv",
+      "type": "variable",
+      "expected": 2400,
+      "checks": [
+        {
+          "status": 200,
+          "price": 2400
+        },
+        {
+          "status": 200,
+          "price": 2400
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-vital-o3-anti-vitiligo-cream",
+      "type": "simple",
+      "expected": 4000,
+      "checks": [
+        {
+          "status": 200,
+          "price": 4000
+        },
+        {
+          "status": 200,
+          "price": 4000
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-foot-bath-powder-300g",
+      "type": "simple",
+      "expected": 1000,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1000
+        },
+        {
+          "status": 200,
+          "price": 1000
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-kalonji-soap",
+      "type": "simple",
+      "expected": 150,
+      "checks": [
+        {
+          "status": 200,
+          "price": 150
+        },
+        {
+          "status": 200,
+          "price": 150
+        }
+      ]
+    },
+    {
+      "slug": "pi-well-food-supplement-capsules",
+      "type": "simple",
+      "expected": 1100,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1100
+        },
+        {
+          "status": 200,
+          "price": 1100
+        }
+      ]
+    },
+    {
+      "slug": "hibiscus-tea-tin",
+      "type": "simple",
+      "expected": 400,
+      "checks": [
+        {
+          "status": 200,
+          "price": 400
+        },
+        {
+          "status": 200,
+          "price": 400
+        }
+      ]
+    },
+    {
+      "slug": "sleep-well-capsules",
+      "type": "simple",
+      "expected": 1100,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1100
+        },
+        {
+          "status": 200,
+          "price": 1100
+        }
+      ]
+    },
+    {
+      "slug": "esnovate-capsules",
+      "type": "simple",
+      "expected": 999,
+      "checks": [
+        {
+          "status": 200,
+          "price": 999
+        },
+        {
+          "status": 200,
+          "price": 999
+        }
+      ]
+    },
+    {
+      "slug": "herbo-protein-powder",
+      "type": "variable",
+      "expected": 500,
+      "checks": [
+        {
+          "status": 200,
+          "price": 500
+        },
+        {
+          "status": 200,
+          "price": 500
+        }
+      ]
+    },
+    {
+      "slug": "dhayani-herbal-hair-oil-100ml",
+      "type": "simple",
+      "expected": 750,
+      "checks": [
+        {
+          "status": 200,
+          "price": 750
+        },
+        {
+          "status": 200,
+          "price": 750
+        }
+      ]
+    },
+    {
+      "slug": "flow-well-capsules",
+      "type": "simple",
+      "expected": 1100,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1100
+        },
+        {
+          "status": 200,
+          "price": 1100
+        }
+      ]
+    },
+    {
+      "slug": "laxa-health-tea-tin",
+      "type": "simple",
+      "expected": 400,
+      "checks": [
+        {
+          "status": 200,
+          "price": 400
+        },
+        {
+          "status": 200,
+          "price": 400
+        }
+      ]
+    },
+    {
+      "slug": "purna-sakthi",
+      "type": "simple",
+      "expected": 1299,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1299
+        },
+        {
+          "status": 200,
+          "price": 1299
+        }
+      ]
+    },
+    {
+      "slug": "skin-well-capsules",
+      "type": "simple",
+      "expected": 1100,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1100
+        },
+        {
+          "status": 200,
+          "price": 1100
+        }
+      ]
+    },
+    {
+      "slug": "skinwell-soap-pack-of-2",
+      "type": "simple",
+      "expected": 260,
+      "checks": [
+        {
+          "status": 200,
+          "price": 260
+        },
+        {
+          "status": 200,
+          "price": 260
+        }
+      ]
+    },
+    {
+      "slug": "save-heart",
+      "type": "simple",
+      "expected": 1199,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1199
+        },
+        {
+          "status": 200,
+          "price": 1199
+        }
+      ]
+    },
+    {
+      "slug": "dia-well-food-supplement-capsules",
+      "type": "simple",
+      "expected": 1299,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1299
+        },
+        {
+          "status": 200,
+          "price": 1299
+        }
+      ]
+    },
+    {
+      "slug": "b-gasonil-capsules",
+      "type": "simple",
+      "expected": 800,
+      "checks": [
+        {
+          "status": 200,
+          "price": 800
+        },
+        {
+          "status": 200,
+          "price": 800
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-skin-well-food-moisturising-gel",
+      "type": "simple",
+      "expected": 1100,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1100
+        },
+        {
+          "status": 200,
+          "price": 1100
+        }
+      ]
+    },
+    {
+      "slug": "etioment-balm",
+      "type": "simple",
+      "expected": 400,
+      "checks": [
+        {
+          "status": 200,
+          "price": 400
+        },
+        {
+          "status": 200,
+          "price": 400
+        }
+      ]
+    },
+    {
+      "slug": "booznil",
+      "type": "variable",
+      "expected": 800,
+      "checks": [
+        {
+          "status": 200,
+          "price": 800
+        },
+        {
+          "status": 200,
+          "price": 800
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-beta-powder",
+      "type": "simple",
+      "expected": 800,
+      "checks": [
+        {
+          "status": 200,
+          "price": 800
+        },
+        {
+          "status": 200,
+          "price": 800
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-skin-conditioning-oil",
+      "type": "simple",
+      "expected": 799,
+      "checks": [
+        {
+          "status": 200,
+          "price": 799
+        },
+        {
+          "status": 200,
+          "price": 799
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-sp-soryn-cream",
+      "type": "simple",
+      "expected": 800,
+      "checks": [
+        {
+          "status": 200,
+          "price": 800
+        },
+        {
+          "status": 200,
+          "price": 800
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-b-derma-capsules",
+      "type": "simple",
+      "expected": 800,
+      "checks": [
+        {
+          "status": 200,
+          "price": 800
+        },
+        {
+          "status": 200,
+          "price": 800
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-hair-well-food-supplement-capsules",
+      "type": "simple",
+      "expected": 1299,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1299
+        },
+        {
+          "status": 200,
+          "price": 1299
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-bpain-out-capsules",
+      "type": "simple",
+      "expected": 800,
+      "checks": [
+        {
+          "status": 200,
+          "price": 800
+        },
+        {
+          "status": 200,
+          "price": 800
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-herbal-shampoo",
+      "type": "simple",
+      "expected": 499,
+      "checks": [
+        {
+          "status": 200,
+          "price": 499
+        },
+        {
+          "status": 200,
+          "price": 499
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-creat-capsules",
+      "type": "simple",
+      "expected": 1100,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1100
+        },
+        {
+          "status": 200,
+          "price": 1100
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-gargling-oil",
+      "type": "simple",
+      "expected": 250,
+      "checks": [
+        {
+          "status": 200,
+          "price": 250
+        },
+        {
+          "status": 200,
+          "price": 250
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-alg",
+      "type": "simple",
+      "expected": 1100,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1100
+        },
+        {
+          "status": 200,
+          "price": 1100
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-imu-360",
+      "type": "simple",
+      "expected": 1100,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1100
+        },
+        {
+          "status": 200,
+          "price": 1100
+        }
+      ]
+    },
+    {
+      "slug": "ayur-raksha-dant-swasthya",
+      "type": "simple",
+      "expected": 200,
+      "checks": [
+        {
+          "status": 200,
+          "price": 200
+        },
+        {
+          "status": 200,
+          "price": 200
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-premium-high-fiber-health-mix",
+      "type": "simple",
+      "expected": 500,
+      "checks": [
+        {
+          "status": 200,
+          "price": 500
+        },
+        {
+          "status": 200,
+          "price": 500
+        }
+      ]
+    },
+    {
+      "slug": "migro-prime-tablets",
+      "type": "simple",
+      "expected": 1299,
+      "checks": [
+        {
+          "status": 200,
+          "price": 1299
+        },
+        {
+          "status": 200,
+          "price": 1299
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-detox-tea",
+      "type": "simple",
+      "expected": 650,
+      "checks": [
+        {
+          "status": 200,
+          "price": 650
+        },
+        {
+          "status": 200,
+          "price": 650
+        }
+      ]
+    },
+    {
+      "slug": "ayurraksha-superheal-o3-cream",
+      "type": "simple",
+      "expected": 3999,
+      "checks": [
+        {
+          "status": 200,
+          "price": 3999
+        },
+        {
+          "status": 200,
+          "price": 3999
+        }
+      ]
+    },
+    {
+      "slug": "etioment-pain-relief-roll-on-50ml",
+      "type": "simple",
+      "expected": 500,
+      "checks": [
+        {
+          "status": 200,
+          "price": 500
+        },
+        {
+          "status": 200,
+          "price": 500
+        }
+      ]
+    }
+  ],
+  "outcomes": [
+    {
+      "width": 1440,
+      "variantId": 28306,
+      "price": 3850,
+      "couponTotal": 3465,
+      "orders": 1,
+      "retained": true,
+      "keyboard": false,
+      "firstAttempt": "Timed out"
+    },
+    {
+      "width": 390,
+      "variantId": 28306,
+      "price": 3850,
+      "couponTotal": 3465,
+      "orders": 1,
+      "retained": true,
+      "errors": []
+    }
+  ]
+}

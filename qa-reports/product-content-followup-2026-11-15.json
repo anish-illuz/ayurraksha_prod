@@ -1,0 +1,3815 @@
+[
+  {
+    "slug": "__trashed-2",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nDilute with Water\n\nTake 15 ml of shampoo and dilute it with water\n\n2\nSTEP 02\nDilu"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with the eyes; if contact occurs, rinse t"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nH\nerbal Shampoo Product Form\nL\niquid Category\nHair & Scalp Care"
+      }
+    ],
+    "http": 200,
+    "expected": "Dhayani Herbal Hair Oil AyurRaksha Hair Well Food Supplement Capsules",
+    "links": [
+      "/product/dhayani-herbal-hair-oil-100ml/",
+      "/product/hair-well-food-supplement-capsules/"
+    ]
+  },
+  {
+    "slug": "ayur-raksha-dant-swasthya",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor oral hygiene use only.\n•\nDo not swallow."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAy\nurvedic Oral Care Product Form\nT\nooth Powder Category\nOral & Dental Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Gargling Oil",
+    "links": [
+      "/product/ayur-raksha-gargling-oil/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-alg",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "Absent",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "Esnovate Immunity Boosting Capsules AyurRaksha Breathe Well Pack",
+    "links": [
+      "/product/esnovate-immunity-boosting-capsules/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-b-derma-capsules",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedi\nc Herbal Capsules Product Form\nC\napsules Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha SP Soryn Cream AyurRaksha Skin Conditioning Oil",
+    "links": [
+      "/product/sp-soryn-cream/",
+      "/product/ayur-raksha-skin-conditioning-oil/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-beta-powder",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "Absent",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "Dia Well Food Supplement Capsules AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/dia-well-food-supplement-capsules/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-bpain-out-capsules",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, or taking medication consult our doctor befo"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedi\nc Herbal Wellness Product Form\nC\napsules Category\nJoint & Muscle Care"
+      }
+    ],
+    "http": 200,
+    "expected": "Etioment Pain Relief Roll-On AyurRaksha Divine Healing Oil",
+    "links": [
+      "/product/etioment-pain-relief-roll-on-50ml/",
+      "/product/divine-healing-oil/"
+    ]
+  },
+  {
+    "slug": "__trashed-2",
+    "width": 390,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "Absent",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "Dhayani Herbal Hair Oil AyurRaksha Hair Well Food Supplement Capsules",
+    "links": [
+      "/product/dhayani-herbal-hair-oil-100ml/",
+      "/product/hair-well-food-supplement-capsules/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-gargling-oil",
+    "width": 390,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "Absent",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor oral swishing only.\n•\nDo not swallow or inhale."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Absent",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Dant Swasthya",
+    "links": [
+      "/product/ayur-raksha-dant-swasthya/"
+    ]
+  },
+  {
+    "slug": "__trashed-2",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A fresh beginning for your hair, inspired by tradition.\n\nA good hair-care routine begins with a moment for yourself. AyurRaksha Herbal Shamp"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nGently cleanses the hair and scalp.\n\nKey Benefit 02\n\nHelps remove everyday dirt and excess oil.\n\nKey Benefit 03\n\nDesigned to"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nALOE VERA LEAF JUICE\nAloe barbadensis\nHERB 02\nHIBISCUS EXTRACT AMLA / AMALAKI\nPhyllanthus emblica"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nDilute with Water\n\nTake 15 ml of shampoo and dilute it with water\n\n2\nSTEP 02\nDilu"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with the eyes; if contact occurs, rinse t"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nH\nerbal Shampoo Product Form\nL\niquid Category\nHair & Scalp Care"
+      }
+    ],
+    "http": 200,
+    "expected": "Dhayani Herbal Hair Oil AyurRaksha Hair Well Food Supplement Capsules",
+    "links": [
+      "/product/dhayani-herbal-hair-oil-100ml/",
+      "/product/hair-well-food-supplement-capsules/"
+    ]
+  },
+  {
+    "slug": "__trashed-2",
+    "width": 390,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A fresh beginning for your hair, inspired by tradition.\n\nA good hair-care routine begins with a moment for yourself. AyurRaksha Herbal Shamp"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nGently cleanses the hair and scalp.\n\nKey Benefit 02\n\nHelps remove everyday dirt and excess oil.\n\nKey Benefit 03\n\nDesigned to"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nALOE VERA LEAF JUICE\nAloe barbadensis\nHERB 02\nHIBISCUS EXTRACT AMLA / AMALAKI\nPhyllanthus emblica"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nDilute with Water\n\nTake 15 ml of shampoo and dilute it with water\n\n2\nSTEP 02\nDilu"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with the eyes; if contact occurs, rinse t"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nH\nerbal Shampoo Product Form\nL\niquid Category\nHair & Scalp Care"
+      }
+    ],
+    "http": 200,
+    "expected": "Dhayani Herbal Hair Oil AyurRaksha Hair Well Food Supplement Capsules",
+    "links": [
+      "/product/dhayani-herbal-hair-oil-100ml/",
+      "/product/hair-well-food-supplement-capsules/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-beta-powder",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Make everyday wellbeing a mindful choice.\n\nWhen life gets busy, caring for your health begins with the choices you make each day. AyurRaksha"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with metabolic wellness in mind.\n\nKey Benefit 02\n\nInspired by traditional botanical and nutritional practices.\n\nK"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKARUNJEERAGAM VENDAYAM PATTAI"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEmpty Stomach\n\nConsume 1-2 grams of Beta Powder on an empty stomach, followed by water"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nW\nellness Powder Product Form\nP\nowder Category\nMetabolic Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "Dia Well Food Supplement Capsules AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/dia-well-food-supplement-capsules/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-alg",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A thoughtful way to care through the seasons.\n\nChanging seasons and everyday surroundings can affect how comfortable you feel. AyurRaksha AL"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated for respiratory and seasonal wellness.\n\nKey Benefit 02\n\nBrings together botanicals used in traditional Indian wel"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nMARUDHA MARAM\nHERB 02\nKRAMBU / CLOVE\nSyzygium aromaticum\nHERB 03\nMANJAL / TURMERIC\nCurcuma longa\nHERB 04\nPAPPALI ILAI / PAPAYA LEAF\n"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake two capsules daily with a glass of wate\n\nTake two capsules daily with a glass of water after food"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, or taking medication consult our healthcare "
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedi\nc Herbal Wellness Product Form\nC\napsules Category\nRespiratory & Seasonal Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "Esnovate Immunity Boosting Capsules AyurRaksha Breathe Well Pack",
+    "links": [
+      "/product/esnovate-immunity-boosting-capsules/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-gargling-oil",
+    "width": 390,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A mindful beginning for your morning.\n\nThe small rituals we choose can bring a sense of care to the start of the day. AyurRaksha Gargling Oi"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nBrings the Ayurvedic tradition of oil pulling to your oral-care routine.\n\nKey Benefit 02\n\nFeatures a botanical blend with se"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nSESAME OIL\nSesamum indicum\nHERB 02\nCOCONUT OIL\nCocos nucifera\nHERB 03\nTULSI / HOLY BASIL\nOcimum sanctum\nHERB 04\nCLOVE\nSyzygium aroma"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nIn the morning\n\nIn the morning\n\n2\nSTEP 02\nEmpty Stomach\n\nmeasure 10 ml of AyurRak"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor oral swishing only.\n•\nDo not swallow or inhale."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Absent",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Dant Swasthya",
+    "links": [
+      "/product/ayur-raksha-dant-swasthya/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-bpain-out-capsules",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Care for the moments that keep you moving.\n\nStaying active helps us enjoy the little things in life—from a morning walk to spending time wit"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with joint and muscle wellness in mind.\n\nKey Benefit 02\n\nBrings together botanicals used in traditional Indian we"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nMANGOSTEEN FRUIT EXTRACT\nHERB 02\nPERANDAI EXTRACT\nHERB 03\nMANJANATHI KEZHANGU"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake one to two capsules three times daily a\n\nTake one to two capsules three times daily after food"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, or taking medication consult our doctor befo"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedi\nc Herbal Wellness Product Form\nC\napsules Category\nJoint & Muscle Care"
+      }
+    ],
+    "http": 200,
+    "expected": "Etioment Pain Relief Roll-On AyurRaksha Divine Healing Oil",
+    "links": [
+      "/product/etioment-pain-relief-roll-on-50ml/",
+      "/product/divine-healing-oil/"
+    ]
+  },
+  {
+    "slug": "ayur-raksha-dant-swasthya",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A fresh ritual for the smile you share.\n\nA confident smile begins with the little care you give it every day. AyurRaksha Dant Swasthya bring"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nDesigned for routine dental cleansing and oral freshness.\n\nKey Benefit 02\n\nInspired by traditional Ayurvedic oral-care pract"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nAGHRAKARAM\nHERB 02\nCHUKKU / DRY GINGER\nZingiber officinale\nHERB 03\nINDUPPU / ROCK SALT\nHERB 04\nPUTHINA UPPU / MINT SALT\nHERB 05\nOMA "
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nBrush Gently\n\nPlace a small amount of tooth powder on a wet, soft-bristled toothbrush\n\n2\nSTEP 02\nBrush Gently\n\nGently brush your t"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor oral hygiene use only.\n•\nDo not swallow."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAy\nurvedic Oral Care Product Form\nT\nooth Powder Category\nOral & Dental Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Gargling Oil",
+    "links": [
+      "/product/ayur-raksha-gargling-oil/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-b-derma-capsules",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A thoughtful approach to skin wellness from within.\n\nCaring for your skin is a personal journey. AyurRaksha B Derma Capsules are created for"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with skin wellness in mind.\n\nKey Benefit 02\n\nFeatures botanicals used in traditional herbal preparations.\n\nKey Be"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nSMILAX\nSmilax chinensis\nHERB 02\nNUTMEG / JATHIKAI\nMyristica fragrans"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake one capsule in the morning after food a\n\nTake one capsule in the morning after food and one capsule in the evening after food"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedi\nc Herbal Capsules Product Form\nC\napsules Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha SP Soryn Cream AyurRaksha Skin Conditioning Oil",
+    "links": [
+      "/product/sp-soryn-cream/",
+      "/product/ayur-raksha-skin-conditioning-oil/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-creat-capsules",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Give your wellbeing the attention it deserves.\n\nYour wellbeing deserves care that considers the whole picture. AyurRaksha CREAT Capsules bri"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nAyurvedic herbal formulation developed with kidney and urinary wellness in mind.\n\nKey Benefit 02\n\nFeatures botanicals used i"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKEELANELLI\nHERB 02\nKATUKI\nPicrorhiza kurroa\nHERB 03\nINJI / GINGER\nZingiber officinale\nHERB 04\nMILAGU / BLACK PEPPER\nPiper nigrum\nHER"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake 2 capsules daily with a glass of water\n\nTake 2 capsules daily with a glass of water after food"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nSeek guidance if you are pregnant or breastfeeding."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedi\nc Herbal Wellness Product Form\nC\napsules Category\nKidney & Urinary Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha IMU 360 AyurRaksha Detox Tea",
+    "links": [
+      "/product/ayur-raksha-imu-360/",
+      "/product/ayurraksha-detox-tea/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-skin-well-food-moisturising-gel",
+    "width": 390,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Make everyday moisture a moment of Ayurvedic care.\n\nYour skin deserves attention throughout the changing seasons. AyurRaksha Skin Well Food "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nHelps moisturise and condition dry-feeling skin.\n\nKey Benefit 02\n\nDesigned to leave skin feeling soft and smooth.\n\nKey Benef"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nVIBHITAKI / BIBHITAKI\nTerminalia bellirica\nHERB 02\nAMALAKI / AMLA\nPhyllanthus emblica\nHERB 03\nRAKTA CHANDANA / RED SANDALWOOD\nPteroc"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nRinse & Dry\n\nCleanse the skin and gently pat dry\n\n2\nSTEP 02\nApply & Massage\n\nAppl"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with the eyes and mucous membranes."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic\nTopical Skin Care Product Form\nTo be confirmed —\ngel or ointment Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha SkinWell Soap AyurRaksha Skin Conditioning Oil",
+    "links": [
+      "/product/ayur-raksha-skinwell-soap-pack-of-2/",
+      "/product/ayur-raksha-skin-conditioning-oil/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-sp-soryn-cream",
+    "width": 390,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Thoughtful care for the skin you’re in.\n\nWhen a particular area of your skin needs extra attention, finding care suited to your needs matter"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nDesigned for targeted external skin care.\n\nKey Benefit 02\n\nBrings together botanicals used in traditional Ayurvedic preparat"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKONDRAI / INDIAN LABURNUM\nCassia fistula\nHERB 02\nKUTH / COSTUS\nSaussurea lappa\nHERB 03\nMANJAL / TURMERIC\nCurcuma longa\nHERB 04\nKUPPA"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nApply & Massage\n\nApply the cream to the intended area\n\n2\nSTEP 02\nApply & Massage\n"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with the eyes and mucous membranes.\n•\nDo "
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic Her\nbal Topical Cream Product Form\nC\nream Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Conditioning Oil AyurRaksha SkinWell Soap",
+    "links": [
+      "/product/ayur-raksha-skin-conditioning-oil/",
+      "/product/ayur-raksha-skinwell-soap-pack-of-2/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-hair-well-food-supplement-capsules",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A daily ritual for your hair-wellness journey.\n\nGood hair care begins with care for yourself. AyurRaksha Hair Well Food Supplement Capsules "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with hair wellness in mind.\n\nKey Benefit 02\n\nFeatures botanical extracts used in traditional Indian wellness prac"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nGUAVA EXTRACT\nPsidium guajava\nHERB 02\nAGATHI / VEGETABLE HUMMINGBIRD EXTRACT\nSesbania grandiflora"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEvening Dosage\n\nTake two capsules daily at night after your meal, with a glass of water"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nf you are pregnant, breastfeeding, or taking medication book a consultation with"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHerba\nl Food Supplement Product Form\nC\napsules Category\nHair & Scalp Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Herbal Shampoo Dhayani Herbal Hair Oil",
+    "links": [
+      "/product/ayur-raksha-herbal-shampoo/",
+      "/product/dhayani-herbal-hair-oil-100ml/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-foot-bath-powder-300g",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha Foot Bath Powder is a 100% natural way to detox your feet. Healthy and hygienic foot care contributes to overall wellbeing.\n\nHow "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nComforts tired feet after a long day of standing or walking.\n\nKey Benefit 02\n\nCreates a relaxing ritual to help you unwind i"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nEPSOM SALT\nHERB 02\nROCK SALT\nHERB 03\nDRY GINGER\nHERB 04\nMENTHOL\nHERB 05\nTHYMOL\nHERB 06\nBHIMSENI KARPOORAM"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nPrepare the Basin\n\nFill a basin with comfortably warm water\n\n2\nSTEP 02\nAdd the quantity stated on the current produ\n\nAdd the quant"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with eyes and discontinue use if irritati"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nF\noot Bath Powder Product Form\nP\nowder Category\nSkin & Body Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Sleep Well Capsules AyurRaksha Divine Healing Oil",
+    "links": [
+      "/product/sleep-well-food-supplement-capsules/",
+      "/product/divine-healing-oil/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-detox-tea",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "End your day with care from within.\n\nYour digestive wellbeing deserves a place in your self-care routine. AyurRaksha Detox Tea brings the wi"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nSupports digestive wellness.\n\nKey Benefit 02\n\nHelps support natural bowel regularity.\n\nKey Benefit 03\n\nBrings together Triph"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nAVURI / NEELI\nIndigofera tinctoria\nHERB 02\n, KADUKKAI / HARITAKI\nTerminalia chebula\nHERB 03\n, THANRIKKAI / BIBHITAKI\nTerminalia bell"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake one sachet of AyurRaksha Detox Tea\n\nTake one sachet of AyurRaksha Detox Tea\n\n2\nSTEP 02\nAdd the contents to 100 ml of water\n\nA"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nUse as directed on the pack.\n•\nNot recommended during pregnancy or while breastf"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nAyurRaksha\nProduct type\nAyurvedic herbal tea powder\nForm\nPre-measured powder sachets\nCategory\nDigestive & Gut Health"
+      }
+    ],
+    "http": 200,
+    "expected": "BoozLiv Hibiscus Tea",
+    "links": [
+      "/product/boozliv/",
+      "/product/organics-hibiscus-tea-tin/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-herbal-shampoo",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "CMS empty",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "",
+    "links": []
+  },
+  {
+    "slug": "ayurraksha-gargling-oil",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A mindful beginning for your morning.\n\nThe small rituals we choose can bring a sense of care to the start of the day. AyurRaksha Gargling Oi"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nBrings the Ayurvedic tradition of oil pulling to your oral-care routine.\n\nKey Benefit 02\n\nFeatures a botanical blend with se"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nSESAME OIL\nSesamum indicum\nHERB 02\nCOCONUT OIL\nCocos nucifera\nHERB 03\nTULSI / HOLY BASIL\nOcimum sanctum\nHERB 04\nCLOVE\nSyzygium aroma"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nIn the morning\n\nIn the morning\n\n2\nSTEP 02\nEmpty Stomach\n\nmeasure 10 ml of AyurRak"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor oral swishing only.\n•\nDo not swallow or inhale."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Absent",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Dant Swasthya",
+    "links": [
+      "/product/ayur-raksha-dant-swasthya/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-herbal-shampoo",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "CMS empty",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "",
+    "links": []
+  },
+  {
+    "slug": "ayurraksha-sp-soryn-cream",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Thoughtful care for the skin you’re in.\n\nWhen a particular area of your skin needs extra attention, finding care suited to your needs matter"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nDesigned for targeted external skin care.\n\nKey Benefit 02\n\nBrings together botanicals used in traditional Ayurvedic preparat"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKONDRAI / INDIAN LABURNUM\nCassia fistula\nHERB 02\nKUTH / COSTUS\nSaussurea lappa\nHERB 03\nMANJAL / TURMERIC\nCurcuma longa\nHERB 04\nKUPPA"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nApply & Massage\n\nApply the cream to the intended area\n\n2\nSTEP 02\nApply & Massage\n"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with the eyes and mucous membranes.\n•\nDo "
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic Her\nbal Topical Cream Product Form\nC\nream Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Conditioning Oil AyurRaksha SkinWell Soap",
+    "links": [
+      "/product/ayur-raksha-skin-conditioning-oil/",
+      "/product/ayur-raksha-skinwell-soap-pack-of-2/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-sp-soryn-cream",
+    "width": 390,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Thoughtful care for the skin you’re in.\n\nWhen a particular area of your skin needs extra attention, finding care suited to your needs matter"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nDesigned for targeted external skin care.\n\nKey Benefit 02\n\nBrings together botanicals used in traditional Ayurvedic preparat"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKONDRAI / INDIAN LABURNUM\nCassia fistula\nHERB 02\nKUTH / COSTUS\nSaussurea lappa\nHERB 03\nMANJAL / TURMERIC\nCurcuma longa\nHERB 04\nKUPPA"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nApply & Massage\n\nApply the cream to the intended area\n\n2\nSTEP 02\nApply & Massage\n"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with the eyes and mucous membranes.\n•\nDo "
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic Her\nbal Topical Cream Product Form\nC\nream Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Conditioning Oil AyurRaksha SkinWell Soap",
+    "links": [
+      "/product/ayur-raksha-skin-conditioning-oil/",
+      "/product/ayur-raksha-skinwell-soap-pack-of-2/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-skin-well-food-moisturising-gel",
+    "width": 390,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Make everyday moisture a moment of Ayurvedic care.\n\nYour skin deserves attention throughout the changing seasons. AyurRaksha Skin Well Food "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nHelps moisturise and condition dry-feeling skin.\n\nKey Benefit 02\n\nDesigned to leave skin feeling soft and smooth.\n\nKey Benef"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nVIBHITAKI / BIBHITAKI\nTerminalia bellirica\nHERB 02\nAMALAKI / AMLA\nPhyllanthus emblica\nHERB 03\nRAKTA CHANDANA / RED SANDALWOOD\nPteroc"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nRinse & Dry\n\nCleanse the skin and gently pat dry\n\n2\nSTEP 02\nApply & Massage\n\nAppl"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with the eyes and mucous membranes."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic\nTopical Skin Care Product Form\nTo be confirmed —\ngel or ointment Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha SkinWell Soap AyurRaksha Skin Conditioning Oil",
+    "links": [
+      "/product/ayur-raksha-skinwell-soap-pack-of-2/",
+      "/product/ayur-raksha-skin-conditioning-oil/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-creat-capsules",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Give your wellbeing the attention it deserves.\n\nYour wellbeing deserves care that considers the whole picture. AyurRaksha CREAT Capsules bri"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nAyurvedic herbal formulation developed with kidney and urinary wellness in mind.\n\nKey Benefit 02\n\nFeatures botanicals used i"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKEELANELLI\nHERB 02\nKATUKI\nPicrorhiza kurroa\nHERB 03\nINJI / GINGER\nZingiber officinale\nHERB 04\nMILAGU / BLACK PEPPER\nPiper nigrum\nHER"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake 2 capsules daily with a glass of water\n\nTake 2 capsules daily with a glass of water after food"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nSeek guidance if you are pregnant or breastfeeding."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedi\nc Herbal Wellness Product Form\nC\napsules Category\nKidney & Urinary Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha IMU 360 AyurRaksha Detox Tea",
+    "links": [
+      "/product/ayur-raksha-imu-360/",
+      "/product/ayurraksha-detox-tea/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-hair-well-food-supplement-capsules",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A daily ritual for your hair-wellness journey.\n\nGood hair care begins with care for yourself. AyurRaksha Hair Well Food Supplement Capsules "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with hair wellness in mind.\n\nKey Benefit 02\n\nFeatures botanical extracts used in traditional Indian wellness prac"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nGUAVA EXTRACT\nPsidium guajava\nHERB 02\nAGATHI / VEGETABLE HUMMINGBIRD EXTRACT\nSesbania grandiflora"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEvening Dosage\n\nTake two capsules daily at night after your meal, with a glass of water"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nf you are pregnant, breastfeeding, or taking medication book a consultation with"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHerba\nl Food Supplement Product Form\nC\napsules Category\nHair & Scalp Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Herbal Shampoo Dhayani Herbal Hair Oil",
+    "links": [
+      "/product/ayur-raksha-herbal-shampoo/",
+      "/product/dhayani-herbal-hair-oil-100ml/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-foot-bath-powder-300g",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha Foot Bath Powder is a 100% natural way to detox your feet. Healthy and hygienic foot care contributes to overall wellbeing.\n\nHow "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nComforts tired feet after a long day of standing or walking.\n\nKey Benefit 02\n\nCreates a relaxing ritual to help you unwind i"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nEPSOM SALT\nHERB 02\nROCK SALT\nHERB 03\nDRY GINGER\nHERB 04\nMENTHOL\nHERB 05\nTHYMOL\nHERB 06\nBHIMSENI KARPOORAM"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nPrepare the Basin\n\nFill a basin with comfortably warm water\n\n2\nSTEP 02\nAdd the quantity stated on the current produ\n\nAdd the quant"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with eyes and discontinue use if irritati"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nF\noot Bath Powder Product Form\nP\nowder Category\nSkin & Body Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Sleep Well Capsules AyurRaksha Divine Healing Oil",
+    "links": [
+      "/product/sleep-well-food-supplement-capsules/",
+      "/product/divine-healing-oil/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-gargling-oil",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A mindful beginning for your morning.\n\nThe small rituals we choose can bring a sense of care to the start of the day. AyurRaksha Gargling Oi"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nBrings the Ayurvedic tradition of oil pulling to your oral-care routine.\n\nKey Benefit 02\n\nFeatures a botanical blend with se"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nSESAME OIL\nSesamum indicum\nHERB 02\nCOCONUT OIL\nCocos nucifera\nHERB 03\nTULSI / HOLY BASIL\nOcimum sanctum\nHERB 04\nCLOVE\nSyzygium aroma"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nIn the morning\n\nIn the morning\n\n2\nSTEP 02\nEmpty Stomach\n\nmeasure 10 ml of AyurRak"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor oral swishing only.\n•\nDo not swallow or inhale."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Absent",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Dant Swasthya",
+    "links": [
+      "/product/ayur-raksha-dant-swasthya/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-detox-tea",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "End your day with care from within.\n\nYour digestive wellbeing deserves a place in your self-care routine. AyurRaksha Detox Tea brings the wi"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nSupports digestive wellness.\n\nKey Benefit 02\n\nHelps support natural bowel regularity.\n\nKey Benefit 03\n\nBrings together Triph"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nAVURI / NEELI\nIndigofera tinctoria\nHERB 02\n, KADUKKAI / HARITAKI\nTerminalia chebula\nHERB 03\n, THANRIKKAI / BIBHITAKI\nTerminalia bell"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake one sachet of AyurRaksha Detox Tea\n\nTake one sachet of AyurRaksha Detox Tea\n\n2\nSTEP 02\nAdd the contents to 100 ml of water\n\nA"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nUse as directed on the pack.\n•\nNot recommended during pregnancy or while breastf"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nAyurRaksha\nProduct type\nAyurvedic herbal tea powder\nForm\nPre-measured powder sachets\nCategory\nDigestive & Gut Health"
+      }
+    ],
+    "http": 200,
+    "expected": "BoozLiv Hibiscus Tea",
+    "links": [
+      "/product/boozliv/",
+      "/product/organics-hibiscus-tea-tin/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-sp-soryn-cream",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Thoughtful care for the skin you’re in.\n\nWhen a particular area of your skin needs extra attention, finding care suited to your needs matter"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nDesigned for targeted external skin care.\n\nKey Benefit 02\n\nBrings together botanicals used in traditional Ayurvedic preparat"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKONDRAI / INDIAN LABURNUM\nCassia fistula\nHERB 02\nKUTH / COSTUS\nSaussurea lappa\nHERB 03\nMANJAL / TURMERIC\nCurcuma longa\nHERB 04\nKUPPA"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nApply & Massage\n\nApply the cream to the intended area\n\n2\nSTEP 02\nApply & Massage\n"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with the eyes and mucous membranes.\n•\nDo "
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic Her\nbal Topical Cream Product Form\nC\nream Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Conditioning Oil AyurRaksha SkinWell Soap",
+    "links": [
+      "/product/ayur-raksha-skin-conditioning-oil/",
+      "/product/ayur-raksha-skinwell-soap-pack-of-2/"
+    ]
+  },
+  {
+    "slug": "save-heart",
+    "width": 390,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Care for the heart of your everyday life.\n\nYour heart is at the centre of the moments that matter—from a morning walk to time spent with the"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nCreated for adults focusing on a heart-conscious lifestyle.\n\nKey Benefit 02\n\nBrings together ingredients familiar to traditi"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nGARLIC EXTRACT\nAllium sativum\nHERB 02\nGINGER EXTRACT\nZingiber officinale\nHERB 03\nLEMON JUICE\nCitrus limon\nHERB 04\nAPPLE CIDER VINEGA"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEmpty Stomach\n\nHeart Patients can take 10 ML on Morning in Empty stomach and 10 Ml before Food in Night Normal Individuals without"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nPre\nmium Health Drink Product Form\nL\niquid Category\nHeart & Cardiac Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Premium High Fiber Health Mix AyurRaksha Detox Tea",
+    "links": [
+      "/product/ayur-raksha-premium-high-fiber-health-mix/",
+      "/product/ayurraksha-detox-tea/"
+    ]
+  },
+  {
+    "slug": "b-gasonil-capsules",
+    "width": 390,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Give your digestion the care it deserves.\n\nA good meal should be something to enjoy. When bloating or indigestion leaves you feeling uncomfo"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated for digestive comfort, including occasional bloating and indigestion.\n\nKey Benefit 02\n\nInspired by traditional Si"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nVETTIVEROIDES TERMINALIA CHEBULA\nHaritaki / Kadukkai Trigonella Foenam"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEvening Dosage\n\nTake one capsule before breakfast and one capsule before dinner"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, or taking medication book a consultation wit"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nSiddha Pro\nprietary Medicine Product Form\nC\napsules Category\nDigestive & Gut Health"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Detox Tea AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/ayurraksha-detox-tea/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-imu-360",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "When your days are full, it’s easy to put your own wellbeing last. AyurRaksha IMU 360 is created for those who want to bring traditional Ayu"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with everyday and seasonal wellness in mind.\n\nKey Benefit 02\n\nBrings together seven botanicals valued in traditio"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nMARUDHA MARAM / ARJUNA\nTerminalia arjuna\nHERB 02\nKRAMBU / CLOVE\nSyzygium aromaticum\nHERB 03\nMANJAL / TURMERIC\nCurcuma longa\nHERB 04\n"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake 2 capsules daily with a glass of water\n\nTake 2 capsules daily with a glass of water after food\n\n2\nSTEP 02\nDo not exceed the r"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, or taking medication consult our healthcare "
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedi\nc Herbal Wellness Product Form\nC\napsules Category\nImmunity & Seasonal Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha ALG AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/ayur-raksha-alg/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-skin-conditioning-oil",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "CMS empty",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "",
+    "links": []
+  },
+  {
+    "slug": "ayurraksha-skin-well-food-moisturising-gel",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Make everyday moisture a moment of Ayurvedic care.\n\nYour skin deserves attention throughout the changing seasons. AyurRaksha Skin Well Food "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nHelps moisturise and condition dry-feeling skin.\n\nKey Benefit 02\n\nDesigned to leave skin feeling soft and smooth.\n\nKey Benef"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nVIBHITAKI / BIBHITAKI\nTerminalia bellirica\nHERB 02\nAMALAKI / AMLA\nPhyllanthus emblica\nHERB 03\nRAKTA CHANDANA / RED SANDALWOOD\nPteroc"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nRinse & Dry\n\nCleanse the skin and gently pat dry\n\n2\nSTEP 02\nApply & Massage\n\nAppl"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with the eyes and mucous membranes."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic\nTopical Skin Care Product Form\nTo be confirmed —\ngel or ointment Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha SkinWell Soap AyurRaksha Skin Conditioning Oil",
+    "links": [
+      "/product/ayur-raksha-skinwell-soap-pack-of-2/",
+      "/product/ayur-raksha-skin-conditioning-oil/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-skin-conditioning-oil",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "CMS empty",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "",
+    "links": []
+  },
+  {
+    "slug": "ayurraksha-kalonji-soap",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Bring a brighter look to your daily bathing ritual.\n\nTime outdoors can leave your skin looking tanned and dull. AyurRaksha Kalonji Soap is c"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Anti-tan care\n\nFormulated to help reduce the appearance of sun tan.\n\nBrighter-looking skin\n\nHelps skin look fresh and radiant.\n\nKalonji-enri"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKALONJI / BLACK SEED OIL"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nWet your skin with water\n\nWet your skin with water\n\n2\nSTEP 02\nApply & Massage\n\nLa"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with eyes"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nGrade 1\nBathing Soap Product Form\nS\noap Bar Category\nSkin & Body Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Conditioning Oil AyurRaksha Skin Well Food Moisturising Gel",
+    "links": [
+      "/product/ayur-raksha-skin-conditioning-oil/",
+      "/product/ayur-raksha-skin-well-food-moisturising-gel/"
+    ]
+  },
+  {
+    "slug": "boozliv",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Revive Your Liver. Reclaim Your Life with BoozLiv.\n\nAyurRaksha Bestseller | Clinically Studied Siddha Liver Support\n\nYour liver works tirele"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with liver wellness in mind.\n\nKey Benefit 02\n\nClinically studied alongside standard treatment in adults with alco"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKARICALAI\nWedelia calendulacea\nHERB 02\nKEEZHANELLI\nPhyllanthus niruri\nHERB 03\nMILAGU / BLACK PEPPER\nPiper nigrum\nHERB 04\nSHOMBU VILV"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nMorning Dosage\n\nTake one 10 ml sachet approximately 30 minutes after breakfast\n\n2\nSTEP 02\nEvening Dosage\n\nAnother 10 ml sachet aft"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, trying to conceive, taking medication or man"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nAyurRaksha\nProduct Type\nSiddha Proprietary Medicine\nProduct Form\nSyrup Sachets\nCategory\nLiver Health & Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "BoozNil, AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/booznil/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-premium-high-fiber-health-mix",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "The goodness of traditional grains, made for modern mornings.\n\nSome of the most comforting food traditions begin with ingredients familiar t"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nBrings together a variety of millets, grains, pulses and nuts.\n\nKey Benefit 02\n\nIncludes fibre-containing ingredients such a"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nMILLETS AND GRAINS\nHERB 02\nRAGI\nFinger Millet\nHERB 03\nJOWAR\nSorghum\nHERB 04\nBAJRA\nPearl Millet\nHERB 05\nBARLEY\nHERB 06\nRICE\nHERB 07\nP"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake 3 tablespoons of AyurRaksha Health Mix\n\nTake 3 tablespoons of AyurRaksha Health Mix\n\n2\nSTEP 02\nAdd it to 1 cup of milk and st"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nContains barley (gluten), soya, peanuts and almonds.\n•\nDo not consume if you are"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nMultigrain Nutri\ntional Health Mix Product Form\nP\nowder Category\nNutrition & General Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "Organics Herbo Protein Powder AyurRaksha Detox Tea",
+    "links": [
+      "/product/organics-herbo-protein-powder/",
+      "/product/ayurraksha-detox-tea/"
+    ]
+  },
+  {
+    "slug": "save-heart",
+    "width": 390,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Care for the heart of your everyday life.\n\nYour heart is at the centre of the moments that matter—from a morning walk to time spent with the"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nCreated for adults focusing on a heart-conscious lifestyle.\n\nKey Benefit 02\n\nBrings together ingredients familiar to traditi"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nGARLIC EXTRACT\nAllium sativum\nHERB 02\nGINGER EXTRACT\nZingiber officinale\nHERB 03\nLEMON JUICE\nCitrus limon\nHERB 04\nAPPLE CIDER VINEGA"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEmpty Stomach\n\nHeart Patients can take 10 ML on Morning in Empty stomach and 10 Ml before Food in Night Normal Individuals without"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nPre\nmium Health Drink Product Form\nL\niquid Category\nHeart & Cardiac Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Premium High Fiber Health Mix AyurRaksha Detox Tea",
+    "links": [
+      "/product/ayur-raksha-premium-high-fiber-health-mix/",
+      "/product/ayurraksha-detox-tea/"
+    ]
+  },
+  {
+    "slug": "dhayani-herbal-hair-oil-100ml",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Dhayani Herbal Hair Oil – Control Hair Fall. Fight Dandruff. Encourage Stronger Hair Growth.\n\nExcessive Hair Fall? Stubborn Dandruff? Thinni"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nHelps control hair fall and supports stronger-looking hair.\n\nKey Benefit 02\n\nSupports healthy hair growth from the roots.\n\nK"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nALOE VERA\nAloe vera\nHERB 02\nSESAME SEEDS\nSesamum indicum\nHERB 03\nFENUGREEK / VENDHAYAM\nTrigonella foenum-graecum\nHERB 04\nRED ONION\nA"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nTake a suitable amount of Dhayani Herbal Hai\n\nTake a suitable amount of Dhayani H"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with eyes.\n•\nPatch-test before first use "
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nDhayani / 18\nHerbs Organics Product Type\nH\nerbal Hair Oil Product Form\nO\nil Category\nHair & Scalp Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Herbal Shampoo AyurRaksha Hair Well Food Supplement Capsules",
+    "links": [
+      "/product/ayur-raksha-herbal-shampoo/",
+      "/product/hair-well-food-supplement-capsules/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-imu-360",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "When your days are full, it’s easy to put your own wellbeing last. AyurRaksha IMU 360 is created for those who want to bring traditional Ayu"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with everyday and seasonal wellness in mind.\n\nKey Benefit 02\n\nBrings together seven botanicals valued in traditio"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nMARUDHA MARAM / ARJUNA\nTerminalia arjuna\nHERB 02\nKRAMBU / CLOVE\nSyzygium aromaticum\nHERB 03\nMANJAL / TURMERIC\nCurcuma longa\nHERB 04\n"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake 2 capsules daily with a glass of water\n\nTake 2 capsules daily with a glass of water after food\n\n2\nSTEP 02\nDo not exceed the r"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, or taking medication consult our healthcare "
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedi\nc Herbal Wellness Product Form\nC\napsules Category\nImmunity & Seasonal Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha ALG AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/ayur-raksha-alg/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "b-gasonil-capsules",
+    "width": 390,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Give your digestion the care it deserves.\n\nA good meal should be something to enjoy. When bloating or indigestion leaves you feeling uncomfo"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated for digestive comfort, including occasional bloating and indigestion.\n\nKey Benefit 02\n\nInspired by traditional Si"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nVETTIVEROIDES TERMINALIA CHEBULA\nHaritaki / Kadukkai Trigonella Foenam"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEvening Dosage\n\nTake one capsule before breakfast and one capsule before dinner"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, or taking medication book a consultation wit"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nSiddha Pro\nprietary Medicine Product Form\nC\napsules Category\nDigestive & Gut Health"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Detox Tea AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/ayurraksha-detox-tea/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-skin-well-food-moisturising-gel",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Make everyday moisture a moment of Ayurvedic care.\n\nYour skin deserves attention throughout the changing seasons. AyurRaksha Skin Well Food "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nHelps moisturise and condition dry-feeling skin.\n\nKey Benefit 02\n\nDesigned to leave skin feeling soft and smooth.\n\nKey Benef"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nVIBHITAKI / BIBHITAKI\nTerminalia bellirica\nHERB 02\nAMALAKI / AMLA\nPhyllanthus emblica\nHERB 03\nRAKTA CHANDANA / RED SANDALWOOD\nPteroc"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nRinse & Dry\n\nCleanse the skin and gently pat dry\n\n2\nSTEP 02\nApply & Massage\n\nAppl"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with the eyes and mucous membranes."
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic\nTopical Skin Care Product Form\nTo be confirmed —\ngel or ointment Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha SkinWell Soap AyurRaksha Skin Conditioning Oil",
+    "links": [
+      "/product/ayur-raksha-skinwell-soap-pack-of-2/",
+      "/product/ayur-raksha-skin-conditioning-oil/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-kalonji-soap",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Bring a brighter look to your daily bathing ritual.\n\nTime outdoors can leave your skin looking tanned and dull. AyurRaksha Kalonji Soap is c"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Anti-tan care\n\nFormulated to help reduce the appearance of sun tan.\n\nBrighter-looking skin\n\nHelps skin look fresh and radiant.\n\nKalonji-enri"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKALONJI / BLACK SEED OIL"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nWet your skin with water\n\nWet your skin with water\n\n2\nSTEP 02\nApply & Massage\n\nLa"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with eyes"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nGrade 1\nBathing Soap Product Form\nS\noap Bar Category\nSkin & Body Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Conditioning Oil AyurRaksha Skin Well Food Moisturising Gel",
+    "links": [
+      "/product/ayur-raksha-skin-conditioning-oil/",
+      "/product/ayur-raksha-skin-well-food-moisturising-gel/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-premium-high-fiber-health-mix",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "The goodness of traditional grains, made for modern mornings.\n\nSome of the most comforting food traditions begin with ingredients familiar t"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nBrings together a variety of millets, grains, pulses and nuts.\n\nKey Benefit 02\n\nIncludes fibre-containing ingredients such a"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nMILLETS AND GRAINS\nHERB 02\nRAGI\nFinger Millet\nHERB 03\nJOWAR\nSorghum\nHERB 04\nBAJRA\nPearl Millet\nHERB 05\nBARLEY\nHERB 06\nRICE\nHERB 07\nP"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake 3 tablespoons of AyurRaksha Health Mix\n\nTake 3 tablespoons of AyurRaksha Health Mix\n\n2\nSTEP 02\nAdd it to 1 cup of milk and st"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nContains barley (gluten), soya, peanuts and almonds.\n•\nDo not consume if you are"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nMultigrain Nutri\ntional Health Mix Product Form\nP\nowder Category\nNutrition & General Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "Organics Herbo Protein Powder AyurRaksha Detox Tea",
+    "links": [
+      "/product/organics-herbo-protein-powder/",
+      "/product/ayurraksha-detox-tea/"
+    ]
+  },
+  {
+    "slug": "boozliv",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Revive Your Liver. Reclaim Your Life with BoozLiv.\n\nAyurRaksha Bestseller | Clinically Studied Siddha Liver Support\n\nYour liver works tirele"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with liver wellness in mind.\n\nKey Benefit 02\n\nClinically studied alongside standard treatment in adults with alco"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKARICALAI\nWedelia calendulacea\nHERB 02\nKEEZHANELLI\nPhyllanthus niruri\nHERB 03\nMILAGU / BLACK PEPPER\nPiper nigrum\nHERB 04\nSHOMBU VILV"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nMorning Dosage\n\nTake one 10 ml sachet approximately 30 minutes after breakfast\n\n2\nSTEP 02\nEvening Dosage\n\nAnother 10 ml sachet aft"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, trying to conceive, taking medication or man"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nAyurRaksha\nProduct Type\nSiddha Proprietary Medicine\nProduct Form\nSyrup Sachets\nCategory\nLiver Health & Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "BoozNil, AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/booznil/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-superheal-o3-cream",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "CMS empty",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "",
+    "links": []
+  },
+  {
+    "slug": "dhayani-herbal-hair-oil-100ml",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Dhayani Herbal Hair Oil – Control Hair Fall. Fight Dandruff. Encourage Stronger Hair Growth.\n\nExcessive Hair Fall? Stubborn Dandruff? Thinni"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nHelps control hair fall and supports stronger-looking hair.\n\nKey Benefit 02\n\nSupports healthy hair growth from the roots.\n\nK"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nALOE VERA\nAloe vera\nHERB 02\nSESAME SEEDS\nSesamum indicum\nHERB 03\nFENUGREEK / VENDHAYAM\nTrigonella foenum-graecum\nHERB 04\nRED ONION\nA"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nTake a suitable amount of Dhayani Herbal Hai\n\nTake a suitable amount of Dhayani H"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with eyes.\n•\nPatch-test before first use "
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nDhayani / 18\nHerbs Organics Product Type\nH\nerbal Hair Oil Product Form\nO\nil Category\nHair & Scalp Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Herbal Shampoo AyurRaksha Hair Well Food Supplement Capsules",
+    "links": [
+      "/product/ayur-raksha-herbal-shampoo/",
+      "/product/hair-well-food-supplement-capsules/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-superheal-o3-cream",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "CMS empty",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "",
+    "links": []
+  },
+  {
+    "slug": "booznil",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha BoozNil – Reduce Alcohol Cravings. Support Liver Health. Take Back Control.\n\nStruggling with Alcohol Cravings? Ready to Cut Down "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nCreated for adults focusing on wellbeing while making changes to their alcohol habits.\n\nKey Benefit 02\n\nBrings together bota"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKHARJURA / DATE PALM\nPhoenix dactylifera\nHERB 02\nKASNI / CHICORY\nCichorium intybus\nHERB 03\nBHUMYAMALAKI / KEEZHANELLI\nPhyllanthus ni"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nDosage: 10 ml twice daily after meals or as\n\nDosage: 10 ml twice daily after meals or as directed by physician\n\n2\nSTEP 02\nCourse D"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic Pro\nprietary Medicine Product Form\nL\niquid sachets Category\nLiver & Alcohol Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "BoozLiv AyurRaksha Detox Tea",
+    "links": [
+      "/product/boozliv/",
+      "/product/ayurraksha-detox-tea/"
+    ]
+  },
+  {
+    "slug": "dia-well-food-supplement-capsules",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "CMS empty",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "",
+    "links": []
+  },
+  {
+    "slug": "ayurraksha-vital-o3-anti-vitiligo-cream",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha Vital O3 Anti-Vitiligo Cream – Targeted Skin Care for Vitiligo and Pigmentation Concerns\n\nWhite Patches? Uneven Pigmentation? Giv"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nTargeted topical care for skin affected by vitiligo-related pigmentation changes.\n\nKey Benefit 02\n\nDeveloped for skin condit"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nALOE VERA TURMERIC NEEM OZONATED BOTANICAL OILS"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nCleanse the skin area gently and pat complet\n\nCleanse the skin area gently and pa"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nConsult our doctor before use if you are pregnant, breastfeeding, using other me"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nTopica\nl Skin-Care Cream Product Form\nC\nream Category\nSkin & Botanical Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Well Food Moisturising Gel AyurRaksha SkinWell Soap",
+    "links": [
+      "/product/ayur-raksha-skin-well-food-moisturising-gel/",
+      "/product/ayur-raksha-skinwell-soap-pack-of-2/"
+    ]
+  },
+  {
+    "slug": "dia-well-food-supplement-capsules",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "CMS empty",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "",
+    "links": []
+  },
+  {
+    "slug": "b-gasonil-capsules",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Give your digestion the care it deserves.\n\nA good meal should be something to enjoy. When bloating or indigestion leaves you feeling uncomfo"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated for digestive comfort, including occasional bloating and indigestion.\n\nKey Benefit 02\n\nInspired by traditional Si"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nVETTIVEROIDES TERMINALIA CHEBULA\nHaritaki / Kadukkai Trigonella Foenam"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEvening Dosage\n\nTake one capsule before breakfast and one capsule before dinner"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, or taking medication book a consultation wit"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nSiddha Pro\nprietary Medicine Product Form\nC\napsules Category\nDigestive & Gut Health"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Detox Tea AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/ayurraksha-detox-tea/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "herbo-protein-powder",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "HERBO PROTEIN Powder – Natural Plant Protein for Muscle Strength, Healthy Weight Gain and Vitality\n\nBuild Strength. Support Muscle Growth. N"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nContains naturally occurring plant protein.\n\nKey Benefit 02\n\nMade with Mucuna pruriens, a traditional Indian botanical.\n\nKey"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nMUCUNA PRURIENS\nHERB 02\nALSO KNOWN AS VELVET BEAN, KAPIKACHHU OR POONAIKALI, MUCUNA IS A BOTANICAL USED IN TRADITIONAL INDIAN HERBAL"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nDo not use during pregnancy or breastfeeding\n\nDo not use during pregnancy or breastfeeding, or if you have liver or kidney problem"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nDo not use during pregnancy or breastfeeding, or if you have liver or kidney pro"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\n18\nHerbs Organics Product Type\nHerb\nal Protein Powder Product Form\nP\nowder Category\nNutrition & Herbal Powders"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Premium High Fiber Health Mix AyurRaksha IMU 360",
+    "links": [
+      "/product/ayur-raksha-premium-high-fiber-health-mix/",
+      "/product/ayur-raksha-imu-360/"
+    ]
+  },
+  {
+    "slug": "etioment-balm",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "CMS empty",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "",
+    "links": []
+  },
+  {
+    "slug": "etioment-balm",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "key_benefits",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "ingredients",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "how_to_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "care_before_use",
+        "status": "CMS empty",
+        "sample": ""
+      },
+      {
+        "field": "product_specifications",
+        "status": "CMS empty",
+        "sample": ""
+      }
+    ],
+    "http": 200,
+    "expected": "",
+    "links": []
+  },
+  {
+    "slug": "flow-well-capsules",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha Flow Well Capsules – Support Healthy Circulation. Strengthen Vein Wellness. Rediscover Leg Comfort.\n\nHeavy Legs? Varicose Veins? "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with circulatory and cardiovascular wellness in mind.\n\nKey Benefit 02\n\nCreated for adults who want to include bot"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nMALABAR TAMARIND\nGarcinia cambogia fruit extract\nHERB 02\nARJUNA\nTerminalia arjuna bark extract\nHERB 03\nGRAPE\nVitis vinifera fruit dr"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEvening Dosage\n\nTwo capsules after breakfast and two after dinner for the first seven days, followed by two after dinner daily"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHerba\nl Food Supplement Product Form\nC\napsules Category\nHeart & Circulatory Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Divine Healing Oil AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/divine-healing-oil/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "migro-prime-tablets",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "When headaches interrupt your day, explore Ayurvedic care.Use as directed on the product label. If you are pregnant, or breastfeeding, consu"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nAn Ayurvedic approach for those seeking support with headache and migraine-related concerns.\n\nKey Benefit 02\n\nFormulated wit"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nPIPPALI / LONG PEPPER\nPiper longum\nHERB 02\nKUTKI\nPicrorhiza kurroa\nHERB 03\nCUCUMBER\nCucumis sativus\nHERB 04\nBUTTERFLY PEA\nClitoria t"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake one tablet two to three times daily aft\n\nTake one tablet two to three times daily after meals"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nUse as directed on the product label.\n•\nIf you are pregnant, or breastfeeding, c"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Product name\nMi\ngro Prime Tablets Product type\nA\nyurvedic herbal tablets Form\nTablets"
+      }
+    ],
+    "http": 200,
+    "expected": "Sleep Well Food Supplement Capsules, AyurRaksha Divine Healing Oil ,Etioment Pain Relief Roll-On.",
+    "links": [
+      "/product/sleep-well-food-supplement-capsules/",
+      "/product/divine-healing-oil/",
+      "/product/etioment-pain-relief-roll-on-50ml/"
+    ]
+  },
+  {
+    "slug": "booznil",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha BoozNil – Reduce Alcohol Cravings. Support Liver Health. Take Back Control.\n\nStruggling with Alcohol Cravings? Ready to Cut Down "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nCreated for adults focusing on wellbeing while making changes to their alcohol habits.\n\nKey Benefit 02\n\nBrings together bota"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nKHARJURA / DATE PALM\nPhoenix dactylifera\nHERB 02\nKASNI / CHICORY\nCichorium intybus\nHERB 03\nBHUMYAMALAKI / KEEZHANELLI\nPhyllanthus ni"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nDosage: 10 ml twice daily after meals or as\n\nDosage: 10 ml twice daily after meals or as directed by physician\n\n2\nSTEP 02\nCourse D"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic Pro\nprietary Medicine Product Form\nL\niquid sachets Category\nLiver & Alcohol Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "BoozLiv AyurRaksha Detox Tea",
+    "links": [
+      "/product/boozliv/",
+      "/product/ayurraksha-detox-tea/"
+    ]
+  },
+  {
+    "slug": "b-gasonil-capsules",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Give your digestion the care it deserves.\n\nA good meal should be something to enjoy. When bloating or indigestion leaves you feeling uncomfo"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated for digestive comfort, including occasional bloating and indigestion.\n\nKey Benefit 02\n\nInspired by traditional Si"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nVETTIVEROIDES TERMINALIA CHEBULA\nHaritaki / Kadukkai Trigonella Foenam"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEvening Dosage\n\nTake one capsule before breakfast and one capsule before dinner"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, or taking medication book a consultation wit"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nSiddha Pro\nprietary Medicine Product Form\nC\napsules Category\nDigestive & Gut Health"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Detox Tea AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/ayurraksha-detox-tea/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "ayurraksha-vital-o3-anti-vitiligo-cream",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha Vital O3 Anti-Vitiligo Cream – Targeted Skin Care for Vitiligo and Pigmentation Concerns\n\nWhite Patches? Uneven Pigmentation? Giv"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nTargeted topical care for skin affected by vitiligo-related pigmentation changes.\n\nKey Benefit 02\n\nDeveloped for skin condit"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nALOE VERA TURMERIC NEEM OZONATED BOTANICAL OILS"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nCleanse the skin area gently and pat complet\n\nCleanse the skin area gently and pa"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nConsult our doctor before use if you are pregnant, breastfeeding, using other me"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nTopica\nl Skin-Care Cream Product Form\nC\nream Category\nSkin & Botanical Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Well Food Moisturising Gel AyurRaksha SkinWell Soap",
+    "links": [
+      "/product/ayur-raksha-skin-well-food-moisturising-gel/",
+      "/product/ayur-raksha-skinwell-soap-pack-of-2/"
+    ]
+  },
+  {
+    "slug": "herbo-protein-powder",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "HERBO PROTEIN Powder – Natural Plant Protein for Muscle Strength, Healthy Weight Gain and Vitality\n\nBuild Strength. Support Muscle Growth. N"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nContains naturally occurring plant protein.\n\nKey Benefit 02\n\nMade with Mucuna pruriens, a traditional Indian botanical.\n\nKey"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nMUCUNA PRURIENS\nHERB 02\nALSO KNOWN AS VELVET BEAN, KAPIKACHHU OR POONAIKALI, MUCUNA IS A BOTANICAL USED IN TRADITIONAL INDIAN HERBAL"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nDo not use during pregnancy or breastfeeding\n\nDo not use during pregnancy or breastfeeding, or if you have liver or kidney problem"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nDo not use during pregnancy or breastfeeding, or if you have liver or kidney pro"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\n18\nHerbs Organics Product Type\nHerb\nal Protein Powder Product Form\nP\nowder Category\nNutrition & Herbal Powders"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Premium High Fiber Health Mix AyurRaksha IMU 360",
+    "links": [
+      "/product/ayur-raksha-premium-high-fiber-health-mix/",
+      "/product/ayur-raksha-imu-360/"
+    ]
+  },
+  {
+    "slug": "flow-well-capsules",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha Flow Well Capsules – Support Healthy Circulation. Strengthen Vein Wellness. Rediscover Leg Comfort.\n\nHeavy Legs? Varicose Veins? "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with circulatory and cardiovascular wellness in mind.\n\nKey Benefit 02\n\nCreated for adults who want to include bot"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nMALABAR TAMARIND\nGarcinia cambogia fruit extract\nHERB 02\nARJUNA\nTerminalia arjuna bark extract\nHERB 03\nGRAPE\nVitis vinifera fruit dr"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEvening Dosage\n\nTwo capsules after breakfast and two after dinner for the first seven days, followed by two after dinner daily"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHerba\nl Food Supplement Product Form\nC\napsules Category\nHeart & Circulatory Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Divine Healing Oil AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/divine-healing-oil/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "migro-prime-tablets",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "When headaches interrupt your day, explore Ayurvedic care.Use as directed on the product label. If you are pregnant, or breastfeeding, consu"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nAn Ayurvedic approach for those seeking support with headache and migraine-related concerns.\n\nKey Benefit 02\n\nFormulated wit"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nPIPPALI / LONG PEPPER\nPiper longum\nHERB 02\nKUTKI\nPicrorhiza kurroa\nHERB 03\nCUCUMBER\nCucumis sativus\nHERB 04\nBUTTERFLY PEA\nClitoria t"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake one tablet two to three times daily aft\n\nTake one tablet two to three times daily after meals"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nUse as directed on the product label.\n•\nIf you are pregnant, or breastfeeding, c"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Product name\nMi\ngro Prime Tablets Product type\nA\nyurvedic herbal tablets Form\nTablets"
+      }
+    ],
+    "http": 200,
+    "expected": "Sleep Well Food Supplement Capsules, AyurRaksha Divine Healing Oil ,Etioment Pain Relief Roll-On.",
+    "links": [
+      "/product/sleep-well-food-supplement-capsules/",
+      "/product/divine-healing-oil/",
+      "/product/etioment-pain-relief-roll-on-50ml/"
+    ]
+  },
+  {
+    "slug": "etioment-pain-relief-roll-on-50ml",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A moment of care for life on the move.\n\nLong hours at a desk, a busy schedule or a day on your feet can leave your body in need of attention"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nDesigned for targeted muscle and joint care.\n\nKey Benefit 02\n\nTraditional Ayurvedic topical formulation.\n\nKey Benefit 03\n\nCo"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nSESAME / GINGELLY\nHERB 02\nBALA\nSida cordifolia\nHERB 03\nCAMPHOR / KARPOORAM"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nEnsure the area is clean and dry\n\nEnsure the area is clean and dry\n\n2\nSTEP 02\nSha"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid contact with eyes and broken skin.\n•\nDiscontinue "
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurv\nedic Topical Care Product Form\nR\noll-On Liquid Category\nJoint & Muscle Care"
+      }
+    ],
+    "http": 200,
+    "expected": "B Pain Out Capsules AyurRaksha Divine Healing Oil Etionment Pain Relief Cream / Balm",
+    "links": [
+      "/product/bpain-out-capsules/",
+      "/product/divine-healing-oil/",
+      "/product/etionment-pain-relief-cream/"
+    ]
+  },
+  {
+    "slug": "esnovate-capsules",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha ESNOVATE Capsules – Fight Seasonal Discomfort. Support Immunity. Breathe Easier.\n\nFrequent Colds? Persistent Cough? Wheezing and "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with respiratory and seasonal wellness in mind.\n\nKey Benefit 02\n\nBrings together botanicals traditionally valued "
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nADATHODAI / MALABAR NUT\nJusticia adhatoda / Adhatoda vasica Thooduvalai\nHERB 02\nSOLANUM TRILOBATUM\nHERB 03\nTHIPPILI / LONG PEPPER\nPi"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake one to two capsules daily with water\n\nTake one to two capsules daily with water"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic Pro\nprietary Medicine Product Form\nC\napsules Category\nRespiratory & Seasonal Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha ALG AyurRaksha IMU 360",
+    "links": [
+      "/product/ayur-raksha-alg/",
+      "/product/ayur-raksha-imu-360/"
+    ]
+  },
+  {
+    "slug": "divine-healing-oil",
+    "width": 1440,
+    "pass": 1,
+    "sections": [],
+    "error": "page.goto: Timeout 12000ms exceeded."
+  },
+  {
+    "slug": "save-heart",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Care for the heart of your everyday life.\n\nYour heart is at the centre of the moments that matter—from a morning walk to time spent with the"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nCreated for adults focusing on a heart-conscious lifestyle.\n\nKey Benefit 02\n\nBrings together ingredients familiar to traditi"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nGARLIC EXTRACT\nAllium sativum\nHERB 02\nGINGER EXTRACT\nZingiber officinale\nHERB 03\nLEMON JUICE\nCitrus limon\nHERB 04\nAPPLE CIDER VINEGA"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEmpty Stomach\n\nHeart Patients can take 10 ML on Morning in Empty stomach and 10 Ml before Food in Night Normal Individuals without"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nPre\nmium Health Drink Product Form\nL\niquid Category\nHeart & Cardiac Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Premium High Fiber Health Mix AyurRaksha Detox Tea",
+    "links": [
+      "/product/ayur-raksha-premium-high-fiber-health-mix/",
+      "/product/ayurraksha-detox-tea/"
+    ]
+  },
+  {
+    "slug": "purna-sakthi",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A little more care for the woman behind every role.\n\nWhen your days are filled with responsibilities, hormonal changes, stress and fatigue, "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with women’s everyday wellbeing in mind.\n\nKey Benefit 02\n\nInspired by traditional Ayurvedic botanical practices.\n"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nSHATAVARI\nAsparagus racemosus\nHERB 02\nCURRY LEAVES\nMurraya koenigii\nHERB 03\nPUMPKIN\nCucurbita maxima\nHERB 04\nGURMAR\nGymnema sylvestr"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\n7 ml mixed with 100 ml of water after food,\n\n7 ml mixed with 100 ml of water after food, twice daily"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, trying to conceive, taking medication or man"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHerbal Nu\ntraceutical Tonic Product Form\nL\niquid Category\nWomen’s Health & Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha IMU 360 AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/ayur-raksha-imu-360/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "sleep-well-capsules",
+    "width": 1440,
+    "pass": 1,
+    "sections": [],
+    "error": "page.goto: Timeout 12000ms exceeded."
+  },
+  {
+    "slug": "esnovate-capsules",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha ESNOVATE Capsules – Fight Seasonal Discomfort. Support Immunity. Breathe Easier.\n\nFrequent Colds? Persistent Cough? Wheezing and "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with respiratory and seasonal wellness in mind.\n\nKey Benefit 02\n\nBrings together botanicals traditionally valued "
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nADATHODAI / MALABAR NUT\nJusticia adhatoda / Adhatoda vasica Thooduvalai\nHERB 02\nSOLANUM TRILOBATUM\nHERB 03\nTHIPPILI / LONG PEPPER\nPi"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake one to two capsules daily with water\n\nTake one to two capsules daily with water"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic Pro\nprietary Medicine Product Form\nC\napsules Category\nRespiratory & Seasonal Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha ALG AyurRaksha IMU 360",
+    "links": [
+      "/product/ayur-raksha-alg/",
+      "/product/ayur-raksha-imu-360/"
+    ]
+  },
+  {
+    "slug": "etioment-pain-relief-roll-on-50ml",
+    "width": 1440,
+    "pass": 2,
+    "sections": [],
+    "error": "page.goto: Timeout 12000ms exceeded."
+  },
+  {
+    "slug": "save-heart",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Care for the heart of your everyday life.\n\nYour heart is at the centre of the moments that matter—from a morning walk to time spent with the"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nCreated for adults focusing on a heart-conscious lifestyle.\n\nKey Benefit 02\n\nBrings together ingredients familiar to traditi"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nGARLIC EXTRACT\nAllium sativum\nHERB 02\nGINGER EXTRACT\nZingiber officinale\nHERB 03\nLEMON JUICE\nCitrus limon\nHERB 04\nAPPLE CIDER VINEGA"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEmpty Stomach\n\nHeart Patients can take 10 ML on Morning in Empty stomach and 10 Ml before Food in Night Normal Individuals without"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nPre\nmium Health Drink Product Form\nL\niquid Category\nHeart & Cardiac Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Premium High Fiber Health Mix AyurRaksha Detox Tea",
+    "links": [
+      "/product/ayur-raksha-premium-high-fiber-health-mix/",
+      "/product/ayurraksha-detox-tea/"
+    ]
+  },
+  {
+    "slug": "purna-sakthi",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A little more care for the woman behind every role.\n\nWhen your days are filled with responsibilities, hormonal changes, stress and fatigue, "
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated with women’s everyday wellbeing in mind.\n\nKey Benefit 02\n\nInspired by traditional Ayurvedic botanical practices.\n"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nSHATAVARI\nAsparagus racemosus\nHERB 02\nCURRY LEAVES\nMurraya koenigii\nHERB 03\nPUMPKIN\nCucurbita maxima\nHERB 04\nGURMAR\nGymnema sylvestr"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\n7 ml mixed with 100 ml of water after food,\n\n7 ml mixed with 100 ml of water after food, twice daily"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, trying to conceive, taking medication or man"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHerbal Nu\ntraceutical Tonic Product Form\nL\niquid Category\nWomen’s Health & Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha IMU 360 AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/ayur-raksha-imu-360/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "laxa-health-tea-tin",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A traditional herbal infusion for occasional relief.\n\nSome days, your digestive routine can feel out of rhythm. When occasional constipation"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nProvides short-term relief from occasional constipation.\n\nKey Benefit 02\n\nContains Senna leaves, a traditional stimulant lax"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nSENNA LEAVES\nCassia angustifolia"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nInfuse\n\nPlace one tea bag in a cup of hot water\n\n2\nSTEP 02\nInfuse\n\nAllow it to infuse for 3–5 minutes\n\n3\nSTEP 03\nInfuse\n\nRemove th"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nLaxa Health Tea contains Senna, a stimulant laxative.\n•\nUse it only for short-te"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\n18\nHerbs Organics Product Type\nHe\nrbal Laxative Tea Product Form\nT\nea Bags Category\nDigestive & Gut Health"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Premium High Fiber Health Mix B-GASONIL Capsules",
+    "links": [
+      "/product/ayur-raksha-premium-high-fiber-health-mix/",
+      "/product/b-gasonil/"
+    ]
+  },
+  {
+    "slug": "laxa-health-tea-tin",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "A traditional herbal infusion for occasional relief.\n\nSome days, your digestive routine can feel out of rhythm. When occasional constipation"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nProvides short-term relief from occasional constipation.\n\nKey Benefit 02\n\nContains Senna leaves, a traditional stimulant lax"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nSENNA LEAVES\nCassia angustifolia"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nInfuse\n\nPlace one tea bag in a cup of hot water\n\n2\nSTEP 02\nInfuse\n\nAllow it to infuse for 3–5 minutes\n\n3\nSTEP 03\nInfuse\n\nRemove th"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nLaxa Health Tea contains Senna, a stimulant laxative.\n•\nUse it only for short-te"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\n18\nHerbs Organics Product Type\nHe\nrbal Laxative Tea Product Form\nT\nea Bags Category\nDigestive & Gut Health"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Premium High Fiber Health Mix B-GASONIL Capsules",
+    "links": [
+      "/product/ayur-raksha-premium-high-fiber-health-mix/",
+      "/product/b-gasonil/"
+    ]
+  },
+  {
+    "slug": "skinwell-soap-pack-of-2",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha SkinWell Soap – Nourish Your Skin with Every Wash\n\nSay Goodbye to Dryness & Dullness. Welcome Softer, Healthier-Looking Skin.\n\nYo"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nGently cleanses the face, hands and body.\n\nKey Benefit 02\n\nHelps leave skin feeling soft and refreshed.\n\nKey Benefit 03\n\nEnr"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nALOE VERA EXTRACT VITAMIN E AVOCADO OIL SAPONIFIED VEGETABLE OILS"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nWet your skin with water\n\nWet your skin with water\n\n2\nSTEP 02\nLather & Wash\n\nLath"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid direct contact with the eyes.\n•\nIf the soap enter"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHe\nrbal Bathing Soap Product Form\nS\noap Bar Category\nSkin & Body Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Conditioning Oil AyurRaksha Skin Well Capsules",
+    "links": [
+      "/product/skin-well-food-supplement-capsules/",
+      "/product/ayur-raksha-skin-conditioning-oil/"
+    ]
+  },
+  {
+    "slug": "skinwell-soap-pack-of-2",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha SkinWell Soap – Nourish Your Skin with Every Wash\n\nSay Goodbye to Dryness & Dullness. Welcome Softer, Healthier-Looking Skin.\n\nYo"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nGently cleanses the face, hands and body.\n\nKey Benefit 02\n\nHelps leave skin feeling soft and refreshed.\n\nKey Benefit 03\n\nEnr"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nALOE VERA EXTRACT VITAMIN E AVOCADO OIL SAPONIFIED VEGETABLE OILS"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nWet your skin with water\n\nWet your skin with water\n\n2\nSTEP 02\nLather & Wash\n\nLath"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nAvoid direct contact with the eyes.\n•\nIf the soap enter"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHe\nrbal Bathing Soap Product Form\nS\noap Bar Category\nSkin & Body Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Conditioning Oil AyurRaksha Skin Well Capsules",
+    "links": [
+      "/product/skin-well-food-supplement-capsules/",
+      "/product/ayur-raksha-skin-conditioning-oil/"
+    ]
+  },
+  {
+    "slug": "divine-healing-oil",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha Divine Healing Oil – Powerful Herbal Care for Skin and Pain Relief\n\nSoothe Irritated Skin. Ease Pain. Experience the Healing Powe"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nHelps condition skin and leaves it feeling soft and cared for.\n\nKey Benefit 02\n\nDesigned for gentle external body massage.\n\n"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nHARIDRA / TURMERIC\nCurcuma longa rhizome\nHERB 02\nNIMBA / NEEM\nAzadirachta indica leaf\nHERB 03\nHARITAKI / KADUKKAI\nTerminalia chebula"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "FOR EXTERNAL / TOPICAL USE ONLY • DO NOT SWALLOW\n1\nSTEP 01\nUse the oil at room temperature\n\nUse the oil at room temperature\n\n2\nSTEP 02\nApply"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nFor external use only.\n•\nDo not swallow.\n•\nAvoid contact with the eyes and mouth"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nAyurvedic Pro\nprietary Medicine Product Form\nT\nopical Oil Category\nSkin & Body Care"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Conditioning Oil AyurRaksha SkinWell Soap",
+    "links": [
+      "/product/ayur-raksha-skin-conditioning-oil/",
+      "/product/ayur-raksha-skinwell-soap-pack-of-2/"
+    ]
+  },
+  {
+    "slug": "sleep-well-capsules",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha Sleep Well Capsules – Calm Your Mind. Sleep Better. Wake Up Refreshed.\n\nRestless Nights? Racing Thoughts? Struggling to Get Quali"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Supports relaxation\n\nFormulated to help calm the mind as you prepare for rest.\n\nHelps you unwind\n\nDesigned for those experiencing everyday s"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nBRAHMI / WATER HYSSOP\nBacopa monnieri\nHERB 02\nPUMPKIN\nCucurbita maxima\nHERB 03\nSHANKHPUSHPI\nConvolvulus pluricaulis"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nBefore Bed\n\nTake two capsules with water before bedtime"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHerba\nl Food Supplement Product Form\nC\napsules Category\nSleep & Stress Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Divine Healing Oil AyurRaksha Detox Tea",
+    "links": [
+      "/product/divine-healing-oil/",
+      "/product/ayurraksha-detox-tea/"
+    ]
+  },
+  {
+    "slug": "pi-well-food-supplement-capsules",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha PI Well Capsules – Targeted Herbal Support for Piles Relief and Digestive Comfort\n\nPainful Piles? Swelling? Bleeding? Take a Step"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "For piles-related discomfort\n\nFormulated to support comfort associated with pain and swelling.\n\nFor internal and external piles\n\nDesigned fo"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nPUMPKIN\nCucurbita maxima\nHERB 02\nNEEM / VEMBU\nAzadirachta indica\nHERB 03\nTULSI / HOLY BASIL\nOcimum sanctum / Ocimum tenuiflorum"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEvening Dosage\n\nTwo capsules at night with food and water"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHerba\nl Food Supplement Product Form\nC\napsules Category\nDigestive & Bowel Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Divine Healing Oil LAXA HEALTH TEA",
+    "links": [
+      "/product/divine-healing-oil/",
+      "/product/organics-laxahealth-tea-tin/"
+    ]
+  },
+  {
+    "slug": "pi-well-food-supplement-capsules",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "AyurRaksha PI Well Capsules – Targeted Herbal Support for Piles Relief and Digestive Comfort\n\nPainful Piles? Swelling? Bleeding? Take a Step"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "For piles-related discomfort\n\nFormulated to support comfort associated with pain and swelling.\n\nFor internal and external piles\n\nDesigned fo"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nPUMPKIN\nCucurbita maxima\nHERB 02\nNEEM / VEMBU\nAzadirachta indica\nHERB 03\nTULSI / HOLY BASIL\nOcimum sanctum / Ocimum tenuiflorum"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nEvening Dosage\n\nTwo capsules at night with food and water"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHerba\nl Food Supplement Product Form\nC\napsules Category\nDigestive & Bowel Wellness"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Divine Healing Oil LAXA HEALTH TEA",
+    "links": [
+      "/product/divine-healing-oil/",
+      "/product/organics-laxahealth-tea-tin/"
+    ]
+  },
+  {
+    "slug": "hibiscus-tea-tin",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "18 Herbs Organics Hibiscus Tea – Support Heart Health. Enjoy Antioxidant Goodness. Refresh Naturally.\n\nHealthy Heart. Balanced Blood Pressur"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Contains plant antioxidants\n\nHibiscus naturally contains compounds including anthocyanins.\n\nFor a heart-conscious routine\n\nHibiscus tea has "
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nHIBISCUS FLOWER PETAL CUTS\n99% Hibiscus sabdariffa\nHERB 02\nGREEN TEA\n1% Camellia sinensis"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nInfuse\n\nPlace one tea bag in a cup\n\n2\nSTEP 02\nInfuse\n\nAdd hot or cold water and allow it to infuse for 3–5 minutes\n\n3\nSTEP 03\nInfu"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication especially for blood press"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\n18\nHerbs Organics Product Type\nH\nerbal Tea Product Form\nT\nea Bags Category\nHerbal Tea & Beverages"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Detox Tea AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/ayurraksha-detox-tea/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "hibiscus-tea-tin",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "18 Herbs Organics Hibiscus Tea – Support Heart Health. Enjoy Antioxidant Goodness. Refresh Naturally.\n\nHealthy Heart. Balanced Blood Pressur"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Contains plant antioxidants\n\nHibiscus naturally contains compounds including anthocyanins.\n\nFor a heart-conscious routine\n\nHibiscus tea has "
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nHIBISCUS FLOWER PETAL CUTS\n99% Hibiscus sabdariffa\nHERB 02\nGREEN TEA\n1% Camellia sinensis"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nInfuse\n\nPlace one tea bag in a cup\n\n2\nSTEP 02\nInfuse\n\nAdd hot or cold water and allow it to infuse for 3–5 minutes\n\n3\nSTEP 03\nInfu"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication especially for blood press"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\n18\nHerbs Organics Product Type\nH\nerbal Tea Product Form\nT\nea Bags Category\nHerbal Tea & Beverages"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Detox Tea AyurRaksha Premium High Fiber Health Mix",
+    "links": [
+      "/product/ayurraksha-detox-tea/",
+      "/product/ayur-raksha-premium-high-fiber-health-mix/"
+    ]
+  },
+  {
+    "slug": "skin-well-capsules",
+    "width": 1440,
+    "pass": 1,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Give your skin care a more thoughtful beginning.\n\nSkin care is personal, and feeling comfortable in your own skin matters. Your daily routin"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated for skin wellness from within.\n\nKey Benefit 02\n\nComplements your everyday external skin-care routine.\n\nKey Benefi"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nVETPALAI\nWrightia tinctoria leaf extract\nHERB 02\nMANJISTHA / INDIAN MADDER\nRubia cordifolia root extract\nHERB 03\nMUSKMELON\nCucumis m"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake two capsules daily with a glass of wate\n\nTake two capsules daily with a glass of water"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHerba\nl Food Supplement Product Form\nC\napsules Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Conditioning Oil AyurRaksha Skin Well Food Moisturising Gel",
+    "links": [
+      "/product/ayur-raksha-skin-conditioning-oil/",
+      "/product/ayur-raksha-skin-well-food-moisturising-gel/"
+    ]
+  },
+  {
+    "slug": "skin-well-capsules",
+    "width": 1440,
+    "pass": 2,
+    "sections": [
+      {
+        "field": "content",
+        "status": "Present",
+        "sample": "Give your skin care a more thoughtful beginning.\n\nSkin care is personal, and feeling comfortable in your own skin matters. Your daily routin"
+      },
+      {
+        "field": "key_benefits",
+        "status": "Present",
+        "sample": "Key Benefit 01\n\nFormulated for skin wellness from within.\n\nKey Benefit 02\n\nComplements your everyday external skin-care routine.\n\nKey Benefi"
+      },
+      {
+        "field": "ingredients",
+        "status": "Present",
+        "sample": "HERB 01\nVETPALAI\nWrightia tinctoria leaf extract\nHERB 02\nMANJISTHA / INDIAN MADDER\nRubia cordifolia root extract\nHERB 03\nMUSKMELON\nCucumis m"
+      },
+      {
+        "field": "how_to_use",
+        "status": "Present",
+        "sample": "1\nSTEP 01\nTake two capsules daily with a glass of wate\n\nTake two capsules daily with a glass of water"
+      },
+      {
+        "field": "care_before_use",
+        "status": "Present",
+        "sample": "Please read these precautions before using this product.\n\n•\nIf you are pregnant, breastfeeding, taking medication or managing a medical cond"
+      },
+      {
+        "field": "product_specifications",
+        "status": "Present",
+        "sample": "Brand\nA\nyurRaksha Product Type\nHerba\nl Food Supplement Product Form\nC\napsules Category\nSkin & Dermatology"
+      }
+    ],
+    "http": 200,
+    "expected": "AyurRaksha Skin Conditioning Oil AyurRaksha Skin Well Food Moisturising Gel",
+    "links": [
+      "/product/ayur-raksha-skin-conditioning-oil/",
+      "/product/ayur-raksha-skin-well-food-moisturising-gel/"
+    ]
+  }
+]

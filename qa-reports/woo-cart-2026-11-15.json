@@ -1,0 +1,124 @@
+{
+  "rows": [
+    {
+      "id": 113,
+      "expected": 999,
+      "actual": 999,
+      "quantity": 1,
+      "variation": []
+    },
+    {
+      "id": 28305,
+      "expected": 2400,
+      "actual": 2400,
+      "quantity": 1,
+      "variation": [
+        {
+          "raw_attribute": "attribute_packs",
+          "attribute": "Packs",
+          "value": "30 Days Pack"
+        }
+      ]
+    },
+    {
+      "id": 28306,
+      "expected": 3850,
+      "actual": 3850,
+      "quantity": 1,
+      "variation": [
+        {
+          "raw_attribute": "attribute_packs",
+          "attribute": "Packs",
+          "value": "60 Days Pack"
+        }
+      ]
+    },
+    {
+      "id": 28320,
+      "expected": 500,
+      "actual": 500,
+      "quantity": 1,
+      "variation": [
+        {
+          "raw_attribute": "attribute_packaging-type",
+          "attribute": "Packaging type",
+          "value": "Box"
+        }
+      ]
+    },
+    {
+      "id": 28321,
+      "expected": 800,
+      "actual": 800,
+      "quantity": 1,
+      "variation": [
+        {
+          "raw_attribute": "attribute_packaging-type",
+          "attribute": "Packaging type",
+          "value": "Packet"
+        }
+      ]
+    },
+    {
+      "id": 28315,
+      "expected": 800,
+      "actual": 800,
+      "quantity": 1,
+      "variation": [
+        {
+          "raw_attribute": "attribute_days",
+          "attribute": "Days",
+          "value": "10 Days"
+        }
+      ]
+    },
+    {
+      "id": 28316,
+      "expected": 1600,
+      "actual": 1600,
+      "quantity": 1,
+      "variation": [
+        {
+          "raw_attribute": "attribute_days",
+          "attribute": "Days",
+          "value": "20 Days"
+        }
+      ]
+    },
+    {
+      "id": 28317,
+      "expected": 2400,
+      "actual": 2400,
+      "quantity": 1,
+      "variation": [
+        {
+          "raw_attribute": "attribute_days",
+          "attribute": "Days",
+          "value": "1 Month"
+        }
+      ]
+    }
+  ],
+  "mixedSubtotal": 15347,
+  "mixedTotals": {
+    "total_items": "1534700",
+    "total_items_tax": "0",
+    "total_fees": "0",
+    "total_fees_tax": "0",
+    "total_discount": "0",
+    "total_discount_tax": "0",
+    "total_shipping": null,
+    "total_shipping_tax": null,
+    "total_price": "1534700",
+    "total_tax": "0",
+    "tax_lines": [],
+    "currency_code": "INR",
+    "currency_symbol": "₹",
+    "currency_minor_unit": 2,
+    "currency_decimal_separator": ".",
+    "currency_thousand_separator": ",",
+    "currency_prefix": "₹",
+    "currency_suffix": ""
+  },
+  "remainingLines": 7
+}

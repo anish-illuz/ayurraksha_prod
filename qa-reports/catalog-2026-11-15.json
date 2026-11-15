@@ -1,0 +1,588 @@
+[
+  {
+    "slug": "divine-healing-oil",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 999,
+    "buttons": [
+      "Add to Cart • ₹999"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/divine-healing-oil/",
+    "heading": "DIVINE HEALING OIL"
+  },
+  {
+    "slug": "boozliv",
+    "type": "variable",
+    "stock": true,
+    "status": 200,
+    "expected": 2400,
+    "buttons": [
+      "Add to Cart • ₹2,400"
+    ],
+    "variations": [
+      {
+        "id": 28305,
+        "attributes": [
+          {
+            "name": "Packs",
+            "value": "30 Days Pack"
+          }
+        ]
+      },
+      {
+        "id": 28306,
+        "attributes": [
+          {
+            "name": "Packs",
+            "value": "60 Days Pack"
+          }
+        ]
+      }
+    ],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/boozliv/",
+    "heading": "BoozLiv Syrup"
+  },
+  {
+    "slug": "__trashed-2",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 500,
+    "buttons": [
+      "Add to Cart • ₹500"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/__trashed-2/",
+    "heading": "AyurRaksha Herbal Shampoo"
+  },
+  {
+    "slug": "ayurraksha-vital-o3-anti-vitiligo-cream",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 4000,
+    "buttons": [
+      "Add to Cart • ₹4,000"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-vital-o3-anti-vitiligo-cream/",
+    "heading": "AyurRaksha Vital O3 Anti-Vitiligo Cream"
+  },
+  {
+    "slug": "ayurraksha-kalonji-soap",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 150,
+    "buttons": [
+      "Add to Cart • ₹150"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-kalonji-soap/",
+    "heading": "AyurRaksha Kalonji Soap"
+  },
+  {
+    "slug": "ayurraksha-foot-bath-powder-300g",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1000,
+    "buttons": [
+      "Add to Cart • ₹1,000"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayur-raksha-foot-bath-powder/",
+    "heading": "AyurRaksha Foot Bath Powder 300g"
+  },
+  {
+    "slug": "sleep-well-capsules",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1100,
+    "buttons": [
+      "Add to Cart • ₹1,100"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/sleep-well-capsules/",
+    "heading": "Sleep Well Capsules"
+  },
+  {
+    "slug": "pi-well-food-supplement-capsules",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1100,
+    "buttons": [
+      "Add to Cart • ₹1,100"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/pi-well-food-supplement-capsules/",
+    "heading": "PI Well Food Supplement Capsules"
+  },
+  {
+    "slug": "hibiscus-tea-tin",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 400,
+    "buttons": [
+      "Add to Cart • ₹400"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/hibiscus-tea-tin/",
+    "heading": "HIBISCUS TEA"
+  },
+  {
+    "slug": "herbo-protein-powder",
+    "type": "variable",
+    "stock": true,
+    "status": 200,
+    "expected": 500,
+    "buttons": [
+      "Add to Cart • ₹500"
+    ],
+    "variations": [
+      {
+        "id": 28320,
+        "attributes": [
+          {
+            "name": "Packaging type",
+            "value": "Box"
+          }
+        ]
+      },
+      {
+        "id": 28321,
+        "attributes": [
+          {
+            "name": "Packaging type",
+            "value": "Packet"
+          }
+        ]
+      }
+    ],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/herbo-protein-powder/",
+    "heading": "HERBO PROTEIN Powder"
+  },
+  {
+    "slug": "dhayani-herbal-hair-oil-100ml",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 750,
+    "buttons": [
+      "Add to Cart • ₹750"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/dhayani-herbal-hair-oil-100ml/",
+    "heading": "Dhayani HERBAL HAIR OIL"
+  },
+  {
+    "slug": "esnovate-capsules",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 999,
+    "buttons": [
+      "Add to Cart • ₹999"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/esnovate-capsules/",
+    "heading": "ESNOVATE Capsules"
+  },
+  {
+    "slug": "purna-sakthi",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1299,
+    "buttons": [
+      "Add to Cart • ₹1,299"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/purna-sakthi/",
+    "heading": "PURNA SAKTHI"
+  },
+  {
+    "slug": "laxa-health-tea-tin",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 400,
+    "buttons": [
+      "Add to Cart • ₹400"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/laxa-health-tea-tin/",
+    "heading": "LAXA HEALTH TEA"
+  },
+  {
+    "slug": "flow-well-capsules",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1100,
+    "buttons": [
+      "Add to Cart • ₹0"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/flow-well-capsules/",
+    "heading": "Flow Well Capsules"
+  },
+  {
+    "slug": "skinwell-soap-pack-of-2",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 260,
+    "buttons": [
+      "Add to Cart • ₹260"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/skinwell-soap-pack-of-2/",
+    "heading": "SkinWell Soap (Pack of 2)"
+  },
+  {
+    "slug": "save-heart",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1199,
+    "buttons": [
+      "Add to Cart • ₹1,299"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/save-heart/",
+    "heading": "AyurRaksha Save Heart"
+  },
+  {
+    "slug": "skin-well-capsules",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1100,
+    "buttons": [
+      "Add to Cart • ₹1,299"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/skin-well-capsules/",
+    "heading": "Skin Well Food Supplement Capsules"
+  },
+  {
+    "slug": "booznil",
+    "type": "variable",
+    "stock": true,
+    "status": 200,
+    "expected": 800,
+    "buttons": [
+      "Add to Cart • ₹800"
+    ],
+    "variations": [
+      {
+        "id": 28315,
+        "attributes": [
+          {
+            "name": "Days",
+            "value": "10 Days"
+          }
+        ]
+      },
+      {
+        "id": 28316,
+        "attributes": [
+          {
+            "name": "Days",
+            "value": "20 Days"
+          }
+        ]
+      },
+      {
+        "id": 28317,
+        "attributes": [
+          {
+            "name": "Days",
+            "value": "1 Month"
+          }
+        ]
+      }
+    ],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/booznil/",
+    "heading": "BoozNil"
+  },
+  {
+    "slug": "b-gasonil-capsules",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 800,
+    "buttons": [
+      "Add to Cart • ₹800"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/b-gasonil-capsules/",
+    "heading": "B-GASONIL Capsules"
+  },
+  {
+    "slug": "dia-well-food-supplement-capsules",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1299,
+    "buttons": [
+      "Add to Cart • ₹1,299"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/dia-well-food-supplement-capsules/",
+    "heading": "Dia Well Food Supplement Capsules"
+  },
+  {
+    "slug": "etioment-balm",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 400,
+    "buttons": [
+      "Add to Cart • ₹400"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/etioment-balm/",
+    "heading": "Etioment Balm"
+  },
+  {
+    "slug": "ayurraksha-beta-powder",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 800,
+    "buttons": [
+      "Add to Cart • ₹800"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-beta-powder/",
+    "heading": "AyurRaksha Beta Powder"
+  },
+  {
+    "slug": "ayurraksha-skin-well-food-moisturising-gel",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1100,
+    "buttons": [
+      "Add to Cart • ₹1,100"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-skin-well-food-moisturising-gel/",
+    "heading": "AyurRaksha Skin Well Food Moisturising Gel"
+  },
+  {
+    "slug": "ayurraksha-b-derma-capsules",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 800,
+    "buttons": [
+      "Add to Cart • ₹800"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-b-derma-capsules/",
+    "heading": "AyurRaksha B Derma Capsules"
+  },
+  {
+    "slug": "ayurraksha-sp-soryn-cream",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 800,
+    "buttons": [
+      "Add to Cart • ₹800"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-sp-soryn-cream/",
+    "heading": "AyurRaksha SP Soryn Cream"
+  },
+  {
+    "slug": "ayurraksha-skin-conditioning-oil",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 799,
+    "buttons": [
+      "Add to Cart • ₹799"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-skin-conditioning-oil/",
+    "heading": "AyurRaksha Skin Conditioning Oil"
+  },
+  {
+    "slug": "ayurraksha-hair-well-food-supplement-capsules",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1299,
+    "buttons": [
+      "Add to Cart • ₹1,299"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-hair-well-food-supplement-capsules/",
+    "heading": "AyurRaksha Hair Well Food Supplement Capsules"
+  },
+  {
+    "slug": "ayurraksha-herbal-shampoo",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 499,
+    "buttons": [
+      "Add to Cart • ₹499"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-herbal-shampoo/",
+    "heading": "AyurRaksha Herbal Shampoo"
+  },
+  {
+    "slug": "ayurraksha-bpain-out-capsules",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 800,
+    "buttons": [
+      "Add to Cart • ₹800"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-bpain-out-capsules/",
+    "heading": "AyurRaksha BPain Out Capsules"
+  },
+  {
+    "slug": "ayurraksha-imu-360",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1100,
+    "buttons": [
+      "Add to Cart • ₹1,100"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-imu-360/",
+    "heading": "AyurRaksha IMU 360"
+  },
+  {
+    "slug": "ayurraksha-creat-capsules",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1100,
+    "buttons": [
+      "Add to Cart • ₹1,100"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-creat-capsules/",
+    "heading": "AyurRaksha CREAT Capsules"
+  },
+  {
+    "slug": "ayurraksha-alg",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1100,
+    "buttons": [
+      "Add to Cart • ₹1,100"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-alg/",
+    "heading": "AyurRaksha ALG"
+  },
+  {
+    "slug": "ayurraksha-gargling-oil",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 250,
+    "buttons": [
+      "Add to Cart • ₹250"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-gargling-oil/",
+    "heading": "AyurRaksha Gargling Oil"
+  },
+  {
+    "slug": "ayurraksha-premium-high-fiber-health-mix",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 500,
+    "buttons": [
+      "Add to Cart • ₹500"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-premium-high-fiber-health-mix/",
+    "heading": "AyurRaksha Premium High Fiber Health Mix"
+  },
+  {
+    "slug": "ayur-raksha-dant-swasthya",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 200,
+    "buttons": [
+      "Add to Cart • ₹200"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayur-raksha-dant-swasthya/",
+    "heading": "AyurRaksha Dant Swasthya"
+  },
+  {
+    "slug": "ayurraksha-superheal-o3-cream",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 3999,
+    "buttons": [
+      "Add to Cart • ₹3,999"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-superheal-o3-cream/",
+    "heading": "AyurRaksha SuperHeal O3 Cream"
+  },
+  {
+    "slug": "etioment-pain-relief-roll-on-50ml",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 500,
+    "buttons": [
+      "Add to Cart • ₹500"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/etioment-pain-relief-roll-on-50ml/",
+    "heading": "Etioment Pain Relief Roll-On"
+  },
+  {
+    "slug": "migro-prime-tablets",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 1299,
+    "buttons": [
+      "Add to Cart • ₹1,299"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/migro-prime-tablets/",
+    "heading": "Migro Prime Tablets"
+  },
+  {
+    "slug": "ayurraksha-detox-tea",
+    "type": "simple",
+    "stock": true,
+    "status": 200,
+    "expected": 650,
+    "buttons": [
+      "Add to Cart • ₹650"
+    ],
+    "variations": [],
+    "url": "https://gray-oyster-367946.hostingersite.com/product/ayurraksha-detox-tea/",
+    "heading": "AyurRaksha Detox Tea"
+  }
+]

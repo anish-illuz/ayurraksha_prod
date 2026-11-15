@@ -5159,9 +5159,9 @@
     "id": 4254,
     "name": "Flow Well Food Supplement Capsules",
     "slug": "flow-well-food-supplement-capsules",
-    "price": 1299,
-    "regularPrice": 1299,
-    "salePrice": 1299,
+    "price": 1100,
+    "regularPrice": 1100,
+    "salePrice": 1100,
     "discountPercent": 0,
     "onSale": false,
     "categories": [

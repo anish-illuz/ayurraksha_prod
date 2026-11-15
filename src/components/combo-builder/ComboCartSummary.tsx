@@ -64,10 +64,10 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
 
   if (totalSellingPrice > 5000) {
     tierDiscountPercent = 15;
-    tierDiscountAmount = Math.round(totalSellingPrice * 0.15);
+    tierDiscountAmount = Math.round(totalSellingPrice * 100 * tierDiscountPercent / 100) / 100;
   } else if (totalSellingPrice > 3000) {
     tierDiscountPercent = 10;
-    tierDiscountAmount = Math.round(totalSellingPrice * 0.10);
+    tierDiscountAmount = Math.round(totalSellingPrice * 100 * tierDiscountPercent / 100) / 100;
     amountToNextTier = Math.max(0, 5000 - totalSellingPrice);
   } else {
     amountToNextTier = Math.max(0, 3000 - totalSellingPrice);

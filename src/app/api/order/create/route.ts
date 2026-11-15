@@ -28,7 +28,7 @@ const STATE_CODE_MAP: Record<string, string> = {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { items, customer, paymentMethod, customerNote, tierDiscount, tierDiscountPercent, attribution } = body;
+    const { items, customer, paymentMethod, customerNote, attribution } = body;
 
     if (!items || !items.length) {
       return NextResponse.json({ success: false, error: 'Cart is empty' }, { status: 400 });
@@ -89,6 +89,7 @@ export async function POST(req: Request) {
         variantName: variant?.variationLabel,
         quantity: item.quantity as number,
         price: variant?.price ?? product.price,
+        isComboItem: item.isComboItem === true,
       };
     }));
     const orderItems = resolvedItems.filter((item): item is NonNullable<typeof item> => item !== null);
@@ -96,12 +97,20 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: 'An item is unavailable or has an invalid quantity. Please refresh your cart.' }, { status: 400 });
     }
 
-    const calculatedSubtotal = orderItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const serverTierPercent = calculatedSubtotal >= 5000 ? 15 : calculatedSubtotal >= 2000 ? 10 : 0;
-    const serverTierDiscount = Math.round(calculatedSubtotal * (serverTierPercent / 100));
+    // Combo Builder Volume Discount — a real WooCommerce percent coupon applied
+    // to the cart below, so the backend order total matches the front-end charge.
+    // Gated on combo-builder items only; the tier is chosen from the combo-item
+    // subtotal (the same rule as the front-end).
+    const comboItems = orderItems.filter((item) => item.isComboItem);
+    const comboSubtotalPaise = comboItems.reduce(
+      (sum, item) => sum + Math.round(item.price * 100) * item.quantity,
+      0,
+    );
+    const comboCoupon = comboSubtotalPaise > 500000 ? 'COMBO5000' : comboSubtotalPaise > 300000 ? 'COMBO3000' : null;
+    const comboCouponPercent = comboCoupon === 'COMBO5000' ? 15 : 10;
     let enhancedNote = customerNote || '';
-    if (serverTierDiscount > 0) {
-      enhancedNote += ` | Automatic Volume Discount: ${serverTierPercent}% OFF (-₹${serverTierDiscount}) [Subtotal: ₹${calculatedSubtotal}, Net: ₹${calculatedSubtotal - serverTierDiscount}]`;
+    if (comboCoupon) {
+      enhancedNote += ` | Combo Volume Discount: ${comboCoupon} (${comboCouponPercent}% OFF applied)`;
     }
     const timestamp = Date.now();
 
@@ -222,6 +231,64 @@ export async function POST(req: Request) {
       if (updateCustRes.headers.get('Cart-Token')) cartToken = updateCustRes.headers.get('Cart-Token') || cartToken;
     } catch (custErr) {
       console.warn('Customer update error:', custErr);
+    }
+
+    // Step 4b: Apply the Combo Builder volume-discount coupon so the backend
+    // order total matches the front-end charge. The WooCommerce percent coupon
+    // is enforced by the store (min-spend + percent), and we read the cart back
+    // to verify it actually applied. If it did not, abort: we never book a
+    // full-price order for a customer who was charged the discounted amount.
+    if (comboCoupon) {
+      const applyRes = await fetch(`${WORDPRESS_STORE_API}/cart/apply-coupon?_nocache=${Date.now()}`, {
+        method: 'POST',
+        headers: {
+          'User-Agent': clientUserAgent,
+          ...clientIpHeaders,
+          'Content-Type': 'application/json',
+          'Nonce': nonce,
+          'Cart-Token': cartToken,
+        },
+        body: JSON.stringify({ code: comboCoupon }),
+        cache: 'no-store',
+      });
+
+      if (applyRes.headers.get('Nonce')) nonce = applyRes.headers.get('Nonce') || nonce;
+      if (applyRes.headers.get('Cart-Token')) cartToken = applyRes.headers.get('Cart-Token') || cartToken;
+
+      if (!applyRes.ok) {
+        const errData = await applyRes.json().catch(() => ({}));
+        console.error('WooCommerce coupon apply error:', errData);
+        throw new Error(`WooCommerce could not apply coupon ${comboCoupon}`);
+      }
+
+      const cartVerify = await fetch(`${WORDPRESS_STORE_API}/cart?_nocache=${Date.now()}`, {
+        method: 'GET',
+        headers: {
+          'User-Agent': clientUserAgent,
+          ...clientIpHeaders,
+          'Accept': 'application/json',
+          'Nonce': nonce,
+          'Cart-Token': cartToken,
+        },
+        cache: 'no-store',
+      });
+      const cartData = await cartVerify.json().catch(() => null);
+      const appliedCodes: string[] = Array.isArray(cartData?.coupons)
+        ? cartData.coupons.map((c: any) => String(c?.code || '').toUpperCase())
+        : [];
+      const discountPaise = Number(cartData?.totals?.total_discount ?? 0);
+      if (
+        !appliedCodes.includes(comboCoupon.toUpperCase()) ||
+        !Number.isFinite(discountPaise) ||
+        discountPaise <= 0
+      ) {
+        console.error('Combo coupon did not register on the cart:', {
+          coupon: comboCoupon,
+          appliedCodes,
+          discountPaise,
+        });
+        throw new Error('Could not apply the combo discount; order not placed.');
+      }
     }
 
     // Step 5: Execute Checkout on WooCommerce Store API with native Order Attribution extension

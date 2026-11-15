@@ -116,16 +116,21 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return sum + itemPrice * item.quantity;
   }, 0);
 
-  // Combo Builder eligible cart value and discounts:
-  // - Cart value above ₹3,000 -> 10% discount on combo builder items
-  // - Cart value above ₹5,000 -> 15% discount on combo builder items
+  // Combo Builder eligible cart value and discounts.
+  // WooCommerce percent coupons book the discount in PAISE (e.g. 15% of
+  // 799800p = 119970p), so the combo subtotal is tracked in paise and the
+  // discount exposed paise-exact — this keeps the front-end display, the
+  // Razorpay charge and the WooCommerce order total reconciled.
+  // - Combo value above ₹3,000 -> 10% off (applied as coupon COMBO3000)
+  // - Combo value above ₹5,000 -> 15% off (applied as coupon COMBO5000)
   // Applies dynamically, single tier only, never stacked.
   const comboSubtotal = items
     .filter((i) => i.isComboItem)
-    .reduce((sum, item) => sum + (item.variantPrice ?? item.product.price) * item.quantity, 0);
+    .reduce((sum, item) => sum + Math.round((item.variantPrice ?? item.product.price) * 100) * item.quantity, 0);
 
-  const comboDiscountPercent = comboSubtotal > 5000 ? 15 : comboSubtotal > 3000 ? 10 : 0;
-  const comboDiscount = Math.round(comboSubtotal * (comboDiscountPercent / 100));
+  // comboSubtotal is in paise.
+  const comboDiscountPercent = comboSubtotal > 500000 ? 15 : comboSubtotal > 300000 ? 10 : 0;
+  const comboDiscount = comboDiscountPercent > 0 ? Math.round((comboSubtotal * comboDiscountPercent) / 100) / 100 : 0;
   const totalPayable = Math.max(0, subtotal - comboDiscount);
 
   const openCart = () => setIsCartOpen(true);

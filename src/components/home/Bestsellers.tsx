@@ -71,7 +71,7 @@ export const Bestsellers: React.FC = () => {
             href="/shop"
             className="inline-flex items-center justify-center gap-2 px-8 h-12 rounded-[8px] text-sm font-semibold bg-primary hover:bg-primary-dark text-white transition-all shadow-xs active:scale-[0.98]"
           >
-            <span>Explore All Formulations</span>
+            <span>Explore All Products</span>
             <ArrowRight size={16} />
           </Link>
         </div>

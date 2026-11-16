@@ -48,6 +48,7 @@ export const CMS_PRODUCT_ID_MAP: Record<string, number> = {
   'ayurraksha-beta-powder': 102,
   'etionment-pain-relief-cream': 103,
   'etioment-balm': 103,
+  'etioment-balm-2': 103,
   'dia-well-food-supplement-capsules': 104,
   'b-gasonil': 105,
   'b-gasonil-capsules': 105,
@@ -83,6 +84,19 @@ export const CMS_PRODUCT_ID_MAP: Record<string, number> = {
 };
 
 const DEFAULT_CMS_PRODUCT_ID = 114; // BoozLiv flagship
+
+/**
+ * Meta's "unique identifier" requirement: the catalog must carry a GTIN,
+ * or Brand + MPN. These proprietary formulations have no GTIN, so
+ * Brand + MPN is the valid path. The MPN is the WooCommerce SKU when the
+ * backend product has one; otherwise a stable AR-prefixed slug so every
+ * catalog item still has a unique, deterministic part number.
+ */
+export function getMpn(p: { slug?: string; sku?: string } | null | undefined): string {
+  if (p?.sku && p.sku.trim()) return p.sku.trim();
+  const slug = (p?.slug || 'ayurraksha').toLowerCase().trim();
+  return `AR-${slug.replace(/-+/g, '-').replace(/^-|-$/g, '')}`;
+}
 
 /**
  * Resolves any storefront product reference into a stable WooCommerce CMS Product ID string.

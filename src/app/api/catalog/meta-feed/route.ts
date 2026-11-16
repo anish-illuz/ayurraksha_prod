@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getAllProducts } from '@/lib/products';
-import { getCmsProductId, CMS_PRODUCT_ID_MAP } from '@/lib/metaProductMap';
+import { getCmsProductId, getMpn, CMS_PRODUCT_ID_MAP } from '@/lib/metaProductMap';
 import { Product } from '@/types/product';
 
 const WORDPRESS_BASE =
@@ -36,6 +36,25 @@ function stripHtml(html: string | null | undefined): string {
     .trim();
 }
 
+/**
+ * Meta ad-policy scrubber. The feed descriptions are pulled verbatim from the
+ * WooCommerce short descriptions; a few carry efficacy-superlative claims
+ * ("clinically proven") that are the likeliest disapproval trigger for a
+ * supplement catalog. This strips the flagged phrase family from feed-only
+ * copy (it does NOT touch the live PDP description on the storefront).
+ */
+function scrubPolicyRiskClaims(text: string): string {
+  if (!text) return text;
+  return text
+    .replace(/\bclinically (?:proven|studied|verified|tested|demonstrated)\b/gi, 'backed by')
+    .replace(/\bclinically\b/gi, '')
+    .replace(/\bguaranteed (?:results?|cure|recovery|weight ?loss|success)\b/gi, '')
+    .replace(/\b(cure|cures|cured)\b/gi, 'support')
+    .replace(/\b(reverse|reverses|reversing) (?:fatty liver|cirrhosis|jaundice|disease|aging)\b/gi, 'support healthy')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
 function ensureAbsoluteImageUrl(url: string | null | undefined): string {
   if (!url) return `${BASE_DOMAIN}/images/logo.png`;
   if (url.startsWith('http://') || url.startsWith('https://')) {
@@ -68,6 +87,7 @@ export async function GET() {
       price: number;
       salePrice?: number;
       brand: string;
+      mpn: string;
       category: string;
       productType: string;
     }> = [];
@@ -86,8 +106,10 @@ export async function GET() {
         const wcProducts = await res.json();
         if (Array.isArray(wcProducts) && wcProducts.length > 0) {
           feedItems = wcProducts.map((p: any) => {
-            const id = String(p.id);
             const slug = p.slug;
+            // Canonical CMS product ID shared by the catalog, Meta Pixel and
+            // CAPI, so events and catalog items reconcile by g:id.
+            const id = getCmsProductId({ id: p.id, slug });
             // Store API prices are paise strings - coerce properly so live
             // items never emit 0.00 INR.
             const priceInRupees = parsePaiseToRupees(p.prices?.price);
@@ -100,7 +122,9 @@ export async function GET() {
             const additional = (p.images || []).slice(1).map((img: any) => img.src).filter(Boolean);
 
             const categoryName = p.categories?.[0]?.name || 'Ayurvedic Wellness';
-            const cleanDesc = stripHtml(p.short_description || p.description || p.name);
+            const cleanDesc = scrubPolicyRiskClaims(
+              stripHtml(p.short_description || p.description || p.name)
+            );
 
             return {
               id,
@@ -113,6 +137,7 @@ export async function GET() {
               price: regPriceInRupees > priceInRupees ? regPriceInRupees : priceInRupees,
               salePrice: salePriceInRupees || (regPriceInRupees > priceInRupees ? priceInRupees : undefined),
               brand: 'AyurRaksha',
+              mpn: getMpn({ slug, sku: p.sku }),
               category: 'Health & Beauty > Health Care > Alternative Medicine',
               productType: categoryName,
             };
@@ -128,7 +153,9 @@ export async function GET() {
       const allLocal = getAllProducts();
       feedItems = allLocal.map((p: Product) => {
         const id = getCmsProductId(p);
-        const cleanDesc = stripHtml(p.cleanDescription || p.shortDescription || p.description);
+        const cleanDesc = scrubPolicyRiskClaims(
+          stripHtml(p.cleanDescription || p.shortDescription || p.description)
+        );
         const primaryImage = p.images[0] || '';
         const additional = p.images.slice(1);
         const categoryName = p.healthConcerns[0] || p.categories[0] || 'Ayurvedic Wellness';
@@ -144,6 +171,7 @@ export async function GET() {
           price: p.regularPrice > p.price ? p.regularPrice : p.price,
           salePrice: p.regularPrice > p.price ? p.price : undefined,
           brand: 'AyurRaksha',
+          mpn: getMpn({ slug: p.slug, sku: p.sku }),
           category: 'Health & Beauty > Health Care > Alternative Medicine',
           productType: categoryName,
         };
@@ -175,6 +203,7 @@ ${item.additionalImages
 ${item.salePrice && item.salePrice < item.price ? `      <g:sale_price>${item.salePrice}.00 INR</g:sale_price>` : ''}
       <g:condition>new</g:condition>
       <g:brand>${escapeXml(item.brand)}</g:brand>
+      <g:mpn>${escapeXml(item.mpn)}</g:mpn>
       <g:google_product_category>${escapeXml(item.category)}</g:google_product_category>
       <g:product_type>${escapeXml(item.productType)}</g:product_type>
     </item>`

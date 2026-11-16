@@ -47,7 +47,7 @@ const LIBRARY: IngredientImageEntry[] = [
   { src: '/images/ingredients/almonds-badam.jpg', keys: ['almond', 'badam', 'prunus dulcis', 'almond', 'mandi badam'] },
   { src: '/images/ingredients/clitoria-ternatea-butterfly-pea.jpg', keys: ['butterfly pea', 'clitoria ternatea', 'clitoria', 'neeli kumbizha', 'butterfly pea'] },
   { src: '/images/ingredients/sida-cordifolia-bala.jpg', keys: ['bala', 'sida cordifolia', 'sida', 'bala herb', 'bala root'] },
-  { src: '/images/ingredients/phyllanthus-niruri-keelanelli.jpg', keys: ['keelanelli', 'keelavembu', 'keezhanelli', 'phyllanthus niruri', 'bhumyamalaki', 'bhumiamalaki', 'bhumiyamalaki', 'phyllanthus'] },
+  { src: '/images/ingredients/phyllanthus-niruri-keelanelli.jpg', keys: ['keelanelli', 'keelavembu', 'keezhanelli', 'phyllanthus niruri', 'bhumyamalaki', 'bhumiamalaki', 'bhumiyamalaki'] },
   { src: '/images/ingredients/garcinia-mangostana-mangosteen.jpg', keys: ['mangosteen', 'garcinia mangostana', 'garcinia'] },
   { src: '/images/ingredients/cissus-quadrangularis-perandai.jpg', keys: ['perandai', 'cissus quadrangularis', 'cissus', 'perandai'] },
   { src: '/images/ingredients/sapindus-mukorossi-soapnut.jpg', keys: ['soapnut', 'mukorossi', 'sapindus', 'reetha', 'reethaka'] },
@@ -99,7 +99,7 @@ const LIBRARY: IngredientImageEntry[] = [
   { src: '/images/ingredients/avuri-neeli.webp', keys: ['avuri', 'neeli', 'indigo', 'indigofera tinctoria', 'indigofera'] },
   { src: '/images/ingredients/kadukkai-haritaki.webp', keys: ['kadukkai', 'haritaki', 'terminalia chebula', 'chebula', 'kadukkai fruit'] },
   { src: '/images/ingredients/thanrikkai-bibhitaki.webp', keys: ['thanrikkai', 'bibhitaki', 'vibhitaki', 'bitaki', 'terminalia bellirica', 'bellirica'] },
-  { src: '/images/ingredients/nellikai-amla.webp', keys: ['nellikkai', 'nelli', 'amla', 'amalaki', 'amaraki', 'emblica officinalis', 'emblica', 'nellik'] },
+  { src: '/images/ingredients/nellikai-amla.webp', keys: ['nellikkai', 'nelli', 'amla', 'amalaki', 'amaraki', 'emblica officinalis', 'emblica', 'phyllanthus emblica', 'nellik'] },
   { src: '/images/ingredients/tulsi-holy-basil.jpg', keys: ['tulsi', 'tulasi', 'thulasi', 'holy basil', 'ocimum', 'basil', 'tulasi leaf'] },
   { src: '/images/ingredients/fenugreek-seeds.jpg', keys: ['fenugreek', 'vendhayam', 'vendha', 'trigonella', 'trigonella foenum', 'fenugreek seed', 'fenugreek leaves'] },
   { src: '/images/ingredients/arjuna-bark.jpg', keys: ['arjuna', 'terminalia arjuna', 'marudha maram', 'marudu', 'arjuna bark', 'marudha'] },
@@ -119,6 +119,9 @@ const LIBRARY: IngredientImageEntry[] = [
   { src: '/images/ingredients/peanut-groundnut.jpg', keys: ['peanuts', 'groundnuts', 'groundnut', 'arachis hypogaea'] },
   { src: '/images/ingredients/mixed-nuts.jpg', keys: ['peanuts and nuts', 'mixed nuts', 'assorted nuts', 'nuts'] },
   { src: '/images/ingredients/elderberry.jpg', keys: ['elderberry', 'sambucus'] },
+  { src: '/images/ingredients/morinda-pubescens-manjanathi.jpg', keys: ['manjanathi', 'morinda pubescens', 'morinda', 'manjanathi kezhangu', 'indian mulberry'] },
+  { src: '/images/ingredients/saussurea-lappa-kuth.jpg', keys: ['kuth', 'costus', 'saussurea lappa', 'saussurea costus', 'saussurea'] },
+  { src: '/images/ingredients/acalypha-indica-kuppaimeni.jpg', keys: ['kuppaimeni', 'acalypha indica', 'acalypha', 'indian nettle'] },
 ];
 
 /** Lower-case, symbol-stripped, whitespace-normalized form of a string. */

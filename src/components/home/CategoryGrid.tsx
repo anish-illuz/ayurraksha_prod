@@ -49,7 +49,7 @@ export const CategoryGrid: React.FC = () => {
           <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-2.5">
             Targeted Herbal Care
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-deepgreen sm:text-primary tracking-tight">
             Shop by Health Concern
           </h2>
           <p className="mt-3 text-base sm:text-lg text-[#37443D] leading-relaxed">
@@ -57,8 +57,8 @@ export const CategoryGrid: React.FC = () => {
           </p>
         </div>
 
-        {/* 8 Concern Grid: Card Structure: 1. Category scene image, 2. Heading, 3. Short sentence, 4. Explore Collection link */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+        {/* 8 Concern Grid: 2-up on mobile, square contain images, 4-up on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-7">
           {HEALTH_CONCERNS.map((c) => {
             const imgSrc = CONCERN_IMAGES[c.slug] || `/images/categories/${c.slug}.webp`;
             const title = CONCERN_TITLES[c.slug] || c.name;
@@ -71,38 +71,38 @@ export const CategoryGrid: React.FC = () => {
                 prefetch={false}
                 className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-xs transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 hover:-translate-y-1"
               >
-                {/* 1. Category scene image at the top */}
-                <div className="relative w-full aspect-[2/1] sm:aspect-[4/3] bg-[#F7F9F5] overflow-hidden">
+                {/* 1. Category scene image — square on mobile, contain so the full product is visible */}
+                <div className="relative w-full aspect-square sm:aspect-[4/3] bg-[#F7F9F5] overflow-hidden">
                   <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
                     <Image
                       src={imgSrc}
                       alt={title}
                       fill
                       loading="lazy"
-                      sizes="(max-width: 640px) 380px, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover object-center"
+                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-contain object-center p-2 sm:p-4"
                     />
                   </div>
                 </div>
 
                 {/* Content Body */}
-                <div className="p-4 sm:p-6 flex flex-col flex-grow">
+                <div className="p-3 sm:p-5 flex flex-col flex-grow">
                   {/* 2. Category heading below the image */}
-                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-primary group-hover:text-primary-dark transition-colors leading-snug">
+                  <h3 className="font-heading text-sm sm:text-xl lg:text-2xl font-bold text-[#163D30] group-hover:text-primary-dark transition-colors leading-snug">
                     {title}
                   </h3>
 
                   {/* 3. One short sentence describing the collection */}
-                  <p className="text-sm text-[#37443D] mt-2 leading-relaxed flex-grow">
+                  <p className="text-xs sm:text-sm text-[#000] mt-1.5 sm:mt-2 leading-relaxed flex-grow">
                     {description}
                   </p>
 
                   {/* 4. Explore Collection link with right arrow */}
-                  <div className="mt-3 pt-3 sm:mt-5 sm:pt-4 border-t border-stone-100 flex items-center text-sm font-semibold text-primary group-hover:text-primary-dark transition-colors">
+                  <div className="mt-2 pt-2 sm:mt-4 sm:pt-3 border-t border-stone-100 flex items-center text-xs sm:text-sm font-semibold text-[#163D30] group-hover:text-primary-dark transition-colors">
                     <span>Explore Collection</span>
                     <ArrowRight
-                      size={16}
-                      className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1"
+                      size={14}
+                      className="ml-1.5 sm:ml-2 transform transition-transform duration-200 group-hover:translate-x-1"
                     />
                   </div>
                 </div>

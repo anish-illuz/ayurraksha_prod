@@ -46,7 +46,7 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
       </div>
 
       {/* Product Title */}
-      <h1 className="font-serif text-2xl sm:text-3xl font-bold text-forest leading-tight mb-1.5">
+      <h1 className="font-serif text-2xl sm:text-3xl font-bold text-deepgreen sm:text-forest leading-tight mb-1.5">
         {product.name}
       </h1>
 
@@ -59,9 +59,9 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
         </span>
       </div>
 
-      {/* Key Benefit Summary - live CMS excerpt */}
+      {/* Key Benefit Summary - live CMS excerpt (16px, solid black) */}
       {product.shortDescription && (
-        <p className="text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans mb-3.5">
+        <p className="text-base text-black leading-relaxed font-sans mb-3.5">
           {product.shortDescription}
         </p>
       )}
@@ -92,7 +92,7 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
                   </span>
                 )}
                 <div className="flex items-center gap-2 min-w-0 pr-2">
-                  <span className={`font-bold ${isOutOfStock ? 'text-stone-400 line-through' : 'text-forest'}`}>
+                  <span className={`text-[14px] sm:text-sm font-bold ${isOutOfStock ? 'text-stone-400 line-through' : 'text-black'}`}>
                     {formatPackMeasurement(pack.name)}
                   </span>
                   {!isOutOfStock && pack.discountBadge && (
@@ -130,7 +130,7 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
             )}
           </div>
 
-          <span className="text-xs text-emerald-800 font-semibold">
+          <span className="text-[14px] sm:text-xs text-emerald-800 font-semibold">
             {isAvailable ? 'In Stock • Free shipping on prepaid orders' : 'Out of Stock'}
           </span>
         </div>

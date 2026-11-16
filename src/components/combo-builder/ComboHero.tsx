@@ -64,7 +64,7 @@ export const ComboHero: React.FC<ComboHeroProps> = ({
               {highlight && <em className="italic text-[#edc48a] font-serif">{highlight}</em>}
             </h1>
 
-            <p className="text-xs sm:text-sm text-[#e5eee7] leading-[1.55] max-w-xl font-sans">
+            <p className="text-sm sm:text-base text-[#e5eee7] leading-[1.55] max-w-xl font-sans">
               {description}
             </p>
 
@@ -104,10 +104,10 @@ export const ComboHero: React.FC<ComboHeroProps> = ({
                       <Layers size={17} />
                     </span>
                     <div>
-                      <strong className="text-[12.5px] sm:text-[13px] font-extrabold text-[#18372b] block leading-tight">
+                      <strong className="text-[14px] sm:text-[13px] font-extrabold text-[#18372b] block leading-tight">
                         {stepGuide.step1Title}
                       </strong>
-                      <span className="text-[10.5px] sm:text-[11px] text-[#5c6f63] leading-snug block mt-0.5">
+                      <span className="text-[14px] sm:text-[11px] text-[#5c6f63] leading-snug block mt-0.5">
                         {stepGuide.step1Desc}
                       </span>
                     </div>
@@ -124,10 +124,10 @@ export const ComboHero: React.FC<ComboHeroProps> = ({
                       <SlidersHorizontal size={17} />
                     </span>
                     <div>
-                      <strong className="text-[12.5px] sm:text-[13px] font-extrabold text-[#18372b] block leading-tight">
+                      <strong className="text-[14px] sm:text-[13px] font-extrabold text-[#18372b] block leading-tight">
                         {stepGuide.step2Title}
                       </strong>
-                      <span className="text-[10.5px] sm:text-[11px] text-[#5c6f63] leading-snug block mt-0.5">
+                      <span className="text-[14px] sm:text-[11px] text-[#5c6f63] leading-snug block mt-0.5">
                         {stepGuide.step2Desc}
                       </span>
                     </div>
@@ -144,10 +144,10 @@ export const ComboHero: React.FC<ComboHeroProps> = ({
                       <Tag size={17} />
                     </span>
                     <div>
-                      <strong className="text-[12.5px] sm:text-[13px] font-extrabold text-[#18372b] block leading-tight">
+                      <strong className="text-[14px] sm:text-[13px] font-extrabold text-[#18372b] block leading-tight">
                         {stepGuide.step3Title}
                       </strong>
-                      <span className="text-[10.5px] sm:text-[11px] text-[#5c6f63] leading-snug block mt-0.5">
+                      <span className="text-[14px] sm:text-[11px] text-[#5c6f63] leading-snug block mt-0.5">
                         {stepGuide.step3Desc}
                       </span>
                     </div>

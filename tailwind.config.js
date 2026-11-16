@@ -50,6 +50,9 @@ module.exports = {
           light: '#37443D',
           muted: '#37443D', // Darker charcoal-green shade (#37443D) for high-contrast readability
         },
+        deepgreen: {
+          DEFAULT: '#163D30', // Client-specified heading green — bold section titles
+        },
         border: {
           botanical: 'rgba(32, 74, 59, 0.15)',
           subtle: 'rgba(38, 53, 45, 0.08)',

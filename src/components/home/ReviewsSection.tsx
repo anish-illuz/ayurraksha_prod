@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Star, ShieldCheck } from 'lucide-react';
@@ -7,6 +9,12 @@ import { SITE_CONFIG } from '@/data/siteConfig';
 import { getProductBySlug } from '@/lib/products';
 
 export const ReviewsSection: React.FC = () => {
+  // Mobile shows the first two reviews; the button expands to the rest.
+  // Desktop (md+) always shows all reviews and hides the button.
+  const [showAll, setShowAll] = useState(false);
+  const MOBILE_COLLAPSED_COUNT = 2;
+  const hiddenCount = VERIFIED_REVIEWS.length - MOBILE_COLLAPSED_COUNT;
+
   return (
     <section className="py-9 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +35,7 @@ export const ReviewsSection: React.FC = () => {
               </span>
             </div>
 
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-deepgreen sm:text-primary tracking-tight">
               What Our Customers Say
             </h2>
             <p className="mt-3 text-base sm:text-lg text-charcoal-muted max-w-xl">
@@ -41,16 +49,22 @@ export const ReviewsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 6 Grid Review Cards with Authentic Product Thumbnails */}
+        {/* Review cards: 2 on mobile (until "Show More" is tapped), all on desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7">
-          {VERIFIED_REVIEWS.map((rev) => {
+          {VERIFIED_REVIEWS.map((rev, index) => {
             const product = getProductBySlug(rev.productSlug);
             const thumbImg = product?.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png';
+            // Mobile shows the first 2 by default; the "Show More" button reveals
+            // the rest. Desktop (md+) always shows all 6, so collapsing is
+            // mobile-only — hidden on small screens, visible from md up.
+            const collapsedOnMobile = !showAll && index >= MOBILE_COLLAPSED_COUNT;
 
             return (
               <div
                 key={rev.id}
-                className="flex flex-col justify-between p-4 sm:p-7 bg-[#FAF9F5] rounded-2xl border border-stone-200/80 shadow-xs transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 group"
+                className={`flex flex-col justify-between p-4 sm:p-7 bg-[#FAF9F5] rounded-2xl border border-stone-200/80 shadow-xs transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 group ${
+                  collapsedOnMobile ? 'md:flex hidden' : ''
+                }`}
               >
                 <div>
                   {/* Stars & Verified */}
@@ -112,6 +126,34 @@ export const ReviewsSection: React.FC = () => {
             );
           })}
         </div>
+
+        {/* Show More Reviews — mobile only; desktop shows all reviews always */}
+        {hiddenCount > 0 && !showAll && (
+          <div className="mt-5 md:mt-8 md:hidden">
+            <button
+              type="button"
+              onClick={() => setShowAll(true)}
+              className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-primary hover:bg-primary-dark text-white text-sm font-bold transition-colors shadow-xs active:scale-[0.98]"
+            >
+              <span>Show More Reviews</span>
+              <span className="text-xs font-semibold opacity-80">
+                ({hiddenCount} more)
+              </span>
+            </button>
+          </div>
+        )}
+
+        {showAll && hiddenCount > 0 && (
+          <div className="mt-5 md:mt-8 md:hidden text-center">
+            <button
+              type="button"
+              onClick={() => setShowAll(false)}
+              className="text-sm font-semibold text-primary hover:underline"
+            >
+              Show Fewer Reviews
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

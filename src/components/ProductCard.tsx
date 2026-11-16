@@ -135,9 +135,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
           )}
         </div>
 
-        {/* Pack / Size Pill Badge */}
+        {/* Pack / Size Pill Badge — min 14px, solid black for readability */}
         <div>
-          <span className="inline-block text-[11px] sm:text-xs font-semibold text-stone-800 bg-stone-100 px-2.5 py-1 rounded-full border border-stone-200">
+          <span className="inline-block text-[14px] sm:text-sm font-semibold text-black bg-stone-100 px-2.5 py-1 rounded-full border border-stone-200">
             {sizeLabel}
           </span>
         </div>

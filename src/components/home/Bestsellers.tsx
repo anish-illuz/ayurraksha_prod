@@ -27,7 +27,7 @@ export const Bestsellers: React.FC = () => {
               <Sparkles size={14} className="text-gold" />
               <span>Customer Favorites</span>
             </div>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-deepgreen sm:text-primary tracking-tight">
               Our Bestsellers
             </h2>
             <p className="mt-3 text-base sm:text-lg text-[#37443D] max-w-xl">

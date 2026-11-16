@@ -205,7 +205,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 
       {/* Stock Status Indicator */}
       {isAvailable ? (
-        <div className="flex items-center gap-2 text-xs font-semibold text-emerald-800">
+        <div className="flex items-center gap-2 text-[14px] sm:text-xs font-semibold text-emerald-800">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
@@ -213,7 +213,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           <span>In Stock • Dispatched within 1–2 business days</span>
         </div>
       ) : (
-        <div className="flex items-center gap-2 text-xs font-semibold text-rose-700 bg-rose-50 border border-rose-200/80 px-3 py-2 rounded-xl">
+        <div className="flex items-center gap-2 text-[14px] sm:text-xs font-semibold text-rose-700 bg-rose-50 border border-rose-200/80 px-3 py-2 rounded-xl">
           <span className="relative flex h-2 w-2">
             <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-600" />
           </span>
@@ -305,22 +305,22 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           <div className="flex flex-wrap items-center gap-x-3.5 gap-y-1.5">
             <div className="flex items-center gap-1.5">
               <Truck size={15} className="text-botanical shrink-0" />
-              <span className="text-[11px] sm:text-xs font-bold text-forest">Free shipping on prepaid orders</span>
+              <span className="text-[14px] sm:text-xs font-bold text-black">Free shipping on prepaid orders</span>
             </div>
             <div className="flex items-center gap-1.5">
               <RefreshCw size={15} className="text-botanical shrink-0" />
-              <span className="text-[11px] sm:text-xs font-bold text-forest">7-Day Return</span>
+              <span className="text-[14px] sm:text-xs font-bold text-black">7-Day Return</span>
             </div>
             <div className="flex items-center gap-1.5">
               <ShieldCheck size={15} className="text-botanical shrink-0" />
-              <span className="text-[11px] sm:text-xs font-bold text-forest">
+              <span className="text-[14px] sm:text-xs font-bold text-black">
                 Cash on Delivery
                 <span className="ml-1 font-semibold text-stone-600">(+₹{SITE_CONFIG.shipping.codFee} delivery charge)</span>
               </span>
             </div>
             <div className="flex items-center gap-1.5">
               <Award size={15} className="text-botanical shrink-0" />
-              <span className="text-[11px] sm:text-xs font-bold text-forest">AyurRaksha Care</span>
+              <span className="text-[14px] sm:text-xs font-bold text-black">AyurRaksha Care</span>
             </div>
           </div>
 
@@ -333,7 +333,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
             <ChevronDown size={12} className={`transition-transform ${openShipping ? 'rotate-180' : ''}`} />
           </button>
           {openShipping && (
-            <div className="mt-1.5 pt-2 border-t border-stone-100 text-[11px] sm:text-xs text-charcoal/80 space-y-1">
+            <div className="mt-1.5 pt-2 border-t border-stone-100 text-[14px] sm:text-xs text-black space-y-1">
               <p><strong>Prepaid Orders:</strong> Free shipping on all prepaid orders anywhere in India.</p>
               <p><strong>7-Day Return:</strong> Unopened packs can be returned within 7 days.</p>
               <p><strong>Cash on Delivery:</strong> Pay at your doorstep, pan-India. A ₹{SITE_CONFIG.shipping.codFee} delivery charge applies to COD orders. Transit: 2–4 days metro, 4–6 days non-metro.</p>

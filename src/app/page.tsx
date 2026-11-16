@@ -34,11 +34,17 @@ export default function HomePage() {
       {/* 2. Trust & Convenience Strip */}
       <TrustBadges />
 
-      {/* 3. Shop by Wellness Concern / Category */}
-      <CategoryGrid />
-
-      {/* 4. Verified Bestsellers Showcase */}
-      <Bestsellers />
+      {/* 3-4. Shop by Concern + Bestsellers.
+          Mobile (<sm): Bestsellers appears first (closer to the top),
+          then Shop by Health Concern.  Desktop (sm+): original order. */}
+      <div className="flex flex-col">
+        <div className="order-2 sm:order-1">
+          <CategoryGrid />
+        </div>
+        <div className="order-1 sm:order-2">
+          <Bestsellers />
+        </div>
+      </div>
 
       {/* 4b. Featured Videos Showcase */}
       <FeaturedVideos />

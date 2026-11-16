@@ -49,33 +49,79 @@ export const Header: React.FC = () => {
             isScrolled ? 'border-stone-200 shadow-xs' : 'border-stone-100'
           }`}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between relative">
-            {/* Left: Mobile Menu Button */}
-            <div className="flex items-center lg:hidden">
-              <button
-                onClick={() => setIsMobileOpen(true)}
-                aria-label="Open mobile navigation menu"
-                className="p-2 text-charcoal hover:text-botanical hover:bg-stone-100 rounded-lg transition-colors"
-              >
-                <Menu size={22} />
-              </button>
-            </div>
+          {/* Premium mobile header: logo centered, menu on the left,
+              search + cart on the right. Desktop layout below. */}
+          {/* Mobile (<lg): 3-column grid — logo is truly centered between
+              two equal-width icon columns so it never drifts with the
+              number of icons on either side. */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 relative">
+            {/* Mobile: grid with two equal side columns keeps the logo centered */}
+            <div className="lg:hidden grid grid-cols-[1fr_auto_1fr] items-center h-full">
+              {/* Left: Menu */}
+              <div className="flex items-center justify-start">
+                <button
+                  onClick={() => setIsMobileOpen(true)}
+                  aria-label="Open mobile navigation menu"
+                  className="p-2.5 text-charcoal hover:text-botanical hover:bg-stone-100 rounded-full transition-colors"
+                >
+                  <Menu size={20} />
+                </button>
+              </div>
 
-            {/* Brand Logo - Centered on Mobile, Left-aligned on Desktop */}
-            <div className="flex items-center justify-center lg:justify-start flex-1 lg:flex-initial">
+              {/* Center: Logo (auto width, always optically centered) */}
               <Link href="/" className="flex items-center group py-1" aria-label="AyurRaksha Home">
-                <div className="relative h-10 sm:h-12 w-36 sm:w-44 transition-transform duration-200 group-hover:scale-[1.02]">
+                <div className="relative h-10 sm:h-12 w-32 sm:w-40 transition-transform duration-200 group-hover:scale-[1.02]">
                   <Image
                     src="/images/logo.png"
                     alt="AyurRaksha"
                     fill
                     priority
-                    sizes="(max-width: 640px) 144px, 176px"
-                    className="object-contain object-center lg:object-left"
+                    sizes="(max-width: 640px) 128px, 160px"
+                    className="object-contain object-center"
                   />
                 </div>
               </Link>
+
+              {/* Right: Search + Cart */}
+              <div className="flex items-center justify-end gap-0.5 sm:gap-1">
+                <button
+                  onClick={() => setIsSearchOpen(true)}
+                  aria-label="Search store"
+                  className="p-2.5 text-charcoal hover:text-primary hover:bg-stone-100 rounded-full transition-colors"
+                >
+                  <Search size={20} />
+                </button>
+                <button
+                  onClick={openCart}
+                  aria-label={`Open cart with ${itemCount} items`}
+                  className="relative p-2.5 text-charcoal hover:text-primary hover:bg-stone-100 rounded-full transition-colors"
+                >
+                  <ShoppingBag size={20} className="stroke-[1.75]" />
+                  {itemCount > 0 && (
+                    <span className="absolute top-0.5 right-0.5 min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-bold bg-primary text-white flex items-center justify-center shadow-xs">
+                      {itemCount}
+                    </span>
+                  )}
+                </button>
+              </div>
             </div>
+
+            {/* Desktop (lg+): menu icon hidden, logo left-aligned, then nav
+                and right icons in the original single row. */}
+            <div className="hidden lg:flex items-center justify-between relative">
+              {/* Brand Logo - Left-aligned on Desktop */}
+              <Link href="/" className="flex items-center group py-1" aria-label="AyurRaksha Home">
+                <div className="relative h-12 w-44 transition-transform duration-200 group-hover:scale-[1.02]">
+                  <Image
+                    src="/images/logo.png"
+                    alt="AyurRaksha"
+                    fill
+                    priority
+                    sizes="176px"
+                    className="object-contain object-left"
+                  />
+                </div>
+              </Link>
 
             {/* Center: Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[15px] font-semibold text-charcoal">
@@ -252,6 +298,7 @@ export const Header: React.FC = () => {
               </button>
             </div>
           </div>
+        </div>
         </div>
       </header>
 

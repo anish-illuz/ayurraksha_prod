@@ -99,17 +99,17 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
                 <Icon size={18} />
               </div>
 
-              {/* Title */}
+              {/* Title — 14px floor on mobile for readability */}
               <p
-                className={`text-[12.5px] sm:text-[13px] font-extrabold leading-snug ${
-                  isWarningCard ? 'text-rose-800' : 'text-[#18372b]'
+                className={`text-[14px] sm:text-[13px] font-extrabold leading-snug ${
+                  isWarningCard ? 'text-rose-800' : 'text-black'
                 }`}
               >
                 {concern.name}
               </p>
 
               {/* Short description */}
-              <p className="text-[10.5px] sm:text-[11px] text-[#5c6f63] leading-snug mt-1 line-clamp-2">
+              <p className="text-[14px] sm:text-[11px] text-[#3c4f44] leading-snug mt-1 line-clamp-2">
                 {concern.shortDesc}
               </p>
             </button>
@@ -135,7 +135,7 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
           </button>
         </div>
       ) : (
-        <div className="px-3 py-1.5 rounded-[9px] bg-[#f4f7f2] border border-[#dbe6d9] text-[11px] text-[#203728] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
+        <div className="px-3 py-1.5 rounded-[9px] bg-[#f4f7f2] border border-[#dbe6d9] text-[14px] sm:text-[11px] text-[#203728] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
           <div className="leading-snug">
             <span className="font-bold text-[#18372b]">{activeConcern.name}: </span>
             <span className="text-[#3c5445]">{activeConcern.shortDesc || activeConcern.description}</span>

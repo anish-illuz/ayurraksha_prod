@@ -159,10 +159,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
           )}
         </div>
 
-        {/* Quantity Stepper + Primary Add to Cart Action Row */}
-        <div className="pt-2 flex items-stretch gap-2">
+        {/* Quantity Stepper + Primary Add to Cart Action Row.
+            Stacks on mobile so the button gets the full card width and the
+            "Add to Cart" label never overflows; side-by-side from sm: up. */}
+        <div className="pt-2 flex flex-col sm:flex-row items-stretch gap-2">
           {/* Quantity + / - Stepper */}
-          <div className="flex items-center border border-stone-300 rounded-lg sm:rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-10">
+          <div className="flex items-center justify-between sm:justify-start border border-stone-300 rounded-lg sm:rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-10 sm:self-start sm:shrink-0">
             <button
               onClick={handleDecrement}
               aria-label="Decrease quantity"
@@ -189,7 +191,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             onClick={handleQuickAdd}
             disabled={!product.inStock}
             aria-label={`Add ${product.name} to cart`}
-            className={`flex-1 min-w-0 h-10 inline-flex items-center justify-center gap-1.5 px-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold uppercase tracking-tight whitespace-nowrap transition-all duration-200 shadow-xs active:scale-[0.98] ${
+            className={`flex-1 min-w-0 w-full h-10 inline-flex items-center justify-center gap-1.5 px-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold uppercase tracking-tight transition-all duration-200 shadow-xs active:scale-[0.98] ${
               !product.inStock
                 ? 'bg-stone-200 text-stone-500 cursor-not-allowed'
                 : isAdded
@@ -198,16 +200,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             }`}
           >
             {!product.inStock ? (
-              <span className="whitespace-nowrap">Out of Stock</span>
+              <span>Out of Stock</span>
             ) : isAdded ? (
               <>
                 <Check size={14} className="flex-shrink-0" />
-                <span className="whitespace-nowrap">Added!</span>
+                <span>Added!</span>
               </>
             ) : (
               <>
                 <ShoppingBag size={14} className="flex-shrink-0" />
-                <span className="whitespace-nowrap">Add to Cart</span>
+                <span>Add to Cart</span>
               </>
             )}
           </button>

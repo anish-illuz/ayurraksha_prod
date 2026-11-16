@@ -135,11 +135,13 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
           </span>
         </div>
 
-        {/* Quantity Stepper & Add to Cart Controls */}
-        <div className="flex items-center gap-2.5">
+        {/* Quantity Stepper & Add to Cart Controls. Stacked on the smallest
+            screens so the Add to Cart button keeps full width; side-by-side
+            from xs (320px+) once there is room. */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
           {/* Quantity Stepper */}
           {isAvailable && (
-            <div className="flex items-center border border-stone-200 rounded-xl bg-white overflow-hidden shadow-2xs">
+            <div className="flex items-center justify-center sm:justify-start border border-stone-200 rounded-xl bg-white overflow-hidden shadow-2xs">
               <button
                 type="button"
                 onClick={decrementQuantity}

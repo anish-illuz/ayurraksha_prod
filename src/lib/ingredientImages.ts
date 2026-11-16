@@ -37,7 +37,7 @@ const LIBRARY: IngredientImageEntry[] = [
   { src: '/images/ingredients/virgin-coconut-oil.jpg', keys: ['coconut', 'cocos nucifera', 'kadayi', 'coconut oil'] },
   { src: '/images/ingredients/bitter-melon-karela.jpg', keys: ['karela', 'bitter melon', 'momordica', 'kareerai'] },
   { src: '/images/ingredients/brahmi-bacopa.jpg', keys: ['brahmi', 'bacopa', 'water hyssop', 'bachi'] },
-  { src: '/images/ingredients/kalonji-black-seed.jpg', keys: ['kalonji', 'nigella', 'nigella sativa', 'black seed', 'kalonji'] },
+  { src: '/images/ingredients/kalonji-black-seed.webp', keys: ['kalonji', 'nigella', 'nigella sativa', 'black seed', 'karunjeeragam', 'kalonji oil'] },
   { src: '/images/ingredients/olive-oil-olives.jpg', keys: ['olive', 'olea europaea', 'olive oil', 'zaitun'] },
   { src: '/images/ingredients/eucalyptus-leaves.jpg', keys: ['eucalyptus'] },
   { src: '/images/ingredients/ragi-finger-millet.jpg', keys: ['ragi', 'finger millet', 'millet', 'elai'] },

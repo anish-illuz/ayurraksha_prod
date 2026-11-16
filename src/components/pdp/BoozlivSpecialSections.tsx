@@ -64,7 +64,52 @@ const PLAYLIST_EPISODES: VideoEpisode[] = [
   },
 ];
 
-export const BoozlivSpecialSections: React.FC = () => {
+/**
+ * The peer-reviewed clinical research banner. Rendered directly below the
+ * purchase area and above the product details, where a buyer sees the
+ * evidence claim before scrolling into the description.
+ */
+export const BoozlivClinicalResearch: React.FC = () => (
+  <section
+    aria-label="Clinical Findings"
+    className="mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl bg-[#143527] p-6 sm:p-8 lg:p-10 border border-emerald-500/20 shadow-sm text-white"
+  >
+    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+      <div className="max-w-2xl">
+        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 tracking-wider uppercase mb-2">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
+          <span>CLINICALLY STUDIED EFFICACY</span>
+        </div>
+        <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3">
+          Backed by Peer-Reviewed Human Clinical Findings
+        </h2>
+        <p className="text-white/80 text-xs sm:text-sm font-sans leading-relaxed">
+          Successfully studied for reversing early-stage fatty liver, supporting cirrhosis care, jaundice
+          alleviation, and alcohol-induced toxin clearance in comprehensive cohort studies.
+        </p>
+      </div>
+
+      <div className="shrink-0">
+        <a
+          href="https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/BoozLiv-Clinical-Report.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 text-[#143527] font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full sm:rounded-xl shadow-md hover:shadow-lg transition-all duration-200 whitespace-nowrap group"
+        >
+          <span>VIEW CLINICAL REPORT (PDF)</span>
+          <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
+        </a>
+      </div>
+    </div>
+  </section>
+);
+
+/**
+ * The "Doctor Insights & Patient Journeys" video hub - Boozliv's supporting
+ * media section, kept below the product details so the purchase path stays
+ * uncluttered.
+ */
+export const BoozlivVideoHub: React.FC = () => {
   const [activeVideo, setActiveVideo] = useState<VideoEpisode>(FEATURED_MAIN_VIDEO);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
@@ -74,10 +119,8 @@ export const BoozlivSpecialSections: React.FC = () => {
   };
 
   return (
-    <div className="mt-10 sm:mt-14 space-y-10 sm:space-y-14">
-      {/* ------------------------------------------------------------- */}
-      {/* SECTION 1: VIDEO HUB (Doctor Insights & Patient Journeys)    */}
-      {/* ------------------------------------------------------------- */}
+    <div className="mt-10 sm:mt-14">
+      {/* SECTION 1: VIDEO HUB (Doctor Insights & Patient Journeys) */}
       <section aria-label="Expert Video Insights" className="space-y-6 sm:space-y-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto">
@@ -228,42 +271,6 @@ export const BoozlivSpecialSections: React.FC = () => {
               <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0" />
               <span>All discussions led by qualified Ayurvedic and Siddha practitioners.</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ------------------------------------------------------------- */}
-      {/* SECTION 2: CLINICAL REPORT BANNER (Backed by Human Findings) */}
-      {/* ------------------------------------------------------------- */}
-      <section
-        aria-label="Clinical Findings"
-        className="rounded-2xl sm:rounded-3xl bg-[#143527] p-6 sm:p-8 lg:p-10 border border-emerald-500/20 shadow-sm text-white"
-      >
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 tracking-wider uppercase mb-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
-              <span>CLINICALLY STUDIED EFFICACY</span>
-            </div>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3">
-              Backed by Peer-Reviewed Human Clinical Findings
-            </h2>
-            <p className="text-white/80 text-xs sm:text-sm font-sans leading-relaxed">
-              Successfully studied for reversing early-stage fatty liver, supporting cirrhosis care, jaundice
-              alleviation, and alcohol-induced toxin clearance in comprehensive cohort studies.
-            </p>
-          </div>
-
-          <div className="shrink-0">
-            <a
-              href="https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/BoozLiv-Clinical-Report.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 text-[#143527] font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full sm:rounded-xl shadow-md hover:shadow-lg transition-all duration-200 whitespace-nowrap group"
-            >
-              <span>VIEW CLINICAL REPORT (PDF)</span>
-              <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
-            </a>
           </div>
         </div>
       </section>

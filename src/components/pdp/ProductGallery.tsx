@@ -12,14 +12,30 @@ interface ProductGalleryProps {
   product?: Product;
 }
 
+/**
+ * Neutral, product-agnostic loading state. When a product has no CMS images yet
+ * (backend fetch still pending or failed) the gallery shows this instead of a
+ * placeholder from another product - no specific item is flashed on screen.
+ */
+const NeutralImagePlaceholder: React.FC<{ compact?: boolean }> = ({ compact }) => (
+  <div className="w-full h-full flex flex-col items-center justify-center gap-2.5 bg-gradient-to-br from-stone-50 via-white to-stone-100 animate-pulse">
+    <div className={compact ? 'w-9 h-9 rounded-full bg-white border border-stone-200 flex items-center justify-center' : 'w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white border border-stone-200 flex items-center justify-center shadow-2xs'}>
+      <Package size={compact ? 16 : 28} className="text-stone-300" />
+    </div>
+    {!compact && (
+      <span className="text-[11px] sm:text-xs font-medium text-stone-400">Loading product photo</span>
+    )}
+  </div>
+);
+
 export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productName, product }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const displayImages = images.length > 0
-    ? images
-    : ['/images/products/ayur-raksha-detox-tea.webp'];
-
-  const currentImage = displayImages[selectedIndex] || displayImages[0];
+  // The CMS media library is the only source of product photos. When it has
+  // not returned any images yet, show a neutral loading state - never a photo
+  // belonging to a different product.
+  const hasImages = images.length > 0;
+  const currentImage = hasImages ? (images[selectedIndex] || images[0]) : null;
 
   const heroBadge = product?.heroImageBadge || '100% AYURVEDIC FORMULA | Pure Herbal Blends';
   const heroTag = product?.heroImageTag || `Hand-curated ${productName.replace(/^AyurRaksha\s*/i, '')}`;
@@ -40,23 +56,30 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
           <span>{heroTag}</span>
         </div>
 
-        {/* Main Product Image */}
+        {/* Main Product Image - a neutral loading state until CMS photos exist,
+            so another product's image is never flashed in the main frame. */}
         <div className="relative w-full h-full">
-          <Image
-            src={currentImage}
-            alt={productName}
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 600px"
-            className="object-contain w-full h-full p-2 transition-transform duration-500 group-hover:scale-[1.02]"
-          />
+          {currentImage ? (
+            <Image
+              src={currentImage}
+              alt={productName}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 600px"
+              className="object-contain w-full h-full p-2 transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          ) : (
+            <div className="w-full h-full p-2 flex items-center justify-center">
+              <NeutralImagePlaceholder />
+            </div>
+          )}
         </div>
       </div>
 
       {/* Gallery Thumbnails: If multiple images exist from CMS, show image thumbnails. Otherwise show authentic highlights */}
       <div className="grid grid-cols-4 gap-2 sm:gap-2.5">
-        {displayImages.length > 1 ? (
-          displayImages.slice(0, 4).map((img, idx) => (
+        {images.length > 1 ? (
+          images.slice(0, 4).map((img, idx) => (
             <button
               key={idx}
               type="button"
@@ -93,13 +116,17 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
               title="Pack View"
             >
               <div className="relative w-full h-full">
-                <Image
-                  src={displayImages[0]}
-                  alt={`${productName} pack view`}
-                  fill
-                  sizes="90px"
-                  className="object-contain"
-                />
+                {images[0] ? (
+                  <Image
+                    src={images[0]}
+                    alt={`${productName} pack view`}
+                    fill
+                    sizes="90px"
+                    className="object-contain"
+                  />
+                ) : (
+                  <NeutralImagePlaceholder compact />
+                )}
               </div>
             </button>
 

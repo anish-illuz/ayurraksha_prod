@@ -44,6 +44,17 @@ function ensureAbsoluteImageUrl(url: string | null | undefined): string {
   return `${BASE_DOMAIN}${url.startsWith('/') ? '' : '/'}${url}`;
 }
 
+/**
+ * The WooCommerce Store API returns prices as paise STRINGS (e.g. "99900"),
+ * not numbers. Coerce to whole-rupee numbers; 0 when the value is absent or
+ * not a positive amount. A wrong `typeof` check here previously made every
+ * live catalogue item emit 0.00 INR.
+ */
+function parsePaiseToRupees(value: unknown): number {
+  const n = Math.round(Number(value) / 100);
+  return Number.isFinite(n) && n > 0 ? n : 0;
+}
+
 export async function GET() {
   try {
     let feedItems: Array<{
@@ -77,10 +88,12 @@ export async function GET() {
           feedItems = wcProducts.map((p: any) => {
             const id = String(p.id);
             const slug = p.slug;
-            const priceInRupees = typeof p.prices?.price === 'number' ? Math.round(p.prices.price / 100) : 0;
-            const regPriceInRupees = typeof p.prices?.regular_price === 'number' ? Math.round(p.prices.regular_price / 100) : priceInRupees;
-            const salePriceInRupees = typeof p.prices?.sale_price === 'number' && p.prices.sale_price > 0
-              ? Math.round(p.prices.sale_price / 100)
+            // Store API prices are paise strings - coerce properly so live
+            // items never emit 0.00 INR.
+            const priceInRupees = parsePaiseToRupees(p.prices?.price);
+            const regPriceInRupees = parsePaiseToRupees(p.prices?.regular_price) || priceInRupees;
+            const salePriceInRupees = p.prices?.sale_price
+              ? parsePaiseToRupees(p.prices.sale_price)
               : undefined;
 
             const primaryImage = p.images?.[0]?.src || '';

@@ -5,7 +5,8 @@ import { ProductGallery } from '@/components/pdp/ProductGallery';
 import { ProductInfo } from '@/components/pdp/ProductInfo';
 import { MobileProductHeader } from '@/components/pdp/MobileProductHeader';
 import { ProductDetailsSections } from '@/components/pdp/ProductDetailsSections';
-import { BoozlivSpecialSections } from '@/components/pdp/BoozlivSpecialSections';
+import { ProductReviews } from '@/components/pdp/ProductReviews';
+import { BoozlivClinicalResearch, BoozlivVideoHub } from '@/components/pdp/BoozlivSpecialSections';
 import { StickyMobileBar } from '@/components/pdp/StickyMobileBar';
 import { ProductCard } from '@/components/ProductCard';
 import { PDPProvider } from '@/context/PDPContext';
@@ -182,11 +183,21 @@ export default async function ProductDetailPage({ params }: PageProps) {
             </div>
           </div>
 
+          {/* BoozLiv-only: peer-reviewed clinical research banner, placed directly
+              below the purchase area and above the product information. */}
+          {product.slug === 'boozliv' && <BoozlivClinicalResearch />}
+
           {/* Redesigned Complete Product Details Sections Matching Reference 3.png */}
           <ProductDetailsSections product={product} />
 
-          {/* BoozLiv-only additions: Clinical Report banner + Doctor Insights video hub */}
-          {product.slug === 'boozliv' && <BoozlivSpecialSections />}
+          {/* Customer reviews: the star aggregate is the live WooCommerce
+              average from the CMS (rating / reviewCount); the section hides
+              itself when the backend reports no reviews. */}
+          <ProductReviews product={product} />
+
+          {/* BoozLiv-only: Doctor Insights video hub, kept below the details so the
+              purchase path stays uncluttered. */}
+          {product.slug === 'boozliv' && <BoozlivVideoHub />}
         </div>
 
         {/* Recommended Products dynamically mapped from WordPress ACF `recommended_products` */}

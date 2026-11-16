@@ -36,7 +36,7 @@ export const DivineHealingOilVideoHub: React.FC = () => {
       {/* Section Heading */}
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="font-serif text-2xl sm:text-3xl font-bold text-forest leading-tight mb-2">
-          Watch Divine Healing Oil in Your Language
+          Watch &amp; Learn About Divine Healing Oil
         </h2>
       </div>
 

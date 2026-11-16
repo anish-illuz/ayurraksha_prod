@@ -321,8 +321,16 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
           { label: 'Origin', value: product.specOrigin || '' },
           { label: 'Disclosures', value: product.specDisclosures || '' },
         ];
-    return parseSpecificationsAcf(rawSpecs, fallbackSpecRows);
-  }, [rawSpecs, product.specNetQuantity, product.specProductForm, product.specOrigin, product.specDisclosures, cmsLoaded]);
+    const rows = parseSpecificationsAcf(rawSpecs, fallbackSpecRows);
+    // The SKU is shown inside Product Specifications (not as a pill above the
+    // title). It comes from the live WooCommerce SKU, or the bundled badge in
+    // the offline fallback.
+    const skuValue = product.sku || (product.skuBadge ? product.skuBadge.replace(/^SKU:\s*/i, '') : '');
+    if (skuValue && !rows.some((r) => r.label.toLowerCase() === 'sku')) {
+      rows.push({ label: 'SKU', value: skuValue });
+    }
+    return rows;
+  }, [rawSpecs, product.sku, product.skuBadge, product.specNetQuantity, product.specProductForm, product.specOrigin, product.specDisclosures, cmsLoaded]);
   const hasSpecifications = parsedSpecRows.length > 0;
 
   return (

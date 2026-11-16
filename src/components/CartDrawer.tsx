@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { X, Trash2, Plus, Minus, ShoppingBag, ShieldCheck, ArrowRight } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
+import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const CartDrawer: React.FC = () => {
   const {
@@ -242,7 +243,7 @@ export const CartDrawer: React.FC = () => {
             <div className="mt-3 flex items-center justify-center gap-3 text-[11px] text-charcoal-muted">
               <span>Razorpay Verified</span>
               <span>•</span>
-              <span>UPI / Cards / COD</span>
+              <span>UPI / Cards / COD (+₹{SITE_CONFIG.shipping.codFee} delivery charge)</span>
               <span>•</span>
               <span>Discreet Packing</span>
             </div>

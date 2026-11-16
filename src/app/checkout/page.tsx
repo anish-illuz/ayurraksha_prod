@@ -78,7 +78,7 @@ export default function CheckoutPage() {
   // creation, so the backend order total matches the charged amount):
   // - Combo value above ₹5,000 -> 15% OFF (COMBO5000)
   // - Combo value above ₹3,000 -> 10% OFF (COMBO3000)
-  const shippingFee = paymentMethod === 'razorpay' ? 0 : 100;
+  const shippingFee = paymentMethod === 'razorpay' ? 0 : SITE_CONFIG.shipping.codFee;
   const totalPayable = Math.max(0, subtotal - comboDiscount + shippingFee);
 
   useEffect(() => {
@@ -639,7 +639,7 @@ export default function CheckoutPage() {
                             <Banknote size={18} className="text-stone-600" />
                             <span>Cash on Delivery (COD)</span>
                           </span>
-                          <span className="text-xs text-stone-500 font-medium">+₹100 COD fee</span>
+                          <span className="text-xs text-stone-500 font-medium">+₹{SITE_CONFIG.shipping.codFee} COD delivery charge</span>
                         </div>
                         <p className="text-xs text-charcoal-muted mt-1">
                           Pay in cash or UPI when your order arrives at your doorstep.
@@ -760,11 +760,13 @@ export default function CheckoutPage() {
                   )}
 
                   <div className="flex items-center justify-between text-charcoal-muted">
-                    <span>Delivery Charges</span>
+                    <span>Delivery Charges{paymentMethod === 'cod' ? ' (COD)' : ' (Prepaid)'}</span>
                     {shippingFee === 0 ? (
                       <span className="font-bold text-botanical">FREE</span>
                     ) : (
-                      <span className="font-semibold text-charcoal">+₹100</span>
+                      <span className="font-semibold text-charcoal">
+                        +₹{shippingFee} <span className="text-[11px] text-stone-500 font-medium">COD delivery charge</span>
+                      </span>
                     )}
                   </div>
 

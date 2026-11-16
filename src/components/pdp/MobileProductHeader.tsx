@@ -36,18 +36,11 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
 
   return (
     <div className="bg-white rounded-2xl p-4 sm:p-5 border border-stone-200/90 shadow-2xs">
-      {/* Category Eyebrow & SKU */}
-      <div className="flex items-center justify-between gap-2 mb-2">
-        {categoryName ? (
+      {/* Category Eyebrow (SKU now lives inside Product Specifications) */}
+      <div className="mb-2">
+        {categoryName && (
           <span className="text-xs font-bold text-botanical uppercase tracking-wider">
             {categoryName}
-          </span>
-        ) : (
-          <span />
-        )}
-        {(product.sku || product.skuBadge) && (
-          <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#E8EFE6] text-forest border border-forest/10">
-            {product.skuBadge || `SKU: ${product.sku}`}
           </span>
         )}
       </div>
@@ -138,7 +131,7 @@ export const MobileProductHeader: React.FC<MobileProductHeaderProps> = ({ produc
           </div>
 
           <span className="text-xs text-emerald-800 font-semibold">
-            {isAvailable ? 'In Stock • Free Shipping' : 'Out of Stock'}
+            {isAvailable ? 'In Stock • Free shipping on prepaid orders' : 'Out of Stock'}
           </span>
         </div>
 

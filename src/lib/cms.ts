@@ -54,15 +54,18 @@ export async function fetchCmsProduct(slug: string): Promise<CmsProductResponse 
         id: item.id,
         slug: item.slug,
         title: item.title?.rendered ? decodeHtmlEntities(item.title.rendered) : '',
-        description: item.content?.rendered || '',
-        shortDescription: item.excerpt?.rendered ? stripTags(item.excerpt.rendered) : '',
+        // Description and ACF text arrive HTML-entity encoded (e.g. &#8211;
+        // for an en-dash). Decode before trimming so the PDP never shows raw
+        // entities.
+        description: item.content?.rendered ? decodeHtmlEntities(item.content.rendered) : '',
+        shortDescription: item.excerpt?.rendered ? decodeHtmlEntities(stripTags(item.excerpt.rendered)) : '',
         acf: {
-          key_benefits: (rawAcf.key_benefits || '').trim(),
-          ingredients: (rawAcf.ingredients || '').trim(),
-          how_to_use: (rawAcf.how_to_use || '').trim(),
-          care_before_use: (rawAcf.care_before_use || '').trim(),
-          product_specifications: (rawAcf.product_specifications || '').trim(),
-          recommended_products: (rawAcf.recommended_products || '').trim(),
+          key_benefits: decodeHtmlEntities((rawAcf.key_benefits || '').trim()),
+          ingredients: decodeHtmlEntities((rawAcf.ingredients || '').trim()),
+          how_to_use: decodeHtmlEntities((rawAcf.how_to_use || '').trim()),
+          care_before_use: decodeHtmlEntities((rawAcf.care_before_use || '').trim()),
+          product_specifications: decodeHtmlEntities((rawAcf.product_specifications || '').trim()),
+          recommended_products: decodeHtmlEntities((rawAcf.recommended_products || '').trim()),
         },
       };
     } catch (err) {
@@ -244,8 +247,9 @@ export async function fetchCmsCommerce(slug: string): Promise<CmsCommerceData | 
       cmsProductId: Number(p.id) || 0,
       name: typeof p.name === 'string' ? decodeHtmlEntities(p.name) : '',
       slug: typeof p.slug === 'string' ? p.slug : '',
-      description: typeof p.description === 'string' ? p.description : '',
-      shortDescription: typeof p.short_description === 'string' ? stripTags(p.short_description) : '',
+      // Decode entities so descriptions never show raw &#8211;-style markup.
+      description: typeof p.description === 'string' ? decodeHtmlEntities(p.description) : '',
+      shortDescription: typeof p.short_description === 'string' ? decodeHtmlEntities(stripTags(p.short_description)) : '',
       categories,
       categorySlugs,
       price: price / 100,

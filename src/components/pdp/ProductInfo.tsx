@@ -18,6 +18,7 @@ import { RatingStars } from '@/components/RatingStars';
 import { usePDP } from '@/context/PDPContext';
 import { formatPackMeasurement } from '@/lib/formatPack';
 import { trackViewItem } from '@/lib/storefrontAnalytics';
+import { SITE_CONFIG } from '@/data/siteConfig';
 
 interface ProductInfoProps {
   product: Product;
@@ -58,19 +59,15 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 
   return (
     <div className="flex flex-col space-y-4 sm:space-y-5">
-      {/* Category Eyebrow & SKU Pill Header (Desktop only - mobile shown in MobileProductHeader) */}
-      <div className="hidden lg:flex items-center justify-between gap-2">
+      {/* Category Eyebrow Header (SKU now lives inside Product Specifications).
+          Desktop only - mobile shown in MobileProductHeader. */}
+      <div className="hidden lg:flex items-center">
         {categoryName ? (
           <span className="text-xs font-bold text-botanical uppercase tracking-wider">
             {categoryName}
           </span>
         ) : (
           <span />
-        )}
-        {(product.sku || product.skuBadge) && (
-          <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#E8EFE6] text-forest border border-forest/10">
-            {product.skuBadge || `SKU: ${product.sku}`}
-          </span>
         )}
       </div>
 
@@ -308,7 +305,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           <div className="flex flex-wrap items-center gap-x-3.5 gap-y-1.5">
             <div className="flex items-center gap-1.5">
               <Truck size={15} className="text-botanical shrink-0" />
-              <span className="text-[11px] sm:text-xs font-bold text-forest">Free Shipping</span>
+              <span className="text-[11px] sm:text-xs font-bold text-forest">Free shipping on prepaid orders</span>
             </div>
             <div className="flex items-center gap-1.5">
               <RefreshCw size={15} className="text-botanical shrink-0" />
@@ -316,7 +313,10 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
             </div>
             <div className="flex items-center gap-1.5">
               <ShieldCheck size={15} className="text-botanical shrink-0" />
-              <span className="text-[11px] sm:text-xs font-bold text-forest">Cash on Delivery</span>
+              <span className="text-[11px] sm:text-xs font-bold text-forest">
+                Cash on Delivery
+                <span className="ml-1 font-semibold text-stone-600">(+₹{SITE_CONFIG.shipping.codFee} delivery charge)</span>
+              </span>
             </div>
             <div className="flex items-center gap-1.5">
               <Award size={15} className="text-botanical shrink-0" />
@@ -334,9 +334,9 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
           </button>
           {openShipping && (
             <div className="mt-1.5 pt-2 border-t border-stone-100 text-[11px] sm:text-xs text-charcoal/80 space-y-1">
-              <p><strong>Free Prepaid Delivery:</strong> All prepaid orders ship free anywhere in India.</p>
+              <p><strong>Prepaid Orders:</strong> Free shipping on all prepaid orders anywhere in India.</p>
               <p><strong>7-Day Return:</strong> Unopened packs can be returned within 7 days.</p>
-              <p><strong>Cash on Delivery:</strong> Pay at your doorstep, pan-India. Transit: 2–4 days metro, 4–6 days non-metro.</p>
+              <p><strong>Cash on Delivery:</strong> Pay at your doorstep, pan-India. A ₹{SITE_CONFIG.shipping.codFee} delivery charge applies to COD orders. Transit: 2–4 days metro, 4–6 days non-metro.</p>
               <p><strong>AyurRaksha Care:</strong> Doctor guidance available on WhatsApp for personal recommendations.</p>
             </div>
           )}

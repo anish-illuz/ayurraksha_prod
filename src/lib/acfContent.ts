@@ -118,6 +118,11 @@ function splitLatinAndName(seg: string): { latin: string; next: string } {
   }
 
   let next = words.slice(i).join(' ');
+  // Strip the delimiter (comma / semicolon / colon) that precedes the next
+  // name in a packed single-line list ("...Piper longum ,Kutki — ..."). That
+  // comma belongs to the separator, not to the following ingredient, so a
+  // card must never be named ",Kutki".
+  next = next.replace(/^[,\s;:]+/, '').trim();
   // A " / variant" continuation belongs to the Latin, not the next name.
   if (next.startsWith('/')) {
     return { latin: [latin.join(' '), next].filter(Boolean).join(' '), next: '' };

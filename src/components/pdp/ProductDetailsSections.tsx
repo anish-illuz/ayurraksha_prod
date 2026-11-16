@@ -163,6 +163,8 @@ function parseSpecificationsAcf(
     }
 
     if (markers.length > 0) {
+      const introduction = text.slice(0, markers[0].start).trim();
+      if (introduction) rows.push({ label: '', value: introduction });
       markers.forEach((mk, i) => {
         // The value runs from the end of this marker to the start of the next.
         const valueEnd = i + 1 < markers.length ? markers[i + 1].start : text.length;
@@ -179,12 +181,12 @@ function parseSpecificationsAcf(
       const lines = rawText.split(/[\r\n]+/).map((l) => l.trim()).filter(Boolean);
       for (const line of lines) {
         const cIdx = line.indexOf(':');
-        if (cIdx > 0) {
-          rows.push({
+        rows.push(cIdx > 0
+          ? {
             label: line.slice(0, cIdx).trim(),
             value: line.slice(cIdx + 1).trim(),
-          });
-        }
+          }
+          : { label: '', value: line });
       }
     }
   }
@@ -574,9 +576,9 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
             onToggle={() => toggleSection('specifications')}
           >
             <div className="space-y-1.5">
-              {parsedSpecRows.map((row) => (
+              {parsedSpecRows.map((row, idx) => (
                 <div
-                  key={row.label}
+                  key={row.label || `value-${idx}`}
                   className="flex items-center justify-between gap-4 text-xs sm:text-sm py-1.5 border-b border-stone-100 last:border-b-0"
                 >
                   <span className="text-charcoal-muted">{row.label}</span>

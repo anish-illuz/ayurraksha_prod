@@ -104,6 +104,21 @@ const LIBRARY: IngredientImageEntry[] = [
   { src: '/images/ingredients/fenugreek-seeds.jpg', keys: ['fenugreek', 'vendhayam', 'vendha', 'trigonella', 'trigonella foenum', 'fenugreek seed', 'fenugreek leaves'] },
   { src: '/images/ingredients/arjuna-bark.jpg', keys: ['arjuna', 'terminalia arjuna', 'marudha maram', 'marudu', 'arjuna bark', 'marudha'] },
   { src: '/images/ingredients/aloe-vera-gel.jpg', keys: ['aloe', 'aloe vera', 'aloe barbadensis', 'kumbhirai', 'aloe leaf', 'aloe barbadensis miller'] },
+  { src: '/images/ingredients/anacyclus-pyrethrum-akarkara.jpg', keys: ['aghrakaram', 'akrakarah', 'akarkara', 'anacyclus pyrethrum', 'anacyclus', 'pellitory'] },
+  { src: '/images/ingredients/acacia-catechu-khair.jpg', keys: ['karuvelam pattai', 'black catechu', 'acacia catechu', 'catechu', 'khair', 'khadira'] },
+  { src: '/images/ingredients/mixed-millet-grains.jpg', keys: ['millets and grains', 'millets', 'grains', 'millet mix'] },
+  { src: '/images/ingredients/sorghum-jowar.jpg', keys: ['jowar', 'sorghum', 'sorghum bicolor'] },
+  { src: '/images/ingredients/pearl-millet-bajra.jpg', keys: ['bajra', 'pearl millet'] },
+  { src: '/images/ingredients/barley-grain.jpg', keys: ['barley', 'barley grain', 'hordeum vulgare'] },
+  { src: '/images/ingredients/raw-rice-grain.jpg', keys: ['rice', 'raw rice', 'rice grain', 'oryza sativa'] },
+  { src: '/images/ingredients/lentils-dal.jpg', keys: ['pulses and legumes', 'pulses', 'legumes', 'lentil', 'lentils', 'dal'] },
+  { src: '/images/ingredients/roasted-gram-chana.jpg', keys: ['fried gram', 'roasted chana', 'roasted gram'] },
+  { src: '/images/ingredients/mung-dal.jpg', keys: ['moong dal', 'green gram', 'mung bean', 'vigna radiata'] },
+  { src: '/images/ingredients/chickpea.jpg', keys: ['chickpea', 'desi chana', 'chana', 'cicer arietinum'] },
+  { src: '/images/ingredients/soybean.jpg', keys: ['soya', 'soybean', 'glycine max', 'soya bean'] },
+  { src: '/images/ingredients/peanut-groundnut.jpg', keys: ['peanuts', 'groundnuts', 'groundnut', 'arachis hypogaea'] },
+  { src: '/images/ingredients/mixed-nuts.jpg', keys: ['peanuts and nuts', 'mixed nuts', 'assorted nuts', 'nuts'] },
+  { src: '/images/ingredients/elderberry.jpg', keys: ['elderberry', 'sambucus'] },
 ];
 
 /** Lower-case, symbol-stripped, whitespace-normalized form of a string. */

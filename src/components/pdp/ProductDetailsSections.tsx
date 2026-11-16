@@ -136,18 +136,45 @@ function parseSpecificationsAcf(
   const rows: SpecRow[] = [];
 
   if (rawText && rawText.trim()) {
-    // Match patterns like "Brand: AyurRaksha" or "Product Type: Ayurvedic..."
-    const regex = /([A-Za-z\s/&-]{2,30}):\s*([^:\r\n]+?)(?=(?:[A-Za-z\s/&-]{2,30}:|$|[\r\n]))/g;
-    let match;
-    while ((match = regex.exec(rawText)) !== null) {
-      const label = match[1].trim();
-      const val = match[2].trim().replace(/[,\.;]+$/, '');
-      if (label && val) {
-        rows.push({ label, value: val });
-      }
+    // The ACF field can arrive as a single-line "Label: Value Label: Value ..."
+    // stream (one space between pairs) or as separate lines. Normalise all
+    // whitespace to single spaces so both parse identically.
+    const text = rawText.replace(/\s+/g, ' ').trim();
+
+    // Known multi-word label phrases from the CMS spec data, listed first so the
+    // alternation matches them before the generic single-word label below.
+    const multiWordLabels =
+      'Product Type|Product Form|Net Quantity|Country of Origin|Shelf Life|Pack Size|Form Factor|Storage Method';
+
+    // A label boundary is a known multi-word phrase OR a single word, each
+    // immediately followed by a colon. Values may contain spaces and capital
+    // words ("Ayurvedic Proprietary Medicine", "Skin & Body Care"), so only a
+    // word/phrase that is directly followed by a colon is ever treated as a
+    // new label — value words are never absorbed into a neighbouring label.
+    const labelRegex = new RegExp(
+      `((?:${multiWordLabels})|[A-Z][A-Za-z0-9]{1,19})\\s*:\\s*`,
+      'g'
+    );
+
+    const markers: { label: string; start: number; end: number }[] = [];
+    let m: RegExpExecArray | null;
+    while ((m = labelRegex.exec(text)) !== null) {
+      markers.push({ label: m[1].trim(), start: m.index, end: m.index + m[0].length });
     }
 
-    // If regex didn't find multiple keys, try line by line
+    if (markers.length > 0) {
+      markers.forEach((mk, i) => {
+        // The value runs from the end of this marker to the start of the next.
+        const valueEnd = i + 1 < markers.length ? markers[i + 1].start : text.length;
+        const value = text.slice(mk.end, valueEnd).replace(/[,\.;\s]+$/, '');
+        if (mk.label && value) {
+          rows.push({ label: mk.label, value });
+        }
+      });
+    }
+
+    // No label marker matched: fall back to a line-by-line "key: value" split
+    // (handles fields where each pair is on its own line with a free-form key).
     if (rows.length === 0) {
       const lines = rawText.split(/[\r\n]+/).map((l) => l.trim()).filter(Boolean);
       for (const line of lines) {

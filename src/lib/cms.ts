@@ -36,7 +36,7 @@ export async function fetchCmsProduct(slug: string): Promise<CmsProductResponse 
     try {
       const url = `${CMS_DOMAIN}/wp-json/wp/v2/product?slug=${encodeURIComponent(s)}&_fields=id,slug,title,content,excerpt,acf`;
       const res = await fetch(url, {
-        next: { revalidate: 60 },
+        cache: 'no-store',
         headers: {
           Accept: 'application/json',
         },
@@ -143,7 +143,7 @@ function parseStorePrice(value: unknown): number {
 async function fetchStoreProduct(slug: string): Promise<any | null> {
   try {
     const res = await fetch(`${STORE_API}/products?slug=${encodeURIComponent(slug)}&per_page=1`, {
-      next: { revalidate: 60 },
+      cache: 'no-store',
       headers: { Accept: 'application/json' },
     });
     if (!res.ok) return null;
@@ -163,7 +163,7 @@ async function fetchStoreProduct(slug: string): Promise<any | null> {
 async function fetchStoreVariation(variationId: number): Promise<any | null> {
   try {
     const res = await fetch(`${STORE_API}/products/${variationId}`, {
-      next: { revalidate: 60 },
+      cache: 'no-store',
       headers: { Accept: 'application/json' },
     });
     if (!res.ok) return null;

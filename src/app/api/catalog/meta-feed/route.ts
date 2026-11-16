@@ -14,8 +14,9 @@ const PRODUCTION_SITE_URL =
 // Clean domain string without trailing slash
 const BASE_DOMAIN = PRODUCTION_SITE_URL.replace(/\/+$/, '');
 
+// Every request regenerates the feed from the live WooCommerce data so
+// backend updates propagate immediately.
 export const dynamic = 'force-dynamic';
-export const revalidate = 3600; // Cache for 1 hour
 
 function escapeXml(unsafe: string | null | undefined): string {
   if (!unsafe) return '';
@@ -67,7 +68,7 @@ export async function GET() {
           'User-Agent': 'AyurRaksha-MetaCatalogFeed/2.0',
           'Accept': 'application/json',
         },
-        next: { revalidate: 3600 },
+        cache: 'no-store',
       });
 
       if (res.ok) {
@@ -173,7 +174,7 @@ ${item.salePrice && item.salePrice < item.price ? `      <g:sale_price>${item.sa
       status: 200,
       headers: {
         'Content-Type': 'application/xml; charset=utf-8',
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+        'Cache-Control': 'no-store, max-age=0',
         'X-Robots-Tag': 'noindex',
       },
     });

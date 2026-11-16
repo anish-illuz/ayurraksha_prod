@@ -5,7 +5,8 @@ import { ComboProduct } from '@/types/combo';
 const WORDPRESS_BASE = process.env.WORDPRESS_API_URL || process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://cms.ayurrakshaonline.com';
 const WORDPRESS_STORE_API = `${WORDPRESS_BASE}/wp-json/wc/store/v1`;
 
-export const revalidate = 60; // Cache on server for 60 seconds
+// Always run on request so backend price/stock updates show immediately.
+export const dynamic = 'force-dynamic';
 
 // Parse a WooCommerce Store API price (minor units / paise, returned as a
 // string) into whole rupees. Returns 0 when the value is missing or invalid.
@@ -41,7 +42,7 @@ export async function GET(req: Request) {
             'User-Agent': 'AyurRaksha-ComboBuilder/2.0',
             'Accept': 'application/json',
           },
-          next: { revalidate: 60 },
+          cache: 'no-store',
         });
 
         if (res.ok) {

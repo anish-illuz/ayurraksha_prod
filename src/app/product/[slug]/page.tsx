@@ -9,7 +9,6 @@ import { BoozlivSpecialSections } from '@/components/pdp/BoozlivSpecialSections'
 import { StickyMobileBar } from '@/components/pdp/StickyMobileBar';
 import { ProductCard } from '@/components/ProductCard';
 import { PDPProvider } from '@/context/PDPContext';
-import { getStaticParamSlugs } from '@/lib/products';
 import {
   fetchCmsCommerce,
   fetchDynamicProduct,
@@ -21,16 +20,12 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// Pre-render every Product at both URL shapes it can be reached at: the
-// bundled slug and the CMS post_name alias (when they differ). This is what
-// lets a CMS-native URL such as /product/ayurraksha-hair-well-.../ render
-// alongside the storefront slug /product/hair-well-.../, keeping the PDP
-// catalog in sync with the live CMS without re-hardcoding any content.
-export async function generateStaticParams() {
-  return getStaticParamSlugs().map((slug) => ({
-    slug,
-  }));
-}
+// Product pages are fully dynamic: both the bundled slug and the CMS
+// post_name alias resolve on demand, and every request re-fetches CMS
+// content (ACF fields, WooCommerce commerce) so a backend update — price,
+// stock, description — shows immediately. Static pre-rendering was removed
+// on purpose: generateStaticParams would bake CMS content into the build.
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;

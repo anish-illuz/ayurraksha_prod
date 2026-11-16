@@ -14,7 +14,7 @@ export async function GET() {
         'User-Agent': 'AyurRaksha-NextJS-Client/1.0',
       },
       body: JSON.stringify({}),
-      next: { revalidate: 300 }, // Cache for 5 minutes
+      cache: 'no-store', // Fetch fresh so backend payment settings update immediately
     });
 
     if (!res.ok) {

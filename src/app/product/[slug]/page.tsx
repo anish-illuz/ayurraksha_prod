@@ -7,6 +7,7 @@ import { MobileProductHeader } from '@/components/pdp/MobileProductHeader';
 import { ProductDetailsSections } from '@/components/pdp/ProductDetailsSections';
 import { ProductReviews } from '@/components/pdp/ProductReviews';
 import { BoozlivClinicalResearch, BoozlivVideoHub } from '@/components/pdp/BoozlivSpecialSections';
+import { DivineHealingOilVideoHub } from '@/components/pdp/DivineHealingOilVideoHub';
 import { StickyMobileBar } from '@/components/pdp/StickyMobileBar';
 import { ProductCard } from '@/components/ProductCard';
 import { PDPProvider } from '@/context/PDPContext';
@@ -198,6 +199,10 @@ export default async function ProductDetailPage({ params }: PageProps) {
           {/* BoozLiv-only: Doctor Insights video hub, kept below the details so the
               purchase path stays uncluttered. */}
           {product.slug === 'boozliv' && <BoozlivVideoHub />}
+
+          {/* Divine Healing Oil only: practitioner-led usage guidance videos in
+              Tamil, English, Hindi and Telugu. */}
+          {product.slug === 'divine-healing-oil' && <DivineHealingOilVideoHub />}
         </div>
 
         {/* Recommended Products dynamically mapped from WordPress ACF `recommended_products` */}

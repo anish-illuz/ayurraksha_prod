@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
             {/* Social Icons matching 11.webp circular outline buttons */}
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://www.instagram.com/ayurrakshaonline/"
+                href="https://www.instagram.com/vprimehealthcare/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="AyurRaksha on Instagram"
@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
                 <Facebook size={17} className="stroke-[1.8]" />
               </a>
               <a
-                href="https://www.youtube.com/@ayurrakshaonline"
+                href="https://www.youtube.com/@Holistic_Wellness_7"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="AyurRaksha on YouTube"

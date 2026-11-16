@@ -31,7 +31,7 @@ export default function RefundReturnsPage() {
 
             <h2 className="font-serif text-lg font-bold text-forest pt-2">1. Order Cancellation Terms</h2>
             <ul className="list-disc pl-5 space-y-1.5">
-              <li><strong>Prior to Dispatch:</strong> You may cancel your order at any time before it has been handed over to the courier partner by contacting us at <a href={`mailto:${SITE_CONFIG.ordersEmail}`} className="text-botanical font-semibold underline">{SITE_CONFIG.ordersEmail}</a> or via WhatsApp at <strong>{SITE_CONFIG.displayPhone}</strong>. Full 100% refund is initiated immediately to your original payment mode with zero cancellation fees.</li>
+              <li><strong>Prior to Dispatch:</strong> You may cancel your order at any time before it has been handed over to the courier partner by contacting us at <a href={`mailto:${SITE_CONFIG.ordersEmail}`} className="text-botanical font-semibold underline">{SITE_CONFIG.ordersEmail}</a> or via WhatsApp at <strong>{SITE_CONFIG.displayPhone}</strong>. We’ll immediately initiate a full refund through your original payment method. There is no cancellation fee.</li>
               <li><strong>Post Dispatch:</strong> Once an order has been dispatched and an AWB tracking number generated, cancellations cannot be processed mid-transit. The shipment must either be rejected upon delivery attempt or returned in its unopened condition under our standard return policy.</li>
             </ul>
 

@@ -39,7 +39,7 @@ const FAQS: FaqItem[] = [
     q: '3. Can I create my own personalised skincare combo?',
     answerParagraphs: [
       'Absolutely! Your skin is unique, and your skincare routine should be too.',
-      'With AyurRaksha’s Build Your Own Skin Care Combo, you can explore 13 Ayurvedic skincare and wellness essentials and create a combination suited to your preferences.',
+      'With AyurRaksha’s Build Your Own Skin Care Combo, you can explore 14 Ayurvedic skincare and wellness essentials and create a combination suited to your preferences.',
       'Choose from herbal oils, soaps, creams and complementary wellness products, adjust quantities and see your combo price update instantly.',
       'You’re always in control—nothing is added without your choice. Not sure where to begin? Explore products by skin concern or seek guidance from an Ayurvedic doctor.',
     ],

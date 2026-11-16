@@ -47,7 +47,7 @@ export default function TermsOfServicePage() {
               <li>Reproduce, scrape, republish, or commercialize product descriptions, clinical case studies, or photography without written consent from VPrime Innovations.</li>
             </ul>
 
-            <h2 className="font-serif text-lg font-bold text-forest pt-2">2. Products &amp; Wellness Nature of Formulations</h2>
+            <h2 className="font-serif text-lg font-bold text-forest pt-2">2. Products and the Nature of Our Formulations</h2>
             <ul className="list-disc pl-5 space-y-1.5">
               <li>All formulations offered on AyurRakshaOnline.com are classical and proprietary Ayurvedic dietary supplements, herbal tonics, and topical preparations.</li>
               <li>These formulations are engineered to support holistic well-being and bodily balance. <strong>They are not synthetic pharmaceutical drugs and are not sold to cure, prevent, or diagnose any medical illness.</strong></li>

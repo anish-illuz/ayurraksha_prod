@@ -782,7 +782,7 @@ export default function CheckoutPage() {
                 <div className="pt-2 border-t border-stone-100 space-y-2">
                   <div className="flex items-center justify-center gap-2 text-xs font-semibold text-stone-600">
                     <ShieldCheck size={16} className="text-botanical" />
-                    <span>Verified Razorpay Secured Checkout</span>
+                    <span>Secure checkout powered by Razorpay</span>
                   </div>
                   <p className="text-[11px] text-center text-stone-400">
                     UPI • Google Pay • PhonePe • Paytm • Visa • Mastercard • NetBanking

@@ -16,7 +16,7 @@ export const TrustBadges: React.FC = () => {
     {
       icon: ShieldCheck,
       title: 'Quality Standards',
-      subtitle: 'Verified manufacturing practices',
+      subtitle: 'Verified manufacturing',
     },
     {
       icon: Lock,
@@ -30,7 +30,7 @@ export const TrustBadges: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Single clean horizontal trust strip (matching document & Image 3) */}
         <div className="bg-[#0D2E22] rounded-2xl sm:rounded-3xl px-4 py-5 sm:px-8 sm:py-6 text-white shadow-sm border border-[#164232]">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-center">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start">
             {badges.map((b, idx) => {
               const Icon = b.icon;
               return (

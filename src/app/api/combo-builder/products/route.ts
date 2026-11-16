@@ -57,8 +57,15 @@ export async function GET(req: Request) {
             ? liveRegPrice
             : master.mrp ?? price;
 
+          // The CMS is the source of truth for the display name too: surface the
+          // live WooCommerce product name when present, else keep the bundled value.
+          const liveName = typeof liveItem.name === 'string' && liveItem.name.trim()
+            ? liveItem.name.trim()
+            : master.name;
+
           return {
             ...master,
+            name: liveName,
             inStock: liveItem.is_in_stock ?? master.inStock,
             price,
             mrp,

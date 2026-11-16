@@ -40,7 +40,7 @@ export default function ContactPage() {
             Customer Support &amp; Clinical Inquiries
           </h1>
           <p className="mt-2 text-sm text-charcoal-muted leading-relaxed">
-            Have questions about an ongoing order, delivery timelines, or need guidance choosing a formulation? We are here to help.
+            Have questions about an order or delivery timelines? Need help choosing a formulation? We are here to help.
           </p>
         </div>
 

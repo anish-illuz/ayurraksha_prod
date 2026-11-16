@@ -48,7 +48,7 @@ export default function ShippingPolicyPage() {
             <ul className="list-disc pl-5 space-y-1.5">
               <li>All orders are verified and handed over to our courier partners within <strong>1–2 business days</strong> from our Chennai manufacturing and fulfillment center.</li>
               <li>Orders placed before <strong>3:00 PM IST</strong> on a business day are queued for same-day packing and verification.</li>
-              <li>Orders placed after 3:00 PM IST, on Sundays, or on statutory public holidays are processed on the immediate following business day.</li>
+              <li>Orders placed after 3:00 PM IST, on Sundays, or on statutory public holidays are processed on the next business day.</li>
             </ul>
 
             <h2 className="font-serif text-lg font-bold text-forest pt-2">3. Shipping Fees &amp; Payment Options</h2>

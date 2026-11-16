@@ -18,7 +18,7 @@ export const MERCHANDISING_CATEGORIES: MerchandisingCategory[] = [
   'O3 specialty',
 ];
 
-// Exactly 13 approved formulations with accurate store prices and pack sizes
+// Exactly 14 approved formulations with accurate store prices and pack sizes
 export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
   // 1. Divine Healing Oil (CMS ID 113)
   {
@@ -449,15 +449,49 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     sku: 'AYUR-VITAL-O3',
     isFlagshipSkinCare: true,
   },
+
+  // 14. AyurRaksha Skin Well Food Moisturising Gel (CMS ID 101)
+  {
+    id: 11270,
+    cmsId: 101,
+    name: 'AyurRaksha Skin Well Food Moisturising Gel',
+    slug: 'ayur-raksha-skin-well-food-moisturising-gel',
+    category: 'External care',
+    packSize: 'Gel',
+    formatTag: 'Botanical Hydration · Gel',
+    primaryImage: '/images/products/ayur-raksha-skin-well-food-moisturising-gel.webp',
+    gallery: [
+      '/images/products/ayur-raksha-skin-well-food-moisturising-gel.webp',
+      'https://www.ayurrakshaonline.com/wp-content/uploads/2024/03/Skin-Food-Moisturizing-Gel-feature.webp',
+    ],
+    mrp: 1000,
+    price: 1000,
+    pricePending: false,
+    inStock: true,
+    doctorGuided: false,
+    shortDescription:
+      'Experience lightweight botanical hydration, designed to moisturise, nourish and leave skin feeling soft, smooth and refreshed.',
+    description:
+      'A lightweight, non-greasy botanical moisturising gel formulated to hydrate, condition and leave skin feeling soft, smooth and refreshed. Its refreshing gel texture absorbs comfortably without a heavy, greasy finish, making it an easy addition to a daily skincare routine.',
+    indications: 'Dry, dehydrated skin, tightness after cleansing, and everyday botanical hydration.',
+    ingredients: 'Botanical moisturising and conditioning extracts, including aloe-based hydrating agents.',
+    directions:
+      'Apply a small amount to clean, dry skin and allow it to absorb before dressing.',
+    storage: 'Store in a cool, dry place away from direct sunlight. Keep the cap tightly closed.',
+    warnings: 'For external use only. Perform a patch test before first use. Avoid contact with eyes.',
+    href: '/product/ayur-raksha-skin-well-food-moisturising-gel',
+    sku: '11270',
+    isFlagshipSkinCare: true,
+  },
 ];
 
 export const SKIN_CONCERNS: SkinConcern[] = [
   {
     id: 'browse',
-    name: 'Explore all 13 products',
-    shortDesc: 'Curate your own routine freely from the complete 13-product catalogue.',
+    name: 'Explore all 14 products',
+    shortDesc: 'Curate your own routine freely from the complete 14-product catalogue.',
     description:
-      'Browse all 13 products at your own pace across all 5 care categories. Nothing is automatically added to your combo — every product is your choice.',
+      'Browse all 14 products at your own pace across all 5 care categories. Nothing is automatically added to your combo — every product is your choice.',
     highlightedProductIds: [],
     requiresDoctorGuidance: false,
   },
@@ -565,9 +599,9 @@ export const COMBO_BUILDERS: ComboBuilderInfo[] = [
     slug: 'skin-care',
     name: 'Skin Care Combo Builder',
     shortName: 'Skin Care',
-    description: '13 authentic formulations for sensitive, dry, and chronic skin concerns.',
-    badge: '13 Formulations',
-    productCount: 13,
+    description: '14 authentic formulations for sensitive, dry, and chronic skin concerns.',
+    badge: '14 Formulations',
+    productCount: 14,
     categoryCount: 5,
     href: '/combo-builder/skin-care',
     accentColor: '#18372b',
@@ -578,9 +612,9 @@ export const COMBO_BUILDERS: ComboBuilderInfo[] = [
     slug: 'varicose-veins',
     name: 'Varicose Veins Combo Builder',
     shortName: 'Varicose Veins',
-    description: '5 targeted formulations for healthy circulation, heavy legs, and skin comfort.',
-    badge: '5 Products',
-    productCount: 5,
+    description: '6 targeted formulations for healthy circulation, heavy legs, and skin comfort.',
+    badge: '6 Products',
+    productCount: 6,
     categoryCount: 5,
     href: '/combo-builder/varicose-veins',
     accentColor: '#1c513d',
@@ -588,8 +622,8 @@ export const COMBO_BUILDERS: ComboBuilderInfo[] = [
   {
     id: 'breath-easy',
     slug: 'breath-easy',
-    name: 'Breath Easy Combo Builder',
-    shortName: 'Breath Easy',
+    name: 'Breathe Easy Combo Builder',
+    shortName: 'Breathe Easy',
     description: '3 herbal formulations for muscle soreness, digestive routine, and skin nourishment.',
     badge: '3 Products',
     productCount: 3,
@@ -785,15 +819,50 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     href: '/product/ayurraksha-detox-tea',
     sku: '27739',
   },
+
+  // 6. AyurRaksha Foot Bath Powder (CMS ID 121)
+  {
+    id: 26348,
+    cmsId: 121,
+    name: 'AyurRaksha Foot Bath Powder',
+    slug: 'ayur-raksha-foot-bath-powder',
+    category: 'Bath & scalp',
+    packSize: '300 g',
+    formatTag: 'Herbal Foot Soak · 300 g',
+    primaryImage: '/images/products/ayur-raksha-foot-bath-powder.webp',
+    gallery: [
+      '/images/products/ayur-raksha-foot-bath-powder.webp',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/foot-bath-powder.png',
+    ],
+    mrp: 999,
+    price: 999,
+    pricePending: false,
+    inStock: true,
+    doctorGuided: false,
+    shortDescription:
+      'Soothe tired, heavy feet and support healthy lower-leg circulation with a traditional herbal foot soak.',
+    description:
+      'A restorative Ayurvedic therapeutic foot soak powder enriched with cooling herbs and botanical minerals. Traditionally formulated to relieve pedal tiredness, soften dry skin and cracked heels, and support natural circulation to the lower extremities, making it a comfortable complement to a lower-leg wellness routine.',
+    indications:
+      'Tired, heavy-feeling feet; dry soles and cracked heels; and everyday lower-leg comfort in a circulation-support routine.',
+    ingredients: 'Classical Ayurvedic cooling herbs and botanical minerals for a therapeutic warm-water foot soak.',
+    directions:
+      'Add 2–3 tablespoons of the powder to a basin of lukewarm water, stir until dissolved, and soak the feet for 15–20 minutes.',
+    storage: 'Store in an airtight container in a cool, dry place.',
+    warnings:
+      'For external use only. Do not apply over open wounds, ulcers, or broken skin. Consult a vascular specialist for persistent leg swelling.',
+    href: '/product/ayur-raksha-foot-bath-powder',
+    sku: 'AYUR-FOOT-BATH-300G',
+  },
 ];
 
 export const VARICOSE_VEINS_CONCERNS: ComboConcern[] = [
   {
     id: 'explore-all',
-    name: 'Explore all 5 products',
-    shortDesc: 'Curate your leg-wellness and skin care routine freely from all 5 products.',
+    name: 'Explore all 6 products',
+    shortDesc: 'Curate your leg-wellness and skin care routine freely from all 6 products.',
     description:
-      'Browse all 5 formulations at your own pace. All product choices remain completely optional, and nothing is added automatically.',
+      'Browse all 6 formulations at your own pace. All product choices remain completely optional, and nothing is added automatically.',
     highlightedProductIds: [],
     requiresDoctorGuidance: false,
   },
@@ -875,35 +944,39 @@ export const BREATH_EASY_PRODUCTS: ComboProduct[] = [
     sku: '11317',
   },
 
-  // 2. Etionment Pain Relief Cream (CMS ID 103)
+  // 2. Esnovate Immunity Boosting Capsules (CMS ID 115)
   {
-    id: 6319,
-    cmsId: 103,
-    name: 'Etionment Pain Relief Cream (50 g)',
-    slug: 'etionment-pain-relief-cream',
-    category: 'Joint & Muscle Care',
-    packSize: '50 g',
-    formatTag: 'Pain-Relief Cream · 50 g',
-    primaryImage: '/images/products/etionment-pain-relief-cream.webp',
+    id: 6381,
+    cmsId: 115,
+    name: 'Esnovate Immunity Boosting Capsules',
+    slug: 'esnovate-immunity-boosting-capsules',
+    category: 'Internal wellness',
+    packSize: 'Capsules',
+    formatTag: 'Respiratory & Seasonal · Immunity',
+    primaryImage: '/images/products/esnovate-immunity-boosting-capsules.webp',
     gallery: [
-      '/images/products/etionment-pain-relief-cream.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2024/01/Etionment-1.webp',
+      '/images/products/esnovate-immunity-boosting-capsules.webp',
+      'https://www.ayurrakshaonline.com/wp-content/uploads/2024/01/Esnovate-1-768x768-1.webp',
     ],
-    mrp: 400,
-    price: 350,
+    mrp: 999,
+    price: 999,
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Soothe aching muscles and stiff joints with targeted herbal pain-relief care.',
+    shortDescription:
+      'Support respiratory and seasonal wellness with a traditional Ayurvedic immunity formulation.',
     description:
-      'A fast-acting topical botanical balm formulated with natural active extracts and Vitamin E to soothe everyday muscular aches, stiff neck, shoulder fatigue, and joint soreness.',
-    indications: 'Topical soothing of muscle stiffness, joint tightness, backache, and everyday body fatigue.',
-    ingredients: 'Botanical essential oils, Gaultheria procumbens (Wintergreen), Mentha arvensis, Vitamin E, and cream base.',
-    directions: 'Gently massage a small amount onto sore muscles or joints 2–3 times daily. Wash hands after use.',
-    storage: 'Store in a cool, dry place. Keep tube cap tightly closed.',
-    warnings: 'For external application only. Do not apply on face, chest for breathing relief, or on broken skin.',
-    href: '/product/etionment-pain-relief-cream',
-    sku: '6319',
+      'A traditional Ayurvedic herbal formulation featuring five botanicals historically associated with respiratory wellbeing and seasonal care, inspired by India’s heritage of botanical wellness. Its capsule format offers a convenient everyday option for respiratory and seasonal self-care.',
+    indications:
+      'Respiratory and seasonal wellness, everyday immunity support, and comfort during changing weather.',
+    ingredients: 'Classical Ayurvedic botanicals, including Adhatoda vasica (Adathodai / Malabar Nut).',
+    directions:
+      'Take as directed on the label or as advised by your Ayurvedic practitioner.',
+    storage: 'Store in a cool, dry place away from direct sunlight.',
+    warnings:
+      'Dietary supplement. Consult your physician if pregnant, nursing, or taking medication. Not a substitute for medical care.',
+    href: '/product/esnovate-immunity-boosting-capsules',
+    sku: '6381',
   },
 
   // 3. AyurRaksha Detox Tea (CMS ID 85)
@@ -942,21 +1015,21 @@ export const BREATH_EASY_CONCERNS: ComboConcern[] = [
   {
     id: 'explore-all',
     name: 'Explore all 3 products',
-    shortDesc: 'Display B Derma, Etionment 50G, and Detox Tea without mandatory preselection.',
+    shortDesc: 'Display B Derma, Esnovate, and Detox Tea without mandatory preselection.',
     description:
       'Curate your personal selection freely from the 3 formulations. Each item is independently selectable with no forced items.',
     highlightedProductIds: [],
     requiresDoctorGuidance: false,
   },
   {
-    id: 'muscle-discomfort',
-    name: 'Muscle & joint soreness',
-    shortDesc: 'Suggested starting item: Etionment 50G Pain Relief Cream.',
+    id: 'respiratory-wellness',
+    name: 'Respiratory & seasonal wellness',
+    shortDesc: 'Suggested starting item: Esnovate Immunity Boosting Capsules.',
     description:
-      'Highlights Etionment topical balm for everyday muscular fatigue, joint stiffness, and physical comfort.',
+      'Highlights Esnovate for everyday respiratory and seasonal wellness, comfort during changing weather, and everyday immunity support.',
     clinicalNotice:
-      'Etionment is formulated for musculoskeletal comfort. It is not formulated to relieve chest tightness, asthma, or respiratory symptoms.',
-    highlightedProductIds: [6319],
+      'Esnovate is a traditional herbal wellness option, not a respiratory medication. Chest tightness, asthma, or persistent respiratory symptoms need professional medical evaluation.',
+    highlightedProductIds: [6381],
     requiresDoctorGuidance: false,
   },
   {
@@ -1159,14 +1232,14 @@ export const SKIN_CARE_CONFIG: ComboBuilderConfig = {
   heroTitle: 'Build Your Own',
   heroHighlight: 'Skin Care Combo',
   heroDescription:
-    "Explore 13 Ayurvedic essentials and create a skincare routine that's uniquely yours.",
-  heroBadge: '13 Formulations',
+    "Explore 14 Ayurvedic essentials and create a skincare routine that's uniquely yours.",
+  heroBadge: '14 Formulations',
   catalogSubtitle: 'Browse, compare and customize your selection with live store prices. No products are added without your choice.',
-  catalogCountBadge: '13 Products • 5 Categories',
+  catalogCountBadge: '14 Products • 5 Categories',
   storageKey: 'ayurraksha_combo_selection_v2',
   stepGuide: {
     step1Title: 'Choose Products',
-    step1Desc: 'Select from 13 Ayurvedic essentials',
+    step1Desc: 'Select from 14 Ayurvedic essentials',
     step2Title: 'Adjust Quantities',
     step2Desc: 'Set your quantity for each product',
     step3Title: 'Checkout & Save',
@@ -1181,7 +1254,7 @@ export const SKIN_CARE_CONFIG: ComboBuilderConfig = {
   consultationFocus: 'Skin Care Guidance',
   metaTitle: 'Skin Care Combo Builder — Build Your Routine | AyurRaksha Online',
   metaDescription:
-    'Build your personalized Ayurvedic skin care combo from 13 authentic herbal products. Enjoy live savings and optional free physician consultations.',
+    'Build your personalized Ayurvedic skin care combo from 14 authentic herbal products. Enjoy live savings and optional free physician consultations.',
 };
 
 export const VARICOSE_VEINS_CONFIG: ComboBuilderConfig = {
@@ -1192,15 +1265,15 @@ export const VARICOSE_VEINS_CONFIG: ComboBuilderConfig = {
   heroTitle: 'Vascular wellness that supports',
   heroHighlight: 'every step.',
   heroDescription:
-    'Choose from 5 authentic preparations for circulation, heavy legs, and skin comfort. Individually selectable with automatic volume savings.',
-  heroBadge: '5 Products',
+    'Choose from 6 authentic preparations for circulation, heavy legs, and skin comfort. Individually selectable with automatic volume savings.',
+  heroBadge: '6 Products',
   catalogSubtitle:
-    'Select the capsules, pre-bath massage oil, botanical soap, O3 cream, or tea that match your routine. No forced items.',
-  catalogCountBadge: '5 Products • 4 Categories',
+    'Select the capsules, pre-bath massage oil, botanical soap, foot soak, O3 cream, or tea that match your routine. No forced items.',
+  catalogCountBadge: '6 Products • 5 Categories',
   storageKey: 'ayurraksha_varicose_combo_v1',
   stepGuide: {
     step1Title: 'Select your focus:',
-    step1Desc: 'Choose leg heaviness, dry skin, or explore all 5 products.',
+    step1Desc: 'Choose leg heaviness, dry skin, or explore all 6 products.',
     step2Title: 'Customize combo:',
     step2Desc: 'Pick any combination of capsules, oil, soap, or specialty cream.',
     step3Title: 'Direct checkout:',
@@ -1215,13 +1288,13 @@ export const VARICOSE_VEINS_CONFIG: ComboBuilderConfig = {
   consultationFocus: 'Varicose Veins & Circulation Guidance',
   metaTitle: 'Varicose Veins Combo Builder — Custom Circulation Routine | AyurRaksha',
   metaDescription:
-    'Create your custom Varicose Veins and circulation combo from 5 Ayurvedic formulations including Flow Well, Divine Healing Oil, and SkinWell Soap.',
+    'Create your custom Varicose Veins and circulation combo from 6 Ayurvedic formulations including Flow Well, Divine Healing Oil, SkinWell Soap, and Foot Bath Powder.',
 };
 
 export const BREATH_EASY_CONFIG: ComboBuilderConfig = {
   id: 'breath-easy',
   slug: 'breath-easy',
-  name: 'Breath Easy Combo Builder',
+  name: 'Breathe Easy Combo Builder',
   heroTagline: 'Targeted Comfort & Wellness',
   heroTitle: 'Everyday comfort crafted',
   heroHighlight: 'for your vitality.',
@@ -1246,10 +1319,10 @@ export const BREATH_EASY_CONFIG: ComboBuilderConfig = {
   consultationHeading: 'Have questions about these formulations? Consult a doctor.',
   consultationText:
     'Talk with a certified VPrime Ayurvedic doctor to discuss proper topical application and proprietary herbal usage. Free and non-binding.',
-  consultationFocus: 'Breath Easy Formulations Guidance',
-  metaTitle: 'Breath Easy Combo Builder — Customized Herbal Routine | AyurRaksha',
+  consultationFocus: 'Breathe Easy Formulations Guidance',
+  metaTitle: 'Breathe Easy Combo Builder — Customized Herbal Routine | AyurRaksha',
   metaDescription:
-    'Customize your Breath Easy combo from 3 Ayurvedic formulations: Etionment pain-relief cream, B Derma capsules, and Detox Tea.',
+    'Customize your Breathe Easy combo from 3 Ayurvedic formulations: Esnovate immunity capsules, B Derma capsules, and Detox Tea.',
 };
 
 export const CARDIAC_WELLNESS_CONFIG: ComboBuilderConfig = {

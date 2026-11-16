@@ -26,7 +26,7 @@ export const ComboHowItWorks: React.FC = () => {
               Tell us what you're looking for
             </h3>
             <p className="text-xs sm:text-[13px] text-[#283830] leading-relaxed">
-              Browse common skin-care concerns or select the full catalogue of 13 formulations.
+              Browse common skin-care concerns or select the full catalogue of 14 formulations.
             </p>
           </div>
 

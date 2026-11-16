@@ -76,10 +76,12 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             variantId = fallback.id;
             variantPrice = item.variantPrice ?? fallback.price ?? product.price;
           } else {
-            // Simple product without backend-configured variants
+            // Simple product without backend-configured variants. Prefer the
+            // persisted live (WooCommerce) price captured when the item was
+            // added; fall back to the static bundled price only if absent.
             selectedVariant = undefined;
             variantId = undefined;
-            variantPrice = product.price;
+            variantPrice = item.variantPrice ?? product.price;
           }
 
           return [{
@@ -172,10 +174,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       variantId = fallback.id;
       variantPrice = variantPrice ?? fallback.price;
     } else {
-      // Simple product without backend-configured variants
+      // Simple product without backend-configured variants.
+      // Prefer the live (WooCommerce) price passed by the caller — e.g. the
+      // combo builder — so the cart shows exactly what the builder displayed.
+      // Fall back to the static bundled price only when none was provided.
       selectedVariant = undefined;
       variantId = undefined;
-      variantPrice = product.price;
+      variantPrice = variantPrice ?? product.price;
     }
 
     packCount = 1;

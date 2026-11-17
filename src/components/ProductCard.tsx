@@ -152,9 +152,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           )}
         </div>
 
-        {/* Pack / Size Pill Badge — min 14px, solid black for readability */}
+        {/* Pack / Size Pill Badge — capped to match the 11px font size of other
+            card metadata on mobile, expanding to text-xs on larger screens */}
         <div>
-          <span className="inline-block text-[14px] sm:text-sm font-semibold text-black bg-stone-100 px-2.5 py-1 rounded-full border border-stone-200">
+          <span className="inline-block text-[11px] sm:text-xs font-semibold text-stone-800 bg-stone-100 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-stone-200">
             {sizeLabel}
           </span>
         </div>
@@ -177,11 +178,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         {/* Quantity Stepper + Primary Add to Cart Action Row.
-            Stacks on mobile so the button gets the full card width and the
-            "Add to Cart" label never overflows; side-by-side from sm: up. */}
-        <div className="pt-2 flex flex-col sm:flex-row items-stretch gap-2">
+            Stacks on mobile and tablet (including 1024x642 where the 3-col grid with
+            sidebar narrows cards) so the Add to Cart button keeps full card width
+            and stays strictly on a single line without wrapping or clipping;
+            side-by-side on wide screens from xl: up. */}
+        <div className="pt-2 flex flex-col xl:flex-row items-stretch gap-2">
           {/* Quantity + / - Stepper */}
-          <div className="flex items-center justify-between sm:justify-start border border-stone-300 rounded-lg sm:rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-10 sm:self-start sm:shrink-0">
+          <div className="flex items-center justify-between xl:justify-start border border-stone-300 rounded-lg sm:rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-9 sm:h-10 w-full xl:w-auto">
             <button
               onClick={handleDecrement}
               aria-label="Decrease quantity"
@@ -190,7 +193,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             >
               <Minus size={11} />
             </button>
-            <span className="w-6 text-center text-xs sm:text-sm font-bold text-forest select-none">
+            <span className="w-8 text-center text-xs sm:text-sm font-bold text-forest select-none">
               {quantity}
             </span>
             <button
@@ -208,7 +211,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             onClick={handleQuickAdd}
             disabled={!product.inStock}
             aria-label={`Add ${product.name} to cart`}
-            className={`flex-1 min-w-0 w-full h-10 inline-flex items-center justify-center gap-1.5 px-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold uppercase tracking-tight transition-all duration-200 shadow-xs active:scale-[0.98] ${
+            className={`flex-1 min-w-0 w-full h-10 inline-flex items-center justify-center gap-1.5 px-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold uppercase tracking-tight whitespace-nowrap transition-all duration-200 shadow-xs active:scale-[0.98] ${
               !product.inStock
                 ? 'bg-stone-200 text-stone-500 cursor-not-allowed'
                 : isAdded
@@ -217,16 +220,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             }`}
           >
             {!product.inStock ? (
-              <span>Out of Stock</span>
+              <span className="whitespace-nowrap">Out of Stock</span>
             ) : isAdded ? (
               <>
                 <Check size={14} className="flex-shrink-0" />
-                <span>Added!</span>
+                <span className="whitespace-nowrap">Added!</span>
               </>
             ) : (
               <>
                 <ShoppingBag size={14} className="flex-shrink-0" />
-                <span>Add to Cart</span>
+                <span className="whitespace-nowrap">Add to Cart</span>
               </>
             )}
           </button>

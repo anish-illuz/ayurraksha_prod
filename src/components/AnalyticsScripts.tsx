@@ -23,7 +23,9 @@ export const AnalyticsScripts: React.FC = () => {
   return (
     <>
       {/* 1. Global dataLayer & gtag Initialization */}
-      <Script id="analytics-init" strategy="afterInteractive">
+      {/* beforeInteractive: emitted in the static HTML <head> at parse time,
+          so GTM starts as early as possible (GTM's recommended placement). */}
+      <Script id="analytics-init" strategy="beforeInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -35,7 +37,7 @@ export const AnalyticsScripts: React.FC = () => {
       {/* 2. Google Tag Manager (GTM) Container */}
       {gtmId && (
         <>
-          <Script id="gtm-container" strategy="afterInteractive">
+          <Script id="gtm-container" strategy="beforeInteractive">
             {`
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

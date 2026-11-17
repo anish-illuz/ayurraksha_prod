@@ -290,6 +290,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
     return (product.ritualSteps || []).map((s, idx) => ({
       stepNumber: s.stepNumber || idx + 1,
       title: s.title,
+      sectionLabel: undefined,
       description: s.description,
     }));
   }, [rawHowToUse, cmsLoaded, product.ritualSteps]);
@@ -522,6 +523,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
                           <span className="text-[10px] font-bold text-botanical uppercase tracking-wider block mb-0.5">
                             STEP {step.stepNumber < 10 ? `0${step.stepNumber}` : step.stepNumber}
                           </span>
+                          {step.sectionLabel && <p className="text-xs font-bold text-forest mb-1">{step.sectionLabel}</p>}
                           <h4 className="font-serif text-sm font-bold text-forest mb-1">
                             {step.title}
                           </h4>

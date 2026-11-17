@@ -62,10 +62,10 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
   let tierDiscountAmount = 0;
   let amountToNextTier = 0;
 
-  if (totalSellingPrice > 5000) {
+  if (totalSellingPrice >= 5000) {
     tierDiscountPercent = 15;
     tierDiscountAmount = Math.round(totalSellingPrice * 100 * tierDiscountPercent / 100) / 100;
-  } else if (totalSellingPrice > 3000) {
+  } else if (totalSellingPrice >= 3000) {
     tierDiscountPercent = 10;
     tierDiscountAmount = Math.round(totalSellingPrice * 100 * tierDiscountPercent / 100) / 100;
     amountToNextTier = Math.max(0, 5000 - totalSellingPrice);
@@ -154,30 +154,30 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
         </div>
         <div className="flex justify-between text-[9.5px] text-stone-500 font-medium px-0.5 mb-3">
           <span>0%</span>
-          <span className={totalSellingPrice > 3000 ? 'text-[#25764d] font-bold' : ''}>10%</span>
-          <span className={totalSellingPrice > 5000 ? 'text-[#25764d] font-bold' : ''}>15%</span>
+          <span className={totalSellingPrice >= 3000 ? 'text-[#25764d] font-bold' : ''}>10%</span>
+          <span className={totalSellingPrice >= 5000 ? 'text-[#25764d] font-bold' : ''}>15%</span>
         </div>
 
         {/* Two side-by-side benefit cards */}
         <div className="grid grid-cols-2 gap-2">
           <div className={`rounded-[11px] border p-2.5 ${
-            totalSellingPrice > 3000
+            totalSellingPrice >= 3000
               ? 'bg-[#eef7f0] border-[#25764d]'
               : 'bg-[#FAF8EE] border-[#EADBBD]'
           }`}>
             <p className="text-[11px] font-extrabold text-[#18372b]">10% Combo Savings</p>
             <p className="text-[9.5px] text-[#5c4a28] leading-snug mt-0.5">
-              Get 10% off your combo when your order total is above <strong>₹3,000</strong>.
+              Get 10% off your combo when your order total is at least <strong>₹3,000</strong>.
             </p>
           </div>
           <div className={`rounded-[11px] border p-2.5 ${
-            totalSellingPrice > 5000
+            totalSellingPrice >= 5000
               ? 'bg-[#eef7f0] border-[#25764d]'
               : 'bg-[#FAF8EE] border-[#EADBBD]'
           }`}>
             <p className="text-[11px] font-extrabold text-[#18372b]">15% Combo Savings</p>
             <p className="text-[9.5px] text-[#5c4a28] leading-snug mt-0.5">
-              Get 15% off your combo when your order total is above <strong>₹5,000</strong>.
+              Get 15% off your combo when your order total is at least <strong>₹5,000</strong>.
             </p>
           </div>
         </div>

@@ -152,6 +152,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       <head>
+        {/* Preconnect & DNS-prefetch to critical external endpoints for faster handshake */}
+        <link rel="preconnect" href="https://cms.ayurrakshaonline.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cms.ayurrakshaonline.com" />
+        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
         {/* Responsive LCP Hero Image Preload: Mobile loads only mobile banner, Desktop loads only desktop banner */}
         <link
           rel="preload"

@@ -131,7 +131,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     .reduce((sum, item) => sum + Math.round((item.variantPrice ?? item.product.price) * 100) * item.quantity, 0);
 
   // comboSubtotal is in paise.
-  const comboDiscountPercent = comboSubtotal > 500000 ? 15 : comboSubtotal > 300000 ? 10 : 0;
+  const comboDiscountPercent = comboSubtotal >= 500000 ? 15 : comboSubtotal >= 300000 ? 10 : 0;
   const comboDiscount = comboDiscountPercent > 0 ? Math.round((comboSubtotal * comboDiscountPercent) / 100) / 100 : 0;
   const totalPayable = Math.max(0, subtotal - comboDiscount);
 

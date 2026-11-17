@@ -106,7 +106,7 @@ export async function POST(req: Request) {
       (sum, item) => sum + Math.round(item.price * 100) * item.quantity,
       0,
     );
-    const comboCoupon = comboSubtotalPaise > 500000 ? 'COMBO5000' : comboSubtotalPaise > 300000 ? 'COMBO3000' : null;
+    const comboCoupon = comboSubtotalPaise >= 500000 ? 'COMBO5000' : comboSubtotalPaise >= 300000 ? 'COMBO3000' : null;
     const comboCouponPercent = comboCoupon === 'COMBO5000' ? 15 : 10;
     let enhancedNote = customerNote || '';
     if (comboCoupon) {

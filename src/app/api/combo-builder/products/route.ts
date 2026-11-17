@@ -50,12 +50,9 @@ export async function GET(req: Request) {
           const livePrice = toRupees(liveItem.prices?.price);
           const liveRegPrice = toRupees(liveItem.prices?.regular_price);
 
-          const price = livePrice > 0 ? livePrice : master.price;
-          // Only surface a live MRP when it is valid and genuinely above the
-          // selling price; otherwise keep the bundled MRP (or the price).
-          const mrp = liveRegPrice > 0 && liveRegPrice > (livePrice || 0)
-            ? liveRegPrice
-            : master.mrp ?? price;
+          const price = livePrice > 0 ? livePrice : null;
+          // Preserve the backend regular price, including when no sale is configured.
+          const mrp = liveRegPrice > 0 ? liveRegPrice : price;
 
           // The CMS is the source of truth for the display name too: surface the
           // live WooCommerce product name when present, else keep the bundled value.
@@ -69,13 +66,13 @@ export async function GET(req: Request) {
             inStock: liveItem.is_in_stock ?? master.inStock,
             price,
             mrp,
-            pricePending: false,
+            pricePending: price === null,
           } as ComboProduct;
         }
       } catch {
         // Fallback to the bundled master product on timeout/network error.
       }
-      return master;
+      return { ...master, price: null, mrp: null, pricePending: true, inStock: false };
     });
 
     const normalizedProducts: ComboProduct[] = await Promise.all(liveFetches);
@@ -94,7 +91,7 @@ export async function GET(req: Request) {
       {
         success: false,
         slug,
-        products: masterProducts,
+        products: masterProducts.map(p => ({ ...p, price: null, mrp: null, pricePending: true, inStock: false })),
         totalCount: masterProducts.length,
         error: error.message || 'Failed to fetch live WordPress products',
         source: 'fallback',

@@ -220,7 +220,7 @@ function mapIngredientItem(item: string, index: number): StructuredIngredient {
   if (prose) {
     return {
       commonName: item.replace(/\s*—\s*.*/, '').trim() || item,
-      description: item,
+      description: item.includes('—') ? item.slice(item.indexOf('—') + 1).trim() : undefined,
       badge: padBadge(index + 1),
       image: resolveIngredientImage({ name: item, description: item }),
     };

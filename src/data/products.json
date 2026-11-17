@@ -230,9 +230,9 @@
     "id": 7689,
     "name": "AyurRaksha Divine Healing Oil",
     "slug": "divine-healing-oil",
-    "price": 450,
-    "regularPrice": 450,
-    "salePrice": 450,
+    "price": 999,
+    "regularPrice": 999,
+    "salePrice": 999,
     "discountPercent": 0,
     "onSale": false,
     "categories": [

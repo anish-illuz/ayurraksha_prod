@@ -22,6 +22,77 @@ interface IngredientImageEntry {
   keys: string[];
 }
 
+/**
+ * Product-specific overrides.
+ *
+ * When an ingredient is resolved for a specific product, these overrides take
+ * precedence over the generic cross-product library. This ensures that custom
+ * ingredient photos provided specifically for a product (e.g. Foot Bath Powder,
+ * Kalonji Soap, Dhayani Herbal Oil, Migro Prime, etc.) are only applied to
+ * that product without altering other products.
+ */
+const PRODUCT_OVERRIDES: Record<string, IngredientImageEntry[]> = {
+  'ayur-raksha-foot-bath-powder': [
+    { src: '/images/ingredients/products/ayur-raksha-foot-bath-powder/epsom-salt.jpg', keys: ['epsom salt', 'epsom'] },
+    { src: '/images/ingredients/products/ayur-raksha-foot-bath-powder/rock-salt.jpg', keys: ['rock salt', 'induppu', 'salt'] },
+    { src: '/images/ingredients/products/ayur-raksha-foot-bath-powder/dry-ginger.jpg', keys: ['dry ginger', 'ginger', 'sunthi', 'chukku'] },
+    { src: '/images/ingredients/products/ayur-raksha-foot-bath-powder/menthol.jpg', keys: ['menthol', 'peppermint'] },
+    { src: '/images/ingredients/products/ayur-raksha-foot-bath-powder/thymol.jpg', keys: ['thymol'] },
+    { src: '/images/ingredients/products/ayur-raksha-foot-bath-powder/bhimseni.jpg', keys: ['bhimseni', 'bhimseni karpooram'] },
+    { src: '/images/ingredients/products/ayur-raksha-foot-bath-powder/karpooram.jpg', keys: ['karpooram', 'camphor'] },
+  ],
+  'ayurraksha-kalonji-soap': [
+    { src: '/images/ingredients/products/ayurraksha-kalonji-soap/karunjeera.jpg', keys: ['kalonji', 'black seed', 'karunjeera', 'karunjeeragam', 'nigella', 'nigella sativa'] },
+  ],
+  'ayurraksha-immuno3-immunity-booster-capsules': [
+    { src: '/images/ingredients/products/ayurraksha-immuno3-immunity-booster-capsules/amla.webp', keys: ['amla', 'amalaki', 'emblica', 'nellikai', 'nellikkai'] },
+    { src: '/images/ingredients/products/ayurraksha-immuno3-immunity-booster-capsules/ashwagandha.jpg', keys: ['ashwagandha', 'withania'] },
+    { src: '/images/ingredients/products/ayurraksha-immuno3-immunity-booster-capsules/spirulina.jpg', keys: ['spirulina', 'arthrospira'] },
+  ],
+  'ayurraksha-vital-o3-anti-vitiligo-cream': [
+    { src: '/images/ingredients/products/ayurraksha-vital-o3-anti-vitiligo-cream/aloe-vera-leaf-juice.jpg', keys: ['aloe vera', 'aloe', 'aloe vera leaf juice', 'aloe barbadensis'] },
+    { src: '/images/ingredients/products/ayurraksha-vital-o3-anti-vitiligo-cream/turmeric.jpg', keys: ['turmeric', 'curcuma', 'haridra', 'manjal'] },
+    { src: '/images/ingredients/products/ayurraksha-vital-o3-anti-vitiligo-cream/neem.jpg', keys: ['neem', 'azadirachta', 'nimba'] },
+    { src: '/images/ingredients/products/ayurraksha-vital-o3-anti-vitiligo-cream/saponified-vegetable-oils.jpg', keys: ['ozonated', 'botanical oils', 'saponified', 'vegetable oils'] },
+  ],
+  'dhayani-herbal-hair-oil-100ml': [
+    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/aloe-vera-leaf-juice.jpg', keys: ['aloe vera', 'aloe', 'aloe vera leaf juice', 'aloe barbadensis'] },
+    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/sesame-oil.jpg', keys: ['sesame seeds', 'sesame', 'sesame oil', 'gingelly', 'tila'] },
+    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/vendhayam.jpg', keys: ['fenugreek', 'vendhayam', 'trigonella', 'trigonella foenum'] },
+    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/red-onion.jpg', keys: ['red onion', 'onion', 'allium cepa'] },
+    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/curry-leaves.jpg', keys: ['curry leaves', 'karuveppilai', 'murraya', 'murraya koenigii'] },
+    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/organic-coconut-oil-.jpg', keys: ['coconut oil', 'coconut', 'cocos nucifera', 'organic coconut oil'] },
+    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/amla.webp', keys: ['amla', 'nellikai', 'nellikkai', 'phyllanthus emblica', 'amalaki'] },
+    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/badam.jpg', keys: ['badam', 'almond', 'prunus dulcis'] },
+  ],
+  'organics-hibiscus-tea-tin': [
+    { src: '/images/ingredients/products/organics-hibiscus-tea-tin/hibiscus-extract.jpg', keys: ['hibiscus', 'hibiscus sabdariffa', 'hibiscus flower', 'hibiscus extract'] },
+    { src: '/images/ingredients/products/organics-hibiscus-tea-tin/green-tea.png', keys: ['green tea', 'camellia sinensis', 'tea'] },
+  ],
+  'migro-prime-tablets': [
+    { src: '/images/ingredients/products/migro-prime-tablets/thippili.jpg', keys: ['pippali', 'long pepper', 'piper longum', 'thippili'] },
+    { src: '/images/ingredients/products/migro-prime-tablets/kutki.jpg', keys: ['kutki', 'picrorhiza', 'picrorhiza kurroa', 'katuki'] },
+    { src: '/images/ingredients/products/migro-prime-tablets/cucumber.jpg', keys: ['cucumber', 'cucumis sativus', 'cucumis'] },
+    { src: '/images/ingredients/products/migro-prime-tablets/shankhpushpi.png', keys: ['butterfly pea', 'clitoria ternatea', 'clitoria', 'shankhpushpi', 'aparajita'] },
+    { src: '/images/ingredients/products/migro-prime-tablets/saffron.jpg', keys: ['saffron', 'crocus sativus', 'crocus', 'kesar'] },
+  ],
+  'pi-well-food-supplement-capsules': [
+    { src: '/images/ingredients/products/pi-well-food-supplement-capsules/pumpkin.jpg', keys: ['pumpkin', 'cucurbita maxima', 'cucurbita'] },
+    { src: '/images/ingredients/products/pi-well-food-supplement-capsules/neem.jpg', keys: ['neem', 'vembu', 'azadirachta indica', 'azadirachta'] },
+    { src: '/images/ingredients/products/pi-well-food-supplement-capsules/tulasi.jpg', keys: ['tulsi', 'holy basil', 'ocimum sanctum', 'ocimum tenuiflorum', 'tulasi', 'ocimum'] },
+  ],
+  'sleep-well-food-supplement-capsules': [
+    { src: '/images/ingredients/products/sleep-well-food-supplement-capsules/brahmi.jpg', keys: ['brahmi', 'water hyssop', 'bacopa monnieri', 'bacopa'] },
+    { src: '/images/ingredients/products/sleep-well-food-supplement-capsules/pumpkin.jpg', keys: ['pumpkin', 'cucurbita maxima', 'cucurbita'] },
+    { src: '/images/ingredients/products/sleep-well-food-supplement-capsules/shankhpushpi.png', keys: ['shankhpushpi', 'convolvulus pluricaulis', 'convolvulus'] },
+  ],
+};
+
+// Aliases support so CMS post_name also matches
+PRODUCT_OVERRIDES['ayurraksha-foot-bath-powder-300g'] = PRODUCT_OVERRIDES['ayur-raksha-foot-bath-powder'];
+PRODUCT_OVERRIDES['sleep-well-capsules'] = PRODUCT_OVERRIDES['sleep-well-food-supplement-capsules'];
+PRODUCT_OVERRIDES['hibiscus-tea-tin'] = PRODUCT_OVERRIDES['organics-hibiscus-tea-tin'];
+
 // One entry per asset in public/images/ingredients/. Keys are deliberately
 // redundant (common + alias + latin) so a backend name in any of its forms
 // resolves to the right photo. Multi-word keys phrase-match; single-word keys
@@ -163,6 +234,7 @@ export function resolveIngredientImage(args: {
   aliases?: string[];
   latin?: string;
   description?: string;
+  productSlug?: string;
 }): string {
   const haystackParts: string[] = [];
   if (args.name) haystackParts.push(args.name);
@@ -173,6 +245,33 @@ export function resolveIngredientImage(args: {
   const haystack = normalize(haystackParts.join(' '));
   if (!haystack) return INGREDIENT_FALLBACK_IMAGE;
 
+  // 1. Check product-specific overrides first if a product slug is provided
+  if (args.productSlug) {
+    const overrides = PRODUCT_OVERRIDES[args.productSlug.toLowerCase()];
+    if (overrides) {
+      let bestOverrideSrc: string | null = null;
+      let bestOverrideScore = 0;
+
+      for (const entry of overrides) {
+        for (const key of entry.keys) {
+          const isPhrase = key.includes(' ');
+          const found = isPhrase
+            ? haystack.includes(key.toLowerCase())
+            : wordPattern(key).test(haystack);
+          if (found && key.length > bestOverrideScore) {
+            bestOverrideScore = key.length;
+            bestOverrideSrc = entry.src;
+          }
+        }
+      }
+
+      if (bestOverrideSrc) {
+        return bestOverrideSrc;
+      }
+    }
+  }
+
+  // 2. Fall back to generic cross-product library
   let bestSrc: string | null = null;
   let bestScore = 0;
 

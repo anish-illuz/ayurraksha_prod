@@ -728,49 +728,39 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "PRIMARY HERB",
-        "commonName": "Thippili / Long Pepper",
+        "badge": "HERB 01",
+        "commonName": "Pippali / Long Pepper",
         "latinName": "Piper longum",
-        "description": "Classical rejuvenator traditionally valued for clearing head heaviness and micro-circulation.",
-        "bioactive": "Piperine 1.5%",
-        "derivative": "Fruit Spike Extract",
-        "image": "/images/ingredients/black-pepper-seeds.jpg"
+        "image": "/images/ingredients/products/migro-prime-tablets/thippili.jpg",
+        "description": "Enhances bioavailability and micro-circulation."
       },
       {
-        "badge": "DIGESTIVE HERB",
-        "commonName": "Katuki / Kutki",
+        "badge": "HERB 02",
+        "commonName": "Kutki",
         "latinName": "Picrorhiza kurroa",
-        "description": "Bitter botanical supporting gentle hepatic detoxification and digestive equilibrium.",
-        "bioactive": "Kutkin 4%",
-        "derivative": "Rhizome Extract",
-        "image": "/images/ingredients/turmeric-rhizome.jpg"
+        "image": "/images/ingredients/products/migro-prime-tablets/kutki.jpg",
+        "description": "Gentle hepatic and metabolic detoxification."
       },
       {
-        "badge": "WARMING HERB",
-        "commonName": "Sukku / Dry Ginger",
-        "latinName": "Zingiber officinale",
-        "description": "Traditional digestive stimulant that eases occasional nausea and head discomfort.",
-        "bioactive": "Gingerols 5%",
-        "derivative": "Rhizome Powder",
-        "image": "/images/ingredients/dry-ginger-sunthi.png"
+        "badge": "HERB 03",
+        "commonName": "Cucumber",
+        "latinName": "Cucumis sativus",
+        "image": "/images/ingredients/products/migro-prime-tablets/cucumber.jpg",
+        "description": "Hydrating botanical soothing occasional tension."
       },
       {
-        "badge": "BIOAVAILABILITY",
-        "commonName": "Milagu / Black Pepper",
-        "latinName": "Piper nigrum",
-        "description": "Enhances bioavailability and assimilation of synergistic botanical bioactives.",
-        "bioactive": "Piperine 95%",
-        "derivative": "Fruit Seed Extract",
-        "image": "/images/ingredients/black-pepper-seeds.jpg"
+        "badge": "HERB 04",
+        "commonName": "Butterfly Pea / Shankhpushpi",
+        "latinName": "Clitoria ternatea",
+        "image": "/images/ingredients/products/migro-prime-tablets/shankhpushpi.png",
+        "description": "Medhya rasayana supporting mental calm."
       },
       {
-        "badge": "BALANCING HERB",
-        "commonName": "Kadukkai / Haritaki",
-        "latinName": "Terminalia chebula",
-        "description": "Revered Ayurvedic fruit supporting metabolic balance and natural elimination.",
-        "bioactive": "Chebulic acid 20%",
-        "derivative": "Pericarp Extract",
-        "image": "/images/ingredients/kadukkai-haritaki.webp"
+        "badge": "HERB 05",
+        "commonName": "Saffron",
+        "latinName": "Crocus sativus",
+        "image": "/images/ingredients/products/migro-prime-tablets/saffron.jpg",
+        "description": "Revered crimson spice promoting mood balance."
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -5984,40 +5974,60 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "Scalp Soother",
-        "commonName": "Kattralai / Pure Aloe Vera",
+        "badge": "HERB 01",
+        "commonName": "Aloe Vera",
         "latinName": "Aloe barbadensis",
-        "description": "Natural moisture-retaining mucilage supporting healthy scalp pH and root hydration.",
-        "bioactive": "Barbaloin",
-        "derivative": "Inner Leaf Extract",
-        "image": "/images/ingredients/aloe-vera-gel.jpg"
+        "image": "/images/ingredients/products/dhayani-herbal-hair-oil-100ml/aloe-vera-leaf-juice.jpg",
+        "description": "Conditioning botanical supporting scalp hydration."
       },
       {
-        "badge": "Follicle Stimulator",
-        "commonName": "Vengayam / Red Onion Bulb",
-        "latinName": "Allium cepa",
-        "description": "Rich in organic sulphur and flavonoids traditionally valued for hair density and scalp nourishment.",
-        "bioactive": "Quercetin & Sulphur",
-        "derivative": "Bulb Extract",
-        "image": "/images/ingredients/red-onion.jpg"
-      },
-      {
-        "badge": "Nourishing Carrier",
-        "commonName": "Black Sesame Seed Oil",
+        "badge": "SEED 01",
+        "commonName": "Sesame Seeds",
         "latinName": "Sesamum indicum",
-        "description": "Cold-pressed black sesame oil providing deep penetration and essential lipids to hair follicles.",
-        "bioactive": "Sesamin & Sesamol",
-        "derivative": "Cold-Pressed Seed Oil",
-        "image": "/images/ingredients/sesame-seeds.jpg"
+        "image": "/images/ingredients/products/dhayani-herbal-hair-oil-100ml/sesame-oil.jpg",
+        "description": "Classical Ayurvedic oil base deeply penetrating hair follicles."
       },
       {
-        "badge": "Protein Support",
-        "commonName": "Vendhayam / Sprouted Fenugreek",
+        "badge": "HERB 02",
+        "commonName": "Fenugreek",
         "latinName": "Trigonella foenum-graecum",
-        "description": "High in amino acids and lecithin to condition brittle hair strands and soothe dry scalp.",
-        "bioactive": "Trigonelline",
-        "derivative": "Sprouted Seed Extract",
-        "image": "/images/ingredients/fenugreek-seeds.jpg"
+        "image": "/images/ingredients/products/dhayani-herbal-hair-oil-100ml/vendhayam.jpg",
+        "description": "Vendhayam, traditionally valued for strengthening hair roots."
+      },
+      {
+        "badge": "HERB 03",
+        "commonName": "Red Onion",
+        "latinName": "Allium cepa",
+        "image": "/images/ingredients/products/dhayani-herbal-hair-oil-100ml/red-onion.jpg",
+        "description": "Rich in sulfur supporting hair density and vitality."
+      },
+      {
+        "badge": "HERB 04",
+        "commonName": "Curry Leaves",
+        "latinName": "Murraya koenigii",
+        "image": "/images/ingredients/products/dhayani-herbal-hair-oil-100ml/curry-leaves.jpg",
+        "description": "Karuveppilai, preserving natural hair pigmentation."
+      },
+      {
+        "badge": "OIL 01",
+        "commonName": "Coconut Oil",
+        "latinName": "Cocos nucifera",
+        "image": "/images/ingredients/products/dhayani-herbal-hair-oil-100ml/organic-coconut-oil-.jpg",
+        "description": "Nourishing organic coconut oil sealing moisture."
+      },
+      {
+        "badge": "FRUIT 01",
+        "commonName": "Amla",
+        "latinName": "Phyllanthus emblica",
+        "image": "/images/ingredients/products/dhayani-herbal-hair-oil-100ml/amla.webp",
+        "description": "Indian gooseberry rich in antioxidants for hair growth."
+      },
+      {
+        "badge": "NUT 01",
+        "commonName": "Badam",
+        "latinName": "Prunus dulcis",
+        "image": "/images/ingredients/products/dhayani-herbal-hair-oil-100ml/badam.jpg",
+        "description": "Almond oil rich in vitamin E nourishing fragile strands."
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -6391,22 +6401,18 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "Antioxidant Petals",
-        "commonName": "Sembaruthi / Red Hibiscus Petals",
+        "badge": "FLOWER 01",
+        "commonName": "Hibiscus Flower Petal Cuts",
         "latinName": "Hibiscus sabdariffa",
-        "description": "Deep ruby floral calyces packed with anthocyanins, organic acids, and refreshing botanical hydration.",
-        "bioactive": "Anthocyanins",
-        "derivative": "Dried Petals",
-        "image": "/images/ingredients/hibiscus-petals.jpg"
+        "image": "/images/ingredients/products/organics-hibiscus-tea-tin/hibiscus-extract.jpg",
+        "description": "Tangy ruby-red dried hibiscus petals supporting cardiovascular wellness."
       },
       {
-        "badge": "Whole Leaf Polyphenols",
-        "commonName": "Green Tea Whole Leaf",
+        "badge": "HERB 01",
+        "commonName": "Green Tea",
         "latinName": "Camellia sinensis",
-        "description": "Premium whole green tea leaves delivering clean antioxidant catechins for daily metabolic wellness.",
-        "bioactive": "EGCG & Catechins",
-        "derivative": "Whole Leaf",
-        "image": "/images/ingredients/camellia-sinensis-tea.jpg"
+        "image": "/images/ingredients/products/organics-hibiscus-tea-tin/green-tea.png",
+        "description": "Antioxidant-rich whole green tea leaves."
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -6567,31 +6573,25 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "Nutritive Seed",
-        "commonName": "Poosanikai / Pumpkin Seed",
+        "badge": "HERB 01",
+        "commonName": "Pumpkin",
         "latinName": "Cucurbita maxima",
-        "description": "Traditional zinc-rich seed supporting smooth muscle relaxation and tissue soothing.",
-        "bioactive": "Phytosterols",
-        "derivative": "Seed Extract",
-        "image": "/images/ingredients/cucurbita-maxima-pumpkin.jpg"
+        "image": "/images/ingredients/products/pi-well-food-supplement-capsules/pumpkin.jpg",
+        "description": "Nutritious botanical supporting digestive harmony."
       },
       {
-        "badge": "Purifying Active",
-        "commonName": "Vembu / Neem Leaves & Seed",
+        "badge": "HERB 02",
+        "commonName": "Neem / Vembu",
         "latinName": "Azadirachta indica",
-        "description": "Revered bitter botanical traditionally used for purifying tissue tone and antimicrobial protection.",
-        "bioactive": "Nimbin",
-        "derivative": "Leaf & Seed Extract",
-        "image": "/images/ingredients/neem-leaves.jpg"
+        "image": "/images/ingredients/products/pi-well-food-supplement-capsules/neem.jpg",
+        "description": "Traditional purifying bitter herb."
       },
       {
-        "badge": "Soothing Adaptogen",
+        "badge": "HERB 03",
         "commonName": "Tulsi / Holy Basil",
         "latinName": "Ocimum sanctum",
-        "description": "Sacred basil supporting digestive soothe, normal circulation, and natural defense.",
-        "bioactive": "Eugenol",
-        "derivative": "Leaf Extract",
-        "image": "/images/ingredients/tulsi-holy-basil.jpg"
+        "image": "/images/ingredients/products/pi-well-food-supplement-capsules/tulasi.jpg",
+        "description": "Sacred Ayurvedic herb supporting systemic wellness."
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -6721,40 +6721,25 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "MEDHYA RASAYANA",
+        "badge": "HERB 01",
         "commonName": "Brahmi / Water Hyssop",
         "latinName": "Bacopa monnieri",
-        "description": "Ancient Ayurvedic botanical that increases GABA synthesis, quiets restless racing thoughts, and encourages smooth transition into deep restorative sleep.",
-        "bioactive": "Bacosides A & B (45%)",
-        "derivative": "Whole Plant Aqueous Extract",
-        "image": "/images/ingredients/brahmi-bacopa.jpg"
+        "image": "/images/ingredients/products/sleep-well-food-supplement-capsules/brahmi.jpg",
+        "description": "Brain tonic promoting calm and restorative sleep."
       },
       {
-        "badge": "NOCTURNAL EQUILIBRIUM",
-        "commonName": "Shankhpushpi / Morning Glory",
-        "latinName": "Convolvulus pluricaulis",
-        "description": "Classical tranquilizing Ayurvedic herb that pacifies agitated Pitta-Vata energy in the cranial channels, reducing night awakenings and anxious restlessness.",
-        "bioactive": "Microphylline & Convolvine",
-        "derivative": "Whole Herb Flowering Aerial Parts",
-        "image": "/images/ingredients/clitoria-ternatea-butterfly-pea.jpg"
-      },
-      {
-        "badge": "CIRCADIAN ADAPTOGEN",
-        "commonName": "Amukkira / Ashwagandha",
-        "latinName": "Withania somnifera",
-        "description": "Renowned root extract containing triethylene glycol that normalizes nighttime cortisol levels and restores the body’s natural circadian sleep architecture.",
-        "bioactive": "Withanolides & Triethylene Glycol",
-        "derivative": "Wild Taproot Decoction",
-        "image": "/images/ingredients/ashwagandha-root.jpg"
-      },
-      {
-        "badge": "NEURO-COOLING NOURISHMENT",
-        "commonName": "Poosanikai / White Pumpkin Seed",
+        "badge": "HERB 02",
+        "commonName": "Pumpkin",
         "latinName": "Cucurbita maxima",
-        "description": "Botanical seed extract rich in natural tryptophan, magnesium, and zinc that serve as vital enzymatic co-factors for the brain’s melatonin production.",
-        "bioactive": "L-Tryptophan & Bioavailable Magnesium",
-        "derivative": "De-Husked White Pumpkin Seeds",
-        "image": "/images/ingredients/cucurbita-maxima-pumpkin.jpg"
+        "image": "/images/ingredients/products/sleep-well-food-supplement-capsules/pumpkin.jpg",
+        "description": "Natural magnesium source easing nervous tension."
+      },
+      {
+        "badge": "HERB 03",
+        "commonName": "Shankhpushpi",
+        "latinName": "Convolvulus pluricaulis",
+        "image": "/images/ingredients/products/sleep-well-food-supplement-capsules/shankhpushpi.png",
+        "description": "Classical relaxant supporting healthy sleep architecture."
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -6893,40 +6878,11 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "NIGELLA PURIFYING OIL",
+        "badge": "HERB 01",
         "commonName": "Kalonji / Black Seed Oil",
         "latinName": "Nigella sativa",
-        "description": "Pure cold-pressed black seed oil packed with thymoquinone that clears sun-tanning, soothes skin hyperpigmentation, and purifies pores.",
-        "bioactive": "Thymoquinone & Nigellone",
-        "derivative": "Cold-Pressed Whole Black Seeds",
-        "image": "/images/ingredients/kalonji-black-seed.webp"
-      },
-      {
-        "badge": "DEEP MOISTURE BARRIER",
-        "commonName": "Extra Virgin Olive Oil",
-        "latinName": "Olea europaea",
-        "description": "Rich in polyphenols and squalene that deeply condition weathered skin, restore barrier integrity, and prevent dryness.",
-        "bioactive": "Oleic Acid & Squalene",
-        "derivative": "First Cold-Pressed Olives",
-        "image": "/images/ingredients/olive-oil-olives.jpg"
-      },
-      {
-        "badge": "GENTLE CLEANSING BASE",
-        "commonName": "Pure Coconut Oil Saponified",
-        "latinName": "Cocos nucifera",
-        "description": "Traditional cold-process saponified coconut oil delivering creamy lather that lifts dirt and perspiration without stripping skin lipids.",
-        "bioactive": "Lauric & Myristic Fatty Acids",
-        "derivative": "Saponified Virgin Coconut Oil",
-        "image": "/images/ingredients/virgin-coconut-oil.jpg"
-      },
-      {
-        "badge": "SKIN SOFTENING NUTRIENT",
-        "commonName": "Sweet Almond Oil / Badam",
-        "latinName": "Prunus dulcis",
-        "description": "Pure almond oil rich in Vitamin E that softens rough skin texture, smooths complexion irregularities, and promotes natural radiance.",
-        "bioactive": "Alpha-Tocopherol & Oleic Acid",
-        "derivative": "Cold-Pressed Sweet Almond Kernels",
-        "image": "/images/ingredients/almonds-badam.jpg"
+        "image": "/images/ingredients/products/ayurraksha-kalonji-soap/karunjeera.jpg",
+        "description": "Pure cold-pressed black seed oil for skin nourishment."
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -7061,40 +7017,31 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "MELANIN-STIMULATING SEED",
-        "commonName": "Bakuchi / Babchi Seeds",
-        "latinName": "Psoralea corylifolia",
-        "description": "Ancient Ayurvedic seed rich in psoralen that stimulates dormant melanocytes, promoting repigmentation in hypopigmented skin patches.",
-        "bioactive": "Psoralen & Bakuchiol",
-        "derivative": "Cold-Extracted Mature Seeds",
-        "image": "/images/ingredients/kalonji-black-seed.webp"
+        "badge": "HERB 01",
+        "commonName": "Aloe Vera",
+        "latinName": "Aloe barbadensis",
+        "image": "/images/ingredients/products/ayurraksha-vital-o3-anti-vitiligo-cream/aloe-vera-leaf-juice.jpg",
+        "description": "Hydrating botanical base providing soothing relief."
       },
       {
-        "badge": "ACTIVATED BIO-OXYGEN SALVE",
-        "commonName": "Medical Grade Ozonated Matrix",
-        "latinName": "Activated O₃ Lipid Complex",
-        "description": "Nascent trioxygen stabilized in botanical lipid chains to improve localized cellular respiration and activate deep tissue recovery.",
-        "bioactive": "Active Ozonides & Peroxides",
-        "derivative": "Ozonated Virgin Olive Lipid Matrix",
-        "image": "/images/ingredients/olive-oil-olives.jpg"
-      },
-      {
-        "badge": "EPIDERMAL NORMALIZER",
-        "commonName": "Vetpalai / Sweet Indrajao",
-        "latinName": "Wrightia tinctoria",
-        "description": "Proven Siddha herb that harmonizes dermal cellular activity and soothes autoimmune skin reactivity.",
-        "bioactive": "Wrightial & Triterpenoids",
-        "derivative": "Sun-Infused Foliage Extract",
-        "image": "/images/ingredients/neem-leaves.jpg"
-      },
-      {
-        "badge": "ANTIOXIDANT GOLDEN RHIZOME",
-        "commonName": "Haridra / Pure Turmeric",
+        "badge": "HERB 02",
+        "commonName": "Turmeric",
         "latinName": "Curcuma longa",
-        "description": "High-purity turmeric rhizome delivering natural curcuminoids that protect melanocytes from oxidative damage and support even skin tone.",
-        "bioactive": "Curcuminoids (95%)",
-        "derivative": "Purified Rhizome Micro-Extract",
-        "image": "/images/ingredients/turmeric-rhizome.jpg"
+        "image": "/images/ingredients/products/ayurraksha-vital-o3-anti-vitiligo-cream/turmeric.jpg",
+        "description": "Golden Ayurvedic rhizome supporting skin clarity and restoration."
+      },
+      {
+        "badge": "HERB 03",
+        "commonName": "Neem",
+        "latinName": "Azadirachta indica",
+        "image": "/images/ingredients/products/ayurraksha-vital-o3-anti-vitiligo-cream/neem.jpg",
+        "description": "Purifying botanical supporting natural skin balance."
+      },
+      {
+        "badge": "OIL 01",
+        "commonName": "Ozonated Botanical Oils",
+        "image": "/images/ingredients/products/ayurraksha-vital-o3-anti-vitiligo-cream/saponified-vegetable-oils.jpg",
+        "description": "Oxygen-infused plant oils supporting cellular rejuvenation."
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -7230,40 +7177,25 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "OZONATED BIO-LIPID MATRIX",
-        "commonName": "Ozonated Botanical Lipid Matrix",
-        "latinName": "O3 Enriched Enteric Complex",
-        "description": "Specialized enteric-coated ozonated botanical lipid complex that releases oxygenating bio-active ozonides directly into the intestinal tract.",
-        "bioactive": "Active Ozonides & Oxygenated Lipids",
-        "derivative": "Enteric Micro-Encapsulated Matrix",
-        "image": "/images/ingredients/olive-oil-olives.jpg"
-      },
-      {
-        "badge": "CELLULAR ADAPTOGEN",
-        "commonName": "Amukkira / Ashwagandha",
-        "latinName": "Withania somnifera",
-        "description": "Premier Ayurvedic immune rejuvenator that supports white blood cell vitality and optimizes resistance against environmental pathogens.",
-        "bioactive": "Withanolides & Sitoindosides",
-        "derivative": "Wild Taproot Decoction",
-        "image": "/images/ingredients/ashwagandha-root.jpg"
-      },
-      {
-        "badge": "IMMUNE SYSTEM HARMONIZER",
-        "commonName": "Seenthil Kodi / Guduchi",
-        "latinName": "Tinospora cordifolia",
-        "description": "Renowned Ayurvedic vine that modulates immune hypersensitivity, eliminates metabolic toxins (Ama), and strengthens natural immune defense.",
-        "bioactive": "Tinosporaside & Cordifoliosides",
-        "derivative": "Mature Climber Stem Extract",
-        "image": "/images/ingredients/tinospora-cordifolia-guduchi.jpg"
-      },
-      {
-        "badge": "BIOAVAILABLE VITAMIN C",
-        "commonName": "Nellikai / Amla Fruit",
+        "badge": "HERB 01",
+        "commonName": "Amla",
         "latinName": "Phyllanthus emblica",
-        "description": "Potent Rasayana fruit rich in organic Vitamin C and bioflavonoids that neutralizes free radicals and fuels immune cellular energy.",
-        "bioactive": "Emblicanin A/B & Ascorbic Acid",
-        "derivative": "Cold-Processed Fresh Fruit Pulp",
-        "image": "/images/ingredients/nellikai-amla.webp"
+        "image": "/images/ingredients/products/ayurraksha-immuno3-immunity-booster-capsules/amla.webp",
+        "description": "Vitamin C rich Indian gooseberry for immune vitality."
+      },
+      {
+        "badge": "HERB 02",
+        "commonName": "Ashwagandha",
+        "latinName": "Withania somnifera",
+        "image": "/images/ingredients/products/ayurraksha-immuno3-immunity-booster-capsules/ashwagandha.jpg",
+        "description": "Classical adaptogen supporting stamina and stress resilience."
+      },
+      {
+        "badge": "ALGAE 01",
+        "commonName": "Spirulina",
+        "latinName": "Arthrospira platensis",
+        "image": "/images/ingredients/products/ayurraksha-immuno3-immunity-booster-capsules/spirulina.jpg",
+        "description": "Nutrient-dense superfood supporting holistic vitality."
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",
@@ -7387,40 +7319,42 @@
     "featuresBadge": "6 Verified Formulation Pillars",
     "ingredientCards": [
       {
-        "badge": "PURIFYING DERMAL DEFENSE",
-        "commonName": "Nimba / Neem Leaf & Bark",
-        "latinName": "Azadirachta indica",
-        "description": "Potent antimicrobial and antifungal tree bark and leaf powder that eliminates foot odor, cleanses cracked heels, and purifies toe microflora.",
-        "bioactive": "Nimbin & Azadirachtin",
-        "derivative": "Micro-Pulverized Leaf & Bark",
-        "image": "/images/ingredients/neem-leaves.jpg"
+        "badge": "MINERAL 01",
+        "commonName": "Epsom Salt",
+        "image": "/images/ingredients/products/ayur-raksha-foot-bath-powder/epsom-salt.jpg",
+        "description": "Magnesium-rich mineral salt traditionally used for warm therapeutic foot soaks."
       },
       {
-        "badge": "COOLING AROMATIC RELIEF",
-        "commonName": "Karpooram / Camphor Flakes",
-        "latinName": "Cinnamomum camphora",
-        "description": "Pure crystalline camphor that stimulates microcirculation in tired, aching feet, reduces swelling, and produces an invigorating aromatic bath.",
-        "bioactive": "Pure Crystalline D-Camphor",
-        "derivative": "Natural Sublimated Flakes",
-        "image": "/images/ingredients/camphor-flakes.png"
+        "badge": "MINERAL 02",
+        "commonName": "Rock Salt",
+        "latinName": "Induppu",
+        "image": "/images/ingredients/products/ayur-raksha-foot-bath-powder/rock-salt.jpg",
+        "description": "Traditional unrefined Ayurvedic mineral salt promoting soothing sensation."
       },
       {
-        "badge": "MINERAL DETOX SALTS",
-        "commonName": "Induppu / Pure Rock Salt",
-        "latinName": "Saindhava Lavana",
-        "description": "Authentic Himalayan rock salt containing 84 ionic trace minerals that draw out heavy metabolic impurities, relax tense plantar fascia, and soften dead skin.",
-        "bioactive": "84 Ionic Trace Minerals (Na, Mg, K)",
-        "derivative": "Crushed Natural Salt Crystals",
-        "image": "/images/ingredients/rock-salt.png"
+        "badge": "HERB 01",
+        "commonName": "Dry Ginger",
+        "latinName": "Zingiber officinale",
+        "image": "/images/ingredients/products/ayur-raksha-foot-bath-powder/dry-ginger.jpg",
+        "description": "Warming Ayurvedic rhizome supporting revitalizing warmth."
       },
       {
-        "badge": "ASTRINGENT REFRESHMENT",
-        "commonName": "Puthina Uppu & Fitkari / Menthol & Alum",
-        "latinName": "Mentha arvensis & Potassium Alum",
-        "description": "Cooling natural menthol crystals blended with classical mineral alum (Fitkari) to tighten pores, curb excessive perspiration, and refresh tired soles.",
-        "bioactive": "Natural L-Menthol & Mineral Alum",
-        "derivative": "Purified Crystals & Minerals",
-        "image": "/images/ingredients/menthol-peppermint.png"
+        "badge": "EXTRACT 01",
+        "commonName": "Menthol",
+        "image": "/images/ingredients/products/ayur-raksha-foot-bath-powder/menthol.jpg",
+        "description": "Natural botanical crystal providing cooling relief for tired feet."
+      },
+      {
+        "badge": "EXTRACT 02",
+        "commonName": "Thymol",
+        "image": "/images/ingredients/products/ayur-raksha-foot-bath-powder/thymol.jpg",
+        "description": "Thyme-derived botanical active with natural purifying properties."
+      },
+      {
+        "badge": "RESIN 01",
+        "commonName": "Bhimseni Karpooram",
+        "image": "/images/ingredients/products/ayur-raksha-foot-bath-powder/bhimseni.jpg",
+        "description": "Pure edible camphor valued in classical Ayurveda for clearing sensations."
       }
     ],
     "ingredientsEyebrow": "AUTHENTIC BOTANICAL FORMULATION",

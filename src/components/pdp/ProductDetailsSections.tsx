@@ -261,7 +261,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
   const rawIngredients = product.acf?.ingredients || product.ingredientsText || '';
   const parsedIngredients = useMemo(() => {
     if (rawIngredients.trim()) {
-      return parseIngredients(rawIngredients).map((it) => ({
+      return parseIngredients(rawIngredients, product.slug).map((it) => ({
         ...it,
         description: it.description,
       }));

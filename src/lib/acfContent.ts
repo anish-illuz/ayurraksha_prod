@@ -84,6 +84,7 @@ const ANCHOR_TERMS = [
   'rock salt', 'dry ginger', 'bhimseni karpooram', 'bhimseni',
   'epsom salt', 'epsom', 'menthol', 'thymol',
   'mangosteen', 'perandai', 'manjanathi',
+  'aloe vera', 'turmeric', 'neem', 'ozonated botanical oils', 'ozonated',
 ];
 
 const escapeRegExp = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -115,6 +116,12 @@ function splitLatinAndName(seg: string): { latin: string; next: string } {
   while (i < words.length && LATIN_PART_WORDS.has(words[i].toLowerCase())) {
     latin.push(words[i]);
     i += 1;
+  }
+
+  // A genuine Latin binomial requires at least 2 tokens (Genus species).
+  // A single capitalised word is not Latin and belongs to the ingredient name.
+  if (latin.length < 2) {
+    return { latin: '', next: seg.trim() };
   }
 
   let next = words.slice(i).join(' ');
@@ -213,7 +220,7 @@ function splitPackedIngredientList(text: string): string[] {
   return [text.trim()];
 }
 
-function mapIngredientItem(item: string, index: number): StructuredIngredient {
+function mapIngredientItem(item: string, index: number, productSlug?: string): StructuredIngredient {
   const prose =
     /\b(is a|known as|used in|naturally contains|botanical)\b/i.test(item) &&
     item.length > 60;
@@ -222,7 +229,7 @@ function mapIngredientItem(item: string, index: number): StructuredIngredient {
       commonName: item.replace(/\s*—\s*.*/, '').trim() || item,
       description: item.includes('—') ? item.slice(item.indexOf('—') + 1).trim() : undefined,
       badge: padBadge(index + 1),
-      image: resolveIngredientImage({ name: item, description: item }),
+      image: resolveIngredientImage({ name: item, description: item, productSlug }),
     };
   }
 
@@ -267,15 +274,17 @@ function mapIngredientItem(item: string, index: number): StructuredIngredient {
       aliases,
       latin: latinName,
       description: item,
+      productSlug,
     }),
   };
 }
 
 /**
  * Parse a raw ACF ingredients string into individual, image-mapped
- * ingredient items.
+ * ingredient items. Accepts an optional productSlug for product-specific image
+ * overrides.
  */
-export function parseIngredients(raw: string | undefined): StructuredIngredient[] {
+export function parseIngredients(raw: string | undefined, productSlug?: string): StructuredIngredient[] {
   if (!raw || !raw.trim()) return [];
 
   const source = raw.trim();
@@ -305,7 +314,7 @@ export function parseIngredients(raw: string | undefined): StructuredIngredient[
     return true;
   });
 
-  return unique.map((it, i) => mapIngredientItem(it, i));
+  return unique.map((it, i) => mapIngredientItem(it, i, productSlug));
 }
 
 /* ------------------------------------------------------------------ *

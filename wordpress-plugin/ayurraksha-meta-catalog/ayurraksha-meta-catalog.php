@@ -18,7 +18,7 @@ class AyurRaksha_Meta_Catalog_Feed {
 
     const REST_NAMESPACE = 'meta/v1';
     const REST_ROUTE     = '/catalog';
-    const DEFAULT_FRONTEND_DOMAIN = 'https://ayurrakshaonline.com';
+    const DEFAULT_FRONTEND_DOMAIN = 'https://www.ayurrakshaonline.com';
 
     public function __construct() {
         add_action('rest_api_init', [$this, 'register_routes']);

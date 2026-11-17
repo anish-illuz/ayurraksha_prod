@@ -143,7 +143,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
                   >
                     <div className="relative w-14 h-14 bg-white rounded border border-stone-200 flex-shrink-0 p-1">
                       <Image
-                        src={product.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'}
+                        src={product.images[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'}
                         alt={product.name}
                         fill
                         className="object-contain"

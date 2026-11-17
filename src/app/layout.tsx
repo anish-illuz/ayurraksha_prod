@@ -81,7 +81,7 @@ export const metadata: Metadata = {
       'Discover AyurRaksha, your trusted source for natural health supplements. Shop our range of products, including liver detox tonics, pain relief oils, heart care solutions, and skin care remedies.',
     images: [
       {
-        url: 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg',
+        url: 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg',
         width: 1024,
         height: 1024,
         alt: 'AyurRaksha Ayurvedic Formulations',
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AyurRaksha | Natural Ayurvedic Health Supplements',
     description: 'Shop authentic classical Ayurvedic herbal solutions for liver detox, pain relief, and holistic health.',
-    images: ['https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'],
+    images: ['https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'],
   },
 };
 
@@ -113,7 +113,7 @@ export default function RootLayout({
         logo: {
           '@type': 'ImageObject',
           '@id': `${SITE_CONFIG.domain}/#logo`,
-          url: 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/AYUR-RAKSHA_Favicon-e1708027496398.png',
+          url: 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/AYUR-RAKSHA_Favicon-e1708027496398.png',
           caption: 'AyurRaksha',
         },
         address: {

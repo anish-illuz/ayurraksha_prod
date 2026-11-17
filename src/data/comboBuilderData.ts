@@ -462,7 +462,7 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/ayur-raksha-skin-well-food-moisturising-gel.webp',
     gallery: [
       '/images/products/ayur-raksha-skin-well-food-moisturising-gel.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2024/03/Skin-Food-Moisturizing-Gel-feature.webp',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/03/Skin-Food-Moisturizing-Gel-feature.webp',
     ],
     mrp: 1000,
     price: 1000,
@@ -671,8 +671,8 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/flow-well-food-supplement-capsules.webp',
     gallery: [
       '/images/products/flow-well-food-supplement-capsules.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/AyurRaksha-Flow-Well-Food-Supplement-Capsules-1.png',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/AyurRaksha-Flow-Well-Food-Supplement-Capsules-2.png',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/AyurRaksha-Flow-Well-Food-Supplement-Capsules-1.png',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/AyurRaksha-Flow-Well-Food-Supplement-Capsules-2.png',
     ],
     mrp: 1299,
     price: 1199,
@@ -703,7 +703,7 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/divine-healing-oil.webp',
     gallery: [
       '/images/products/divine-healing-oil.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/AYUR-RAKSHA-OIL_new.png',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/AYUR-RAKSHA-OIL_new.png',
     ],
     mrp: 800,
     price: 800,
@@ -736,7 +736,7 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/ayur-raksha-skinwell-soap-pack-of-2.webp',
     gallery: [
       '/images/products/ayur-raksha-skinwell-soap-pack-of-2.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2024/03/Untitled-1-1.webp',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/03/Untitled-1-1.webp',
     ],
     mrp: 250,
     price: 250,
@@ -767,7 +767,7 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/ayur-raksha-superheal-o3-cream.webp',
     gallery: [
       '/images/products/ayur-raksha-superheal-o3-cream.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/AyurRaksha-SuperHeal-O3-Cream.png',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2025/05/AyurRaksha-SuperHeal-O3-Cream.png',
     ],
     mrp: 3999,
     price: 3999,
@@ -925,7 +925,7 @@ export const BREATH_EASY_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/b-derma-capsules.webp',
     gallery: [
       '/images/products/b-derma-capsules.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2024/03/bderma-feature.webp',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/03/bderma-feature.webp',
     ],
     mrp: 799,
     price: 799,
@@ -956,7 +956,7 @@ export const BREATH_EASY_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/esnovate-immunity-boosting-capsules.webp',
     gallery: [
       '/images/products/esnovate-immunity-boosting-capsules.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2024/01/Esnovate-1-768x768-1.webp',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/01/Esnovate-1-768x768-1.webp',
     ],
     mrp: 999,
     price: 999,
@@ -1080,8 +1080,8 @@ export const CARDIAC_WELLNESS_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/save-heart.webp',
     gallery: [
       '/images/products/save-heart.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Save-Heart-1.png',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Save-heart-3-1.png',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Save-Heart-1.png',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Save-heart-3-1.png',
     ],
     mrp: 1299,
     price: 1199,
@@ -1113,7 +1113,7 @@ export const CARDIAC_WELLNESS_PRODUCTS: ComboProduct[] = [
     primaryImage: '/images/products/flow-well-food-supplement-capsules.webp',
     gallery: [
       '/images/products/flow-well-food-supplement-capsules.webp',
-      'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/AyurRaksha-Flow-Well-Food-Supplement-Capsules-1.png',
+      'https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/AyurRaksha-Flow-Well-Food-Supplement-Capsules-1.png',
     ],
     mrp: 1299,
     price: 1199,

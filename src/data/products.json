@@ -21,12 +21,12 @@
     "isBestseller": true,
     "images": [
       "/images/products/boozliv.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_2.jpg",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_3.jpg",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_4.jpg",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_5.jpg",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_6.jpg"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_2.jpg",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_3.jpg",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_4.jpg",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_5.jpg",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/03/Boozliv_6.jpg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -251,12 +251,12 @@
     "isBestseller": true,
     "images": [
       "/images/products/divine-healing-oil.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/AYUR-RAKSHA-OIL_new.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/divine-healing-6.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/divine-healing-3.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/divine-healing-4.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/divine-healing-5.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/divine-healing-7.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/AYUR-RAKSHA-OIL_new.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/divine-healing-6.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/divine-healing-3.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/divine-healing-4.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/divine-healing-5.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/divine-healing-7.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -646,7 +646,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/migro-prime-tablets.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/10/Migro-Prime-Tablets.jpg"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2025/10/Migro-Prime-Tablets.jpg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -848,9 +848,9 @@
     "isBestseller": false,
     "images": [
       "/images/products/etioment-pain-relief-roll-on-50ml.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/08/roll-on-web.jpg",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/08/etioment-roll-on-1.jpg",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/08/etioment-roll-on-2.jpg"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2025/08/roll-on-web.jpg",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2025/08/etioment-roll-on-1.jpg",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2025/08/etioment-roll-on-2.jpg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -1049,7 +1049,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/ayur-raksha-superheal-o3-cream.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-SuperHeal-O3-Cream.png"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-SuperHeal-O3-Cream.png"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -1240,7 +1240,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/ayur-raksha-dant-swasthya.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-Dant-Swasthya.jpeg"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-Dant-Swasthya.jpeg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -1443,7 +1443,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/ayur-raksha-premium-high-fiber-health-mix.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-Premium-High-Fiber-Health-Mix.jpeg"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-Premium-High-Fiber-Health-Mix.jpeg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -1642,7 +1642,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/ayur-raksha-gargling-oil.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-Gargling-Oil.jpeg"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-Gargling-Oil.jpeg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -1839,7 +1839,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/ayur-raksha-alg.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-ALG.jpeg"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-ALG.jpeg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -2031,7 +2031,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/ayur-raksha-creat-capsules.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-CREAT-Capsules.jpeg"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-CREAT-Capsules.jpeg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -2220,7 +2220,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/ayur-raksha-imu-360.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-IMU-360.png"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2025/05/Ayur-Raksha-IMU-360.png"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -2410,7 +2410,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/bpain-out-capsules.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/06/Bpain-out_1.jpeg"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/06/Bpain-out_1.jpeg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -2588,7 +2588,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/ayur-raksha-herbal-shampoo.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/hair-well-shampoo.jpeg"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/04/hair-well-shampoo.jpeg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -2785,7 +2785,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/hair-well-food-supplement-capsules.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/Hair-well-capsules.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/04/Hair-well-capsules.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -2969,7 +2969,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/ayur-raksha-skin-conditioning-oil.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/Skin.png"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/04/Skin.png"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -3142,7 +3142,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/sp-soryn-cream.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/03/s-p-soryn-feature.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/03/s-p-soryn-feature.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -3330,7 +3330,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/b-derma-capsules.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/03/bderma-feature.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/03/bderma-feature.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -3512,7 +3512,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/ayur-raksha-skin-well-food-moisturising-gel.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/03/Skin-Food-Moisturizing-Gel-feature.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/03/Skin-Food-Moisturizing-Gel-feature.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -3689,7 +3689,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/etionment-pain-relief-cream.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/01/Etionment-1.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/01/Etionment-1.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -3862,7 +3862,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/ayur-raksha-beta-powder.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/beta_powder.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/04/beta_powder.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -4042,10 +4042,10 @@
     "isBestseller": false,
     "images": [
       "/images/products/dia-well-food-supplement-capsules.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Dia-Well-Food-Supplement-Capsules-1.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Dia-Well-Food-Supplement-Capsules-3.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Dia-Well-Food-Supplement-Capsules-2.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Dia-well-Ingredient.png"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Dia-Well-Food-Supplement-Capsules-1.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Dia-Well-Food-Supplement-Capsules-3.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Dia-Well-Food-Supplement-Capsules-2.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Dia-well-Ingredient.png"
     ],
     "rating": 5,
     "reviewCount": 1,
@@ -4231,7 +4231,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/b-gasonil.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/B-Ganonil-1.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/04/B-Ganonil-1.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -4400,7 +4400,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/booznil.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/04/Booznil.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/04/Booznil.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -4623,10 +4623,10 @@
     "isBestseller": true,
     "images": [
       "/images/products/skin-well-food-supplement-capsules.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Skin-Well-Food-Supplement-Capsules-1.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Skin-Well-Food-Supplement-Capsules-2.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Skin-Well-Food-Supplement-Capsules-3.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Skin-well-2-1.png"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Skin-Well-Food-Supplement-Capsules-1.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Skin-Well-Food-Supplement-Capsules-2.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Skin-Well-Food-Supplement-Capsules-3.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Skin-well-2-1.png"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -4797,9 +4797,9 @@
     "isBestseller": true,
     "images": [
       "/images/products/save-heart.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Save-Heart-1.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Save-heart-3-1.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Save-Heart-2.png"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Save-Heart-1.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Save-heart-3-1.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Save-Heart-2.png"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -4988,7 +4988,7 @@
     "isBestseller": true,
     "images": [
       "/images/products/ayur-raksha-skinwell-soap-pack-of-2.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/03/Untitled-1-1.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/03/Untitled-1-1.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -5179,10 +5179,10 @@
     "isBestseller": true,
     "images": [
       "/images/products/flow-well-food-supplement-capsules.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Flow-Well-Food-Supplement-Capsules-1.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Flow-Well-Food-Supplement-Capsules-2.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Flow-Well-Food-Supplement-Capsules-3.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Flow-well-Ingredient.png"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Flow-Well-Food-Supplement-Capsules-1.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Flow-Well-Food-Supplement-Capsules-2.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-Flow-Well-Food-Supplement-Capsules-3.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Flow-well-Ingredient.png"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -5357,7 +5357,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/organics-laxahealth-tea-tin.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/09/untitled-3.jpeg"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/09/untitled-3.jpeg"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -5527,11 +5527,11 @@
     "isBestseller": true,
     "images": [
       "/images/products/purna-sakthi-tonic.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Purna-Sakthi-1.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Purna-Sakthi-2.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Purna-Sakthi-4.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Purna-Sakthi-3.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Purna-Sakthi-6.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Purna-Sakthi-1.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Purna-Sakthi-2.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Purna-Sakthi-4.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Purna-Sakthi-3.webp",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Purna-Sakthi-6.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -5720,7 +5720,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/esnovate-immunity-boosting-capsules.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2024/01/Esnovate-1-768x768-1.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2024/01/Esnovate-1-768x768-1.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -5898,7 +5898,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/dhayani-herbal-hair-oil-100ml.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/09/dhayani100ml_394x.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/09/dhayani100ml_394x.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -6102,7 +6102,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/organics-herbo-protein-powder.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/09/P3-S1600x600px-1_394x.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/09/P3-S1600x600px-1_394x.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -6315,7 +6315,7 @@
     "isBestseller": false,
     "images": [
       "/images/products/organics-hibiscus-tea-tin.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/09/18-herbs-hibiscus-tea-tin_394x.webp"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/09/18-herbs-hibiscus-tea-tin_394x.webp"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -6489,10 +6489,10 @@
     "isBestseller": false,
     "images": [
       "/images/products/pi-well-food-supplement-capsules.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-PI-Well-Food-Supplement-Capsules-1.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-PI-Well-Food-Supplement-Capsules-3.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-PI-Well-Food-Supplement-Capsules-2.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Pi-well-Ingredient.png"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-PI-Well-Food-Supplement-Capsules-1.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-PI-Well-Food-Supplement-Capsules-3.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Ayur-Raksha-PI-Well-Food-Supplement-Capsules-2.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Pi-well-Ingredient.png"
     ],
     "rating": 4.8,
     "reviewCount": 12,
@@ -6665,10 +6665,10 @@
     "isBestseller": false,
     "images": [
       "/images/products/sleep-well-food-supplement-capsules.webp",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1-1.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/2-1.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/3-1.png",
-      "https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/Sleep-well-Ingredient.png"
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/1-1.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/2-1.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/3-1.png",
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/Sleep-well-Ingredient.png"
     ],
     "rating": 4.8,
     "reviewCount": 12,

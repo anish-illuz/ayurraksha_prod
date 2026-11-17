@@ -73,7 +73,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     setQuantity((prev) => prev + 1);
   };
 
-  const primaryImage = product.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg';
+  const primaryImage = product.images[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg';
   const secondaryImage = product.images[1] || primaryImage;
 
   // Determine size/pack label accurately based on product title or category

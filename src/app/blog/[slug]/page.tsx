@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'article',
       images: [
         {
-          url: post.image || 'https://www.ayurrakshaonline.com/wp-content/uploads/2025/06/Ayurvedic-tonic-for-liver.jpg',
+          url: post.image || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2025/06/Ayurvedic-tonic-for-liver.jpg',
           width: 800,
           height: 500,
           alt: post.title,
@@ -72,7 +72,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
       name: 'AyurRaksha',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/AYUR-RAKSHA_Favicon-e1708027496398.png',
+        url: 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/AYUR-RAKSHA_Favicon-e1708027496398.png',
       },
     },
     mainEntityOfPage: {

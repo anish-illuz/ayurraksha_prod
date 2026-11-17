@@ -90,7 +90,7 @@ export default function CartPage() {
                         className="relative w-20 h-20 bg-[#FDFBF7] rounded-lg border border-stone-200 p-1 flex-shrink-0 overflow-hidden"
                       >
                         <Image
-                          src={item.product.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'}
+                          src={item.product.images[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'}
                           alt={item.product.name}
                           fill
                           sizes="80px"

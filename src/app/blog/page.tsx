@@ -49,7 +49,7 @@ export default function BlogListPage() {
                 className="relative block w-full aspect-[16/10] overflow-hidden bg-stone-100"
               >
                 <Image
-                  src={post.image || 'https://www.ayurrakshaonline.com/wp-content/uploads/2025/06/Ayurvedic-tonic-for-liver.jpg'}
+                  src={post.image || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2025/06/Ayurvedic-tonic-for-liver.jpg'}
                   alt={post.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"

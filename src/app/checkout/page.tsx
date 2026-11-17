@@ -229,7 +229,7 @@ export default function CheckoutPage() {
       currency: razorpayConfig?.currency || 'INR',
       name: razorpayConfig?.name || 'AyurRaksha',
       description: `Order #${wooOrderNumber} (${itemCount} ${itemCount === 1 ? 'item' : 'items'})`,
-      image: 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/cropped-Ayur-Raksha-Favicon-192x192.png',
+      image: 'https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/cropped-Ayur-Raksha-Favicon-192x192.png',
       handler: async function (response: any) {
         // Server-side signature verification is the ONLY trustworthy proof that
         // this payment actually happened. The SDK response reaches the browser
@@ -770,7 +770,7 @@ export default function CheckoutPage() {
                         <div className="flex items-center gap-3 min-w-0">
                           <div className="relative w-14 h-14 bg-[#FAF8F5] rounded-xl border border-stone-200 p-1 flex-shrink-0">
                             <Image
-                              src={item.product.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png'}
+                              src={item.product.images[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png'}
                               alt={item.product.name}
                               fill
                               sizes="56px"

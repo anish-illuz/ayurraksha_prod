@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: `${SITE_CONFIG.domain}/product/${product.slug}/`,
       images: [
         {
-          url: product.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg',
+          url: product.images[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg',
           width: 800,
           height: 800,
           alt: product.name,

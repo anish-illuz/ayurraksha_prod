@@ -53,7 +53,7 @@ export const ReviewsSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7">
           {VERIFIED_REVIEWS.map((rev, index) => {
             const product = getProductBySlug(rev.productSlug);
-            const thumbImg = product?.images[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png';
+            const thumbImg = product?.images[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png';
             // Mobile shows the first 2 by default; the "Show More" button reveals
             // the rest. Desktop (md+) always shows all 6, so collapsing is
             // mobile-only — hidden on small screens, visible from md up.

@@ -119,7 +119,7 @@ export const CartDrawer: React.FC = () => {
                   className="relative w-18 h-18 aspect-square bg-[#FDFBF7] rounded-lg border border-stone-200 flex-shrink-0 p-1 overflow-hidden self-start"
                 >
                   <Image
-                    src={item.product.images?.[0] || 'https://www.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'}
+                    src={item.product.images?.[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'}
                     alt={item.product.name}
                     fill
                     sizes="72px"

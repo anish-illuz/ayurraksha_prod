@@ -8,8 +8,16 @@ import Script from 'next/script';
  * Initializes global dataLayer, Google Tag Manager (GTM), and GA4 direct measurement.
  * Meta Pixel is managed separately via MetaPixel component for SPA route awareness.
  */
+/**
+ * Default GTM container for the AyurRaksha storefront.
+ * Shipped as a build-time fallback (same pattern as META_PIXEL_ID in
+ * lib/metaPixel.ts) so tracking works even if NEXT_PUBLIC_GTM_ID is not set
+ * in the deployment environment; the env var always wins when present.
+ */
+const GTM_CONTAINER_ID = 'GTM-K9BMR9S';
+
 export const AnalyticsScripts: React.FC = () => {
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || GTM_CONTAINER_ID;
   const ga4Id = process.env.NEXT_PUBLIC_GA4_ID;
 
   return (

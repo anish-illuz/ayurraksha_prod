@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { fetchCmsCommerce } from '@/lib/cms';
 import { getProductById } from '@/lib/products';
 import { comboSubtotalPaise as computeComboSubtotalPaise, comboCouponFor } from '@/lib/comboPricing';
+import { resolveItemVariant } from '@/lib/orderItemResolution';
 
 const WORDPRESS_BASE = process.env.WORDPRESS_API_URL || process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://cms.ayurrakshaonline.com';
 const WORDPRESS_STORE_API = `${WORDPRESS_BASE}/wp-json/wc/store/v1`;
@@ -88,15 +89,22 @@ export async function POST(req: Request) {
       const product = typeof slug === 'string' ? await fetchCmsCommerce(slug) : null;
       if (!product?.inStock || !Number.isInteger(item.quantity) || item.quantity < 1) return null;
 
-      const variant = product.variantDetails.find((entry) => entry.id === item.variantId);
-      if ((product.type === 'variable' || item.variantId !== undefined) && !variant?.inStock) return null;
+      // Resolve the WooCommerce id/price to book this line against. A variable
+      // product MUST be booked against a live variation id — sending the
+      // parent id makes the Store API reject the whole order. When the cart
+      // item carries no (or a stale) variantId we fall back to the default
+      // in-stock live variation so the order still records; an explicitly
+      // requested out-of-stock pack still rejects. Rule lives in
+      // lib/orderItemResolution (shared, unit-tested).
+      const target = resolveItemVariant(product.type, product.variantDetails, item.variantId);
+      if (!target) return null;
 
       return {
-        id: variant?.id ?? product.cmsProductId,
+        id: target.useParent ? product.cmsProductId : target.variantId,
         name: product.name,
-        variantName: variant?.variationLabel,
+        variantName: target.useParent ? undefined : target.label,
         quantity: item.quantity as number,
-        price: variant?.price ?? product.price,
+        price: (target.useParent ? undefined : target.price) ?? product.price,
         isComboItem: item.isComboItem === true,
       };
     }));
@@ -186,10 +194,15 @@ export async function POST(req: Request) {
       }
     }
 
-    // Split name into first and last
+    // Split name into first and last. WooCommerce's Store API validates
+    // addresses and rejects the checkout when last_name is an empty string
+    // (woocommerce_rest_invalid_address: "Last name is required"). Customers who
+    // enter a single-word name leave last_name empty, which silently blocks the
+    // order from being recorded in the backend. Fall back to the first name so
+    // last_name is never empty and the order always lands in WooCommerce.
     const nameParts = (customer.name || '').trim().split(' ');
     const firstName = nameParts[0] || 'Customer';
-    const lastName = nameParts.slice(1).join(' ') || '';
+    const lastName = nameParts.slice(1).join(' ') || firstName;
 
     const stateCode = STATE_CODE_MAP[customer.state] || customer.state || 'TN';
 

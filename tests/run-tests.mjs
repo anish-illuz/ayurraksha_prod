@@ -30,6 +30,7 @@ const testFiles = [
   './combo-pricing.test.mjs',
   './razorpay-verify.test.mjs',
   './meta-hash.test.mjs',
+  './order-item-resolution.test.mjs',
   './analytics-payload.test.mjs',
 ];
 

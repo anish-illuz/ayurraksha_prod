@@ -1,11 +1,11 @@
 {
   "runner": "node-native-type-stripping",
-  "generatedAt": "2026-11-17T03:42:53.870Z",
+  "generatedAt": "2026-11-17T05:41:18.665Z",
   "node": "v24.19.0",
   "nodeModules": "typescript=strip",
   "target": "offline-unit (no browser, no gateway, no live CMS)",
-  "total": 36,
-  "passed": 36,
+  "total": 46,
+  "passed": 46,
   "failed": 0,
   "results": [
     {
@@ -197,6 +197,66 @@
     {
       "suite": "MetaHash",
       "name": "empty phone returns undefined",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "OrderItemResolution",
+      "name": "simple product books the parent id, no variant",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "OrderItemResolution",
+      "name": "simple product ignores a stray variantId (bundles may carry one)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "OrderItemResolution",
+      "name": "variable + in-stock requested pack books exactly that pack",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "OrderItemResolution",
+      "name": "variable + explicitly requested OUT-OF-STOCK pack is rejected (no silent swap)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "OrderItemResolution",
+      "name": "variable + STALE variantId (not in live details) is rejected",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "OrderItemResolution",
+      "name": "variable + no variantId falls back to the first in-stock live variation",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "OrderItemResolution",
+      "name": "fallback skips out-of-stock firsts and picks the first available one",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "OrderItemResolution",
+      "name": "variable with no live variations in stock is rejected",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "OrderItemResolution",
+      "name": "variable with an empty live variation list is rejected",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "OrderItemResolution",
+      "name": "boozliv live snapshot: no variantId books the 30-day default pack",
       "status": "PASS",
       "details": ""
     },

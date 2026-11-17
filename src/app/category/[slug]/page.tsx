@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { ShopContent } from '@/components/shop/ShopContent';
-import { getAllProducts } from '@/lib/products';
+import { fetchLiveCatalogProducts } from '@/lib/cms';
 import { PRODUCT_FORMATS, SITE_CONFIG } from '@/data/siteConfig';
 
 interface PageProps {
@@ -34,7 +34,7 @@ export default async function CategoryPage({ params }: PageProps) {
   const format = PRODUCT_FORMATS.find((f) => f.slug === slug);
   if (!format) notFound();
 
-  const allProducts = getAllProducts();
+  const allProducts = await fetchLiveCatalogProducts();
 
   return (
     <div className="bg-[#FAF7F2] min-h-screen">

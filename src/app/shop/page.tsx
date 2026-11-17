@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { ShopContent } from '@/components/shop/ShopContent';
-import { getAllProducts } from '@/lib/products';
+import { fetchLiveCatalogProducts } from '@/lib/cms';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ShopPage() {
-  const products = getAllProducts();
+export default async function ShopPage() {
+  const products = await fetchLiveCatalogProducts();
 
   return (
     <div className="bg-[#FAF7F2] min-h-screen">

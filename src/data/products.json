@@ -3,11 +3,11 @@
     "id": 7694,
     "name": "BoozLiv",
     "slug": "boozliv",
-    "price": 2600,
+    "price": 2400,
     "regularPrice": 2600,
-    "salePrice": 2600,
-    "discountPercent": 0,
-    "onSale": false,
+    "salePrice": 2400,
+    "discountPercent": 8,
+    "onSale": true,
     "categories": [
       "Tonic"
     ],

@@ -27,7 +27,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
   const [isComboAdded, setIsComboAdded] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   const handleQuickAdd = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -74,7 +73,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   const primaryImage = product.images[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg';
-  const secondaryImage = product.images[1] || primaryImage;
 
   // Determine size/pack label accurately based on product title or category
   const titleSizeMatch = product.name.match(/\b(\d+)\s*(ml|g)\b/i);
@@ -95,8 +93,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div
       className="group relative flex flex-col bg-white rounded-2xl border border-stone-200 overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:border-botanical/50"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Product Image Area - Clean Full Bleed Without Awkward White Box Border */}
       <div className="relative block w-full aspect-square bg-[#FAF8F5] overflow-hidden p-1.5 sm:p-2">
@@ -117,7 +113,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <Link href={`/product/${product.slug}`} prefetch={false} onClick={handleCardSelect} className="relative block w-full h-full">
           <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
             <Image
-              src={isHovered && secondaryImage !== primaryImage ? secondaryImage : primaryImage}
+              src={primaryImage}
               alt={product.name}
               fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

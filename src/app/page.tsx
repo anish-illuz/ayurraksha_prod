@@ -2,6 +2,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { Hero } from '@/components/home/Hero';
 import { TrustBadges } from '@/components/TrustBadges';
+import { fetchLiveCatalogProducts } from '@/lib/cms';
 
 const CategoryGrid = dynamic(
   () => import('@/components/home/CategoryGrid').then((m) => m.CategoryGrid)
@@ -25,7 +26,10 @@ const Newsletter = dynamic(
   () => import('@/components/home/Newsletter').then((m) => m.Newsletter)
 );
 
-export default function HomePage() {
+export default async function HomePage() {
+  const allProducts = await fetchLiveCatalogProducts();
+  const liveBestsellers = allProducts.filter((p) => p.isBestseller).slice(0, 7);
+
   return (
     <>
       {/* Primary heading. The hero is a full-bleed banner carousel with no
@@ -48,7 +52,7 @@ export default function HomePage() {
           <CategoryGrid />
         </div>
         <div className="order-1 sm:order-2">
-          <Bestsellers />
+          <Bestsellers initialProducts={liveBestsellers} />
         </div>
       </div>
 

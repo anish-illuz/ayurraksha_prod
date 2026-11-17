@@ -1,6 +1,6 @@
 {
   "runner": "node-native-type-stripping",
-  "generatedAt": "2026-11-17T06:04:05.297Z",
+  "generatedAt": "2026-11-17T06:57:01.925Z",
   "node": "v24.19.0",
   "nodeModules": "typescript=strip",
   "target": "offline-unit (no browser, no gateway, no live CMS)",

@@ -424,3 +424,57 @@ export async function fetchDynamicProduct(slug: string): Promise<Product | null>
 
   return product;
 }
+
+/**
+ * Fetch all catalog products with live WooCommerce Store API pricing, sale
+ * prices, and stock status overlaid onto the canonical product list.
+ *
+ * Falls back safely to local products.json if the CMS Store API is unavailable.
+ */
+export async function fetchLiveCatalogProducts(): Promise<Product[]> {
+  const fallback = getAllProducts();
+  try {
+    const res = await fetch(`${STORE_API}/products?per_page=100`, {
+      next: { revalidate: 60 },
+      headers: { Accept: 'application/json' },
+    });
+    if (!res.ok) return fallback;
+    const liveStoreProducts = await res.json();
+    if (!Array.isArray(liveStoreProducts) || !liveStoreProducts.length) return fallback;
+
+    const liveMap = new Map<string, any>();
+    for (const lp of liveStoreProducts) {
+      if (lp.slug) liveMap.set(String(lp.slug).toLowerCase(), lp);
+      if (lp.id) liveMap.set(String(lp.id), lp);
+    }
+
+    return fallback.map((base) => {
+      const cmsSlug = (SLUG_ALIASES[base.slug] || base.slug).toLowerCase();
+      const live = liveMap.get(cmsSlug) || (base.cmsProductId ? liveMap.get(String(base.cmsProductId)) : null);
+      if (!live || !live.prices) return base;
+
+      const price = parseStorePrice(live.prices.price) / 100;
+      const regularPrice = (parseStorePrice(live.prices.regular_price) || parseStorePrice(live.prices.price)) / 100;
+      const salePrice = (parseStorePrice(live.prices.sale_price) || parseStorePrice(live.prices.price)) / 100;
+      const onSale = Boolean(live.on_sale) || regularPrice > price;
+      const discountPercent =
+        regularPrice > price
+          ? Math.max(0, Math.round(((regularPrice - price) / regularPrice) * 100))
+          : 0;
+
+      return {
+        ...base,
+        price: price > 0 ? price : base.price,
+        regularPrice: regularPrice > 0 ? regularPrice : base.regularPrice,
+        salePrice: salePrice > 0 ? salePrice : base.salePrice,
+        discountPercent,
+        onSale,
+        inStock: Boolean(live.is_in_stock),
+      };
+    });
+  } catch (err) {
+    console.warn('Could not fetch live products from WooCommerce Store API:', err);
+    return fallback;
+  }
+}
+

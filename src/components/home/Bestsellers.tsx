@@ -5,12 +5,18 @@ import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { ProductCard } from '@/components/ProductCard';
 import { getBestsellers } from '@/lib/products';
+import { Product } from '@/types/product';
 
-export const Bestsellers: React.FC = () => {
-  // Show exactly the client-approved bestseller set (7 products) without the
-  // "fill with highest rated" padding, so the grid never surfaces a product
-  // that isn't explicitly flagged as a bestseller.
-  const bestsellers = getBestsellers(7);
+interface BestsellersProps {
+  initialProducts?: Product[];
+}
+
+export const Bestsellers: React.FC<BestsellersProps> = ({ initialProducts }) => {
+  // Show exactly the client-approved bestseller set (7 products) with live
+  // pricing from WooCommerce when provided.
+  const bestsellers = initialProducts && initialProducts.length > 0
+    ? initialProducts
+    : getBestsellers(7);
   const [filter, setFilter] = useState<'all' | 'tonic' | 'oil' | 'capsules'>('all');
 
   const filtered = filter === 'all'

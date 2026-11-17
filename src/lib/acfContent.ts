@@ -339,32 +339,18 @@ function splitFreeFormSteps(text: string): string[] {
   return out.filter((s) => s.length > 0);
 }
 
-/** Concise card title derived from a single instruction. */
+/**
+ * Extract an explicit title from an instruction string only if one was
+ * written by the author (e.g. "Morning Dose: Take 1 sachet").
+ * Never synthesises artificial titles and never duplicates the instruction.
+ */
 export function extractStepTitle(text: string, stepNum: number): string {
   const t = text.trim().replace(/[.]+$/, '');
-  const lower = t.toLowerCase();
-
-  if (lower.includes('empty stomach')) return 'Empty Stomach';
-  if (lower.includes('before bed') || lower.includes('bedtime')) return 'Before Bed';
-  if (lower.includes('breakfast') && !lower.includes('dinner')) return 'Morning Dosage';
-  if (lower.includes('dinner') || lower.includes('at night')) return 'Evening Dosage';
-  if (lower.includes('dilute')) return 'Dilute with Water';
-  if (lower.includes('swish') || lower.includes('gargle')) return 'Swish & Rinse';
-  if (lower.includes('massage') || (lower.includes('apply') && !lower.includes('two capsules')))
-    return 'Apply & Massage';
-  if (lower.includes('lather')) return 'Lather & Wash';
-  if (lower.includes('rinse') || lower.includes('pat dry')) return 'Rinse & Dry';
-  if (lower.includes('boil') || lower.includes('heat') || lower.includes('simmer'))
-    return 'Heat & Prepare';
-  if (lower.includes('infuse') || lower.includes('tea bag')) return 'Infuse';
-  if (lower.includes('soak')) return 'Warm Soak';
-  if (lower.includes('brush') || lower.includes('tooth')) return 'Brush Gently';
-  if (lower.includes('fill') && lower.includes('basin')) return 'Prepare the Basin';
-  if (lower.includes('shake')) return 'Shake First';
-  if (lower.includes('roll')) return 'Roll On Area';
-
-  const first = t.split(/\s{2}/)[0].replace(/[.,;]+$/, '').trim();
-  return first.slice(0, 44) || `Step ${stepNum}`;
+  const colonIdx = t.indexOf(':');
+  if (colonIdx > 0 && colonIdx < 35) {
+    return t.slice(0, colonIdx).trim();
+  }
+  return '';
 }
 
 /**
@@ -417,15 +403,27 @@ function parseLabeledNumbered(text: string): StructuredStep[] | null {
   }
 
   if (steps.length === 0) return null;
-  return steps.map((s, i) => ({
-    ...s,
-    stepNumber: i + 1,
-    title: extractStepTitle(s.description, i + 1),
-  }));
+  return steps.map((s, i) => {
+    const colonIdx = s.description.indexOf(':');
+    let title = '';
+    let desc = s.description;
+    if (colonIdx > 0 && colonIdx < 35) {
+      title = s.description.slice(0, colonIdx).trim();
+      desc = s.description.slice(colonIdx + 1).trim();
+    }
+    return {
+      ...s,
+      stepNumber: i + 1,
+      title,
+      description: desc || s.description,
+    };
+  });
 }
 
 /**
  * Parse a raw ACF how-to-use string into numbered step-by-step cards.
+ * Preserves the exact backend text without generating artificial titles or
+ * duplicating text between heading and body.
  */
 export function parseHowToUse(raw: string | undefined): StructuredStep[] {
   if (!raw || !raw.trim()) return [];
@@ -438,9 +436,19 @@ export function parseHowToUse(raw: string | undefined): StructuredStep[] {
   const pieces = splitFreeFormSteps(text);
   if (pieces.length === 0) return [];
 
-  return pieces.map((p, i) => ({
-    stepNumber: i + 1,
-    title: extractStepTitle(p, i + 1),
-    description: p.replace(/[.]+$/, ''),
-  }));
+  return pieces.map((p, i) => {
+    const clean = p.trim().replace(/[.]+$/, '');
+    const colonIdx = clean.indexOf(':');
+    let title = '';
+    let desc = clean;
+    if (colonIdx > 0 && colonIdx < 35) {
+      title = clean.slice(0, colonIdx).trim();
+      desc = clean.slice(colonIdx + 1).trim();
+    }
+    return {
+      stepNumber: i + 1,
+      title,
+      description: desc || clean,
+    };
+  });
 }

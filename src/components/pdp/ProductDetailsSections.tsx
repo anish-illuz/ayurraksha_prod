@@ -377,7 +377,7 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
                 {parsedBenefits.map((benefit, idx) => {
                   const colonIdx = benefit.indexOf(':');
                   const hasTitle = colonIdx > 0 && colonIdx < 40;
-                  const title = hasTitle ? benefit.slice(0, colonIdx).trim() : `Key Benefit 0${idx + 1}`;
+                  const title = hasTitle ? benefit.slice(0, colonIdx).trim() : '';
                   const desc = hasTitle ? benefit.slice(colonIdx + 1).trim() : benefit;
 
                   return (
@@ -389,9 +389,11 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
                         <div className="w-9 h-9 rounded-lg bg-white border border-stone-200/80 flex items-center justify-center mb-2.5 shadow-2xs">
                           {featureIcons[idx % featureIcons.length]}
                         </div>
-                        <h4 className="font-serif text-sm sm:text-base font-bold text-forest mb-1">
-                          {title}
-                        </h4>
+                        {title && (
+                          <h4 className="font-serif text-sm sm:text-base font-bold text-forest mb-1">
+                            {title}
+                          </h4>
+                        )}
                         <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans">
                           {desc}
                         </p>
@@ -520,14 +522,16 @@ export const ProductDetailsSections: React.FC<ProductDetailsSectionsProps> = ({ 
                               {getStepActionIcon(`${step.title} ${step.description}`, idx)}
                             </div>
                           </div>
-                          <span className="text-[10px] font-bold text-botanical uppercase tracking-wider block mb-0.5">
+                          <span className="text-[10px] font-bold text-botanical uppercase tracking-wider block mb-1">
                             STEP {step.stepNumber < 10 ? `0${step.stepNumber}` : step.stepNumber}
                           </span>
                           {step.sectionLabel && <p className="text-xs font-bold text-forest mb-1">{step.sectionLabel}</p>}
-                          <h4 className="font-serif text-sm font-bold text-forest mb-1">
-                            {step.title}
-                          </h4>
-                          <p className="text-xs text-charcoal/80 leading-relaxed font-sans">
+                          {step.title && step.title.toLowerCase() !== step.description.toLowerCase() && (
+                            <h4 className="font-serif text-sm font-bold text-forest mb-1">
+                              {step.title}
+                            </h4>
+                          )}
+                          <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans">
                             {step.description}
                           </p>
                         </div>

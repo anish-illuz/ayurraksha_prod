@@ -122,6 +122,16 @@ const LIBRARY: IngredientImageEntry[] = [
   { src: '/images/ingredients/morinda-pubescens-manjanathi.jpg', keys: ['manjanathi', 'morinda pubescens', 'morinda', 'manjanathi kezhangu', 'indian mulberry'] },
   { src: '/images/ingredients/saussurea-lappa-kuth.jpg', keys: ['kuth', 'costus', 'saussurea lappa', 'saussurea costus', 'saussurea'] },
   { src: '/images/ingredients/acalypha-indica-kuppaimeni.jpg', keys: ['kuppaimeni', 'acalypha indica', 'acalypha', 'indian nettle'] },
+  { src: '/images/ingredients/psidium-guajava-guava.jpg', keys: ['guava', 'psidium guajava', 'guajava', 'guava extract'] },
+  { src: '/images/ingredients/adhatoda-vasica-adathodai.jpg', keys: ['adathodai', 'adhatoda', 'adhatoda vasica', 'justicia adhatoda', 'vasaindu'] },
+  { src: '/images/ingredients/shorea-robusta-kungilium.jpg', keys: ['kungilium', 'shorea robusta', 'kungilam', 'red bean'] },
+  { src: '/images/ingredients/vitex-negundo-nochi.jpg', keys: ['nochi', 'vitex negundo', 'chasteberry', 'five leaved chaste tree', 'five leaved', 'nischaya'] },
+  { src: '/images/ingredients/trachyspermum-ammi-omauppu.jpg', keys: ['trachyspermum ammi', 'trachyspermum'] },
+  { src: '/images/ingredients/pinus-roxburghii-thenmelugu.jpg', keys: ['thenmelugu', 'pinus roxburghii', 'pine resin', 'rosin', 'long pine'] },
+  { src: '/images/ingredients/linum-usitatissimum-flax.jpg', keys: ['flax', 'linseed', 'linum usitatissimum', 'linum usitatissimum extract', 'flax seed'] },
+  { src: '/images/ingredients/saraca-asoca-ashoka.jpg', keys: ['ashoka', 'saraca', 'asoka', 'ashoka leaf'] },
+  { src: '/images/ingredients/honey-bee-product.jpg', keys: ['honey', 'madhu', 'bee honey'] },
+  { src: '/images/ingredients/saponified-vegetable-oils.jpg', keys: ['saponified vegetable oils', 'saponified', 'vegetable oils', 'vegetable oil'] },
 ];
 
 /** Lower-case, symbol-stripped, whitespace-normalized form of a string. */

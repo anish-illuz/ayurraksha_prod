@@ -71,7 +71,7 @@ export const CategoryGrid: React.FC = () => {
                 prefetch={false}
                 className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-xs transition-all duration-300 hover:shadow-card-hover hover:border-primary/40 hover:-translate-y-1"
               >
-                {/* 1. Category scene image — square on mobile, contain so the full product is visible */}
+                {/* 1. Category scene image — full bleed edge-to-edge cover */}
                 <div className="relative w-full aspect-square sm:aspect-[4/3] bg-[#F7F9F5] overflow-hidden">
                   <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
                     <Image
@@ -79,8 +79,8 @@ export const CategoryGrid: React.FC = () => {
                       alt={title}
                       fill
                       loading="lazy"
-                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-contain object-center p-2 sm:p-4"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover object-center"
                     />
                   </div>
                 </div>

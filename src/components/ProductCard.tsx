@@ -174,29 +174,28 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         {/* Quantity Stepper + Primary Add to Cart Action Row.
-            Stacks on mobile and tablet (including 1024x642 where the 3-col grid with
-            sidebar narrows cards) so the Add to Cart button keeps full card width
-            and stays strictly on a single line without wrapping or clipping;
-            side-by-side on wide screens from xl: up. */}
-        <div className="pt-2 flex flex-col xl:flex-row items-stretch gap-2">
-          {/* Quantity + / - Stepper */}
-          <div className="flex items-center justify-between xl:justify-start border border-stone-300 rounded-lg sm:rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-9 sm:h-10 w-full xl:w-auto">
+            Compact side-by-side layout across all screen sizes (mobile, tablet, desktop)
+            with matching heights (h-9 on mobile, h-10 on sm+) and a streamlined stepper
+            width so the Add to Cart button has ample room on single line without wrapping. */}
+        <div className="pt-2 flex flex-row items-center gap-1.5 sm:gap-2">
+          {/* Compact Quantity + / - Stepper */}
+          <div className="flex items-center justify-between border border-stone-300 rounded-lg sm:rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-9 sm:h-10 w-[74px] sm:w-[84px]">
             <button
               onClick={handleDecrement}
               aria-label="Decrease quantity"
-              className="w-9 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all disabled:opacity-40"
+              className="w-6 sm:w-7 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all disabled:opacity-40"
               disabled={quantity <= 1 || !product.inStock}
             >
               <Minus size={11} />
             </button>
-            <span className="w-8 text-center text-xs sm:text-sm font-bold text-forest select-none">
+            <span className="flex-1 text-center text-xs sm:text-sm font-bold text-forest select-none">
               {quantity}
             </span>
             <button
               disabled={!product.inStock}
               onClick={handleIncrement}
               aria-label="Increase quantity"
-              className="w-9 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all"
+              className="w-6 sm:w-7 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all"
             >
               <Plus size={11} />
             </button>
@@ -207,7 +206,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             onClick={handleQuickAdd}
             disabled={!product.inStock}
             aria-label={`Add ${product.name} to cart`}
-            className={`flex-1 min-w-0 w-full h-10 inline-flex items-center justify-center gap-1.5 px-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold uppercase tracking-tight whitespace-nowrap transition-all duration-200 shadow-xs active:scale-[0.98] ${
+            className={`flex-1 min-w-0 h-9 sm:h-10 inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 rounded-lg sm:rounded-xl text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-tight whitespace-nowrap transition-all duration-200 shadow-xs active:scale-[0.98] ${
               !product.inStock
                 ? 'bg-stone-200 text-stone-500 cursor-not-allowed'
                 : isAdded
@@ -219,12 +218,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               <span className="whitespace-nowrap">Out of Stock</span>
             ) : isAdded ? (
               <>
-                <Check size={14} className="flex-shrink-0" />
+                <Check size={13} className="flex-shrink-0" />
                 <span className="whitespace-nowrap">Added!</span>
               </>
             ) : (
               <>
-                <ShoppingBag size={14} className="flex-shrink-0" />
+                <ShoppingBag size={13} className="flex-shrink-0" />
                 <span className="whitespace-nowrap">Add to Cart</span>
               </>
             )}

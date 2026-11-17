@@ -52,6 +52,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'VPrime Innovations' }],
   creator: 'VPrime Innovations',
   publisher: 'AyurRaksha Online',
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+  },
   robots: {
     index: true,
     follow: true,

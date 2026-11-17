@@ -33,5 +33,20 @@ export async function resolve(specifier, context, nextResolve) {
       }
     }
   }
+  // Extensionless relative imports inside src/*.ts (e.g. `./ingredientImages`):
+  // Node's native type stripping requires explicit extensions, so try the
+  // TS/JS candidates before falling back to the default resolver.
+  if (
+    (specifier.startsWith('./') || specifier.startsWith('../')) &&
+    !path.extname(specifier) &&
+    context.parentURL
+  ) {
+    const base = path.resolve(path.dirname(fileURLToPath(context.parentURL)), specifier);
+    for (const c of [`${base}.ts`, `${base}.tsx`, `${base}.js`, path.join(base, 'index.ts')]) {
+      if (existsSync(c)) {
+        return nextResolve(pathToFileURL(c).href, context);
+      }
+    }
+  }
   return nextResolve(specifier, context);
 }

@@ -184,10 +184,10 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 6. Herbal Hair Shampoo (CMS ID 96) — Corrected quantity: 100 ml (matching Shop)
+  // 6. Herbal Hair Shampoo (CMS ID 28334) — Corrected quantity: 100 ml (matching Shop)
   {
     id: 12007,
-    cmsId: 96,
+    cmsId: 28334,
     name: 'AyurRaksha Herbal Hair Shampoo',
     slug: 'ayur-raksha-herbal-shampoo',
     category: 'Bath & scalp',
@@ -382,10 +382,10 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
     isFlagshipSkinCare: true,
   },
 
-  // 12. AyurRaksha Immune O3 Capsules (CMS ID 124) — Main Store price: ₹1,298
+  // 12. AyurRaksha Immune O3 Capsules (CMS ID 28377) — Main Store price: ₹3,500
   {
     id: 124,
-    cmsId: 124,
+    cmsId: 28377,
     name: 'AyurRaksha Immune O3 Capsules',
     slug: 'ayurraksha-immuno3-immunity-booster-capsules',
     category: 'O3 specialty',

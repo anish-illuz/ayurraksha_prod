@@ -9,7 +9,7 @@ const allProducts: Product[] = productsData as Product[];
 // (getProductBySlug) and CMS content fetching (lib/cms.ts) share one map.
 // Keys are bundle slugs, values are the CMS post_name.
 export const SLUG_ALIASES: Record<string, string> = {
-  'etionment-pain-relief-cream': 'etioment-balm',
+  'etionment-pain-relief-cream': 'etioment-balm-2',
   'skin-well-food-supplement-capsules': 'skin-well-capsules',
   'flow-well-food-supplement-capsules': 'flow-well-capsules',
   'esnovate-immunity-boosting-capsules': 'esnovate-capsules',
@@ -32,11 +32,19 @@ export const SLUG_ALIASES: Record<string, string> = {
   'ayur-raksha-skin-well-food-moisturising-gel': 'ayurraksha-skin-well-food-moisturising-gel',
   'ayur-raksha-dant-swasthya': 'ayur-raksha-dant-swasthya',
   'ayur-raksha-foot-bath-powder': 'ayurraksha-foot-bath-powder-300g',
-  'hair-well-food-supplement-capsules': 'ayurraksha-hair-well-food-supplement-capsules',
-  'sp-soryn-cream': 'ayurraksha-sp-soryn-cream',
-  'b-derma-capsules': 'ayurraksha-b-derma-capsules',
-  'bpain-out-capsules': 'ayurraksha-bpain-out-capsules',
-  'b-gasonil': 'b-gasonil-capsules',
+  // The live WooCommerce post names are the un-prefixed slugs below (ids 95,
+  // 97, 99, 100, 105). The old ayurraksha-*/b-gasonil-capsules targets no
+  // longer exist in the catalog, which made the /shop/ live-price overlay
+  // miss and fall back to stale bundled prices for these products.
+  'hair-well-food-supplement-capsules': 'hair-well-food-supplement-capsules',
+  'sp-soryn-cream': 'sp-soryn-cream',
+  'b-derma-capsules': 'b-derma-capsules',
+  'bpain-out-capsules': 'bpain-out-capsules',
+  'b-gasonil': 'b-gasonil',
+  // The dhayani bundle slug keeps a "-100ml" size suffix the live Woo post
+  // name dropped (id 116); without this alias the /shop/ overlay and the
+  // bundle-slug PDP fall back to the stale bundled price.
+  'dhayani-herbal-hair-oil-100ml': 'dhayani-herbal-hair-oil',
 };
 
 // Catalog index by the bundled slug.

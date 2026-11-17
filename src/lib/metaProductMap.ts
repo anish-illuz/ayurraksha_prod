@@ -32,8 +32,8 @@ export const CMS_PRODUCT_ID_MAP: Record<string, number> = {
   'ayurraksha-imu-360': 94,
   'bpain-out-capsules': 95,
   'ayurraksha-bpain-out-capsules': 95,
-  'ayur-raksha-herbal-shampoo': 96,
-  'ayurraksha-herbal-shampoo': 96,
+  'ayur-raksha-herbal-shampoo': 28334,
+  'ayurraksha-herbal-shampoo': 28334,
   'hair-well-food-supplement-capsules': 97,
   'ayurraksha-hair-well-food-supplement-capsules': 97,
   'ayur-raksha-skin-conditioning-oil': 98,
@@ -46,9 +46,9 @@ export const CMS_PRODUCT_ID_MAP: Record<string, number> = {
   'ayurraksha-skin-well-food-moisturising-gel': 101,
   'ayur-raksha-beta-powder': 102,
   'ayurraksha-beta-powder': 102,
-  'etionment-pain-relief-cream': 103,
-  'etioment-balm': 103,
-  'etioment-balm-2': 103,
+  'etionment-pain-relief-cream': 28366,
+  'etioment-balm': 28366,
+  'etioment-balm-2': 28366,
   'dia-well-food-supplement-capsules': 104,
   'b-gasonil': 105,
   'b-gasonil-capsules': 105,
@@ -80,7 +80,7 @@ export const CMS_PRODUCT_ID_MAP: Record<string, number> = {
   'ayur-raksha-foot-bath-powder': 121,
   'ayurraksha-kalonji-soap': 122,
   'ayurraksha-vital-o3-anti-vitiligo-cream': 123,
-  'ayurraksha-immuno3-immunity-booster-capsules': 124,
+  'ayurraksha-immuno3-immunity-booster-capsules': 28377,
 };
 
 const DEFAULT_CMS_PRODUCT_ID = 114; // BoozLiv flagship
@@ -110,7 +110,11 @@ export function getCmsProductId(product: { id?: number; slug?: string } | null |
   }
 
   const numericId = Number(product.id);
-  if (numericId >= 85 && numericId <= 124) {
+  // Live WooCommerce id passthrough: the original 85-124 range plus any id
+  // currently owned by this catalog (including re-created high-range products
+  // 28334 / 28366 / 28377, which replaced some legacy posts).
+  const knownLiveIds = new Set(Object.values(CMS_PRODUCT_ID_MAP));
+  if ((numericId >= 85 && numericId <= 124) || knownLiveIds.has(numericId)) {
     return String(numericId);
   }
 

@@ -4,6 +4,11 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Product, CartItem } from '@/types/product';
 import { getProductById } from '@/lib/products';
 import { trackAddToCart as dispatchAddToCart, trackRemoveFromCart as dispatchRemoveFromCart } from '@/lib/storefrontAnalytics';
+import {
+  comboSubtotalPaise as computeComboSubtotalPaise,
+  comboDiscountPercent as computeComboDiscountPercent,
+  comboDiscountRupees as computeComboDiscountRupees,
+} from '@/lib/comboPricing';
 
 interface CartContextType {
   items: CartItem[];
@@ -123,16 +128,21 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // 799800p = 119970p), so the combo subtotal is tracked in paise and the
   // discount exposed paise-exact — this keeps the front-end display, the
   // Razorpay charge and the WooCommerce order total reconciled.
+  // The tier rule lives in lib/comboPricing (shared with the order route):
   // - Combo value above ₹3,000 -> 10% off (applied as coupon COMBO3000)
   // - Combo value above ₹5,000 -> 15% off (applied as coupon COMBO5000)
   // Applies dynamically, single tier only, never stacked.
-  const comboSubtotal = items
-    .filter((i) => i.isComboItem)
-    .reduce((sum, item) => sum + Math.round((item.variantPrice ?? item.product.price) * 100) * item.quantity, 0);
+  const comboSubtotal = computeComboSubtotalPaise(
+    items.map((i) => ({
+      price: i.variantPrice ?? i.product.price,
+      quantity: i.quantity,
+      isComboItem: i.isComboItem,
+    })),
+  );
 
   // comboSubtotal is in paise.
-  const comboDiscountPercent = comboSubtotal >= 500000 ? 15 : comboSubtotal >= 300000 ? 10 : 0;
-  const comboDiscount = comboDiscountPercent > 0 ? Math.round((comboSubtotal * comboDiscountPercent) / 100) / 100 : 0;
+  const comboDiscountPercent = computeComboDiscountPercent(comboSubtotal);
+  const comboDiscount = computeComboDiscountRupees(comboSubtotal);
   const totalPayable = Math.max(0, subtotal - comboDiscount);
 
   const openCart = () => setIsCartOpen(true);

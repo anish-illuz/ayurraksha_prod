@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { fetchCmsCommerce } from '@/lib/cms';
 import { getProductById } from '@/lib/products';
+import { comboSubtotalPaise as computeComboSubtotalPaise, comboCouponFor } from '@/lib/comboPricing';
 
 const WORDPRESS_BASE = process.env.WORDPRESS_API_URL || process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://cms.ayurrakshaonline.com';
 const WORDPRESS_STORE_API = `${WORDPRESS_BASE}/wp-json/wc/store/v1`;
@@ -38,10 +39,17 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: 'Missing customer shipping details' }, { status: 400 });
     }
 
-    // Extract client network and browser context for authentic order attribution
+    // Extract the browser user-agent for attribution context.
+    //
+    // SECURITY (P1): We deliberately do NOT read or forward a client-supplied
+    // X-Forwarded-For / X-Real-IP to the WooCommerce Store API. That value is
+    // controllable by the requester (a browser can send its own X-Forwarded-For),
+    // so forwarding it would let a customer poison the IP WooCommerce records
+    // for fraud detection and order attribution. The authoritative client IP is
+    // the one the trusted edge/VPS proxy attaches to the real inbound
+    // connection, which the Next.js server (and therefore the Store API calls
+    // it makes) already presents directly. We rely on that instead.
     const headerUserAgent = req.headers.get('user-agent') || 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)';
-    const forwardedFor = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || '';
-    const clientIp = forwardedFor ? forwardedFor.split(',')[0].trim() : '';
     const headerReferer = req.headers.get('referer') || '';
 
     // Prepare complete WooCommerce 8.5+ Order Attribution payload
@@ -100,14 +108,11 @@ export async function POST(req: Request) {
     // Combo Builder Volume Discount — a real WooCommerce percent coupon applied
     // to the cart below, so the backend order total matches the front-end charge.
     // Gated on combo-builder items only; the tier is chosen from the combo-item
-    // subtotal (the same rule as the front-end).
-    const comboItems = orderItems.filter((item) => item.isComboItem);
-    const comboSubtotalPaise = comboItems.reduce(
-      (sum, item) => sum + Math.round(item.price * 100) * item.quantity,
-      0,
-    );
-    const comboCoupon = comboSubtotalPaise >= 500000 ? 'COMBO5000' : comboSubtotalPaise >= 300000 ? 'COMBO3000' : null;
-    const comboCouponPercent = comboCoupon === 'COMBO5000' ? 15 : 10;
+    // subtotal (the same rule as the front-end, shared via lib/comboPricing).
+    const comboSubtotalPaise = computeComboSubtotalPaise(orderItems);
+    const comboTier = comboCouponFor(comboSubtotalPaise);
+    const comboCoupon = comboTier?.coupon ?? null;
+    const comboCouponPercent = comboTier?.percent ?? 0;
     let enhancedNote = customerNote || '';
     if (comboCoupon) {
       enhancedNote += ` | Combo Volume Discount: ${comboCoupon} (${comboCouponPercent}% OFF applied)`;
@@ -117,15 +122,14 @@ export async function POST(req: Request) {
     // Step 1: Initialize Fresh WooCommerce Cart Session
     // Bypass Hostinger LiteSpeed cache with no-cache headers and timestamp
     const clientUserAgent = clientAttribution.user_agent || headerUserAgent;
-    const clientIpHeaders: Record<string, string> = clientIp
-      ? { 'X-Forwarded-For': clientIp, 'X-Real-IP': clientIp }
-      : {};
+    // No client-supplied IP headers are forwarded to WooCommerce (see security
+    // note above). The Store API calls inherit the real inbound connection IP
+    // from the server's trusted proxy layer.
 
     const cartInitRes = await fetch(`${WORDPRESS_STORE_API}/cart?_nocache=${timestamp}`, {
       method: 'GET',
       headers: {
         'User-Agent': clientUserAgent,
-        ...clientIpHeaders,
         'Accept': 'application/json',
         'Cache-Control': 'no-cache, no-store, must-revalidate',
         'Pragma': 'no-cache',
@@ -142,7 +146,6 @@ export async function POST(req: Request) {
         method: 'DELETE',
         headers: {
           'User-Agent': clientUserAgent,
-          ...clientIpHeaders,
           'Nonce': nonce,
           'Cart-Token': cartToken,
         },
@@ -164,7 +167,6 @@ export async function POST(req: Request) {
         method: 'POST',
         headers: {
           'User-Agent': clientUserAgent,
-          ...clientIpHeaders,
           'Content-Type': 'application/json',
           'Nonce': nonce,
           'Cart-Token': cartToken,
@@ -197,7 +199,6 @@ export async function POST(req: Request) {
         method: 'POST',
         headers: {
           'User-Agent': clientUserAgent,
-          ...clientIpHeaders,
           'Content-Type': 'application/json',
           'Nonce': nonce,
           'Cart-Token': cartToken,
@@ -243,7 +244,6 @@ export async function POST(req: Request) {
         method: 'POST',
         headers: {
           'User-Agent': clientUserAgent,
-          ...clientIpHeaders,
           'Content-Type': 'application/json',
           'Nonce': nonce,
           'Cart-Token': cartToken,
@@ -265,7 +265,6 @@ export async function POST(req: Request) {
         method: 'GET',
         headers: {
           'User-Agent': clientUserAgent,
-          ...clientIpHeaders,
           'Accept': 'application/json',
           'Nonce': nonce,
           'Cart-Token': cartToken,
@@ -342,7 +341,6 @@ export async function POST(req: Request) {
       method: 'POST',
       headers: {
         'User-Agent': clientUserAgent,
-        ...clientIpHeaders,
         'Content-Type': 'application/json',
         'Nonce': nonce,
         'Cart-Token': cartToken,

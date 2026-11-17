@@ -1,0 +1,228 @@
+{
+  "runner": "node-native-type-stripping",
+  "generatedAt": "2026-11-17T03:11:13.432Z",
+  "node": "v24.19.0",
+  "nodeModules": "typescript=strip",
+  "target": "offline-unit (no browser, no gateway, no live CMS)",
+  "total": 36,
+  "passed": 36,
+  "failed": 0,
+  "results": [
+    {
+      "suite": "ComboPricing",
+      "name": "comboSubtotalPaise sums only combo items in paise",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "comboSubtotalPaise floors to whole paise",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "comboSubtotalPaise is 0 with no combo items",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "below ₹3,000 -> no coupon",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "₹3,000 inclusive -> COMBO3000 (10%)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "₹5,000 inclusive -> COMBO5000 (15%)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "just below ₹5,000 -> COMBO3000, not COMBO5000",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "exactly 0 -> no coupon",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "₹5,000 x 15% = ₹750 discount",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "₹3,000 x 10% = ₹300 discount",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "below threshold -> 0 discount",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "paise-exact rounding (e.g. 799800p @15% = 119970p = ₹1199.70)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "discount percent reflects the tier, 0 otherwise",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ComboPricing",
+      "name": "tiers never stack (single top tier)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "RazorpayVerify",
+      "name": "a genuine signature verifies",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "RazorpayVerify",
+      "name": "signature is case-insensitive (Razorpay returns lowercase hex)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "RazorpayVerify",
+      "name": "a forged signature (attacker-computed) is rejected",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "RazorpayVerify",
+      "name": "a signature for a different order id is rejected",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "RazorpayVerify",
+      "name": "a signature for a different payment id is rejected",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "RazorpayVerify",
+      "name": "an empty signature is rejected as missing",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "RazorpayVerify",
+      "name": "missing payment id -> missing_fields",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "RazorpayVerify",
+      "name": "missing order id -> missing_fields (Standard Checkout needs it)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "RazorpayVerify",
+      "name": "unconfigured secret NEVER claims verified",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "RazorpayVerify",
+      "name": "whitespace-only secret is treated as unconfigured",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "MetaHash",
+      "name": "email is trimmed + lowercased + SHA-256",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "MetaHash",
+      "name": "name/city/state/country are lowercased before hashing",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "MetaHash",
+      "name": "empty/whitespace value returns undefined (field omitted)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "MetaHash",
+      "name": "output is lowercase hex, 64 chars",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "MetaHash",
+      "name": "phone is stripped to digits before hashing",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "MetaHash",
+      "name": "10-digit Indian mobile gets 91 country-code prefix",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "MetaHash",
+      "name": "already country-coded number is NOT double-prefixed",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "MetaHash",
+      "name": "empty phone returns undefined",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "AnalyticsPayload",
+      "name": "GA4 purchase payload has transaction_id, value, currency, items",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "AnalyticsPayload",
+      "name": "no raw PII in the GA4 purchase payload",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "AnalyticsPayload",
+      "name": "no raw PII in browser-bound Meta Pixel event data",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "AnalyticsPayload",
+      "name": "Meta Purchase event deduplicates on a second call for the same order",
+      "status": "PASS",
+      "details": ""
+    }
+  ]
+}

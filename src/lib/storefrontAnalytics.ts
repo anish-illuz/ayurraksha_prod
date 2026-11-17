@@ -1,6 +1,7 @@
-import { Product, CartItem } from '@/types/product';
+import type { Product, CartItem } from '@/types/product';
 import { getCmsProductId } from '@/lib/metaProductMap';
-import { trackMetaEvent, MetaUserData } from '@/lib/metaPixel';
+import { trackMetaEvent } from '@/lib/metaPixel';
+import type { MetaUserData } from '@/lib/metaPixel';
 
 /**
  * AyurRaksha Storefront E-Commerce Analytics Dispatcher
@@ -42,6 +43,188 @@ export interface PurchasePayload {
 function getSafeWindow(): any {
   if (typeof window === 'undefined') return null;
   return window as any;
+}
+
+/**
+ * GA4 / GTM: view_item_list
+ * Triggered when a product list is displayed (shop, category, bestsellers,
+ * search results). Fires once per list render, not per item.
+ */
+export function trackViewItemList(
+  products: Product[],
+  itemList: string,
+  value = 0
+): void {
+  const win = getSafeWindow();
+  if (!win || !products.length) return;
+
+  const items = products.map((p, index) => {
+    const cmsId = getCmsProductId(p);
+    return {
+      item_id: cmsId,
+      item_name: p.name,
+      item_category: p.healthConcerns?.[0] || p.categories?.[0] || 'Ayurvedic Formulations',
+      price: p.price,
+      item_list_name: itemList,
+      index: index + 1,
+    };
+  });
+
+  try {
+    const payload = {
+      event: 'view_item_list',
+      item_list_name: itemList,
+      item_list_id: itemList,
+      value: value > 0 ? value : undefined,
+      items: items,
+    };
+    if (Array.isArray(win.dataLayer)) win.dataLayer.push(payload);
+    if (typeof win.gtag === 'function') win.gtag('event', 'view_item_list', payload);
+  } catch (err) {
+    console.warn('[Analytics Error]', err);
+  }
+}
+
+/**
+ * GA4 / GTM: select_item
+ * Triggered when a customer selects a product from a list (clicks a product
+ * card, search result, or recommended product).
+ */
+export function trackSelectItem(product: Product, itemList: string, index?: number): void {
+  const win = getSafeWindow();
+  if (!win) return;
+
+  const cmsId = getCmsProductId(product);
+  const payload = {
+    event: 'select_item',
+    item_id: cmsId,
+    item_name: product.name,
+    item_category: product.healthConcerns?.[0] || product.categories?.[0] || 'Ayurvedic Formulations',
+    price: product.price,
+    item_list_name: itemList,
+    index: index ?? 1,
+  };
+
+  try {
+    if (Array.isArray(win.dataLayer)) win.dataLayer.push(payload);
+    if (typeof win.gtag === 'function') win.gtag('event', 'select_item', payload);
+  } catch (err) {
+    console.warn('[Analytics Error]', err);
+  }
+}
+
+/**
+ * GA4 / GTM: view_cart
+ * Triggered when the customer views the cart (dedicated page or slide-over).
+ * Fires the full cart contents, matching GA4 ecommerce expectations.
+ */
+export function trackViewCart(items: CartItem[], totalAmount: number): void {
+  const win = getSafeWindow();
+  if (!win || !items.length) return;
+
+  const formattedItems = items.map((item) => {
+    const cmsId = getCmsProductId(item.product);
+    return {
+      item_id: cmsId,
+      item_name: item.product.name,
+      item_variant: item.selectedVariant || 'Standard',
+      price: item.variantPrice ?? item.product.price,
+      quantity: item.quantity,
+    };
+  });
+
+  try {
+    const payload = {
+      event: 'view_cart',
+      ecommerce: {
+        currency: 'INR',
+        value: totalAmount,
+        items: formattedItems,
+      },
+    };
+    if (Array.isArray(win.dataLayer)) win.dataLayer.push(payload);
+    if (typeof win.gtag === 'function') win.gtag('event', 'view_cart', payload);
+  } catch (err) {
+    console.warn('[Analytics Error]', err);
+  }
+}
+
+/**
+ * GA4 / GTM: add_shipping_info
+ * Triggered on checkout when the customer submits the shipping form step.
+ */
+export function trackAddShippingInfo(
+  items: CartItem[],
+  totalAmount: number
+): void {
+  const win = getSafeWindow();
+  if (!win || !items.length) return;
+
+  const formattedItems = items.map((item) => {
+    const cmsId = getCmsProductId(item.product);
+    return {
+      item_id: cmsId,
+      item_name: item.product.name,
+      item_variant: item.selectedVariant || 'Standard',
+      price: item.variantPrice ?? item.product.price,
+      quantity: item.quantity,
+    };
+  });
+
+  try {
+    const payload = {
+      event: 'add_shipping_info',
+      ecommerce: {
+        currency: 'INR',
+        value: totalAmount,
+        items: formattedItems,
+      },
+    };
+    if (Array.isArray(win.dataLayer)) win.dataLayer.push(payload);
+    if (typeof win.gtag === 'function') win.gtag('event', 'add_shipping_info', payload);
+  } catch (err) {
+    console.warn('[Analytics Error]', err);
+  }
+}
+
+/**
+ * GA4 / GTM: add_payment_info
+ * Triggered on checkout when the customer reaches / submits the payment step.
+ */
+export function trackAddPaymentInfo(
+  items: CartItem[],
+  totalAmount: number,
+  paymentMethod?: string
+): void {
+  const win = getSafeWindow();
+  if (!win || !items.length) return;
+
+  const formattedItems = items.map((item) => {
+    const cmsId = getCmsProductId(item.product);
+    return {
+      item_id: cmsId,
+      item_name: item.product.name,
+      item_variant: item.selectedVariant || 'Standard',
+      price: item.variantPrice ?? item.product.price,
+      quantity: item.quantity,
+    };
+  });
+
+  try {
+    const payload = {
+      event: 'add_payment_info',
+      payment_type: paymentMethod || undefined,
+      ecommerce: {
+        currency: 'INR',
+        value: totalAmount,
+        items: formattedItems,
+      },
+    };
+    if (Array.isArray(win.dataLayer)) win.dataLayer.push(payload);
+    if (typeof win.gtag === 'function') win.gtag('event', 'add_payment_info', payload);
+  } catch (err) {
+    console.warn('[Analytics Error]', err);
+  }
 }
 
 /**

@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
 import { getOrderAttribution } from '@/lib/orderAttribution';
-import { trackBeginCheckout, trackPurchase } from '@/lib/storefrontAnalytics';
+import { trackBeginCheckout, trackPurchase, trackAddShippingInfo, trackAddPaymentInfo } from '@/lib/storefrontAnalytics';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 declare global {
@@ -41,6 +41,15 @@ interface OrderSuccess {
   pincode: string;
   items: any[];
   totalAmount: number;
+  /**
+   * Razorpay verification state. For online orders:
+   *  - 'verified'  = the Razorpay signature was confirmed server-side.
+   *  - 'pending'   = the order was recorded in WooCommerce but server-side
+   *                  verification is not yet configured (RAZORPAY_SECRET_KEY
+   *                  missing), so the payment cannot be proven.
+   * COD orders have no online payment to verify (field is undefined).
+   */
+  verification?: 'verified' | 'pending';
 }
 
 export default function CheckoutPage() {
@@ -133,6 +142,10 @@ export default function CheckoutPage() {
     setIsProcessing(true);
     setErrorMessage(null);
 
+    // GA4 add_shipping_info: the shipping step is complete the moment the
+    // customer submits the delivery form (billing + shipping are one form here).
+    trackAddShippingInfo(items, totalPayable);
+
     // Record order in WooCommerce backend and get the real WooCommerce Order Number
     let wooOrderNumber = '';
     let wooOrderId = '';
@@ -217,8 +230,30 @@ export default function CheckoutPage() {
       name: razorpayConfig?.name || 'AyurRaksha',
       description: `Order #${wooOrderNumber} (${itemCount} ${itemCount === 1 ? 'item' : 'items'})`,
       image: 'https://www.ayurrakshaonline.com/wp-content/uploads/2023/02/cropped-Ayur-Raksha-Favicon-192x192.png',
-      handler: function (response: any) {
-        setIsProcessing(false);
+      handler: async function (response: any) {
+        // Server-side signature verification is the ONLY trustworthy proof that
+        // this payment actually happened. The SDK response reaches the browser
+        // and could be forged, so we never mark the order paid (or fire the
+        // purchase event) on it alone. We re-verify the HMAC on the server.
+        let verification: 'verified' | 'pending' = 'pending';
+        try {
+          const verifyRes = await fetch('/api/razorpay/verify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+            }),
+          });
+          const verifyData = await verifyRes.json();
+          verification = verifyData.verified === true ? 'verified' : 'pending';
+        } catch {
+          // If the verify route is unreachable, never claim the payment is confirmed.
+          verification = 'pending';
+          console.warn('[Checkout] Could not reach the payment-verify route; payment left unverified.');
+        }
+
         const orderSummary: OrderSuccess = {
           orderId: wooOrderNumber,
           paymentId: response.razorpay_payment_id,
@@ -232,12 +267,27 @@ export default function CheckoutPage() {
           pincode: formData.pincode,
           items: [...items],
           totalAmount: totalPayable,
+          verification,
         };
+
+        setIsProcessing(false);
         setCompletedOrder(orderSummary);
-        trackPurchase(orderSummary);
         if (typeof window !== 'undefined') {
           localStorage.setItem('ayurraksha_has_ordered', 'true');
         }
+
+        // Fire the purchase event only once the payment is actually confirmed.
+        // An unverified ("pending") payment must not inflate purchase analytics
+        // or send a Meta CAPI purchase for an amount we cannot prove was paid.
+        if (verification === 'verified') {
+          trackPurchase(orderSummary);
+        } else {
+          console.warn(
+            `[Checkout] Order #${wooOrderNumber} recorded, but the Razorpay payment is not ` +
+            'server-verified; purchase tracking withheld. Configure RAZORPAY_SECRET_KEY to enable verification.',
+          );
+        }
+
         clearCart();
       },
       prefill: {
@@ -283,17 +333,37 @@ export default function CheckoutPage() {
             <CheckCircle2 size={44} />
           </div>
 
-          <span className="text-xs font-bold uppercase tracking-wider text-botanical bg-sage-light px-3 py-1 rounded-full">
-            Order Confirmed
-          </span>
+          {completedOrder.paymentMethod === 'razorpay' && completedOrder.verification === 'pending' ? (
+            <>
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-3 py-1 rounded-full">
+                Payment Verification Pending
+              </span>
 
-          <h1 className="font-heading text-3xl sm:text-4xl font-bold text-forest mt-3">
-            Thank you, {completedOrder.customerName}!
-          </h1>
+              <h1 className="font-heading text-3xl sm:text-4xl font-bold text-forest mt-3">
+                Thank you, {completedOrder.customerName}!
+              </h1>
 
-          <p className="text-sm sm:text-base text-charcoal-muted mt-2">
-            Your order has been received and is being prepared with doctor-guided clinical care.
-          </p>
+              <p className="text-sm sm:text-base text-charcoal-muted mt-2">
+                Your order has been recorded. We are confirming your online payment with the payment
+                gateway — this usually completes within a few minutes. You will see the final
+                confirmation in your order status.
+              </p>
+            </>
+          ) : (
+            <>
+              <span className="text-xs font-bold uppercase tracking-wider text-botanical bg-sage-light px-3 py-1 rounded-full">
+                Order Confirmed
+              </span>
+
+              <h1 className="font-heading text-3xl sm:text-4xl font-bold text-forest mt-3">
+                Thank you, {completedOrder.customerName}!
+              </h1>
+
+              <p className="text-sm sm:text-base text-charcoal-muted mt-2">
+                Your order has been received and is being prepared with doctor-guided clinical care.
+              </p>
+            </>
+          )}
 
           <div className="mt-6 p-5 bg-[#F9FAF6] rounded-2xl border border-stone-200 text-left space-y-3">
             <div className="flex items-center justify-between text-xs sm:text-sm border-b border-stone-200 pb-3">
@@ -592,7 +662,10 @@ export default function CheckoutPage() {
                         name="paymentMethod"
                         value="razorpay"
                         checked={paymentMethod === 'razorpay'}
-                        onChange={() => setPaymentMethod('razorpay')}
+                        onChange={() => {
+                          setPaymentMethod('razorpay');
+                          trackAddPaymentInfo(items, totalPayable, 'razorpay');
+                        }}
                         className="mt-1 h-4 w-4 text-botanical focus:ring-botanical"
                       />
                       <div className="flex-grow">
@@ -630,7 +703,10 @@ export default function CheckoutPage() {
                         name="paymentMethod"
                         value="cod"
                         checked={paymentMethod === 'cod'}
-                        onChange={() => setPaymentMethod('cod')}
+                        onChange={() => {
+                          setPaymentMethod('cod');
+                          trackAddPaymentInfo(items, totalPayable, 'cod');
+                        }}
                         className="mt-1 h-4 w-4 text-botanical focus:ring-botanical"
                       />
                       <div className="flex-grow">

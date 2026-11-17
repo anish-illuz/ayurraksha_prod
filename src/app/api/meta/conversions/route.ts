@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import crypto from 'crypto';
+import { hashMetaParam, hashMetaPhone } from '@/lib/metaHash';
 
 /**
  * Meta Conversions API (CAPI) Server Route
@@ -26,28 +26,12 @@ const META_TEST_EVENT_CODE = process.env.META_TEST_EVENT_CODE;
 const processedPurchases = new Set<string>();
 
 /**
- * Normalizes and computes SHA-256 hash according to Meta specifications
+ * PII hashing (SHA-256, Meta-Advanced-Matching normalisation) is centralised
+ * in lib/metaHash so it is unit-tested and reusable. Bound here to the route's
+ * local names so the call sites below are unchanged.
  */
-function hashParam(value: string | undefined | null): string | undefined {
-  if (!value) return undefined;
-  const normalized = value.trim().toLowerCase();
-  if (!normalized) return undefined;
-  return crypto.createHash('sha256').update(normalized).digest('hex');
-}
-
-/**
- * Normalizes phone numbers (removes non-digits, ensures country code)
- */
-function hashPhone(phone: string | undefined | null): string | undefined {
-  if (!phone) return undefined;
-  // Strip all non-digit characters
-  let digits = phone.replace(/\D/g, '');
-  // Default to Indian country code 91 if 10-digit number
-  if (digits.length === 10) {
-    digits = `91${digits}`;
-  }
-  return crypto.createHash('sha256').update(digits).digest('hex');
-}
+const hashParam: typeof hashMetaParam = hashMetaParam;
+const hashPhone: typeof hashMetaPhone = hashMetaPhone;
 
 export async function POST(req: Request) {
   try {

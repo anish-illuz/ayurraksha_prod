@@ -28,6 +28,12 @@ const Newsletter = dynamic(
 export default function HomePage() {
   return (
     <>
+      {/* Primary heading. The hero is a full-bleed banner carousel with no
+          visible text, so the page's only <h1> is an accessible heading that
+          matches the <title> and gives search + screen readers a topic anchor
+          without disturbing the visual design. */}
+      <h1 className="sr-only">AyurRaksha — Health Supplements for Liver Detox, Pain Relief &amp; Skin Care</h1>
+
       {/* 1. Hero Section */}
       <Hero />
 

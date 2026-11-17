@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { X, Trash2, Plus, Minus, ShoppingBag, ShieldCheck, ArrowRight } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
+import { trackViewCart } from '@/lib/storefrontAnalytics';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 export const CartDrawer: React.FC = () => {
@@ -43,6 +44,14 @@ export const CartDrawer: React.FC = () => {
     }
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isCartOpen, closeCart]);
+
+  // GA4 view_cart when the slide-over cart is opened with items present.
+  useEffect(() => {
+    if (isCartOpen && items.length > 0) {
+      trackViewCart(items, totalPayable);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isCartOpen]);
 
   if (!isCartOpen) return null;
 

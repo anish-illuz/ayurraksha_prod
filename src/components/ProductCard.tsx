@@ -6,13 +6,23 @@ import Image from 'next/image';
 import { Star, ShoppingBag, Check, Tag, Plus, Minus } from 'lucide-react';
 import { Product } from '@/types/product';
 import { useCart } from '@/lib/cartContext';
+import { trackSelectItem } from '@/lib/storefrontAnalytics';
 
 interface ProductCardProps {
   product: Product;
   priority?: boolean;
+  /** GA4 `select_item` item_list_name; defaults to 'Shop'. */
+  itemList?: string;
+  /** 1-based position of the product within its list (GA4 index param). */
+  selectItemIndex?: number;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = false }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({
+  product,
+  priority = false,
+  itemList = 'Shop',
+  selectItemIndex,
+}) => {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
@@ -42,6 +52,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
     } catch {
       // Ignore
     }
+  };
+
+  // GA4/GTM select_item: fired when the customer chooses this product from a
+  // list. Attached to the card's navigational links WITHOUT preventDefault so
+  // next/link still navigates to the PDP.
+  const handleCardSelect = (e: React.MouseEvent) => {
+    trackSelectItem(product, itemList, selectItemIndex ?? 1);
   };
 
   const handleDecrement = (e: React.MouseEvent) => {
@@ -97,7 +114,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
         </div>
 
         {/* Clickable Image */}
-        <Link href={`/product/${product.slug}`} prefetch={false} className="relative block w-full h-full">
+        <Link href={`/product/${product.slug}`} prefetch={false} onClick={handleCardSelect} className="relative block w-full h-full">
           <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
             <Image
               src={isHovered && secondaryImage !== primaryImage ? secondaryImage : primaryImage}
@@ -115,7 +132,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       <div className="flex flex-col flex-grow p-2 sm:p-4 bg-white space-y-2 sm:space-y-3">
         {/* Product Title (Larger and clearer for mobile scanning) */}
         <h3 className="font-heading font-bold text-[15px] sm:text-base md:text-lg text-forest group-hover:text-botanical transition-colors line-clamp-2 min-h-[2.85rem] leading-snug">
-          <Link href={`/product/${product.slug}`}>{product.name}</Link>
+          <Link href={`/product/${product.slug}`} onClick={handleCardSelect}>{product.name}</Link>
         </h3>
 
         {/* Rating & Concern Row: ★ 4.8 (840) | Liver Wellness */}

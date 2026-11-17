@@ -1,0 +1,109 @@
+{
+  "target": "https://www.ayurrakshaonline.com",
+  "startedAt": "2026-11-17T03:00:12.956Z",
+  "finishedAt": "2026-11-17T03:00:54.948Z",
+  "summary": {
+    "total": 16,
+    "passed": 10,
+    "failed": 4,
+    "skipped": 2
+  },
+  "results": [
+    {
+      "id": "TC-HOM-001",
+      "title": "Homepage loads (200) with brand title",
+      "status": "PASS",
+      "evidence": "status=200 title=\"AyurRaksha | Health Supplements for Liver Detox, Pain Relief, Skin Care & More\""
+    },
+    {
+      "id": "TC-HOM-002",
+      "title": "Homepage has a single primary H1",
+      "status": "FAIL",
+      "evidence": "h1=\"\""
+    },
+    {
+      "id": "TC-SEO-001",
+      "title": "Structured data present (JSON-LD)",
+      "status": "PASS",
+      "evidence": "1 JSON-LD block(s)"
+    },
+    {
+      "id": "TC-CAT-001",
+      "title": "A product/listing route resolves (200)",
+      "status": "PASS",
+      "evidence": "https://www.ayurrakshaonline.com/product/boozliv/"
+    },
+    {
+      "id": "TC-PDP-001",
+      "title": "Product page carries Product JSON-LD schema",
+      "status": "FAIL",
+      "evidence": "0 Product schema block(s)"
+    },
+    {
+      "id": "TC-ATC-001",
+      "title": "Add-to-cart control present & clickable",
+      "status": "SKIP",
+      "evidence": "clicked=false cartAnchor=\"\""
+    },
+    {
+      "id": "TC-CART-001",
+      "title": "Cart route resolves (200)",
+      "status": "PASS",
+      "evidence": "status=200"
+    },
+    {
+      "id": "TC-CKO-001",
+      "title": "Checkout renders a delivery/payment form",
+      "status": "FAIL",
+      "evidence": "status=200 formPresent=false"
+    },
+    {
+      "id": "TC-SEO-002",
+      "title": "robots.txt reachable",
+      "status": "PASS",
+      "evidence": "status=200"
+    },
+    {
+      "id": "TC-SEO-003",
+      "title": "sitemap.xml reachable",
+      "status": "PASS",
+      "evidence": "status=200"
+    },
+    {
+      "id": "TC-API-RAZORPAY-001",
+      "title": "Razorpay /verify rejects a forged signature",
+      "status": "PASS",
+      "evidence": "status=404 verified=undefined reason=undefined"
+    },
+    {
+      "id": "TC-API-META-001",
+      "title": "Meta /conversions returns a structured (non-5xx) result",
+      "status": "PASS",
+      "evidence": "status=200 {\"success\":true,\"events_received\":1,\"fbtrace_id\":\"A1XOQBUc_q3e3oHUCMmR0L2\",\"even"
+    },
+    {
+      "id": "TC-ANALYTICS-001",
+      "title": "Analytics bootstrap present (dataLayer or Pixel)",
+      "status": "PASS",
+      "evidence": "dataLayer=true fbq=true events=[object Object]"
+    },
+    {
+      "id": "TC-PERF-001",
+      "title": "Homepage performance snapshot (desktop context)",
+      "status": "PASS",
+      "evidence": "HTTP=200 TTFB=65ms FCP=248ms 3230KB/56req"
+    },
+    {
+      "id": "TC-GEN-001",
+      "title": "No uncaught JS errors on key routes",
+      "status": "FAIL",
+      "evidence": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "id": "TC-GEN-002",
+      "title": "No 4xx/5xx app requests on key routes",
+      "status": "SKIP",
+      "evidence": "404 https://www.ayurrakshaonline.com/boozliv/"
+    }
+  ]
+}

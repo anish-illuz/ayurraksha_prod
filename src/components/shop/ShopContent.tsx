@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { SlidersHorizontal, X, ChevronDown, Check } from 'lucide-react';
 import { Product } from '@/types/product';
 import { ProductCard } from '@/components/ProductCard';
+import { trackViewItemList } from '@/lib/storefrontAnalytics';
 import { HEALTH_CONCERNS, PRODUCT_FORMATS } from '@/data/siteConfig';
 import { CONCERN_SLUG_MAP } from '@/lib/products';
 
@@ -115,6 +116,23 @@ export const ShopContent: React.FC<ShopContentProps> = ({
     selectedConcern !== (initialConcern || 'all') ||
     selectedCategory !== (initialCategory || 'all') ||
     selectedPriceRange !== 'all';
+
+  // GA4/GTM view_item_list: fired when a product list is displayed or the
+  // visible set changes (filter / sort applied). item_list_name reflects the
+  // page context so GA4 can separate shop vs. category browsing.
+  const itemListName = initialCategory && initialCategory !== 'all'
+    ? `Category: ${initialCategory}`
+    : initialConcern && initialConcern !== 'all'
+      ? `Concern: ${initialConcern}`
+      : 'Shop';
+  const visibleListKey = filteredProducts.map((p) => p.id).join(',');
+
+  useEffect(() => {
+    if (filteredProducts.length > 0) {
+      trackViewItemList(filteredProducts, itemListName);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visibleListKey]);
 
   const resetFilters = () => {
     setSelectedConcern(initialConcern || 'all');
@@ -337,8 +355,8 @@ export const ShopContent: React.FC<ShopContentProps> = ({
             </div>
           ) : (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-              {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {filteredProducts.map((product, index) => (
+                <ProductCard key={product.id} product={product} itemList={itemListName} selectItemIndex={index + 1} />
               ))}
             </div>
           )}

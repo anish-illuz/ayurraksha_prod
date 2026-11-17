@@ -6,18 +6,31 @@ import Image from 'next/image';
 import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, ShieldCheck, Truck, Lock } from 'lucide-react';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { useCart } from '@/lib/cartContext';
+import { trackViewCart } from '@/lib/storefrontAnalytics';
 import { SITE_CONFIG } from '@/data/siteConfig';
+import { useEffect } from 'react';
 
 export default function CartPage() {
   const {
     items,
     itemCount,
     subtotal,
+    comboDiscount,
+    comboDiscountPercent,
+    totalPayable,
     updateQuantity,
     removeFromCart,
     clearCart,
     checkoutUrl,
   } = useCart();
+
+  // GA4 view_cart on dedicated cart page view (fires once per page load).
+  useEffect(() => {
+    if (items.length > 0) {
+      trackViewCart(items, totalPayable);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="bg-[#FAF7F2] min-h-screen pb-16">

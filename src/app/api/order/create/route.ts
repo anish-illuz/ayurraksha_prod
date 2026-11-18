@@ -86,8 +86,10 @@ async function recordCodFeeLineItem(
   }
 
   // Keep any existing fee lines; skip when a COD fee is already recorded
-  // (retry-safe).
-  const existingFees: any[] = Array.isArray(order.fee_line_items) ? order.fee_line_items : [];
+  // (retry-safe). The WC REST v3 order field is `fee_lines` — the older
+  // `fee_line_items` spelling is silently ignored by the API, so the fee
+  // must go under `fee_lines` or the order total never moves.
+  const existingFees: any[] = Array.isArray(order.fee_lines) ? order.fee_lines : [];
   if (existingFees.some((f) => /cod/i.test(String(f?.name || '')))) return;
 
   try {
@@ -103,18 +105,15 @@ async function recordCodFeeLineItem(
       method: 'PUT',
       headers,
       body: JSON.stringify({
-        fee_line_items: [
+        fee_lines: [
           ...existingFees,
           {
             name: 'COD Delivery Charge',
             total: codFeeRupees.toFixed(2),
-            tax_total: '0.00',
+            total_tax: '0.00',
             tax_class: '',
           },
         ],
-        // Set the total explicitly so the backend order reads the full cash
-        // amount even if WooCommerce does not recalc from the new fee line.
-        total: (orderTotalRupees + codFeeRupees).toFixed(2),
       }),
       cache: 'no-store',
     });
@@ -122,6 +121,24 @@ async function recordCodFeeLineItem(
     if (!putRes.ok) {
       console.warn(`[OrderCreate] COD fee line item not recorded for order #${wooOrderId} (HTTP ${putRes.status}):`, await putRes.text().catch(() => ''));
       return;
+    }
+
+    // WooCommerce recalculates the order total when fee lines change
+    // (verified live: total moved +100 on a real order). Confirm it moved;
+    // if it did not, set the total explicitly as a fallback.
+    const afterRes = await fetch(url, { headers, cache: 'no-store' });
+    const after = afterRes.ok ? await afterRes.json().catch(() => null) : null;
+    const expectedTotal = orderTotalRupees + codFeeRupees;
+    if (after && Math.abs(Number(after.total ?? 0) - expectedTotal) > 0.005) {
+      const totalRes = await fetch(url, {
+        method: 'PUT',
+        headers,
+        body: JSON.stringify({ total: expectedTotal.toFixed(2) }),
+        cache: 'no-store',
+      });
+      if (!totalRes.ok) {
+        console.warn(`[OrderCreate] COD fee recorded but order #${wooOrderId} total did not recalc and explicit total set failed (HTTP ${totalRes.status}).`);
+      }
     }
     console.log(`[OrderCreate] COD delivery charge of ${codFeeRupees} INR recorded on order #${wooOrderId}.`);
   } catch (feeErr) {

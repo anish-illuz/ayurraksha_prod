@@ -9,7 +9,18 @@ export const ExitIntentDiscountModal: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const pathname = usePathname();
 
+  // Robust checkout detection: handles trailing slashes (e.g. /checkout/ with trailingSlash: true),
+  // subpaths, and case insensitivity so the popup is strictly never shown on checkout.
+  const normalizedPath = (pathname || '').toLowerCase().replace(/\/+$/, '');
+  const isCheckout = normalizedPath === '/checkout' || normalizedPath.startsWith('/checkout/');
+
   useEffect(() => {
+    // 0. Strict checkout guard: if on checkout page, ensure popup is closed and attach no listeners
+    if (isCheckout) {
+      setIsVisible(false);
+      return;
+    }
+
     // 1. Strict guard: NEVER show to users who have placed an order
     const hasOrdered = typeof window !== 'undefined' && localStorage.getItem('ayurraksha_has_ordered') === 'true';
     if (hasOrdered) return;
@@ -19,12 +30,13 @@ export const ExitIntentDiscountModal: React.FC = () => {
     if (hasShown) return;
 
     // 3. Do not trigger on active checkout completion or on individual product pages
-    if (pathname === '/checkout' || pathname?.startsWith('/product')) return;
+    if (isCheckout || pathname?.startsWith('/product')) return;
 
     let triggered = false;
 
     const triggerPopup = () => {
-      // Re-verify ordering state before opening
+      // Re-verify checkout and ordering state before opening
+      if (isCheckout) return;
       const orderConfirmed = typeof window !== 'undefined' && localStorage.getItem('ayurraksha_has_ordered') === 'true';
       if (orderConfirmed || triggered) return;
 
@@ -66,7 +78,7 @@ export const ExitIntentDiscountModal: React.FC = () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       clearTimeout(timer);
     };
-  }, [pathname]);
+  }, [pathname, isCheckout]);
 
   // Keyboard accessibility: Escape key listener
   useEffect(() => {
@@ -85,7 +97,7 @@ export const ExitIntentDiscountModal: React.FC = () => {
     setIsVisible(false);
   };
 
-  if (!isVisible) return null;
+  if (isCheckout || !isVisible) return null;
 
   return (
     <div

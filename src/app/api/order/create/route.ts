@@ -1,8 +1,13 @@
 import { NextResponse } from 'next/server';
 import { fetchCmsCommerce } from '@/lib/cms';
 import { getProductById } from '@/lib/products';
-import { comboSubtotalPaise as computeComboSubtotalPaise, comboCouponFor } from '@/lib/comboPricing';
+import {
+  comboSubtotalPaise as computeComboSubtotalPaise,
+  comboCouponFor,
+  comboDiscountRupees,
+} from '@/lib/comboPricing';
 import { resolveItemVariant } from '@/lib/orderItemResolution';
+import { SITE_CONFIG } from '@/data/siteConfig';
 
 const WORDPRESS_BASE = process.env.WORDPRESS_API_URL || process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://cms.ayurrakshaonline.com';
 const WORDPRESS_STORE_API = `${WORDPRESS_BASE}/wp-json/wc/store/v1`;
@@ -26,6 +31,103 @@ const STATE_CODE_MAP: Record<string, string> = {
   'Bihar': 'BR',
   'Odisha': 'OR',
 };
+
+/**
+ * Record the COD delivery charge on a placed WooCommerce order as a fee line
+ * item (authenticated WC REST API, same application-password credentials the
+ * Razorpay verify route uses), so the backend order total matches the amount
+ * the customer pays in cash at the doorstep. Idempotent: skips when a COD fee
+ * line already exists. Failures are logged, never thrown — the order is
+ * already recorded; fee bookkeeping must not break checkout.
+ */
+async function recordCodFeeLineItem(
+  wooOrderId: string | number,
+  codFeeRupees: number,
+  userAgent?: string,
+  prefetchedOrder?: any,
+): Promise<void> {
+  const ck = process.env.WC_CONSUMER_KEY;
+  const cs = process.env.WC_CONSUMER_SECRET;
+  if (!ck || !cs) {
+    console.warn('[OrderCreate] WC_CONSUMER_KEY / WC_CONSUMER_SECRET not set; the COD delivery-charge fee was not recorded on the order.');
+    return;
+  }
+
+  const url = `${WORDPRESS_BASE}/wp-json/wc/v3/orders/${encodeURIComponent(String(wooOrderId))}`;
+
+  // Resolve the order object: prefer the REST v3 order the caller already
+  // fetched (avoids a duplicate GET); otherwise read it now to keep any
+  // existing fee lines and stay retry-safe.
+  let order: any = prefetchedOrder;
+  if (!order) {
+    try {
+      const getRes = await fetch(url, {
+        headers: {
+          'Authorization': `Basic ${Buffer.from(`${ck}:${cs}`).toString('base64')}`,
+          'Content-Type': 'application/json',
+          'User-Agent': userAgent || 'AyurRaksha-NextJS/1.0',
+          'Accept': 'application/json',
+        },
+        cache: 'no-store',
+      });
+      if (!getRes.ok) {
+        console.warn(`[OrderCreate] Could not read order #${wooOrderId} for COD fee recording (HTTP ${getRes.status}).`);
+        return;
+      }
+      order = await getRes.json().catch(() => null);
+    } catch (readErr) {
+      console.warn(`[OrderCreate] Could not read order #${wooOrderId} for COD fee recording:`, readErr);
+      return;
+    }
+  }
+  if (!order) {
+    console.warn(`[OrderCreate] No order data available for #${wooOrderId}; COD fee not recorded.`);
+    return;
+  }
+
+  // Keep any existing fee lines; skip when a COD fee is already recorded
+  // (retry-safe).
+  const existingFees: any[] = Array.isArray(order.fee_line_items) ? order.fee_line_items : [];
+  if (existingFees.some((f) => /cod/i.test(String(f?.name || '')))) return;
+
+  try {
+    const auth = Buffer.from(`${ck}:${cs}`).toString('base64');
+    const headers = {
+      'Authorization': `Basic ${auth}`,
+      'Content-Type': 'application/json',
+      'User-Agent': userAgent || 'AyurRaksha-NextJS/1.0',
+      'Accept': 'application/json',
+    };
+    const orderTotalRupees = Number(order.total ?? 0);
+    const putRes = await fetch(url, {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify({
+        fee_line_items: [
+          ...existingFees,
+          {
+            name: 'COD Delivery Charge',
+            total: codFeeRupees.toFixed(2),
+            tax_total: '0.00',
+            tax_class: '',
+          },
+        ],
+        // Set the total explicitly so the backend order reads the full cash
+        // amount even if WooCommerce does not recalc from the new fee line.
+        total: (orderTotalRupees + codFeeRupees).toFixed(2),
+      }),
+      cache: 'no-store',
+    });
+
+    if (!putRes.ok) {
+      console.warn(`[OrderCreate] COD fee line item not recorded for order #${wooOrderId} (HTTP ${putRes.status}):`, await putRes.text().catch(() => ''));
+      return;
+    }
+    console.log(`[OrderCreate] COD delivery charge of ${codFeeRupees} INR recorded on order #${wooOrderId}.`);
+  } catch (feeErr) {
+    console.warn('[OrderCreate] Could not record COD fee line item:', feeErr);
+  }
+}
 
 export async function POST(req: Request) {
   try {
@@ -252,6 +354,7 @@ export async function POST(req: Request) {
     // is enforced by the store (min-spend + percent), and we read the cart back
     // to verify it actually applied. If it did not, abort: we never book a
     // full-price order for a customer who was charged the discounted amount.
+    let lastVerifiedCartData: any = null;
     if (comboCoupon) {
       const applyRes = await fetch(`${WORDPRESS_STORE_API}/cart/apply-coupon?_nocache=${Date.now()}`, {
         method: 'POST',
@@ -285,6 +388,7 @@ export async function POST(req: Request) {
         cache: 'no-store',
       });
       const cartData = await cartVerify.json().catch(() => null);
+      lastVerifiedCartData = cartData;
       const appliedCodes: string[] = Array.isArray(cartData?.coupons)
         ? cartData.coupons.map((c: any) => String(c?.code || '').toUpperCase())
         : [];
@@ -302,6 +406,45 @@ export async function POST(req: Request) {
         throw new Error('Could not apply the combo discount; order not placed.');
       }
     }
+
+    // Step 4c: Capture the cart's discounted total in paise BEFORE checkout.
+    // This is the authoritative charge for prepaid orders: the WooCommerce
+    // store has already computed items + combo-coupon discount (+ free
+    // shipping) on the live cart, so this paise total is exactly what the
+    // front-end promised and what the backend order books. The front-end rule
+    // (item subtotal − combo discount, shared lib/comboPricing) is only the
+    // fallback when the cart is unreadable.
+    //
+    // NOTE: the Store API POST /checkout response only carries
+    // { id, status, payment_result, payment_result_meta_data } — no money
+    // fields at all. The old code read `orderData.totals?.total_price` from
+    // it, always got 0, and silently fell back to the full undiscounted item
+    // sum, which is what overcharged prepaid customers (₹8,000 instead of
+    // ₹6,800). Computing the amount here, from the cart, fixes it.
+    let preCheckoutCart = lastVerifiedCartData;
+    if (!preCheckoutCart) {
+      const preCheckoutCartRes = await fetch(`${WORDPRESS_STORE_API}/cart?_nocache=${Date.now()}`, {
+        method: 'GET',
+        headers: {
+          'User-Agent': clientUserAgent,
+          'Accept': 'application/json',
+          'Nonce': nonce,
+          'Cart-Token': cartToken,
+        },
+        cache: 'no-store',
+      });
+      preCheckoutCart = await preCheckoutCartRes.json().catch(() => null);
+    }
+    const cartTotalPaise = Number(preCheckoutCart?.totals?.total_price ?? 0);
+    const itemSubtotalPaise = Math.round(
+      orderItems.reduce((acc, it) => acc + (Number(it.price) * it.quantity), 0) * 100,
+    );
+    const comboDiscountPaise = Math.round(comboDiscountRupees(comboSubtotalPaise) * 100);
+    // Authoritative discounted paise: prefer the live cart total, fall back
+    // to the front-end rule (itemSubtotal − comboDiscount).
+    const effectiveDiscountedPaise = Number.isFinite(cartTotalPaise) && cartTotalPaise > 0
+      ? cartTotalPaise
+      : Math.max(0, itemSubtotalPaise - comboDiscountPaise);
 
     // Step 5: Execute Checkout on WooCommerce Store API with native Order Attribution extension
     const originLabel =
@@ -370,6 +513,51 @@ export async function POST(req: Request) {
 
     const orderData = await checkoutRes.json();
 
+    // The WooCommerce Store API checkout response is minimal: { id, status,
+    // payment_result, payment_result_meta_data }. The numeric order id lives
+    // at `id` — there is NO order_id / order_number / totals in this
+    // response, so the full order (order number, order key, fee lines) must
+    // be fetched via the authenticated WC REST API below.
+    const checkoutOrderId =
+      Number(orderData.id ?? orderData.order_id ?? 0) || null;
+
+    const ck = process.env.WC_CONSUMER_KEY;
+    const cs = process.env.WC_CONSUMER_SECRET;
+    let restOrder: any = null;
+    if (checkoutOrderId && ck && cs) {
+      try {
+        const restAuth = `Basic ${Buffer.from(`${ck}:${cs}`).toString('base64')}`;
+        const getRes = await fetch(`${WORDPRESS_BASE}/wp-json/wc/v3/orders/${checkoutOrderId}`, {
+          headers: {
+            'Authorization': restAuth,
+            'Content-Type': 'application/json',
+            'User-Agent': 'AyurRaksha-NextJS/1.0',
+            'Accept': 'application/json',
+          },
+          cache: 'no-store',
+        });
+        if (getRes.ok) restOrder = await getRes.json().catch(() => null);
+      } catch (restErr) {
+        console.warn('[OrderCreate] Could not fetch full order via WC REST:', restErr);
+      }
+    }
+
+    // COD delivery charge: the front-end shows the customer a COD total that
+    // includes the ₹100 fee, but the WooCommerce order only carries the
+    // (discounted) product total, so the backend order would read ₹100 short
+    // of what the customer actually pays in cash at the doorstep. Record the
+    // fee as an explicit fee line item so the backend order reconciles with
+    // the cash amount due.
+    if (paymentMethod === 'cod' && checkoutOrderId) {
+      await recordCodFeeLineItem(checkoutOrderId, SITE_CONFIG.shipping.codFee, clientUserAgent, restOrder);
+    }
+
+    const orderNumber = restOrder?.number != null
+      ? String(restOrder.number)
+      : checkoutOrderId
+        ? String(checkoutOrderId)
+        : String(orderData.order_id ?? orderData.id ?? 'unknown');
+
     // If paying via Razorpay, pre-create a Razorpay Order so the client SDK
     // binds to the exact amount and returns razorpay_order_id and razorpay_signature
     // on success (enabling server-side HMAC signature verification).
@@ -380,11 +568,16 @@ export async function POST(req: Request) {
       const rzpKey = process.env.RAZORPAY_KEY_ID || process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_live_kWyXoOFkrDjUBk';
       const rzpSecret = process.env.RAZORPAY_SECRET_KEY;
 
-      // Extract total price in paise (WooCommerce Store API returns totals in minor units / paise)
-      const rawTotalPaise = Number(orderData.totals?.total_price ?? 0);
-      const totalPaise = Number.isFinite(rawTotalPaise) && rawTotalPaise > 0
-        ? rawTotalPaise
-        : Math.round(orderItems.reduce((acc, it) => acc + (it.price * it.quantity), 0) * 100);
+      // Charge the discounted amount the front-end promised. Authoritative
+      // source is the live cart total read in Step 4c (the combo coupon is
+      // already applied, so it is the post-discount paise total the customer
+      // will pay; prepaid delivery is free, so no shipping is added). The
+      // front-end rule (item subtotal − combo discount) is only the fallback.
+      // The old code read `orderData.totals?.total_price` — a field that does
+      // not exist on the checkout response — and silently fell back to the
+      // full undiscounted item sum, which is what overcharged prepaid
+      // customers (₹8,000 instead of ₹6,800).
+      const totalPaise = effectiveDiscountedPaise;
 
       if (rzpKey && rzpSecret && totalPaise > 0) {
         try {
@@ -399,10 +592,10 @@ export async function POST(req: Request) {
             body: JSON.stringify({
               amount: totalPaise,
               currency: 'INR',
-              receipt: String(orderData.order_number || orderData.order_id),
+              receipt: orderNumber,
               notes: {
-                woocommerce_order_id: String(orderData.order_id),
-                woocommerce_order_number: String(orderData.order_number || orderData.order_id),
+                woocommerce_order_id: String(checkoutOrderId ?? ''),
+                woocommerce_order_number: orderNumber,
               },
             }),
           });
@@ -422,10 +615,10 @@ export async function POST(req: Request) {
 
     return NextResponse.json({
       success: true,
-      orderId: orderData.order_id,
-      orderNumber: orderData.order_number || String(orderData.order_id),
-      orderKey: orderData.order_key,
-      status: orderData.status,
+      orderId: checkoutOrderId,
+      orderNumber,
+      orderKey: restOrder?.order_key ?? orderData.order_key,
+      status: orderData.status ?? restOrder?.status,
       paymentResult: orderData.payment_result,
       razorpayOrderId,
       razorpayAmount,

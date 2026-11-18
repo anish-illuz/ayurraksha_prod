@@ -8,6 +8,7 @@ interface ComboHeroProps {
   title?: string;
   highlight?: string;
   description?: string;
+  savingsLine?: string;
   badge?: string;
   stepGuide?: {
     step1Title: string;
@@ -21,9 +22,10 @@ interface ComboHeroProps {
 
 export const ComboHero: React.FC<ComboHeroProps> = ({
   tagline = 'AyurRaksha Botanical Wellness',
-  title = 'Build Your Own',
-  highlight = 'Skin Care Combo',
-  description = "Explore 14 Ayurvedic essentials and create a skincare routine that's uniquely yours.",
+  title = 'Give Your Skin the',
+  highlight = 'Care It Deserves',
+  description = 'Build your personalised skin care routine with Ayurvedic oils, cleansers and botanical supplements, selected to suit your needs.',
+  savingsLine = 'Choose Your Products. Build Your Combo. Save up to 15%.',
   badge = '14 Formulations',
   stepGuide = {
     step1Title: 'Choose Products',
@@ -60,13 +62,25 @@ export const ComboHero: React.FC<ComboHeroProps> = ({
             </div>
 
             <h1 className="font-serif text-2xl sm:text-3xl lg:text-[40px] font-normal leading-[1.12] tracking-[-0.035em] text-white">
-              {title}{' '}
-              {highlight && <em className="italic text-[#edc48a] font-serif">{highlight}</em>}
+              {title}
+              {highlight ? (
+                <>
+                  {' '}
+                  <em className="italic text-[#edc48a] font-serif">{highlight}</em>
+                </>
+              ) : null}
             </h1>
 
             <p className="text-sm sm:text-base text-[#e5eee7] leading-[1.55] max-w-xl font-sans">
               {description}
             </p>
+
+            {savingsLine && (
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#faf6ea]/15 border border-[#edc48a]/35 text-[#fbe3ba] text-xs sm:text-[13px] font-semibold tracking-wide">
+                <Tag size={13} className="text-[#edc48a] flex-shrink-0" />
+                <span>{savingsLine}</span>
+              </div>
+            )}
 
             {/* Primary CTA */}
             <div className="flex flex-wrap items-center gap-2.5 pt-1">

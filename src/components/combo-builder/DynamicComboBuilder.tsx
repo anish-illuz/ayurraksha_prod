@@ -287,6 +287,7 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
         title={config.heroTitle}
         highlight={config.heroHighlight}
         description={config.heroDescription}
+        savingsLine={config.savingsLine}
         badge={config.heroBadge}
         stepGuide={config.stepGuide}
       />

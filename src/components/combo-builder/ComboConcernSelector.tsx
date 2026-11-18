@@ -38,6 +38,7 @@ const CONCERN_ICONS: Record<string, LucideIcon> = {
   'digestive-interest': HelpCircle,
   'on-heart-meds': Stethoscope,
   'chest-pain': AlertTriangle,
+  'need-help': HelpCircle,
 };
 
 interface ComboConcernSelectorProps {
@@ -138,7 +139,7 @@ export const ComboConcernSelector: React.FC<ComboConcernSelectorProps> = ({
         <div className="px-3 py-1.5 rounded-[9px] bg-[#f4f7f2] border border-[#dbe6d9] text-[14px] sm:text-[11px] text-[#203728] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
           <div className="leading-snug">
             <span className="font-bold text-[#18372b]">{activeConcern.name}: </span>
-            <span className="text-[#3c5445]">{activeConcern.shortDesc || activeConcern.description}</span>
+            <span className="text-[#3c5445]">{activeConcern.detail || activeConcern.shortDesc || activeConcern.description}</span>
           </div>
 
           {activeConcern.requiresDoctorGuidance && (

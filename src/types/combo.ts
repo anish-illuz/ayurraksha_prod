@@ -40,6 +40,8 @@ export interface SkinConcern {
   id: string;
   name: string;
   shortDesc: string;
+  /** Optional line shown in the strip below the concern cards (falls back to shortDesc). */
+  detail?: string;
   description: string;
   clinicalNotice?: string;
   emergencyNotice?: string;

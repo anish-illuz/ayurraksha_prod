@@ -488,8 +488,8 @@ export const MASTER_COMBO_PRODUCTS: ComboProduct[] = [
 export const SKIN_CONCERNS: SkinConcern[] = [
   {
     id: 'browse',
-    name: 'Explore all 14 products',
-    shortDesc: 'Curate your own routine freely from the complete 14-product catalogue.',
+    name: 'Explore All Products',
+    shortDesc: 'Browse all 14 products.',
     description:
       'Browse all 14 products at your own pace across all 5 care categories. Nothing is automatically added to your combo — every product is your choice.',
     highlightedProductIds: [],
@@ -497,8 +497,8 @@ export const SKIN_CONCERNS: SkinConcern[] = [
   },
   {
     id: 'dryness',
-    name: 'Dryness & mild itching',
-    shortDesc: 'Suggested starting shortlist: Skin Conditioning Oil + SkinWell Soap.',
+    name: 'Dryness & Itching',
+    shortDesc: 'Explore products for skin care and moisture.',
     description:
       'Recommended focus on lipid-replenishing moisture care and gentle, non-stripping cleansing. You may also explore Divine Healing Oil or internal nourishment.',
     clinicalNotice:
@@ -508,8 +508,8 @@ export const SKIN_CONCERNS: SkinConcern[] = [
   },
   {
     id: 'chronic',
-    name: 'Persistent eczema / psoriasis',
-    shortDesc: 'Specialty-care shortlist with physician-guided options and gentle cleansers.',
+    name: 'Eczema & Psoriasis',
+    shortDesc: 'Explore products for specialised skin care.',
     description:
       'For long-standing flaking, scaling, or chronic itching. Highlights specialty O3 formulations, gentle cleansers, and internal botanical support.',
     clinicalNotice:
@@ -519,8 +519,8 @@ export const SKIN_CONCERNS: SkinConcern[] = [
   },
   {
     id: 'fungal',
-    name: 'Possible ringworm / fungal issue',
-    shortDesc: 'Targeted hygiene shortlist; conventional body oils are excluded.',
+    name: 'Fungal Skin Concerns',
+    shortDesc: 'Explore products for targeted skin care.',
     description:
       'For itchy, spreading, circular, or fungal-looking skin discomfort. Highlights cleansing soaps and SP Soryn Cream, with conventional oils excluded from recommendations.',
     clinicalNotice:
@@ -531,8 +531,8 @@ export const SKIN_CONCERNS: SkinConcern[] = [
   },
   {
     id: 'vitiligo',
-    name: 'Vitiligo-related concerns',
-    shortDesc: 'Targeted support shortlist requiring clinical dermatological evaluation.',
+    name: 'Vitiligo Concerns',
+    shortDesc: 'Explore products for specialised skin care.',
     description:
       'Highlights Vital O3 Cream, Immune O3 Capsules, and Detox Tea for systemic balance under professional physician direction.',
     clinicalNotice:
@@ -679,7 +679,7 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Support healthy blood circulation and bring comfort to heavy, tired legs.',
+    shortDescription: 'A botanical supplement created for a daily circulatory wellness routine.',
     description:
       'Formulated with classical Ayurvedic herbs to help maintain healthy peripheral circulation, venous tone, and lower limb comfort. Traditionally taken as part of a daily vascular wellness routine.',
     indications: 'Leg heaviness, fatigue after standing, peripheral circulation balance, and everyday vascular comfort.',
@@ -710,7 +710,7 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Soothe dry, irritated skin with the nourishing power of eight traditional Ayurvedic herbs.',
+    shortDescription: 'A traditional herbal oil for a comforting pre-bath massage and everyday skin care.',
     description:
       'A pre-bath botanical massage oil for intact, dry, or uncomfortable-feeling lower-leg skin. Nourishes the epidermal barrier with eight classical Ayurvedic herbs. Massage gently upwards from foot to knee; do not apply forceful pressure directly over bulging varicose veins.',
     indications: 'Dry lower-leg skin, mild surface tightness, scaling, and pre-bath epidermal nourishment.',
@@ -743,7 +743,7 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
     pricePending: false,
     inStock: true,
     doctorGuided: false,
-    shortDescription: 'Enjoy gentle botanical cleansing that leaves your skin feeling soft, fresh and comfortable.',
+    shortDescription: 'A botanical soap for a gentle, refreshing daily cleanse.',
     description:
       'Enriched with Aloe Vera, Vitamin E, and Avocado Oil, SkinWell Soap provides ultra-gentle cleansing that respects sensitive, dry lower-leg skin without stripping natural lipids.',
     indications: 'Daily bathing, sensitive lower-leg skin, dryness, and non-stripping hygiene.',
@@ -859,8 +859,9 @@ export const VARICOSE_VEINS_PRODUCTS: ComboProduct[] = [
 export const VARICOSE_VEINS_CONCERNS: ComboConcern[] = [
   {
     id: 'explore-all',
-    name: 'Explore all 6 products',
-    shortDesc: 'Curate your leg-wellness and skin care routine freely from all 6 products.',
+    name: 'Explore All Products',
+    shortDesc: 'Browse all 6 products.',
+    detail: 'Choose any products to build your routine.',
     description:
       'Browse all 6 formulations at your own pace. All product choices remain completely optional, and nothing is added automatically.',
     highlightedProductIds: [],
@@ -868,8 +869,9 @@ export const VARICOSE_VEINS_CONCERNS: ComboConcern[] = [
   },
   {
     id: 'visible-veins',
-    name: 'Visible veins / leg heaviness',
-    shortDesc: 'Suggested starting shortlist: Flow Well Capsules + Divine Healing Oil.',
+    name: 'Visible Veins & Heavy Legs',
+    shortDesc: 'Explore products for leg wellness.',
+    detail: 'Explore products for leg wellness.',
     description:
       'Exploration of Flow Well herbal circulation capsules and gentle lower-leg care with Divine Healing Oil. Persistent heaviness or swelling may require medical evaluation.',
     clinicalNotice:
@@ -879,8 +881,9 @@ export const VARICOSE_VEINS_CONCERNS: ComboConcern[] = [
   },
   {
     id: 'dry-itchy',
-    name: 'Dry / itchy lower-leg skin',
-    shortDesc: 'Suggested starting shortlist: SkinWell Soap + Divine Healing Oil.',
+    name: 'Dry & Itchy Leg Skin',
+    shortDesc: 'Explore products for skin care and moisture.',
+    detail: 'Explore products for skin care and moisture.',
     description:
       'Focus on gentle, non-stripping cleansing and pre-bath botanical skin nourishment for intact, dry lower-leg skin.',
     clinicalNotice:
@@ -890,8 +893,9 @@ export const VARICOSE_VEINS_CONCERNS: ComboConcern[] = [
   },
   {
     id: 'darkening',
-    name: 'Skin darkening / persistent irritation',
-    shortDesc: 'Targeted skin care with physician-guided O3 options.',
+    name: 'Skin Darkening & Irritation',
+    shortDesc: 'Explore products for specialised skin care.',
+    detail: 'Explore products for specialised skin care.',
     description:
       'For skin discoloration (stasis pigmentation) or chronic irritation. Highlights gentle cleansing, healing oil, and physician-guided Super Heal O3 Cream.',
     clinicalNotice:
@@ -1014,8 +1018,9 @@ export const BREATH_EASY_PRODUCTS: ComboProduct[] = [
 export const BREATH_EASY_CONCERNS: ComboConcern[] = [
   {
     id: 'explore-all',
-    name: 'Explore all 3 products',
-    shortDesc: 'Display B Derma, Esnovate, and Detox Tea without mandatory preselection.',
+    name: 'Explore All Products',
+    shortDesc: 'Browse all 3 products.',
+    detail: 'Choose any products to build your combo.',
     description:
       'Curate your personal selection freely from the 3 formulations. Each item is independently selectable with no forced items.',
     highlightedProductIds: [],
@@ -1023,8 +1028,9 @@ export const BREATH_EASY_CONCERNS: ComboConcern[] = [
   },
   {
     id: 'respiratory-wellness',
-    name: 'Respiratory & seasonal wellness',
-    shortDesc: 'Suggested starting item: Esnovate Immunity Boosting Capsules.',
+    name: 'Respiratory & Seasonal Wellness',
+    shortDesc: 'Explore Esnovate Capsules.',
+    detail: 'Explore Esnovate Capsules for your wellness routine.',
     description:
       'Highlights Esnovate for everyday respiratory and seasonal wellness, comfort during changing weather, and everyday immunity support.',
     clinicalNotice:
@@ -1034,8 +1040,9 @@ export const BREATH_EASY_CONCERNS: ComboConcern[] = [
   },
   {
     id: 'digestive-routine',
-    name: 'Digestive routine',
-    shortDesc: 'Suggested starting item: AyurRaksha Detox Tea.',
+    name: 'Digestive Wellness',
+    shortDesc: 'Explore AyurRaksha Detox Tea.',
+    detail: 'Explore Detox Tea as an optional addition.',
     description:
       'Highlights Detox Tea as an optional herbal infusion to support comfortable evening digestion and natural gut equilibrium.',
     clinicalNotice:
@@ -1045,8 +1052,9 @@ export const BREATH_EASY_CONCERNS: ComboConcern[] = [
   },
   {
     id: 'skin-guidance',
-    name: 'Skin-related guidance',
-    shortDesc: 'Doctor-guided herbal option: B Derma Capsules.',
+    name: 'Skin Care',
+    shortDesc: 'Explore B Derma Capsules.',
+    detail: 'Explore B Derma Capsules for skin care.',
     description:
       'Displays B Derma proprietary capsules for physician-guided internal skin balance and radiance.',
     clinicalNotice:
@@ -1166,9 +1174,20 @@ export const CARDIAC_WELLNESS_PRODUCTS: ComboProduct[] = [
 
 export const CARDIAC_WELLNESS_CONCERNS: ComboConcern[] = [
   {
+    id: 'explore-all',
+    name: 'Explore All Products',
+    shortDesc: 'Browse all 3 products.',
+    detail: 'Choose any products to build your combo.',
+    description:
+      'Explore Save Heart tonic, Flow Well circulation capsules, and Detox Tea at your own pace with zero compulsory items.',
+    highlightedProductIds: [],
+    requiresDoctorGuidance: false,
+  },
+  {
     id: 'general-heart',
-    name: 'General heart-wellness interest',
-    shortDesc: 'Suggested starting product: Save Heart Herbal Tonic.',
+    name: 'Heart Wellness',
+    shortDesc: 'Explore Save Heart.',
+    detail: 'Explore Save Heart for your wellness routine.',
     description:
       'Explore Save Heart tonic formulated with classical Arjuna for heart-wellness support. Does not replace physician-prescribed heart medications.',
     clinicalNotice:
@@ -1178,8 +1197,9 @@ export const CARDIAC_WELLNESS_CONCERNS: ComboConcern[] = [
   },
   {
     id: 'leg-heaviness',
-    name: 'Leg heaviness / circulation interest',
-    shortDesc: 'Suggested starting product: Flow Well Capsules.',
+    name: 'Circulatory Wellness',
+    shortDesc: 'Explore Flow Well Capsules.',
+    detail: 'Explore Flow Well Capsules for your wellness routine.',
     description:
       'Explore Flow Well capsules formulated to assist healthy peripheral blood circulation and lower-leg comfort.',
     clinicalNotice:
@@ -1189,14 +1209,25 @@ export const CARDIAC_WELLNESS_CONCERNS: ComboConcern[] = [
   },
   {
     id: 'digestive-interest',
-    name: 'Digestive-wellness interest',
-    shortDesc: 'Optional separate ritual: AyurRaksha Detox Tea.',
+    name: 'Digestive Wellness',
+    shortDesc: 'Explore Detox Tea.',
+    detail: 'Explore Detox Tea as an optional addition.',
     description:
       'Keep digestive balance an easy, separate part of your evening routine with Detox Tea.',
     clinicalNotice:
       'Detox Tea is an independent digestive-wellness option; it is not a heart formulation.',
     highlightedProductIds: [27739],
     requiresDoctorGuidance: false,
+  },
+  {
+    id: 'need-help',
+    name: 'Need Help Choosing?',
+    shortDesc: 'Explore guidance before choosing your products.',
+    detail: 'Explore the available guidance before making your selection.',
+    description:
+      'Explore the available Ayurvedic physician guidance before making your product selection. A free consultation is available to review your health routine alongside any prescribed medications.',
+    highlightedProductIds: [],
+    requiresDoctorGuidance: true,
   },
 ];
 

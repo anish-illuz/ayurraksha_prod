@@ -379,7 +379,7 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-[15px] sm:text-base font-extrabold text-[#18372b]">
-                    {activeCategory === 'All products' ? 'Browse All' : activeCategory}
+                    {activeCategory === 'All products' ? 'Choose Your Products' : activeCategory}
                   </h3>
                   <span className="text-[10.5px] text-[#5c6f63]">
                     {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
@@ -429,7 +429,7 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
                   {/* Volume-discount badge */}
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[9px] bg-[#faf6ea] border border-[#e8dcc0] text-[11px] font-extrabold text-[#8a6020]">
                     <Tag size={13} />
-                    <span>10-15% Volume Discounts</span>
+                    <span>Save 10%–15% on Your Combo</span>
                   </span>
                 </div>
               </div>

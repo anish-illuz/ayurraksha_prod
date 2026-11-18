@@ -162,7 +162,7 @@ export const ComboProductCard: React.FC<ComboProductCardProps> = ({
               onClick={handleOpenDetails}
               className="text-[11.5px] font-extrabold text-[#2e6845] hover:text-[#18372b] underline py-1"
             >
-              View details ↗
+              View Details ↗
             </button>
 
             {/* Selection / Quantity Controls */}

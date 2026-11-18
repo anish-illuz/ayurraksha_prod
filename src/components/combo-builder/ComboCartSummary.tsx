@@ -127,7 +127,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
       <div className="pb-3 border-b border-[#edf0eb]">
         <div className="flex items-center justify-between">
           <span className="text-[10.5px] font-extrabold uppercase tracking-[0.16em] text-[#ab8345] block">
-            COMBO BASKET
+            Your Combo
           </span>
           <span className="text-[11px] font-extrabold text-[#18372b] bg-[#eef3ec] px-2 py-0.5 rounded-full">
             {totalItemsCount} {totalItemsCount === 1 ? 'item' : 'items'}
@@ -141,7 +141,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
       {/* Combo Savings */}
       <div className="mt-3.5">
         <h4 className="text-[13px] sm:text-[14px] font-extrabold text-[#18372b] mb-2">
-          Combo Savings
+          Your Combo Savings
         </h4>
 
         {/* Tiered progress bar with markers */}
@@ -167,7 +167,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
           }`}>
             <p className="text-[11px] font-extrabold text-[#18372b]">10% Combo Savings</p>
             <p className="text-[9.5px] text-[#5c4a28] leading-snug mt-0.5">
-              Get 10% off your combo when your order total is at least <strong>₹3,000</strong>.
+              Spend <strong>₹3,000</strong> or more and save 10%.
             </p>
           </div>
           <div className={`rounded-[11px] border p-2.5 ${
@@ -177,7 +177,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
           }`}>
             <p className="text-[11px] font-extrabold text-[#18372b]">15% Combo Savings</p>
             <p className="text-[9.5px] text-[#5c4a28] leading-snug mt-0.5">
-              Get 15% off your combo when your order total is at least <strong>₹5,000</strong>.
+              Spend <strong>₹5,000</strong> or more and save 15%.
             </p>
           </div>
         </div>
@@ -187,11 +187,11 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
           <p className="text-[11px] text-[#18372b] mt-2.5 leading-snug">
             {tierDiscountPercent === 10 ? (
               <>
-                <strong className="text-[#25764d]">10% OFF applied.</strong> Add{' '}
+                <strong className="text-[#25764d]">10% discount applied.</strong> Add{' '}
                 <strong className="text-[#8a6020]">
                   ₹{amountToNextTier.toLocaleString('en-IN')}
                 </strong>{' '}
-                more to unlock <strong className="text-[#25764d]">15% OFF</strong>.
+                more to unlock <strong className="text-[#25764d]">15% off</strong>.
               </>
             ) : (
               <>
@@ -199,7 +199,7 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
                 <strong className="text-[#8a6020]">
                   ₹{amountToNextTier.toLocaleString('en-IN')}
                 </strong>{' '}
-                more to unlock <strong className="text-[#25764d]">10% OFF</strong>.
+                more to unlock <strong className="text-[#25764d]">10% off</strong>.
               </>
             )}
           </p>
@@ -215,22 +215,24 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
         <div className="mt-3 px-3 py-2 rounded-[10px] bg-[#eef3ec] border border-[#dbe6d9] text-[10.5px] text-[#203728] leading-snug flex items-start gap-2">
           <Tag size={13} className="text-[#25764d] flex-shrink-0 mt-0.5" />
           <span>
-            Your combo savings will be applied automatically at checkout based on your order total. No coupon code needed.
+            Your eligible combo discount is applied automatically. No coupon code needed.
           </span>
         </div>
       </div>
 
-      {/* Items in Combo */}
+      {/* Your Selected Products */}
       <div className="mt-4">
         <h4 className="text-[13px] sm:text-[14px] font-extrabold text-[#18372b] mb-2">
-          Items in Combo
+          Your Selected Products
         </h4>
 
         <div className="space-y-2 max-h-[260px] overflow-y-auto pr-0.5">
           {selectedItems.length === 0 ? (
             <div className="py-4 px-3 text-center rounded-[10px] bg-stone-50/70 border border-dashed border-stone-200">
               <p className="text-[11px] text-[#4d6355] leading-snug">
-                No items added yet. Click <strong>+ Add</strong> on any product to start your combo.
+                  No products added yet.
+                  <br />
+                  Choose your products and click <strong>“Add to Combo”</strong> to get started.
               </p>
             </div>
           ) : (
@@ -296,19 +298,19 @@ export const ComboCartSummary: React.FC<ComboCartSummaryProps> = ({
       {/* Calculations & Checkout */}
       <div className="mt-4 pt-3 border-t border-[#e6ece3] space-y-2">
         <div className="flex justify-between items-center text-xs text-[#283830]">
-          <span>Product Subtotal</span>
+          <span>Subtotal</span>
           <strong className="text-[#18372b]">₹{totalSellingPrice.toLocaleString('en-IN')}</strong>
         </div>
 
         {tierDiscountAmount > 0 && (
           <div className="flex justify-between items-center text-xs text-[#25764d] font-bold">
-            <span>Volume Discount ({tierDiscountPercent}% OFF)</span>
+            <span>Combo Discount ({tierDiscountPercent}% Off)</span>
             <span>− ₹{tierDiscountAmount.toLocaleString('en-IN')}</span>
           </div>
         )}
 
         <div className="flex justify-between items-center text-sm text-[#123b2d] font-bold">
-          <span className="font-sans text-[13px]">Final Payable</span>
+          <span className="font-sans text-[13px]">Total Payable</span>
           <span className="font-serif text-[20px] font-bold">
             ₹{finalPayableTotal.toLocaleString('en-IN')}
           </span>

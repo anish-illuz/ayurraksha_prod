@@ -7,6 +7,7 @@ import { Star, ShoppingBag, Check, Tag, Plus, Minus } from 'lucide-react';
 import { Product } from '@/types/product';
 import { useCart } from '@/lib/cartContext';
 import { trackSelectItem } from '@/lib/storefrontAnalytics';
+import { getProductSpecBadge } from '@/lib/formatPack';
 
 interface ProductCardProps {
   product: Product;
@@ -74,21 +75,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   const primaryImage = product.images[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg';
 
-  // Determine size/pack label accurately based on product title or category
-  const titleSizeMatch = product.name.match(/\b(\d+)\s*(ml|g)\b/i);
-  const isTablet = product.name.toLowerCase().includes('tablet');
-
-  const sizeLabel = (product.variants && product.variants.length > 0 ? (product.variants.find(v => v.default) || product.variants[0])?.name : undefined) || (
-    titleSizeMatch ? `${titleSizeMatch[1]} ${titleSizeMatch[2]}` :
-    product.specNetQuantity ? product.specNetQuantity :
-    isTablet ? '60 Tablets' :
-    product.categorySlugs.includes('oil') ? '100 ml' :
-    product.categorySlugs.includes('tonic') ? '200 ml' :
-    product.categorySlugs.includes('capsules') ? '60 Capsules' :
-    product.categorySlugs.includes('powder') ? '100 g' :
-    product.categorySlugs.includes('soap') ? 'Pack of 2' :
-    'Standard Pack'
-  );
+  // Pack / size badge sourced strictly from WordPress ACF "Product Specifications".
+  // If the specification is missing or unavailable, the badge is hidden.
+  const specBadge = getProductSpecBadge(product);
 
   return (
     <div
@@ -148,13 +137,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           )}
         </div>
 
-        {/* Pack / Size Pill Badge — capped to match the 11px font size of other
-            card metadata on mobile, expanding to text-xs on larger screens */}
-        <div>
-          <span className="inline-block text-[11px] sm:text-xs font-semibold text-stone-800 bg-stone-100 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-stone-200">
-            {sizeLabel}
-          </span>
-        </div>
+        {/* Pack / Size Pill Badge — sourced strictly from ACF Product Specifications; hidden when unavailable */}
+        {specBadge ? (
+          <div>
+            <span className="inline-block text-[11px] sm:text-xs font-semibold text-stone-800 bg-stone-100 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-stone-200">
+              {specBadge}
+            </span>
+          </div>
+        ) : null}
 
         {/* Price Row: ₹Price ₹Regular % OFF */}
         <div className="pt-0.5 flex items-baseline gap-1.5 sm:gap-2 flex-wrap">

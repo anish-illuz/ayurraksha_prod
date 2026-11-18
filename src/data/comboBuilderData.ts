@@ -1166,15 +1166,6 @@ export const CARDIAC_WELLNESS_PRODUCTS: ComboProduct[] = [
 
 export const CARDIAC_WELLNESS_CONCERNS: ComboConcern[] = [
   {
-    id: 'explore-all',
-    name: 'Explore all 3 products',
-    shortDesc: 'Display all three choices independently. Customers select each item on their own.',
-    description:
-      'Explore Save Heart tonic, Flow Well circulation capsules, and Detox Tea at your own pace with zero compulsory items.',
-    highlightedProductIds: [],
-    requiresDoctorGuidance: false,
-  },
-  {
     id: 'general-heart',
     name: 'General heart-wellness interest',
     shortDesc: 'Suggested starting product: Save Heart Herbal Tonic.',
@@ -1207,17 +1198,6 @@ export const CARDIAC_WELLNESS_CONCERNS: ComboConcern[] = [
     highlightedProductIds: [27739],
     requiresDoctorGuidance: false,
   },
-  {
-    id: 'on-heart-meds',
-    name: 'On heart medicines / existing condition',
-    shortDesc: 'Medication check and physician consultation required.',
-    description:
-      'Patients taking antihypertensives, blood thinners, antiplatelets, or diuretics should have an interaction review before taking herbal supplements.',
-    clinicalNotice:
-      'MEDICATION SAFETY CHECK: Always review any supplement with your treating cardiologist before adding it to prescribed heart medicines. Never discontinue or adjust prescription medications.',
-    highlightedProductIds: [7695, 4254],
-    requiresDoctorGuidance: true,
-  },
 ];
 
 // ============================================================================
@@ -1231,11 +1211,11 @@ export const SKIN_CARE_CONFIG: ComboBuilderConfig = {
   id: 'skin-care',
   slug: 'skin-care',
   name: 'Skin Care Combo Builder',
-  heroTagline: 'AyurRaksha Botanical Wellness',
-  heroTitle: 'Give Your Skin the',
-  heroHighlight: 'Care It Deserves',
+  heroTagline: 'Build Your Skin Care Combo',
+  heroTitle: 'Create Your Personalised',
+  heroHighlight: 'Skin Care Combo',
   heroDescription:
-    'Build your personalised skin care routine with Ayurvedic oils, cleansers and botanical supplements, selected to suit your needs.',
+    'Choose the products that suit your routine, select your quantities and enjoy combo savings.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '14 Formulations',
   catalogSubtitle: 'Browse, compare and customize your selection with live store prices. No products are added without your choice.',
@@ -1265,11 +1245,11 @@ export const VARICOSE_VEINS_CONFIG: ComboBuilderConfig = {
   id: 'varicose-veins',
   slug: 'varicose-veins',
   name: 'Varicose Veins Combo Builder',
-  heroTagline: 'Circulation & Lower-Leg Comfort',
-  heroTitle: 'Lighter Legs.',
-  heroHighlight: 'More Comfortable Days.',
+  heroTagline: 'Build Your Personalised Combo',
+  heroTitle: 'Create Your',
+  heroHighlight: 'Varicose Veins Care Combo',
   heroDescription:
-    'Create your own routine with Ayurvedic products selected to support circulation, care for tired legs and nourish your skin.',
+    'Choose the products that suit your routine, select your quantities and enjoy combo savings.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '6 Products',
   catalogSubtitle:
@@ -1300,11 +1280,11 @@ export const BREATH_EASY_CONFIG: ComboBuilderConfig = {
   id: 'breath-easy',
   slug: 'breath-easy',
   name: 'Breathe Easy Combo Builder',
-  heroTagline: 'Targeted Comfort & Wellness',
-  heroTitle: 'Breathe Easier.',
-  heroHighlight: 'Feel Ready for Your Day.',
+  heroTagline: 'Create Your Breathe Easy Combo',
+  heroTitle: 'Create Your',
+  heroHighlight: 'Breathe Easy Combo',
   heroDescription:
-    'Choose Ayurvedic products for respiratory and seasonal wellness, digestive comfort and everyday care.',
+    'Choose the products that suit your wellness routine, select your quantities and enjoy combo savings.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '3 Products',
   catalogSubtitle:
@@ -1335,11 +1315,11 @@ export const CARDIAC_WELLNESS_CONFIG: ComboBuilderConfig = {
   id: 'cardiac-wellness',
   slug: 'cardiac-wellness',
   name: 'Cardiac Wellness Combo Builder',
-  heroTagline: 'Cardiovascular Vitality & Balance',
-  heroTitle: 'Give Your Heart the',
-  heroHighlight: 'Care It Deserves',
+  heroTagline: 'Create Your Cardiac Wellness Combo',
+  heroTitle: 'Create Your',
+  heroHighlight: 'Cardiac Wellness Combo',
   heroDescription:
-    'Build your heart-conscious wellness routine with Ayurvedic products for cardiovascular care, circulation and digestive wellness.',
+    'Build a heart-conscious wellness routine with Save Heart, Flow Well Capsules and Detox Tea. Choose the products you need and enjoy combo savings.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '3 Products',
   catalogSubtitle:

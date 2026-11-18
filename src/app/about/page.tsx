@@ -83,7 +83,7 @@ export default function AboutPage() {
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-card border border-stone-200">
               <Image
-                src="/images/categories/cat-digestive-health.webp"
+                src="/images/about/about-story.webp"
                 alt="AyurRaksha Botanical Formulations and Herbal Traditions"
                 fill
                 sizes="(max-width: 1024px) 100vw, 550px"

@@ -149,6 +149,7 @@ export default function CheckoutPage() {
     // Record order in WooCommerce backend and get the real WooCommerce Order Number
     let wooOrderNumber = '';
     let wooOrderId = '';
+    let razorpayOrderIdFromBackend: string | null = null;
 
     try {
       const note = formData.notes
@@ -181,6 +182,7 @@ export default function CheckoutPage() {
       }
       wooOrderNumber = String(orderData.orderNumber);
       wooOrderId = String(orderData.orderId);
+      razorpayOrderIdFromBackend = orderData.razorpayOrderId || null;
       setPreviousAttemptOrderId(wooOrderNumber);
     } catch (err) {
       console.error('WooCommerce order recording error:', err);
@@ -230,6 +232,7 @@ export default function CheckoutPage() {
       name: razorpayConfig?.name || 'AyurRaksha',
       description: `Order #${wooOrderNumber} (${itemCount} ${itemCount === 1 ? 'item' : 'items'})`,
       image: 'https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/cropped-Ayur-Raksha-Favicon-192x192.png',
+      order_id: razorpayOrderIdFromBackend || undefined,
       handler: async function (response: any) {
         // Server-side signature verification is the ONLY trustworthy proof that
         // this payment actually happened. The SDK response reaches the browser
@@ -241,9 +244,10 @@ export default function CheckoutPage() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              razorpay_order_id: response.razorpay_order_id,
+              razorpay_order_id: response.razorpay_order_id || razorpayOrderIdFromBackend,
               razorpay_payment_id: response.razorpay_payment_id,
               razorpay_signature: response.razorpay_signature,
+              woocommerce_order_id: wooOrderId || wooOrderNumber,
             }),
           });
           const verifyData = await verifyRes.json();

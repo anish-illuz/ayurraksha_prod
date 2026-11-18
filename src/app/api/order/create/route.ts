@@ -370,6 +370,56 @@ export async function POST(req: Request) {
 
     const orderData = await checkoutRes.json();
 
+    // If paying via Razorpay, pre-create a Razorpay Order so the client SDK
+    // binds to the exact amount and returns razorpay_order_id and razorpay_signature
+    // on success (enabling server-side HMAC signature verification).
+    let razorpayOrderId: string | null = null;
+    let razorpayAmount: number | null = null;
+
+    if (paymentMethod === 'razorpay') {
+      const rzpKey = process.env.RAZORPAY_KEY_ID || process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_live_kWyXoOFkrDjUBk';
+      const rzpSecret = process.env.RAZORPAY_SECRET_KEY;
+
+      // Extract total price in paise (WooCommerce Store API returns totals in minor units / paise)
+      const rawTotalPaise = Number(orderData.totals?.total_price ?? 0);
+      const totalPaise = Number.isFinite(rawTotalPaise) && rawTotalPaise > 0
+        ? rawTotalPaise
+        : Math.round(orderItems.reduce((acc, it) => acc + (it.price * it.quantity), 0) * 100);
+
+      if (rzpKey && rzpSecret && totalPaise > 0) {
+        try {
+          const auth = Buffer.from(`${rzpKey}:${rzpSecret}`).toString('base64');
+          const rzpOrderRes = await fetch('https://api.razorpay.com/v1/orders', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Basic ${auth}`,
+              'Content-Type': 'application/json',
+              'User-Agent': 'AyurRaksha-NextJS/1.0',
+            },
+            body: JSON.stringify({
+              amount: totalPaise,
+              currency: 'INR',
+              receipt: String(orderData.order_number || orderData.order_id),
+              notes: {
+                woocommerce_order_id: String(orderData.order_id),
+                woocommerce_order_number: String(orderData.order_number || orderData.order_id),
+              },
+            }),
+          });
+
+          if (rzpOrderRes.ok) {
+            const rzpOrderData = await rzpOrderRes.json();
+            razorpayOrderId = rzpOrderData.id;
+            razorpayAmount = rzpOrderData.amount;
+          } else {
+            console.warn('[OrderCreate] Razorpay order creation returned status', rzpOrderRes.status, await rzpOrderRes.text().catch(() => ''));
+          }
+        } catch (rzpErr) {
+          console.warn('[OrderCreate] Could not pre-create Razorpay order:', rzpErr);
+        }
+      }
+    }
+
     return NextResponse.json({
       success: true,
       orderId: orderData.order_id,
@@ -377,6 +427,8 @@ export async function POST(req: Request) {
       orderKey: orderData.order_key,
       status: orderData.status,
       paymentResult: orderData.payment_result,
+      razorpayOrderId,
+      razorpayAmount,
       source: 'woocommerce_store_api',
     });
   } catch (error: any) {

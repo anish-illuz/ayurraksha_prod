@@ -275,6 +275,56 @@ const nextConfig = {
         destination: '/contact',
         permanent: true,
       },
+      {
+        source: '/ayur-raksha-join-well-pack',
+        destination: '/combo-builder/varicose-veins/',
+        permanent: true,
+      },
+      {
+        source: '/ayur-raksha-join-well-pack/',
+        destination: '/combo-builder/varicose-veins/',
+        permanent: true,
+      },
+      {
+        source: '/flow-well-pack',
+        destination: '/combo-builder/cardiac-wellness/',
+        permanent: true,
+      },
+      {
+        source: '/flow-well-pack/',
+        destination: '/combo-builder/cardiac-wellness/',
+        permanent: true,
+      },
+      {
+        source: '/skin-well-pack',
+        destination: '/combo-builder/skin-care/',
+        permanent: true,
+      },
+      {
+        source: '/skin-well-pack/',
+        destination: '/combo-builder/skin-care/',
+        permanent: true,
+      },
+      {
+        source: '/skin-well-food-supplement-capsules',
+        destination: '/product/skin-well-food-supplement-capsules/',
+        permanent: true,
+      },
+      {
+        source: '/skin-well-food-supplement-capsules/',
+        destination: '/product/skin-well-food-supplement-capsules/',
+        permanent: true,
+      },
+      {
+        source: '/boozliv-liver-tonic-for-fatty-liver',
+        destination: '/product/boozliv/',
+        permanent: true,
+      },
+      {
+        source: '/boozliv-liver-tonic-for-fatty-liver/',
+        destination: '/product/boozliv/',
+        permanent: true,
+      },
     ];
   },
   async rewrites() {

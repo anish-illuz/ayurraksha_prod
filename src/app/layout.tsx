@@ -9,6 +9,7 @@ import { Footer } from '@/components/Footer';
 import { OrderAttributionTracker } from '@/components/OrderAttributionTracker';
 import { AnalyticsScripts } from '@/components/AnalyticsScripts';
 import { MetaPixel } from '@/components/MetaPixel';
+import { TawkTo } from '@/components/TawkTo';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 const ExitIntentDiscountModal = dynamic(
@@ -184,6 +185,9 @@ export default function RootLayout({
         <AnalyticsScripts />
         <Suspense fallback={null}>
           <MetaPixel />
+        </Suspense>
+        <Suspense fallback={null}>
+          <TawkTo />
         </Suspense>
         <Suspense fallback={null}>
           <OrderAttributionTracker />

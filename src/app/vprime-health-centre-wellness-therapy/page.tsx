@@ -252,7 +252,7 @@ export default function VPrimeWellnessPage() {
                 <div className="bg-white rounded-2xl overflow-hidden border border-[#e7e5dc] shadow-xs hover:shadow-md transition-shadow group flex flex-col">
                   <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
                     <Image
-                      src="/images/combos/ayur-raksha-joint-well-pack.webp"
+                      src="/images/about/vprime-massage-therapy.png"
                       alt="Padha Guasa & Musculoskeletal Therapy at VPrime Wellness"
                       fill
                       sizes="(max-width: 768px) 100vw, 300px"
@@ -274,7 +274,7 @@ export default function VPrimeWellnessPage() {
                 <div className="bg-white rounded-2xl overflow-hidden border border-[#e7e5dc] shadow-xs hover:shadow-md transition-shadow group flex flex-col">
                   <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
                     <Image
-                      src="/images/categories/liver-wellness.webp"
+                      src="/images/about/vprime-hydro-room.png"
                       alt="Colon Hydrotherapy & Digestive Balancing at VPrime Wellness"
                       fill
                       sizes="(max-width: 768px) 100vw, 300px"
@@ -296,7 +296,7 @@ export default function VPrimeWellnessPage() {
                 <div className="bg-white rounded-2xl overflow-hidden border border-[#e7e5dc] shadow-xs hover:shadow-md transition-shadow group flex flex-col">
                   <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
                     <Image
-                      src="/images/products/sp-soryn-cream.webp"
+                      src="/images/about/vprime-consultation.png"
                       alt="Skin Rejuvenation & Detox Therapy at VPrime Wellness"
                       fill
                       sizes="(max-width: 768px) 100vw, 300px"
@@ -318,7 +318,7 @@ export default function VPrimeWellnessPage() {
                 <div className="bg-white rounded-2xl overflow-hidden border border-[#e7e5dc] shadow-xs hover:shadow-md transition-shadow group flex flex-col">
                   <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
                     <Image
-                      src="/images/products/purna-sakthi-tonic.webp"
+                      src="/images/about/vprime-botanical-prep.png"
                       alt="Vitality & Immunity Formulations by VPrime Wellness"
                       fill
                       sizes="(max-width: 768px) 100vw, 300px"

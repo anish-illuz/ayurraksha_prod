@@ -60,10 +60,12 @@ export default function VPrimeWellnessPage() {
                 {/* Dual Action CTAs */}
                 <div className="pt-2 flex flex-wrap items-center gap-4">
                   <a
-                    href="#who-we-are"
+                    href="https://www.vprimewellness.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-[#0d402b] hover:bg-[#093020] text-white px-8 py-3.5 rounded-full font-medium shadow-md shadow-[#0d402b]/15 hover:shadow-lg transition-all duration-200 text-sm font-sans"
                   >
-                    <span>Discover Our Story</span>
+                    <span>Learn More</span>
                     <ArrowRight size={16} className="ml-2" />
                   </a>
                   <a

@@ -247,7 +247,7 @@ export default function VPrimeWellnessPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-sans">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-sans items-start">
 
                 <div className="bg-white rounded-2xl overflow-hidden border border-[#e7e5dc] shadow-xs hover:shadow-md transition-shadow group flex flex-col">
                   <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
@@ -262,7 +262,7 @@ export default function VPrimeWellnessPage() {
                       Joint Care
                     </div>
                   </div>
-                  <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+                  <div className="p-5 flex flex-col space-y-2">
                     <div>
                       <h4 className="text-base font-bold text-[#0d402b] font-heading">Padha Guasa &amp; Musculoskeletal Care</h4>
                       <p className="text-xs text-[#526058] leading-relaxed mt-1">Targeted reflexology and deep tissue relief for chronic knee strain, spinal stiffness, and sciatica.</p>
@@ -284,7 +284,7 @@ export default function VPrimeWellnessPage() {
                       Digestive Detox
                     </div>
                   </div>
-                  <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+                  <div className="p-5 flex flex-col space-y-2">
                     <div>
                       <h4 className="text-base font-bold text-[#0d402b] font-heading">Colon Detox &amp; Gut Restoration</h4>
                       <p className="text-xs text-[#526058] leading-relaxed mt-1">Gentle internal cleansing promoting toxin elimination, metabolic balance, and liver vitality.</p>
@@ -306,7 +306,7 @@ export default function VPrimeWellnessPage() {
                       Dermatology
                     </div>
                   </div>
-                  <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+                  <div className="p-5 flex flex-col space-y-2">
                     <div>
                       <h4 className="text-base font-bold text-[#0d402b] font-heading">Skin Rejuvenation &amp; Blood Purification</h4>
                       <p className="text-xs text-[#526058] leading-relaxed mt-1">Holistic botanical therapies designed to cleanse bloodstream impurities and revive natural skin glow.</p>
@@ -328,7 +328,7 @@ export default function VPrimeWellnessPage() {
                       Vitality &amp; Herbs
                     </div>
                   </div>
-                  <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+                  <div className="p-5 flex flex-col space-y-2">
                     <div>
                       <h4 className="text-base font-bold text-[#0d402b] font-heading">Vitality &amp; Immunity Formulations</h4>
                       <p className="text-xs text-[#526058] leading-relaxed mt-1">Translating clinical insights into high-potency daily herbal supplements for enduring health.</p>

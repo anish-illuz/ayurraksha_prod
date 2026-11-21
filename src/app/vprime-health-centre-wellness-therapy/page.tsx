@@ -389,8 +389,8 @@ export default function VPrimeWellnessPage() {
 
                   <div className="relative rounded-2xl overflow-hidden shadow-sm aspect-[16/9] group">
                     <Image
-                      src="/images/brand/dr-jegajothi-pandian.webp"
-                      alt="VPrime Wellness Clinical Care, Chennai"
+                      src="/images/about/therapy-room.webp"
+                      alt="VPrime Wellness Clinical Therapy Room, Chennai"
                       fill
                       sizes="(max-width: 1024px) 100vw, 500px"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"

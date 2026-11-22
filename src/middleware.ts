@@ -20,6 +20,7 @@ const REDIRECTS: Record<string, string> = {
   '/skin-well-pack': '/combo-builder/skin-care/',
   '/skin-well-food-supplement-capsules': '/product/skin-well-food-supplement-capsules/',
   '/boozliv-liver-tonic-for-fatty-liver': '/product/boozliv/',
+  '/boozliv': '/product/boozliv/',
 };
 
 export function middleware(req: NextRequest) {
@@ -47,5 +48,7 @@ export const config = {
     '/skin-well-food-supplement-capsules/',
     '/boozliv-liver-tonic-for-fatty-liver',
     '/boozliv-liver-tonic-for-fatty-liver/',
+    '/boozliv',
+    '/boozliv/',
   ],
 };

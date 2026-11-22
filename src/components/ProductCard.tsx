@@ -164,16 +164,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         {/* Quantity Stepper + Primary Add to Cart Action Row.
-            Compact side-by-side layout across all screen sizes (mobile, tablet, desktop)
-            with matching heights (h-9 on mobile, h-10 on sm+) and a streamlined stepper
-            width so the Add to Cart button has ample room on single line without wrapping. */}
-        <div className="pt-2 flex flex-row items-center gap-1.5 sm:gap-2">
-          {/* Compact Quantity + / - Stepper */}
-          <div className="flex items-center justify-between border border-stone-300 rounded-lg sm:rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-9 sm:h-10 w-[74px] sm:w-[84px]">
+            On mobile (< sm), controls stack vertically (h-8 stepper, h-9 button)
+            so the Add to Cart button has full card width and is never clipped or wrapped.
+            On sm+ screens, side-by-side with streamlined stepper (w-[84px] h-10). */}
+        <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-1.5 sm:gap-2">
+          {/* Quantity + / - Stepper */}
+          <div className="flex items-center justify-between border border-stone-300 rounded-lg sm:rounded-xl bg-stone-50 overflow-hidden flex-shrink-0 h-8 sm:h-10 w-full sm:w-[84px]">
             <button
               onClick={handleDecrement}
               aria-label="Decrease quantity"
-              className="w-6 sm:w-7 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all disabled:opacity-40"
+              className="w-8 sm:w-7 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all disabled:opacity-40"
               disabled={quantity <= 1 || !product.inStock}
             >
               <Minus size={11} />
@@ -185,7 +185,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               disabled={!product.inStock}
               onClick={handleIncrement}
               aria-label="Increase quantity"
-              className="w-6 sm:w-7 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all"
+              className="w-8 sm:w-7 h-full flex items-center justify-center text-stone-700 hover:bg-stone-200 active:scale-90 transition-all"
             >
               <Plus size={11} />
             </button>
@@ -196,7 +196,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             onClick={handleQuickAdd}
             disabled={!product.inStock}
             aria-label={`Add ${product.name} to cart`}
-            className={`flex-1 min-w-0 h-9 sm:h-10 inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 rounded-lg sm:rounded-xl text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-tight whitespace-nowrap transition-all duration-200 shadow-xs active:scale-[0.98] ${
+            className={`w-full sm:flex-1 min-w-0 h-9 sm:h-10 inline-flex items-center justify-center gap-1.5 px-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold uppercase tracking-tight whitespace-nowrap transition-all duration-200 shadow-xs active:scale-[0.98] ${
               !product.inStock
                 ? 'bg-stone-200 text-stone-500 cursor-not-allowed'
                 : isAdded
@@ -208,12 +208,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               <span className="whitespace-nowrap">Out of Stock</span>
             ) : isAdded ? (
               <>
-                <Check size={13} className="flex-shrink-0" />
+                <Check size={14} className="flex-shrink-0" />
                 <span className="whitespace-nowrap">Added!</span>
               </>
             ) : (
               <>
-                <ShoppingBag size={13} className="flex-shrink-0" />
+                <ShoppingBag size={14} className="flex-shrink-0" />
                 <span className="whitespace-nowrap">Add to Cart</span>
               </>
             )}

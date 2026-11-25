@@ -5,6 +5,7 @@ import { Star, ShieldCheck, MapPin } from 'lucide-react';
 import { Product } from '@/types/product';
 import { PdpReview } from '@/lib/productReviews';
 import { VERIFIED_REVIEWS } from '@/data/reviews';
+import { ReviewForm } from '@/components/pdp/ReviewForm';
 
 interface ProductReviewsProps {
   product: Product;
@@ -21,7 +22,9 @@ interface ProductReviewsProps {
  * Individual cards: the live reviews pulled from the backend (where the
  * Customer Reviews for WooCommerce plugin stores them) when available;
  * otherwise the curated customer testimonials matching this product's slug.
- * The whole section hides when the backend reports no reviews.
+ *
+ * The "Write a review" form is always shown - products with zero reviews
+ * still get the section so a customer can post the first one.
  */
 export const ProductReviews: React.FC<ProductReviewsProps> = ({ product, liveReviews }) => {
   const curated = VERIFIED_REVIEWS.filter((r) => r.productSlug === product.slug);
@@ -32,9 +35,6 @@ export const ProductReviews: React.FC<ProductReviewsProps> = ({ product, liveRev
   const hasLive = live.length > 0;
   const rating = product.rating || 0;
   const reviewCount = product.reviewCount || 0;
-
-  // No backend reviews and no curated cards: nothing to show.
-  if (reviewCount <= 0 && reviews.length === 0) return null;
 
   const displayRating = rating > 0 ? rating : reviews.length > 0 ? 5 : 0;
 
@@ -169,6 +169,18 @@ export const ProductReviews: React.FC<ProductReviewsProps> = ({ product, liveRev
                 ))}
           </div>
         )}
+        {/* No reviews yet: invite the customer to be the first */}
+        {reviews.length === 0 && (
+          <p className="text-xs sm:text-sm text-charcoal-muted pt-4 sm:pt-5">
+            No reviews yet. Be the first to share your experience.
+          </p>
+        )}
+
+        {/* Write a review - submits to the Customer Reviews plugin store on
+            the WordPress backend (cms.ayurrakshaonline.com). The page reloads
+            after a successful publish so the fresh review shows up in the
+            live list above. */}
+        <ReviewForm productSlug={product.slug} productName={product.name} />
       </div>
     </section>
   );

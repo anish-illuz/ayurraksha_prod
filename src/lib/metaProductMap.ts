@@ -28,8 +28,6 @@ export const CMS_PRODUCT_ID_MAP: Record<string, number> = {
   'ayurraksha-creat-capsules': 93,
   'ayur-raksha-imu-360': 94,
   'ayurraksha-imu-360': 94,
-  'bpain-out-capsules': 95,
-  'ayurraksha-bpain-out-capsules': 95,
   'ayur-raksha-herbal-shampoo': 28334,
   'ayurraksha-herbal-shampoo': 28334,
   'hair-well-food-supplement-capsules': 97,

@@ -34,7 +34,6 @@ export const SLUG_ALIASES: Record<string, string> = {
   'hair-well-food-supplement-capsules': 'hair-well-food-supplement-capsules',
   'sp-soryn-cream': 'sp-soryn-cream',
   'b-derma-capsules': 'b-derma-capsules',
-  'bpain-out-capsules': 'bpain-out-capsules',
   'b-gasonil': 'b-gasonil',
 };
 

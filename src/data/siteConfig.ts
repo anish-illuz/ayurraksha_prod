@@ -22,7 +22,7 @@ export const HEALTH_CONCERNS: HealthConcern[] = [
     slug: 'pain-joints',
     description: 'Keep moving, keep doing what you love. Discover herbal care for everyday comfort.',
     icon: 'ShieldCheck',
-    heroProductSlug: 'bpain-out-capsules',
+    heroProductSlug: 'etioment-pain-relief-roll-on-50ml',
   },
   {
     id: 'skin-dermatology',

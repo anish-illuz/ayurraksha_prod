@@ -63,7 +63,6 @@ const SIGNATURES: Record<string, string[][]> = {
   'ayur-raksha-alg': [['alg']],
   'ayur-raksha-creat-capsules': [['creat']],
   'ayur-raksha-imu-360': [['imu']],
-  'bpain-out-capsules': [['bpain', 'b pain']],
   'ayur-raksha-herbal-shampoo': [['shampoo']],
   'hair-well-food-supplement-capsules': [['hair'], ['well']],
   'ayur-raksha-skin-conditioning-oil': [['skin'], ['conditioning']],

@@ -79,11 +79,6 @@ const PRODUCT_OVERRIDES: Record<string, IngredientImageEntry[]> = {
     { src: '/images/ingredients/products/migro-prime-tablets/albizia-lebbeck.jpg', keys: ['albizia lebbeck', 'albizia'] },
     { src: '/images/ingredients/products/migro-prime-tablets/eclipta-alba.jpg', keys: ['eclipta alba', 'eclipta'] },
   ],
-  'pi-well-food-supplement-capsules': [
-    { src: '/images/ingredients/products/pi-well-food-supplement-capsules/pumpkin.jpg', keys: ['pumpkin', 'cucurbita maxima', 'cucurbita'] },
-    { src: '/images/ingredients/products/pi-well-food-supplement-capsules/neem.jpg', keys: ['neem', 'vembu', 'azadirachta indica', 'azadirachta'] },
-    { src: '/images/ingredients/products/pi-well-food-supplement-capsules/tulasi.jpg', keys: ['tulsi', 'holy basil', 'ocimum sanctum', 'ocimum tenuiflorum', 'tulasi', 'ocimum'] },
-  ],
   'sleep-well-food-supplement-capsules': [
     { src: '/images/ingredients/products/sleep-well-food-supplement-capsules/brahmi.jpg', keys: ['brahmi', 'water hyssop', 'bacopa monnieri', 'bacopa'] },
     { src: '/images/ingredients/products/sleep-well-food-supplement-capsules/pumpkin.jpg', keys: ['pumpkin', 'cucurbita maxima', 'cucurbita'] },
@@ -177,21 +172,6 @@ const PRODUCT_OVERRIDES: Record<string, IngredientImageEntry[]> = {
     { src: '/images/ingredients/products/ayur-raksha-gargling-oil/sesame-oil.jpg', keys: ['sesame oil', 'sesame', 'cold pressed sesame', 'sesamum indicum'] },
     { src: '/images/ingredients/products/ayur-raksha-gargling-oil/organic-coconut-oil.jpg', keys: ['coconut oil', 'coconut', 'cocos nucifera'] },
     { src: '/images/ingredients/products/ayur-raksha-gargling-oil/clove-oil.jpg', keys: ['clove oil', 'clove'] },
-  ],
-  'ayur-raksha-premium-high-fiber-health-mix': [
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/ragi.jpg', keys: ['ragi', 'finger millet'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/jowar.jpg', keys: ['jowar', 'sorghum'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/wheat.jpg', keys: ['wheat', 'triticum'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/barley.jpg', keys: ['barley', 'hordeum vulgare'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/rice.jpg', keys: ['rice', 'oryza sativa'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/fried-gram.jpg', keys: ['fried gram', 'roasted chana', 'roasted gram'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/moong-dal.jpg', keys: ['moong dal', 'green gram', 'mung'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/desi-chickpea.jpg', keys: ['desi chickpea', 'chickpea', 'chana'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/soya.jpg', keys: ['soya', 'soybean', 'glycine max'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/peanut.jpg', keys: ['peanut', 'groundnut', 'groundnuts'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/badam.jpg', keys: ['badam', 'almond', 'prunus dulcis'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/cashew-nut.jpg', keys: ['cashew nut', 'cashew'] },
-    { src: '/images/ingredients/products/ayur-raksha-premium-high-fiber-health-mix/cardamom.jpg', keys: ['cardamom', 'elettaria cardamomum'] },
   ],
   'boozliv': [
     { src: '/images/ingredients/products/boozliv/wedelia-calendulacea-kesaraja.jpg', keys: ['karicalai', 'wedelia calendulacea', 'wedelia', 'kesaraja'] },

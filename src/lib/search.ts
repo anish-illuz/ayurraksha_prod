@@ -114,7 +114,6 @@ const BRAND_SYNONYMS: Record<string, string[]> = {
   immuno3: ['immuno', 'imuno', 'immune', 'immunity booster', 'immuno 3'],
   vital: ['vittal', 'vitiligo', 'anti vitiligo', 'vital o3'],
   sleepwell: ['sleep well', 'slepwell', 'sleepwel'],
-  piwell: ['pi well', 'piwel', 'pwell'],
 };
 
 /**

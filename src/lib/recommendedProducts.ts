@@ -59,7 +59,6 @@ const SIGNATURES: Record<string, string[][]> = {
   'etionment-pain-relief-cream': [['cream', 'balm'], ['etioment', 'etionment']],
   'ayur-raksha-superheal-o3-cream': [['superheal']],
   'ayur-raksha-dant-swasthya': [['dant', 'swasthya']],
-  'ayur-raksha-premium-high-fiber-health-mix': [['fiber']],
   'ayur-raksha-gargling-oil': [['gargling']],
   'ayur-raksha-alg': [['alg']],
   'ayur-raksha-creat-capsules': [['creat']],
@@ -71,7 +70,6 @@ const SIGNATURES: Record<string, string[][]> = {
   'sp-soryn-cream': [['soryn']],
   'b-derma-capsules': [['derma']],
   'ayur-raksha-skin-well-food-moisturising-gel': [['moisturising', 'moisturizing']],
-  'ayur-raksha-beta-powder': [['beta']],
   'dia-well-food-supplement-capsules': [['dia']],
   'b-gasonil': [['gasonil']],
   // "skin well" alone is shared with the Moisturising Gel family, so the
@@ -81,7 +79,6 @@ const SIGNATURES: Record<string, string[][]> = {
   'flow-well-food-supplement-capsules': [['flow']],
   'purna-sakthi-tonic': [['purna', 'sakthi']],
   'esnovate-immunity-boosting-capsules': [['esnovate']],
-  'pi-well-food-supplement-capsules': [['pi'], ['well']],
   'sleep-well-food-supplement-capsules': [['sleep']],
   'ayurraksha-kalonji-soap': [['kalonji']],
   'ayurraksha-vital-o3-anti-vitiligo-cream': [['vital', 'vitiligo']],

@@ -21,6 +21,17 @@ const REDIRECTS: Record<string, string> = {
   '/skin-well-food-supplement-capsules': '/product/skin-well-food-supplement-capsules/',
   '/boozliv-liver-tonic-for-fatty-liver': '/product/boozliv/',
   '/boozliv': '/product/boozliv/',
+  // Trashed in the CMS backend: the PDPs no longer resolve, so send any
+  // indexed/linked URL for the removed products to the shop page.
+  '/product/ayur-raksha-beta-powder': '/shop/',
+  '/product/ayurraksha-beta-powder': '/shop/',
+  '/product/ayur-raksha-premium-high-fiber-health-mix': '/shop/',
+  '/product/ayurraksha-premium-high-fiber-health-mix': '/shop/',
+  '/product/pi-well-food-supplement-capsules': '/shop/',
+  '/product/organics-laxahealth-tea-tin': '/shop/',
+  '/product/dhayani-herbal-hair-oil-100ml': '/shop/',
+  '/product/organics-herbo-protein-powder': '/shop/',
+  '/product/organics-hibiscus-tea-tin': '/shop/',
 };
 
 export function middleware(req: NextRequest) {
@@ -50,5 +61,23 @@ export const config = {
     '/boozliv-liver-tonic-for-fatty-liver/',
     '/boozliv',
     '/boozliv/',
+    '/product/ayur-raksha-beta-powder',
+    '/product/ayur-raksha-beta-powder/',
+    '/product/ayurraksha-beta-powder',
+    '/product/ayurraksha-beta-powder/',
+    '/product/ayur-raksha-premium-high-fiber-health-mix',
+    '/product/ayur-raksha-premium-high-fiber-health-mix/',
+    '/product/ayurraksha-premium-high-fiber-health-mix',
+    '/product/ayurraksha-premium-high-fiber-health-mix/',
+    '/product/pi-well-food-supplement-capsules',
+    '/product/pi-well-food-supplement-capsules/',
+    '/product/organics-laxahealth-tea-tin',
+    '/product/organics-laxahealth-tea-tin/',
+    '/product/dhayani-herbal-hair-oil-100ml',
+    '/product/dhayani-herbal-hair-oil-100ml/',
+    '/product/organics-herbo-protein-powder',
+    '/product/organics-herbo-protein-powder/',
+    '/product/organics-hibiscus-tea-tin',
+    '/product/organics-hibiscus-tea-tin/',
   ],
 };

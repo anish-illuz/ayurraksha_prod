@@ -31,6 +31,7 @@ const testFiles = [
   './razorpay-verify.test.mjs',
   './meta-hash.test.mjs',
   './order-item-resolution.test.mjs',
+  './product-reviews.test.mjs',
   './analytics-payload.test.mjs',
 ];
 

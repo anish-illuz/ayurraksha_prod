@@ -16,6 +16,7 @@ import {
   fetchDynamicProduct,
   resolveRecommendedProducts,
 } from '@/lib/cms';
+import { fetchCmsProductReviews, type PdpReview } from '@/lib/productReviews';
 import { SITE_CONFIG } from '@/data/siteConfig';
 
 interface PageProps {
@@ -67,6 +68,14 @@ export default async function ProductDetailPage({ params }: PageProps) {
   // Fetch complete dynamic product directly from cms.ayurrakshaonline.com
   const product = await fetchDynamicProduct(slug);
   if (!product) notFound();
+
+  // Live customer reviews from the WordPress backend (cms.ayurrakshaonline.com),
+  // where the "Customer Reviews for WooCommerce" plugin stores its reviews as
+  // WooCommerce product reviews. Returned [] on any failure so the PDP simply
+  // falls back to its curated testimonials.
+  const liveReviews: PdpReview[] = product.cmsProductId
+    ? await fetchCmsProductReviews(product.cmsProductId, 6)
+    : [];
 
   // Map recommended products dynamically from ACF `recommended_products` field.
   // Each recommended card is enriched with its own live CMS commerce data
@@ -192,9 +201,13 @@ export default async function ProductDetailPage({ params }: PageProps) {
           <ProductDetailsSections product={product} />
 
           {/* Customer reviews: the star aggregate is the live WooCommerce
-              average from the CMS (rating / reviewCount); the section hides
-              itself when the backend reports no reviews. */}
-          <ProductReviews product={product} />
+              average from the CMS (rating / reviewCount); the individual cards
+              are the most recent reviews pulled live from the backend (where
+              the Customer Reviews plugin stores them), falling back to the
+              curated testimonials when no live reviews are available. The
+              section hides itself when the backend reports no reviews and no
+              live/curation cards exist. */}
+          <ProductReviews product={product} liveReviews={liveReviews} />
 
           {/* BoozLiv-only: Doctor Insights video hub, kept below the details so the
               purchase path stays uncluttered. */}

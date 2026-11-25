@@ -1,11 +1,11 @@
 {
   "runner": "node-native-type-stripping",
-  "generatedAt": "2026-11-18T04:56:23.556Z",
+  "generatedAt": "2026-11-25T08:00:00.446Z",
   "node": "v24.19.0",
   "nodeModules": "typescript=strip",
   "target": "offline-unit (no browser, no gateway, no live CMS)",
-  "total": 46,
-  "passed": 46,
+  "total": 56,
+  "passed": 56,
   "failed": 0,
   "results": [
     {
@@ -257,6 +257,66 @@
     {
       "suite": "OrderItemResolution",
       "name": "boozliv live snapshot: no variantId books the 30-day default pack",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ProductReviews",
+      "name": "strips HTML and decodes entities",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ProductReviews",
+      "name": "collapses <br> and blank lines to single spaces",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ProductReviews",
+      "name": "returns empty string for empty input",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ProductReviews",
+      "name": "maps a full wc/v3 review row",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ProductReviews",
+      "name": "unrated review maps to rating 0, verified false",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ProductReviews",
+      "name": "row with neither text nor reviewer is dropped (null)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ProductReviews",
+      "name": "null / non-object input is dropped",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ProductReviews",
+      "name": "dedupes identical texts, keeping the highest-rated row",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ProductReviews",
+      "name": "keeps distinct texts and respects the limit",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "suite": "ProductReviews",
+      "name": "same text from different reviewers collapses to the best-rated row",
       "status": "PASS",
       "details": ""
     },

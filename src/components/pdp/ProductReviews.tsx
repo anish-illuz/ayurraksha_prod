@@ -3,21 +3,33 @@
 import React from 'react';
 import { Star, ShieldCheck, MapPin } from 'lucide-react';
 import { Product } from '@/types/product';
+import { PdpReview } from '@/lib/productReviews';
 import { VERIFIED_REVIEWS } from '@/data/reviews';
 
 interface ProductReviewsProps {
   product: Product;
+  /** Most recent reviews fetched live from the WordPress backend. When
+   *  present, these are shown in place of the bundled curated testimonials. */
+  liveReviews?: PdpReview[];
 }
 
 /**
  * Customer reviews for the PDP. The star aggregate (rating + review count) is
  * the live WooCommerce average from cms.ayurrakshaonline.com (product.rating /
- * product.reviewCount), never a bundled value. The individual verified review
- * cards are the curated customer testimonials matching this product's slug.
+ * product.reviewCount), never a bundled value.
+ *
+ * Individual cards: the live reviews pulled from the backend (where the
+ * Customer Reviews for WooCommerce plugin stores them) when available;
+ * otherwise the curated customer testimonials matching this product's slug.
  * The whole section hides when the backend reports no reviews.
  */
-export const ProductReviews: React.FC<ProductReviewsProps> = ({ product }) => {
-  const reviews = VERIFIED_REVIEWS.filter((r) => r.productSlug === product.slug);
+export const ProductReviews: React.FC<ProductReviewsProps> = ({ product, liveReviews }) => {
+  const curated = VERIFIED_REVIEWS.filter((r) => r.productSlug === product.slug);
+  // Live backend reviews take precedence; fall back to the curated set so a
+  // product with testimonials but no backend reviews still renders cards.
+  const live = Array.isArray(liveReviews) ? liveReviews : [];
+  const reviews = live.length > 0 ? live : curated;
+  const hasLive = live.length > 0;
   const rating = product.rating || 0;
   const reviewCount = product.reviewCount || 0;
 
@@ -77,46 +89,84 @@ export const ProductReviews: React.FC<ProductReviewsProps> = ({ product }) => {
         {/* Verified review cards */}
         {reviews.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 pt-4 sm:pt-5">
-            {reviews.map((review) => (
-              <article
-                key={review.id}
-                className="p-4 sm:p-4.5 rounded-xl sm:rounded-2xl bg-[#FAF7F2] border border-stone-200/70"
-              >
-                <div className="flex items-center justify-between gap-2 mb-2.5">
-                  <div className="flex items-center text-amber-500">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star
-                        key={i}
-                        size={13}
-                        className={i <= review.rating ? 'fill-current' : 'text-stone-300'}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-[11px] text-stone-400">{review.date}</span>
-                </div>
+            {hasLive
+              ? live.map((review, idx) => (
+                  <article
+                    key={`live-${review.id || idx}`}
+                    className="p-4 sm:p-4.5 rounded-xl sm:rounded-2xl bg-[#FAF7F2] border border-stone-200/70"
+                  >
+                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                      <div className="flex items-center text-amber-500">
+                        {[1, 2, 3, 4, 5].map((i) => (
+                          <Star
+                            key={i}
+                            size={13}
+                            className={i <= review.rating ? 'fill-current' : 'text-stone-300'}
+                          />
+                        ))}
+                      </div>
+                      {review.date && (
+                        <span className="text-[11px] text-stone-400">{review.date}</span>
+                      )}
+                    </div>
 
-                <h3 className="text-sm sm:text-[15px] font-bold text-forest leading-snug mb-1.5">
-                  {review.title}
-                </h3>
-                <p className="text-xs sm:text-[13px] text-charcoal/80 font-sans leading-relaxed mb-3">
-                  {review.content}
-                </p>
+                    {review.review && (
+                      <p className="text-xs sm:text-[13px] text-charcoal/80 font-sans leading-relaxed mb-3">
+                        {review.review}
+                      </p>
+                    )}
 
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 pt-2.5 border-t border-stone-200/70">
-                  <span className="text-xs font-bold text-charcoal">{review.author}</span>
-                  <span className="inline-flex items-center gap-1 text-[11px] text-stone-500">
-                    <MapPin size={11} className="text-stone-400" />
-                    {review.location}
-                  </span>
-                  {review.verified && (
-                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
-                      <ShieldCheck size={12} />
-                      Verified buyer
-                    </span>
-                  )}
-                </div>
-              </article>
-            ))}
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 pt-2.5 border-t border-stone-200/70">
+                      <span className="text-xs font-bold text-charcoal">{review.reviewer}</span>
+                      {review.verified && (
+                        <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
+                          <ShieldCheck size={12} />
+                          Verified buyer
+                        </span>
+                      )}
+                    </div>
+                  </article>
+                ))
+              : curated.map((review) => (
+                  <article
+                    key={review.id}
+                    className="p-4 sm:p-4.5 rounded-xl sm:rounded-2xl bg-[#FAF7F2] border border-stone-200/70"
+                  >
+                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                      <div className="flex items-center text-amber-500">
+                        {[1, 2, 3, 4, 5].map((i) => (
+                          <Star
+                            key={i}
+                            size={13}
+                            className={i <= review.rating ? 'fill-current' : 'text-stone-300'}
+                          />
+                        ))}
+                      </div>
+                      <span className="text-[11px] text-stone-400">{review.date}</span>
+                    </div>
+
+                    <h3 className="text-sm sm:text-[15px] font-bold text-forest leading-snug mb-1.5">
+                      {review.title}
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-charcoal/80 font-sans leading-relaxed mb-3">
+                      {review.content}
+                    </p>
+
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 pt-2.5 border-t border-stone-200/70">
+                      <span className="text-xs font-bold text-charcoal">{review.author}</span>
+                      <span className="inline-flex items-center gap-1 text-[11px] text-stone-500">
+                        <MapPin size={11} className="text-stone-400" />
+                        {review.location}
+                      </span>
+                      {review.verified && (
+                        <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
+                          <ShieldCheck size={12} />
+                          Verified buyer
+                        </span>
+                      )}
+                    </div>
+                  </article>
+                ))}
           </div>
         )}
       </div>

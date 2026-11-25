@@ -113,8 +113,6 @@ const BRAND_SYNONYMS: Record<string, string[]> = {
   kalonji: ['kalongi', 'kalanji', 'kalonjee', 'black seed'],
   immuno3: ['immuno', 'imuno', 'immune', 'immunity booster', 'immuno 3'],
   vital: ['vittal', 'vitiligo', 'anti vitiligo', 'vital o3'],
-  dhayani: ['dayani', 'dhyani', 'dahyani', 'herbal oil'],
-  hibiscus: ['hibicus', 'hibiscos', 'hibiscus tea', 'rosella'],
   sleepwell: ['sleep well', 'slepwell', 'sleepwel'],
   piwell: ['pi well', 'piwel', 'pwell'],
 };

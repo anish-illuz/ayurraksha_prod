@@ -14,9 +14,6 @@ export const SLUG_ALIASES: Record<string, string> = {
   'flow-well-food-supplement-capsules': 'flow-well-capsules',
   'esnovate-immunity-boosting-capsules': 'esnovate-capsules',
   'sleep-well-food-supplement-capsules': 'sleep-well-capsules',
-  'organics-hibiscus-tea-tin': 'hibiscus-tea-tin',
-  'organics-herbo-protein-powder': 'herbo-protein-powder',
-  'organics-laxahealth-tea-tin': 'laxa-health-tea-tin',
   'purna-sakthi-tonic': 'purna-sakthi',
   'ayur-raksha-superheal-o3-cream': 'ayurraksha-superheal-o3-cream',
   'ayur-raksha-skinwell-soap-pack-of-2': 'skinwell-soap-pack-of-2',
@@ -41,10 +38,6 @@ export const SLUG_ALIASES: Record<string, string> = {
   'b-derma-capsules': 'b-derma-capsules',
   'bpain-out-capsules': 'bpain-out-capsules',
   'b-gasonil': 'b-gasonil',
-  // The dhayani bundle slug keeps a "-100ml" size suffix the live Woo post
-  // name dropped (id 116); without this alias the /shop/ overlay and the
-  // bundle-slug PDP fall back to the stale bundled price.
-  'dhayani-herbal-hair-oil-100ml': 'dhayani-herbal-hair-oil',
 };
 
 // Catalog index by the bundled slug.

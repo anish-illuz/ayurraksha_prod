@@ -28,7 +28,7 @@ interface IngredientImageEntry {
  * When an ingredient is resolved for a specific product, these overrides take
  * precedence over the generic cross-product library. This ensures that custom
  * ingredient photos provided specifically for a product (e.g. Foot Bath Powder,
- * Kalonji Soap, Dhayani Herbal Oil, Migro Prime, etc.) are only applied to
+ * Kalonji Soap, Migro Prime, etc.) are only applied to
  * that product without altering other products.
  */
 const PRODUCT_OVERRIDES: Record<string, IngredientImageEntry[]> = {
@@ -62,20 +62,6 @@ const PRODUCT_OVERRIDES: Record<string, IngredientImageEntry[]> = {
     { src: '/images/ingredients/products/ayurraksha-vital-o3-anti-vitiligo-cream/curcumin.jpg', keys: ['curcumin'] },
     { src: '/images/ingredients/products/ayurraksha-vital-o3-anti-vitiligo-cream/medicinal-plant-extracts.jpg', keys: ['medicinal plant extracts', 'medicinal plant extract'] },
     { src: '/images/ingredients/products/ayurraksha-vital-o3-anti-vitiligo-cream/oleic-acid.jpg', keys: ['oleic acid', 'oleic'] },
-  ],
-  'dhayani-herbal-hair-oil-100ml': [
-    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/aloe-vera-leaf-juice.jpg', keys: ['aloe vera', 'aloe', 'aloe vera leaf juice', 'aloe barbadensis'] },
-    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/sesame-oil.jpg', keys: ['sesame seeds', 'sesame', 'sesame oil', 'gingelly', 'tila'] },
-    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/vendhayam.jpg', keys: ['fenugreek', 'vendhayam', 'trigonella', 'trigonella foenum'] },
-    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/red-onion.jpg', keys: ['red onion', 'onion', 'allium cepa'] },
-    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/curry-leaves.jpg', keys: ['curry leaves', 'karuveppilai', 'murraya', 'murraya koenigii'] },
-    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/organic-coconut-oil-.jpg', keys: ['coconut oil', 'coconut', 'cocos nucifera', 'organic coconut oil'] },
-    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/amla.webp', keys: ['amla', 'nellikai', 'nellikkai', 'phyllanthus emblica', 'amalaki'] },
-    { src: '/images/ingredients/products/dhayani-herbal-hair-oil-100ml/badam.jpg', keys: ['badam', 'almond', 'prunus dulcis'] },
-  ],
-  'organics-hibiscus-tea-tin': [
-    { src: '/images/ingredients/products/organics-hibiscus-tea-tin/hibiscus-extract.jpg', keys: ['hibiscus', 'hibiscus sabdariffa', 'hibiscus flower', 'hibiscus extract'] },
-    { src: '/images/ingredients/products/organics-hibiscus-tea-tin/green-tea.png', keys: ['green tea', 'camellia sinensis', 'tea'] },
   ],
   'migro-prime-tablets': [
     { src: '/images/ingredients/products/migro-prime-tablets/piper-longum.jpg', keys: ['piper longum', 'long pepper', 'pippali', 'thippili'] },
@@ -283,7 +269,6 @@ const PRODUCT_OVERRIDES: Record<string, IngredientImageEntry[]> = {
 // Aliases support so CMS post_name also matches
 PRODUCT_OVERRIDES['ayurraksha-foot-bath-powder-300g'] = PRODUCT_OVERRIDES['ayur-raksha-foot-bath-powder'];
 PRODUCT_OVERRIDES['sleep-well-capsules'] = PRODUCT_OVERRIDES['sleep-well-food-supplement-capsules'];
-PRODUCT_OVERRIDES['hibiscus-tea-tin'] = PRODUCT_OVERRIDES['organics-hibiscus-tea-tin'];
 PRODUCT_OVERRIDES['esnovate-capsules'] = PRODUCT_OVERRIDES['esnovate-immunity-boosting-capsules'];
 PRODUCT_OVERRIDES['ayurraksha-gargling-oil'] = PRODUCT_OVERRIDES['ayur-raksha-gargling-oil'];
 
@@ -294,7 +279,7 @@ PRODUCT_OVERRIDES['ayurraksha-gargling-oil'] = PRODUCT_OVERRIDES['ayur-raksha-ga
 const LIBRARY: IngredientImageEntry[] = [
   { src: '/images/ingredients/turmeric-rhizome.jpg', keys: ['turmeric', 'manjal', 'haridra', 'haridr', 'curcuma longa', 'curcuma', 'golden turmeric'] },
   { src: '/images/ingredients/neem-leaves.jpg', keys: ['neem', 'nimba', 'nimbam', 'nimbha', 'nemba', 'azadirachta indica', 'azadirachta'] },
-  { src: '/images/ingredients/senna-leaves.jpg', keys: ['senna', 'cassia angustifolia', 'laxa health', 'laxahealth', 'laxa', 'senna leaves'] },
+  { src: '/images/ingredients/senna-leaves.jpg', keys: ['senna', 'cassia angustifolia', 'senna leaves'] },
   { src: '/images/ingredients/cinnamon-bark.jpg', keys: ['cinnamon', 'cinnamomum zeylanicum', 'cinnamomum', 'zeylanicum', 'cinnamon bark', 'elaku', 'dallakka'] },
   { src: '/images/ingredients/sesame-seeds.jpg', keys: ['sesame', 'gingelly', 'sesamum indicum', 'sesamum', 'tila tailam', 'tila', 'sesame seed', 'gingelly oil', 'sesame oil'] },
   { src: '/images/ingredients/raw-garlic-bulb.jpg', keys: ['garlic', 'allium sativum', 'lasun'] },

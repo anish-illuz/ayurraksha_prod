@@ -18,7 +18,6 @@ const POPULAR_SEARCHES = [
   'Divine Healing Oil',
   'Purna Sakthi Tonic',
   'SkinWell Soap',
-  'Organics LaxaHealth',
   'Flow Well',
   'Joint Pain',
   'Psoriasis',

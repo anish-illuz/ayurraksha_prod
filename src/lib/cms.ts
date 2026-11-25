@@ -462,8 +462,18 @@ export async function fetchLiveCatalogProducts(): Promise<Product[]> {
           ? Math.max(0, Math.round(((regularPrice - price) / regularPrice) * 100))
           : 0;
 
+      // The CMS name is the source of truth for display: surface the live
+      // WooCommerce product name (with any entity markup stripped) when
+      // present, so the shop page never shows a stale bundled name next to
+      // a live CMS price.
+      const liveName =
+        typeof live.name === 'string' && live.name.trim()
+          ? stripTags(decodeHtmlEntities(live.name)).trim()
+          : '';
+
       return {
         ...base,
+        name: liveName || base.name,
         price: price > 0 ? price : base.price,
         regularPrice: regularPrice > 0 ? regularPrice : base.regularPrice,
         salePrice: salePrice > 0 ? salePrice : base.salePrice,

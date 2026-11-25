@@ -83,13 +83,16 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
         if (!res.ok) return;
         const data = await res.json();
         if (cancelled || !Array.isArray(data?.products) || data.products.length === 0) return;
-        // Merge live commerce fields into the catalog products by id.
+        // Merge live commerce fields into the catalog products by id. The CMS
+        // name is the source of truth for display too: show the live
+        // WooCommerce product name when the backend resolved one.
         setProducts((prev) =>
           prev.map((p) => {
             const live = data.products.find((l: ComboProduct) => l.id === p.id);
             if (!live) return p;
             return {
               ...p,
+              name: live.name || p.name,
               price: live.price ?? p.price,
               mrp: live.mrp ?? p.mrp,
               inStock: live.inStock ?? p.inStock,
@@ -255,7 +258,9 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
     // Add each selected item to the global CartContext as a Combo Builder item.
     // Pass the live WooCommerce price/MRP captured in the builder state so the
     // cart, drawer and checkout show exactly what the builder displayed — never
-    // the stale bundled fallback.
+    // the stale bundled fallback. Also pass the live CMS product name so the
+    // post-handoff displays match what the builder showed (the cart item's
+    // bundled Product keeps its own name, which can differ from the CMS).
     itemsToAdd.forEach(({ product, quantity }) => {
       const canonical = getProductById(product.id);
       if (canonical && product.price !== null) {
@@ -268,7 +273,8 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
           1, // packCount
           true, // isComboItem
           false, // isSecondVariantOffer
-          product.mrp ?? product.price // originalUnitPrice — live MRP for savings display
+          product.mrp ?? product.price, // originalUnitPrice — live MRP for savings display
+          product.name, // cmsProductName — live CMS name shown after handoff
         );
       }
     });

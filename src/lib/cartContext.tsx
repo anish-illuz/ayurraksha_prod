@@ -31,7 +31,8 @@ interface CartContextType {
     packCount?: number,
     isComboItem?: boolean,
     isSecondVariantOffer?: boolean,
-    originalUnitPrice?: number
+    originalUnitPrice?: number,
+    cmsProductName?: string
   ) => void;
   updateQuantity: (productId: number, quantity: number, variant?: string) => void;
   removeFromCart: (productId: number, variant?: string) => void;
@@ -158,7 +159,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     packCount?: number,
     isComboItem = false,
     isSecondVariantOffer = false,
-    originalUnitPrice?: number
+    originalUnitPrice?: number,
+    cmsProductName?: string
   ) => {
     const canonical = product.cmsProductId ? product : getProductById(product.id);
     if (!canonical?.inStock || !Number.isInteger(quantity) || quantity < 1) return;
@@ -212,6 +214,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (isComboItem) next[existingIndex].isComboItem = true;
         if (isSecondVariantOffer) next[existingIndex].isSecondVariantOffer = true;
         next[existingIndex].originalUnitPrice = originalUnitPrice;
+        if (cmsProductName) next[existingIndex].cmsProductName = cmsProductName;
         return next;
       }
       return [
@@ -226,6 +229,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
           isComboItem,
           isSecondVariantOffer,
           originalUnitPrice,
+          cmsProductName: cmsProductName || undefined,
         },
       ];
     });

@@ -120,7 +120,7 @@ export const CartDrawer: React.FC = () => {
                 >
                   <Image
                     src={item.product.images?.[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'}
-                    alt={item.product.name}
+                    alt={item.cmsProductName || item.product.name}
                     fill
                     sizes="72px"
                     className="object-contain"
@@ -136,11 +136,11 @@ export const CartDrawer: React.FC = () => {
                         onClick={closeCart}
                         className="text-xs font-semibold text-charcoal hover:text-botanical transition-colors line-clamp-2"
                       >
-                        {item.product.name}
+                        {item.cmsProductName || item.product.name}
                       </Link>
                       <button
                         onClick={() => removeFromCart(item.product.id, item.selectedVariant)}
-                        aria-label={`Remove ${item.product.name}`}
+                        aria-label={`Remove ${item.cmsProductName || item.product.name}`}
                         className="text-stone-400 hover:text-red-600 transition-colors p-1"
                       >
                         <Trash2 size={14} />

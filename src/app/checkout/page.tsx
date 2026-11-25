@@ -775,7 +775,7 @@ export default function CheckoutPage() {
                           <div className="relative w-14 h-14 bg-[#FAF8F5] rounded-xl border border-stone-200 p-1 flex-shrink-0">
                             <Image
                               src={item.product.images[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2023/02/1.png'}
-                              alt={item.product.name}
+                              alt={item.cmsProductName || item.product.name}
                               fill
                               sizes="56px"
                               className="object-contain"
@@ -786,7 +786,7 @@ export default function CheckoutPage() {
                           </div>
                           <div className="min-w-0">
                             <p className="text-xs sm:text-sm font-bold text-charcoal truncate">
-                              {item.product.name}
+                              {item.cmsProductName || item.product.name}
                             </p>
                             {item.selectedVariant && (
                               <p className="text-xs font-semibold text-emerald-800 truncate">

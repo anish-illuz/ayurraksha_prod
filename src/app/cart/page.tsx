@@ -91,7 +91,7 @@ export default function CartPage() {
                       >
                         <Image
                           src={item.product.images[0] || 'https://cms.ayurrakshaonline.com/wp-content/uploads/2024/02/1-1024x1024.jpg'}
-                          alt={item.product.name}
+                          alt={item.cmsProductName || item.product.name}
                           fill
                           sizes="80px"
                           className="object-contain"
@@ -103,7 +103,7 @@ export default function CartPage() {
                           href={`/product/${item.product.slug}`}
                           className="text-sm font-semibold text-charcoal hover:text-botanical transition-colors line-clamp-2"
                         >
-                          {item.product.name}
+                          {item.cmsProductName || item.product.name}
                         </Link>
                         {item.selectedVariant && (
                           <p className="text-xs text-charcoal-muted mt-0.5">
@@ -146,7 +146,7 @@ export default function CartPage() {
 
                       <button
                         onClick={() => removeFromCart(item.product.id, item.selectedVariant)}
-                        aria-label={`Remove ${item.product.name}`}
+                        aria-label={`Remove ${item.cmsProductName || item.product.name}`}
                         className="text-stone-400 hover:text-red-600 transition-colors p-1"
                       >
                         <Trash2 size={16} />

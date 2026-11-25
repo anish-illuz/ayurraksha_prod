@@ -169,6 +169,10 @@ export interface CartItem {
   isComboItem?: boolean;
   isSecondVariantOffer?: boolean;
   originalUnitPrice?: number;
+  /** Live CMS (WooCommerce) product name captured at add-time. Displayed in
+   *  place of the bundled `product.name` so the cart, drawer and checkout
+   *  show exactly what the CMS sells. */
+  cmsProductName?: string;
 }
 
 export interface BlogPost {

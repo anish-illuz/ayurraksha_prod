@@ -1243,10 +1243,10 @@ export const SKIN_CARE_CONFIG: ComboBuilderConfig = {
   slug: 'skin-care',
   name: 'Skin Care Combo Builder',
   heroTagline: 'Build Your Skin Care Combo',
-  heroTitle: 'Create Your Personalised',
-  heroHighlight: 'Skin Care Combo',
+  heroTitle: 'Give Your Skin the',
+  heroHighlight: 'Care It Deserves',
   heroDescription:
-    'Choose the products that suit your routine, select your quantities and enjoy combo savings.',
+    'Build your personalised skin care routine with Ayurvedic oils, cleansers and botanical supplements, selected to suit your needs.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '14 Formulations',
   catalogSubtitle: 'Browse, compare and customize your selection with live store prices. No products are added without your choice.',
@@ -1277,10 +1277,10 @@ export const VARICOSE_VEINS_CONFIG: ComboBuilderConfig = {
   slug: 'varicose-veins',
   name: 'Varicose Veins Combo Builder',
   heroTagline: 'Build Your Personalised Combo',
-  heroTitle: 'Create Your',
-  heroHighlight: 'Varicose Veins Care Combo',
+  heroTitle: 'Lighter Legs.',
+  heroHighlight: 'More Comfortable Days.',
   heroDescription:
-    'Choose the products that suit your routine, select your quantities and enjoy combo savings.',
+    'Create your own routine with Ayurvedic products selected to support circulation, care for tired legs and nourish your skin.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '6 Products',
   catalogSubtitle:
@@ -1312,10 +1312,10 @@ export const BREATH_EASY_CONFIG: ComboBuilderConfig = {
   slug: 'breath-easy',
   name: 'Breathe Easy Combo Builder',
   heroTagline: 'Create Your Breathe Easy Combo',
-  heroTitle: 'Create Your',
-  heroHighlight: 'Breathe Easy Combo',
+  heroTitle: 'Breathe Easier.',
+  heroHighlight: 'Feel Ready for Your Day.',
   heroDescription:
-    'Choose the products that suit your wellness routine, select your quantities and enjoy combo savings.',
+    'Choose Ayurvedic products for respiratory and seasonal wellness, digestive comfort and everyday care.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '3 Products',
   catalogSubtitle:
@@ -1347,10 +1347,10 @@ export const CARDIAC_WELLNESS_CONFIG: ComboBuilderConfig = {
   slug: 'cardiac-wellness',
   name: 'Cardiac Wellness Combo Builder',
   heroTagline: 'Create Your Cardiac Wellness Combo',
-  heroTitle: 'Create Your',
-  heroHighlight: 'Cardiac Wellness Combo',
+  heroTitle: 'Give Your Heart the',
+  heroHighlight: 'Care It Deserves',
   heroDescription:
-    'Build a heart-conscious wellness routine with Save Heart, Flow Well Capsules and Detox Tea. Choose the products you need and enjoy combo savings.',
+    'Build your heart-conscious wellness routine with Ayurvedic products for cardiovascular care, circulation and digestive wellness.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '3 Products',
   catalogSubtitle:

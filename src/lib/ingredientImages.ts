@@ -99,6 +99,17 @@ const PRODUCT_OVERRIDES: Record<string, IngredientImageEntry[]> = {
     { src: '/images/ingredients/products/ayur-raksha-alg/draksha.jpg', keys: ['draksha', 'grape', 'vitis vinifera'] },
     { src: '/images/ingredients/products/ayur-raksha-alg/garlic-allium-sativum.jpg', keys: ['garlic', 'allium sativum'] },
   ],
+  'b-ortho-nivaran-best-ds-tablets': [
+    { src: '/images/ingredients/products/b-ortho-nivaran-best-ds-tablets/apium-leptophyllum.jpg', keys: ['apium leptophyllum', 'pachoi', 'celery'] },
+    { src: '/images/ingredients/products/b-ortho-nivaran-best-ds-tablets/embelia-ribes.jpg', keys: ['embelia ribes', 'embelia', 'nelikkai', 'bellicaria'] },
+    { src: '/images/ingredients/products/b-ortho-nivaran-best-ds-tablets/cedrus-deodara.jpg', keys: ['cedrus deodara', 'cedrus', 'himalayan cedar', 'deodar'] },
+    { src: '/images/ingredients/products/b-ortho-nivaran-best-ds-tablets/plumbago-zeylanica.jpg', keys: ['plumbago zeylanica', 'plumbago'] },
+    { src: '/images/ingredients/products/b-ortho-nivaran-best-ds-tablets/anethum-sowa.jpg', keys: ['anethum sowa', 'anethum', 'sowa'] },
+    { src: '/images/ingredients/products/b-ortho-nivaran-best-ds-tablets/piper-nigrum.jpg', keys: ['piper nigrum', 'black pepper'] },
+    { src: '/images/ingredients/products/b-ortho-nivaran-best-ds-tablets/terminalia-chebula.jpg', keys: ['terminalia chebula', 'haritaki', 'chebula'] },
+    { src: '/images/ingredients/products/b-ortho-nivaran-best-ds-tablets/zingiber-officinale.jpg', keys: ['zingiber officinale', 'zingiber', 'ginger'] },
+    { src: '/images/ingredients/products/b-ortho-nivaran-best-ds-tablets/alpinia-calcarata.jpg', keys: ['alpinia calcarata', 'alpinia'] },
+  ],
   'b-derma-capsules': [
     { src: '/images/ingredients/products/b-derma-capsules/santalum-album.jpg', keys: ['santalum album'] },
     { src: '/images/ingredients/products/b-derma-capsules/trichosanthes-dioica.jpg', keys: ['trichosanthes dioica', 'trichosanthes'] },

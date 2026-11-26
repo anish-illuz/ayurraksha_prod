@@ -89,6 +89,16 @@ const ANCHOR_TERMS = [
 
 const escapeRegExp = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
+/**
+ * A standalone Latin binomial: two or more tokens, genus Capitalised and
+ * species lower-case, with no common-name / alias / slash noise.
+ * "Apium leptophyllum" -> true; "Karicalai" (single common word) and
+ * "Shombu Vilvaver" (Capital-Capital) -> false.
+ */
+function looksLikeLatinBinomial(s: string): boolean {
+  return /^[A-Z][a-z]+(?: [a-z]+)+$/.test(s.trim());
+}
+
 /** Split "Genus species ... rest" into its Latin tail and the next name. */
 function splitLatinAndName(seg: string): { latin: string; next: string } {
   const words = seg.trim().split(/\s+/).filter(Boolean);
@@ -182,6 +192,14 @@ function splitPackedIngredientList(text: string): string[] {
   const commaCount = (text.match(/,/g) || []).length;
   if (commaCount >= 2) {
     const segs = text.split(',').map((s) => s.trim()).filter(Boolean);
+    // A flat list of standalone Latin binomials ("Apium leptophyllum, Embelia
+    // ribes, ...") is one ingredient per segment, not a common-name/latin
+    // pairing: every comma merely separates two herbs. Split them apart so
+    // each binomial becomes its own card; any segment that reads like a
+    // common name keeps the pairing behaviour below.
+    if (segs.length >= 2 && segs.every((s) => looksLikeLatinBinomial(s))) {
+      return segs;
+    }
     const items: string[] = [];
     segs.forEach((seg, idx) => {
       if (idx === 0) {

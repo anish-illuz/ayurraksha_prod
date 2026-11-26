@@ -6004,5 +6004,51 @@
     },
     "productSpecifications": "Product type: Hair care oil. Net content: 100 ml",
     "recommendedProductsText": ""
+  },
+  {
+    "id": 28892,
+    "name": "B Ortho Nivaran Best DS Tablets",
+    "slug": "b-ortho-nivaran-best-ds-tablets",
+    "price": 600,
+    "regularPrice": 600,
+    "salePrice": 600,
+    "discountPercent": 0,
+    "onSale": false,
+    "categories": [
+      "Joint & Muscle Care"
+    ],
+    "categorySlugs": [
+      "joint-muscle-care"
+    ],
+    "healthConcerns": [
+      "Joint & Muscle Care"
+    ],
+    "isBestseller": false,
+    "images": [
+      "https://cms.ayurrakshaonline.com/wp-content/uploads/2026/11/B-Ortho-Nivaran.png"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "shortDescription": "Move Freely, Live Comfortably! Experience targeted Ayurvedic support for joint pain, muscle discomfort, and stiffness with B Ortho Nivaran Best DS Tablets. Formulated with nine carefully selected botanical ingredients, this traditional Ayurvedic formulation helps support joint flexibility, mobility, and everyday comfort—so you can stay active and move with greater ease.",
+    "description": "<p>Move Freely, Stay Active, Live Comfortably!</p><p>Joint stiffness, back discomfort, or muscle aches slowing you down? Discover traditional Ayurvedic support with B Ortho Nivaran Best DS Tablets, a specially formulated herbal blend designed to support joint comfort, muscle wellness, and everyday mobility.</p><p>Powered by nine carefully selected botanical ingredients, including Apium leptophyllum, Embelia ribes, Cedrus deodara, Plumbago zeylanica, Anethum sowa, Piper nigrum, Terminalia chebula, Zingiber officinale, and Alpinia calcarata, this Ayurvedic proprietary formulation brings together traditional herbs to promote joint and muscle well-being. Each tablet contains 50 mg of each botanical ingredient.</p><p>Whether you're experiencing occasional stiffness, discomfort after physical activity, or reduced ease of movement, B Ortho Nivaran offers a traditional approach to supporting flexibility, mobility, and everyday comfort.</p><p>Developed for individuals seeking Ayurvedic joint and muscle care, this formulation complements a balanced lifestyle and appropriate physical activity.</p><p>Support Your Joints. Move with Confidence. Embrace Everyday Comfort.</p>",
+    "cleanDescription": "Move Freely, Stay Active, Live Comfortably! Joint stiffness, back discomfort, or muscle aches slowing you down? Discover traditional Ayurvedic support with B Ortho Nivaran Best DS Tablets, a specially formulated herbal blend designed to support joint comfort, muscle wellness, and everyday mobility. Powered by nine carefully selected botanical ingredients, including Apium leptophyllum, Embelia ribes, Cedrus deodara, Plumbago zeylanica, Anethum sowa, Piper nigrum, Terminalia chebula, Zingiber officinale, and Alpinia calcarata, this Ayurvedic proprietary formulation brings together traditional herbs to promote joint and muscle well-being. Each tablet contains 50 mg of each botanical ingredient. Whether you're experiencing occasional stiffness, discomfort after physical activity, or reduced ease of movement, B Ortho Nivaran offers a traditional approach to supporting flexibility, mobility, and everyday comfort. Developed for individuals seeking Ayurvedic joint and muscle care, this formulation complements a balanced lifestyle and appropriate physical activity. Support Your Joints. Move with Confidence. Embrace Everyday Comfort.",
+    "inStock": true,
+    "variants": [],
+    "sku": "",
+    "cmsProductId": 28892,
+    "acf": {
+      "key_benefits": "Experience the goodness of traditional Ayurveda with a carefully selected blend of nine botanical ingredients. Formulated to support joint comfort, muscle wellness, and everyday mobility, B Ortho Nivaran offers a natural approach to maintaining flexibility and an active lifestyle. With clearly defined herbal quantities and a convenient 30-tablet pack, it provides support for your joint and muscle wellness journey.",
+      "ingredients": "Apium leptophyllum, Embelia ribes, Cedrus deodara, Plumbago zeylanica, Anethum sowa, Piper nigrum, Terminalia chebula, Zingiber officinale, Alpinia calcarata",
+      "how_to_use": "Dosage and duration based on individual health needs.",
+      "care_before_use": "Consult with our doctor if you are pregnant or breastfeeding",
+      "product_specifications": "Product: B Ortho Nivaran Best DS Tablets; format: tablets; pack: 30 tablets; classification on label: Ayurveda Proprietary Medicine; MRP: ₹600, inclusive of taxes; manufacturer: Best Research Pharma; marketed by: VPrime Innovations.",
+      "recommended_products": ""
+    },
+    "keyBenefits": "Experience the goodness of traditional Ayurveda with a carefully selected blend of nine botanical ingredients. Formulated to support joint comfort, muscle wellness, and everyday mobility, B Ortho Nivaran offers a natural approach to maintaining flexibility and an active lifestyle. With clearly defined herbal quantities and a convenient 30-tablet pack, it provides support for your joint and muscle wellness journey.",
+    "ingredientsText": "Apium leptophyllum, Embelia ribes, Cedrus deodara, Plumbago zeylanica, Anethum sowa, Piper nigrum, Terminalia chebula, Zingiber officinale, Alpinia calcarata",
+    "howToUseText": "Dosage and duration based on individual health needs.",
+    "careBeforeUse": "Consult with our doctor if you are pregnant or breastfeeding",
+    "productSpecifications": "Product: B Ortho Nivaran Best DS Tablets; format: tablets; pack: 30 tablets; classification on label: Ayurveda Proprietary Medicine; MRP: ₹600, inclusive of taxes; manufacturer: Best Research Pharma; marketed by: VPrime Innovations.",
+    "recommendedProductsText": ""
   }
 ]

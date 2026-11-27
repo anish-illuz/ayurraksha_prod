@@ -1249,7 +1249,9 @@ export const SKIN_CARE_CONFIG: ComboBuilderConfig = {
     'Build your personalised skin care routine with Ayurvedic oils, cleansers and botanical supplements, selected to suit your needs.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '14 Formulations',
-  catalogSubtitle: 'Browse, compare and customize your selection with live store prices. No products are added without your choice.',
+  catalogHeading: 'Discover Your Perfect Skincare Ritual',
+  catalogSubtitle:
+    'Discover thoughtfully selected skincare essentials and build a routine that complements your unique skin needs.',
   catalogCountBadge: '14 Products • 5 Categories',
   storageKey: 'ayurraksha_combo_selection_v2',
   stepGuide: {
@@ -1283,8 +1285,9 @@ export const VARICOSE_VEINS_CONFIG: ComboBuilderConfig = {
     'Create your own routine with Ayurvedic products selected to support circulation, care for tired legs and nourish your skin.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '6 Products',
+  catalogHeading: 'Lighter Legs. Greater Comfort. Your Way.',
   catalogSubtitle:
-    'Select the capsules, pre-bath massage oil, botanical soap, foot soak, O3 cream, or tea that match your routine. No forced items.',
+    'Discover Ayurvedic wellness essentials designed to support leg comfort and everyday well-being. Mix, match, and create a personalized care routine that suits your needs.',
   catalogCountBadge: '6 Products • 5 Categories',
   storageKey: 'ayurraksha_varicose_combo_v1',
   stepGuide: {
@@ -1318,8 +1321,9 @@ export const BREATH_EASY_CONFIG: ComboBuilderConfig = {
     'Choose Ayurvedic products for respiratory and seasonal wellness, digestive comfort and everyday care.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '3 Products',
+  catalogHeading: 'Breathe Better, Live Better',
   catalogSubtitle:
-    'Compare and select pain-relief cream, digestive tea, or doctor-guided skin capsules with transparent store pricing.',
+    'Discover carefully selected Ayurvedic wellness essentials designed to support respiratory comfort and everyday well-being. Mix, match, and create a personalized care routine that suits your needs.',
   catalogCountBadge: '3 Products • 3 Categories',
   storageKey: 'ayurraksha_breath_combo_v1',
   stepGuide: {
@@ -1353,8 +1357,9 @@ export const CARDIAC_WELLNESS_CONFIG: ComboBuilderConfig = {
     'Build your heart-conscious wellness routine with Ayurvedic products for cardiovascular care, circulation and digestive wellness.',
   savingsLine: COMBO_SAVINGS_LINE,
   heroBadge: '3 Products',
+  catalogHeading: 'A Healthy Heart. A Healthier You.',
   catalogSubtitle:
-    'Independently choose Save Heart tonic, Flow Well circulation capsules, and Detox Tea. View live prices and verified discounts.',
+    'Discover thoughtfully selected Ayurvedic wellness essentials designed to support heart health, healthy circulation, and everyday vitality. Mix, match, and create a personalized wellness routine that suits your needs.',
   catalogCountBadge: '3 Products • 3 Categories',
   storageKey: 'ayurraksha_cardiac_combo_v1',
   stepGuide: {

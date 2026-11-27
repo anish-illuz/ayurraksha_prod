@@ -78,6 +78,7 @@ export interface ComboBuilderConfig {
   heroDescription: string;
   savingsLine?: string;
   heroBadge: string;
+  catalogHeading: string;
   catalogSubtitle: string;
   catalogCountBadge: string;
   storageKey: string;

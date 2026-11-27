@@ -352,7 +352,7 @@ export const DynamicComboBuilder: React.FC<DynamicComboBuilderProps> = ({
                 CURATE YOUR ROUTINE
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[#18372b] tracking-[-0.03em]">
-                {config.slug === 'skin-care' ? 'What Does Your Skin Need?' : config.name}
+                {config.catalogHeading}
               </h2>
               <p className="text-xs text-[#283830] mt-0.5 leading-relaxed">
                 {config.catalogSubtitle}
